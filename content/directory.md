@@ -2,6 +2,7 @@
 title = "The Sovereign Software Index"
 description = "Tools that pass the seven gates, grouped by discipline."
 layout = "directory"
+js = true
 weight = 2
 +++
 

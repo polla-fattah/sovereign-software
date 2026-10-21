@@ -1,7 +1,8 @@
-baseURL = "http://localhost:1313/"
-languageCode = "en-us"
+baseURL = "https://polla-fattah.github.io/sovereign-software/"
+locale = "en-us"
 title = "Sovereign Personal Software — Manifesto, Index & Engineering Standard"
-disableKinds = ["taxonomy", "term"]
+disableKinds = ["taxonomy", "term", "RSS"]
+enableRobotsTXT = true
 
 [params]
   specVersion = "v2.4 (CANONICAL)"

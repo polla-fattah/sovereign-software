@@ -1,6 +1,18 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>{{ .Site.Title }}</title>
+{{- $desc := cond (ne .Description "") .Description .Site.Params.quote -}}
+{{- $title := cond (or .IsHome (hasSuffix .Title "Sovereign Personal Software")) (cond .IsHome .Site.Title .Title) (printf "%s · Sovereign Personal Software" .Title) -}}
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="theme-color" content="#fdf9f7">
+<link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sovereign Personal Software">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta name="twitter:card" content="summary">
 <!-- Everything is self-hosted: no CDN, no third-party fonts. See README.md to rebuild tailwind.css. -->
 <link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/tailwind.css" | relURL }}">
@@ -141,6 +153,8 @@
     font-weight: 500;
     transition: border-color .15s, color .15s;
   }
+  .btn-ghost { background-color: transparent; border: 1px solid var(--color-hairline-gray); color: var(--color-forest-ink); font-family: var(--font-inter); font-weight: 500; text-decoration: none; transition: border-color .15s; }
+  .btn-ghost:hover { border-color: var(--color-vivid-emerald); }
   button:hover { border-color: var(--color-vivid-emerald) !important; color: var(--color-forest-ink) !important; }
   /* Former filled / active states become emerald outline */
   button[class*="bg-amber-500"], button[class*="bg-slate-900"], button[class*="bg-emerald-500"],

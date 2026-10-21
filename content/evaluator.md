@@ -2,6 +2,7 @@
 title = "The 7-Gate Evaluator"
 description = "Test any tool or proposed architecture against the seven gates."
 layout = "evaluator"
+js = true
 weight = 3
 +++
 

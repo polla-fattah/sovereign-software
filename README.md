@@ -52,3 +52,15 @@ The site loads nothing from outside its own origin.
   ```
 
 - The CLI binary is not committed (`tools/` is git-ignored). Download `tailwindcss-windows-x64.exe` from the [Tailwind v3.4.17 release](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.4.17), save it as `tools/tailwindcss.exe`, and check it against `sha256sums.txt` from the same release.
+
+## Publishing (GitHub Pages)
+
+The site deploys automatically from `main` through `.github/workflows/pages.yml`, which builds with Hugo and publishes the result. `public/` is generated output and is git-ignored.
+
+One-time setup: in the repository, open **Settings → Pages** and set **Source** to **GitHub Actions**. The site is then served at `https://polla-fattah.github.io/sovereign-software/`.
+
+Local preview: `hugo server` reads `config/development/hugo.toml`, which sets `baseURL` to `http://localhost:1313/` so the site works at the root. Restart the server after changing config files.
+
+## Licence
+
+Everything in this repository is licensed under [Creative Commons Attribution 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/): you may share and adapt it for any purpose, including commercially, with credit. See `LICENSE`. The bundled fonts and the compiled Tailwind CSS keep their own licences, listed in `LICENSE`.

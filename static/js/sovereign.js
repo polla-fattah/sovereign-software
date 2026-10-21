@@ -1,17 +1,12 @@
 // Sovereign Personal Software — Client-Side Interactivity for Hugo Build
-const t0 = performance.now();
 const DIRECTORY_ITEMS = window.DIRECTORY_ITEMS || [];
 const GATES = window.GATES || [];
-const MANIFESTO_MD_URL = "/read/sovereign-personal-software-manifesto.md";
 
 let activeCategory = 'ALL';
 let gateState = { gate1: false, gate2: false, gate3: false, gate4: false, gate5: false, gate6: false, gate7: false };
 let evaluatorTouched = false;
 
 window.addEventListener('DOMContentLoaded', () => {
-  const elapsed = (performance.now() - t0).toFixed(2);
-  const badge = document.getElementById('latency-badge');
-  if (badge) badge.innerHTML = 'LOCAL RENDER: <strong class="text-emerald-500">' + elapsed + 'ms</strong> (GATE 02 PASS)';
   if (document.getElementById('directory-grid')) renderDirectory();
   if (document.getElementById('evaluator-questions')) { renderEvaluatorQuestions(); updateEvaluator(); }
 });
@@ -168,10 +163,6 @@ function updateEvaluator() {
       ];
       document.getElementById('eval-markdown-output').textContent = mdLines.join('\n');
     }
-function toggleTheme() {
-      const root = document.documentElement;
-      root.classList.toggle('dark');
-    }
 function showToast(msg) {
       const toast = document.getElementById('toast');
       const label = document.getElementById('toast-message');
@@ -201,13 +192,4 @@ function copyCodeBlock(elementId) {
 function copyAuditReport() {
       const el = document.getElementById('eval-markdown-output');
       if (el) copyTextToClipboard(el.textContent, 'Audit Markdown report copied');
-    }
-function exportManifestoMarkdown() {
-      const a = document.createElement('a');
-      a.href = MANIFESTO_MD_URL;
-      a.download = 'sovereign-personal-software-manifesto.md';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      showToast('Downloading sovereign-personal-software-manifesto.md');
     }

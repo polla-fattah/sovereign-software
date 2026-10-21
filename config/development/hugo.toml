@@ -1,0 +1,2 @@
+# Used by `hugo server` so local preview works at the site root.
+baseURL = "http://localhost:1313/"
