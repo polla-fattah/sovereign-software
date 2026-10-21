@@ -1,0 +1,96 @@
+/* @theme sovereign */
+/* Theme for the manifesto slides. Matches the site: cream paper, forest ink, one emerald accent.
+   Fonts are the site's own self-hosted files, resolved relative to /slides/index.html. */
+@import 'default';
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../fonts/inter-var.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'General Sans';
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/general-sans-700.woff2') format('woff2');
+}
+
+section {
+  width: 1280px;
+  height: 720px;
+  padding: 64px 90px 80px;
+  background: #fdf9f7;
+  color: #333333;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 30px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3 {
+  font-family: 'General Sans', 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  color: #003f2e;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+h1 { font-size: 58px; margin: 0 0 0.4em; }
+h2 { font-size: 44px; margin: 0 0 0.6em; padding-bottom: 0.3em; border-bottom: 2px solid #039861; }
+h3 { font-size: 32px; margin: 0.8em 0 0.3em; }
+
+strong { color: #003f2e; font-weight: 700; }
+a { color: #003f2e; text-decoration: underline; text-underline-offset: 4px; }
+em { color: #6e7673; }
+
+ul, ol { margin: 0.4em 0; padding-left: 1.2em; }
+li { margin: 0.35em 0; }
+li::marker { color: #039861; font-weight: 700; }
+
+blockquote {
+  margin: 0.6em 0;
+  padding: 0.2em 0 0.2em 1em;
+  border-left: 4px solid #039861;
+  font-size: 1.05em;
+  font-style: italic;
+  color: #003f2e;
+}
+
+code { font-family: 'JetBrains Mono', Consolas, monospace; font-size: 0.8em; background: #f6f1ed; padding: 0.1em 0.3em; }
+
+section::after {            /* page number */
+  font-size: 18px;
+  color: #6e7673;
+  right: 40px;
+  bottom: 28px;
+}
+footer {
+  font-size: 18px;
+  color: #6e7673;
+  left: 90px;
+  bottom: 28px;
+}
+
+/* Title and closing slides: dark forest background */
+section.title {
+  background: #003f2e;
+  color: #fdf9f7;
+  justify-content: center;
+}
+section.title h1, section.title h2, section.title strong { color: #fdf9f7; border: 0; }
+section.title a { color: #fdf9f7; }
+section.title em { color: #c3e3d2; }
+section.title footer, section.title::after { color: #c3e3d2; }
+
+/* Two columns */
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+.cols > div > h3:first-child { margin-top: 0; }
+
+/* Big statement slide */
+section.statement { justify-content: center; }
+section.statement h2 { border: 0; font-size: 52px; }
+section.statement blockquote { font-size: 36px; }
+
+/* Smaller text for dense slides */
+section.dense { font-size: 26px; }
+section.dense li { margin: 0.25em 0; }

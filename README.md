@@ -54,6 +54,18 @@ Nothing is loaded from a CDN or a third-party font service.
   The CLI binary is not committed (`tools/` is git-ignored). Download the build for your platform from the release page above (for example `tailwindcss-windows-x64.exe`, `tailwindcss-macos-arm64` or `tailwindcss-linux-x64`), save it in `tools/` as `tailwindcss` (`tailwindcss.exe` on Windows), and check it against `sha256sums.txt` from the same release.
 - **JavaScript** is limited to `static/js/sovereign.js`, loaded only on the Index and Evaluator pages (pages opt in with `js = true` in their front matter). Every other page ships no JavaScript.
 
+## Slides
+
+The presentation lives at `/slides/`, linked from the footer. It is written in plain Markdown in `slides/manifesto.md` (speaker notes are the HTML comments) and styled by `slides/sovereign.css`, then compiled with [Marp CLI](https://github.com/marp-team/marp-cli) (MIT) into one self-contained file, `static/slides/index.html`, which is committed. It uses the site's self-hosted fonts and makes no network requests.
+
+Install Marp CLI once (`npm install -g @marp-team/marp-cli`), and rebuild after editing the slides:
+
+```bash
+marp slides/manifesto.md --theme slides/sovereign.css --html -o static/slides/index.html
+```
+
+When presenting, press `F` or use the fullscreen button, and `P` for presenter view with the speaker notes.
+
 ## Publishing
 
 The site deploys to GitHub Pages from `main` through `.github/workflows/pages.yml`. `public/` is generated output and is git-ignored.

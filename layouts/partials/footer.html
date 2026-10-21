@@ -4,12 +4,14 @@
       <div class="space-y-3 max-w-md">
         <div class="footer-wordmark">Sovereign Software</div>
         <p class="footer-muted">Your data belongs to you. Tools that respect your time and outlive their vendors.</p>
+        <p class="footer-muted">Reference implementation: <a href="https://todoz.polla.dev/" target="_blank" rel="noopener" class="underline">ToDoz</a>, an offline-first personal task manager.</p>
       </div>
       <nav class="flex flex-wrap gap-x-8 gap-y-3" aria-label="Footer">
         <a href="{{ "manifesto/" | relURL }}">Manifesto</a>
         <a href="{{ "directory/" | relURL }}">Index</a>
         <a href="{{ "evaluator/" | relURL }}">Evaluator</a>
         <a href="{{ "escape-hatches/" | relURL }}">Escape Hatches</a>
+        <a href="{{ "slides/" | relURL }}">Slides</a>
         <a href="{{ "read/sovereign-personal-software-manifesto.md" | relURL }}" download="sovereign-personal-software-manifesto.md">Download .md</a>
         {{ with .Site.Params.social.githubRepo }}
         <a href="{{ . }}" target="_blank" rel="noopener" class="inline-flex items-center" aria-label="Source on GitHub" title="Source on GitHub">{{ partial "github-icon.html" "w-5 h-5" }}</a>
