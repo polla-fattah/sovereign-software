@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>A Manifesto for Sovereign Personal Software on Sovereign Personal Software — Manifesto, Index &amp; Engineering Standard</title>
+		<link>http://localhost:1313/</link>
+		<description>Recent content in A Manifesto for Sovereign Personal Software on Sovereign Personal Software — Manifesto, Index &amp; Engineering Standard</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 21 Oct 2026 08:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>The Complete Manifesto for Sovereign Personal Software</title>
+				<link>http://localhost:1313/manifesto/</link>
+				<pubDate>Wed, 21 Oct 2026 08:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/manifesto/</guid>
+				<description>&lt;h1 id=&#34;a-manifesto-for-sovereign-personal-software&#34;&gt;A Manifesto for Sovereign Personal Software&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;“Your data belongs to you. Your tools should respect your time, preserve your freedom, and remain useful without depending on someone else’s infrastructure.”&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;01-the-core-manifesto&#34;&gt;01. The Core Manifesto&lt;/h2&gt;&#xA;&lt;p&gt;Software should adapt to people, not force people to adapt to software.&#xA;Six foundational principles define Sovereign Personal Software:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Sovereignty: Users control their data, infrastructure, cryptographic keys, and ability to migrate.&lt;/li&gt;&#xA;&lt;li&gt;Locality: Core functionality executes on the user&amp;rsquo;s hardware, independently of network connectivity.&lt;/li&gt;&#xA;&lt;li&gt;Predictability: Critical state transitions and rule engines are deterministic, transparent, and testable.&lt;/li&gt;&#xA;&lt;li&gt;Responsiveness: Software respects human attention with sub-100ms feedback and zero artificial friction.&lt;/li&gt;&#xA;&lt;li&gt;Focused Interoperability: Applications maintain bounded responsibilities while exchanging information across open protocols.&lt;/li&gt;&#xA;&lt;li&gt;Longevity: Human records must outlive the applications, vendors, and runtimes that produced them.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;06-the-seven-engineering-evaluation-tests&#34;&gt;06. The Seven Engineering Evaluation Tests&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;The Air-Gap Test: Does primary functionality operate cleanly with the network interface disabled?&lt;/li&gt;&#xA;&lt;li&gt;The 100ms Test: Do common local interactions respond within 100 milliseconds on baseline hardware?&lt;/li&gt;&#xA;&lt;li&gt;The Longevity Test: Can users recover and understand their raw data using standard system tools if the binary disappears?&lt;/li&gt;&#xA;&lt;li&gt;The Responsibility Test: Does this capability belong in this tool, or should a decoupled external utility handle it?&lt;/li&gt;&#xA;&lt;li&gt;The Dependency Test: Does this avoid mandatory third-party cloud accounts, fragile dependency trees, or subscriptions?&lt;/li&gt;&#xA;&lt;li&gt;The Predictability Test: Are state transitions formally specified, reproducible, testable, and free of silent guesswork?&lt;/li&gt;&#xA;&lt;li&gt;The Recovery &amp;amp; Security Test: Does the system enforce local cryptographic integrity while providing verifiable user backup and recovery?&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+			</item>
+			<item>
+				<title></title>
+				<link>http://localhost:1313/full/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/full/</guid>
+				<description>&lt;h1 id=&#34;a-manifesto-for-sovereign-personal-software&#34;&gt;A Manifesto for Sovereign Personal Software&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;“Your data belongs to you. Your tools should respect your time, preserve your freedom, and remain useful without depending on someone else’s infrastructure.”&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;section-01-the-core-manifesto&#34;&gt;Section 01: The Core Manifesto&lt;/h2&gt;&#xA;&lt;p&gt;Software should adapt to people, not force people to adapt to software.&lt;/p&gt;&#xA;&lt;p&gt;Modern productivity and engineering applications offer remarkable capabilities, yet most increasingly depend on remote cloud infrastructure, recurring subscriptions, opaque interfaces, and features engineered for corporate retention rather than individual utility.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

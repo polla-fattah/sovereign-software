@@ -1,0 +1,40 @@
+<!-- Primary Navigation Header -->
+<header class="sticky top-0 z-40 border-b border-slate-200 dark:border-slate-800/90 bg-stone-50/90 dark:bg-obsidian-950/90 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
+    <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('manifesto')">
+      <div class="w-9 h-9 rounded-lg bg-slate-900 dark:bg-amber-500 flex items-center justify-center text-white dark:text-obsidian-950 font-mono font-bold text-lg shadow-sm">§</div>
+      <div>
+        <span class="font-mono text-sm font-bold tracking-wider uppercase block leading-none">Sovereign.Software</span>
+        <span class="font-mono text-[10px] text-slate-500 dark:text-slate-400 tracking-tight">{{ .Site.Params.subtitle }}</span>
+      </div>
+    </div>
+
+    <nav class="hidden md:flex items-center space-x-1 font-mono text-xs">
+      <button onclick="switchTab('manifesto')" id="nav-manifesto" class="nav-btn px-3.5 py-2 rounded-lg font-medium transition-all bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30">The Manifesto</button>
+      <button onclick="switchTab('index')" id="nav-index" class="nav-btn px-3.5 py-2 rounded-lg font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all border border-transparent">Sovereign Index</button>
+      <button onclick="switchTab('evaluator')" id="nav-evaluator" class="nav-btn px-3.5 py-2 rounded-lg font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all border border-transparent">7-Gate Evaluator</button>
+      <button onclick="switchTab('blueprints')" id="nav-blueprints" class="nav-btn px-3.5 py-2 rounded-lg font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all border border-transparent">Blueprints & Specs</button>
+      <button onclick="switchTab('escape')" id="nav-escape" class="nav-btn px-3.5 py-2 rounded-lg font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all border border-transparent">Escape Hatches</button>
+    </nav>
+
+    <button onclick="exportManifestoMarkdown()" title="Export manifesto as Markdown" class="hidden md:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium border border-slate-300 transition-colors">
+      ↓ Export .MD
+    </button>
+
+    <div class="md:hidden flex items-center">
+      <select onchange="switchTab(this.value)" id="mobile-nav-select" aria-label="Section navigation" class="bg-white dark:bg-obsidian-800 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-1.5 font-mono text-xs text-slate-800 dark:text-slate-100">
+        <option value="manifesto">The Manifesto</option>
+        <option value="index">Sovereign Index</option>
+        <option value="evaluator">7-Gate Evaluator</option>
+        <option value="blueprints">Blueprints & Specs</option>
+        <option value="escape">Escape Hatches</option>
+      </select>
+      <button onclick="exportManifestoMarkdown()" aria-label="Export manifesto as Markdown" class="ml-2 px-3 py-1.5 text-xs font-medium border border-slate-300">↓ .MD</button>
+    </div>
+  </div>
+</header>
+
+<div id="toast" class="fixed bottom-6 right-6 z-50 hidden transform transition-all duration-300 bg-slate-900 dark:bg-amber-500 text-white dark:text-obsidian-950 font-mono text-xs font-semibold px-4 py-3 rounded-lg shadow-xl border border-slate-700 dark:border-amber-400 flex items-center gap-2">
+  <span>✓</span>
+  <span id="toast-message">Copied to clipboard</span>
+</div>

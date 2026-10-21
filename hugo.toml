@@ -1,0 +1,14 @@
+baseURL = "http://localhost:1313/"
+languageCode = "en-us"
+title = "Sovereign Personal Software — Manifesto, Index & Engineering Standard"
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  specVersion = "v2.4 (CANONICAL)"
+  subtitle = "ARCHITECTURAL CANON & INDEX"
+  quote = "Your data belongs to you. Your tools should respect your time, preserve your freedom, and remain useful without depending on someone else’s infrastructure."
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

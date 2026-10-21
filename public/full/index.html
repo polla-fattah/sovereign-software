@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sovereign Personal Software — Manifesto, Index &amp; Engineering Standard</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+  
+
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'sans-serif'],
+          serif: ['"PP Mori"', '"General Sans"', '"DM Serif Display"', 'Georgia', 'serif'],
+          display: ['"PP Mori"', '"General Sans"', '"DM Serif Display"', 'Georgia', 'serif'],
+          mono: ['"JetBrains Mono"', 'monospace'],
+        },
+        colors: {
+           
+          'forest-ink': '#003f2e',
+          'vivid-emerald': '#039861',
+          'cream-canvas': '#fdf9f7',
+          'pure-paper': '#ffffff',
+          'ink-black': '#333333',
+          'faded-pencil': '#6e7673',
+          'hairline-gray': '#d6d6d6',
+          'mid-gray': '#a6a6a6',
+           
+          slate: {
+            50: '#fdf9f7', 100: '#f6f1ed', 200: '#d6d6d6', 300: '#d6d6d6', 400: '#a6a6a6',
+            500: '#6e7673', 600: '#6e7673', 700: '#333333', 800: '#333333', 900: '#003f2e', 950: '#003f2e',
+          },
+          stone: { 50: '#fdf9f7', 100: '#f6f1ed', 200: '#ece6e1' },
+           
+          amber: {
+            50: '#f1f8f4', 100: '#e3f1e9', 200: '#c3e3d2', 300: '#039861', 400: '#039861',
+            450: '#039861', 500: '#039861', 600: '#003f2e', 700: '#003f2e', 800: '#003f2e', 900: '#003f2e',
+          },
+          emerald: {
+            300: '#039861', 400: '#039861', 500: '#039861', 600: '#003f2e', 700: '#003f2e',
+          },
+          obsidian: { 950: '#003f2e', 900: '#003f2e', 800: '#003f2e', 700: '#003f2e' },
+        }
+      }
+    }
+  }
+</script>
+<style>
+  :root {
+     
+    --color-forest-ink: #003f2e;
+    --color-vivid-emerald: #039861;
+    --color-cream-canvas: #fdf9f7;
+    --color-pure-paper: #ffffff;
+    --color-ink-black: #333333;
+    --color-faded-pencil: #6e7673;
+    --color-hairline-gray: #d6d6d6;
+    --color-mid-gray: #a6a6a6;
+
+     
+    --font-pp-mori: 'PP Mori', 'General Sans', 'DM Serif Display', Georgia, serif;
+    --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+     
+    --text-body: 16px;        --leading-body: 1.4;        --tracking-body: -0.48px;
+    --text-body-lg: 18px;     --leading-body-lg: 1.4;     --tracking-body-lg: -0.54px;
+    --text-subheading: 20px;  --leading-subheading: 1.3;  --tracking-subheading: -0.6px;
+    --text-heading-sm: 24px;  --leading-heading-sm: 1.3;  --tracking-heading-sm: -0.72px;
+    --text-heading: 52px;     --leading-heading: 1;
+    --text-heading-lg: 64px;  --leading-heading-lg: 1;
+    --text-display: 66px;     --leading-display: 0.95;
+
+     
+    --spacing-4: 4px; --spacing-8: 8px; --spacing-20: 20px; --spacing-32: 32px;
+    --spacing-40: 40px; --spacing-48: 48px; --spacing-64: 64px; --spacing-80: 80px;
+    --spacing-96: 96px; --spacing-180: 180px;
+
+     
+    --page-max-width: 1200px;
+    --section-gap: 64px;
+    --element-gap: 20px;
+
+     
+    --radius-full: 800px;
+    --radius-tags: 800px;
+    --radius-cards: 0px;
+    --radius-logos: 800px;
+    --radius-buttons: 800px;
+  }
+
+   
+  html, body { background: var(--color-cream-canvas) !important; }
+  body {
+    font-family: var(--font-inter);
+    color: var(--color-ink-black);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+    letter-spacing: -0.03em;
+  }
+  ::selection { background: #c3e3d2; color: var(--color-forest-ink); }
+
+   
+  .max-w-7xl { max-width: var(--page-max-width) !important; }
+
+   
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-pp-mori) !important;
+    font-weight: 600;
+    color: var(--color-forest-ink);
+    letter-spacing: 0;
+    font-style: normal !important;
+  }
+  h1 { line-height: var(--leading-display) !important; }
+  h2 { line-height: var(--leading-heading) !important; }
+  h3 { line-height: 1.2 !important; }
+  h4, h5, h6 { font-family: var(--font-inter); font-weight: 700; color: var(--color-forest-ink); letter-spacing: -0.03em; }
+  .text-5xl, .text-6xl { font-size: clamp(40px, 6vw, var(--text-display)) !important; line-height: var(--leading-display) !important; }
+  .text-4xl { font-size: clamp(36px, 5vw, var(--text-heading)) !important; line-height: 1 !important; }
+
+   
+  .font-mono:not(pre):not(code) { font-family: var(--font-inter) !important; letter-spacing: -0.03em; }
+  pre, code, pre *, code * { font-family: 'JetBrains Mono', monospace !important; letter-spacing: 0; }
+  .uppercase { letter-spacing: 0.02em; }
+
+   
+  .prose-editorial p, main article p { max-width: 640px; font-size: var(--text-body-lg); line-height: var(--leading-body-lg); }
+
+   
+  *, *::before, *::after { box-shadow: none !important; text-shadow: none !important; }
+  [class*="bg-gradient"] { background-image: none !important; }
+
+   
+  .rounded, .rounded-md, .rounded-lg, .rounded-xl, .rounded-2xl, .rounded-3xl { border-radius: var(--radius-cards) !important; }
+  button, button[class], select, select[class], input[type="search"], input[type="text"][class], .rounded-full,
+  a.rounded, a.rounded-lg, a.rounded-xl, span.rounded, span.rounded-lg, span.rounded-md {
+    border-radius: var(--radius-buttons) !important;
+  }
+   
+  header .w-9.h-9 { border-radius: var(--radius-logos) !important; }
+   
+  .bg-white { background-color: var(--color-pure-paper) !important; }
+  .border-slate-200, .border-slate-300 { border-color: var(--color-hairline-gray) !important; }
+
+   
+  button {
+    background-color: transparent !important;
+    border: 1px solid var(--color-hairline-gray);
+    color: var(--color-forest-ink);
+    font-family: var(--font-inter) !important;
+    font-weight: 500;
+    transition: border-color .15s, color .15s;
+  }
+  button:hover { border-color: var(--color-vivid-emerald) !important; color: var(--color-forest-ink) !important; }
+   
+  button[class*="bg-amber-500"], button[class*="bg-slate-900"], button[class*="bg-emerald-500"],
+  .nav-btn[class*="border-amber"], .cat-btn[class*="bg-amber-500"] {
+    border: 1px solid var(--color-vivid-emerald) !important;
+    color: var(--color-forest-ink) !important;
+  }
+  .bg-amber-500, .bg-slate-900 { background-color: transparent !important; color: var(--color-forest-ink) !important; border: 1px solid var(--color-forest-ink); }
+   
+  .h-full.bg-amber-500, .h-full.bg-emerald-500 { background-color: var(--color-vivid-emerald) !important; border: 0; }
+   
+  [class*="bg-amber-500/"], [class*="bg-emerald-500/"] { background-color: transparent !important; }
+
+   
+  main p a, main li a, .prose a {
+    color: var(--color-vivid-emerald);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-vivid-emerald);
+  }
+  main p a:hover, main li a:hover { color: var(--color-forest-ink); border-color: var(--color-forest-ink); }
+
+   
+  .rounded-full.border, span.rounded.border, span.rounded-md.border {
+    border-color: var(--color-forest-ink) !important;
+    color: var(--color-forest-ink) !important;
+    background: transparent !important;
+  }
+
+   
+  hr { border: 0; border-top: 1px solid var(--color-hairline-gray); margin: var(--spacing-48) 0; }
+  hr.rule-emphasis { border-top-color: var(--color-vivid-emerald); }
+
+   
+  details { border-top: 1px solid var(--color-hairline-gray); padding: var(--spacing-20) 0; }
+  details > summary { font-weight: 700; color: var(--color-forest-ink); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: var(--spacing-20); }
+  details > summary::-webkit-details-marker { display: none; }
+  details > summary::after {
+    content: '+'; flex: none; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid var(--color-forest-ink); border-radius: var(--radius-full); font-weight: 400;
+  }
+  details[open] > summary::after { content: '\2212'; }
+
+   
+  header.sticky { background: rgba(253, 249, 247, 0.96) !important; border-color: var(--color-hairline-gray) !important; }
+
+   
+  .site-footer { background: var(--color-forest-ink); color: var(--color-cream-canvas); }
+  .site-footer .footer-wordmark { font-family: var(--font-pp-mori); font-weight: 600; font-size: var(--text-heading-sm); line-height: 1.1; letter-spacing: 0; }
+  .site-footer .footer-muted { color: rgba(253, 249, 247, 0.7); }
+  .site-footer nav a { color: var(--color-cream-canvas); font-weight: 500; text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: border-color .15s; }
+  .site-footer nav a:hover { border-bottom-color: var(--color-cream-canvas); }
+  .site-footer .footer-rule { border-top: 1px solid rgba(253, 249, 247, 0.2); }
+
+   
+  input[type="checkbox"] { accent-color: var(--color-vivid-emerald); }
+</style>
+</head>
+<body class="bg-stone-50 dark:bg-obsidian-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-amber-500/20 selection:text-amber-900 transition-colors duration-200 min-h-screen flex flex-col">
+<header class="sticky top-0 z-40 border-b border-slate-200 dark:border-slate-800/90 bg-stone-50/90 dark:bg-obsidian-950/90 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
+    <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('manifesto')">
+      <div class="w-9 h-9 rounded-lg bg-slate-900 dark:bg-amber-500 flex items-center justify-center text-white dark:text-obsidian-950 font-mono font-bold text-lg shadow-sm">§</div>
+      <div>
+        <span class="font-mono text-sm font-bold tracking-wider uppercase block leading-none">Sovereign.Software</span>
+        <span class="font-mono text-[10px] text-slate-500 dark:text-slate-400 tracking-tight">ARCHITECTURAL CANON &amp; INDEX</span>
+      </div>
+    </div>
+
+    <nav class="hidden md:flex items-center space-x-1 font-mono text-xs">
+      <button onclick="switchTab('manifesto')" id="nav-manifesto" class="nav-btn px-3.5 py-2 rounded-lg font-medium transition-all bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30">The Manifesto</button>
+      <button onclick="switchTab('index')" id="nav-index" class="nav-btn px-3.5 py-2 rounded-lg font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all border border-transparent">Sovereign Index</button>
+      <button onclick="switchTab('evaluator')" id="nav-evaluator" class="nav-btn px-3.5 py-2 rounded-lg font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all border border-transparent">7-Gate Evaluator</button>
+      <button onclick="switchTab('blueprints')" id="nav-blueprints" class="nav-btn px-3.5 py-2 rounded-lg font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all border border-transparent">Blueprints & Specs</button>
+      <button onclick="switchTab('escape')" id="nav-escape" class="nav-btn px-3.5 py-2 rounded-lg font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all border border-transparent">Escape Hatches</button>
+    </nav>
+
+    <button onclick="exportManifestoMarkdown()" title="Export manifesto as Markdown" class="hidden md:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium border border-slate-300 transition-colors">
+      ↓ Export .MD
+    </button>
+
+    <div class="md:hidden flex items-center">
+      <select onchange="switchTab(this.value)" id="mobile-nav-select" aria-label="Section navigation" class="bg-white dark:bg-obsidian-800 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-1.5 font-mono text-xs text-slate-800 dark:text-slate-100">
+        <option value="manifesto">The Manifesto</option>
+        <option value="index">Sovereign Index</option>
+        <option value="evaluator">7-Gate Evaluator</option>
+        <option value="blueprints">Blueprints & Specs</option>
+        <option value="escape">Escape Hatches</option>
+      </select>
+      <button onclick="exportManifestoMarkdown()" aria-label="Export manifesto as Markdown" class="ml-2 px-3 py-1.5 text-xs font-medium border border-slate-300">↓ .MD</button>
+    </div>
+  </div>
+</header>
+
+<div id="toast" class="fixed bottom-6 right-6 z-50 hidden transform transition-all duration-300 bg-slate-900 dark:bg-amber-500 text-white dark:text-obsidian-950 font-mono text-xs font-semibold px-4 py-3 rounded-lg shadow-xl border border-slate-700 dark:border-amber-400 flex items-center gap-2">
+  <span>✓</span>
+  <span id="toast-message">Copied to clipboard</span>
+</div><main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-8 py-8 sm:py-12">
+<article class="max-w-4xl mx-auto rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 sm:p-12 space-y-6">
+  <div class="font-mono text-xs text-amber-500 uppercase tracking-widest">Standalone Hugo Page</div>
+  <h1 class="font-serif text-4xl sm:text-5xl text-slate-900 dark:text-white"></h1>
+  <div class="prose dark:prose-invert max-w-none text-slate-600 dark:text-slate-300 leading-relaxed space-y-4">
+    <h1 id="a-manifesto-for-sovereign-personal-software">A Manifesto for Sovereign Personal Software</h1>
+<blockquote>
+<p>“Your data belongs to you. Your tools should respect your time, preserve your freedom, and remain useful without depending on someone else’s infrastructure.”</p>
+</blockquote>
+<hr>
+<h2 id="section-01-the-core-manifesto">Section 01: The Core Manifesto</h2>
+<p>Software should adapt to people, not force people to adapt to software.</p>
+<p>Modern productivity and engineering applications offer remarkable capabilities, yet most increasingly depend on remote cloud infrastructure, recurring subscriptions, opaque interfaces, and features engineered for corporate retention rather than individual utility.</p>
+<p>Sovereign personal software represents a deliberate alternative. It rests on the conviction that personal computing tools should be owned, controlled, understood, and shaped by the people who rely on them.</p>
+<p>AI-assisted development makes custom, high-craft software increasingly practical for individuals and small teams to build. However, reducing the cost of writing code does not eliminate the laws of software engineering: disciplined architecture, formal verification, boundary security, and sustainable maintenance remain non-negotiable.</p>
+<p>Six foundational principles define Sovereign Personal Software:</p>
+<ul>
+<li><strong>Sovereignty:</strong> Users control their data, their infrastructure, their cryptographic keys, and their ability to migrate.</li>
+<li><strong>Locality:</strong> Core functionality executes on the user&rsquo;s hardware, operating independently of network connectivity.</li>
+<li><strong>Predictability:</strong> Critical state transitions and rule engines are deterministic, transparent, and testable.</li>
+<li><strong>Responsiveness:</strong> Software respects human attention by delivering immediate local feedback and eliminating artificial friction.</li>
+<li><strong>Focused Interoperability:</strong> Applications maintain bounded responsibilities while exchanging information across open protocols.</li>
+<li><strong>Longevity:</strong> Human records and intellectual work must outlive the applications, vendors, and runtimes that produced them.</li>
+</ul>
+<p>These principles take precedence over any specific framework, operating system, database engine, or implementation technique.</p>
+<hr>
+<h2 id="section-02-the-six-foundational-principles">Section 02: The Six Foundational Principles</h2>
+<h3 id="principle-i-sovereignty-the-user-is-the-owner">Principle I. Sovereignty: The User Is the Owner</h3>
+<p>Personal information must never become inaccessible because a subscription expires, an identity provider suspends an account, or a remote service shuts down.</p>
+<p>Sovereignty requires uninhibited control over data—including the native ability to inspect, export, back up, migrate, and restore it without vendor permission. However, true ownership also transfers custodial responsibility to the user; sovereign software must therefore make automated, verifiable backups and cryptographic key recovery a first-class, low-friction part of the core experience rather than an afterthought.</p>
+<p>Ownership is meaningful only when the user retains both the ability to leave and the resilience to recover.</p>
+<h3 id="principle-ii-locality-the-device-comes-first">Principle II. Locality: The Device Comes First</h3>
+<p>The network should enhance an application, not determine whether it can function. Reading records, capturing inputs, mutating state, and querying information must remain 100% operational offline.</p>
+<p>Sovereign software treats local storage as the primary source of truth. Multi-device synchronization operates asynchronously as a separate transport layer, with explicit connection status, deterministic conflict handling, and clean recovery from interrupted connections.</p>
+<p>Offline operation is not an emergency fallback mode. It is the baseline operating model.</p>
+<h3 id="principle-iii-predictability-intelligence-may-assist-rules-must-govern">Principle III. Predictability: Intelligence May Assist, Rules Must Govern</h3>
+<p>Schedules, financial ledgers, state machines, and structured records represent deliberate human commitments. Their behavior must be consistent, explainable, and reproducible.</p>
+<p>Sovereign software relies on deterministic rules for critical operations and explicitly surfaces invalid or ambiguous inputs rather than silently guessing. Where probabilistic models or heuristics assist in parsing natural intent, their proposed mutations must be staged, validated, and explicitly authorized by the user before committing to persistent state.</p>
+<p>Intelligence may assist at the boundary. Predictability must govern at the core.</p>
+<h3 id="principle-iv-responsiveness-respect-human-attention">Principle IV. Responsiveness: Respect Human Attention</h3>
+<p>Software should reduce cognitive effort, not become another source of administrative work. Routine local interactions should yield immediate perceptual feedback—targeting sub-100 millisecond response times on standard hardware.</p>
+<p>Responsiveness also requires architectural restraint: eliminating invasive notifications, telemetry beacons, background churn, and interface complexity that distract from the work at hand.</p>
+<p>Good software helps users complete their work without becoming work itself.</p>
+<h3 id="principle-v-focused-interoperability-separate-responsibilities-connect-information">Principle V. Focused Interoperability: Separate Responsibilities, Connect Information</h3>
+<p>Different cognitive tasks require distinct structural paradigms. Managing operational actions and state transitions is fundamentally different from preserving long-form reflection, domain knowledge, or raw media. Forcing distinct domains into a single monolithic application degrades them all.</p>
+<p>Sovereign tools focus on bounded responsibilities while connecting through documented interfaces—such as URI schemes, plain-text sidecars, local sockets, command-line interfaces, and open interchange standards. Where host operating systems (such as heavily sandboxed mobile environments) restrict direct inter-process or filesystem communication, applications must expose clean, standardized import/export bridges that preserve modularity without surrendering to proprietary cloud relays.</p>
+<p>Separate responsibilities. Connect information. Preserve freedom of choice.</p>
+<h3 id="principle-vi-longevity-information-should-outlive-software">Principle VI. Longevity: Information Should Outlive Software</h3>
+<p>Applications, frameworks, and hardware architectures are transient; personal and technical records remain valuable for decades. Sovereign software resolves the tension between high-speed local execution and long-term human readability through dual-layer persistence: pairing fast, standardized local indexing (such as embedded relational stores) with deterministic, human-inspectable plain-text exports or sidecars.</p>
+<p>No technology guarantees fifty-year binary compatibility. Longevity depends on self-describing open formats, documented schemas, and zero-dependency recovery paths.</p>
+<p>Applications are temporary. Human information deserves a longer life.</p>
+<hr>
+<h2 id="section-03-the-architecture-of-personal-computing">Section 03: The Architecture of Personal Computing</h2>
+<p>Sovereign systems follow a modular model that separates state execution from long-term preservation while allowing both to cooperate smoothly:</p>
+<ul>
+<li><strong>The Execution Layer:</strong> Responsible for capturing active state, managing lifecycles, schedules, priorities, and structured transactions.
+<em>Central inquiry:</em> What needs to be done, when, and in what state is it?</li>
+<li><strong>The Integration Layer:</strong> Open, documented bridges (application URIs, standard file sidecars, local IPC sockets, CLI pipes, and RFC-compliant interchange formats).</li>
+<li><strong>The Preservation Layer:</strong> Responsible for long-form prose, research, documentation, raw assets, and historical archives.
+<em>Central inquiry:</em> What has been created, experienced, and understood?</li>
+</ul>
+<p>Each layer remains independently usable, inspectable, and replaceable. Integration must create capability, never structural dependency.</p>
+<hr>
+<h2 id="section-04-artificial-intelligence-without-artificial-dependency">Section 04: Artificial Intelligence Without Artificial Dependency</h2>
+<p>Automated coding agents accelerate software creation, and statistical models can streamline user workflows. Yet neither eliminates the need for human judgment, verification, security boundaries, and deterministic guarantees.</p>
+<p>Sovereign software integrates optional AI assistance only when:</p>
+<ol>
+<li>Core functionality remains 100% operational when all AI services are unreachable or disabled.</li>
+<li>The user retains explicit authorization over any proposed state mutation.</li>
+<li>Critical data pipelines remain deterministic, verifiable, and repeatable.</li>
+<li>Privacy boundaries, computational costs, and external network calls are completely transparent.</li>
+<li>Removing or swapping an AI model causes zero loss of access to existing records.</li>
+</ol>
+<p>AI may help build or operate the tool. It must never hold the tool hostage.</p>
+<hr>
+<h2 id="section-05-synchronization-without-surrender">Section 05: Synchronization Without Surrender</h2>
+<p>Synchronization across devices is an operational convenience, not a transfer of data custody.</p>
+<p>In distributed offline systems, concurrent edits across disconnected devices inevitably create state divergence. Sovereign software does not hide this reality behind opaque cloud heuristics. Instead, it requires explicit, predictable conflict resolution:</p>
+<ul>
+<li><strong>Syntactic &amp; State Convergence:</strong> Handled via mathematically verifiable structures (such as Conflict-Free Replicated Data Types or append-only operation logs).</li>
+<li><strong>Semantic Conflicts:</strong> When concurrent offline changes contradict human intent in ways an algorithm cannot safely guess, the software preserves both states transparently and surfaces a clean, non-destructive resolution path rather than silently overwriting data.</li>
+</ul>
+<p>Synchronization architectures must make encryption guarantees, trust boundaries, and backup verification explicit. Complexity must always justify its existence.</p>
+<hr>
+<h2 id="section-06-the-seven-engineering-evaluation-tests">Section 06: The Seven Engineering Evaluation Tests</h2>
+<p>Every significant feature, dependency, or architectural decision must pass seven verification gates:</p>
+<ol>
+<li><strong>The Air-Gap Test:</strong> Does all primary functionality operate cleanly with the network interface disabled?</li>
+<li><strong>The 100ms Test:</strong> Do common local interactions respond within 100 milliseconds on baseline hardware?</li>
+<li><strong>The Longevity Test:</strong> Can users recover, inspect, and understand their raw data using standard system tools if the application binary disappears?</li>
+<li><strong>The Responsibility Test:</strong> Does this capability belong in this tool, or should a decoupled external utility handle it?</li>
+<li><strong>The Dependency Test:</strong> Does this introduce an avoidable third-party service, subscription, fragile dependency tree, or recurring cost?</li>
+<li><strong>The Predictability Test:</strong> Are state transitions and conflict resolutions formally specified, reproducible, testable, and free of silent guesswork?</li>
+<li><strong>The Recovery &amp; Security Test:</strong> Does the system enforce local cryptographic integrity while providing a frictionless, verifiable path for user backup and disaster recovery?</li>
+</ol>
+<p>These tests govern engineering judgment. Any exception must be deliberate, bounded, and documented.</p>
+<hr>
+<h2 id="section-07-what-sovereign-software-refuses-to-become">Section 07: What Sovereign Software Refuses to Become</h2>
+<p>Sovereign software deliberately rejects:</p>
+<ul>
+<li><strong>✕ Mandatory Cloud Lock-In:</strong> Remote accounts and subscriptions required for local functionality.</li>
+<li><strong>✕ Unchecked AI Mutation:</strong> Non-deterministic inference injected directly into critical state operations.</li>
+<li><strong>✕ Invasive Telemetry:</strong> Undisclosed tracking, behavioral harvesting, or phone-home analytics.</li>
+<li><strong>✕ Monolithic Feature Bloat:</strong> Cluttered re-implementations of tools better served by specialized utilities.</li>
+<li><strong>✕ Silent Sync Corruption:</strong> Opaque synchronization routines that overwrite conflicting offline work without trace.</li>
+<li><strong>✕ Unrecoverable Custody:</strong> Leaving users vulnerable to catastrophic data loss through complex, fragile backup procedures.</li>
+<li><strong>✕ Proprietary Silos:</strong> Undocumented binary formats designed to prevent inspection or migration.</li>
+</ul>
+<p>The ability to add a feature is never sufficient reason to add it.</p>
+<hr>
+<h2 id="section-08-personal-software-in-the-age-of-ai">Section 08: Personal Software in the Age of AI</h2>
+<p>Historically, software development required substantial capital and large engineering teams, pushing products toward mass-market monetization, cloud lock-in, and lowest-common-denominator design.</p>
+<p>Modern engineering tools and AI-assisted workflows are fundamentally altering that economic equation. Individuals and focused communities can now build and maintain high-craft, bespoke tools around their exact workflows without needing venture scale or a commercial mass market.</p>
+<p>This shift does not eliminate engineering discipline—verification, security, data recovery, and architectural judgment remain paramount. However, it unlocks a vital truth:</p>
+<p><strong>Software no longer requires a mass market to justify its existence.</strong></p>
+<hr>
+<h2 id="section-09-the-permanent-standard">Section 09: The Permanent Standard</h2>
+<p>Sovereign software is never defined by a transient UI framework, a specific database library, or a trendy synchronization protocol. Those are implementation choices that will evolve and eventually be replaced.</p>
+<p>Its identity rests on enduring engineering principles: software must remain functional when disconnected, transparent when inspected, recoverable when hardware fails, deterministic when resolving conflicts, and adaptable when human needs change.</p>
+<p>It must respect human attention, protect personal records, and refuse dependencies that do not serve a clear purpose. Above all, it must remain an instrument under human control.</p>
+
+  </div>
+</article>
+
+  </main><footer class="site-footer mt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 py-16 space-y-10">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+      <div class="space-y-3 max-w-md">
+        <div class="footer-wordmark">Sovereign Software</div>
+        <p class="footer-muted">Your data belongs to you. Tools that respect your time and outlive their vendors.</p>
+      </div>
+      <nav class="flex flex-wrap gap-x-8 gap-y-3" aria-label="Footer">
+        <a href="#manifesto" onclick="switchTab('manifesto'); return false;">Manifesto</a>
+        <a href="#index" onclick="switchTab('index'); return false;">Index</a>
+        <a href="#evaluator" onclick="switchTab('evaluator'); return false;">Evaluator</a>
+        <a href="#blueprints" onclick="switchTab('blueprints'); return false;">Blueprints</a>
+        <a href="#escape" onclick="switchTab('escape'); return false;">Escape Hatches</a>
+        <a href="#" onclick="exportManifestoMarkdown(); return false;">Download .md</a>
+      </nav>
+    </div>
+    <div class="footer-rule pt-6 flex flex-col sm:flex-row justify-between gap-2 footer-muted text-sm">
+      <span>© 2026 Sovereign Personal Software</span>
+      <span>Built with Hugo · No trackers · No cookies</span>
+    </div>
+  </div>
+</footer>
+<script src="/js/sovereign.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "gate1",
+    "title": "1. The Air-Gap Test (Locality)",
+    "desc": "Core CRUD, compilation, and search operate 100% offline with the network interface physically disabled.",
+    "failMsg": "Fails Principle II (Locality): Requires remote network connectivity or cloud authentication handshake."
+  },
+  {
+    "id": "gate2",
+    "title": "2. The 100ms Test (Responsiveness)",
+    "desc": "Routine local interactions and incremental saves provide perceptual feedback in under 100ms on baseline hardware.",
+    "failMsg": "Fails Principle IV (Responsiveness): Exhibits UI thread blocking, sluggish bundler delays, or network spinners."
+  },
+  {
+    "id": "gate3",
+    "title": "3. The Longevity Test (50-Year Survivability)",
+    "desc": "Data is stored in or natively exports to documented, self-describing plain text, open XML, or archival SQLite.",
+    "failMsg": "Fails Principle VI (Longevity): Locks user creations inside undocumented proprietary binary silos."
+  },
+  {
+    "id": "gate4",
+    "title": "4. The Responsibility Test (Anti-Monolith)",
+    "desc": "Maintains a bounded domain focus and interoperates via URIs, CLI pipes, or sidecars rather than duplicating unrelated suites.",
+    "failMsg": "Fails Principle V (Interoperability): Suffers from monolithic feature bloat instead of clean Unix composition."
+  },
+  {
+    "id": "gate5",
+    "title": "5. The Dependency Test (Zero Lock-In)",
+    "desc": "Zero mandatory cloud subscriptions, zero undisclosed telemetry, and no fragile transitive dependency trees.",
+    "failMsg": "Fails Principle I (Sovereignty): Introduces mandatory vendor accounts, telemetry, or fragile upstream supply chains."
+  },
+  {
+    "id": "gate6",
+    "title": "6. The Predictability Test (Determinism)",
+    "desc": "State transitions, geometry kernels, and AI assists are governed by deterministic rules and explicit user validation.",
+    "failMsg": "Fails Principle III (Predictability): Vulnerable to non-deterministic state corruption or unchecked AI guesswork."
+  },
+  {
+    "id": "gate7",
+    "title": "7. The Recovery & Security Test (Custody)",
+    "desc": "Provides transparent conflict resolution (CRDTs/branching) and frictionless, verifiable local backups.",
+    "failMsg": "Fails Section 05 (Sync & Custody): Obscures sync conflicts or burdens the user with fragile recovery mechanics."
+  }
+]
