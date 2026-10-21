@@ -1,4 +1,4 @@
-// Sovereign Personal Software — Client-Side Interactivity for Hugo Build
+// Sovereign Personal Software: Client-Side Interactivity for Hugo Build
 const DIRECTORY_ITEMS = window.DIRECTORY_ITEMS || [];
 const GATES = window.GATES || [];
 
@@ -157,7 +157,7 @@ function updateEvaluator() {
       // Build Markdown snippet
       const mdLines = [
         `### Sovereign Software Audit: ${appName}`,
-        `**Result:** ${passedCount}/7 Gates Passed (${pct}%) — **${badge.textContent}**`,
+        `**Result:** ${passedCount}/7 Gates Passed (${pct}%): **${badge.textContent}**`,
         ``,
         ...GATES.map(g => `- [${gateState[g.id] ? 'x' : ' '}] ${g.title}`)
       ];
@@ -181,7 +181,7 @@ function copyTextToClipboard(text, message) {
         document.execCommand('copy');
         showToast(message || 'Copied to clipboard');
       } catch (err) {
-        showToast('Copy failed — please select manually');
+        showToast('Copy failed. Please select manually');
       }
       document.body.removeChild(textarea);
     }

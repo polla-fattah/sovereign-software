@@ -1,6 +1,6 @@
-baseURL = "https://polla-fattah.github.io/sovereign-software/"
+baseURL = "https://polla.dev/sovereign-software/"
 locale = "en-us"
-title = "Sovereign Personal Software — Manifesto, Index & Engineering Standard"
+title = "Sovereign Personal Software: Manifesto, Index & Engineering Standard"
 disableKinds = ["taxonomy", "term", "RSS"]
 enableRobotsTXT = true
 

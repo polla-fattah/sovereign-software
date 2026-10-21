@@ -2,7 +2,7 @@
 
 A manifesto for software that people own, and the tools that go with it: an index of examples, an interactive seven-gate evaluator, and practical ways to leave cloud services. The site is built with [Hugo](https://gohugo.io/) and loads nothing from third parties.
 
-**Live site:** https://polla-fattah.github.io/sovereign-software/
+**Live site:** https://polla.dev/sovereign-software/
 
 ## What is on the site
 

@@ -34,7 +34,7 @@ These principles take precedence over any specific framework, operating system, 
 
 Personal information must never become inaccessible because a subscription expires, an identity provider suspends an account, or a remote service shuts down.
 
-Sovereignty requires uninhibited control over data—including the native ability to inspect, export, back up, migrate, and restore it without vendor permission. However, true ownership also transfers custodial responsibility to the user; sovereign software must therefore make automated, verifiable backups and cryptographic key recovery a first-class, low-friction part of the core experience rather than an afterthought.
+Sovereignty requires uninhibited control over data, including the native ability to inspect, export, back up, migrate, and restore it without vendor permission. However, true ownership also transfers custodial responsibility to the user; sovereign software must therefore make automated, verifiable backups and cryptographic key recovery a first-class, low-friction part of the core experience rather than an afterthought.
 
 Ownership is meaningful only when the user retains both the ability to leave and the resilience to recover.
 
@@ -56,7 +56,7 @@ Intelligence may assist at the boundary. Predictability must govern at the core.
 
 ### Principle IV. Responsiveness: Respect Human Attention
 
-Software should reduce cognitive effort, not become another source of administrative work. Routine local interactions should yield immediate perceptual feedback—targeting sub-100 millisecond response times on standard hardware.
+Software should reduce cognitive effort, not become another source of administrative work. Routine local interactions should yield immediate perceptual feedback, targeting sub-100 millisecond response times on standard hardware.
 
 The 100 millisecond figure follows the widely cited response-time limits: about 0.1 second feels instantaneous, about 1 second preserves flow of thought, and about 10 seconds is the limit of focused attention. These originate with Miller (1968)[^miller] and were popularized by Nielsen (1993).[^nielsen] They are practical engineering guidelines rather than precise laws, and they apply most directly to feedback on direct interaction.
 
@@ -68,7 +68,7 @@ Good software helps users complete their work without becoming work itself.
 
 Different cognitive tasks require distinct structural paradigms. Managing operational actions and state transitions is fundamentally different from preserving long-form reflection, domain knowledge, or raw media. Forcing distinct domains into a single monolithic application degrades them all.
 
-Sovereign tools focus on bounded responsibilities[^unix] while connecting through documented interfaces—such as URI schemes, plain-text sidecars, local sockets, command-line interfaces, and open interchange standards. Where host operating systems (such as heavily sandboxed mobile environments) restrict direct inter-process or filesystem communication, applications must expose clean, standardized import/export bridges that preserve modularity without surrendering to proprietary cloud relays.
+Sovereign tools focus on bounded responsibilities[^unix] while connecting through documented interfaces, such as URI schemes, plain-text sidecars, local sockets, command-line interfaces, and open interchange standards. Where host operating systems (such as heavily sandboxed mobile environments) restrict direct inter-process or filesystem communication, applications must expose clean, standardized import/export bridges that preserve modularity without surrendering to proprietary cloud relays.
 
 Separate responsibilities. Connect information. Preserve freedom of choice.
 
@@ -163,7 +163,7 @@ Historically, software development required substantial capital and large engine
 
 Modern engineering tools and AI-assisted workflows are fundamentally altering that economic equation. Individuals and focused communities can now build and maintain high-craft, bespoke tools around their exact workflows without needing venture scale or a commercial mass market.
 
-This shift does not eliminate engineering discipline—verification, security, data recovery, and architectural judgment remain paramount. However, it unlocks a vital truth:
+This shift does not eliminate engineering discipline: verification, security, data recovery, and architectural judgment remain paramount. However, it unlocks a vital truth:
 
 **Software no longer requires a mass market to justify its existence.**
 
