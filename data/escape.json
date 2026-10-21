@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Move your notes out of Notion",
+    "from": "Notion and other cloud wikis",
+    "to": "Plain Markdown files (Obsidian, Logseq)",
+    "summary": "Export your workspace, then convert it into ordinary Markdown files you can keep in a folder and back up with Git.",
+    "label": "Convert an HTML or Docx export to Markdown",
+    "cmd": "pandoc input_export.html -f html -t commonmark_x --wrap=none -o note.md",
+    "note": "Notion also has a built-in Markdown & CSV export. Expect to tidy filenames and internal links by hand."
+  },
+  {
+    "title": "Move your budget out of YNAB",
+    "from": "YNAB and other cloud budgeting apps",
+    "to": "A plain-text ledger (Beancount, hledger)",
+    "summary": "Export your transactions as CSV, convert them into a double-entry journal, and keep that file in Git.",
+    "label": "Check the ledger and print balances",
+    "cmd": "bean-check personal_ledger.beancount && bean-report personal_ledger.beancount balances",
+    "note": "Run this after you have converted your CSV into a Beancount file."
+  },
+  {
+    "title": "Keep a local copy of your email",
+    "from": "Webmail that only lives online",
+    "to": "Local Maildir folders (isync + notmuch)",
+    "summary": "Download your mailbox so every message is a plain file on your disk, then search it offline.",
+    "label": "Sync, index, then search",
+    "cmd": "mbsync -a && notmuch new && notmuch search \"tag:inbox AND date:2026..\"",
+    "note": "Needs a one-time ~/.mbsyncrc and 'notmuch setup' first."
+  },
+  {
+    "title": "Own your CAD and electronics designs",
+    "from": "Cloud CAD and proprietary EDA tools",
+    "to": "OpenSCAD, CadQuery, KiCad (plain-text files)",
+    "summary": "Export existing models as STEP files to keep them, and write new parts as code so they rebuild the same way every time.",
+    "label": "Build a parametric part offline",
+    "cmd": "openscad -o enclosure_rev2.stl -D 'wall_thickness=2.4' enclosure.scad",
+    "note": "OpenSCAD cannot import STEP. Use FreeCAD or CadQuery to edit existing STEP geometry."
+  }
+]

@@ -6,12 +6,14 @@
         <p class="footer-muted">Your data belongs to you. Tools that respect your time and outlive their vendors.</p>
       </div>
       <nav class="flex flex-wrap gap-x-8 gap-y-3" aria-label="Footer">
-        <a href="#manifesto" onclick="switchTab('manifesto'); return false;">Manifesto</a>
-        <a href="#index" onclick="switchTab('index'); return false;">Index</a>
-        <a href="#evaluator" onclick="switchTab('evaluator'); return false;">Evaluator</a>
-        <a href="#blueprints" onclick="switchTab('blueprints'); return false;">Blueprints</a>
-        <a href="#escape" onclick="switchTab('escape'); return false;">Escape Hatches</a>
+        <a href="{{ "/manifesto/" | relURL }}">Manifesto</a>
+        <a href="{{ "/directory/" | relURL }}">Index</a>
+        <a href="{{ "/evaluator/" | relURL }}">Evaluator</a>
+        <a href="{{ "/escape-hatches/" | relURL }}">Escape Hatches</a>
         <a href="#" onclick="exportManifestoMarkdown(); return false;">Download .md</a>
+        {{ with .Site.Params.social.githubRepo }}
+        <a href="{{ . }}" target="_blank" rel="noopener" class="inline-flex items-center gap-2">{{ partial "github-icon.html" "w-4 h-4" }}GitHub</a>
+        {{ end }}
       </nav>
     </div>
     <div class="footer-rule pt-6 flex flex-col sm:flex-row justify-between gap-2 footer-muted text-sm">

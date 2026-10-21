@@ -1,0 +1,42 @@
+{{ define "main" }}
+<script>window.DIRECTORY_ITEMS = {{ hugo.Data.directory | jsonify | safeJS }};</script>
+<div class="space-y-10">
+  <!-- Index header: title, one-line purpose, filters -->
+  {{ partial "page-header.html" . }}
+{{ with .Content }}<div class="prose-editorial max-w-3xl mb-10">{{ . }}</div>{{ end }}
+
+  <div class="space-y-4 border-b border-slate-200 pb-8">
+    <input type="search" id="dir-search" oninput="renderDirectory()" placeholder="Search tools or formats" aria-label="Search tools" class="w-full sm:w-80 px-4 py-2 bg-white border border-slate-300 text-sm focus:outline-none focus:border-amber-500" />
+    <div class="flex flex-wrap gap-2 text-sm" id="category-filters">
+      <button onclick="filterDirectory('ALL')" data-cat="ALL" class="cat-btn px-3 py-1.5 rounded-lg bg-amber-500 text-obsidian-950 font-semibold">All</button>
+      <button onclick="filterDirectory('VCS & Core')" data-cat="VCS & Core" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">VCS & Databases</button>
+      <button onclick="filterDirectory('Knowledge & Office')" data-cat="Knowledge & Office" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">Knowledge & Office</button>
+      <button onclick="filterDirectory('Tasks & Finance')" data-cat="Tasks & Finance" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">Tasks & Finance</button>
+      <button onclick="filterDirectory('Engineering & CAD')" data-cat="Engineering & CAD" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">Engineering & CAD</button>
+      <button onclick="filterDirectory('Media & Creative')" data-cat="Media & Creative" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">Audio & Creative</button>
+      <button onclick="filterDirectory('OS & Infra')" data-cat="OS & Infra" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">OS & Infrastructure</button>
+    </div>
+  </div>
+
+  <!-- Hugo Server-Side Rendered Fallback + JS Interactive Grid -->
+  <div id="directory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {{ range hugo.Data.directory }}
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">{{ .category }}</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">{{ .tierLabel }}</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ .name }}</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{{ .summary }}</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">{{ .substrate }}</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">{{ .syncModel }}</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ {{ .extractCmd }}</code></div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

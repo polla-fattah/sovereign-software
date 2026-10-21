@@ -2,7 +2,6 @@
 
 > “Your data belongs to you. Your tools should respect your time, preserve your freedom, and remain useful without depending on someone else’s infrastructure.”
 
----
 
 ## Section 01: The Core Manifesto
 
@@ -41,7 +40,7 @@ Ownership is meaningful only when the user retains both the ability to leave and
 
 The network should enhance an application, not determine whether it can function. Reading records, capturing inputs, mutating state, and querying information must remain 100% operational offline.
 
-Sovereign software treats local storage as the primary source of truth. Multi-device synchronization operates asynchronously as a separate transport layer, with explicit connection status, deterministic conflict handling, and clean recovery from interrupted connections.
+Sovereign software treats local storage as the primary source of truth.[^localfirst] Multi-device synchronization operates asynchronously as a separate transport layer, with explicit connection status, deterministic conflict handling, and clean recovery from interrupted connections.
 
 Offline operation is not an emergency fallback mode. It is the baseline operating model.
 
@@ -57,6 +56,8 @@ Intelligence may assist at the boundary. Predictability must govern at the core.
 
 Software should reduce cognitive effort, not become another source of administrative work. Routine local interactions should yield immediate perceptual feedback—targeting sub-100 millisecond response times on standard hardware.
 
+The 100 millisecond figure follows the widely cited response-time limits: about 0.1 second feels instantaneous, about 1 second preserves flow of thought, and about 10 seconds is the limit of focused attention. These originate with Miller (1968)[^miller] and were popularized by Nielsen (1993).[^nielsen] They are practical engineering guidelines rather than precise laws, and they apply most directly to feedback on direct interaction.
+
 Responsiveness also requires architectural restraint: eliminating invasive notifications, telemetry beacons, background churn, and interface complexity that distract from the work at hand.
 
 Good software helps users complete their work without becoming work itself.
@@ -65,13 +66,13 @@ Good software helps users complete their work without becoming work itself.
 
 Different cognitive tasks require distinct structural paradigms. Managing operational actions and state transitions is fundamentally different from preserving long-form reflection, domain knowledge, or raw media. Forcing distinct domains into a single monolithic application degrades them all.
 
-Sovereign tools focus on bounded responsibilities while connecting through documented interfaces—such as URI schemes, plain-text sidecars, local sockets, command-line interfaces, and open interchange standards. Where host operating systems (such as heavily sandboxed mobile environments) restrict direct inter-process or filesystem communication, applications must expose clean, standardized import/export bridges that preserve modularity without surrendering to proprietary cloud relays.
+Sovereign tools focus on bounded responsibilities[^unix] while connecting through documented interfaces—such as URI schemes, plain-text sidecars, local sockets, command-line interfaces, and open interchange standards. Where host operating systems (such as heavily sandboxed mobile environments) restrict direct inter-process or filesystem communication, applications must expose clean, standardized import/export bridges that preserve modularity without surrendering to proprietary cloud relays.
 
 Separate responsibilities. Connect information. Preserve freedom of choice.
 
 ### Principle VI. Longevity: Information Should Outlive Software
 
-Applications, frameworks, and hardware architectures are transient; personal and technical records remain valuable for decades. Sovereign software resolves the tension between high-speed local execution and long-term human readability through dual-layer persistence: pairing fast, standardized local indexing (such as embedded relational stores) with deterministic, human-inspectable plain-text exports or sidecars.
+Applications, frameworks, and hardware architectures are transient; personal and technical records remain valuable for decades. Sovereign software resolves the tension between high-speed local execution and long-term human readability through dual-layer persistence: pairing fast, standardized local indexing (such as embedded relational stores[^sqlite]) with deterministic, human-inspectable plain-text exports or sidecars.
 
 No technology guarantees fifty-year binary compatibility. Longevity depends on self-describing open formats, documented schemas, and zero-dependency recovery paths.
 
@@ -115,7 +116,7 @@ Synchronization across devices is an operational convenience, not a transfer of 
 
 In distributed offline systems, concurrent edits across disconnected devices inevitably create state divergence. Sovereign software does not hide this reality behind opaque cloud heuristics. Instead, it requires explicit, predictable conflict resolution:
 
-* **Syntactic & State Convergence:** Handled via mathematically verifiable structures (such as Conflict-Free Replicated Data Types or append-only operation logs).
+* **Syntactic & State Convergence:** Handled via mathematically verifiable structures (such as Conflict-Free Replicated Data Types[^crdt] or append-only operation logs).
 * **Semantic Conflicts:** When concurrent offline changes contradict human intent in ways an algorithm cannot safely guess, the software preserves both states transparently and surfaces a clean, non-destructive resolution path rather than silently overwriting data.
 
 Synchronization architectures must make encryption guarantees, trust boundaries, and backup verification explicit. Complexity must always justify its existence.
@@ -126,7 +127,7 @@ Synchronization architectures must make encryption guarantees, trust boundaries,
 
 Every significant feature, dependency, or architectural decision must pass seven verification gates:
 
-1. **The Air-Gap Test:** Does all primary functionality operate cleanly with the network interface disabled?
+1. **The Offline Test (Air-Gap):** Does all primary functionality operate cleanly with the network interface disabled?
 2. **The 100ms Test:** Do common local interactions respond within 100 milliseconds on baseline hardware?
 3. **The Longevity Test:** Can users recover, inspect, and understand their raw data using standard system tools if the application binary disappears?
 4. **The Responsibility Test:** Does this capability belong in this tool, or should a decoupled external utility handle it?
@@ -173,3 +174,17 @@ Sovereign software is never defined by a transient UI framework, a specific data
 Its identity rests on enduring engineering principles: software must remain functional when disconnected, transparent when inspected, recoverable when hardware fails, deterministic when resolving conflicts, and adaptable when human needs change.
 
 It must respect human attention, protect personal records, and refuse dependencies that do not serve a clear purpose. Above all, it must remain an instrument under human control.
+
+---
+
+## References
+
+These sources support specific arguments in the manifesto. The response-time limits in Principle IV are practical guidelines, not precise laws.
+
+[^localfirst]: M. Kleppmann, A. Wiggins, P. van Hardenberg and M. McGranaghan, “Local-first software: you own your data, in spite of the cloud,” *Onward! 2019*, pp. 154–178. DOI: 10.1145/3359591.3359737. [Essay](https://inkandswitch.com/essay/local-first/local-first.pdf)
+[^miller]: R. B. Miller, “Response time in man-computer conversational transactions,” *Proc. AFIPS Fall Joint Computer Conference*, vol. 33, 1968, pp. 267–277.
+[^nielsen]: J. Nielsen, *Usability Engineering*, Academic Press, 1993, ch. 5. [Excerpt: Response Times: The 3 Important Limits](https://www.nngroup.com/articles/response-times-3-important-limits/)
+[^unix]: M. D. McIlroy, E. N. Pinson and B. A. Tague, “UNIX Time-Sharing System: Foreword,” *Bell System Technical Journal* 57(6), 1978, pp. 1899–1904. [PDF](https://ia902701.us.archive.org/12/items/bstj57-6-1899/bstj57-6-1899_text.pdf)
+[^sqlite]: SQLite, “Recommended Storage Format for Datasets” (US Library of Congress designation). [sqlite.org/locrsf.html](https://sqlite.org/locrsf.html)
+[^crdt]: M. Shapiro, N. Preguiça, C. Baquero and M. Zawirski, “Conflict-free replicated data types,” *SSS 2011*, LNCS 6976, pp. 386–400. [INRIA report RR-7687](https://hal.sorbonne-universite.fr/inria-00609399v1)
+

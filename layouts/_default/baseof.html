@@ -9,6 +9,6 @@
     {{- block "main" . }}{{- end }}
   </main>
   {{- partial "footer.html" . -}}
-  <script src="/js/sovereign.js"></script>
+  <script src="{{ "js/sovereign.js" | relURL }}"></script>
 </body>
 </html>

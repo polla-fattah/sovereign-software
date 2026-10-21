@@ -27,7 +27,7 @@ sovereign-hugo-site/
         └── sovereign.js             # Sub-millisecond local evaluator & filter logic
 ```
 
-## Running Locally (100% Offline / Air-Gapped after initial load)
+## Running Locally (100% Offline after initial load)
 
 1. Ensure [Hugo](https://gohugo.io/) is installed (`hugo version`).
 2. Start the local development server:
@@ -39,3 +39,16 @@ sovereign-hugo-site/
    ```bash
    hugo --minify
    ```
+
+## Self-hosted assets (no CDN, no third-party requests)
+
+The site loads nothing from outside its own origin.
+
+- **Fonts** live in `static/fonts/` and are declared in `static/css/fonts.css`: Inter and JetBrains Mono (SIL OFL 1.1) and General Sans (Fontshare, ITF Free Font License).
+- **CSS** is compiled once with the Tailwind v3 standalone CLI into `static/css/tailwind.css`, which is committed. Rebuild it whenever you add or change utility classes in layouts, content or `static/js`:
+
+  ```bash
+  ./tools/tailwindcss.exe -c tailwind.config.js -i tailwind.input.css -o static/css/tailwind.css --minify
+  ```
+
+- The CLI binary is not committed (`tools/` is git-ignored). Download `tailwindcss-windows-x64.exe` from the [Tailwind v3.4.17 release](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.4.17), save it as `tools/tailwindcss.exe`, and check it against `sha256sums.txt` from the same release.

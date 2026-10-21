@@ -4,56 +4,9 @@
 	<meta name="generator" content="Hugo 0.166.0"><meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Sovereign Personal Software — Manifesto, Index &amp; Engineering Standard</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 
-<link href="https://api.fontshare.com/v2/css?f[]=general-sans@600,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script>
-  
-
-  tailwind.config = {
-    darkMode: 'class',
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['Inter', 'ui-sans-serif', 'sans-serif'],
-          serif: ['"PP Mori"', '"General Sans"', '"DM Serif Display"', 'Georgia', 'serif'],
-          display: ['"PP Mori"', '"General Sans"', '"DM Serif Display"', 'Georgia', 'serif'],
-          mono: ['"JetBrains Mono"', 'monospace'],
-        },
-        colors: {
-           
-          'forest-ink': '#003f2e',
-          'vivid-emerald': '#039861',
-          'cream-canvas': '#fdf9f7',
-          'pure-paper': '#ffffff',
-          'ink-black': '#333333',
-          'faded-pencil': '#6e7673',
-          'hairline-gray': '#d6d6d6',
-          'mid-gray': '#a6a6a6',
-           
-          slate: {
-            50: '#fdf9f7', 100: '#f6f1ed', 200: '#d6d6d6', 300: '#d6d6d6', 400: '#a6a6a6',
-            500: '#6e7673', 600: '#6e7673', 700: '#333333', 800: '#333333', 900: '#003f2e', 950: '#003f2e',
-          },
-          stone: { 50: '#fdf9f7', 100: '#f6f1ed', 200: '#ece6e1' },
-           
-          amber: {
-            50: '#f1f8f4', 100: '#e3f1e9', 200: '#c3e3d2', 300: '#039861', 400: '#039861',
-            450: '#039861', 500: '#039861', 600: '#003f2e', 700: '#003f2e', 800: '#003f2e', 900: '#003f2e',
-          },
-          emerald: {
-            300: '#039861', 400: '#039861', 500: '#039861', 600: '#003f2e', 700: '#003f2e',
-          },
-          obsidian: { 950: '#003f2e', 900: '#003f2e', 800: '#003f2e', 700: '#003f2e' },
-        }
-      }
-    }
-  }
-</script>
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/tailwind.css">
 <style>
   :root {
      
@@ -130,6 +83,38 @@
   .font-mono:not(pre):not(code) { font-family: var(--font-inter) !important; letter-spacing: -0.03em; }
   pre, code, pre *, code * { font-family: 'JetBrains Mono', monospace !important; letter-spacing: 0; }
   .uppercase { letter-spacing: 0.02em; }
+
+
+   
+  .prose-editorial > * + * { margin-top: 1.25rem; }
+  .prose-editorial h1 { font-size: clamp(2.25rem, 5vw, 3.25rem); line-height: 1.1; margin-bottom: 1.5rem; }
+  .prose-editorial h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-hairline-gray); }
+  .prose-editorial h3 { font-size: 1.35rem; margin-top: 2.25rem; }
+  .prose-editorial h1, .prose-editorial h2, .prose-editorial h3 { font-weight: 700; color: var(--color-forest-ink); letter-spacing: -0.02em; }
+  .prose-editorial ul, .prose-editorial ol { max-width: 640px; padding-left: 1.5rem; }
+  .prose-editorial ul { list-style: disc; }
+  .prose-editorial ol { list-style: decimal; }
+  .prose-editorial li { font-size: var(--text-body-lg); line-height: var(--leading-body-lg); padding-left: 0.25rem; }
+  .prose-editorial li + li { margin-top: 0.6rem; }
+  .prose-editorial li::marker { color: var(--color-vivid-emerald); font-weight: 600; }
+  .prose-editorial strong { font-weight: 700; color: var(--color-forest-ink); }
+  .prose-editorial blockquote, .reading > blockquote { max-width: 640px; border-left: 3px solid var(--color-vivid-emerald); padding-left: 1.25rem; font-style: italic; font-size: 1.25rem; line-height: 1.5; }
+  .prose-editorial hr { border: 0; border-top: 1px solid var(--color-hairline-gray); margin: 2.5rem 0; max-width: 640px; }
+  .prose-editorial a { text-decoration: underline; text-underline-offset: 3px; }
+  .prose-editorial em { font-style: italic; }
+
+   
+  sup { font-size: 0.75em; line-height: 0; vertical-align: super; }
+  sup a, a.cite { text-decoration: none; color: var(--color-vivid-emerald); font-weight: 600; }
+  sup a.footnote-ref::before { content: "["; } sup a.footnote-ref::after { content: "]"; }
+  .footnotes { max-width: 640px; }
+  .footnotes hr { display: none; }
+  .footnotes ol { list-style: decimal; padding-left: 1.75rem; }
+  .footnotes li { font-size: 0.95rem; line-height: 1.55; }
+  .footnotes li::marker { color: var(--color-vivid-emerald); font-weight: 600; }
+  .footnotes li p { font-size: inherit; display: inline; }
+  .footnote-backref { text-decoration: none; margin-left: .35rem; }
+  :target { scroll-margin-top: 5rem; }
 
    
   .prose-editorial p, main article p { max-width: 640px; font-size: var(--text-body-lg); line-height: var(--leading-body-lg); }
@@ -214,39 +199,53 @@
   .site-footer .footer-rule { border-top: 1px solid rgba(253, 249, 247, 0.2); }
 
    
+  .github-link { width: 36px; height: 36px; align-items: center; justify-content: center; margin-left: 8px;
+    border: 1px solid var(--color-hairline-gray); border-radius: var(--radius-logos); color: var(--color-forest-ink); transition: border-color .15s; }
+  .github-link:hover { border-color: var(--color-vivid-emerald); }
+
+   
   input[type="checkbox"] { accent-color: var(--color-vivid-emerald); }
+
+   
+  .reading { max-width: 42rem; margin-inline: auto; font-size: 1.125rem; line-height: 1.75; }
+  @media print {
+    header.sticky, .site-footer, #toast, .no-print { display: none !important; }
+    body { background: #fff !important; color: #000 !important; }
+    main { padding: 0 !important; max-width: none !important; }
+    .reading { font-size: 11pt; line-height: 1.5; max-width: none; }
+    .reading h2 { break-after: avoid; } .reading h3 { break-after: avoid; }
+    .reading p, .reading li { orphans: 3; widows: 3; }
+    a { color: inherit; text-decoration: none; }
+  }
 </style>
 </head>
 <body class="bg-stone-50 dark:bg-obsidian-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-amber-500/20 selection:text-amber-900 transition-colors duration-200 min-h-screen flex flex-col">
 <header class="sticky top-0 z-40 border-b border-slate-200 dark:border-slate-800/90 bg-stone-50/90 dark:bg-obsidian-950/90 backdrop-blur-md">
   <div class="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
-    <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('manifesto')">
+    <a href="/" class="flex items-center space-x-3">
       <div class="w-9 h-9 rounded-lg bg-slate-900 dark:bg-amber-500 flex items-center justify-center text-white dark:text-obsidian-950 font-mono font-bold text-lg shadow-sm">§</div>
       <div>
         <span class="font-mono text-sm font-bold tracking-wider uppercase block leading-none">Sovereign.Software</span>
-        <span class="font-mono text-[10px] text-slate-500 dark:text-slate-400 tracking-tight">ARCHITECTURAL CANON &amp; INDEX</span>
       </div>
-    </div>
+    </a>
 
     <nav class="hidden md:flex items-center space-x-1 font-mono text-xs">
-      <button onclick="switchTab('manifesto')" id="nav-manifesto" class="nav-btn px-3.5 py-2 rounded-lg font-medium transition-all bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30">The Manifesto</button>
-      <button onclick="switchTab('index')" id="nav-index" class="nav-btn px-3.5 py-2 rounded-lg font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all border border-transparent">Sovereign Index</button>
-      <button onclick="switchTab('evaluator')" id="nav-evaluator" class="nav-btn px-3.5 py-2 rounded-lg font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all border border-transparent">7-Gate Evaluator</button>
-      <button onclick="switchTab('blueprints')" id="nav-blueprints" class="nav-btn px-3.5 py-2 rounded-lg font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all border border-transparent">Blueprints & Specs</button>
-      <button onclick="switchTab('escape')" id="nav-escape" class="nav-btn px-3.5 py-2 rounded-lg font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all border border-transparent">Escape Hatches</button>
+      <a href="/manifesto/" class="nav-btn px-3.5 py-2 rounded-lg font-medium border text-slate-600 hover:text-slate-900 border-transparent">The Manifesto</a>
+      <a href="/directory/" class="nav-btn px-3.5 py-2 rounded-lg font-medium border text-slate-600 hover:text-slate-900 border-transparent">Sovereign Index</a>
+      <a href="/evaluator/" class="nav-btn px-3.5 py-2 rounded-lg font-medium border text-slate-600 hover:text-slate-900 border-transparent">7-Gate Evaluator</a>
+      <a href="/escape-hatches/" class="nav-btn px-3.5 py-2 rounded-lg font-medium border text-slate-600 hover:text-slate-900 border-transparent">Escape Hatches</a>
     </nav>
 
-    <button onclick="exportManifestoMarkdown()" title="Export manifesto as Markdown" class="hidden md:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium border border-slate-300 transition-colors">
-      ↓ Export .MD
-    </button>
+    <button onclick="exportManifestoMarkdown()" title="Export manifesto as Markdown" class="hidden md:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium border border-slate-300 transition-colors">↓ .MD</button>
+
+    
 
     <div class="md:hidden flex items-center">
-      <select onchange="switchTab(this.value)" id="mobile-nav-select" aria-label="Section navigation" class="bg-white dark:bg-obsidian-800 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-1.5 font-mono text-xs text-slate-800 dark:text-slate-100">
-        <option value="manifesto">The Manifesto</option>
-        <option value="index">Sovereign Index</option>
-        <option value="evaluator">7-Gate Evaluator</option>
-        <option value="blueprints">Blueprints & Specs</option>
-        <option value="escape">Escape Hatches</option>
+      <select onchange="location.href=this.value" id="mobile-nav-select" aria-label="Section navigation" class="bg-white dark:bg-obsidian-800 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-1.5 font-mono text-xs text-slate-800 dark:text-slate-100">
+        <option value="/manifesto/">The Manifesto</option>
+        <option value="/directory/">Sovereign Index</option>
+        <option value="/evaluator/">7-Gate Evaluator</option>
+        <option value="/escape-hatches/">Escape Hatches</option>
       </select>
       <button onclick="exportManifestoMarkdown()" aria-label="Export manifesto as Markdown" class="ml-2 px-3 py-1.5 text-xs font-medium border border-slate-300">↓ .MD</button>
     </div>
@@ -257,7 +256,7 @@
   <span>✓</span>
   <span id="toast-message">Copied to clipboard</span>
 </div><main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-8 py-8 sm:py-12">
-<section id="tab-manifesto" class="tab-panel space-y-12">
+<div class="space-y-10">
       
       <div class="relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-obsidian-900/90 p-6 sm:p-12 shadow-sm overflow-hidden">
         <div class="max-w-3xl space-y-6">
@@ -267,6 +266,7 @@
           <blockquote class="border-l-2 border-amber-500 pl-4 sm:pl-6 py-1 text-lg sm:text-xl text-slate-600 dark:text-slate-300 font-serif italic">
             “Your data belongs to you. Your tools should respect your time, preserve your freedom, and remain useful without depending on someone else’s infrastructure.”
           </blockquote>
+          <p class="font-mono text-xs"><a href="/read/">Read or print the full text →</a></p>
         </div>
       </div>
 
@@ -287,11 +287,11 @@
             <li><a href="#sec-07" class="block py-1 text-slate-600 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">07. What It Refuses to Become</a></li>
             <li><a href="#sec-08" class="block py-1 text-slate-600 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">08. Economics in the Age of AI</a></li>
             <li><a href="#sec-09" class="block py-1 text-slate-600 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">09. The Permanent Standard</a></li>
+            <li><a href="#references" class="block py-1 text-slate-600 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">References</a></li>
           </ul>
           <div class="pt-3 border-t border-slate-200 dark:border-slate-800">
-            <button onclick="copyManifestoText()" class="w-full py-2 px-3 rounded-lg bg-slate-100 dark:bg-obsidian-800 hover:bg-amber-500/20 text-slate-700 dark:text-slate-300 hover:text-amber-500 font-mono text-xs border border-slate-300 dark:border-slate-700 transition-all">
-              Copy Plain-Text Spec
-            </button>
+            <a href="/read/" class="block w-full text-center py-2 px-3 rounded-lg bg-slate-100 dark:bg-obsidian-800 hover:bg-amber-500/20 text-slate-700 dark:text-slate-300 hover:text-amber-500 font-mono text-xs border border-slate-300 dark:border-slate-700 transition-all">Read / Print edition</a>
+            <button onclick="exportManifestoMarkdown()" class="block w-full text-center py-2 px-3 rounded-lg bg-slate-100 dark:bg-obsidian-800 hover:bg-amber-500/20 text-slate-700 dark:text-slate-300 hover:text-amber-500 font-mono text-xs border border-slate-300 dark:border-slate-700 transition-all mt-2">Download .md</button>
           </div>
         </aside>
 
@@ -375,11 +375,11 @@
                 <div class="space-y-3">
                   <div class="flex items-center justify-between font-mono text-xs">
                     <span class="text-amber-600 dark:text-amber-400 font-bold">PRINCIPLE II</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-obsidian-700 text-slate-700 dark:text-slate-300">Local-First • Air-Gapped</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-obsidian-700 text-slate-700 dark:text-slate-300">Local-First • Offline</span>
                   </div>
                   <h3 class="text-lg font-bold text-slate-900 dark:text-white">Locality: The Device Comes First</h3>
                   <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    The network should enhance an application, not determine whether it can function. Creating records, updating states, compiling outputs, and searching locally stored information must remain 100% available offline. Local storage is the primary working environment; synchronization operates asynchronously with explicit status and deterministic conflict recovery.
+                    The network should enhance an application, not determine whether it can function. Creating records, updating states, compiling outputs, and searching locally stored information must remain 100% available offline. Local storage is the primary working environment<sup><a href="#ref-1" class="cite">[1]</a></sup>; synchronization operates asynchronously with explicit status and deterministic conflict recovery.
                   </p>
                 </div>
                 <p class="font-mono text-xs text-amber-600 dark:text-amber-400 pt-2 border-t border-slate-200 dark:border-slate-800">
@@ -419,6 +419,10 @@
                 <p class="font-mono text-xs text-amber-600 dark:text-amber-400 pt-2 border-t border-slate-200 dark:border-slate-800">
                   → Good software helps users complete their work without becoming work itself.
                 </p>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                  The 100ms figure follows the widely cited response-time limits of Miller (1968)<sup><a href="#ref-2" class="cite">[2]</a></sup> and Nielsen (1993)<sup><a href="#ref-3" class="cite">[3]</a></sup>: about 0.1s feels instantaneous, about 1s keeps flow, about 10s is the limit of focused attention. They are practical guidelines, not precise laws.
+                  <a href="https://www.nngroup.com/articles/response-times-3-important-limits/" target="_blank" rel="noopener" class="underline">Nielsen, Response Times: The 3 Important Limits</a>
+                </p>
               </div>
 
               
@@ -430,7 +434,7 @@
                   </div>
                   <h3 class="text-lg font-bold text-slate-900 dark:text-white">Focused Interoperability</h3>
                   <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Managing operational actions is fundamentally distinct from preserving long-form knowledge or editing raw media. Sovereign tools maintain bounded responsibilities while connecting through documented interfaces: URI schemes, plain-text sidecars, local sockets, CLI pipes, and open interchange standards—with clean import/export bridges on sandboxed mobile OS environments.
+                    Managing operational actions is fundamentally distinct from preserving long-form knowledge or editing raw media. Sovereign tools maintain bounded responsibilities<sup><a href="#ref-4" class="cite">[4]</a></sup> while connecting through documented interfaces: URI schemes, plain-text sidecars, local sockets, CLI pipes, and open interchange standards—with clean import/export bridges on sandboxed mobile OS environments.
                   </p>
                 </div>
                 <p class="font-mono text-xs text-amber-600 dark:text-amber-400 pt-2 border-t border-slate-200 dark:border-slate-800">
@@ -447,7 +451,7 @@
                   </div>
                   <h3 class="text-lg font-bold text-slate-900 dark:text-white">Longevity: Information Outlives Software</h3>
                   <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Applications and vendors are transient; human records remain valuable across decades. Sovereign software resolves the tension between high-speed local execution and long-term human readability through dual-layer persistence: pairing fast local indexing (such as SQLite) with deterministic, human-inspectable plain-text files or sidecars.
+                    Applications and vendors are transient; human records remain valuable across decades. Sovereign software resolves the tension between high-speed local execution and long-term human readability through dual-layer persistence: pairing fast local indexing (such as SQLite<sup><a href="#ref-5" class="cite">[5]</a></sup>) with deterministic, human-inspectable plain-text files or sidecars.
                   </p>
                 </div>
                 <p class="font-mono text-xs text-amber-600 dark:text-amber-400 pt-2 border-t border-slate-200 dark:border-slate-800">
@@ -528,7 +532,7 @@
                 Synchronization is a transport convenience, not a transfer of custody. Because concurrent offline edits across devices inevitably create divergence, sovereign software enforces explicit conflict policies:
               </p>
               <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
-                <li><strong class="text-slate-900 dark:text-white font-mono">Syntactic Convergence:</strong> Handled via mathematically verifiable structures (CRDTs or append-only operation logs).</li>
+                <li><strong class="text-slate-900 dark:text-white font-mono">Syntactic Convergence:</strong> Handled via mathematically verifiable structures (CRDTs<sup><a href="#ref-6" class="cite">[6]</a></sup> or append-only operation logs).</li>
                 <li><strong class="text-slate-900 dark:text-white font-mono">Semantic Divergence:</strong> When concurrent offline changes contradict human intent, both branches are preserved transparently rather than silently overwritten.</li>
               </ul>
               <p class="font-mono text-xs text-amber-600 dark:text-amber-400 pt-2">
@@ -544,16 +548,16 @@
                 <div class="font-mono text-xs text-amber-600 dark:text-amber-400 uppercase tracking-widest">Section 06</div>
                 <h2 class="font-serif text-3xl sm:text-4xl text-slate-900 dark:text-white mt-1">The Seven Engineering Evaluation Tests</h2>
               </div>
-              <button onclick="switchTab('evaluator')" class="px-3.5 py-2 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 font-mono text-xs hover:bg-amber-500/25 transition-all">
+              <a href="/evaluator/" class="px-3.5 py-2 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 font-mono text-xs hover:bg-amber-500/25 transition-all">
                 Launch Interactive Scorer →
-              </button>
+              </a>
             </div>
             <p class="text-sm text-slate-600 dark:text-slate-300">
               Every significant feature, dependency, or architectural decision must pass seven non-negotiable verification gates:
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50 dark:bg-obsidian-800/50">
-                <span class="font-mono text-xs text-amber-500 font-bold">GATE 01 // AIR-GAP TEST</span>
+                <span class="font-mono text-xs text-amber-500 font-bold">GATE 01 // OFFLINE TEST (AIR-GAP)</span>
                 <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">Does all primary functionality remain 100% operational with the network interface physically disabled?</p>
               </div>
               <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50 dark:bg-obsidian-800/50">
@@ -635,588 +639,25 @@
                 Above all, it remains a tool under human control.
               </p>
             </article>
+
+            <article id="references" class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 sm:p-8 space-y-4">
+              <div class="font-mono text-xs text-amber-600 dark:text-amber-400 uppercase tracking-widest">References</div>
+              <h2 class="font-serif text-2xl sm:text-3xl text-slate-900 dark:text-white">Sources</h2>
+              <p class="text-sm text-slate-600 dark:text-slate-300">These sources support specific arguments above. The response-time limits are practical guidelines, not precise laws.</p>
+              <ol class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <li id="ref-1" class="flex gap-2"><span class="font-semibold text-slate-900 dark:text-white">[1]</span><span>M. Kleppmann, A. Wiggins, P. van Hardenberg and M. McGranaghan, “Local-first software: you own your data, in spite of the cloud,” <em>Onward! 2019</em>, pp. 154–178. DOI: 10.1145/3359591.3359737. <a href="https://inkandswitch.com/essay/local-first/local-first.pdf" target="_blank" rel="noopener" class="underline">Link</a></span></li>
+                <li id="ref-2" class="flex gap-2"><span class="font-semibold text-slate-900 dark:text-white">[2]</span><span>R. B. Miller, “Response time in man-computer conversational transactions,” <em>Proc. AFIPS Fall Joint Computer Conference</em>, vol. 33, 1968, pp. 267–277.</span></li>
+                <li id="ref-3" class="flex gap-2"><span class="font-semibold text-slate-900 dark:text-white">[3]</span><span>J. Nielsen, <em>Usability Engineering</em>, Academic Press, 1993, ch. 5. <a href="https://www.nngroup.com/articles/response-times-3-important-limits/" target="_blank" rel="noopener" class="underline">Link</a></span></li>
+                <li id="ref-4" class="flex gap-2"><span class="font-semibold text-slate-900 dark:text-white">[4]</span><span>M. D. McIlroy, E. N. Pinson and B. A. Tague, “UNIX Time-Sharing System: Foreword,” <em>Bell System Technical Journal</em> 57(6), 1978, pp. 1899–1904. <a href="https://ia902701.us.archive.org/12/items/bstj57-6-1899/bstj57-6-1899_text.pdf" target="_blank" rel="noopener" class="underline">Link</a></span></li>
+                <li id="ref-5" class="flex gap-2"><span class="font-semibold text-slate-900 dark:text-white">[5]</span><span>SQLite, “Recommended Storage Format for Datasets” (US Library of Congress designation). <a href="https://sqlite.org/locrsf.html" target="_blank" rel="noopener" class="underline">Link</a></span></li>
+                <li id="ref-6" class="flex gap-2"><span class="font-semibold text-slate-900 dark:text-white">[6]</span><span>M. Shapiro, N. Preguiça, C. Baquero and M. Zawirski, “Conflict-free replicated data types,” <em>SSS 2011</em>, LNCS 6976, pp. 386–400. <a href="https://hal.sorbonne-universite.fr/inria-00609399v1" target="_blank" rel="noopener" class="underline">Link</a></span></li>
+              </ol>
+            </article>
           </div>
 
         </div>
       </div>
-    </section>
-
-
-
-
-<section id="tab-index" class="tab-panel hidden space-y-10">
-  
-  <header class="pt-4 space-y-4 max-w-3xl">
-    <h2 class="text-4xl sm:text-5xl">The Sovereign Software Index</h2>
-    <p class="text-lg text-slate-600">Tools that pass the seven gates, grouped by discipline.</p>
-  </header>
-
-  <div class="space-y-4 border-b border-slate-200 pb-8">
-    <input type="search" id="dir-search" oninput="renderDirectory()" placeholder="Search tools or formats" aria-label="Search tools" class="w-full sm:w-80 px-4 py-2 bg-white border border-slate-300 text-sm focus:outline-none focus:border-amber-500" />
-    <div class="flex flex-wrap gap-2 text-sm" id="category-filters">
-      <button onclick="filterDirectory('ALL')" data-cat="ALL" class="cat-btn px-3 py-1.5 rounded-lg bg-amber-500 text-obsidian-950 font-semibold">All</button>
-      <button onclick="filterDirectory('VCS & Core')" data-cat="VCS & Core" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">VCS & Databases</button>
-      <button onclick="filterDirectory('Knowledge & Office')" data-cat="Knowledge & Office" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">Knowledge & Office</button>
-      <button onclick="filterDirectory('Tasks & Finance')" data-cat="Tasks & Finance" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">Tasks & Finance</button>
-      <button onclick="filterDirectory('Engineering & CAD')" data-cat="Engineering & CAD" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">Engineering & CAD</button>
-      <button onclick="filterDirectory('Media & Creative')" data-cat="Media & Creative" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">Audio & Creative</button>
-      <button onclick="filterDirectory('OS & Infra')" data-cat="OS & Infra" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">OS & Infrastructure</button>
     </div>
-  </div>
-
-  
-  <div id="directory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">VCS &amp; Core</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Git</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">The archetype of sovereign software. Full commit history lives on your local disk, verified via cryptographic hashes, with 100% offline branching, diffing, and merging.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Content-Addressable Merkle DAG (.git)</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Decentralized SSH / HTTPS push-pull</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ git bundle create repo.bundle --all</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">VCS &amp; Core</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Jujutsu (jj)</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Next-generation version control where even conflicts and rebases are recorded as deterministic, first-class mathematical states in an undoable local operation log.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Append-only Operation Log &#43; Git Backend</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Git-compatible remotes / Native local</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ jj op log --limit 20</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">VCS &amp; Core</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">SQLite</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Library of Congress permanent archival standard. Delivers microsecond local queries with zero server daemons, zero configuration, and guaranteed backward compatibility through 2050.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Single Cross-Platform B-Tree Disk File</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Local Embedded Engine (Zero Network)</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ sqlite3 data.db .dump &gt; archive.sql</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">VCS &amp; Core</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Fossil SCM</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Engineered by the creator of SQLite. Packages version control, tickets, bug tracking, and wiki documentation into one durable SQLite file that runs an instant air-gapped web UI.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Single Standalone SQLite Database File</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Peer-to-peer HTTP/SSH sync</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ fossil ui repository.fossil</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Tasks &amp; Finance</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Taskwarrior / Todo.txt</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Pure execution-layer task tools. Sub-10ms CLI latency, deterministic date/priority grammars, and complete separation from long-form note bloat.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Plain-Text Grammar / Local State Store</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Local Hooks / Sync Server / Syncthing</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ task export &gt; commitments.json</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Tasks &amp; Finance</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Beancount / hledger</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Plain-Text Accounting (PTA). Enforces strict double-entry mathematical invariants locally without bank scraping breakages or recurring cloud subscriptions.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">UTF-8 Plain-Text Double-Entry Ledgers</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Git Version Control / File Sync</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ bean-query ledger.beancount &#39;SELECT account, sum(position)&#39;</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Tasks &amp; Finance</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 2 • Sovereign Core</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Actual Budget</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Local-first zero-based budgeting. Runs entirely offline against a local SQLite database and synchronizes across devices via verifiable Hybrid Logical Clock CRDT messages.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Client-Side SQLite &#43; Merkle CRDTs</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Self-Hosted Docker Sync with E2EE</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ Export standard SQLite / CSV archive</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Knowledge &amp; Office</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 2 • Sovereign Core</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Obsidian / Logseq</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Exemplifies the &#39;File Over App&#39; paradigm. Notes remain standard UTF-8 Markdown files on your local filesystem, editable simultaneously in Vim, VS Code, or bash.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Local Directory of Plain Markdown (.md)</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Decoupled (Syncthing, Git, or E2EE)</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ cp -r ~/Vault /backup/plain-markdown/</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Knowledge &amp; Office</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Emacs Org-Mode</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">The grand-ancestor of sovereign personal computing. Unifies structured prose, deterministic agendas, tables, and literate programming inside immortal plain text.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Plain-Text .org Outlines</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Git / rsync / Syncthing</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ emacs --batch file.org -f org-html-export-to-html</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Knowledge &amp; Office</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Typst &amp; Hugo</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Deterministic document typesetting and static site compilation that pass the 100ms test—recompiling complex multi-page documents and sites in milliseconds offline.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Plain-Text Markup (.typ, .md)</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Single Zero-Dependency Native Binary</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ typst compile manuscript.typ output.pdf</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Knowledge &amp; Office</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Paperless-ngx</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Enforces the Archive Invariant: never locks or mutates original documents inside a proprietary blob. Stores untouched PDFs on disk alongside archival PDF/A files.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Pristine Original PDFs &#43; PDF/A &#43; SQLite</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Self-Hosted Container / Local Filesystem</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ document_exporter ../export --no-progress-bar</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Knowledge &amp; Office</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">LibreOffice (ODF)</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Full desktop office suite running 100% air-gapped. Native files are standard zip containers holding documented XML (`content.xml`) extractable with basic POSIX unzip.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">ISO/IEC 26300 OpenDocument XML (.odt/.ods)</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Local Filesystem</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ unzip -p document.odt content.xml | xmllint --format -</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Engineering &amp; CAD</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">OpenSCAD</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Code-first 3D solid modeling. Eliminates the non-deterministic Topological Naming Problem of GUI CAD kernels; identical script inputs yield identical meshes.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Programmatic CSG Plain-Text Scripts (.scad)</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Git Version Control</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ openscad -o part.stl model.scad</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Engineering &amp; CAD</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">KiCad</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Electronic schematic capture and PCB design suite where every net, footprint, and trace is stored in human-readable S-expressions with zero cloud licensing.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Plain-Text S-Expressions (.kicad_sch/.kicad_pcb)</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Git / Local Vendor Libraries</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ kicad-cli pcb export gerbers board.kicad_pcb</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Engineering &amp; CAD</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">NGSPICE</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Deterministic analog and mixed-signal circuit simulator solving differential equations directly from human-readable netlists without network dependencies.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Plain-Text SPICE Netlists (.cir / .sp)</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Standalone POSIX CLI</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ ngspice -b -r rawfile.raw circuit.cir</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Media &amp; Creative</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">REAPER</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Professional Digital Audio Workstation with sub-millisecond performance, zero cloud DRM dongles, and plain-text project files parseable with standard text tools.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Human-Readable ASCII Project Files (.RPP)</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Portable Local Install (~15MB)</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ grep -E &#39;TRACK|VOLPAN&#39; session.RPP</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Media &amp; Creative</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Darktable</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Non-destructive raw photography workflow. Never alters original sensor data; all exposure curves and crops reside in sibling XML sidecar files.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Immutable RAW &#43; ISO Standard .xmp Sidecars</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Local Disk Hierarchy</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ darktable-cli image.RAW image.RAW.xmp export.jpg</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">OS &amp; Infra</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Pass / KeePassXC</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Sovereign secret management. Credentials reside in user-controlled cryptographic containers on disk without trusting third-party vault servers.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">GPG Encrypted Files / Local .kdbx Vault</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Git / Syncthing (Zero Commercial Cloud)</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ gpg -d ~/.password-store/infra/root.gpg</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">OS &amp; Infra</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Syncthing</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">The canonical decoupled synchronization layer. Replicates folders across devices with cryptographic device IDs and explicit conflict file preservation.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Direct Peer-to-Peer Block Exchange (BEP)</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">End-to-End TLS over LAN / Relay</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ syncthing cli show system</code></div>
-      </div>
-    </div>
-    
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
-      <div class="space-y-3">
-        <div class="flex items-center justify-between gap-2">
-          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">OS &amp; Infra</span>
-          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
-        </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white">NixOS / GNU Guix &amp; OpenBSD</h3>
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">While mainstream OS platforms mutate global state imperatively, NixOS/Guix treat the entire operating system as a deterministic, rollback-capable function of plain text.</p>
-      </div>
-      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
-        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Declarative Plain-Text System Configs</span></div>
-        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Reproducible Content-Addressed Store</span></div>
-        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ nixos-rebuild build --flake .#workstation</code></div>
-      </div>
-    </div>
-    
-  </div>
-</section>
-
-
-
-
-<section id="tab-evaluator" class="tab-panel hidden space-y-8">
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-    <div class="lg:col-span-7 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 sm:p-8 space-y-6">
-      <div>
-        <span class="font-mono text-xs text-amber-600 dark:text-amber-400 uppercase tracking-widest">Diagnostic Instrument</span>
-        <h2 class="font-serif text-3xl sm:text-4xl text-slate-900 dark:text-white mt-1">The 7-Gate Sovereignty Evaluator</h2>
-        <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">Test any existing software tool or proposed RFC architecture against the seven non-negotiable gates.</p>
-      </div>
-      <div class="space-y-3">
-        <label class="block font-mono text-xs text-slate-500 dark:text-slate-400">TARGET APPLICATION OR RFC NAME</label>
-        <input type="text" id="eval-app-name" value="ToDoz Local Engine" oninput="updateEvaluator()" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 dark:bg-obsidian-800 border border-slate-300 dark:border-slate-700 font-mono text-sm focus:outline-none focus:border-amber-500" />
-      </div>
-      <div id="evaluator-questions" class="space-y-3 pt-2"></div>
-      <div class="flex flex-wrap gap-3 pt-4 border-t border-slate-200 dark:border-slate-800">
-        <button onclick="setEvaluatorPreset('canonical')" class="px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 font-mono text-xs">Preset: Git / OpenSCAD (7/7)</button>
-        <button onclick="setEvaluatorPreset('freecad')" class="px-3 py-1.5 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30 font-mono text-xs">Preset: FreeCAD (4/7 - TNP & Bloat)</button>
-        <button onclick="setEvaluatorPreset('cloud')" class="px-3 py-1.5 rounded-lg bg-rose-500/10 text-rose-500 border border-rose-500/30 font-mono text-xs">Preset: Cloud SaaS Workspace (0/7)</button>
-      </div>
-    </div>
-    <div class="lg:col-span-5 lg:sticky lg:top-24 space-y-6">
-      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 sm:p-8 space-y-6">
-        <div class="flex items-center justify-between">
-          <span class="font-mono text-xs uppercase tracking-wider text-slate-400">Audit Verdict</span>
-          <span id="eval-tier-badge" class="px-3 py-1 rounded-full font-mono text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">CANONICAL TIER 1</span>
-        </div>
-        <div class="flex items-baseline gap-4">
-          <div id="eval-score-number" class="font-mono text-5xl sm:text-6xl font-bold text-slate-900 dark:text-white">7/7</div>
-          <div class="text-xs font-mono text-slate-500 dark:text-slate-400">GATES PASSED<br/><span id="eval-percentage" class="text-amber-500 font-bold">100% SOVEREIGN COMPLIANCE</span></div>
-        </div>
-        <div class="w-full h-2.5 bg-slate-200 dark:bg-obsidian-800 rounded-full overflow-hidden">
-          <div id="eval-progress-bar" class="h-full bg-emerald-500 transition-all duration-300" style="width: 100%"></div>
-        </div>
-        <div class="space-y-2">
-          <div class="font-mono text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">Architectural Diagnostics:</div>
-          <div id="eval-diagnostics" class="space-y-2 text-xs font-mono"></div>
-        </div>
-        <div class="space-y-2 pt-4 border-t border-slate-200 dark:border-slate-800">
-          <div class="flex items-center justify-between">
-            <span class="font-mono text-xs text-slate-500">GENERATED AUDIT REPORT (MARKDOWN)</span>
-            <button onclick="copyAuditReport()" class="font-mono text-xs text-amber-500 hover:underline">Copy Report</button>
-          </div>
-          <pre id="eval-markdown-output" class="p-3.5 rounded-xl bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800 font-mono text-[11px] text-slate-700 dark:text-slate-300 overflow-x-auto whitespace-pre-wrap"></pre>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="tab-blueprints" class="tab-panel hidden space-y-8">
-      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 sm:p-10 space-y-3">
-        <span class="font-mono text-xs text-amber-600 dark:text-amber-400 uppercase tracking-widest">Reference Engineering Patterns</span>
-        <h2 class="font-serif text-3xl sm:text-5xl text-slate-900 dark:text-white">Open Architectural Blueprints</h2>
-        <p class="text-slate-600 dark:text-slate-300 max-w-3xl text-sm sm:text-base">
-          Concrete specifications for building software that satisfies the manifesto: decoupled immutable media sidecars, dual-layer SQLite + plain-text persistence, and PR verification templates.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 sm:p-8 space-y-5 flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-1 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400 font-mono text-xs font-semibold">SPEC 01 // IMMUTABLE MEDIA SIDECAR</span>
-              <button onclick="copyCodeBlock('sidecar-spec-code')" class="font-mono text-xs text-slate-500 hover:text-amber-500">Copy JSON</button>
-            </div>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Decoupling State from Original Binary Assets</h3>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-              Never mutate source binaries (raw photos, videos, PDFs, audio). Store non-destructive edits, tags, and temporal markers in sibling plain-text sidecars (<code>&lt;filename&gt;.&lt;ext&gt;.meta.json</code>) bound via cryptographic BLAKE3/SHA-256 hashes and sorted keys for clean Git diffs.
-            </p>
-            <pre id="sidecar-spec-code" class="p-4 rounded-xl bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800 font-mono text-xs text-emerald-700 dark:text-emerald-400 overflow-x-auto leading-relaxed">{
-  "$schema": "https://sovereign.software/specs/v1/sidecar.schema.json",
-  "created_at": "2026-10-21T08:00:00Z",
-  "edits": {
-    "crop_matrix": [0.0, 0.0, 1.0, 1.0],
-    "exposure_ev": 0.35,
-    "non_destructive": true
-  },
-  "intent": {
-    "project": "+architecture-canon",
-    "rating": 5,
-    "status": "ARCHIVED",
-    "tags": ["deterministic", "local-first", "sovereign"]
-  },
-  "target": {
-    "byte_size": 48291042,
-    "relative_path": "./schematic_rev4.pdf",
-    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-  }
-}</pre>
-          </div>
-          <div class="pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs text-slate-500">
-            ✓ Survives filename renames via SHA-256 healing • ✓ Zero 40GB binary re-sync churn
-          </div>
-        </div>
-
-        
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 sm:p-8 space-y-5 flex flex-col justify-between">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono text-xs font-semibold">SPEC 02 // DUAL-LAYER PERSISTENCE</span>
-              <button onclick="copyCodeBlock('sqlite-spec-code')" class="font-mono text-xs text-slate-500 hover:text-amber-500">Copy SQL</button>
-            </div>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Resolving the 100ms vs. 50-Year Longevity Tension</h3>
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-              Plain text is unbeatable for 50-year readability, while SQLite delivers sub-millisecond indexed queries. Sovereign applications combine an append-only operation log in SQLite with deterministic plain-text ledger dumps.
-            </p>
-            <pre id="sqlite-spec-code" class="p-4 rounded-xl bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800 font-mono text-xs text-amber-700 dark:text-amber-300 overflow-x-auto leading-relaxed">-- 1. Primary Local State Store (Sub-millisecond Queries)
-PRAGMA journal_mode = WAL;
-PRAGMA synchronous = NORMAL;
-
-CREATE TABLE IF NOT EXISTS commitments (
-    id TEXT PRIMARY KEY,
-    title TEXT NOT NULL,
-    state TEXT CHECK(state IN ('TODO','ACTIVE','DONE','CANCELED')),
-    due_utc TEXT,
-    hlc_timestamp TEXT NOT NULL -- Hybrid Logical Clock for Sync
-) STRICT;
-
--- 2. Deterministic Append-Only Operation Log (Audit &amp; Sync)
-CREATE TABLE IF NOT EXISTS op_log (
-    seq INTEGER PRIMARY KEY AUTOINCREMENT,
-    entity_id TEXT NOT NULL,
-    operation TEXT NOT NULL,
-    payload_json TEXT NOT NULL,
-    device_id TEXT NOT NULL,
-    hlc_timestamp TEXT NOT NULL
-) STRICT;</pre>
-          </div>
-          <div class="pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs text-slate-500">
-            ✓ Strict typing • ✓ Local WAL concurrency • ✓ Trivial export to JSON/Markdown
-          </div>
-        </div>
-
-        
-        <div class="lg:col-span-2 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 sm:p-8 space-y-4">
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <div>
-              <span class="px-2.5 py-1 rounded bg-purple-500/10 text-purple-600 dark:text-purple-400 font-mono text-xs font-semibold">SPEC 03 // REPOSITORY GOVERNANCE</span>
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-2">Drop-In `.github/PULL_REQUEST_TEMPLATE.md`</h3>
-            </div>
-            <button onclick="copyCodeBlock('pr-template-code')" class="px-3.5 py-2 rounded-lg bg-slate-100 dark:bg-obsidian-800 hover:bg-amber-500/20 font-mono text-xs text-amber-500 border border-slate-300 dark:border-slate-700">
-              Copy PR Template
-            </button>
-          </div>
-          <pre id="pr-template-code" class="p-4 rounded-xl bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800 font-mono text-xs text-slate-700 dark:text-slate-300 overflow-x-auto leading-relaxed">## Sovereign Architecture Verification Gates
-Every pull request or architectural change must verify compliance with the 7 Engineering Evaluation Tests:
-
-- [ ] **1. Air-Gap Test:** Does this feature function 100% offline with `ip link set down`?
-- [ ] **2. 100ms Test:** Are all local user interactions completing in &lt; 100ms on baseline hardware?
-- [ ] **3. Longevity Test:** Is any new persistent state stored in documented, open formats inspectable without this binary?
-- [ ] **4. Responsibility Test:** Does this belong in our core scope rather than an external composable tool?
-- [ ] **5. Dependency Test:** Does this avoid mandatory cloud accounts, telemetry, or heavy transitive dependencies?
-- [ ] **6. Predictability Test:** Are all state mutations deterministic and covered by reproducible unit tests?
-- [ ] **7. Security &amp; Recovery Test:** Are backup export and conflict resolution paths preserved without silent data loss?</pre>
-        </div>
-      </div>
-    </section>
-<section id="tab-escape" class="tab-panel hidden space-y-8">
-      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 sm:p-10 space-y-3">
-        <span class="font-mono text-xs text-amber-600 dark:text-amber-400 uppercase tracking-widest">Data Liberation Runbooks</span>
-        <h2 class="font-serif text-3xl sm:text-5xl text-slate-900 dark:text-white">Sovereignty Escape Hatches</h2>
-        <p class="text-slate-600 dark:text-slate-300 max-w-3xl text-sm sm:text-base">
-          Ownership is meaningful only when the user retains the ability to leave. Use these open migration pipelines to extract personal records from proprietary cloud silos into durable, local-first formats.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 space-y-4">
-          <div class="flex items-center justify-between font-mono text-xs">
-            <span class="text-rose-500 line-through">Notion / Cloud Wikis</span>
-            <span class="text-emerald-500 font-bold">→ Local Markdown + Obsidian / Logseq</span>
-          </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Knowledge Base Liberation</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-            Convert proprietary block-database exports into clean, flat UTF-8 Markdown directories with YAML frontmatter and standard relative WikiLinks, synced via Git or Syncthing.
-          </p>
-          <pre class="p-3 rounded-lg bg-stone-100 dark:bg-obsidian-950 font-mono text-[11px] text-slate-700 dark:text-slate-300 overflow-x-auto"># Convert HTML/Docx exports to clean CommonMark via Pandoc
-pandoc input_export.html -f html -t commonmark_x --wrap=none -o note.md</pre>
-        </div>
-
-        
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 space-y-4">
-          <div class="flex items-center justify-between font-mono text-xs">
-            <span class="text-rose-500 line-through">YNAB / Cloud Budgeting</span>
-            <span class="text-emerald-500 font-bold">→ Beancount / hledger / Actual SQLite</span>
-          </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Financial Ledger Liberation</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-            Replace subscription cloud scrapers with double-entry plain-text accounting journals or client-side SQLite databases. Verify 30 years of transactions in under 50 milliseconds offline.
-          </p>
-          <pre class="p-3 rounded-lg bg-stone-100 dark:bg-obsidian-950 font-mono text-[11px] text-slate-700 dark:text-slate-300 overflow-x-auto"># Verify mathematical ledger balance offline
-bean-checkpersonal_ledger.beancount &amp;&amp; bean-report personal_ledger.beancount balances</pre>
-        </div>
-
-        
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 space-y-4">
-          <div class="flex items-center justify-between font-mono text-xs">
-            <span class="text-rose-500 line-through">Cloud Webmail Silos</span>
-            <span class="text-emerald-500 font-bold">→ Local Maildir + isync + notmuch</span>
-          </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Communication Archive Liberation</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-            Replicate remote IMAP mailboxes into local RFC-compliant Maildir directories where every message is an individual plain-text file indexed locally via Xapian.
-          </p>
-          <pre class="p-3 rounded-lg bg-stone-100 dark:bg-obsidian-950 font-mono text-[11px] text-slate-700 dark:text-slate-300 overflow-x-auto"># Sync remote IMAP to local Maildir &amp; index for sub-10ms search
-mbsync -a &amp;&amp; notmuch new &amp;&amp; notmuch search "tag:inbox AND date:2026.."</pre>
-        </div>
-
-        
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 space-y-4">
-          <div class="flex items-center justify-between font-mono text-xs">
-            <span class="text-rose-500 line-through">Cloud CAD &amp; Proprietary EDA</span>
-            <span class="text-emerald-500 font-bold">→ OpenSCAD / CadQuery / KiCad</span>
-          </div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Hardware &amp; Mechanical Liberation</h3>
-          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-            Export locked cloud assemblies into vendor-neutral ISO 10303 STEP files, and author new parametric components as deterministic `.scad` code or KiCad S-expressions.
-          </p>
-          <pre class="p-3 rounded-lg bg-stone-100 dark:bg-obsidian-950 font-mono text-[11px] text-slate-700 dark:text-slate-300 overflow-x-auto"># Headless air-gapped compilation of parametric 3D part
-openscad -o enclosure_rev2.stl -D 'wall_thickness=2.4' enclosure.scad</pre>
-        </div>
-      </div>
-    </section>
 
   </main><footer class="site-footer mt-24">
   <div class="max-w-7xl mx-auto px-4 sm:px-8 py-16 space-y-10">
@@ -1226,12 +667,12 @@ openscad -o enclosure_rev2.stl -D 'wall_thickness=2.4' enclosure.scad</pre>
         <p class="footer-muted">Your data belongs to you. Tools that respect your time and outlive their vendors.</p>
       </div>
       <nav class="flex flex-wrap gap-x-8 gap-y-3" aria-label="Footer">
-        <a href="#manifesto" onclick="switchTab('manifesto'); return false;">Manifesto</a>
-        <a href="#index" onclick="switchTab('index'); return false;">Index</a>
-        <a href="#evaluator" onclick="switchTab('evaluator'); return false;">Evaluator</a>
-        <a href="#blueprints" onclick="switchTab('blueprints'); return false;">Blueprints</a>
-        <a href="#escape" onclick="switchTab('escape'); return false;">Escape Hatches</a>
+        <a href="/manifesto/">Manifesto</a>
+        <a href="/directory/">Index</a>
+        <a href="/evaluator/">Evaluator</a>
+        <a href="/escape-hatches/">Escape Hatches</a>
         <a href="#" onclick="exportManifestoMarkdown(); return false;">Download .md</a>
+        
       </nav>
     </div>
     <div class="footer-rule pt-6 flex flex-col sm:flex-row justify-between gap-2 footer-muted text-sm">

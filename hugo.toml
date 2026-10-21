@@ -5,10 +5,23 @@ disableKinds = ["taxonomy", "term"]
 
 [params]
   specVersion = "v2.4 (CANONICAL)"
-  subtitle = "ARCHITECTURAL CANON & INDEX"
   quote = "Your data belongs to you. Your tools should respect your time, preserve your freedom, and remain useful without depending on someone else’s infrastructure."
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[params.social]
+  # Set this to your repository URL, e.g. https://github.com/<user>/<repo>
+  githubRepo = ""
+
+
+[outputFormats.md]
+  mediaType = "text/markdown"
+  baseName = "sovereign-personal-software-manifesto"
+  isPlainText = true
+  notAlternative = true
+
+[mediaTypes."text/markdown"]
+  suffixes = ["md"]

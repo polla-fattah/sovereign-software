@@ -1,7 +1,7 @@
 [
   {
     "id": "gate1",
-    "title": "1. The Air-Gap Test (Locality)",
+    "title": "1. The Offline Test (Air-Gap)",
     "desc": "Core CRUD, compilation, and search operate 100% offline with the network interface physically disabled.",
     "failMsg": "Fails Principle II (Locality): Requires remote network connectivity or cloud authentication handshake."
   },
@@ -32,7 +32,7 @@
   {
     "id": "gate6",
     "title": "6. The Predictability Test (Determinism)",
-    "desc": "State transitions, geometry kernels, and AI assists are governed by deterministic rules and explicit user validation.",
+    "desc": "State transitions, conflict resolutions and any AI assistance follow deterministic rules and explicit user validation.",
     "failMsg": "Fails Principle III (Predictability): Vulnerable to non-deterministic state corruption or unchecked AI guesswork."
   },
   {

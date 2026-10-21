@@ -12,11 +12,11 @@
   {
     "name": "Jujutsu (jj)",
     "category": "VCS & Core",
-    "tier": "TIER_1",
-    "tierLabel": "Tier 1 • Canonical",
+    "tier": "TIER_2",
+    "tierLabel": "Tier 2 • Sovereign Core",
     "substrate": "Append-only Operation Log + Git Backend",
     "syncModel": "Git-compatible remotes / Native local",
-    "summary": "Next-generation version control where even conflicts and rebases are recorded as deterministic, first-class mathematical states in an undoable local operation log.",
+    "summary": "Next-generation version control where even conflicts and rebases are recorded as deterministic, first-class mathematical states in an undoable local operation log. Young project: the storage format is still evolving, so treat it as promising rather than canonical.",
     "extractCmd": "jj op log --limit 20"
   },
   {
@@ -36,18 +36,28 @@
     "tierLabel": "Tier 1 • Canonical",
     "substrate": "Single Standalone SQLite Database File",
     "syncModel": "Peer-to-peer HTTP/SSH sync",
-    "summary": "Engineered by the creator of SQLite. Packages version control, tickets, bug tracking, and wiki documentation into one durable SQLite file that runs an instant air-gapped web UI.",
+    "summary": "Engineered by the creator of SQLite. Packages version control, tickets, bug tracking, and wiki documentation into one durable SQLite file that runs an instant local web UI that works offline.",
     "extractCmd": "fossil ui repository.fossil"
   },
   {
-    "name": "Taskwarrior / Todo.txt",
+    "name": "Taskwarrior",
     "category": "Tasks & Finance",
     "tier": "TIER_1",
     "tierLabel": "Tier 1 • Canonical",
-    "substrate": "Plain-Text Grammar / Local State Store",
-    "syncModel": "Local Hooks / Sync Server / Syncthing",
-    "summary": "Pure execution-layer task tools. Sub-10ms CLI latency, deterministic date/priority grammars, and complete separation from long-form note bloat.",
+    "substrate": "Local task database with open JSON export",
+    "syncModel": "Local hooks / sync server / Syncthing",
+    "summary": "Command-line task manager with deterministic date and priority grammars and a complete JSON export, kept separate from long-form notes.",
     "extractCmd": "task export > commitments.json"
+  },
+  {
+    "name": "Todo.txt",
+    "category": "Tasks & Finance",
+    "tier": "TIER_1",
+    "tierLabel": "Tier 1 • Canonical",
+    "substrate": "Single plain-text file, one task per line",
+    "syncModel": "Git / Syncthing",
+    "summary": "The simplest possible task format: one line per task, with priority, project and context markers readable by any text tool.",
+    "extractCmd": "grep '^(A)' todo.txt"
   },
   {
     "name": "Beancount / hledger",
@@ -70,14 +80,24 @@
     "extractCmd": "Export standard SQLite / CSV archive"
   },
   {
-    "name": "Obsidian / Logseq",
+    "name": "Obsidian",
     "category": "Knowledge & Office",
     "tier": "TIER_2",
     "tierLabel": "Tier 2 • Sovereign Core",
     "substrate": "Local Directory of Plain Markdown (.md)",
-    "syncModel": "Decoupled (Syncthing, Git, or E2EE)",
-    "summary": "Exemplifies the 'File Over App' paradigm. Notes remain standard UTF-8 Markdown files on your local filesystem, editable simultaneously in Vim, VS Code, or bash.",
+    "syncModel": "Decoupled (Syncthing, Git, or paid first-party sync)",
+    "summary": "Notes stay as standard UTF-8 Markdown files in a local folder you can edit in Vim, VS Code or bash. The app is closed-source (free for personal use), so the open files, not the application, are what earn the entry.",
     "extractCmd": "cp -r ~/Vault /backup/plain-markdown/"
+  },
+  {
+    "name": "Logseq",
+    "category": "Knowledge & Office",
+    "tier": "TIER_2",
+    "tierLabel": "Tier 2 • Sovereign Core",
+    "substrate": "Local Directory of Markdown / Org Files",
+    "syncModel": "Decoupled (Syncthing or Git)",
+    "summary": "Open-source outliner that stores notes as plain Markdown or Org files in a local folder, so the same 'File Over App' guarantee holds without a proprietary application.",
+    "extractCmd": "cp -r ~/logseq-graph /backup/plain-markdown/"
   },
   {
     "name": "Emacs Org-Mode",
@@ -90,33 +110,43 @@
     "extractCmd": "emacs --batch file.org -f org-html-export-to-html"
   },
   {
-    "name": "Typst & Hugo",
+    "name": "Typst",
     "category": "Knowledge & Office",
     "tier": "TIER_1",
     "tierLabel": "Tier 1 • Canonical",
-    "substrate": "Plain-Text Markup (.typ, .md)",
-    "syncModel": "Single Zero-Dependency Native Binary",
-    "summary": "Deterministic document typesetting and static site compilation that pass the 100ms test—recompiling complex multi-page documents and sites in milliseconds offline.",
+    "substrate": "Plain-Text Markup (.typ)",
+    "syncModel": "Single zero-dependency native binary",
+    "summary": "Deterministic document typesetting from plain text that recompiles multi-page documents in milliseconds, offline.",
     "extractCmd": "typst compile manuscript.typ output.pdf"
+  },
+  {
+    "name": "Hugo",
+    "category": "Knowledge & Office",
+    "tier": "TIER_1",
+    "tierLabel": "Tier 1 • Canonical",
+    "substrate": "Plain-Text Markdown (.md) + TOML/YAML front matter",
+    "syncModel": "Single zero-dependency native binary",
+    "summary": "Static site generator that compiles a whole site from plain files in milliseconds, offline. This site is built with it.",
+    "extractCmd": "hugo --minify"
   },
   {
     "name": "Paperless-ngx",
     "category": "Knowledge & Office",
-    "tier": "TIER_1",
-    "tierLabel": "Tier 1 • Canonical",
+    "tier": "TIER_2",
+    "tierLabel": "Tier 2 • Sovereign Core",
     "substrate": "Pristine Original PDFs + PDF/A + SQLite",
     "syncModel": "Self-Hosted Container / Local Filesystem",
-    "summary": "Enforces the Archive Invariant: never locks or mutates original documents inside a proprietary blob. Stores untouched PDFs on disk alongside archival PDF/A files.",
+    "summary": "Enforces the Archive Invariant: never locks or mutates original documents inside a proprietary blob. Stores untouched PDFs on disk alongside archival PDF/A files. Running it normally needs Docker plus a database and other services, which is why it sits in Tier 2.",
     "extractCmd": "document_exporter ../export --no-progress-bar"
   },
   {
     "name": "LibreOffice (ODF)",
     "category": "Knowledge & Office",
-    "tier": "TIER_1",
-    "tierLabel": "Tier 1 • Canonical",
+    "tier": "TIER_2",
+    "tierLabel": "Tier 2 • Sovereign Core",
     "substrate": "ISO/IEC 26300 OpenDocument XML (.odt/.ods)",
     "syncModel": "Local Filesystem",
-    "summary": "Full desktop office suite running 100% air-gapped. Native files are standard zip containers holding documented XML (`content.xml`) extractable with basic POSIX unzip.",
+    "summary": "Full desktop office suite running 100% offline. Native files are standard zip containers holding documented XML (`content.xml`) extractable with basic POSIX unzip. The suite is large and slow to start, so it does not clearly pass the 100ms test.",
     "extractCmd": "unzip -p document.odt content.xml | xmllint --format -"
   },
   {
@@ -152,11 +182,11 @@
   {
     "name": "REAPER",
     "category": "Media & Creative",
-    "tier": "TIER_1",
-    "tierLabel": "Tier 1 • Canonical",
+    "tier": "TIER_2",
+    "tierLabel": "Tier 2 • Sovereign Core",
     "substrate": "Human-Readable ASCII Project Files (.RPP)",
-    "syncModel": "Portable Local Install (~15MB)",
-    "summary": "Professional Digital Audio Workstation with sub-millisecond performance, zero cloud DRM dongles, and plain-text project files parseable with standard text tools.",
+    "syncModel": "Portable local install (~15MB), proprietary licence",
+    "summary": "Professional Digital Audio Workstation with no cloud accounts and plain-text project files parseable with standard text tools. The application itself is closed-source and paid, which keeps it out of Tier 1.",
     "extractCmd": "grep -E 'TRACK|VOLPAN' session.RPP"
   },
   {
@@ -170,14 +200,24 @@
     "extractCmd": "darktable-cli image.RAW image.RAW.xmp export.jpg"
   },
   {
-    "name": "Pass / KeePassXC",
+    "name": "Pass",
     "category": "OS & Infra",
     "tier": "TIER_1",
     "tierLabel": "Tier 1 • Canonical",
-    "substrate": "GPG Encrypted Files / Local .kdbx Vault",
-    "syncModel": "Git / Syncthing (Zero Commercial Cloud)",
-    "summary": "Sovereign secret management. Credentials reside in user-controlled cryptographic containers on disk without trusting third-party vault servers.",
+    "substrate": "GPG-encrypted files in a plain directory",
+    "syncModel": "Git / Syncthing (no commercial cloud)",
+    "summary": "Secrets live as individual GPG-encrypted files in a directory you control, with no third-party vault server.",
     "extractCmd": "gpg -d ~/.password-store/infra/root.gpg"
+  },
+  {
+    "name": "KeePassXC",
+    "category": "OS & Infra",
+    "tier": "TIER_2",
+    "tierLabel": "Tier 2 • Sovereign Core",
+    "substrate": "Open KDBX vault (binary, documented format)",
+    "syncModel": "Git / Syncthing (no commercial cloud)",
+    "summary": "Open-source password manager with a documented, encrypted vault file on your disk. The vault is binary, not plain text, so it ranks below Pass.",
+    "extractCmd": "keepassxc-cli export --format csv vault.kdbx"
   },
   {
     "name": "Syncthing",
@@ -190,7 +230,7 @@
     "extractCmd": "syncthing cli show system"
   },
   {
-    "name": "NixOS / GNU Guix & OpenBSD",
+    "name": "NixOS / GNU Guix",
     "category": "OS & Infra",
     "tier": "TIER_1",
     "tierLabel": "Tier 1 • Canonical",
@@ -198,5 +238,15 @@
     "syncModel": "Reproducible Content-Addressed Store",
     "summary": "While mainstream OS platforms mutate global state imperatively, NixOS/Guix treat the entire operating system as a deterministic, rollback-capable function of plain text.",
     "extractCmd": "nixos-rebuild build --flake .#workstation"
+  },
+  {
+    "name": "OpenBSD",
+    "category": "OS & Infra",
+    "tier": "TIER_2",
+    "tierLabel": "Tier 2 • Sovereign Core",
+    "substrate": "Plain-text configuration files in /etc",
+    "syncModel": "Local filesystem / Git",
+    "summary": "Small, auditable operating system whose configuration lives in plain-text files. It is imperative rather than declarative, but every setting is inspectable and diffable.",
+    "extractCmd": "tar czf etc-backup.tgz /etc"
   }
 ]

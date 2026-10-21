@@ -1,0 +1,10 @@
+{{ define "main" }}
+{{/* The manifesto Markdown carries its own H1, so no page-header here. */}}
+<article class="prose-editorial manifesto mx-auto max-w-2xl">
+  {{ .Content }}
+  <p class="pt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs max-w-none">
+    <a href="{{ "/read/" | relURL }}">Read the full text →</a>
+    <a href="#" onclick="exportManifestoMarkdown(); return false;">Download full text (.md)</a>
+  </p>
+</article>
+{{ end }}

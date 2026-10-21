@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sovereign Personal Software — Manifesto, Index &amp; Engineering Standard</title>
+
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/tailwind.css">
+<style>
+  :root {
+     
+    --color-forest-ink: #003f2e;
+    --color-vivid-emerald: #039861;
+    --color-cream-canvas: #fdf9f7;
+    --color-pure-paper: #ffffff;
+    --color-ink-black: #333333;
+    --color-faded-pencil: #6e7673;
+    --color-hairline-gray: #d6d6d6;
+    --color-mid-gray: #a6a6a6;
+
+     
+    --font-pp-mori: 'PP Mori', 'General Sans', 'DM Serif Display', Georgia, serif;
+    --font-inter: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+     
+    --text-body: 16px;        --leading-body: 1.4;        --tracking-body: -0.48px;
+    --text-body-lg: 18px;     --leading-body-lg: 1.4;     --tracking-body-lg: -0.54px;
+    --text-subheading: 20px;  --leading-subheading: 1.3;  --tracking-subheading: -0.6px;
+    --text-heading-sm: 24px;  --leading-heading-sm: 1.3;  --tracking-heading-sm: -0.72px;
+    --text-heading: 52px;     --leading-heading: 1;
+    --text-heading-lg: 64px;  --leading-heading-lg: 1;
+    --text-display: 66px;     --leading-display: 0.95;
+
+     
+    --spacing-4: 4px; --spacing-8: 8px; --spacing-20: 20px; --spacing-32: 32px;
+    --spacing-40: 40px; --spacing-48: 48px; --spacing-64: 64px; --spacing-80: 80px;
+    --spacing-96: 96px; --spacing-180: 180px;
+
+     
+    --page-max-width: 1200px;
+    --section-gap: 64px;
+    --element-gap: 20px;
+
+     
+    --radius-full: 800px;
+    --radius-tags: 800px;
+    --radius-cards: 0px;
+    --radius-logos: 800px;
+    --radius-buttons: 800px;
+  }
+
+   
+  html, body { background: var(--color-cream-canvas) !important; }
+  body {
+    font-family: var(--font-inter);
+    color: var(--color-ink-black);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+    letter-spacing: -0.03em;
+  }
+  ::selection { background: #c3e3d2; color: var(--color-forest-ink); }
+
+   
+  .max-w-7xl { max-width: var(--page-max-width) !important; }
+
+   
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-pp-mori) !important;
+    font-weight: 600;
+    color: var(--color-forest-ink);
+    letter-spacing: 0;
+    font-style: normal !important;
+  }
+  h1 { line-height: var(--leading-display) !important; }
+  h2 { line-height: var(--leading-heading) !important; }
+  h3 { line-height: 1.2 !important; }
+  h4, h5, h6 { font-family: var(--font-inter); font-weight: 700; color: var(--color-forest-ink); letter-spacing: -0.03em; }
+  .text-5xl, .text-6xl { font-size: clamp(40px, 6vw, var(--text-display)) !important; line-height: var(--leading-display) !important; }
+  .text-4xl { font-size: clamp(36px, 5vw, var(--text-heading)) !important; line-height: 1 !important; }
+
+   
+  .font-mono:not(pre):not(code) { font-family: var(--font-inter) !important; letter-spacing: -0.03em; }
+  pre, code, pre *, code * { font-family: 'JetBrains Mono', monospace !important; letter-spacing: 0; }
+  .uppercase { letter-spacing: 0.02em; }
+
+
+   
+  .prose-editorial > * + * { margin-top: 1.25rem; }
+  .prose-editorial h1 { font-size: clamp(2.25rem, 5vw, 3.25rem); line-height: 1.1; margin-bottom: 1.5rem; }
+  .prose-editorial h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-hairline-gray); }
+  .prose-editorial h3 { font-size: 1.35rem; margin-top: 2.25rem; }
+  .prose-editorial h1, .prose-editorial h2, .prose-editorial h3 { font-weight: 700; color: var(--color-forest-ink); letter-spacing: -0.02em; }
+  .prose-editorial ul, .prose-editorial ol { max-width: 640px; padding-left: 1.5rem; }
+  .prose-editorial ul { list-style: disc; }
+  .prose-editorial ol { list-style: decimal; }
+  .prose-editorial li { font-size: var(--text-body-lg); line-height: var(--leading-body-lg); padding-left: 0.25rem; }
+  .prose-editorial li + li { margin-top: 0.6rem; }
+  .prose-editorial li::marker { color: var(--color-vivid-emerald); font-weight: 600; }
+  .prose-editorial strong { font-weight: 700; color: var(--color-forest-ink); }
+  .prose-editorial blockquote, .reading > blockquote { max-width: 640px; border-left: 3px solid var(--color-vivid-emerald); padding-left: 1.25rem; font-style: italic; font-size: 1.25rem; line-height: 1.5; }
+  .prose-editorial hr { border: 0; border-top: 1px solid var(--color-hairline-gray); margin: 2.5rem 0; max-width: 640px; }
+  .prose-editorial a { text-decoration: underline; text-underline-offset: 3px; }
+  .prose-editorial em { font-style: italic; }
+
+   
+  sup { font-size: 0.75em; line-height: 0; vertical-align: super; }
+  sup a, a.cite { text-decoration: none; color: var(--color-vivid-emerald); font-weight: 600; }
+  sup a.footnote-ref::before { content: "["; } sup a.footnote-ref::after { content: "]"; }
+  .footnotes { max-width: 640px; }
+  .footnotes hr { display: none; }
+  .footnotes ol { list-style: decimal; padding-left: 1.75rem; }
+  .footnotes li { font-size: 0.95rem; line-height: 1.55; }
+  .footnotes li::marker { color: var(--color-vivid-emerald); font-weight: 600; }
+  .footnotes li p { font-size: inherit; display: inline; }
+  .footnote-backref { text-decoration: none; margin-left: .35rem; }
+  :target { scroll-margin-top: 5rem; }
+
+   
+  .prose-editorial p, main article p { max-width: 640px; font-size: var(--text-body-lg); line-height: var(--leading-body-lg); }
+
+   
+  *, *::before, *::after { box-shadow: none !important; text-shadow: none !important; }
+  [class*="bg-gradient"] { background-image: none !important; }
+
+   
+  .rounded, .rounded-md, .rounded-lg, .rounded-xl, .rounded-2xl, .rounded-3xl { border-radius: var(--radius-cards) !important; }
+  button, button[class], select, select[class], input[type="search"], input[type="text"][class], .rounded-full,
+  a.rounded, a.rounded-lg, a.rounded-xl, span.rounded, span.rounded-lg, span.rounded-md {
+    border-radius: var(--radius-buttons) !important;
+  }
+   
+  header .w-9.h-9 { border-radius: var(--radius-logos) !important; }
+   
+  .bg-white { background-color: var(--color-pure-paper) !important; }
+  .border-slate-200, .border-slate-300 { border-color: var(--color-hairline-gray) !important; }
+
+   
+  button {
+    background-color: transparent !important;
+    border: 1px solid var(--color-hairline-gray);
+    color: var(--color-forest-ink);
+    font-family: var(--font-inter) !important;
+    font-weight: 500;
+    transition: border-color .15s, color .15s;
+  }
+  button:hover { border-color: var(--color-vivid-emerald) !important; color: var(--color-forest-ink) !important; }
+   
+  button[class*="bg-amber-500"], button[class*="bg-slate-900"], button[class*="bg-emerald-500"],
+  .nav-btn[class*="border-amber"], .cat-btn[class*="bg-amber-500"] {
+    border: 1px solid var(--color-vivid-emerald) !important;
+    color: var(--color-forest-ink) !important;
+  }
+  .bg-amber-500, .bg-slate-900 { background-color: transparent !important; color: var(--color-forest-ink) !important; border: 1px solid var(--color-forest-ink); }
+   
+  .h-full.bg-amber-500, .h-full.bg-emerald-500 { background-color: var(--color-vivid-emerald) !important; border: 0; }
+   
+  [class*="bg-amber-500/"], [class*="bg-emerald-500/"] { background-color: transparent !important; }
+
+   
+  main p a, main li a, .prose a {
+    color: var(--color-vivid-emerald);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-vivid-emerald);
+  }
+  main p a:hover, main li a:hover { color: var(--color-forest-ink); border-color: var(--color-forest-ink); }
+
+   
+  .rounded-full.border, span.rounded.border, span.rounded-md.border {
+    border-color: var(--color-forest-ink) !important;
+    color: var(--color-forest-ink) !important;
+    background: transparent !important;
+  }
+
+   
+  hr { border: 0; border-top: 1px solid var(--color-hairline-gray); margin: var(--spacing-48) 0; }
+  hr.rule-emphasis { border-top-color: var(--color-vivid-emerald); }
+
+   
+  details { border-top: 1px solid var(--color-hairline-gray); padding: var(--spacing-20) 0; }
+  details > summary { font-weight: 700; color: var(--color-forest-ink); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: var(--spacing-20); }
+  details > summary::-webkit-details-marker { display: none; }
+  details > summary::after {
+    content: '+'; flex: none; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid var(--color-forest-ink); border-radius: var(--radius-full); font-weight: 400;
+  }
+  details[open] > summary::after { content: '\2212'; }
+
+   
+  header.sticky { background: rgba(253, 249, 247, 0.96) !important; border-color: var(--color-hairline-gray) !important; }
+
+   
+  .site-footer { background: var(--color-forest-ink); color: var(--color-cream-canvas); }
+  .site-footer .footer-wordmark { font-family: var(--font-pp-mori); font-weight: 600; font-size: var(--text-heading-sm); line-height: 1.1; letter-spacing: 0; }
+  .site-footer .footer-muted { color: rgba(253, 249, 247, 0.7); }
+  .site-footer nav a { color: var(--color-cream-canvas); font-weight: 500; text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: border-color .15s; }
+  .site-footer nav a:hover { border-bottom-color: var(--color-cream-canvas); }
+  .site-footer .footer-rule { border-top: 1px solid rgba(253, 249, 247, 0.2); }
+
+   
+  .github-link { width: 36px; height: 36px; align-items: center; justify-content: center; margin-left: 8px;
+    border: 1px solid var(--color-hairline-gray); border-radius: var(--radius-logos); color: var(--color-forest-ink); transition: border-color .15s; }
+  .github-link:hover { border-color: var(--color-vivid-emerald); }
+
+   
+  input[type="checkbox"] { accent-color: var(--color-vivid-emerald); }
+
+   
+  .reading { max-width: 42rem; margin-inline: auto; font-size: 1.125rem; line-height: 1.75; }
+  @media print {
+    header.sticky, .site-footer, #toast, .no-print { display: none !important; }
+    body { background: #fff !important; color: #000 !important; }
+    main { padding: 0 !important; max-width: none !important; }
+    .reading { font-size: 11pt; line-height: 1.5; max-width: none; }
+    .reading h2 { break-after: avoid; } .reading h3 { break-after: avoid; }
+    .reading p, .reading li { orphans: 3; widows: 3; }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body class="bg-stone-50 dark:bg-obsidian-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-amber-500/20 selection:text-amber-900 transition-colors duration-200 min-h-screen flex flex-col">
+<header class="sticky top-0 z-40 border-b border-slate-200 dark:border-slate-800/90 bg-stone-50/90 dark:bg-obsidian-950/90 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center space-x-3">
+      <div class="w-9 h-9 rounded-lg bg-slate-900 dark:bg-amber-500 flex items-center justify-center text-white dark:text-obsidian-950 font-mono font-bold text-lg shadow-sm">§</div>
+      <div>
+        <span class="font-mono text-sm font-bold tracking-wider uppercase block leading-none">Sovereign.Software</span>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center space-x-1 font-mono text-xs">
+      <a href="/manifesto/" class="nav-btn px-3.5 py-2 rounded-lg font-medium border text-slate-600 hover:text-slate-900 border-transparent">The Manifesto</a>
+      <a href="/directory/" class="nav-btn px-3.5 py-2 rounded-lg font-medium border bg-amber-500/15 text-amber-600 border-amber-500/30">Sovereign Index</a>
+      <a href="/evaluator/" class="nav-btn px-3.5 py-2 rounded-lg font-medium border text-slate-600 hover:text-slate-900 border-transparent">7-Gate Evaluator</a>
+      <a href="/escape-hatches/" class="nav-btn px-3.5 py-2 rounded-lg font-medium border text-slate-600 hover:text-slate-900 border-transparent">Escape Hatches</a>
+    </nav>
+
+    <button onclick="exportManifestoMarkdown()" title="Export manifesto as Markdown" class="hidden md:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium border border-slate-300 transition-colors">↓ .MD</button>
+
+    
+
+    <div class="md:hidden flex items-center">
+      <select onchange="location.href=this.value" id="mobile-nav-select" aria-label="Section navigation" class="bg-white dark:bg-obsidian-800 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-1.5 font-mono text-xs text-slate-800 dark:text-slate-100">
+        <option value="/manifesto/">The Manifesto</option>
+        <option value="/directory/" selected>Sovereign Index</option>
+        <option value="/evaluator/">7-Gate Evaluator</option>
+        <option value="/escape-hatches/">Escape Hatches</option>
+      </select>
+      <button onclick="exportManifestoMarkdown()" aria-label="Export manifesto as Markdown" class="ml-2 px-3 py-1.5 text-xs font-medium border border-slate-300">↓ .MD</button>
+    </div>
+  </div>
+</header>
+
+<div id="toast" class="fixed bottom-6 right-6 z-50 hidden transform transition-all duration-300 bg-slate-900 dark:bg-amber-500 text-white dark:text-obsidian-950 font-mono text-xs font-semibold px-4 py-3 rounded-lg shadow-xl border border-slate-700 dark:border-amber-400 flex items-center gap-2">
+  <span>✓</span>
+  <span id="toast-message">Copied to clipboard</span>
+</div><main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-8 py-8 sm:py-12">
+<script>window.DIRECTORY_ITEMS = [{"category":"VCS \u0026 Core","extractCmd":"git bundle create repo.bundle --all","name":"Git","substrate":"Content-Addressable Merkle DAG (.git)","summary":"The archetype of sovereign software. Full commit history lives on your local disk, verified via cryptographic hashes, with 100% offline branching, diffing, and merging.","syncModel":"Decentralized SSH / HTTPS push-pull","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"VCS \u0026 Core","extractCmd":"jj op log --limit 20","name":"Jujutsu (jj)","substrate":"Append-only Operation Log + Git Backend","summary":"Next-generation version control where even conflicts and rebases are recorded as deterministic, first-class mathematical states in an undoable local operation log. Young project: the storage format is still evolving, so treat it as promising rather than canonical.","syncModel":"Git-compatible remotes / Native local","tier":"TIER_2","tierLabel":"Tier 2 • Sovereign Core"},{"category":"VCS \u0026 Core","extractCmd":"sqlite3 data.db .dump \u003e archive.sql","name":"SQLite","substrate":"Single Cross-Platform B-Tree Disk File","summary":"Library of Congress permanent archival standard. Delivers microsecond local queries with zero server daemons, zero configuration, and guaranteed backward compatibility through 2050.","syncModel":"Local Embedded Engine (Zero Network)","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"VCS \u0026 Core","extractCmd":"fossil ui repository.fossil","name":"Fossil SCM","substrate":"Single Standalone SQLite Database File","summary":"Engineered by the creator of SQLite. Packages version control, tickets, bug tracking, and wiki documentation into one durable SQLite file that runs an instant local web UI that works offline.","syncModel":"Peer-to-peer HTTP/SSH sync","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"Tasks \u0026 Finance","extractCmd":"task export \u003e commitments.json","name":"Taskwarrior","substrate":"Local task database with open JSON export","summary":"Command-line task manager with deterministic date and priority grammars and a complete JSON export, kept separate from long-form notes.","syncModel":"Local hooks / sync server / Syncthing","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"Tasks \u0026 Finance","extractCmd":"grep '^(A)' todo.txt","name":"Todo.txt","substrate":"Single plain-text file, one task per line","summary":"The simplest possible task format: one line per task, with priority, project and context markers readable by any text tool.","syncModel":"Git / Syncthing","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"Tasks \u0026 Finance","extractCmd":"bean-query ledger.beancount 'SELECT account, sum(position)'","name":"Beancount / hledger","substrate":"UTF-8 Plain-Text Double-Entry Ledgers","summary":"Plain-Text Accounting (PTA). Enforces strict double-entry mathematical invariants locally without bank scraping breakages or recurring cloud subscriptions.","syncModel":"Git Version Control / File Sync","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"Tasks \u0026 Finance","extractCmd":"Export standard SQLite / CSV archive","name":"Actual Budget","substrate":"Client-Side SQLite + Merkle CRDTs","summary":"Local-first zero-based budgeting. Runs entirely offline against a local SQLite database and synchronizes across devices via verifiable Hybrid Logical Clock CRDT messages.","syncModel":"Self-Hosted Docker Sync with E2EE","tier":"TIER_2","tierLabel":"Tier 2 • Sovereign Core"},{"category":"Knowledge \u0026 Office","extractCmd":"cp -r ~/Vault /backup/plain-markdown/","name":"Obsidian","substrate":"Local Directory of Plain Markdown (.md)","summary":"Notes stay as standard UTF-8 Markdown files in a local folder you can edit in Vim, VS Code or bash. The app is closed-source (free for personal use), so the open files, not the application, are what earn the entry.","syncModel":"Decoupled (Syncthing, Git, or paid first-party sync)","tier":"TIER_2","tierLabel":"Tier 2 • Sovereign Core"},{"category":"Knowledge \u0026 Office","extractCmd":"cp -r ~/logseq-graph /backup/plain-markdown/","name":"Logseq","substrate":"Local Directory of Markdown / Org Files","summary":"Open-source outliner that stores notes as plain Markdown or Org files in a local folder, so the same 'File Over App' guarantee holds without a proprietary application.","syncModel":"Decoupled (Syncthing or Git)","tier":"TIER_2","tierLabel":"Tier 2 • Sovereign Core"},{"category":"Knowledge \u0026 Office","extractCmd":"emacs --batch file.org -f org-html-export-to-html","name":"Emacs Org-Mode","substrate":"Plain-Text .org Outlines","summary":"The grand-ancestor of sovereign personal computing. Unifies structured prose, deterministic agendas, tables, and literate programming inside immortal plain text.","syncModel":"Git / rsync / Syncthing","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"Knowledge \u0026 Office","extractCmd":"typst compile manuscript.typ output.pdf","name":"Typst","substrate":"Plain-Text Markup (.typ)","summary":"Deterministic document typesetting from plain text that recompiles multi-page documents in milliseconds, offline.","syncModel":"Single zero-dependency native binary","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"Knowledge \u0026 Office","extractCmd":"hugo --minify","name":"Hugo","substrate":"Plain-Text Markdown (.md) + TOML/YAML front matter","summary":"Static site generator that compiles a whole site from plain files in milliseconds, offline. This site is built with it.","syncModel":"Single zero-dependency native binary","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"Knowledge \u0026 Office","extractCmd":"document_exporter ../export --no-progress-bar","name":"Paperless-ngx","substrate":"Pristine Original PDFs + PDF/A + SQLite","summary":"Enforces the Archive Invariant: never locks or mutates original documents inside a proprietary blob. Stores untouched PDFs on disk alongside archival PDF/A files. Running it normally needs Docker plus a database and other services, which is why it sits in Tier 2.","syncModel":"Self-Hosted Container / Local Filesystem","tier":"TIER_2","tierLabel":"Tier 2 • Sovereign Core"},{"category":"Knowledge \u0026 Office","extractCmd":"unzip -p document.odt content.xml | xmllint --format -","name":"LibreOffice (ODF)","substrate":"ISO/IEC 26300 OpenDocument XML (.odt/.ods)","summary":"Full desktop office suite running 100% offline. Native files are standard zip containers holding documented XML (`content.xml`) extractable with basic POSIX unzip. The suite is large and slow to start, so it does not clearly pass the 100ms test.","syncModel":"Local Filesystem","tier":"TIER_2","tierLabel":"Tier 2 • Sovereign Core"},{"category":"Engineering \u0026 CAD","extractCmd":"openscad -o part.stl model.scad","name":"OpenSCAD","substrate":"Programmatic CSG Plain-Text Scripts (.scad)","summary":"Code-first 3D solid modeling. Eliminates the non-deterministic Topological Naming Problem of GUI CAD kernels; identical script inputs yield identical meshes.","syncModel":"Git Version Control","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"Engineering \u0026 CAD","extractCmd":"kicad-cli pcb export gerbers board.kicad_pcb","name":"KiCad","substrate":"Plain-Text S-Expressions (.kicad_sch/.kicad_pcb)","summary":"Electronic schematic capture and PCB design suite where every net, footprint, and trace is stored in human-readable S-expressions with zero cloud licensing.","syncModel":"Git / Local Vendor Libraries","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"Engineering \u0026 CAD","extractCmd":"ngspice -b -r rawfile.raw circuit.cir","name":"NGSPICE","substrate":"Plain-Text SPICE Netlists (.cir / .sp)","summary":"Deterministic analog and mixed-signal circuit simulator solving differential equations directly from human-readable netlists without network dependencies.","syncModel":"Standalone POSIX CLI","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"Media \u0026 Creative","extractCmd":"grep -E 'TRACK|VOLPAN' session.RPP","name":"REAPER","substrate":"Human-Readable ASCII Project Files (.RPP)","summary":"Professional Digital Audio Workstation with no cloud accounts and plain-text project files parseable with standard text tools. The application itself is closed-source and paid, which keeps it out of Tier 1.","syncModel":"Portable local install (~15MB), proprietary licence","tier":"TIER_2","tierLabel":"Tier 2 • Sovereign Core"},{"category":"Media \u0026 Creative","extractCmd":"darktable-cli image.RAW image.RAW.xmp export.jpg","name":"Darktable","substrate":"Immutable RAW + ISO Standard .xmp Sidecars","summary":"Non-destructive raw photography workflow. Never alters original sensor data; all exposure curves and crops reside in sibling XML sidecar files.","syncModel":"Local Disk Hierarchy","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"OS \u0026 Infra","extractCmd":"gpg -d ~/.password-store/infra/root.gpg","name":"Pass","substrate":"GPG-encrypted files in a plain directory","summary":"Secrets live as individual GPG-encrypted files in a directory you control, with no third-party vault server.","syncModel":"Git / Syncthing (no commercial cloud)","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"OS \u0026 Infra","extractCmd":"keepassxc-cli export --format csv vault.kdbx","name":"KeePassXC","substrate":"Open KDBX vault (binary, documented format)","summary":"Open-source password manager with a documented, encrypted vault file on your disk. The vault is binary, not plain text, so it ranks below Pass.","syncModel":"Git / Syncthing (no commercial cloud)","tier":"TIER_2","tierLabel":"Tier 2 • Sovereign Core"},{"category":"OS \u0026 Infra","extractCmd":"syncthing cli show system","name":"Syncthing","substrate":"Direct Peer-to-Peer Block Exchange (BEP)","summary":"The canonical decoupled synchronization layer. Replicates folders across devices with cryptographic device IDs and explicit conflict file preservation.","syncModel":"End-to-End TLS over LAN / Relay","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"OS \u0026 Infra","extractCmd":"nixos-rebuild build --flake .#workstation","name":"NixOS / GNU Guix","substrate":"Declarative Plain-Text System Configs","summary":"While mainstream OS platforms mutate global state imperatively, NixOS/Guix treat the entire operating system as a deterministic, rollback-capable function of plain text.","syncModel":"Reproducible Content-Addressed Store","tier":"TIER_1","tierLabel":"Tier 1 • Canonical"},{"category":"OS \u0026 Infra","extractCmd":"tar czf etc-backup.tgz /etc","name":"OpenBSD","substrate":"Plain-text configuration files in /etc","summary":"Small, auditable operating system whose configuration lives in plain-text files. It is imperative rather than declarative, but every setting is inspectable and diffable.","syncModel":"Local filesystem / Git","tier":"TIER_2","tierLabel":"Tier 2 • Sovereign Core"}];</script>
+<div class="space-y-10">
+  
+  <header class="pt-4 pb-10 mb-10 border-b border-slate-200 space-y-4 max-w-3xl">
+  <h1 class="text-4xl sm:text-5xl">The Sovereign Software Index</h1>
+  <p class="text-lg text-slate-600">Tools that pass the seven gates, grouped by discipline.</p>
+</header>
+
+<div class="prose-editorial max-w-3xl mb-10"><p>These tools were assessed against the seven gates in the manifesto: open, inspectable data formats, full function offline, and the ability to leave without losing anything. The tiers are editorial judgments, not formal audits.</p>
+<p>Use the search box and category filters to narrow the list. Every card shows where the tool keeps your data and the command that extracts it.</p>
+</div>
+
+  <div class="space-y-4 border-b border-slate-200 pb-8">
+    <input type="search" id="dir-search" oninput="renderDirectory()" placeholder="Search tools or formats" aria-label="Search tools" class="w-full sm:w-80 px-4 py-2 bg-white border border-slate-300 text-sm focus:outline-none focus:border-amber-500" />
+    <div class="flex flex-wrap gap-2 text-sm" id="category-filters">
+      <button onclick="filterDirectory('ALL')" data-cat="ALL" class="cat-btn px-3 py-1.5 rounded-lg bg-amber-500 text-obsidian-950 font-semibold">All</button>
+      <button onclick="filterDirectory('VCS & Core')" data-cat="VCS & Core" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">VCS & Databases</button>
+      <button onclick="filterDirectory('Knowledge & Office')" data-cat="Knowledge & Office" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">Knowledge & Office</button>
+      <button onclick="filterDirectory('Tasks & Finance')" data-cat="Tasks & Finance" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">Tasks & Finance</button>
+      <button onclick="filterDirectory('Engineering & CAD')" data-cat="Engineering & CAD" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">Engineering & CAD</button>
+      <button onclick="filterDirectory('Media & Creative')" data-cat="Media & Creative" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">Audio & Creative</button>
+      <button onclick="filterDirectory('OS & Infra')" data-cat="OS & Infra" class="cat-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-obsidian-800 text-slate-600 dark:text-slate-300">OS & Infrastructure</button>
+    </div>
+  </div>
+
+  
+  <div id="directory-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">VCS &amp; Core</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Git</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">The archetype of sovereign software. Full commit history lives on your local disk, verified via cryptographic hashes, with 100% offline branching, diffing, and merging.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Content-Addressable Merkle DAG (.git)</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Decentralized SSH / HTTPS push-pull</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ git bundle create repo.bundle --all</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">VCS &amp; Core</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 2 • Sovereign Core</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Jujutsu (jj)</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Next-generation version control where even conflicts and rebases are recorded as deterministic, first-class mathematical states in an undoable local operation log. Young project: the storage format is still evolving, so treat it as promising rather than canonical.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Append-only Operation Log &#43; Git Backend</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Git-compatible remotes / Native local</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ jj op log --limit 20</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">VCS &amp; Core</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">SQLite</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Library of Congress permanent archival standard. Delivers microsecond local queries with zero server daemons, zero configuration, and guaranteed backward compatibility through 2050.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Single Cross-Platform B-Tree Disk File</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Local Embedded Engine (Zero Network)</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ sqlite3 data.db .dump &gt; archive.sql</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">VCS &amp; Core</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Fossil SCM</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Engineered by the creator of SQLite. Packages version control, tickets, bug tracking, and wiki documentation into one durable SQLite file that runs an instant local web UI that works offline.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Single Standalone SQLite Database File</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Peer-to-peer HTTP/SSH sync</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ fossil ui repository.fossil</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Tasks &amp; Finance</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Taskwarrior</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Command-line task manager with deterministic date and priority grammars and a complete JSON export, kept separate from long-form notes.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Local task database with open JSON export</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Local hooks / sync server / Syncthing</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ task export &gt; commitments.json</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Tasks &amp; Finance</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Todo.txt</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">The simplest possible task format: one line per task, with priority, project and context markers readable by any text tool.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Single plain-text file, one task per line</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Git / Syncthing</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ grep &#39;^(A)&#39; todo.txt</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Tasks &amp; Finance</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Beancount / hledger</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Plain-Text Accounting (PTA). Enforces strict double-entry mathematical invariants locally without bank scraping breakages or recurring cloud subscriptions.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">UTF-8 Plain-Text Double-Entry Ledgers</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Git Version Control / File Sync</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ bean-query ledger.beancount &#39;SELECT account, sum(position)&#39;</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Tasks &amp; Finance</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 2 • Sovereign Core</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Actual Budget</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Local-first zero-based budgeting. Runs entirely offline against a local SQLite database and synchronizes across devices via verifiable Hybrid Logical Clock CRDT messages.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Client-Side SQLite &#43; Merkle CRDTs</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Self-Hosted Docker Sync with E2EE</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ Export standard SQLite / CSV archive</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Knowledge &amp; Office</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 2 • Sovereign Core</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Obsidian</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Notes stay as standard UTF-8 Markdown files in a local folder you can edit in Vim, VS Code or bash. The app is closed-source (free for personal use), so the open files, not the application, are what earn the entry.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Local Directory of Plain Markdown (.md)</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Decoupled (Syncthing, Git, or paid first-party sync)</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ cp -r ~/Vault /backup/plain-markdown/</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Knowledge &amp; Office</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 2 • Sovereign Core</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Logseq</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Open-source outliner that stores notes as plain Markdown or Org files in a local folder, so the same &#39;File Over App&#39; guarantee holds without a proprietary application.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Local Directory of Markdown / Org Files</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Decoupled (Syncthing or Git)</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ cp -r ~/logseq-graph /backup/plain-markdown/</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Knowledge &amp; Office</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Emacs Org-Mode</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">The grand-ancestor of sovereign personal computing. Unifies structured prose, deterministic agendas, tables, and literate programming inside immortal plain text.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Plain-Text .org Outlines</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Git / rsync / Syncthing</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ emacs --batch file.org -f org-html-export-to-html</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Knowledge &amp; Office</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Typst</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Deterministic document typesetting from plain text that recompiles multi-page documents in milliseconds, offline.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Plain-Text Markup (.typ)</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Single zero-dependency native binary</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ typst compile manuscript.typ output.pdf</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Knowledge &amp; Office</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Hugo</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Static site generator that compiles a whole site from plain files in milliseconds, offline. This site is built with it.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Plain-Text Markdown (.md) &#43; TOML/YAML front matter</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Single zero-dependency native binary</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ hugo --minify</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Knowledge &amp; Office</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 2 • Sovereign Core</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Paperless-ngx</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Enforces the Archive Invariant: never locks or mutates original documents inside a proprietary blob. Stores untouched PDFs on disk alongside archival PDF/A files. Running it normally needs Docker plus a database and other services, which is why it sits in Tier 2.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Pristine Original PDFs &#43; PDF/A &#43; SQLite</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Self-Hosted Container / Local Filesystem</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ document_exporter ../export --no-progress-bar</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Knowledge &amp; Office</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 2 • Sovereign Core</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">LibreOffice (ODF)</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Full desktop office suite running 100% offline. Native files are standard zip containers holding documented XML (`content.xml`) extractable with basic POSIX unzip. The suite is large and slow to start, so it does not clearly pass the 100ms test.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">ISO/IEC 26300 OpenDocument XML (.odt/.ods)</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Local Filesystem</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ unzip -p document.odt content.xml | xmllint --format -</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Engineering &amp; CAD</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">OpenSCAD</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Code-first 3D solid modeling. Eliminates the non-deterministic Topological Naming Problem of GUI CAD kernels; identical script inputs yield identical meshes.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Programmatic CSG Plain-Text Scripts (.scad)</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Git Version Control</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ openscad -o part.stl model.scad</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Engineering &amp; CAD</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">KiCad</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Electronic schematic capture and PCB design suite where every net, footprint, and trace is stored in human-readable S-expressions with zero cloud licensing.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Plain-Text S-Expressions (.kicad_sch/.kicad_pcb)</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Git / Local Vendor Libraries</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ kicad-cli pcb export gerbers board.kicad_pcb</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Engineering &amp; CAD</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">NGSPICE</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Deterministic analog and mixed-signal circuit simulator solving differential equations directly from human-readable netlists without network dependencies.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Plain-Text SPICE Netlists (.cir / .sp)</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Standalone POSIX CLI</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ ngspice -b -r rawfile.raw circuit.cir</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Media &amp; Creative</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 2 • Sovereign Core</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">REAPER</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Professional Digital Audio Workstation with no cloud accounts and plain-text project files parseable with standard text tools. The application itself is closed-source and paid, which keeps it out of Tier 1.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Human-Readable ASCII Project Files (.RPP)</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Portable local install (~15MB), proprietary licence</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ grep -E &#39;TRACK|VOLPAN&#39; session.RPP</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Media &amp; Creative</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Darktable</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Non-destructive raw photography workflow. Never alters original sensor data; all exposure curves and crops reside in sibling XML sidecar files.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Immutable RAW &#43; ISO Standard .xmp Sidecars</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Local Disk Hierarchy</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ darktable-cli image.RAW image.RAW.xmp export.jpg</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">OS &amp; Infra</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Pass</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Secrets live as individual GPG-encrypted files in a directory you control, with no third-party vault server.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">GPG-encrypted files in a plain directory</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Git / Syncthing (no commercial cloud)</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ gpg -d ~/.password-store/infra/root.gpg</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">OS &amp; Infra</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 2 • Sovereign Core</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">KeePassXC</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Open-source password manager with a documented, encrypted vault file on your disk. The vault is binary, not plain text, so it ranks below Pass.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Open KDBX vault (binary, documented format)</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Git / Syncthing (no commercial cloud)</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ keepassxc-cli export --format csv vault.kdbx</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">OS &amp; Infra</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Syncthing</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">The canonical decoupled synchronization layer. Replicates folders across devices with cryptographic device IDs and explicit conflict file preservation.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Direct Peer-to-Peer Block Exchange (BEP)</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">End-to-End TLS over LAN / Relay</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ syncthing cli show system</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">OS &amp; Infra</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 1 • Canonical</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">NixOS / GNU Guix</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">While mainstream OS platforms mutate global state imperatively, NixOS/Guix treat the entire operating system as a deterministic, rollback-capable function of plain text.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Declarative Plain-Text System Configs</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Reproducible Content-Addressed Store</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ nixos-rebuild build --flake .#workstation</code></div>
+      </div>
+    </div>
+    
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 flex flex-col justify-between space-y-5">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">OS &amp; Infra</span>
+          <span class="px-2.5 py-0.5 rounded-full font-mono text-[11px] font-semibold border bg-emerald-500/15 text-emerald-400 border-emerald-500/30">Tier 2 • Sovereign Core</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white">OpenBSD</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Small, auditable operating system whose configuration lives in plain-text files. It is imperative rather than declarative, but every setting is inspectable and diffable.</p>
+      </div>
+      <div class="space-y-2.5 pt-4 border-t border-slate-200 dark:border-slate-800 font-mono text-xs">
+        <div><span class="text-slate-400 block text-[10px]">STORAGE SUBSTRATE:</span><span class="text-slate-800 dark:text-slate-200 font-medium">Plain-text configuration files in /etc</span></div>
+        <div><span class="text-slate-400 block text-[10px]">SYNCHRONIZATION / RUNTIME:</span><span class="text-slate-700 dark:text-slate-300">Local filesystem / Git</span></div>
+        <div class="p-2.5 rounded-lg bg-stone-100 dark:bg-obsidian-950 border border-slate-200 dark:border-slate-800/80 text-[11px] text-amber-700 dark:text-amber-400 overflow-x-auto"><code>$ tar czf etc-backup.tgz /etc</code></div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+  </main><footer class="site-footer mt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-8 py-16 space-y-10">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+      <div class="space-y-3 max-w-md">
+        <div class="footer-wordmark">Sovereign Software</div>
+        <p class="footer-muted">Your data belongs to you. Tools that respect your time and outlive their vendors.</p>
+      </div>
+      <nav class="flex flex-wrap gap-x-8 gap-y-3" aria-label="Footer">
+        <a href="/manifesto/">Manifesto</a>
+        <a href="/directory/">Index</a>
+        <a href="/evaluator/">Evaluator</a>
+        <a href="/escape-hatches/">Escape Hatches</a>
+        <a href="#" onclick="exportManifestoMarkdown(); return false;">Download .md</a>
+        
+      </nav>
+    </div>
+    <div class="footer-rule pt-6 flex flex-col sm:flex-row justify-between gap-2 footer-muted text-sm">
+      <span>© 2026 Sovereign Personal Software</span>
+      <span>Built with Hugo · No trackers · No cookies</span>
+    </div>
+  </div>
+</footer>
+<script src="/js/sovereign.js"></script>
+</body>
+</html>
