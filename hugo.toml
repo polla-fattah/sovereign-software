@@ -1,4 +1,4 @@
-baseURL = "https://polla.dev/sovereign-software/"
+baseURL = "https://sovereign.polla.dev/"
 locale = "en-us"
 title = "Sovereign Personal Software: Manifesto, Index & Engineering Standard"
 disableKinds = ["taxonomy", "term", "RSS"]
