@@ -14,7 +14,7 @@ disableKinds = ["taxonomy", "term"]
 
 [params.social]
   # Set this to your repository URL, e.g. https://github.com/<user>/<repo>
-  githubRepo = ""
+  githubRepo = "https://github.com/polla-fattah/sovereign-software"
 
 
 [outputFormats.md]

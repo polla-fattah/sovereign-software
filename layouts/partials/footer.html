@@ -12,7 +12,7 @@
         <a href="{{ "/escape-hatches/" | relURL }}">Escape Hatches</a>
         <a href="#" onclick="exportManifestoMarkdown(); return false;">Download .md</a>
         {{ with .Site.Params.social.githubRepo }}
-        <a href="{{ . }}" target="_blank" rel="noopener" class="inline-flex items-center gap-2">{{ partial "github-icon.html" "w-4 h-4" }}GitHub</a>
+        <a href="{{ . }}" target="_blank" rel="noopener" class="inline-flex items-center" aria-label="Source on GitHub" title="Source on GitHub">{{ partial "github-icon.html" "w-5 h-5" }}</a>
         {{ end }}
       </nav>
     </div>
