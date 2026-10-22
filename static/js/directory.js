@@ -51,7 +51,7 @@
   var search = document.getElementById('dir-search');
   var chips = Array.prototype.slice.call(document.querySelectorAll('.dir-chip'));
   var count = document.getElementById('dir-count');
-  var hint = document.getElementById('dir-hint');
+  var clear = document.getElementById('dir-clear');
   var category = '';
 
   var hay = {};
@@ -70,17 +70,26 @@
       card.hidden = !ok;
       if (ok) visible++;
     });
-    count.textContent = visible === cards.length ? 'Showing all ' + cards.length + ' entries.' : 'Showing ' + visible + ' of ' + cards.length + ' entries.';
-    hint.textContent = visible === 0 ? 'No entries match these filters.' : '';
+    /* say which filters are active, so a combined result never looks like a broken button */
+    var active = [];
+    if (category) active.push('in ' + category);
+    if (q) active.push('matching “' + search.value.trim() + '”');
+    var what = visible === 1 ? '1 entry' : visible + ' entries';
+    count.textContent = !active.length ? 'Showing all ' + cards.length + ' entries.'
+      : visible === 0 ? 'No entries ' + active.join(' ') + '.'
+      : 'Showing ' + what + ' ' + active.join(' ') + '.';
+    clear.hidden = !active.length;
+  }
+
+  function setCategory(value) {
+    category = value;
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-category') === value ? 'true' : 'false'); });
   }
 
   search.addEventListener('input', apply);
   chips.forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      category = chip.getAttribute('data-category');
-      chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
-      apply();
-    });
+    chip.addEventListener('click', function () { setCategory(chip.getAttribute('data-category')); apply(); });
   });
+  clear.addEventListener('click', function () { search.value = ''; setCategory(''); apply(); search.focus(); });
   apply();
 })();

@@ -15,8 +15,10 @@ window.SOVEREIGN_DIRECTORY = {{ hugo.Data.directory | jsonify | safeJS }};</scri
     <button type="button" class="dir-chip" data-category="" aria-pressed="true">All</button>
     {{ range $cats | uniq }}<button type="button" class="dir-chip" data-category="{{ . }}" aria-pressed="false">{{ . }}</button>{{ end }}
   </div>
-  <p id="dir-count" class="dir-count" role="status" aria-live="polite">Showing all {{ len hugo.Data.directory }} entries.</p>
-  <p id="dir-hint" class="dir-hint" role="status"></p>
+  <div class="dir-statusrow">
+    <p id="dir-count" class="dir-count" role="status" aria-live="polite">Showing all {{ len hugo.Data.directory }} entries.</p>
+    <button type="button" id="dir-clear" class="dir-clear" hidden>Clear filters</button>
+  </div>
 </section>
 
 <div id="directory-grid" class="dir-grid">
