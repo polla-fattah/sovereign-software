@@ -43,7 +43,7 @@ test('the manifesto source lists the four principles in order', () => {
   assert.ok(/Data longevity/.test(md) && /Functional longevity/.test(md) && /Knowledge longevity/.test(md), 'Longevity has three dimensions');
   assert.ok(md.includes('no single numerical score can excuse a proven loss of fundamental user control'));
   assert.ok(md.includes('No new weighting scheme or tier threshold is adopted'), 'the withdrawal of weights is stated');
-  for (const h of ['Section 06: Evaluating Sovereign Software', '### 6.1 Four principle assessments', '### 6.2 Fundamental eligibility requirements', '### 6.3 Evidence before a numerical score', '### 6.4 Supporting engineering tests', '## Revision History', '## Selected References']) {
+  for (const h of ['Section 06: Evaluating Sovereign Software', '### 6.1 Four principle assessments', '### 6.2 Fundamental eligibility requirements', '### 6.3 Evidence before a numerical score', '### 6.4 Supporting engineering tests', '## Selected References']) {
     assert.ok(md.includes(h), 'read.md has ' + h);
   }
   assert.equal((md.split('## Selected References')[1].match(/^- /gm) || []).length, 5, 'five selected references');
@@ -64,6 +64,24 @@ test('the short manifesto, slides, README, and home page follow the same princip
   assert.ok(home.includes('.Site.Params.tagline'));
 });
 
+test('the lineage page and domain preservation profiles are complete and valid', () => {
+  const lineageIndex = read('content/lineage/_index.md');
+  const slugs = ['local-first', 'free-software', 'indieweb', 'solid', 'permacomputing', 'mydata', 'digital-preservation', 'ai-governance', 'interoperability-and-exit', 'design-justice'];
+  for (const slug of slugs) {
+    assert.ok(lineageIndex.includes('/lineage/' + slug + '/'), 'lineage/_index.md links to /lineage/' + slug + '/');
+    const doc = read('content/lineage/' + slug + '.md');
+    for (const sec of ['## 1. Historical context and core thesis', '## 2. Where Sovereign Software agrees', '## 3. Where we stand and why we diverge', '## 4. Concrete architectural contrasts', '## 5. How this shapes the evaluation methodology', '## 6. Primary sources and further reading']) {
+      assert.ok(doc.includes(sec), slug + '.md has ' + sec);
+    }
+    assert.ok(!doc.includes('utm_source='), slug + '.md contains no tracking query parameters');
+  }
+  assert.ok(!lineageIndex.includes('utm_source='), 'lineage/_index.md contains no tracking query parameters');
+  const meth = read('content/methodology.md');
+  for (const prof of ['vcs_core', 'knowledge_notes', 'cad_engineering', 'finance_tasks', 'research_bibliographic']) {
+    assert.ok(meth.includes(prof), 'methodology.md defines domain profile ' + prof);
+  }
+});
+
 test('the tagline and description are the revised ones, and the old quote is gone', () => {
   const toml = read('hugo.toml');
   assert.ok(toml.includes(TAGLINE));
@@ -78,8 +96,8 @@ test('the tagline and description are the revised ones, and the old quote is gon
 test('no weights, scores, tiers, or retired principles remain in the live source', () => {
   const banned = ['7-Gate', '7/7', 'GATE 0', 'Seven Engineering Evaluation Tests', 'Launch Interactive Scorer', 'sovereign.js', 'scoring.js', 'gates.json', 'Tier 1', 'Tier 2', 'Tier 3',
     'Weighted score', 'weighted score', 'Focused Interoperability', '25%', '/ 100', 'Responsiveness:'];
-  const files = ['content/read.md', 'content/manifesto.md', 'content/methodology.md', 'content/directory/_index.md',
-    'layouts/index.html', 'layouts/_default/directory.html', 'layouts/partials/header.html', 'layouts/partials/footer.html',
+  const files = ['content/read.md', 'content/manifesto.md', 'content/lineage/_index.md', 'content/methodology.md', 'content/directory/_index.md',
+    'layouts/index.html', 'layouts/_default/directory.html', 'layouts/lineage/list.html', 'layouts/lineage/single.html', 'layouts/partials/header.html', 'layouts/partials/footer.html',
     'layouts/partials/directory-card.html', 'layouts/directory/single.html', 'slides/manifesto.md', 'static/js/directory.js', 'static/js/assessment.js'];
   for (const f of files) {
     const t = read(f);
@@ -89,7 +107,7 @@ test('no weights, scores, tiers, or retired principles remain in the live source
     const t = read('layouts/shortcodes/' + f);
     for (const b of ['weight', 'Weight', 'tier']) assert.ok(!t.includes(b), f + ' mentions ' + b);
   }
-  for (const gone of ['data/gates.json', 'static/js/sovereign.js', 'static/js/scoring.js', 'static/js/evaluator.js', 'content/evaluator.md', 'layouts/_default/evaluator.html', 'static/schema']) {
+  for (const gone of ['data/gates.json', 'data/escape.json', 'data/profiles.json', 'static/js/sovereign.js', 'static/js/scoring.js', 'static/js/evaluator.js', 'content/evaluator.md', 'layouts/_default/evaluator.html', 'layouts/_default/escape-hatches.html', 'static/schema']) {
     assert.equal(fs.existsSync(path.join(root, gone)), false, gone + ' is gone');
   }
 });
@@ -115,12 +133,15 @@ test('Index and Escape Hatches data follow the framework keys', () => {
     cats.add(e.category);
   }
   assert.ok(cats.size >= 6, 'the original six disciplines are preserved');
-  const esc = JSON.parse(read('data/escape.json'));
-  for (const c of esc) {
-    assert.ok(c.caveat && c.caveat.length > 30, c.title + ' states a caveat');
-    assert.deepEqual(c.connections.map((x) => x.principle), ['Sovereignty', 'Longevity', 'Recoverability']);
-    for (const x of c.connections) for (const m of x.text.match(/E\d/g) || []) assert.ok(fw.eligibility.some((e) => e.id === m), c.title + ' cites ' + m);
+  const esc = read('content/escape-hatches.md');
+  assertOrder(esc, NAMES, 'escape-hatches.md');
+  for (const prof of ['knowledge_notes', 'finance_tasks', 'research_bibliographic', 'cad_engineering', 'vcs_core']) {
+    assert.ok(esc.includes(prof), 'escape-hatches.md covers domain profile ' + prof);
   }
+  for (const req of ['E1', 'E2', 'E3', 'E4', 'E5', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6']) {
+    assert.ok(esc.includes(req), 'escape-hatches.md cites ' + req);
+  }
+  assert.ok(esc.includes('No migration is promised to be lossless'), 'escape-hatches.md states migration caveats');
 });
 
 /* ---------- built site ---------- */
@@ -132,20 +153,23 @@ const html = (p) => fs.readFileSync(path.join(out, p), 'utf8');
 test('the site builds', { skip }, () => { assert.equal(build.status, 0, build.stderr); });
 
 test('existing URLs still resolve and the new pages exist', { skip }, () => {
-  for (const p of ['index.html', 'manifesto/index.html', 'read/index.html', 'read/sovereign-personal-software-manifesto.md', 'directory/index.html', 'evaluator/index.html',
-    'directory/beancount-hledger/index.html', 'directory/nixos-guix/index.html', 'escape-hatches/index.html', 'slides/index.html', 'methodology/index.html', '404.html', 'robots.txt', 'sitemap.xml']) {
+  for (const p of ['index.html', 'manifesto/index.html', 'read/index.html', 'read/sovereign-software-manifesto.md', 'lineage/index.html',
+    'lineage/local-first/index.html', 'lineage/free-software/index.html', 'lineage/indieweb/index.html', 'lineage/solid/index.html', 'lineage/permacomputing/index.html',
+    'lineage/mydata/index.html', 'lineage/digital-preservation/index.html', 'lineage/ai-governance/index.html', 'lineage/interoperability-and-exit/index.html', 'lineage/design-justice/index.html',
+    'directory/index.html', 'evaluator/index.html',
+    'directory/beancount-hledger/index.html', 'directory/nixos-guix/index.html', 'escape-hatches/index.html', 'slides/index.html', 'methodology/index.html', 'methodology/sovereign-software-methodology.md', '404.html', 'robots.txt', 'sitemap.xml']) {
     assert.ok(fs.existsSync(path.join(out, p)), p + ' exists');
   }
   for (const e of loadEntries(fw)) assert.ok(fs.existsSync(path.join(out, 'directory', e.id, 'index.html')), 'detail page for ' + e.id);
 });
 
 test('built pages show the four principles in the framework order, and the download matches', { skip }, () => {
-  for (const p of ['index.html', 'read/index.html', 'methodology/index.html']) {
+  for (const p of ['index.html', 'read/index.html', 'methodology/index.html', 'lineage/index.html']) {
     const t = html(p);
     assertOrder(t.slice(t.indexOf('Sovereignty')), NAMES.slice(1), p);
     assert.ok(t.includes('Transparency and Control'), p);
   }
-  const md = html('read/sovereign-personal-software-manifesto.md');
+  const md = html('read/sovereign-software-manifesto.md');
   assertOrder(md, NAMES.map((n, i) => '### Principle ' + ORDER[i] + '. ' + n), 'downloadable markdown');
   assert.ok(md.includes(TAGLINE) && md.includes('## Selected References'));
   const visible = html('read/index.html');
@@ -173,14 +197,13 @@ test('only the pages that need scripts load them', { skip }, () => {
   assert.ok(has('evaluator/index.html', 'methodology/'), 'the retired /evaluator/ URL redirects to the methodology');
   assert.ok(!has('evaluator/index.html', '/js/'), 'the redirect page ships no script');
   assert.ok(has('directory/index.html', '/js/directory.js') && has('directory/git/index.html', '/js/assessment.js'));
-  for (const p of ['index.html', 'read/index.html', 'manifesto/index.html', 'methodology/index.html', 'escape-hatches/index.html']) assert.ok(!/<script src=/.test(html(p)), p + ' ships no script');
+  for (const p of ['index.html', 'read/index.html', 'manifesto/index.html', 'lineage/index.html', 'methodology/index.html', 'escape-hatches/index.html']) assert.ok(!/<script src=/.test(html(p)), p + ' ships no script');
 });
 
 test('the methodology page covers the framework and states that there is no score', { skip }, () => {
   const t = html('methodology/index.html');
-  for (const h of ['Purpose, scope, and vocabulary', 'The four foundational principles', 'Fundamental eligibility requirements', 'Principle findings', 'Overall determination and precedence',
-    'Engineering verification procedures', 'Evidence, sufficiency, confidence, and uncertainty', 'Contextual interpretation and boundaries', 'Versioning, publication, and reassessment',
-    'Worked examples', 'Limits and governance of the methodology']) {
+  for (const h of ['Purpose, scope, and vocabulary', 'Baseline domain preservation profiles', 'The four foundational principles and authority dimensions', 'Fundamental eligibility requirements', 'Principle findings and decision thresholds', 'Overall determination and precedence',
+    'Engineering verification procedures', 'Six-stage laboratory execution protocol', 'Evidence, confidence, and publication', 'Worked examples', 'Limits and governance of the methodology']) {
     assert.ok(t.includes(h), 'methodology section: ' + h);
   }
   for (const label of Object.values(fw.determinations.labels)) assert.ok(t.includes(label), 'determination: ' + label);
@@ -190,11 +213,13 @@ test('the methodology page covers the framework and states that there is no scor
   for (const ex of ['Example A', 'Example B', 'Example C', 'Example D']) assert.ok(t.includes(ex), ex);
 });
 
-test('legacy Index entries are not presented as current classifications', { skip }, () => {
+test('unverified Index entries are not presented as current classifications', { skip }, () => {
   const t = html('directory/index.html');
-  assert.ok((t.match(/Legacy v1 tier/g) || []).length >= 25);
-  assert.ok((t.match(/Insufficient evidence/g) || []).length >= 25);
+  assert.ok((t.match(/Insufficient evidence/g) || []).length >= 1);
+  assert.ok(!t.includes('legacy_tier') && !t.includes('legacy_label') && !t.includes('Legacy v1 tier'), 'no legacy tier fields remain');
   assert.ok(!/dir-b-meets_core|dir-b-partially_aligned|dir-b-fails_fundamental/.test(t.replace(/\.dir-b-[a-z_]+[^{]*\{[^}]*\}/g, '')), 'no entry carries a determination badge');
+  const gitPage = html('directory/git/index.html');
+  assert.ok(gitPage.includes('Insufficient evidence'));
 });
 
 test.after(() => { fs.rmSync(out, { recursive: true, force: true }); });

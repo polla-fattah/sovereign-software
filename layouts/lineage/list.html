@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{ partial "page-header.html" . }}
+
+<div class="prose-editorial prose-wide">
+  {{ .Content }}
+
+  <h2 id="dossiers">The ten intellectual traditions and technical movements (chronological order)</h2>
+  <p>Ordered from earliest historical starting point to most recent, each movement below has its own dedicated dossier examining its historical context, canonical principles, points of agreement with Sovereign Software, where and why we diverge, concrete architectural contrasts, and primary sources.</p>
+</div>
+
+<div class="grid grid-cols-1 gap-5 my-8 max-w-3xl">
+  {{ range .Pages.ByWeight }}
+  <article class="dir-card" id="{{ .File.ContentBaseName }}">
+    <header class="dir-card-head">
+      <span class="dir-cat">{{ .Params.period }}</span>
+    </header>
+    <h2 class="dir-name"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <p class="dir-summary">{{ .Description }}</p>
+    <dl class="dir-facts">
+      <div><dt>Key figures</dt><dd>{{ .Params.proponents }}</dd></div>
+      <div><dt>Overlap &amp; principles</dt><dd>{{ .Params.overlap }} &bull; {{ delimit .Params.principles ", " }} ({{ delimit .Params.framework_links ", " }})</dd></div>
+      <div><dt>Where we stand</dt><dd>{{ .Params.stance }}</dd></div>
+    </dl>
+    <p class="dir-link"><a href="{{ .RelPermalink }}">Read full dossier</a></p>
+  </article>
+  {{ end }}
+</div>
+{{ end }}

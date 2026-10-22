@@ -16,14 +16,12 @@
   "syncModel" $p.sync_model
   "extractCmd" $p.extract_cmd
   "limitations" (default slice $p.limitations)
-  "legacy_tier" $p.legacy_tier
   "assessment_batch" $p.assessment_batch
   "pilot_stage" $p.pilot_stage
-  "legacy_label" $p.legacy_label
   "version_assessed" $p.version_assessed
   "assessment_date" $p.assessment_date
   "assessment_status" (cond $complete "complete" "unverified")
-  "assessment_notes" (default (cond (ne $p.legacy_label nil) "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published." "This entry is a candidate for assessment. No assessment under the current proposed framework has been performed, so no findings or determination are published.") $p.assessment_notes)
+  "assessment_notes" (default "This entry is a candidate for assessment. No assessment under the evaluation framework has been performed yet, so no findings or determination are published." $p.assessment_notes)
   "eligibility" $elig
   "principles" $prin
   "evidence" (default slice $p.evidence)

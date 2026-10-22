@@ -36,7 +36,7 @@ if (!entry) {
   process.exit(1);
 }
 const r = result(entry);
-console.log(entry.name + ' (' + entry.assessment_status + ', framework ' + fw.version + ' ' + fw.status + ')');
+console.log(entry.name + ' (' + entry.assessment_status + ')');
 console.log('Determination: ' + r.determination.label);
 r.determination.reasons.forEach((x) => console.log('  - ' + x));
 console.log('Fundamental requirements: ' + r.eligibility.verdict);

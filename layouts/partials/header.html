@@ -12,10 +12,11 @@
       <a href="{{ "manifesto/" | relURL }}" class="nav-btn px-3.5 py-2 rounded-lg font-medium border {{ if hasPrefix $.RelPermalink ("manifesto/" | relURL) }}bg-amber-500/15 text-amber-600 border-amber-500/30{{ else }}text-slate-600 hover:text-slate-900 border-transparent{{ end }}">The Manifesto</a>
       <a href="{{ "directory/" | relURL }}" class="nav-btn px-3.5 py-2 rounded-lg font-medium border {{ if hasPrefix $.RelPermalink ("directory/" | relURL) }}bg-amber-500/15 text-amber-600 border-amber-500/30{{ else }}text-slate-600 hover:text-slate-900 border-transparent{{ end }}">Sovereign Index</a>
       <a href="{{ "methodology/" | relURL }}" class="nav-btn px-3.5 py-2 rounded-lg font-medium border {{ if hasPrefix $.RelPermalink ("methodology/" | relURL) }}bg-amber-500/15 text-amber-600 border-amber-500/30{{ else }}text-slate-600 hover:text-slate-900 border-transparent{{ end }}">Methodology</a>
+      <a href="{{ "lineage/" | relURL }}" class="nav-btn px-3.5 py-2 rounded-lg font-medium border {{ if hasPrefix $.RelPermalink ("lineage/" | relURL) }}bg-amber-500/15 text-amber-600 border-amber-500/30{{ else }}text-slate-600 hover:text-slate-900 border-transparent{{ end }}">Lineage</a>
       <a href="{{ "escape-hatches/" | relURL }}" class="nav-btn px-3.5 py-2 rounded-lg font-medium border {{ if hasPrefix $.RelPermalink ("escape-hatches/" | relURL) }}bg-amber-500/15 text-amber-600 border-amber-500/30{{ else }}text-slate-600 hover:text-slate-900 border-transparent{{ end }}">Escape Hatches</a>
     </nav>
 
-    <a href="{{ "read/sovereign-personal-software-manifesto.md" | relURL }}" download="sovereign-personal-software-manifesto.md" title="Download the full manifesto as Markdown" class="btn-ghost rounded hidden lg:inline-flex items-center gap-1.5 px-4 py-2 text-xs">↓ .MD</a>
+    <a href="{{ "read/sovereign-software-manifesto.md" | relURL }}" download="sovereign-software-manifesto.md" title="Download the full manifesto as Markdown" class="btn-ghost rounded hidden lg:inline-flex items-center gap-1.5 px-4 py-2 text-xs">↓ .MD</a>
 
     {{ with .Site.Params.social.githubRepo }}
     <a href="{{ . }}" target="_blank" rel="noopener" aria-label="View source on GitHub" title="View source on GitHub" class="github-link hidden lg:inline-flex">
@@ -28,9 +29,10 @@
         <option value="{{ "manifesto/" | relURL }}"{{ if hasPrefix $.RelPermalink ("manifesto/" | relURL) }} selected{{ end }}>The Manifesto</option>
         <option value="{{ "directory/" | relURL }}"{{ if hasPrefix $.RelPermalink ("directory/" | relURL) }} selected{{ end }}>Sovereign Index</option>
         <option value="{{ "methodology/" | relURL }}"{{ if hasPrefix $.RelPermalink ("methodology/" | relURL) }} selected{{ end }}>Methodology</option>
+        <option value="{{ "lineage/" | relURL }}"{{ if hasPrefix $.RelPermalink ("lineage/" | relURL) }} selected{{ end }}>Lineage</option>
         <option value="{{ "escape-hatches/" | relURL }}"{{ if hasPrefix $.RelPermalink ("escape-hatches/" | relURL) }} selected{{ end }}>Escape Hatches</option>
       </select>
-      <a href="{{ "read/sovereign-personal-software-manifesto.md" | relURL }}" download="sovereign-personal-software-manifesto.md" aria-label="Download the full manifesto as Markdown" class="btn-ghost rounded ml-2 px-3 py-1.5 text-xs">↓ .MD</a>
+      <a href="{{ "read/sovereign-software-manifesto.md" | relURL }}" download="sovereign-software-manifesto.md" aria-label="Download the full manifesto as Markdown" class="btn-ghost rounded ml-2 px-3 py-1.5 text-xs">↓ .MD</a>
     </div>
   </div>
 </header>

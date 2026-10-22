@@ -3,7 +3,7 @@ marp: true
 theme: sovereign
 paginate: true
 title: A Manifesto for Sovereign Personal Software
-description: Slides for presenting the manifesto and its evidence-led evaluation framework
+description: Slides for presenting the manifesto, its intellectual lineage, its evidence-led evaluation methodology, and prime examples from the Sovereign Index
 footer: sovereign.polla.dev
 ---
 
@@ -20,7 +20,7 @@ Software should serve people without claiming permanent custody over their infor
 *sovereign.polla.dev*
 
 <!--
-Open with the one-line claim. Say how long you will take and that the full text and the methodology are both on the site, so nobody needs to copy anything down.
+Open with the one-line claim. Mention that the full manifesto, the ten lineage dossiers, the evaluation methodology, and the Sovereign Index are all published on the site with zero third-party trackers.
 -->
 
 ---
@@ -28,37 +28,24 @@ Open with the one-line claim. Say how long you will take and that the full text 
 ## The problem
 
 - Many applications make ordinary work depend on **remote services, vendor accounts, and opaque decisions**
-- Business models can change **without the user's consent**
+- Business models, pricing, and terms can change **without the user's consent**
 - Convenience becomes dependence when a person **cannot continue working, retrieve records, or leave** without unacceptable loss
 
-**Who holds the authority over the software you depend on?**
+**When the software, vendor, or network changes, do you still hold effective authority over your work?**
 
 <!--
-Ask the room for one tool they could not use tomorrow if their account were suspended. Let them answer before moving on.
+Ask the audience for one tool they rely on every week that would lock them out of their own history if their subscription or account stopped working tomorrow.
 -->
 
 ---
 
 <!-- _class: statement -->
 
-## The idea
+## The core thesis
 
 > Software should remain under human authority, preserve human knowledge, function independently wherever possible, and make consequential behavior understandable and controllable.
 
 *Sovereign Software does not reject networks, commercial software, or AI. It rejects unnecessary surrender of control.*
-
----
-
-## Why now: AI changes the economics
-
-- AI-assisted tools lower some barriers, so **tailored software** becomes feasible for individuals and small communities
-- But lower development cost **does not guarantee lower lifetime cost**
-- Security, migration, maintenance, documentation, and recovery still need sustained attention
-- AI-generated code can be **faster to create without being easier to trust or preserve**
-
-<!--
-The point is not to produce more applications. It is to build tools that are accountable to the people who use them.
--->
 
 ---
 
@@ -75,231 +62,219 @@ The point is not to produce more applications. It is to build tools that are acc
 
 ## A relationship, not a ranking
 
-- **Sovereignty** defines the goal
-- **Longevity** protects it across time
+- **Sovereignty** defines the goal (information, execution, governance, and continuity authority)
+- **Longevity** protects it across time (data, functional, and knowledge longevity)
 - **Locality** provides a powerful means of independence
 - **Transparency and Control** make authority meaningful in operation
 
 All four matter, and **no single numerical score can excuse a proven loss of fundamental user control**.
 
 <!--
-Earlier versions ranked six principles and weighted them. That model has been withdrawn. The order now describes how the principles relate. It is not a measured ranking.
--->
-
----
-
-## Sovereignty: the user is the authority
-
-- Practical, **not merely contractual**, authority over records and essential workflows
-- Access, export, back up, restore, and migrate through documented means
-- Explain key ownership and recovery honestly
-- A managed service **can** respect sovereignty if exit, independent access, and recovery remain
-- Local installation **alone** proves nothing if essential functions can be revoked remotely
-
-**The ability to leave without losing what is yours is a practical test of ownership.**
-
----
-
-## Longevity: information outlives software
-
-- **Data:** records and metadata can be preserved, inspected, exported, and restored independently
-- **Function:** essential workflows continue through maintained software or practicable migration
-- **Knowledge:** formats, schemas, units, provenance, and recovery steps are documented for future people and tools
-- A documented binary format, such as SQLite, can qualify; **open format names alone guarantee nothing**
-- No design can promise eternal compatibility
-
----
-
-## Locality: independence by design
-
-- The network should **extend** what software can do, not arbitrarily decide whether you can reach your own work
-- Where appropriate, reading, editing, searching, and essential calculation stay on hardware you control
-- A failed sync should not erase the ability to work
-- Not absolutist: ask whether a dependency is **inherent to the task** or imposed
-- Local data is not automatically safe: backups and recovery are still needed
-
----
-
-## Transparency and Control
-
-- You cannot govern a tool whose **consequential behavior is inscrutable**
-- Explain the rules behind important operations; make material changes traceable
-- Distinguish **suggestions from committed actions**; let users approve, reverse, or contest
-- **Determinism is not itself the principle:** a deterministic black box can still deny control, and a statistical system can stay governable
-
-**The machine may assist in decisions; it must not quietly take ownership of them.**
-
----
-
-## Architecture in service of the principles
-
-- **Execution:** carrying out tasks and calculations
-- **Preservation:** retaining records and recovery information so they stay intelligible
-- **Exchange:** moving information between tools through documented formats and interfaces
-
-These are **conceptual responsibilities**, not three applications. An integrated application can embody all three.
-
-**Interoperability is a means of preserving sovereignty and longevity**, not a demand for small programs.
-
----
-
-## AI without artificial dependency
-
-AI is used only under boundaries that preserve human authority:
-
-1. Records stay accessible if a model or provider disappears
-2. Core workflows that do not need AI stay usable without it
-3. Consequential AI changes are validated and authorized by risk
-4. Network calls, privacy effects, and costs are disclosed
-5. What you keep from AI can be stored in independent formats
-6. Important decisions can be inspected, explained, and corrected
-
-**AI may extend human ability. It must not become a condition for retaining human work or authority.**
-
----
-
-## Synchronization without surrender
-
-- Syncing must not quietly **transfer custody or conceal loss**
-- An automatic merge can fix the data structure and still **misunderstand intent**
-- Document conflict rules, keep recoverable history, and expose conflicts that need a decision
-- Know where data is stored, who can read it, and how it is encrypted
-- **Replicated data is not a tested backup**
-
-<!--
-CRDT reference: Shapiro, Preguiça, Baquero, Zawirski, SSS 2011. The broader argument for local-first software: Kleppmann et al., Onward! 2019.
+The order describes how the principles reinforce one another. It is not a weighted formula where speed or UI polish can offset vendor lock-in.
 -->
 
 ---
 
 <!-- _class: dense -->
 
-## Evaluation: evidence before a score
+## Intellectual lineage (1983 to present)
 
-A manifesto is useful when its claims can be challenged with evidence.
+Sovereign Software is a **synthesis and evaluation approach** building on ten traditions:
 
-1. **Five fundamental requirements:** verified failures cannot be offset
-2. **An evidence-led finding for each of the four principles**
-3. **Seven supporting engineering tests** that gather the evidence
-
-**No weights, no numerical score, no tiers.** The earlier six-principle weighting is withdrawn, and any future scored method needs separate justification, testing across disciplines, and published methodology.
-
-<!--
-Weights are not silently reassigned to the new principles. No arithmetic should let excellent speed or elegant architecture compensate for the loss of essential user authority.
--->
-
----
-
-<!-- _class: dense -->
-
-## Five fundamental requirements
-
-The highest classification is **not earned** when verified evidence shows that:
-
-1. Users cannot independently retrieve essential information
-2. There is no practicable way to leave without unacceptable loss
-3. Essential records cannot be recovered outside a vendor-controlled system
-4. Vendor permission is required to keep control of already-created work
-5. Consequential operations remove meaningful authorization or oversight
-
-**Pass, Fail, Not Verified, or Not Applicable with justification.** Missing evidence is not a failure, and it is not a pass.
-
-These are minimum eligibility conditions; the principle findings provide the broader assessment of how fully the software embodies the philosophy.
+1. **Free Software (1983):** user freedom to run, study, modify, and redistribute code
+2. **Digital Preservation & OAIS (1995):** keeping records independently understandable across decades
+3. **Interoperability & Right to Exit (2000s):** low switching costs and protocol portability
+4. **IndieWeb (2010):** owning your domain and content before syndicating outward (POSSE)
+5. **MyData (2014):** human-centric control over personal data flows
+6. **Solid (2016):** decoupling user data pods from applications
+7. **Design Justice (2016):** asking *which* users hold power in multi-stakeholder systems
+8. **Local-first Software (2019):** primary copy on local storage; the cloud is optional
+9. **Permacomputing (2020):** long hardware lifespans and minimal, inspectable stacks
+10. **AI Governance / NIST AI RMF (2021):** inspectable, contestable automated decisions
 
 ---
 
 <!-- _class: dense -->
 
-## Findings and a qualified determination
+## Where we stand and what this framework adds
 
-- Each principle: **meets, partially meets, or does not meet**, with observations, sources, limitations, and confidence
-- Overall determination:
-  - **Meets the proposed core requirements**
-  - **Partially aligned**
-  - **Does not meet the proposed core standard**
-  - **Fails a fundamental requirement**
-  - **Insufficient evidence**
-- Every claim states the **version, scope, and date**; old classifications stay historical
+- **Observable authority over ideology:** we test what a user can actually do when a vendor stops cooperating, rather than judging by license labels or protocol names alone
+- **Operational independence vs. source freedom:** portable open formats suffice when independent tools can continue the work; source availability is required when the application binary is the sole viable interpreter
+- **Longevity beyond raw bytes:** exporting a static mesh or PDF is not preservation if editable parametric constraints, formulas, or citation graphs are lost
+- **Individual vs. shared governance:** assessments declare a **perspective role** (*Individual*, *Contributor*, *Collaborator*, or *Institutional Custodian*) to separate accountable team governance from vendor lock-in
 
-*A proposed standard, not an accredited certification.*
+---
 
-<!--
-Worked examples on the methodology page: a fast, polished application that cannot export its data fails a fundamental requirement. A slow application that keeps users in control can still meet the core requirements. Neither responsiveness nor narrow scope is a prerequisite.
--->
+## Sovereignty & Longevity in practice
+
+<div class="cols">
+<div>
+
+### I. Sovereignty
+- Practical, **not merely contractual**, authority over records and workflows
+- Documented access, export, backup, restore, and migration
+- Honest cryptographic key custody
+- Managed services qualify **only** if exit and independent recovery remain real
+
+</div>
+<div>
+
+### II. Longevity
+- **Data longevity:** records and metadata survive independently
+- **Functional longevity:** essential workflows continue in alternative tools
+- **Knowledge longevity:** schemas, units, and provenance stay documented
+- Documented binary formats (e.g. SQLite) can qualify alongside plain text
+
+</div>
+</div>
+
+---
+
+## Locality & Transparency in practice
+
+<div class="cols">
+<div>
+
+### III. Locality
+- The network should **extend** software, not gate access to local work
+- Reading, editing, searching, and core calculation run on user hardware
+- Evaluated by **dependency proportionality and replaceability** (can a relay or server be self-hosted or swapped?)
+
+</div>
+<div>
+
+### IV. Transparency & Control
+- Consequential operations must be inspectable, authorized, and reversible
+- Distinguish **suggestions from committed actions**
+- **Determinism is an engineering tool, not the principle:** statistical/AI tools comply when bounded and auditable
+
+</div>
+</div>
+
+---
+
+## AI and synchronization without surrender
+
+<div class="cols">
+<div>
+
+### AI boundaries
+1. Records remain accessible if the AI provider disappears
+2. Non-AI core workflows work without AI
+3. Consequential AI edits require risk-proportionate approval
+4. Network calls and costs are disclosed
+5. Kept outputs use open formats
+
+</div>
+<div>
+
+### Synchronization boundaries
+1. Sync connects devices; it must not transfer custody
+2. Automatic merges (CRDTs) can fix syntax while breaking human intent
+3. Document conflict rules and keep recoverable history
+4. **Replication is not a tested backup**
+
+</div>
+</div>
 
 ---
 
 <!-- _class: dense -->
 
-## Seven supporting engineering tests
+## Evaluation methodology: scope and eligibility
 
-1. **Ownership and exit**
-2. **Preservation and recovery**
-3. **Offline independence**
-4. **Operational transparency**
-5. **Security and continuity**
-6. **Interoperability and maintainability** (supporting quality)
-7. **Human experience and performance** (supporting quality)
+Every assessment declares its **Domain Preservation Profile** (`vcs_core`, `knowledge_notes`, `cad_engineering`, `finance_tasks`, `research_bibliographic`) and **Perspective Role** before testing against **five non-compensatory requirements**:
 
-*They gather evidence. They are not interchangeable philosophical pillars. A sub-100 ms target is useful, but it is not a universal sovereignty test.*
+- **E1 Independent access:** retrieve an intelligible copy of essential records
+- **E2 Practicable exit:** migrate to an alternative workflow without unacceptable loss of meaning
+- **E3 Independent recovery:** interpret and restore records after the original vendor is gone
+- **E4 Continuing authority & custody:** keep working on existing records when subscriptions or servers stop, with no architectural exposure to unauthorized parties
+- **E5 Consequential oversight:** inspect, authorize, and reverse or contest high-risk actions
+
+**Status:** *Pass*, *Fail*, *Not Verified*, or *Not Applicable with justification*.
 
 ---
 
 <!-- _class: dense -->
 
-## What sovereign software refuses to become
+## Six-stage lab protocol & precedence rules
 
-- **Captive data:** records that cannot be retrieved, interpreted, or migrated
-- **Revocable access to your own work:** cut off by an arbitrary account or subscription decision
-- **Irrecoverable dependence:** useless when one vendor, binary, or runtime disappears
-- **Opaque consequential automation:** significant actions without visibility, authorization, or recourse
-- **Silent loss through synchronization**
-- **Concealed dependencies and surveillance**
+<div class="cols">
+<div>
 
-*It does not reject sophistication, commerce, cloud, AI, or features. The issue is the distribution of authority.*
+### Seven verification tests (`T1–T7`)
+1. **T1** Ownership and exit (`E1, E2, E4`)
+2. **T2** Preservation and recovery (`E3`)
+3. **T3** Offline independence (`Locality`)
+4. **T4** Operational transparency (`E5`)
+5. **T5** Security, custody, and continuity
+6. **T6** Interoperability & maintainability
+7. **T7** Human experience & performance *(supporting quality, never a 100-ms gate)*
 
----
+</div>
+<div>
 
-## A reference implementation: ToDoz
+### Five determinations (in order)
+1. **Fails a fundamental requirement**
+2. **Insufficient evidence**
+3. **Does not meet the proposed core standard**
+4. **Partially aligned**
+5. **Meets the proposed core requirements**
 
-- An open-source, offline-first task manager, built **deliberately around the philosophy of sovereign software**
-- Flutter, SQLite, and a lightweight **self-hosted** sync service
-- Recurrence, reminders, and filters run on **deterministic rules**
-- Built with AI coding agents: **AI in the build, not in the product**
-- It was built around an **earlier, six-principle formulation**; it has not yet been reassessed against the four-principle framework
+*Computed deterministically from evidence; never stored as a manual badge.*
 
-*todoz.polla.dev*
-
-<!--
-Be honest here: ToDoz predates the four-principle revision. It is a reference implementation of the philosophy, not an assessed example of the new framework.
--->
-
----
-
-## What is on the website
-
-- **The manifesto:** full text, a reading and print edition, and a Markdown download
-- **Methodology:** the formal reference for findings and determinations
-- **Index:** example software, each **awaiting assessment**
-- **Escape hatches:** recipes for moving data out of cloud services, with their caveats
-
-The site follows its own rules: it loads **nothing from third parties**, with no trackers and no cookies.
-
-<!--
-Be explicit that Index entries carry no findings yet. Their old version 1 tiers are kept as history only.
--->
+</div>
+</div>
 
 ---
 
-## Honest limits
+<!-- _class: dense -->
 
-- This is a **position**, supported by evidence, not a standard
-- The framework is **proposed** and replaces two earlier versions
-- It deliberately offers **no numerical score**; findings are judgments
-- The Index has **no assessed entries yet**
-- Response-time research is supporting usability guidance, not part of the definition
+## Prime examples I: Infrastructure & knowledge
 
-**Disagreement is welcome. The source is open.**
+Well-known, well-behaved tools in the **Sovereign Index** (`/directory/`):
+
+- **Git & Jujutsu (`vcs_core`):** complete revision history, parent-child DAG, and cryptographic integrity hashes live locally in `.git/`; full offline commits, branching, and bundle recovery without any central forge
+- **SQLite (`vcs_core`):** single-file ACID relational database with a publicly specified binary format, endorsed by the US Library of Congress for long-term dataset preservation
+- **Obsidian, Logseq & Org-mode (`knowledge_notes`):** vaults are ordinary local folders of UTF-8 Markdown or Org files; even if the application binary vanishes, prose, headings, attachments, and internal links remain readable with standard text tools
+- **Typst & LibreOffice (`knowledge_notes`):** local document compilation and OpenDocument (`ODF`) authoring with zero mandatory cloud accounts
+
+---
+
+<!-- _class: dense -->
+
+## Prime examples II: Finance, custody & research
+
+- **Beancount & hledger (`finance_tasks`):** plain-text double-entry accounting ledgers where every posting, currency, and balance assertion is inspectable with `grep` or `git diff` and verified deterministically offline
+- **KeePassXC & Pass (`vcs_core`):** local cryptographic password vaults (`KDBX` and GPG-encrypted directory trees) where decryption keys never leave user custody
+- **Zotero (`research_bibliographic`):** local SQLite database and PDF storage on the user's filesystem, supporting complete offline search, citation, and standard export (`BibTeX`, `CSL JSON`, `RDF`)
+- **Paperless-ngx & calibre (`knowledge_notes` / `research_bibliographic`):** self-hosted archival PDF/A document management and local e-book libraries with documented directory layouts and metadata sidecars
+
+---
+
+<!-- _class: dense -->
+
+## Prime examples III: Engineering, sync & systems
+
+- **KiCad, FreeCAD & OpenSCAD (`cad_engineering`):** schematic, PCB, and parametric 3D CAD tools that run offline without license-server heartbeats and store human-readable S-expressions or CSG source alongside `STEP` and `Gerber` exports
+- **Syncthing + restic / BorgBackup (`vcs_core`):** peer-to-peer encrypted folder synchronization paired with deduplicated, client-side encrypted backups that can be restored on any clean machine with independent CLI tools
+- **NixOS, GNU Guix & OpenBSD (`vcs_core`):** declarative, reproducible operating-system configurations and auditable base systems that protect long-term functional longevity
+- **ToDoz (Reference Implementation):** an offline-first task manager (`todoz.polla.dev`) built with Flutter, SQLite, deterministic recurrence rules, and an optional self-hosted sync relay
+
+---
+
+<!-- _class: dense -->
+
+## Escape hatches: leaving cloud silos safely
+
+When a tool fails sovereignty, `/escape-hatches/` provides **4-stage migration runbooks** across all six domains:
+
+1. **Extract from the source silo** using native bulk exports or local caches (Notion, Evernote, Google Docs, Cloud Password Managers, Proprietary Finance, SaaS Git Forges)
+2. **Audit completeness (`T1`)** before closing the account: check record counts, attachments, internal links, and historical timestamps
+3. **Normalize into a durable local substrate (`T2`, `T6`):** plain UTF-8 Markdown, OpenDocument, SQLite, `KDBX`, plain-text ledgers, or `--mirror` Git bundles
+4. **Cut over, back up, and freeze (`T3`, `T5`):** verify offline operation in an isolated environment and retain a read-only archive of the raw export
+
+*No migration is promised to be lossless: every runbook documents what metadata or platform state is lost on exit.*
 
 ---
 
@@ -317,10 +292,9 @@ Be explicit that Index entries carry no findings yet. Their old version 1 tiers 
 
 ## For discussion
 
-- Which tool you use every day **fails the exit test**: could you leave it with your data intact?
-- When is a network dependency **inherent to the task**, and when is it imposed?
-- Is a **qualified, evidence-led** judgment better than a score? What would a score hide?
-- Which principle is hardest to apply to **research software**?
+- Which tool you rely on every day **fails the provider-withdrawal test**: could you continue working and recover your records if the vendor vanished tonight?
+- Where is the boundary between **operational independence** (portable data) and **software freedom** (open-source code) in your domain?
+- In collaborative research or institutional software, how should **individual exit rights** balance against **shared audit-trail retention**?
 
 ---
 
@@ -329,10 +303,10 @@ Be explicit that Index entries carry no findings yet. Their old version 1 tiers 
 
 # Thank you
 
-**Read it:** sovereign.polla.dev
+**Manifesto & Lineage:** sovereign.polla.dev / sovereign.polla.dev/lineage
 
-**Method:** sovereign.polla.dev/methodology
+**Methodology & Index:** sovereign.polla.dev/methodology / sovereign.polla.dev/directory
 
-**Source:** github.com/polla-fattah/sovereign-software
+**Escape Hatches:** sovereign.polla.dev/escape-hatches
 
-*Licensed under CC BY 4.0*
+**Source:** github.com/polla-fattah/sovereign-software · *CC BY 4.0*

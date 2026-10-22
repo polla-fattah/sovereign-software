@@ -41,13 +41,6 @@
   entries.forEach(function (e) { byId[e.id] = e; });
   var cards = Array.prototype.slice.call(grid.querySelectorAll('.dir-card'));
 
-  cards.forEach(function (card) {
-    var r = evaluate(byId[card.getAttribute('data-id')]);
-    if (!r) return;
-    card.setAttribute('data-det', r.determination.id);
-    text(card, 'det', r.determination.label).className = 'dir-badge dir-b-' + r.determination.id;
-  });
-
   var search = document.getElementById('dir-search');
   var select = document.getElementById('dir-category');
   var count = document.getElementById('dir-count');

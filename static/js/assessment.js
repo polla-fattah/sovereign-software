@@ -206,7 +206,6 @@
     var weaknesses = notMeeting.map(function (c) { return { principle: c.id, name: c.name, finding: c.finding, findingLabel: c.findingLabel, recommendation: findPrinciple(fw, c.id).improvement }; });
 
     return {
-      frameworkVersion: fw.version,
       complete: complete,
       assessedCount: ids.length - missing.length,
       totalPrinciples: ids.length,

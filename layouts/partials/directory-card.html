@@ -1,6 +1,4 @@
 {{- $e := . -}}
-{{- $fw := hugo.Data.framework -}}
-{{- $complete := eq $e.assessment_status "complete" -}}
 <article class="dir-card" id="{{ $e.id }}"
   data-id="{{ $e.id }}" data-name="{{ $e.name }}" data-category="{{ $e.category }}"
   data-status="{{ $e.assessment_status }}" data-det="{{ $e.determination }}" data-attention="">
@@ -8,20 +6,12 @@
     <span class="dir-cat">{{ $e.category }}</span>
   </header>
   <h2 class="dir-name"><a href="{{ printf "directory/%s/" $e.id | relURL }}">{{ $e.name }}</a></h2>
-  <p class="dir-result">
-    <span class="dir-badge dir-b-{{ $e.determination }}" data-role="det">{{ if $complete }}Computing determination{{ else }}{{ index $fw.determinations.labels $e.determination }}{{ end }}</span>
-  </p>
-  <p class="dir-legacy">{{ if $complete }}Assessed under v{{ $fw.version }}{{ else }}Candidate: awaiting assessment{{ with $e.assessment_batch }} (batch {{ . }}){{ end }}{{ with $e.pilot_stage }} (pilot stage {{ . }}){{ end }}{{ end }}</p>
-  {{ with $e.legacy_label }}<details class="dir-legacy"><summary>Legacy v1 history</summary>Legacy v1 tier: {{ . }} (history only)</details>{{ end }}
   <p class="dir-summary">{{ $e.summary }}</p>
   <dl class="dir-facts">
-    <div><dt>Native storage format</dt><dd>{{ $e.substrate }}</dd></div>
-    <div><dt>Migration and recovery</dt><dd>{{ $e.syncModel }}.{{ with $e.extractCmd }} Example (untested): <code>{{ . }}</code>{{ end }}</dd></div>
+    <div><dt>Data format</dt><dd>{{ $e.substrate }}</dd></div>
+    <div><dt>Recovery model</dt><dd>{{ $e.syncModel }}</dd></div>
     {{- if $e.limitations }}
     <div><dt>Limitations</dt><dd>{{ delimit $e.limitations " " }}</dd></div>
-    {{- end }}
-    {{- if $complete }}
-    <div><dt>Evidence</dt><dd>{{ len $e.evidence }} item{{ if ne (len $e.evidence) 1 }}s{{ end }}, assessed {{ $e.assessment_date }}</dd></div>
     {{- end }}
   </dl>
   <p class="dir-link"><a href="{{ printf "directory/%s/" $e.id | relURL }}">Full evaluation</a></p>

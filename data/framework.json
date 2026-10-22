@@ -1,14 +1,6 @@
 {
   "name": "Sovereign Software Evaluation Framework",
-  "version": "3.1",
-  "status": "proposed",
-  "revisionDate": "2026-10-22",
-  "supersedes": [
-    "3.0 (four principles, four determinations, ten-character evidence minimum)",
-    "2.0 (six weighted principles, five eligibility gates, seven verification tests)",
-    "1.0 (six principles in an earlier order and seven equal pass/fail tests)"
-  ],
-  "policyNote": "This is a proposed, evidence-led framework. It adopts no weighting scheme, numerical score, or tier threshold, and it is not an externally accredited certification scheme.",
+  "policyNote": "This is an evidence-led evaluation framework. It adopts no weighting scheme, numerical score, or tier threshold, and it is not an externally accredited certification scheme.",
   "findingLevels": [
     { "id": "meets", "label": "Meets", "symbol": "✓" },
     { "id": "partial", "label": "Partially meets", "symbol": "◐" },
@@ -31,7 +23,6 @@
         "Key custody where applicable",
         "Freedom from revocable vendor control"
       ],
-      "note": "Sovereignty does not mean that every user must personally operate a server. A managed service can respect sovereignty if meaningful exit, independent access, recovery, and replaceability remain available. Conversely, local installation alone is not proof of sovereignty if essential functions are subject to revocable remote licensing or information is trapped in an undocumented format.",
       "levels": {
         "meets": "Users can access, export, back up, restore, and migrate their information through documented means, and no revocable vendor decision removes their essential capabilities.",
         "partial": "Exit and access are possible but incomplete, costly, or dependent on undocumented steps, or some essential capability remains subject to vendor permission.",
@@ -54,26 +45,6 @@
       "relationship": "Longevity protects it across time.",
       "definition": "Records and intellectual work remain accessible, interpretable, and recoverable after applications, vendors, and runtimes disappear. Preserving bytes is insufficient if their meaning, relationships, or means of recovery disappear.",
       "question": "Will the user's information remain understandable and recoverable after the original software is gone?",
-      "dimensions": [
-        {
-          "id": "data",
-          "name": "Data longevity",
-          "question": "Can records and relevant metadata be preserved, inspected, exported, and restored independently of the original application?",
-          "examine": ["Documented formats", "Metadata preservation", "Complete exports", "Tested backups and restoration"]
-        },
-        {
-          "id": "functional",
-          "name": "Functional longevity",
-          "question": "Can essential workflows continue through maintained software, independent implementations, or practicable migration when the original application or provider disappears?",
-          "examine": ["Independent implementations", "Practicable migration", "Maintained alternatives"]
-        },
-        {
-          "id": "knowledge",
-          "name": "Knowledge longevity",
-          "question": "Are formats, schemas, relationships, units, provenance, and recovery procedures documented well enough for future people and tools to understand preserved information?",
-          "examine": ["Schemas and relationships", "Units and provenance", "Recovery procedures"]
-        }
-      ],
       "evidence": [
         "Documented formats and schemas",
         "Metadata preservation",
@@ -81,7 +52,6 @@
         "Restoration",
         "Independent interpretation"
       ],
-      "note": "Human-readable text is valuable but is not the only credible route. A documented binary format, such as SQLite, can support longevity when independent tooling, complete exports, and tested recovery procedures exist. Open format names alone do not guarantee preservation: backups must be usable, and archives must be periodically verified and migrated when necessary. No design can promise eternal compatibility. Sovereign Software minimizes irreversible loss and maximizes independent recovery.",
       "levels": {
         "meets": "Records and their meaning can be preserved, interpreted, and restored by an independent party, with documented formats and tested recovery.",
         "partial": "Data can be exported, but documentation, relationships, metadata, or restoration are incomplete or untested.",
@@ -92,7 +62,7 @@
         "title": "Longevity: Information Should Outlive Software",
         "tag": "Data • Function • Knowledge",
         "short": "Records and intellectual work remain accessible, interpretable, and recoverable after applications, vendors, and runtimes disappear.",
-        "text": "Applications are temporary, while research, designs, records, and creative work may matter for generations. Longevity has three dimensions: data (records and metadata can be preserved and restored independently), function (essential workflows can continue through maintained software or practicable migration), and knowledge (formats, schemas, and recovery procedures are documented well enough for future people and tools). A documented binary format such as SQLite can qualify, but open format names alone guarantee nothing.",
+        "text": "Applications are temporary, while research, designs, records, and creative work may matter for generations. Longevity has three dimensions: data (records and metadata can be preserved and restored independently), function (essential workflows can continue through maintained software, independent implementations, or practicable migration), and knowledge (formats, schemas, and recovery procedures are documented well enough for future people and tools). A documented binary format such as SQLite can qualify, but open format names alone guarantee nothing.",
         "takeaway": "Applications are temporary. Human information deserves a longer life."
       }
     },
@@ -103,23 +73,22 @@
       "tagline": "Independence is designed in.",
       "relationship": "Locality provides a powerful means of independence.",
       "definition": "Capabilities that can reasonably operate on user-controlled hardware do not depend unnecessarily on continuous external connectivity or permission.",
-      "question": "Which essential functions keep working without remote permission, and are the remaining dependencies genuinely necessary?",
+      "question": "Which essential functions keep working without remote permission, and are the remaining dependencies genuinely necessary and replaceable?",
       "evidence": [
         "Which essential functions operate without remote permission",
-        "Which dependencies are genuinely necessary"
+        "Which dependencies are genuinely necessary and replaceable"
       ],
-      "note": "Locality is not an absolutist demand that every product run fully offline. Real-time communication, shared remote resources, and distributed services necessarily involve networks. The relevant question is whether a dependency is inherent to the task or imposed by a business or architectural decision that unnecessarily weakens user authority. Likewise, local data is not automatically safe: devices fail, keys are lost, and files become corrupted, so locality must be complemented by credible backups, security protections, and recovery paths.",
       "levels": {
-        "meets": "Everything that can reasonably work on the user's hardware does, and remaining network dependencies are inherent to the task.",
-        "partial": "Core work is possible without the network, but some dependencies are imposed by business or architectural choices rather than by the task.",
+        "meets": "Everything that can reasonably work on the user's hardware does, and remaining network dependencies are inherent to the task and replaceable.",
+        "partial": "Core work is possible without the network, but some dependencies are imposed by business or architectural choices or cannot be substituted.",
         "does_not_meet": "Reading, creating, or searching the user's own work requires someone else's permission or connectivity without a reason inherent to the task."
       },
-      "improvement": "Move work that can run locally onto user-controlled hardware, make synchronization optional, and explain which dependencies are inherent to the task.",
+      "improvement": "Move work that can run locally onto user-controlled hardware, make synchronization optional and replaceable, and explain which dependencies are inherent to the task.",
       "home": {
         "title": "Locality: Independence by Design",
         "tag": "Local Capability • Necessary Dependencies",
         "short": "Capabilities that can reasonably operate on user-controlled hardware do not depend unnecessarily on external connectivity or permission.",
-        "text": "The network should extend what software can do, not arbitrarily determine whether a person can reach work already on their device. Where technically appropriate, reading, editing, searching, and essential calculation should stay available on hardware the user controls, and a failed synchronization should not erase the ability to work. Locality is not an absolutist offline demand: the question is whether a dependency is inherent to the task or imposed unnecessarily. Local data also needs credible backups and recovery paths.",
+        "text": "The network should extend what software can do, not arbitrarily determine whether a person can reach work already on their device. Where technically appropriate, reading, editing, searching, and essential calculation should stay available on hardware the user controls, and a failed synchronization should not erase the ability to work. Locality is not an absolutist offline demand: the question is whether a dependency is inherent to the task and replaceable, or imposed unnecessarily. Local data also needs credible backups and recovery paths.",
         "takeaway": "If a task can reasonably be performed independently, its execution should not require someone else's permission."
       }
     },
@@ -138,7 +107,6 @@
         "Error visibility",
         "Paths for correction"
       ],
-      "note": "Deterministic algorithms are often the right mechanism for ledgers, schedules, access rules, and state transitions, but determinism is not itself the philosophical principle. A deterministic black box may still deny users meaningful control, while a system using statistical models may remain governable when its boundaries, permissions, evidence, and effects are transparent. Safety-critical, irreversible, and financial operations need especially explicit specifications, validation, authorization, and audit trails. Complex numerical systems should be judged within documented assumptions and tolerances rather than by demanding identical output everywhere.",
       "levels": {
         "meets": "Important operations follow explained rules, material changes are traceable, suggestions are distinct from committed actions, and users can approve, reverse, or contest outcomes appropriate to the risk.",
         "partial": "Rules or effects are partly documented or visible, but some consequential behavior cannot be inspected, authorized, or corrected.",
@@ -188,10 +156,10 @@
     {
       "id": "E4",
       "key": "retained_control",
-      "title": "Continuing authority over already-created work",
+      "title": "Continuing authority and custody over already-created work",
       "principle": "sovereignty",
-      "failure": "Withdrawal of permission, payment, activation, or provider availability removes effective control over existing work.",
-      "question": "If new permission, payment, activation, or provider availability is withdrawn, can the user still retain effective control over existing work?"
+      "failure": "Withdrawal of permission, payment, activation, or provider availability removes effective control or essential operations over existing work, or architectural custody defects expose confidential records to unauthorized parties by design.",
+      "question": "If new permission, payment, activation, or provider availability is withdrawn, can the user still retain effective custody and continue essential operations over existing work without architectural exposure to unauthorized parties?"
     },
     {
       "id": "E5",
@@ -240,7 +208,7 @@
       "question": "Which functions continue when external services are unavailable, and why?",
       "verify": [
         "Functions that continue without external services",
-        "Each remaining dependency shown to be inherent to the task",
+        "Each remaining dependency shown to be inherent to the task and replaceable",
         "A failed synchronization does not remove the ability to work"
       ]
     },
@@ -267,7 +235,7 @@
       "eligibility": ["E3", "E4", "E5"],
       "question": "Are custody, encryption, backups, restoration, and vendor-failure scenarios credibly addressed?",
       "verify": [
-        "Custody of data and keys",
+        "Custody of data and keys against unauthorized parties",
         "Encryption and trust boundaries",
         "Backups and restoration",
         "Vendor-failure scenarios"

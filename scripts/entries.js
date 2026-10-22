@@ -48,7 +48,7 @@ function normalise(id, p, fw) {
   return {
     id, name: p.title, category: p.category, summary: p.summary, substrate: p.substrate,
     syncModel: p.sync_model, extractCmd: p.extract_cmd || null, limitations: p.limitations || [],
-    legacy_tier: p.legacy_tier || null, legacy_label: p.legacy_label || null, assessment_batch: p.assessment_batch || null, pilot_stage: p.pilot_stage || null,
+    assessment_batch: p.assessment_batch || null, pilot_stage: p.pilot_stage || null,
     version_assessed: p.version_assessed || null, assessment_date: p.assessment_date || null,
     assessment_status: complete ? 'complete' : 'unverified',
     eligibility: elig, principles: prin, evidence: p.evidence || [],

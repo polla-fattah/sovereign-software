@@ -74,7 +74,7 @@ The network should extend what software can do, not arbitrarily determine whethe
 
 Where technically appropriate, reading records, creating and editing content, searching local information, and performing essential calculations should remain available on hardware controlled by the user. Synchronization may be valuable, but its failure should not unnecessarily erase the ability to work.
 
-Locality is not an absolutist demand that every product run fully offline. Real-time communication, shared remote resources, and distributed services necessarily involve networks. The relevant question is whether a dependency is inherent to the task or imposed by a business or architectural decision that unnecessarily weakens user authority.
+Locality is not an absolutist demand that every product run fully offline. Real-time communication, shared remote resources, and distributed services necessarily involve networks. The relevant question is **dependency proportionality and replaceability**: whether a dependency is inherent to the task and substitutable by an open protocol, alternative provider, or self-hosted service, or imposed by a business or architectural decision that unnecessarily weakens user authority.
 
 Likewise, local data is not automatically safe. Devices fail; encryption keys are lost; files become corrupted. Locality must be complemented by credible backups, security protections, and recovery paths.
 
@@ -107,6 +107,28 @@ These are conceptual responsibilities, not a requirement for three separate appl
 **Interoperability is a means of preserving sovereignty and longevity, not an independent ideological demand for small programs.** Open interfaces, documented data structures, and replaceable components are valuable when they reduce lock-in and support recovery. Modularity and bounded responsibilities remain sound engineering practices, but software does not become non-sovereign simply because it offers many features.
 
 Architecture should make information portable, important behavior understandable, and essential functions recoverable. Implementation choices are justified by those outcomes rather than by aesthetic preference for any particular stack.
+
+### Software freedom and practical authority
+
+A central philosophical question separates this framework from classical free software doctrine: *can software respect user sovereignty when users cannot independently inspect, modify, or redistribute its source code?*
+
+Free software philosophy answers no: without the legally protected freedoms to study, change, and share the program, the developer retains ultimate power over the software itself. This framework makes a deliberate distinction between **custody of already-created work** and **continuity of the execution engine**:
+
+- **Where independent formats and alternative tools exist:** If a proprietary application operates without revocable remote permission, stores or exports complete records in documented formats, and allows essential workflows to continue in independent implementations (for example, plain Markdown notes or standard SQLite databases), operational independence can satisfy user authority over the work itself. Conversely, an open-source license does not establish sovereignty if a product's actual deployment traps user records in a centrally operated service without workable exit.
+- **Where the software itself is the irreplaceable interpreter:** When continuing essential work requires maintaining, patching, or adapting a specialized engine that no independent tool can replace, proprietary restriction becomes a direct threat to Functional Longevity and continuing authority. In those domains, source availability, open specifications, or a verified multi-implementation standard is required to prevent vendor abandonment from rendering the user's work inert.
+
+Operational independence can therefore substitute for software license freedom when the data and workflow are genuinely portable across independent tools, and cannot substitute for it when the application binary is the sole viable custodian of the work's meaning or execution.
+
+### Shared work and legitimate governance
+
+The phrase "the user" is simple in single-person tools, but many real systems serve teams, research groups, communities, and institutions with competing rights and obligations. Maximizing one participant's unilateral control can destroy another's: a contributor who deletes a shared dataset may erase a co-author's audit trail or violate an institution's legal retention duty.
+
+In multi-user and institutional software, sovereignty cannot mean unrestricted individual power over shared records. It requires distinguishing:
+
+1. **Individual authority:** A participant's right to inspect, export, and retain copies of their own contributions and personal records, and to exit the system with that history intact.
+2. **Legitimate shared governance:** Collective or institutional rules governing shared records, retention, permissions, and dispute resolution. Shared governance is compatible with sovereignty when its rules, roles, and retention obligations are **explicitly documented, visible to affected participants before they commit work, auditable in operation, and open to contest or appeal**.
+
+Evaluations of multi-user systems must therefore declare the **perspective role** being assessed (for example, individual contributor, project collaborator, or institutional custodian) and judge shared constraints by whether they represent transparent, accountable governance rather than arbitrary vendor lock-in.
 
 ---
 
@@ -155,10 +177,10 @@ Every assessment should examine:
 | --- | --- |
 | **Sovereignty** | Independent access, complete export, practical migration, key custody where applicable, and freedom from revocable vendor control |
 | **Longevity** | Documented formats and schemas, metadata preservation, tested backups, restoration, and independent interpretation |
-| **Locality** | Which essential functions operate without remote permission, and which dependencies are genuinely necessary |
+| **Locality** | Which essential functions operate without remote permission, and which dependencies are genuinely necessary and replaceable |
 | **Transparency and Control** | Understandable rules, traceable consequential changes, informed authorization, error visibility, and paths for correction |
 
-Tests must be adapted to software's actual purpose and deployment setting. An offline text editor, a distributed messaging system, and a scientific simulation cannot be judged by identical assumptions about networking or operation duration.
+Tests must be adapted to software's actual purpose, declared domain profile, and perspective role. An offline text editor, a distributed messaging system, and a scientific simulation cannot be judged by identical assumptions about networking or operation duration.
 
 ### 6.2 Fundamental eligibility requirements
 
@@ -167,7 +189,7 @@ A tool cannot earn the highest sovereign classification when verified evidence s
 - Its users cannot independently retrieve essential information.
 - There is no practicable way to leave without unacceptable loss of important records or meaning.
 - Essential records cannot be recovered or interpreted outside an irreplaceable vendor-controlled system.
-- Continued vendor permission is required to retain effective control over already-created work.
+- Continued vendor permission is required to retain effective custody and continue essential operations over already-created work, or architectural custody defects expose confidential records to unauthorized parties by design.
 - Consequential operations remove meaningful user authorization or oversight in a way incompatible with the tool's risks.
 
 Treat each requirement as **Pass**, **Fail**, **Not Verified**, or **Not Applicable with justification**. A verified failure is not canceled by high marks elsewhere; missing evidence is not a failure and must not be misrepresented as a pass.
@@ -176,9 +198,9 @@ These five requirements are minimum eligibility conditions, not the complete def
 
 ### 6.3 Evidence before a numerical score
 
-The previous six-principle weighted framework (25/25/20/15/10/5) is superseded. Its weights must not be silently reassigned to the four new principles. **No new weighting scheme or tier threshold is adopted by this manifesto without separate justification, representative testing across disciplines, and published methodology.**
+**No new weighting scheme or tier threshold is adopted by this manifesto without separate justification, representative testing across disciplines, and published methodology.**
 
-Until such a method is validated, publish an evidence-led principle profile and a clearly qualified overall determination, such as *meets the proposed core requirements*, *partially aligned*, *does not meet the proposed core standard*, *fails a fundamental requirement*, or *insufficient evidence*. Each claim should disclose the application version, scope, observations, sources, limitations, and assessment date. Historical classifications remain historical, not automatically renewed.
+Until such a method is validated, publish an evidence-led principle profile and a clearly qualified overall determination, such as *meets the proposed core requirements*, *partially aligned*, *does not meet the proposed core standard*, *fails a fundamental requirement*, or *insufficient evidence*. Each claim should disclose the application version, scope, observations, sources, limitations, and assessment date.
 
 The determination follows a fixed order of precedence, so that two assessors holding the same evidence reach the same conclusion:
 
@@ -256,12 +278,6 @@ A good implementation will also strive for security, performance, accessibility,
 That is the standard by which Sovereign Software asks to be judged.
 
 ---
-
-## Revision History
-
-- **22 October 2026: Philosophical revision (proposed).** Refined the six-principle model into four foundational principles: Sovereignty, Longevity, Locality, and Transparency and Control. Reclassified deterministic behavior, interoperability, modularity, and responsiveness as supporting engineering characteristics rather than independent philosophical requirements. Withdrew the previous numerical weights and tier thresholds pending separate methodological validation.
-- **22 October 2026: Prior evaluation framework v2.0.** Six weighted principles with five eligibility gates and seven verification tests. Preserved as historical context; not the current evaluation proposal.
-- **Earlier framework v1.0.** Six principles in an earlier order and seven equal pass/fail tests.
 
 ## Selected References
 

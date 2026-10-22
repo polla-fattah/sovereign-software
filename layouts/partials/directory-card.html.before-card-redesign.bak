@@ -1,0 +1,24 @@
+{{- $e := . -}}
+{{- $complete := eq $e.assessment_status "complete" -}}
+<article class="dir-card" id="{{ $e.id }}"
+  data-id="{{ $e.id }}" data-name="{{ $e.name }}" data-category="{{ $e.category }}"
+  data-status="{{ $e.assessment_status }}" data-det="{{ $e.determination }}" data-attention="">
+  <header class="dir-card-head">
+    <span class="dir-cat">{{ $e.category }}</span>
+  </header>
+  <h2 class="dir-name"><a href="{{ printf "directory/%s/" $e.id | relURL }}">{{ $e.name }}</a></h2>
+  {{- if $complete }}
+  <p class="dir-result">
+    <span class="dir-badge dir-b-{{ $e.determination }}" data-role="det">Computing determination</span>
+  </p>
+  {{- end }}
+  <p class="dir-summary">{{ $e.summary }}</p>
+  <dl class="dir-facts">
+    <div><dt>Native storage format</dt><dd>{{ $e.substrate }}</dd></div>
+    <div><dt>Migration and recovery</dt><dd>{{ $e.syncModel }}.{{ with $e.extractCmd }} Example (untested): <code>{{ . }}</code>{{ end }}</dd></div>
+    {{- if $e.limitations }}
+    <div><dt>Limitations</dt><dd>{{ delimit $e.limitations " " }}</dd></div>
+    {{- end }}
+  </dl>
+  <p class="dir-link"><a href="{{ printf "directory/%s/" $e.id | relURL }}">Full evaluation</a></p>
+</article>

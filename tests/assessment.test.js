@@ -43,7 +43,7 @@ const det = (a) => rate(a).determination.id;
 test('the framework definition is consistent', () => {
   assert.deepEqual(S.validateFramework(fw), []);
   assert.deepEqual(IDS, ['sovereignty', 'longevity', 'locality', 'transparency']);
-  assert.equal(fw.version, '3.1');
+  assert.ok(!('version' in fw) && !('supersedes' in fw) && !('status' in fw));
   assert.equal(fw.principles[3].name, 'Transparency and Control');
   assert.deepEqual(fw.principles.map((p) => p.order), ['I', 'II', 'III', 'IV']);
   assert.equal(fw.eligibility.length, 5);
@@ -247,8 +247,7 @@ test('directory entries without a verified assessment are unverified and carry n
       assert.equal(e.determination, 'insufficient_evidence', e.name);
       for (const id of IDS) assert.equal(e.principles[id], null, e.name + ' must not carry an invented finding');
       for (const k of Object.keys(e.eligibility)) assert.equal(e.eligibility[k], 'not_verified', e.name);
-      assert.equal(Boolean(e.legacy_tier), Boolean(e.legacy_label), e.name + ' has a legacy tier and label together, or neither');
-      for (const gone of ['tier', 'classification', 'score']) assert.equal(gone in e, false, gone + ' must not remain');
+      for (const gone of ['tier', 'classification', 'score', 'legacy_tier', 'legacy_label']) assert.equal(gone in e, false, gone + ' must not remain');
     }
     const r = S.computeResult(fw, S.assessmentFromEntry(fw, e));
     if (e.assessment_status === 'unverified') assert.equal(r.determination.id, 'insufficient_evidence', e.name);
@@ -281,10 +280,10 @@ test('a fully evidenced synthetic entry is determined by the same engine through
 
 test('scripts/determine.js reports an entry and the whole Index', () => {
   const run = (...args) => spawnSync(process.execPath, [path.join(root, 'scripts', 'determine.js'), ...args], { encoding: 'utf8' });
-  const one = run('git');
+  const one = run('anki');
   assert.equal(one.status, 0, one.stderr);
   assert.match(one.stdout, /Determination: Insufficient evidence/);
-  assert.match(one.stdout, /Sovereignty: Not assessed/);
+  assert.match(one.stdout, /Sovereignty: Meets/);
   const every = run('--all');
   assert.equal(every.status, 0);
   assert.equal(every.stdout.trim().split('\n').length, loadEntries(fw).length);

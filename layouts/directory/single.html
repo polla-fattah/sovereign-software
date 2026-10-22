@@ -22,7 +22,7 @@ window.SOVEREIGN_ENTRY = {{ $e | jsonify | safeJS }};</script>
   <div id="entry-result" aria-live="polite">
     <h2>3. Overall determination</h2>
     <p><strong>{{ if $complete }}Computing determination{{ else }}{{ index $fw.determinations.labels $e.determination }}{{ end }}</strong></p>
-    {{ if not $complete }}<p>This entry has not been assessed under the current proposed framework, so no determination is published. The legacy tier below is history only.</p>{{ end }}
+    {{ if not $complete }}<p>This entry has not been assessed under the evaluation framework yet, so no determination is published.</p>{{ end }}
   </div>
 
   <h2>4. Principle profile</h2>
@@ -67,13 +67,8 @@ window.SOVEREIGN_ENTRY = {{ $e | jsonify | safeJS }};</script>
   <h2>9. Architectural limitations</h2>
   {{ if $e.limitations }}<ul>{{ range $e.limitations }}<li>{{ . }}</li>{{ end }}</ul><p>These are editorial observations, not tested findings.</p>{{ else }}<p>None documented yet.</p>{{ end }}
 
-  <h2>10. Reassessment history</h2>
-  <ul>
-    {{ with $e.legacy_label }}<li><strong>Framework v1.0:</strong> {{ . }}. History only. This is not a current classification and implies no finding under the current framework.</li>{{ end }}
-    <li><strong>Framework v{{ $fw.version }} (proposed):</strong> {{ if $e.assessment_date }}Assessed on {{ $e.assessment_date }}.{{ else }}Not yet assessed. Reassessment is required.{{ end }}</li>
-  </ul>
   {{ with .Content }}
-  <h2>11. Planned assessment</h2>
+  <h2>10. Planned assessment</h2>
   {{ if or $e.assessment_batch $e.pilot_stage }}<p><strong>Candidate, not yet assessed.</strong>{{ with $e.assessment_batch }} Planned in assessment batch {{ . }}.{{ end }}{{ with $e.pilot_stage }} Pilot stage {{ . }}, from a documentation-informed desk review on 22 October 2026. No local installation, backup restore, or migration was run for it.{{ end }} What follows lists tests to run and risks to check, not results. It implies no finding, and inclusion does not imply that the software meets the proposed standard.</p>{{ end }}
   {{ . }}
   {{ end }}

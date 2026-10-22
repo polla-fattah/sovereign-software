@@ -2,7 +2,7 @@
 <article class="reading">
   <div class="no-print flex flex-wrap gap-4 font-mono text-xs pb-6">
     <a href="#" onclick="window.print(); return false;">⎙ Print / save as PDF</a>
-    {{ with .OutputFormats.Get "md" }}<a href="{{ .RelPermalink }}" download>↓ Download Markdown</a>{{ end }}
+    {{ with or (.OutputFormats.Get "md") (.OutputFormats.Get "methodology_md") }}<a href="{{ .RelPermalink }}" download>↓ Download Markdown</a>{{ end }}
   </div>
   {{- /* a page that opens with its own H1 (the methodology) supplies its own title block */ -}}
   {{ if not (hasPrefix (strings.TrimLeft (printf " %c%c%c" 9 10 13) .RawContent) "# ") }}

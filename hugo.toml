@@ -20,7 +20,13 @@ enableRobotsTXT = true
 
 [outputFormats.md]
   mediaType = "text/markdown"
-  baseName = "sovereign-personal-software-manifesto"
+  baseName = "sovereign-software-manifesto"
+  isPlainText = true
+  notAlternative = true
+
+[outputFormats.methodology_md]
+  mediaType = "text/markdown"
+  baseName = "sovereign-software-methodology"
   isPlainText = true
   notAlternative = true
 

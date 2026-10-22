@@ -1,6 +1,6 @@
 # Sovereign Personal Software
 
-A manifesto for software that stays under the authority of the people who use it, and the evidence-led tools that go with it: the proposed Sovereign Software Evaluation Framework (version 3.1), an index of example software, and practical ways to leave cloud services. The site is built with [Hugo](https://gohugo.io/), loads nothing from third parties, and runs all evaluation in the browser.
+A manifesto for software that stays under the authority of the people who use it, and the evidence-led tools that go with it: the Sovereign Software Evaluation Framework, an intellectual lineage and related-work analysis, an index of example software, and practical ways to leave cloud services. The site is built with [Hugo](https://gohugo.io/), loads nothing from third parties, and runs all evaluation in the browser.
 
 **Live site:** https://sovereign.polla.dev/
 
@@ -8,9 +8,11 @@ A manifesto for software that stays under the authority of the people who use it
 
 ## Purpose
 
-The site argues that software should remain under human authority, preserve human knowledge, function independently wherever possible, and make consequential behavior understandable and controllable. The manifesto states four principles. The framework turns them into five fundamental requirements, an evidence-based finding for each principle, and a qualified overall determination.
+The site argues that software should remain under human authority, preserve human knowledge, function independently wherever possible, and make consequential behavior understandable and controllable. Rather than claiming to invent these concerns from scratch, Sovereign Software is presented as a **synthesis and evaluation approach** that connects insights from Free Software, Local-first Software, IndieWeb, Solid, MyData, Permacomputing, digital preservation (OAIS), adversarial interoperability, and AI governance into a single falsifiable verification methodology.
 
-The framework is **evidence-led and unscored**. It adopts no weights, no numerical score, and no tier threshold, and it is a proposed standard, not an accredited certification. The earlier six-principle weighted model (framework 2.0) and the earliest seven-gate model (1.0) are superseded and kept only as history.
+The manifesto states four principles. The framework turns them into five fundamental requirements, an evidence-based finding for each principle, and a qualified overall determination across four dimensions of practical authority: information authority, execution authority, governance authority, and continuity authority.
+
+The framework is **evidence-led and unscored**. It adopts no weights, no numerical score, and no tier threshold, and it is a proposed standard, not an accredited certification.
 
 ## What is on the site
 
@@ -19,9 +21,10 @@ The framework is **evidence-led and unscored**. It adopts no weights, no numeric
 | Home (`/`) | `layouts/index.html` | The manifesto as a designed page. Principle cards and the evaluation section are generated from `data/framework.json` |
 | Reading edition (`/read/`) | `content/read.md` | The full text for reading and printing. Also published as a downloadable Markdown file |
 | The Manifesto (`/manifesto/`) | `content/manifesto.md` | A one-page summary |
-| Methodology (`/methodology/`) | `content/methodology.md`, `data/framework.json` | The formal reference for findings and determinations. `/evaluator/` redirects here |
+| Lineage (`/lineage/`) | `content/lineage.md` | Intellectual lineage, prior-art comparison across ten related movements, and research roadmap |
+| Methodology (`/methodology/`) | `content/methodology.md`, `data/framework.json`, `Section 1 of the methodology` | The formal reference for findings, domain profiles, two-assessor protocol, and determinations. `/evaluator/` redirects here |
 | Sovereign Index (`/directory/`) | `content/directory/*.md` | Example software and its evidence status. A detail page per entry at `/directory/<id>/` |
-| Escape Hatches (`/escape-hatches/`) | `data/escape.json` | Recipes for moving data out of cloud services, with caveats |
+| Escape Hatches (`/escape-hatches/`) | `content/escape-hatches.md` | Verifiable migration runbooks for moving records and workflows out of cloud silos across all domain profiles, with caveats |
 | Slides (`/slides/`) | `slides/manifesto.md` | A presentation of the manifesto, compiled by Marp |
 
 ## The framework
@@ -33,9 +36,11 @@ Four principles, in a deliberate conceptual order that is a relationship and not
 3. **Locality:** independence is designed in.
 4. **Transparency and Control:** consequential behavior remains governable.
 
-**Five fundamental requirements** express a loss of control that no other quality can excuse: independent retrieval of essential information, a practicable way to leave, recoverability outside a vendor-controlled system, control of already-created work without vendor permission, and authorization and oversight of consequential operations. Each is Pass, Fail, Not Verified, or Not Applicable with justification.
+**Five fundamental requirements** express a loss of control that no other quality can excuse: independent retrieval of essential information, a practicable way to leave, recoverability outside a vendor-controlled system, continuing authority and custody over already-created work without vendor permission, and authorization and oversight of consequential operations. Each is Pass, Fail, Not Verified, or Not Applicable with justification.
 
 These are minimum eligibility conditions, not a complete definition of the philosophy. The broader principle findings describe how fully the software embodies Sovereignty, Longevity, Locality, and Transparency and Control.
+
+**Domain preservation profiles (`Section 1 of the methodology`) and perspective roles.** Before testing, an assessment declares the perspective role from which authority is evaluated and the baseline domain profile (`vcs_core`, `knowledge_notes`, `cad_engineering`, `finance_tasks`, `research_bibliographic`) specifying essential records, essential capabilities, and acceptable loss on exit.
 
 **Findings.** Each principle is assessed as Meets, Partially meets, or Does not meet, with observations, sources, limitations, and confidence, or it is left Not assessed.
 
@@ -55,7 +60,7 @@ A failed requirement beside a principle marked Meets (for example E3 failed and 
 
 There is one definition and one implementation, so nothing is duplicated across pages:
 
-- **`data/framework.json`** is the single source of truth: principles, requirements, finding guidance, tests and their mapping, and determination labels. The worked examples live only in `content/methodology.md`, and a test runs them through the engine.
+- **`data/framework.json`** is the single source of truth: principles, requirements, finding guidance, tests and their mapping, and determination labels. Baseline domain preservation profiles live in `Section 1 of the methodology`. The worked examples live only in `content/methodology.md`, and a test runs them through the engine.
 - **`static/js/assessment.js`** is the only implementation of the requirement rules, the findings, and the determination. It has no DOM access, so the Index page, the maintainer command, and the Node tests run the same code.
 - **`static/js/directory.js`** is the Index interface (filtering and computed determinations). It calls `assessment.js`.
 - Determinations are never stored in the data. They are computed from the findings and evidence.
@@ -80,8 +85,6 @@ substrate = "Native storage format"
 sync_model = "How it synchronises or runs"
 extract_cmd = "a command that exports or inspects the data"
 limitations = ["An editorial observation."]
-legacy_tier = "Tier 1"
-legacy_label = "Tier 1 • Canonical"
 +++
 ```
 
@@ -102,7 +105,7 @@ The 25 original entries (27 products, since Beancount and hledger, and NixOS and
 4. Engineering and creative state: OpenSCAD, KiCad, NGSPICE, REAPER, Darktable.
 5. Multi-host, operational state, and complex recovery: Jujutsu, Fossil, Syncthing, NixOS, GNU Guix, OpenBSD.
 
-The review corrected earlier wording: KeePassXC is no longer marked down for a binary vault, LibreOffice is no longer marked down for start-up speed, REAPER's licence is treated as a custody question, the OpenSCAD and NGSPICE reproducibility claims are bounded, and Syncthing, Paperless-ngx, and Darktable now state their limits. Cards show "Candidate: awaiting assessment" until an entry is assessed, and legacy v1 tiers sit in a collapsed history line.
+The review corrected earlier wording: KeePassXC is no longer marked down for a binary vault, LibreOffice is no longer marked down for start-up speed, REAPER's licence is treated as a custody question, the OpenSCAD and NGSPICE reproducibility claims are bounded, and Syncthing, Paperless-ngx, and Darktable now state their limits. Cards show "Candidate: awaiting assessment" until an entry is assessed.
 
 ### Assessment programme (first twelve candidates)
 
@@ -117,33 +120,31 @@ Twelve entries carry a test plan in the body of their file and an `assessment_ba
 
 Every candidate gets the same baseline procedure, adapted to its domain:
 
-1. **Baseline:** record version, operating system, installation method, licence, configuration, plugins, storage model, and network services, and create synthetic data with known expected results.
+1. **Baseline:** record version, operating system, installation method, licence, configuration, plugins, storage model, perspective role, domain profile, and network services, and create synthetic data with known expected results.
 2. **Exit and export:** export, open independently, import into a clean installation or another tool, and compare against the baseline.
 3. **Provider withdrawal:** disable external services in an isolated environment and note what already-created work remains available.
 4. **Backup and recovery:** back up, restore to a clean environment, and verify files, metadata, relationships, configuration, and state.
 5. **Consequential operations:** identify destructive or irreversible actions, authorization boundaries, warnings, audit records, and recovery options.
 6. **Evidence:** keep commands, observations, expected versus actual results, logs, and limitations, and assign findings only afterwards.
 
-Destructive, corruption, credential-loss, and interrupted-backup experiments run on disposable data only. Each test records an assessment id, application and exact version, environment, primary principle, requirement (E1 to E5), test id, procedure, the expected result written before the run, the actual observation, supporting material, limitations, confidence, and a Pass, Fail, or Not Verified result. Directly tested behavior, independently corroborated documentation, and vendor declarations are kept distinct, and documentation alone never substitutes for testing a recoverability claim. A second evaluator should review every fundamental failure before publication, and disagreements are recorded rather than averaged.
+Destructive, corruption, credential-loss, and interrupted-backup experiments run on disposable data only. Each test records an assessment id, application and exact version, environment, primary principle, requirement (E1 to E5), test id, procedure, the expected result written before the run, the actual observation, supporting material, limitations, confidence, and a Pass, Fail, or Not Verified result. Directly tested behavior, independently corroborated documentation, and vendor declarations are kept distinct, and documentation alone never substitutes for testing a recoverability claim. High-stakes or disputed assessments follow the **Two-Assessor Protocol** described in the methodology, and disagreements are recorded rather than averaged.
 
 ### Conducting and documenting an assessment
 
 There is no web form: assessments are recorded by editing the entry file in `content/directory/`.
 
-1. Choose one version of the software and one deployment model, and record it in `version_assessed`.
+1. Choose one version of the software and one deployment model, and record it in `version_assessed`, along with `domain_profile` and `perspective_role`.
 2. Work through the five fundamental requirements and the four principles using the [methodology](https://sovereign.polla.dev/methodology/) and the supporting tests (`data/framework.json`) as your checklist.
 3. Record the results in the front matter: `assessment_status = "complete"`, `assessment_date`, `version_assessed`, a `[eligibility]` table (each of the five keys set to `pass`, `fail`, or `not_verified`), a `[principles]` table (each of the four set to `meets`, `partial`, or `does_not_meet`), and one `[[evidence]]` block per observation with `target` (a principle id such as `"sovereignty"`, or a requirement id such as `"E1"`), `text`, an optional `url`, and `confidence` (`high`, `medium`, or `low`). Add `limitations`.
 4. Run `node scripts/determine.js <id>` to see the determination the site will publish, and fix any evidence gaps it reports.
 5. Never store a determination. It is computed from the findings and evidence.
 6. Evidence should describe what was tested and how, not repeat the product's own description. A determination needs a recorded observation for every finding and every Pass, a written justification for every Not Applicable, and no Low or unstated confidence. There is no minimum length, and Low confidence cannot establish a Pass or a Fail.
-7. Keep the legacy tier fields. They are history and are labeled as such on the site.
 
-### Updating the framework version
+### Evolving the framework
 
-1. Edit `data/framework.json`: change the principles, requirements, tests, or rules there only, and raise `version` and `revisionDate`. Update `supersedes` and `status`.
-2. Do not rewrite old assessments silently. Mark them for reassessment instead.
-3. Add a dated entry to the Revision History in `content/read.md`, and update `content/methodology.md` where the prose describes changed rules.
-4. Run `node --test`. Index entries assessed under an older version should be reassessed or marked, never reinterpreted.
+1. Edit `data/framework.json` to change the principles, requirements, tests, or rules in one place.
+2. Update `content/methodology.md` where the prose describes changed rules.
+3. Run `node --test`.
 
 Any future scored method needs separate justification, representative testing across disciplines, and a published methodology before it is adopted.
 
@@ -151,8 +152,7 @@ Any future scored method needs separate justification, representative testing ac
 
 - **The manifesto text lives in `content/read.md`,** the source for the reading edition and the downloadable file. The home page cards and the evaluation section are generated from `data/framework.json`, but the rest of the home page (architecture, AI, synchronization, refusals, and the references) is hand-written HTML in `layouts/index.html`. Keep them consistent, and run `node --test`: `tests/consistency.test.js` checks the principle order and the key wording across the files.
 - **The tagline and site description** are `tagline` and `description` in `hugo.toml`.
-- Page intros are the Markdown bodies of the files in `content/`.
-- Recipes in `data/escape.json` carry a `connections` list and a `caveat`. Do not promise a lossless migration.
+- Page intros and migration runbooks live in the Markdown files in `content/` (`content/escape-hatches.md` states explicit caveats and never promises a lossless migration).
 
 ## Running locally
 
@@ -171,7 +171,7 @@ node --test     # run the automated tests
 `node --test` runs `tests/` with no dependencies:
 
 - `assessment.test.js` covers the assessment engine and the framework data: that no weights or scores exist, that a verified failure cannot be offset, that missing evidence is neither a pass nor a failure, evidence sufficiency, precedence, the worked examples, Index entries never inheriting a determination, and the maintainer command.
-- `consistency.test.js` checks that the principle order and wording are the same in the framework data, the manifesto, the home page, the short manifesto, the slides, and the built site, that retired wording and em dashes have not crept back, and that the built site makes no third-party requests.
+- `consistency.test.js` checks that the principle order and wording are the same in the framework data, the manifesto, the home page, the short manifesto, the lineage page, the slides, and the built site, that domain profiles are valid, that retired wording and em dashes have not crept back, and that the built site makes no third-party requests.
 
 ## Styles, fonts and scripts
 
