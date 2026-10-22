@@ -6,23 +6,22 @@
   data-status="{{ $e.assessment_status }}" data-det="{{ $e.determination }}" data-attention="">
   <header class="dir-card-head">
     <span class="dir-cat">{{ $e.category }}</span>
-    <span class="dir-status" data-role="status">{{ if $complete }}Assessment recorded{{ else }}Awaiting assessment{{ end }}</span>
   </header>
   <h2 class="dir-name"><a href="{{ printf "directory/%s/" $e.id | relURL }}">{{ $e.name }}</a></h2>
   <p class="dir-result">
     <span class="dir-badge dir-b-{{ $e.determination }}" data-role="det">{{ if $complete }}Computing determination{{ else }}{{ index $fw.determinations.labels $e.determination }}{{ end }}</span>
   </p>
-  {{- if not $complete }}
-  <p class="dir-note">No assessment under the current proposed framework exists yet, so no finding is published. Reassessment is required.</p>
-  {{- end }}
-  <p class="dir-legacy"><strong>Legacy v1 tier:</strong> {{ $e.legacy_label }}. History only, not a current classification.</p>
+  <p class="dir-legacy">Legacy v1 tier: {{ $e.legacy_label }} (history only)</p>
   <p class="dir-summary">{{ $e.summary }}</p>
   <dl class="dir-facts">
     <div><dt>Native storage format</dt><dd>{{ $e.substrate }}</dd></div>
-    <div><dt>Migration and recovery</dt><dd>{{ $e.syncModel }}. Example command, not verified: <code>{{ $e.extractCmd }}</code></dd></div>
-    <div><dt>Limitations</dt><dd>{{ if $e.limitations }}{{ delimit $e.limitations " " }}{{ else }}None documented yet.{{ end }}</dd></div>
-    <div><dt>Evidence</dt><dd>{{ if $e.evidence }}{{ len $e.evidence }} item{{ if ne (len $e.evidence) 1 }}s{{ end }} recorded.{{ else }}No evidence recorded yet.{{ end }}</dd></div>
-    <div><dt>Assessment date</dt><dd>{{ if $e.assessment_date }}{{ $e.assessment_date }}{{ else }}Not assessed{{ end }}</dd></div>
+    <div><dt>Migration and recovery</dt><dd>{{ $e.syncModel }}. Example (untested): <code>{{ $e.extractCmd }}</code></dd></div>
+    {{- if $e.limitations }}
+    <div><dt>Limitations</dt><dd>{{ delimit $e.limitations " " }}</dd></div>
+    {{- end }}
+    {{- if $complete }}
+    <div><dt>Evidence</dt><dd>{{ len $e.evidence }} item{{ if ne (len $e.evidence) 1 }}s{{ end }}, assessed {{ $e.assessment_date }}</dd></div>
+    {{- end }}
   </dl>
   <p class="dir-link"><a href="{{ printf "directory/%s/" $e.id | relURL }}">Full evaluation</a></p>
 </article>
