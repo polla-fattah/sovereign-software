@@ -16,7 +16,7 @@ Clockwise speaks in a warm, paper-like voice: cream canvas, deep forest-green in
 | Cream Canvas | `#fdf9f7` | `--color-cream-canvas` | Page background, document body: warm off-white gives the entire site a paper-like, non-screen feel |
 | Pure Paper | `#ffffff` | `--color-pure-paper` | Card and elevated surfaces layered above the cream canvas |
 | Ink Black | `#333333` | `--color-ink-black` | Primary body and link text on light surfaces; softened pure black to feel printed rather than digital |
-| Faded Pencil | `#6e7673` | `--color-faded-pencil` | Muted body text, secondary metadata, helper copy |
+| Faded Pencil | `#656c69` | `--color-faded-pencil` | Muted body text, secondary metadata, helper copy |
 | Hairline Gray | `#d6d6d6` | `--color-hairline-gray` | Light borders, dividers, accordion separators, subtle structural rules |
 | Mid Gray | `#a6a6a6` | `--color-mid-gray` | Medium-weight borders, icon strokes, secondary dividers |
 
@@ -185,7 +185,7 @@ Single-column, centered, max-width ~1200px page container with body text constra
 
 **Example Component Prompts**
 
-1. *Hero announcement block*: Cream canvas (#fdf9f7). Centered logo (diamond mark + 'clockwise' wordmark, both #003f2e). Headline at 64px PP Mori weight 600, #003f2e, line-height 1.0. Subtitle at 20px Inter weight 400, #6e7673, line-height 1.30. 64px vertical padding above and below.
+1. *Hero announcement block*: Cream canvas (#fdf9f7). Centered logo (diamond mark + 'clockwise' wordmark, both #003f2e). Headline at 64px PP Mori weight 600, #003f2e, line-height 1.0. Subtitle at 20px Inter weight 400, #656c69, line-height 1.30. 64px vertical padding above and below.
 
 2. *Body text paragraph*: Max-width 640px, centered. Inter 400 at 18px, #333333, line-height 1.40, letter-spacing -0.54px. 32px margin-bottom between paragraphs. Cream canvas background.
 
@@ -214,7 +214,7 @@ Single-column, centered, max-width ~1200px page container with body text constra
   --color-cream-canvas: #fdf9f7;
   --color-pure-paper: #ffffff;
   --color-ink-black: #333333;
-  --color-faded-pencil: #6e7673;
+  --color-faded-pencil: #656c69;
   --color-hairline-gray: #d6d6d6;
   --color-mid-gray: #a6a6a6;
 
@@ -297,7 +297,7 @@ Single-column, centered, max-width ~1200px page container with body text constra
   --color-cream-canvas: #fdf9f7;
   --color-pure-paper: #ffffff;
   --color-ink-black: #333333;
-  --color-faded-pencil: #6e7673;
+  --color-faded-pencil: #656c69;
   --color-hairline-gray: #d6d6d6;
   --color-mid-gray: #a6a6a6;
 

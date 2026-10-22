@@ -31,7 +31,7 @@
     --color-cream-canvas: #fdf9f7;
     --color-pure-paper: #ffffff;
     --color-ink-black: #333333;
-    --color-faded-pencil: #6e7673;
+    --color-faded-pencil: #656c69;
     --color-hairline-gray: #d6d6d6;
     --color-mid-gray: #a6a6a6;
 
@@ -152,7 +152,9 @@
   .ev-steps li::before { content: counter(step) "."; margin-right: 0.35rem; color: var(--color-vivid-emerald); font-weight: 700; }
   .ev-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: start; }
   @media (min-width: 1024px) { .ev-layout { grid-template-columns: minmax(0, 1fr) 20rem; } .ev-aside { position: sticky; top: 5.5rem; } }
-  .ev-main { display: grid; gap: 1.5rem; min-width: 0; }
+  .ev-main { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; min-width: 0; }
+  .ev-main > *, .ev-actions { min-width: 0; }
+  .ev-examples, .ev-card { overflow-wrap: anywhere; }
   .ev-card, .ev-aside, .ev-examples { background: var(--color-pure-paper); border: 1px solid var(--color-hairline-gray); padding: 1.25rem 1.5rem; }
   .ev-card h2, .ev-aside h2, .ev-examples h2 { font-size: 1.5rem; margin: 0 0 0.75rem; }
   .ev-card h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
@@ -254,9 +256,20 @@
   .eh-extra ul { padding-left: 1.1rem; list-style: disc; margin: 0 0 0.6rem; }
   .eh-caveat { margin: 0; color: #5c3a00; }
 
+
+  /* Small screens: keep the header on one row and let buttons wrap */
+  @media (max-width: 479px) {
+    header.sticky .tracking-wider { font-size: 0.7rem; letter-spacing: 0; }
+    header.sticky > div { padding-left: 0.75rem; padding-right: 0.75rem; gap: 0.4rem; }
+    #mobile-nav-select { max-width: 7.25rem; padding-left: 0.5rem; padding-right: 0.5rem; }
+    header.sticky .btn-ghost { padding-left: 0.55rem; padding-right: 0.55rem; margin-left: 0.3rem; }
+  }
+  .ev-actions button { white-space: normal; text-align: left; max-width: 100%; }
+  @media (max-width: 359px) { header.sticky .btn-ghost { display: none; } #mobile-nav-select { max-width: 7.5rem; } }
+
   /* Citations and footnotes: show as [n] */
   sup { font-size: 0.75em; line-height: 0; vertical-align: super; }
-  sup a, a.cite { text-decoration: none; color: var(--color-vivid-emerald); font-weight: 600; }
+  sup a, a.cite { text-decoration: none; color: #02744b; font-weight: 600; }
   sup a.footnote-ref::before { content: "["; } sup a.footnote-ref::after { content: "]"; }
   .footnotes { max-width: 640px; }
   .footnotes hr { display: none; }

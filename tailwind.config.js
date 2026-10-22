@@ -23,13 +23,13 @@ module.exports = Object.assign({
           'cream-canvas': '#fdf9f7',
           'pure-paper': '#ffffff',
           'ink-black': '#333333',
-          'faded-pencil': '#6e7673',
+          'faded-pencil': '#656c69',
           'hairline-gray': '#d6d6d6',
           'mid-gray': '#a6a6a6',
           /* neutral remap: headings -> forest ink, body -> ink black, muted -> faded pencil, borders -> hairline */
           slate: {
             50: '#fdf9f7', 100: '#f6f1ed', 200: '#d6d6d6', 300: '#d6d6d6', 400: '#a6a6a6',
-            500: '#6e7673', 600: '#6e7673', 700: '#333333', 800: '#333333', 900: '#003f2e', 950: '#003f2e',
+            500: '#656c69', 600: '#656c69', 700: '#333333', 800: '#333333', 900: '#003f2e', 950: '#003f2e',
           },
           stone: { 50: '#fdf9f7', 100: '#f6f1ed', 200: '#ece6e1' },
           /* former amber accent -> forest ink (text) / vivid emerald (rules, borders) */
