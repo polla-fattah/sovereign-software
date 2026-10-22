@@ -6,7 +6,22 @@
     "summary": "Export your workspace, then convert it into ordinary Markdown files you can keep in a folder and back up with Git.",
     "label": "Convert an HTML or Docx export to Markdown",
     "cmd": "pandoc input_export.html -f html -t commonmark_x --wrap=none -o note.md",
-    "note": "Notion also has a built-in Markdown & CSV export. Expect to tidy filenames and internal links by hand."
+    "note": "Notion also has a built-in Markdown & CSV export. Expect to tidy filenames and internal links by hand.",
+    "connections": [
+      {
+        "principle": "Sovereignty",
+        "text": "Exporting while you still have access is the first step of a real exit (E1, E2)."
+      },
+      {
+        "principle": "Longevity",
+        "text": "Markdown is a documented, widely supported format that outlives any one editor."
+      },
+      {
+        "principle": "Recoverability",
+        "text": "Keep the original export archive as an independent recovery copy (E3, E4)."
+      }
+    ],
+    "caveat": "Conversion is lossy. Databases, relations, comments, and page history may not survive the move, and links between pages often need repair. Compare the result with the original before you rely on it."
   },
   {
     "title": "Move your budget out of YNAB",
@@ -15,7 +30,22 @@
     "summary": "Export your transactions as CSV, convert them into a double-entry journal, and keep that file in Git.",
     "label": "Check the ledger and print balances",
     "cmd": "bean-check personal_ledger.beancount && bean-report personal_ledger.beancount balances",
-    "note": "Run this after you have converted your CSV into a Beancount file."
+    "note": "Run this after you have converted your CSV into a Beancount file.",
+    "connections": [
+      {
+        "principle": "Sovereignty",
+        "text": "A ledger file you hold cannot be locked behind a subscription (E1, E5)."
+      },
+      {
+        "principle": "Longevity",
+        "text": "A plain-text journal stays readable with any text tool, and its rules are documented."
+      },
+      {
+        "principle": "Recoverability",
+        "text": "Keeping the ledger in version control gives you a history to recover from (E4)."
+      }
+    ],
+    "caveat": "CSV exports can lose category structure, split transactions, and history. Reconcile balances against the original service before you stop using it."
   },
   {
     "title": "Keep a local copy of your email",
@@ -24,7 +54,22 @@
     "summary": "Download your mailbox so every message is a plain file on your disk, then search it offline.",
     "label": "Sync, index, then search",
     "cmd": "mbsync -a && notmuch new && notmuch search \"tag:inbox AND date:2026..\"",
-    "note": "Needs a one-time ~/.mbsyncrc and 'notmuch setup' first."
+    "note": "Needs a one-time ~/.mbsyncrc and 'notmuch setup' first.",
+    "connections": [
+      {
+        "principle": "Sovereignty",
+        "text": "Your messages no longer depend on a provider keeping your account open (E1, E5)."
+      },
+      {
+        "principle": "Longevity",
+        "text": "One file per message in a documented layout is easy to inspect and migrate."
+      },
+      {
+        "principle": "Recoverability",
+        "text": "A local copy is an independent backup if the account is suspended (E3, E4)."
+      }
+    ],
+    "caveat": "IMAP sync copies messages, but usually not provider-side labels, filters, or contacts. Check what your provider offers for those. A synchronized copy is not a backup unless you also keep versions of it."
   },
   {
     "title": "Own your CAD and electronics designs",
@@ -33,6 +78,21 @@
     "summary": "Export existing models as STEP files to keep them, and write new parts as code so they rebuild the same way every time.",
     "label": "Build a parametric part offline",
     "cmd": "openscad -o enclosure_rev2.stl -D 'wall_thickness=2.4' enclosure.scad",
-    "note": "OpenSCAD cannot import STEP. Use FreeCAD or CadQuery to edit existing STEP geometry."
+    "note": "OpenSCAD cannot import STEP. Use FreeCAD or CadQuery to edit existing STEP geometry.",
+    "connections": [
+      {
+        "principle": "Sovereignty",
+        "text": "Keep your designs in files you hold, in formats other tools can open (E1, E2)."
+      },
+      {
+        "principle": "Longevity",
+        "text": "STEP is an ISO standard, and code-defined parts rebuild the same way from plain text."
+      },
+      {
+        "principle": "Recoverability",
+        "text": "Source files plus documented formats let you reconstruct a part without the original tool (E3)."
+      }
+    ],
+    "caveat": "STEP preserves geometry but usually not feature history or parameters, so exported models become fixed shapes. A faithful migration may also need the vendor's native files."
   }
 ]

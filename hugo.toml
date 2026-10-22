@@ -1,6 +1,6 @@
 baseURL = "https://sovereign.polla.dev/"
 locale = "en-us"
-title = "Sovereign Personal Software: Manifesto, Index & Engineering Standard"
+title = "Sovereign Personal Software: Manifesto and Evaluation Framework"
 disableKinds = ["taxonomy", "term", "RSS"]
 enableRobotsTXT = true
 

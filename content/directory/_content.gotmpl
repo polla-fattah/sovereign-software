@@ -5,6 +5,7 @@
     "kind" "page"
     "path" .id
     "title" .name
+    "description" (printf "%s Evidence status under the Sovereign Software Evaluation Framework v%s." .summary (hugo.Data.framework.version))
     "content" $content
     "params" (dict "entry" . "scripts" (slice "scoring.js" "directory.js"))
   }}
