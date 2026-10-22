@@ -1,6 +1,6 @@
 # Sovereign Personal Software
 
-A manifesto for software that stays under the authority of the people who use it, and the evidence-led tools that go with it: the proposed Sovereign Software Evaluation Framework (version 3.0), an interactive evaluator, an index of example software, and practical ways to leave cloud services. The site is built with [Hugo](https://gohugo.io/), loads nothing from third parties, and runs all evaluation in the browser.
+A manifesto for software that stays under the authority of the people who use it, and the evidence-led tools that go with it: the proposed Sovereign Software Evaluation Framework (version 3.0), an index of example software, and practical ways to leave cloud services. The site is built with [Hugo](https://gohugo.io/), loads nothing from third parties, and runs all evaluation in the browser.
 
 **Live site:** https://sovereign.polla.dev/
 
@@ -19,8 +19,7 @@ The framework is **evidence-led and unscored**. It adopts no weights, no numeric
 | Home (`/`) | `layouts/index.html` | The manifesto as a designed page. Principle cards and the evaluation section are generated from `data/framework.json` |
 | Reading edition (`/read/`) | `content/read.md` | The full text for reading and printing. Also published as a downloadable Markdown file |
 | The Manifesto (`/manifesto/`) | `content/manifesto.md` | A one-page summary |
-| Evaluator (`/evaluator/`) | `data/framework.json`, `static/js/` | Five-step assessment with Markdown and JSON export and import |
-| Methodology (`/methodology/`) | `content/methodology.md`, `data/framework.json` | The formal reference for findings and determinations |
+| Methodology (`/methodology/`) | `content/methodology.md`, `data/framework.json` | The formal reference for findings and determinations. `/evaluator/` redirects here |
 | Sovereign Index (`/directory/`) | `data/directory.json` | Example software and its evidence status. A detail page per entry at `/directory/<id>/` |
 | Escape Hatches (`/escape-hatches/`) | `data/escape.json` | Recipes for moving data out of cloud services, with caveats |
 | Slides (`/slides/`) | `slides/manifesto.md` | A presentation of the manifesto, compiled by Marp |
@@ -47,20 +46,25 @@ Four principles, in a deliberate conceptual order that is a relationship and not
 
 **Seven supporting engineering tests** gather evidence: ownership and exit, preservation and recovery, offline independence, operational transparency, security and continuity, interoperability and maintainability, and human experience and performance. They carry no weight or score, and the last two are supporting quality considerations, not prerequisites.
 
-### Scoring architecture
+### Determination architecture
 
 There is one definition and one implementation, so nothing is duplicated across pages:
 
 - **`data/framework.json`** is the single source of truth: principles, requirements, finding guidance, tests and their mapping, determination labels, and the worked examples.
-- **`static/js/assessment.js`** is the only implementation of the requirement rules, the findings, the determination, Markdown and JSON export, and import validation. It has no DOM access, so the browser and the Node tests run the same code.
-- **`static/js/evaluator.js`** and **`static/js/directory.js`** are interfaces only. They call `assessment.js`.
+- **`static/js/assessment.js`** is the only implementation of the requirement rules, the findings, and the determination. It has no DOM access, so the Index page, the maintainer command, and the Node tests run the same code.
+- **`static/js/directory.js`** is the Index interface (filtering and computed determinations). It calls `assessment.js`.
 - Determinations are never stored in the data. They are computed from the findings and evidence.
 
-### Evaluation data format
+To see what the site will publish for an entry, run the maintainer command:
 
-Assessments export as Markdown and JSON. The JSON carries `schemaVersion: "3.0"` and is described by [`static/schema/assessment-3.0.schema.json`](static/schema/assessment-3.0.schema.json). Imports are validated, rejected with a clear message when malformed, and recomputed from the data, so a file cannot claim a determination it has not earned. Files in the superseded 2.0 layout are not accepted.
+```bash
+node scripts/determine.js git     # one entry in detail
+node scripts/determine.js --all   # one line per entry
+```
 
-Index entries in `data/directory.json` use this model:
+### Index entry format
+
+Entries in `data/directory.json` use this model:
 
 ```json
 {
@@ -90,17 +94,20 @@ Index entries in `data/directory.json` use this model:
 
 ### Conducting and documenting an assessment
 
+There is no web form: assessments are recorded by editing `data/directory.json`.
+
 1. Choose one version of the software and one deployment model, and record it in `version_assessed`.
-2. Use the [evaluator](https://sovereign.polla.dev/evaluator/) to work through the five steps, and export the JSON for your records.
-3. Copy the results into the entry: set each requirement status, each principle finding (`meets`, `partial`, or `does_not_meet`), `assessment_date`, and `assessment_status` to `"complete"`. Add `evidence` items, each with `target` (a principle id such as `"sovereignty"`, or a requirement id such as `"E1"`), `text`, an optional `url`, and `confidence` (`high`, `medium`, or `low`). Add `limitations`.
-4. Do not store a determination for a complete entry. It is computed. Keep `"determination": "insufficient_evidence"` only while the entry is unassessed.
-5. Evidence should describe what was tested and how, not repeat the product's own description. A determination needs an evidence statement for every finding and every Pass, and no Low or unstated confidence.
-6. Keep the legacy tier fields. They are history and are labeled as such on the site.
+2. Work through the five fundamental requirements and the four principles using the [methodology](https://sovereign.polla.dev/methodology/) and the supporting tests (`data/framework.json`) as your checklist.
+3. Record the results in the entry: set each requirement status, each principle finding (`meets`, `partial`, or `does_not_meet`), `assessment_date`, and `assessment_status` to `"complete"`. Add `evidence` items, each with `target` (a principle id such as `"sovereignty"`, or a requirement id such as `"E1"`), `text`, an optional `url`, and `confidence` (`high`, `medium`, or `low`). Add `limitations`.
+4. Run `node scripts/determine.js <id>` to see the determination the site will publish, and fix any evidence gaps it reports.
+5. Do not store a determination for a complete entry. It is computed. Keep `"determination": "insufficient_evidence"` only while the entry is unassessed.
+6. Evidence should describe what was tested and how, not repeat the product's own description. A determination needs an evidence statement for every finding and every Pass, and no Low or unstated confidence.
+7. Keep the legacy tier fields. They are history and are labeled as such on the site.
 
 ### Updating the framework version
 
 1. Edit `data/framework.json`: change the principles, requirements, tests, or rules there only, and raise `version` and `revisionDate`. Update `supersedes` and `status`.
-2. If the assessment file layout changes, raise `SCHEMA_VERSION` in `static/js/assessment.js` and add a new schema file. Do not rewrite old assessments silently.
+2. Do not rewrite old assessments silently. Mark them for reassessment instead.
 3. Add a dated entry to the Revision History in `content/read.md`, and update `content/methodology.md` where the prose describes changed rules.
 4. Run `node --test`. Index entries assessed under an older version should be reassessed or marked, never reinterpreted.
 
@@ -129,7 +136,7 @@ node --test     # run the automated tests
 
 `node --test` runs `tests/` with no dependencies:
 
-- `assessment.test.js` covers the assessment engine and the framework data: that no weights or scores exist, that a verified failure cannot be offset, that missing evidence is neither a pass nor a failure, evidence sufficiency, precedence, the worked examples, export and import (including malicious input), the Markdown report, and Index entries never inheriting a determination.
+- `assessment.test.js` covers the assessment engine and the framework data: that no weights or scores exist, that a verified failure cannot be offset, that missing evidence is neither a pass nor a failure, evidence sufficiency, precedence, the worked examples, Index entries never inheriting a determination, and the maintainer command.
 - `consistency.test.js` checks that the principle order and wording are the same in the framework data, the manifesto, the home page, the short manifesto, the slides, and the built site, that retired wording and em dashes have not crept back, and that the built site makes no third-party requests.
 
 ## Styles, fonts and scripts
@@ -144,7 +151,7 @@ Nothing is loaded from a CDN or a third-party font service.
   ```
 
   The CLI binary is not committed (`tools/` is git-ignored). Download the build for your platform from the release page above (for example `tailwindcss-windows-x64.exe`, `tailwindcss-macos-arm64` or `tailwindcss-linux-x64`), save it in `tools/` as `tailwindcss` (`tailwindcss.exe` on Windows), and check it against `sha256sums.txt` from the same release.
-- **JavaScript** is limited to `static/js/`. A page loads only the scripts listed in its front matter (`scripts = ["assessment.js", "evaluator.js"]`). The Evaluator, the Index, and the Index detail pages use JavaScript. Every other page ships none.
+- **JavaScript** is limited to `static/js/`. A page loads only the scripts listed in its front matter (`scripts = ["assessment.js", "directory.js"]`). Only the Index and the Index detail pages use JavaScript. Every other page ships none.
 
 ## Slides
 

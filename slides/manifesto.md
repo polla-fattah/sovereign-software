@@ -20,7 +20,7 @@ Software should serve people without claiming permanent custody over their infor
 *sovereign.polla.dev*
 
 <!--
-Open with the one-line claim. Say how long you will take and that the full text, the evaluator, and the methodology are all on the site, so nobody needs to copy anything down.
+Open with the one-line claim. Say how long you will take and that the full text and the methodology are both on the site, so nobody needs to copy anything down.
 -->
 
 ---
@@ -276,7 +276,6 @@ Be honest here: ToDoz predates the four-principle revision. It is a reference im
 ## What is on the website
 
 - **The manifesto:** full text, a reading and print edition, and a Markdown download
-- **Evaluator:** assess any software in the browser; export and import Markdown or JSON
 - **Methodology:** the formal reference for findings and determinations
 - **Index:** example software, each **awaiting assessment**
 - **Escape hatches:** recipes for moving data out of cloud services, with their caveats
@@ -328,8 +327,6 @@ Be explicit that Index entries carry no findings yet. Their old version 1 tiers 
 # Thank you
 
 **Read it:** sovereign.polla.dev
-
-**Evaluate software:** sovereign.polla.dev/evaluator
 
 **Method:** sovereign.polla.dev/methodology
 

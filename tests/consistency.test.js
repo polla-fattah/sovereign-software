@@ -77,9 +77,9 @@ test('the tagline and description are the revised ones, and the old quote is gon
 test('no weights, scores, tiers, or retired principles remain in the live source', () => {
   const banned = ['7-Gate', '7/7', 'GATE 0', 'Seven Engineering Evaluation Tests', 'Launch Interactive Scorer', 'sovereign.js', 'scoring.js', 'gates.json', 'Tier 1', 'Tier 2', 'Tier 3',
     'Weighted score', 'weighted score', 'Focused Interoperability', '25%', '/ 100', 'Responsiveness:'];
-  const files = ['content/read.md', 'content/manifesto.md', 'content/methodology.md', 'content/evaluator.md', 'content/directory/_index.md',
-    'layouts/index.html', 'layouts/_default/evaluator.html', 'layouts/_default/directory.html', 'layouts/partials/header.html', 'layouts/partials/footer.html',
-    'layouts/partials/directory-card.html', 'layouts/directory/single.html', 'slides/manifesto.md', 'static/js/evaluator.js', 'static/js/directory.js', 'static/js/assessment.js'];
+  const files = ['content/read.md', 'content/manifesto.md', 'content/methodology.md', 'content/directory/_index.md',
+    'layouts/index.html', 'layouts/_default/directory.html', 'layouts/partials/header.html', 'layouts/partials/footer.html',
+    'layouts/partials/directory-card.html', 'layouts/directory/single.html', 'slides/manifesto.md', 'static/js/directory.js', 'static/js/assessment.js'];
   for (const f of files) {
     const t = read(f);
     for (const b of banned) assert.ok(!t.includes(b), f + ' still contains "' + b + '"');
@@ -88,8 +88,7 @@ test('no weights, scores, tiers, or retired principles remain in the live source
     const t = read('layouts/shortcodes/' + f);
     for (const b of ['weight', 'Weight', 'tier']) assert.ok(!t.includes(b), f + ' mentions ' + b);
   }
-  assert.ok(read('static/schema/assessment-3.0.schema.json').includes('"const": "3.0"'));
-  for (const gone of ['data/gates.json', 'static/js/sovereign.js', 'static/js/scoring.js', 'static/schema/assessment-2.0.schema.json']) {
+  for (const gone of ['data/gates.json', 'static/js/sovereign.js', 'static/js/scoring.js', 'static/js/evaluator.js', 'content/evaluator.md', 'layouts/_default/evaluator.html', 'static/schema']) {
     assert.equal(fs.existsSync(path.join(root, gone)), false, gone + ' is gone');
   }
 });
@@ -133,7 +132,7 @@ test('the site builds', { skip }, () => { assert.equal(build.status, 0, build.st
 
 test('existing URLs still resolve and the new pages exist', { skip }, () => {
   for (const p of ['index.html', 'manifesto/index.html', 'read/index.html', 'read/sovereign-personal-software-manifesto.md', 'directory/index.html', 'evaluator/index.html',
-    'escape-hatches/index.html', 'slides/index.html', 'methodology/index.html', 'schema/assessment-3.0.schema.json', '404.html', 'robots.txt', 'sitemap.xml']) {
+    'escape-hatches/index.html', 'slides/index.html', 'methodology/index.html', '404.html', 'robots.txt', 'sitemap.xml']) {
     assert.ok(fs.existsSync(path.join(out, p)), p + ' exists');
   }
   for (const e of JSON.parse(read('data/directory.json'))) assert.ok(fs.existsSync(path.join(out, 'directory', e.id, 'index.html')), 'detail page for ' + e.id);
@@ -170,7 +169,8 @@ test('the built site makes no third-party requests', { skip }, () => {
 
 test('only the pages that need scripts load them', { skip }, () => {
   const has = (p, s) => html(p).includes(s);
-  assert.ok(has('evaluator/index.html', '/js/assessment.js') && has('evaluator/index.html', '/js/evaluator.js'));
+  assert.ok(has('evaluator/index.html', 'methodology/'), 'the retired /evaluator/ URL redirects to the methodology');
+  assert.ok(!has('evaluator/index.html', '/js/'), 'the redirect page ships no script');
   assert.ok(has('directory/index.html', '/js/directory.js') && has('directory/git/index.html', '/js/assessment.js'));
   for (const p of ['index.html', 'read/index.html', 'manifesto/index.html', 'methodology/index.html', 'escape-hatches/index.html']) assert.ok(!/<script src=/.test(html(p)), p + ' ships no script');
 });

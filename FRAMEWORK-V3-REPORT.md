@@ -4,6 +4,19 @@ The revised philosophy (`Sovereign_Software_Manifesto_Revised.md`) carried throu
 
 The fourth principle is named **Transparency** everywhere (it was "Transparency and Control" in the revised file), as requested afterwards.
 
+## Update: the evaluator was removed
+
+After the first version of this report, the interactive evaluator was removed at your request. Where the sections below mention the evaluator, its export and import, or the assessment file schema, they describe the state before this update.
+
+- **Removed:** `/evaluator/` (page, form, script, styles), the JSON Schema, Markdown and JSON export and import, the verification-test checklist, and the repository checklist that lived on that page.
+- **Redirect:** `/evaluator/` now redirects to `/methodology/` (a plain meta-refresh page with no script), so old links keep working.
+- **Kept:** the determination engine, now smaller (`static/js/assessment.js`), because the Index computes each entry's determination from its recorded data. The worked examples stay on the methodology page.
+- **Added:** `scripts/determine.js`, a maintainer command: `node scripts/determine.js <id>` shows what the site will publish for an entry, and `--all` lists every entry. Assessments are now recorded by editing `data/directory.json`, and the README documents the steps.
+- **Updated:** navigation (four links), footer, home Section 06, methodology (the file-format section became "How Assessments Are Recorded"), slides (still 24), README, and the tests.
+- **Tests:** 30 pass (16 engine and maintainer-command tests, 14 consistency and built-site tests). The build makes 35 pages.
+- **A regression I caused and fixed:** removing the evaluator styles also removed a shared rule that styled the Index search box and filters, which made `/directory/` overflow at 320 px. It is restored, and every page was rechecked at 320, 375, 768, 1024, and 1440 px.
+- **Trade-off to be aware of:** there is no longer a public self-service way to try the method. Anyone can read the methodology and the worked examples, but recording an assessment needs a file edit and the command above.
+
 ## 1. What changed
 
 - **Philosophy:** four principles (Sovereignty, Longevity, Locality, Transparency) in a conceptual order that is a relationship and not a ranking. Responsiveness, interoperability, modularity, and determinism are now supporting engineering qualities, not principles.

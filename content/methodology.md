@@ -3,9 +3,10 @@ title = "How Sovereign Software Is Evaluated"
 description = "The formal reference for the proposed Sovereign Software Evaluation Framework v3.0: four principles, five fundamental requirements, evidence-led findings, and qualified determinations, with no numerical score."
 layout = "methodology"
 weight = 4
+aliases = ["/evaluator/"]
 +++
 
-This page is the formal reference for the **Sovereign Software Evaluation Framework, version 3.0 (proposed)**. The [manifesto](../read/) states the philosophy, the [evaluator](../evaluator/) applies this method in your browser, and the [Index](../directory/) records assessments made with it. Everything on this page is generated from the same versioned data file that the evaluator uses, so the two cannot disagree about principles, requirements, or rules.
+This page is the formal reference for the **Sovereign Software Evaluation Framework, version 3.0 (proposed)**. The [manifesto](../read/) states the philosophy, and the [Index](../directory/) records assessments made with it. Everything on this page is generated from the same versioned data file that the Index uses, so the two cannot disagree about principles, requirements, or rules.
 
 The framework is deliberately **evidence-led and unscored**. It adopts no weighting scheme, numerical score, or tier threshold, and it is not an externally accredited certification scheme. "Meets the proposed core requirements" never means third-party approval.
 
@@ -44,7 +45,7 @@ Five requirements express the loss of fundamental control that no other quality 
 * A **verified failure** of any requirement means the software cannot earn the highest classification, whatever else it does well.
 * A requirement that is **not verified** prevents a determination. It is never presented as a failure, and it is never counted as a pass.
 * **Not Applicable** is accepted only with a documented justification, and only when the requirement genuinely does not apply to the software. Without a justification it is treated as Not Verified.
-* The evaluator lets you continue the assessment when a requirement fails, so you can still see the software's strengths and weaknesses.
+* An assessment continues past a failed requirement, so the software's strengths and weaknesses are still recorded.
 
 ## 6. Principle Findings
 
@@ -70,7 +71,7 @@ The seven engineering tests gather evidence. They are not interchangeable philos
 
 The principles define the destination, and the tests show whether the software reaches it. The last two tests are supporting quality and implementation considerations. Interoperability and maintainability matter because they can reduce lock-in and support recovery. Human experience and performance matter for any good product. **Neither responsiveness nor narrow functional scope is a prerequisite for being Sovereign Software.** A sub-100 millisecond interaction target is useful in many interfaces, but it is not a universal sovereignty test.
 
-A finding is recorded once, under the principle it primarily affects. Other principles may cite it, but it is not counted again. The evaluator shows how many verification items you checked for each principle as evidence coverage, and it never turns those counts into a score.
+A finding is recorded once, under the principle it primarily affects. Other principles may cite it, but it is not counted again. Verification items that were checked are recorded as evidence. They are never turned into a score.
 
 ## 9. Evidence Requirements
 
@@ -143,8 +144,6 @@ The examples are hypothetical illustrations of how the rules behave. They are no
 
 A strength in one area never overrides a verified failure of a fundamental requirement.
 
-## Assessment File Format
+## How Assessments Are Recorded
 
-The evaluator exports assessments as Markdown and as JSON, both generated in your browser. Nothing is sent anywhere. The JSON file carries a `schemaVersion` of `3.0`, the framework name, version, and status, the software identity, the evaluation details, the status and evidence of each fundamental requirement, the finding, observations, limitations, confidence, and sources of each principle, and the checked items of each supporting test. It also carries a `derived` block with the determination, which is informational: it is recomputed from the rest of the file on import, so an edited file cannot claim a determination it has not earned.
-
-The formal description is the [JSON Schema](../schema/assessment-3.0.schema.json). Imports are validated, malformed data is rejected with a clear message, and URLs must use http or https. Files in the superseded 2.0 layout are not accepted, because their ratings and weights have no equivalent in this framework.
+Assessments are recorded in the Index's data file, one entry per piece of software. An entry holds the version assessed, the assessment date, the status of each fundamental requirement, the finding for each principle, and the evidence behind them: observations, sources, limitations, and confidence. The determination is never stored. It is computed from the recorded data by the same code every time, so an entry cannot claim a determination it has not earned. Each entry's page shows what has and has not been established.

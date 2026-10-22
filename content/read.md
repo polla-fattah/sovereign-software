@@ -182,7 +182,7 @@ The last two are supporting quality and implementation considerations. Neither r
 
 **The principles define the destination. Evidence-based engineering tests show whether the software reaches it.**
 
-Assess software with the [interactive evaluator](https://sovereign.polla.dev/evaluator/), and read the full [methodology](https://sovereign.polla.dev/methodology/).
+Read the full [methodology](https://sovereign.polla.dev/methodology/).
 
 ---
 

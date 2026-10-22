@@ -1,12 +1,13 @@
 'use strict';
 /* Run with: node --test
-   Tests the assessment engine (static/js/assessment.js) against the framework definition
+   Tests the determination engine (static/js/assessment.js) against the framework definition
    (data/framework.json): four principles, five fundamental requirements, qualitative findings,
    and a qualified determination, with no numerical score, weight, or tier. */
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 const S = require('../static/js/assessment.js');
 
 const root = path.join(__dirname, '..');
@@ -74,8 +75,6 @@ test('missing evidence is not a failure and not a pass: unverified requirements 
   const r = rate(build(all('meets'), { E3: 'not_verified' }));
   assert.equal(r.determination.id, 'insufficient_evidence');
   assert.deepEqual(r.eligibility.unverified, ['E3']);
-  assert.notEqual(r.determination.id, 'fails_fundamental');
-  assert.notEqual(r.determination.id, 'meets_core');
 });
 
 test('Not Applicable needs a documented justification, otherwise it counts as not verified', () => {
@@ -92,7 +91,6 @@ test('an unassessed principle is not assessed, never a pass or a failure', () =>
   assert.equal(r.complete, false);
   assert.deepEqual(r.missing, ['locality']);
   assert.equal(r.determination.id, 'insufficient_evidence');
-  assert.equal(r.profile.find((c) => c.id === 'locality').finding, null);
   assert.equal(r.profile.find((c) => c.id === 'locality').findingLabel, 'Not assessed');
 });
 
@@ -112,20 +110,15 @@ test('partial or unmet principles without a failed requirement give partially al
 });
 
 test('precedence: failure, then insufficient evidence, then meets, then partially aligned', () => {
-  const messy = build({ ...all('meets'), locality: null }, { E1: 'fail', E2: 'not_verified' });
-  assert.equal(det(messy), 'fails_fundamental');
+  assert.equal(det(build({ ...all('meets'), locality: null }, { E1: 'fail', E2: 'not_verified' })), 'fails_fundamental');
   assert.equal(det(build({ ...all('partial'), locality: null }, { E2: 'not_verified' })), 'insufficient_evidence');
   assert.equal(det(build(all('partial'))), 'partially_aligned');
 });
 
-test('speed and polish are supporting qualities: a slow application can meet the core requirements', () => {
-  const a = build(all('meets'));
-  const slowTest = fw.tests.find((t) => t.id === 'T7');
-  assert.deepEqual(slowTest.supports, []);
-  assert.equal(slowTest.role, 'supporting');
-  a.tests.T7.checked = [false, false, false];
-  a.tests.T7.notes = 'Noticeably slow on large files.';
-  assert.equal(det(a), 'meets_core');
+test('speed and polish are supporting qualities: they are not principles and do not decide the outcome', () => {
+  const t7 = fw.tests.find((t) => t.id === 'T7');
+  assert.deepEqual(t7.supports, []);
+  assert.equal(t7.role, 'supporting');
   assert.ok(!IDS.includes('responsiveness'));
 });
 
@@ -137,14 +130,6 @@ test('verification tests map to principles and requirements that exist', () => {
   for (const id of IDS) assert.ok(fw.tests.some((t) => t.supports.includes(id)), id + ' has a verifying test');
   for (const e of fw.eligibility) assert.ok(fw.tests.some((t) => t.eligibility.includes(e.id)), e.id + ' has a verifying test');
   assert.equal(fw.tests.find((t) => t.id === 'T5').role, 'cross-cutting');
-});
-
-test('verification coverage counts checked items per principle without creating a score', () => {
-  const a = build(all('meets'));
-  a.tests.T3.checked[0] = true;
-  const cov = rate(a).coverage.find((c) => c.id === 'locality');
-  assert.equal(cov.verificationChecked, 1);
-  assert.ok(cov.verificationTotal >= 3);
 });
 
 test('worked examples in the framework data match the engine', () => {
@@ -164,79 +149,9 @@ test('worked examples in the framework data match the engine', () => {
   assert.deepEqual(fw.examples.map((e) => e.expected.determination), ['fails_fundamental', 'meets_core', 'partially_aligned']);
 });
 
-/* ---------- export and import ---------- */
-
-test('export then import reproduces the assessment and determination', () => {
-  const a = build({ sovereignty: 'meets', longevity: 'partial', locality: 'meets', transparency: 'meets' }, { E2: 'pass', E4: 'not_applicable' });
-  a.software = { name: 'Example | Tool é中', version: '1.2', category: 'Tools', platform: 'Linux', deployment: 'Local application' };
-  a.evaluation = { date: '2026-10-22', evaluator: 'Tester', notes: 'Line one\nLine two' };
-  a.principles.sovereignty.sources = 'https://example.org/a\nhttps://example.org/b';
-  a.principles.locality.limitations = 'Sync needs a server.';
-  a.eligibility.E1.source = 'https://example.org/e1';
-  a.tests.T3.checked[0] = true;
-  a.tests.T3.notes = 'Checked offline';
-  const result = rate(a);
-  const json = S.toJSON(fw, a, result);
-  const back = S.parseImport(fw, json);
-  assert.equal(back.ok, true, back.errors.join('; '));
-  assert.deepEqual(back.assessment, a);
-  assert.equal(rate(back.assessment).determination.id, result.determination.id);
-  const parsed = JSON.parse(json);
-  assert.equal(parsed.schemaVersion, '3.0');
-  assert.equal(parsed.framework.version, '3.0');
-  assert.ok(!('score' in parsed.derived));
-});
-
-test('invalid or malicious imports are rejected safely', () => {
-  const good = JSON.parse(S.toJSON(fw, build(all('meets')), rate(build(all('meets')))));
-  const bad = (mutate) => { const o = JSON.parse(JSON.stringify(good)); mutate(o); return S.parseImport(fw, JSON.stringify(o)); };
-  assert.equal(S.parseImport(fw, '').ok, false);
-  assert.equal(S.parseImport(fw, 'not json').ok, false);
-  assert.equal(S.parseImport(fw, '[]').ok, false);
-  assert.equal(S.parseImport(fw, 'null').ok, false);
-  assert.equal(S.parseImport(fw, 'x'.repeat(1000001)).ok, false);
-  assert.equal(bad((o) => { o.schemaVersion = '2.0'; }).ok, false, 'the superseded 2.0 file layout is not accepted');
-  assert.equal(bad((o) => { o.principles.sovereignty.finding = 'excellent'; }).ok, false);
-  assert.equal(bad((o) => { o.principles.sovereignty.finding = 5; }).ok, false);
-  assert.equal(bad((o) => { o.principles.sovereignty.confidence = 'certain'; }).ok, false);
-  assert.equal(bad((o) => { o.eligibility.E1.status = 'maybe'; }).ok, false);
-  assert.equal(bad((o) => { o.eligibility.E1.source = 'javascript:alert(1)'; }).ok, false);
-  assert.equal(bad((o) => { o.principles.longevity.sources = 'ftp://example.org/x'; }).ok, false);
-  assert.equal(bad((o) => { o.software.name = { x: 1 }; }).ok, false);
-  assert.equal(bad((o) => { o.software.name = 'a'.repeat(201); }).ok, false);
-  assert.equal(bad((o) => { o.evaluation.date = '22/10/2026'; }).ok, false);
-  assert.equal(bad((o) => { o.tests.T1.checked = [true]; }).ok, false);
-  const polluted = S.parseImport(fw, '{"schemaVersion":"3.0","__proto__":{"polluted":true},"software":{"constructor":{"prototype":{"polluted":true}}}}');
-  assert.equal(polluted.ok, false);
-  assert.equal(({}).polluted, undefined);
-  assert.equal(S.parseImport(fw, '{"schemaVersion":"3.0","principles":{"__proto__":{"x":1}}}').ok, false);
-});
-
-test('an empty but valid import is fully unassessed, never passing', () => {
-  const r = S.parseImport(fw, JSON.stringify({ schemaVersion: '3.0' }));
-  assert.equal(r.ok, true);
-  const res = rate(r.assessment);
-  assert.equal(res.determination.id, 'insufficient_evidence');
-  assert.equal(res.eligibility.unverified.length, 5);
-  assert.equal(res.assessedCount, 0);
-});
-
-test('the Markdown report has the required sections and the not-certified statement', () => {
-  const a = build(all('partial'), { E3: 'fail' });
-  a.software.name = 'Pipe | Test';
-  const md = S.toMarkdown(fw, a, rate(a));
-  for (const needle of ['Framework:', 'Assessment date', 'Overall determination', 'Fundamental eligibility requirements', 'Principle profile', 'Evidence and limitations', 'Known limitations', 'Supporting engineering tests', 'Recommended improvements', 'not externally certified', 'Fails a fundamental requirement']) {
-    assert.ok(md.includes(needle), 'report mentions ' + needle);
-  }
-  assert.ok(md.includes('Pipe | Test'), 'the name appears in the heading');
-  a.eligibility.E1.evidence = 'a | b';
-  assert.ok(S.toMarkdown(fw, a, rate(a)).includes('a \\| b'), 'pipes are escaped inside table cells');
-  assert.ok(!/score|weighted|tier/i.test(md.replace(/adopts no numerical score, weighting, or tier threshold/, '')), 'no scoring language in the report');
-});
-
 /* ---------- directory entries ---------- */
 
-test('directory entries without a verified v3 assessment are unverified and carry no findings', () => {
+test('directory entries without a verified assessment are unverified and carry no findings', () => {
   const dir = JSON.parse(fs.readFileSync(path.join(root, 'data', 'directory.json'), 'utf8'));
   assert.ok(dir.length > 0);
   const seen = new Set();
@@ -281,12 +196,18 @@ test('a fully evidenced synthetic entry is determined by the same engine through
   assert.equal(S.computeResult(fw, S.assessmentFromEntry(fw, entry)).determination.id, 'partially_aligned');
 });
 
-test('schema property names match the framework data', () => {
-  const schema = JSON.parse(fs.readFileSync(path.join(root, 'static', 'schema', 'assessment-3.0.schema.json'), 'utf8'));
-  assert.deepEqual(Object.keys(schema.properties.principles.properties), IDS);
-  assert.deepEqual(Object.keys(schema.properties.eligibility.properties), fw.eligibility.map((e) => e.id));
-  assert.deepEqual(Object.keys(schema.properties.tests.properties), fw.tests.map((t) => t.id));
-  assert.equal(schema.properties.schemaVersion.const, S.SCHEMA_VERSION);
-  assert.deepEqual(schema.properties.principles.properties.sovereignty.properties.finding.enum, [null, ...S.FINDINGS]);
-  fw.tests.forEach((t) => assert.equal(schema.properties.tests.properties[t.id].properties.checked.minItems, t.verify.length));
+/* ---------- maintainer command ---------- */
+
+test('scripts/determine.js reports an entry and the whole Index', () => {
+  const run = (...args) => spawnSync(process.execPath, [path.join(root, 'scripts', 'determine.js'), ...args], { encoding: 'utf8' });
+  const one = run('git');
+  assert.equal(one.status, 0, one.stderr);
+  assert.match(one.stdout, /Determination: Insufficient evidence/);
+  assert.match(one.stdout, /Sovereignty: Not assessed/);
+  const every = run('--all');
+  assert.equal(every.status, 0);
+  assert.equal(every.stdout.trim().split('\n').length, JSON.parse(fs.readFileSync(path.join(root, 'data', 'directory.json'), 'utf8')).length);
+  const bad = run('no-such-entry');
+  assert.equal(bad.status, 1);
+  assert.match(bad.stderr, /No entry with id/);
 });

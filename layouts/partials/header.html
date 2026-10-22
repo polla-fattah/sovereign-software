@@ -11,7 +11,6 @@
     <nav class="hidden lg:flex items-center space-x-1 font-mono text-xs">
       <a href="{{ "manifesto/" | relURL }}" class="nav-btn px-3.5 py-2 rounded-lg font-medium border {{ if hasPrefix $.RelPermalink ("manifesto/" | relURL) }}bg-amber-500/15 text-amber-600 border-amber-500/30{{ else }}text-slate-600 hover:text-slate-900 border-transparent{{ end }}">The Manifesto</a>
       <a href="{{ "directory/" | relURL }}" class="nav-btn px-3.5 py-2 rounded-lg font-medium border {{ if hasPrefix $.RelPermalink ("directory/" | relURL) }}bg-amber-500/15 text-amber-600 border-amber-500/30{{ else }}text-slate-600 hover:text-slate-900 border-transparent{{ end }}">Sovereign Index</a>
-      <a href="{{ "evaluator/" | relURL }}" class="nav-btn px-3.5 py-2 rounded-lg font-medium border {{ if hasPrefix $.RelPermalink ("evaluator/" | relURL) }}bg-amber-500/15 text-amber-600 border-amber-500/30{{ else }}text-slate-600 hover:text-slate-900 border-transparent{{ end }}">Evaluator</a>
       <a href="{{ "methodology/" | relURL }}" class="nav-btn px-3.5 py-2 rounded-lg font-medium border {{ if hasPrefix $.RelPermalink ("methodology/" | relURL) }}bg-amber-500/15 text-amber-600 border-amber-500/30{{ else }}text-slate-600 hover:text-slate-900 border-transparent{{ end }}">Methodology</a>
       <a href="{{ "escape-hatches/" | relURL }}" class="nav-btn px-3.5 py-2 rounded-lg font-medium border {{ if hasPrefix $.RelPermalink ("escape-hatches/" | relURL) }}bg-amber-500/15 text-amber-600 border-amber-500/30{{ else }}text-slate-600 hover:text-slate-900 border-transparent{{ end }}">Escape Hatches</a>
     </nav>
@@ -28,7 +27,6 @@
       <select onchange="location.href=this.value" id="mobile-nav-select" aria-label="Section navigation" class="bg-white dark:bg-obsidian-800 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-1.5 font-mono text-xs text-slate-800 dark:text-slate-100">
         <option value="{{ "manifesto/" | relURL }}"{{ if hasPrefix $.RelPermalink ("manifesto/" | relURL) }} selected{{ end }}>The Manifesto</option>
         <option value="{{ "directory/" | relURL }}"{{ if hasPrefix $.RelPermalink ("directory/" | relURL) }} selected{{ end }}>Sovereign Index</option>
-        <option value="{{ "evaluator/" | relURL }}"{{ if hasPrefix $.RelPermalink ("evaluator/" | relURL) }} selected{{ end }}>Evaluator</option>
         <option value="{{ "methodology/" | relURL }}"{{ if hasPrefix $.RelPermalink ("methodology/" | relURL) }} selected{{ end }}>Methodology</option>
         <option value="{{ "escape-hatches/" | relURL }}"{{ if hasPrefix $.RelPermalink ("escape-hatches/" | relURL) }} selected{{ end }}>Escape Hatches</option>
       </select>
