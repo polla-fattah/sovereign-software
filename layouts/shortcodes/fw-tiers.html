@@ -1,0 +1,13 @@
+{{- $fw := hugo.Data.framework -}}
+{{- $c := $fw.classification -}}
+<div class="table-wrap"><table class="fw-table">
+  <caption class="sr-only">Classification rules in order of precedence</caption>
+  <thead><tr><th scope="col">Order</th><th scope="col">Classification</th><th scope="col">Rule</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><th scope="row">{{ index $c.labels "not_certified" }}</th><td>One or more mandatory eligibility requirements has a verified failure. No score can bypass this.</td></tr>
+    <tr><td>2</td><th scope="row">{{ index $c.labels "unverified" }}</th><td>A mandatory requirement is not verified, or the quality assessment is incomplete. Certification is withheld and the software is not treated as failing.</td></tr>
+    <tr><td>3</td><th scope="row">{{ index $c.labels "tier1" }}</th><td>All requirements satisfied, complete assessment, score at least {{ $c.tier1.minScore }}, every principle rated at least {{ $c.tier1.minEveryPrinciple }}, sufficient documented evidence.</td></tr>
+    <tr><td>4</td><th scope="row">{{ index $c.labels "tier2" }}</th><td>All requirements satisfied, complete assessment, score at least {{ $c.tier2.minScore }}, Sovereignty at least {{ index $c.tier2.minPrinciples "sovereignty" }} and Longevity at least {{ index $c.tier2.minPrinciples "longevity" }}, sufficient documented evidence.</td></tr>
+    <tr><td>5</td><th scope="row">{{ index $c.labels "tier3" }}</th><td>Complete assessment with all requirements established and no verified critical failure, but short of Tier 2. Known limitations are documented.</td></tr>
+  </tbody>
+</table></div>

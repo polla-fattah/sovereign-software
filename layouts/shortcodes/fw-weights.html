@@ -1,0 +1,10 @@
+{{- $fw := hugo.Data.framework -}}
+<div class="table-wrap"><table class="fw-table">
+  <caption class="sr-only">Principle priorities and weights</caption>
+  <thead><tr><th scope="col">Priority</th><th scope="col">Principle</th><th scope="col" class="num">Weight</th><th scope="col">What it protects</th></tr></thead>
+  <tbody>
+  {{- range $fw.principles }}
+    <tr><td>{{ .priority }}</td><th scope="row">{{ .name }}</th><td class="num">{{ .weight }}%</td><td>{{ .hierarchy }}</td></tr>
+  {{- end }}
+  </tbody>
+</table></div>

@@ -1,0 +1,16 @@
+{{- $fw := hugo.Data.framework -}}
+<div class="table-wrap"><table class="fw-table">
+  <caption class="sr-only">Mapping of verification tests to principles and requirements</caption>
+  <thead><tr><th scope="col">Test</th><th scope="col">Supports principle</th><th scope="col">Eligibility</th><th scope="col">Verifies</th></tr></thead>
+  <tbody>
+  {{- range $fw.tests }}
+    {{- $t := . }}
+    <tr>
+      <th scope="row">{{ .id }} {{ .title }}{{ if .crossCutting }} <span class="fw-weight">cross-cutting</span>{{ end }}</th>
+      <td>{{ range $i, $sid := .supports }}{{ if $i }}, {{ end }}{{ range $fw.principles }}{{ if eq .id $sid }}{{ .name }}{{ end }}{{ end }}{{ end }}</td>
+      <td>{{ if .eligibility }}{{ delimit .eligibility ", " }}{{ else }}none{{ end }}</td>
+      <td>{{ delimit .verify "; " }}</td>
+    </tr>
+  {{- end }}
+  </tbody>
+</table></div>

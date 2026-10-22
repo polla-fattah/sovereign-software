@@ -10,6 +10,7 @@
             “Your data belongs to you. Your tools should respect your time, preserve your freedom, and remain useful without depending on someone else’s infrastructure.”
           </blockquote>
           <p class="font-mono text-xs"><a href="{{ "read/" | relURL }}">Read or print the full text →</a></p>
+          <p class="font-mono text-xs text-slate-500">Framework version {{ hugo.Data.framework.version }}, revised {{ hugo.Data.framework.revisionDate }}. <a href="{{ "methodology/" | relURL }}" class="underline">How software is evaluated</a></p>
         </div>
       </div>
 
@@ -26,7 +27,7 @@
             <li><a href="#sec-03" class="block py-1 text-slate-600 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">03. Architecture of Computing</a></li>
             <li><a href="#sec-04" class="block py-1 text-slate-600 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">04. AI Without Dependency</a></li>
             <li><a href="#sec-05" class="block py-1 text-slate-600 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">05. Sync Without Surrender</a></li>
-            <li><a href="#sec-06" class="block py-1 text-slate-600 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">06. Seven Evaluation Tests</a></li>
+            <li><a href="#sec-06" class="block py-1 text-slate-600 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">06. Evaluation Framework</a></li>
             <li><a href="#sec-07" class="block py-1 text-slate-600 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">07. What It Refuses to Become</a></li>
             <li><a href="#sec-08" class="block py-1 text-slate-600 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">08. Economics in the Age of AI</a></li>
             <li><a href="#sec-09" class="block py-1 text-slate-600 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">09. The Permanent Standard</a></li>
@@ -58,33 +59,24 @@
               AI-assisted development makes custom, high-craft software increasingly practical for individuals and small teams to build. However, reducing the cost of writing code does not eliminate the laws of software engineering: disciplined architecture, formal verification, boundary security, and sustainable maintenance remain non-negotiable.
             </p>
             <div class="pt-4">
-              <h3 class="font-mono text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4">Six Foundational Principles Define Sovereign Software:</h3>
+              <h3 class="font-mono text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-4">Six Foundational Principles, in Order of Priority:</h3>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {{ range hugo.Data.framework.principles }}
                 <div class="p-3.5 rounded-xl bg-stone-50 dark:bg-obsidian-800/70 border border-slate-200 dark:border-slate-800">
-                  <span class="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">I. SOVEREIGNTY</span>
-                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Users control their data, infrastructure, cryptographic keys, and migration paths.</p>
+                  <span class="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">{{ .priority }}. {{ upper .name }}</span>
+                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">{{ .home.short }}</p>
                 </div>
-                <div class="p-3.5 rounded-xl bg-stone-50 dark:bg-obsidian-800/70 border border-slate-200 dark:border-slate-800">
-                  <span class="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">II. LOCALITY</span>
-                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Core functionality runs on the user's device, independently of network connectivity.</p>
-                </div>
-                <div class="p-3.5 rounded-xl bg-stone-50 dark:bg-obsidian-800/70 border border-slate-200 dark:border-slate-800">
-                  <span class="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">III. PREDICTABILITY</span>
-                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Critical state transitions and rule engines are deterministic, transparent, and testable.</p>
-                </div>
-                <div class="p-3.5 rounded-xl bg-stone-50 dark:bg-obsidian-800/70 border border-slate-200 dark:border-slate-800">
-                  <span class="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">IV. RESPONSIVENESS</span>
-                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Software respects human attention with sub-100ms feedback and zero artificial friction.</p>
-                </div>
-                <div class="p-3.5 rounded-xl bg-stone-50 dark:bg-obsidian-800/70 border border-slate-200 dark:border-slate-800">
-                  <span class="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">V. INTEROPERABILITY</span>
-                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Applications maintain bounded responsibilities while exchanging data across open formats.</p>
-                </div>
-                <div class="p-3.5 rounded-xl bg-stone-50 dark:bg-obsidian-800/70 border border-slate-200 dark:border-slate-800">
-                  <span class="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">VI. LONGEVITY</span>
-                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">Information must outlive individual applications, vendors, and runtime technologies.</p>
-                </div>
+                {{ end }}
               </div>
+            </div>
+            <div class="pt-4 space-y-3">
+              <h3 class="font-mono text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">Why This Order</h3>
+              <ul class="space-y-1.5 text-sm text-slate-800 dark:text-slate-200">
+                {{ range hugo.Data.framework.principles }}<li><strong>{{ .hierarchy }}</strong></li>{{ end }}
+              </ul>
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Sovereignty and Longevity belong together. Sovereignty answers who controls the software and its information today, and Longevity answers whether that control still means anything in ten or fifty years. Together they carry half of the weight in evaluation. The ranking expresses evaluation priority, not permission to ignore the lower principles: an extremely fast application that traps essential data cannot earn the highest classification, and a slower application with documented, recoverable information should not be rejected on responsiveness alone. It is a deliberate normative framework, not an established scientific law.
+              </p>
             </div>
           </article>
 
@@ -96,111 +88,22 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- Principle 1 -->
+              {{ range hugo.Data.framework.principles }}
               <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50/50 dark:bg-obsidian-800/40 flex flex-col justify-between space-y-4">
                 <div class="space-y-3">
-                  <div class="flex items-center justify-between font-mono text-xs">
-                    <span class="text-amber-600 dark:text-amber-400 font-bold">PRINCIPLE I</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-obsidian-700 text-slate-700 dark:text-slate-300">Data Freedom &amp; Custody</span>
+                  <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
+                    <span class="text-amber-600 dark:text-amber-400 font-bold">PRINCIPLE {{ .priority }} &bull; WEIGHT {{ .weight }}%</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-obsidian-700 text-slate-700 dark:text-slate-300">{{ .home.tag }}</span>
                   </div>
-                  <h3 class="text-lg font-bold text-slate-900 dark:text-white">Sovereignty: The User Is the Owner</h3>
-                  <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Personal information must never become inaccessible because a subscription expires, an account is suspended, or a service shuts down. Sovereignty requires uninhibited control over data, including native inspection, export, backup, and migration. Because true ownership transfers custodial responsibility to the user, sovereign software must make automated, verifiable backups and cryptographic key recovery a zero-friction part of the core experience.
-                  </p>
+                  <h3 class="text-lg font-bold text-slate-900 dark:text-white">{{ .home.title }}</h3>
+                  <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{{ .home.text | safeHTML }}</p>
                 </div>
                 <p class="font-mono text-xs text-amber-600 dark:text-amber-400 pt-2 border-t border-slate-200 dark:border-slate-800">
-                  → Ownership is meaningful only when you retain both the ability to leave and the resilience to recover.
+                  &rarr; {{ .home.takeaway }}
                 </p>
+                {{ with .home.note }}<p class="text-xs text-slate-500 leading-relaxed">{{ . | safeHTML }}</p>{{ end }}
               </div>
-
-              <!-- Principle 2 -->
-              <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50/50 dark:bg-obsidian-800/40 flex flex-col justify-between space-y-4">
-                <div class="space-y-3">
-                  <div class="flex items-center justify-between font-mono text-xs">
-                    <span class="text-amber-600 dark:text-amber-400 font-bold">PRINCIPLE II</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-obsidian-700 text-slate-700 dark:text-slate-300">Local-First • Offline</span>
-                  </div>
-                  <h3 class="text-lg font-bold text-slate-900 dark:text-white">Locality: The Device Comes First</h3>
-                  <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    The network should enhance an application, not determine whether it can function. Creating records, updating states, compiling outputs, and searching locally stored information must remain 100% available offline. Local storage is the primary working environment<sup><a href="#ref-1" class="cite">[1]</a></sup>; synchronization operates asynchronously with explicit status and deterministic conflict recovery.
-                  </p>
-                </div>
-                <p class="font-mono text-xs text-amber-600 dark:text-amber-400 pt-2 border-t border-slate-200 dark:border-slate-800">
-                  → Offline operation is not an emergency fallback. It is the baseline operating model.
-                </p>
-              </div>
-
-              <!-- Principle 3 -->
-              <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50/50 dark:bg-obsidian-800/40 flex flex-col justify-between space-y-4">
-                <div class="space-y-3">
-                  <div class="flex items-center justify-between font-mono text-xs">
-                    <span class="text-amber-600 dark:text-amber-400 font-bold">PRINCIPLE III</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-obsidian-700 text-slate-700 dark:text-slate-300">Deterministic Grammar</span>
-                  </div>
-                  <h3 class="text-lg font-bold text-slate-900 dark:text-white">Predictability: Rules Must Govern</h3>
-                  <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Schedules, financial ledgers, geometry kernels, and state machines represent deliberate commitments. Their behavior must be consistent, explainable, and reproducible. Sovereign software uses deterministic rules for critical operations and explicitly surfaces ambiguous inputs rather than silently guessing. Probabilistic AI may assist at the boundary, but proposed actions must be validated before execution.
-                  </p>
-                </div>
-                <p class="font-mono text-xs text-amber-600 dark:text-amber-400 pt-2 border-t border-slate-200 dark:border-slate-800">
-                  → Intelligence may assist at the boundary. Predictability must govern at the core.
-                </p>
-              </div>
-
-              <!-- Principle 4 -->
-              <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50/50 dark:bg-obsidian-800/40 flex flex-col justify-between space-y-4">
-                <div class="space-y-3">
-                  <div class="flex items-center justify-between font-mono text-xs">
-                    <span class="text-amber-600 dark:text-amber-400 font-bold">PRINCIPLE IV</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-obsidian-700 text-slate-700 dark:text-slate-300">Sub-100ms Latency</span>
-                  </div>
-                  <h3 class="text-lg font-bold text-slate-900 dark:text-white">Responsiveness: Respect Human Attention</h3>
-                  <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Software should reduce cognitive effort, not become another source of work. Routine local interactions must provide immediate perceptual feedback within 100 milliseconds on standard hardware. Responsiveness also demands restraint: eliminating unnecessary notifications, telemetry beacons, background churn, and interface bloat.
-                  </p>
-                </div>
-                <p class="font-mono text-xs text-amber-600 dark:text-amber-400 pt-2 border-t border-slate-200 dark:border-slate-800">
-                  → Good software helps users complete their work without becoming work itself.
-                </p>
-                <p class="text-xs text-slate-500 leading-relaxed">
-                  The 100ms figure follows the widely cited response-time limits of Miller (1968)<sup><a href="#ref-2" class="cite">[2]</a></sup> and Nielsen (1993)<sup><a href="#ref-3" class="cite">[3]</a></sup>: about 0.1s feels instantaneous, about 1s keeps flow, about 10s is the limit of focused attention. They are practical guidelines, not precise laws.
-                  <a href="https://www.nngroup.com/articles/response-times-3-important-limits/" target="_blank" rel="noopener" class="underline">Nielsen, Response Times: The 3 Important Limits</a>
-                </p>
-              </div>
-
-              <!-- Principle 5 -->
-              <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50/50 dark:bg-obsidian-800/40 flex flex-col justify-between space-y-4">
-                <div class="space-y-3">
-                  <div class="flex items-center justify-between font-mono text-xs">
-                    <span class="text-amber-600 dark:text-amber-400 font-bold">PRINCIPLE V</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-obsidian-700 text-slate-700 dark:text-slate-300">Anti-Monolith • Composable</span>
-                  </div>
-                  <h3 class="text-lg font-bold text-slate-900 dark:text-white">Focused Interoperability</h3>
-                  <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Managing operational actions is fundamentally distinct from preserving long-form knowledge or editing raw media. Sovereign tools maintain bounded responsibilities<sup><a href="#ref-4" class="cite">[4]</a></sup> while connecting through documented interfaces: URI schemes, plain-text sidecars, local sockets, CLI pipes, and open interchange standards, with clean import/export bridges on sandboxed mobile OS environments.
-                  </p>
-                </div>
-                <p class="font-mono text-xs text-amber-600 dark:text-amber-400 pt-2 border-t border-slate-200 dark:border-slate-800">
-                  → Separate responsibilities. Connect information. Preserve freedom of choice.
-                </p>
-              </div>
-
-              <!-- Principle 6 -->
-              <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50/50 dark:bg-obsidian-800/40 flex flex-col justify-between space-y-4">
-                <div class="space-y-3">
-                  <div class="flex items-center justify-between font-mono text-xs">
-                    <span class="text-amber-600 dark:text-amber-400 font-bold">PRINCIPLE VI</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-200 dark:bg-obsidian-700 text-slate-700 dark:text-slate-300">Decades-Long Survivability</span>
-                  </div>
-                  <h3 class="text-lg font-bold text-slate-900 dark:text-white">Longevity: Information Outlives Software</h3>
-                  <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Applications and vendors are transient; human records remain valuable across decades. Sovereign software resolves the tension between high-speed local execution and long-term human readability through dual-layer persistence: pairing fast local indexing (such as SQLite<sup><a href="#ref-5" class="cite">[5]</a></sup>) with deterministic, human-inspectable plain-text files or sidecars.
-                  </p>
-                </div>
-                <p class="font-mono text-xs text-amber-600 dark:text-amber-400 pt-2 border-t border-slate-200 dark:border-slate-800">
-                  → Applications are temporary. Human information deserves a longer life.
-                </p>
-              </div>
+              {{ end }}
             </div>
           </article>
 
@@ -246,6 +149,9 @@
                 </p>
               </div>
             </div>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Preservation is an enduring architectural obligation, not a secondary storage feature. The preservation layer must stay readable and recoverable even if the execution layer, and the application that implements it, is replaced or disappears.
+            </p>
           </article>
 
           <!-- Section 04 & 05 Grid -->
@@ -257,14 +163,15 @@
                 AI coding agents accelerate development, and local or remote models can assist workflows. Sovereign software accepts optional AI assistance only when:
               </p>
               <ul class="space-y-2 text-xs font-mono text-slate-700 dark:text-slate-300">
-                <li class="flex items-start gap-2"><span class="text-emerald-500">✓</span> Core functionality remains 100% operational without AI.</li>
-                <li class="flex items-start gap-2"><span class="text-emerald-500">✓</span> The human operator explicitly authorizes proposed state mutations.</li>
-                <li class="flex items-start gap-2"><span class="text-emerald-500">✓</span> Critical pipelines remain deterministic and verifiable.</li>
-                <li class="flex items-start gap-2"><span class="text-emerald-500">✓</span> Privacy, cost, and network boundaries are transparent.</li>
-                <li class="flex items-start gap-2"><span class="text-emerald-500">✓</span> Removing AI never compromises access to existing data.</li>
+                <li class="flex items-start gap-2"><span class="text-emerald-500">&#10003;</span> Core functionality remains 100% operational without AI.</li>
+                <li class="flex items-start gap-2"><span class="text-emerald-500">&#10003;</span> The human operator explicitly authorizes proposed state mutations.</li>
+                <li class="flex items-start gap-2"><span class="text-emerald-500">&#10003;</span> Critical pipelines remain deterministic and verifiable.</li>
+                <li class="flex items-start gap-2"><span class="text-emerald-500">&#10003;</span> Privacy, cost, and network boundaries are transparent.</li>
+                <li class="flex items-start gap-2"><span class="text-emerald-500">&#10003;</span> The model is replaceable: removing or swapping it never compromises access to existing data.</li>
+                <li class="flex items-start gap-2"><span class="text-emerald-500">&#10003;</span> Anything the user keeps is stored in their own durable formats, readable after any provider disappears.</li>
               </ul>
               <p class="font-mono text-xs text-amber-600 dark:text-amber-400 pt-2">
-                AI may help create or assist the software. It must never become a hostage-taker.
+                AI may help build or operate the software. It must never hold the tool, or the user's information, hostage.
               </p>
             </article>
 
@@ -276,7 +183,8 @@
               </p>
               <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
                 <li><strong class="text-slate-900 dark:text-white font-mono">Syntactic Convergence:</strong> Handled via mathematically verifiable structures (CRDTs<sup><a href="#ref-6" class="cite">[6]</a></sup> or append-only operation logs).</li>
-                <li><strong class="text-slate-900 dark:text-white font-mono">Semantic Divergence:</strong> When concurrent offline changes contradict human intent, both branches are preserved transparently rather than silently overwritten.</li>
+                <li><strong class="text-slate-900 dark:text-white font-mono">Semantic Divergence:</strong> When concurrent offline changes contradict human intent, both versions are preserved transparently rather than silently overwritten. No algorithm can promise to interpret every intention correctly, so the goal is a conflict that is visible and recoverable.</li>
+                <li><strong class="text-slate-900 dark:text-white font-mono">Backups:</strong> Synchronized copies are not backups, because a deletion or corruption can replicate everywhere.</li>
               </ul>
               <p class="font-mono text-xs text-amber-600 dark:text-amber-400 pt-2">
                 Complexity must always justify its existence.
@@ -284,49 +192,73 @@
             </article>
           </div>
 
-          <!-- Section 06: The 7 Engineering Evaluation Tests -->
+          <!-- Section 06: Evaluation framework -->
           <article id="sec-06" class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-obsidian-900 p-6 sm:p-10 space-y-6">
+            {{ $fw := hugo.Data.framework }}
+            {{ $max := 0 }}{{ range $fw.principles }}{{ if gt .weight $max }}{{ $max = .weight }}{{ end }}{{ end }}
             <div class="flex flex-wrap items-center justify-between gap-4">
               <div>
                 <div class="font-mono text-xs text-amber-600 dark:text-amber-400 uppercase tracking-widest">Section 06</div>
-                <h2 class="font-serif text-3xl sm:text-4xl text-slate-900 dark:text-white mt-1">The Seven Engineering Evaluation Tests</h2>
+                <h2 class="font-serif text-3xl sm:text-4xl text-slate-900 dark:text-white mt-1">Evaluation: Priorities, Eligibility, and Evidence</h2>
               </div>
-              <a href="{{ "evaluator/" | relURL }}" class="px-3.5 py-2 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 font-mono text-xs hover:bg-amber-500/25 transition-all">
-                Launch Interactive Scorer →
-              </a>
+              <div class="flex flex-wrap gap-2">
+                <a href="{{ "evaluator/" | relURL }}" class="px-3.5 py-2 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 font-mono text-xs hover:bg-amber-500/25 transition-all">Open the evaluator &rarr;</a>
+                <a href="{{ "methodology/" | relURL }}" class="px-3.5 py-2 rounded-lg border border-slate-300 font-mono text-xs transition-all">Read the methodology &rarr;</a>
+              </div>
             </div>
             <p class="text-sm text-slate-600 dark:text-slate-300">
-              Every significant feature, dependency, or architectural decision must pass seven non-negotiable verification gates:
+              Principles are easy to endorse and hard to apply, so the manifesto comes with an evaluation framework: the {{ $fw.name }}, version {{ $fw.version }}. It replaces the earlier model of seven equally weighted pass/fail tests.
             </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50 dark:bg-obsidian-800/50">
-                <span class="font-mono text-xs text-amber-500 font-bold">GATE 01 // OFFLINE TEST (AIR-GAP)</span>
-                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">Does all primary functionality remain 100% operational with the network interface physically disabled?</p>
+
+            <div class="space-y-3">
+              <h3 class="font-mono text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">Six Prioritized Principles</h3>
+              <ul class="home-weights">
+                {{ range $fw.principles }}
+                <li>
+                  <div class="flex justify-between gap-2 text-xs font-mono"><strong>{{ .priority }}. {{ .name }}</strong><span>{{ .weight }}%</span></div>
+                  <div class="home-track" aria-hidden="true"><div class="home-fill" style="width: {{ printf "%.1f" (mul (div .weight $max) 100) }}%"></div></div>
+                </li>
+                {{ end }}
+              </ul>
+              <p class="text-xs text-slate-500 dark:text-slate-400">{{ $fw.policyNote }}</p>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="font-mono text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">Five Mandatory Eligibility Requirements</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {{ range $fw.eligibility }}
+                <div class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50 dark:bg-obsidian-800/50">
+                  <span class="font-mono text-xs text-amber-600 font-bold">{{ .id }} // {{ upper .title }}</span>
+                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">{{ .question }}</p>
+                </div>
+                {{ end }}
               </div>
-              <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50 dark:bg-obsidian-800/50">
-                <span class="font-mono text-xs text-amber-500 font-bold">GATE 02 // 100ms TEST</span>
-                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">Do common local interactions respond within 100 milliseconds on baseline commodity hardware?</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300">A verified failure of any requirement blocks every certified tier, however high the score. An unverified requirement withholds a decision but is never counted as a failure.</p>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="font-mono text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">Seven Verification Tests</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300">The tests gather and check the evidence behind each rating. They do not produce a separate score.</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {{ range $fw.tests }}
+                <div class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50 dark:bg-obsidian-800/50">
+                  <span class="font-mono text-xs text-amber-600 font-bold">{{ .id }} // {{ upper .title }}</span>
+                  <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">{{ delimit .verify "; " }}.</p>
+                </div>
+                {{ end }}
               </div>
-              <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50 dark:bg-obsidian-800/50">
-                <span class="font-mono text-xs text-amber-500 font-bold">GATE 03 // LONGEVITY TEST</span>
-                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">Can users recover, inspect, and understand their raw data using standard POSIX tools if the binary disappears?</p>
-              </div>
-              <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50 dark:bg-obsidian-800/50">
-                <span class="font-mono text-xs text-amber-500 font-bold">GATE 04 // RESPONSIBILITY TEST</span>
-                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">Does this feature belong in this tool's bounded domain, or should a specialized external utility provide it?</p>
-              </div>
-              <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50 dark:bg-obsidian-800/50">
-                <span class="font-mono text-xs text-amber-500 font-bold">GATE 05 // DEPENDENCY TEST</span>
-                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">Does it avoid mandatory third-party cloud accounts, fragile transitive dependency trees, or subscriptions?</p>
-              </div>
-              <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50 dark:bg-obsidian-800/50">
-                <span class="font-mono text-xs text-amber-500 font-bold">GATE 06 // PREDICTABILITY TEST</span>
-                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">Are state transitions and conflict resolutions formally specified, reproducible, testable, and free of silent guesswork?</p>
-              </div>
-              <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-stone-50 dark:bg-obsidian-800/50 sm:col-span-2 lg:col-span-3">
-                <span class="font-mono text-xs text-amber-500 font-bold">GATE 07 // RECOVERY &amp; SECURITY TEST</span>
-                <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5">Does the design preserve local cryptographic integrity while providing a frictionless, verifiable path for user backup and disaster recovery?</p>
-              </div>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="font-mono text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400">Classification</h3>
+              <ul class="space-y-1.5 text-sm text-slate-700 dark:text-slate-200">
+                <li><strong>{{ index $fw.classification.labels "tier1" }}:</strong> all requirements satisfied, score at least {{ $fw.classification.tier1.minScore }}, no principle below {{ $fw.classification.tier1.minEveryPrinciple }}, documented evidence.</li>
+                <li><strong>{{ index $fw.classification.labels "tier2" }}:</strong> all requirements satisfied, score at least {{ $fw.classification.tier2.minScore }}, Sovereignty and Longevity each at least {{ index $fw.classification.tier2.minPrinciples "sovereignty" }}.</li>
+                <li><strong>{{ index $fw.classification.labels "tier3" }}:</strong> complete assessment with no verified critical failure, short of Tier 2.</li>
+                <li><strong>{{ index $fw.classification.labels "not_certified" }}:</strong> a verified failure of a mandatory requirement. No score can bypass it.</li>
+                <li><strong>{{ index $fw.classification.labels "unverified" }}:</strong> the assessment is incomplete or eligibility is not established.</li>
+              </ul>
+              <p class="text-sm text-slate-600 dark:text-slate-300">The tiers and thresholds are proposed editorial policy, not an externally accredited certification scheme.</p>
             </div>
           </article>
 
@@ -345,13 +277,16 @@
                 <strong class="text-rose-500">✕ Invasive Telemetry:</strong> Undisclosed tracking or harvesting of personal daily activity.
               </div>
               <div class="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20 text-slate-700 dark:text-slate-300">
-                <strong class="text-rose-500">✕ Monolithic Feature Bloat:</strong> Cluttered duplication of specialized editors, suites, or kernels.
+                <strong class="text-rose-500">✕ Incoherent Feature Bloat:</strong> Cluttered duplication of specialized tools, and architectures with no coherent boundaries.
               </div>
               <div class="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20 text-slate-700 dark:text-slate-300">
                 <strong class="text-rose-500">✕ Silent Sync Corruption:</strong> Opaque synchronization routines that overwrite conflicting offline work.
               </div>
               <div class="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20 text-slate-700 dark:text-slate-300">
                 <strong class="text-rose-500">✕ Unrecoverable Custody:</strong> Fragile, complex backup procedures that expose users to data loss.
+              </div>
+              <div class="p-3.5 rounded-lg bg-rose-500/5 border border-rose-500/20 text-slate-700 dark:text-slate-300">
+                <strong class="text-rose-500">✕ Proprietary Silos:</strong> Undocumented binary formats designed to prevent inspection or migration.
               </div>
             </div>
             <p class="font-mono text-xs text-slate-500 dark:text-slate-400 pt-2">
@@ -376,7 +311,7 @@
               <div class="font-mono text-xs text-amber-600 dark:text-amber-400 uppercase tracking-widest">Section 09</div>
               <h2 class="font-serif text-2xl sm:text-3xl text-slate-900 dark:text-white">The Permanent Standard</h2>
               <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                Sovereign software is never defined by a transient UI framework, database library, or sync algorithm. Its identity rests on enduring principles: remaining useful when disconnected, understandable when examined, recoverable when hardware fails, and subordinate to human agency.
+                Sovereign software is never defined by a transient UI framework, database library, or sync algorithm. Its identity rests on enduring principles: users keep authority over their software and information, that information outlives the application, and the software stays useful when disconnected, understandable when examined, recoverable when hardware fails, and subordinate to human agency.
               </p>
               <p class="font-mono text-xs text-emerald-600 dark:text-emerald-400">
                 Above all, it remains a tool under human control.

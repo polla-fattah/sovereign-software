@@ -1,0 +1,12 @@
+{{/* One detail page per Index entry, generated from data/directory.json (the single source of truth). */}}
+{{ range hugo.Data.directory }}
+  {{ $content := dict "mediaType" "text/markdown" "value" .summary }}
+  {{ $page := dict
+    "kind" "page"
+    "path" .id
+    "title" .name
+    "content" $content
+    "params" (dict "entry" . "scripts" (slice "scoring.js" "directory.js"))
+  }}
+  {{ $.AddPage $page }}
+{{ end }}

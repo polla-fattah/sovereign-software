@@ -1,0 +1,21 @@
+{{- $fw := hugo.Data.framework -}}
+{{- range $fw.examples }}
+{{- $ex := . }}
+<section class="fw-example">
+  <h3>{{ .name }}</h3>
+  <p>{{ .summary }}</p>
+  <div class="table-wrap"><table class="fw-table">
+    <caption class="sr-only">Ratings for {{ .name }}</caption>
+    <thead><tr><th scope="col">Principle</th><th scope="col" class="num">Weight</th><th scope="col" class="num">Rating</th></tr></thead>
+    <tbody>
+    {{- range $fw.principles }}
+      <tr><th scope="row">{{ .name }}</th><td class="num">{{ .weight }}</td><td class="num">{{ index $ex.ratings .id }} / 5</td></tr>
+    {{- end }}
+    </tbody>
+  </table></div>
+  <p><strong>Eligibility:</strong> {{ range $i, $e := $fw.eligibility }}{{ if $i }}, {{ end }}{{ $e.id }} {{ index $ex.eligibility $e.id | humanize }}{{ end }}.</p>
+  <p><strong>Weighted score:</strong> {{ .expected.score }} / 100. <strong>Classification:</strong> {{ index $fw.classification.labels .expected.classification }}.</p>
+  <p>{{ .lesson }}</p>
+</section>
+{{- end }}
+<p class="fw-note">{{ $fw.exampleNote }} The scores are produced by the same engine as the evaluator, and an automated test checks them.</p>

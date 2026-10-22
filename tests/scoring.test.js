@@ -308,3 +308,58 @@ test('J: directory entries without a verified v2 assessment are unverified', () 
     }
   }
 });
+
+test('worked examples in the framework data match the engine', () => {
+  for (const ex of fw.examples) {
+    const a = S.emptyAssessment(fw);
+    for (const id of IDS) {
+      a.principles[id].rating = ex.ratings[id];
+      a.principles[id].evidence = 'Hypothetical illustration for the methodology.';
+      a.principles[id].confidence = 'high';
+    }
+    for (const e of fw.eligibility) {
+      a.eligibility[e.id].status = ex.eligibility[e.id];
+      a.eligibility[e.id].evidence = 'Hypothetical illustration for the methodology.';
+    }
+    const r = S.computeResult(fw, a);
+    assert.equal(r.score, ex.expected.score, ex.id + ' score');
+    assert.equal(r.classification.id, ex.expected.classification, ex.id + ' classification');
+  }
+});
+
+test('K: directory entries are scored by the same engine through the adapter', () => {
+  const dir = JSON.parse(fs.readFileSync(path.join(root, 'data', 'directory.json'), 'utf8'));
+  for (const e of dir) {
+    const r = S.computeResult(fw, S.assessmentFromEntry(fw, e));
+    assert.equal(r.classification.id, 'unverified', e.name);
+    assert.equal(r.score, null, e.name);
+  }
+  /* a fully evidenced synthetic entry classifies like the evaluator would */
+  const entry = {
+    name: 'Synthetic', category: 'Test', assessment_status: 'complete',
+    eligibility: Object.fromEntries(fw.eligibility.map((x) => [x.key, 'pass'])),
+    principles: { sovereignty: 5, longevity: 5, locality: 4, predictability: 4, interoperability: 4, responsiveness: 2 },
+    evidence: [
+      ...IDS.map((id) => ({ target: id, text: 'Tested against version 1.0 on Linux.', url: 'https://example.org/e', confidence: 'high' })),
+      ...fw.eligibility.map((x) => ({ target: x.id, text: 'Tested against version 1.0 on Linux.', confidence: 'high' }))
+    ],
+    limitations: ['Slow startup.']
+  };
+  const r = S.computeResult(fw, S.assessmentFromEntry(fw, entry));
+  assert.equal(r.score, 88);
+  assert.equal(r.classification.id, 'tier2');
+  entry.eligibility.custody_and_recovery = 'fail';
+  assert.equal(S.computeResult(fw, S.assessmentFromEntry(fw, entry)).classification.id, 'not_certified');
+  entry.eligibility.custody_and_recovery = 'pass';
+  entry.evidence.find((i) => i.target === 'longevity').confidence = 'low';
+  assert.equal(S.computeResult(fw, S.assessmentFromEntry(fw, entry)).classification.id, 'tier3');
+});
+
+test('schema property names match the framework data', () => {
+  const schema = JSON.parse(fs.readFileSync(path.join(root, 'static', 'schema', 'assessment-2.0.schema.json'), 'utf8'));
+  assert.deepEqual(Object.keys(schema.properties.principles.properties), IDS);
+  assert.deepEqual(Object.keys(schema.properties.eligibility.properties), fw.eligibility.map((e) => e.id));
+  assert.deepEqual(Object.keys(schema.properties.tests.properties), fw.tests.map((t) => t.id));
+  assert.equal(schema.properties.schemaVersion.const, S.SCHEMA_VERSION);
+  fw.tests.forEach((t) => assert.equal(schema.properties.tests.properties[t.id].properties.checked.minItems, t.verify.length));
+});

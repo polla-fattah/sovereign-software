@@ -14,22 +14,23 @@ weight = 1
 
 Software should adapt to people, not force people to adapt to software.
 
-Six foundational principles define Sovereign Personal Software:
+Six foundational principles define Sovereign Personal Software, in order of priority:
 
-1. Sovereignty: Users control their data, infrastructure, cryptographic keys, and ability to migrate.
-2. Locality: Core functionality executes on the user's hardware, independently of network connectivity.
-3. Predictability: Critical state transitions and rule engines are deterministic, transparent, and testable.
-4. Responsiveness: Software respects human attention with sub-100ms feedback and zero artificial friction.
-5. Focused Interoperability: Applications maintain bounded responsibilities while exchanging information across open protocols.
-6. Longevity: Human records must outlive the applications, vendors, and runtimes that produced them.
+1. **Sovereignty:** Users retain ultimate authority over their data, essential functionality, migration paths, and cryptographic keys.
+2. **Longevity:** Human records and intellectual work remain accessible, interpretable, recoverable, and transferable beyond the applications, vendors, and runtimes that produced them.
+3. **Locality:** Core functionality runs on the user's hardware, without mandatory continuous network access.
+4. **Predictability:** Critical state transitions, calculations, and rule engines are explicit, explainable, and testable.
+5. **Focused Interoperability:** Applications keep coherent responsibilities and exchange information through open, documented, replaceable interfaces.
+6. **Responsiveness:** Software respects human attention through immediate feedback and efficient operation.
 
+The order is deliberate. Sovereignty determines authority, and Longevity preserves that authority through time, so together they carry half of the weight in evaluation. Lower priority does not mean optional: it expresses how the principles are weighted, not permission to ignore them.
 
-## 06. The Seven Engineering Evaluation Tests
+## 06. Evaluation
 
-1. The Offline Test (Air-Gap): Does primary functionality operate cleanly with the network interface disabled?
-2. The 100ms Test: Do common local interactions respond within 100 milliseconds on baseline hardware?
-3. The Longevity Test: Can users recover and understand their raw data using standard system tools if the binary disappears?
-4. The Responsibility Test: Does this capability belong in this tool, or should a decoupled external utility handle it?
-5. The Dependency Test: Does this avoid mandatory third-party cloud accounts, fragile dependency trees, or subscriptions?
-6. The Predictability Test: Are state transitions formally specified, reproducible, testable, and free of silent guesswork?
-7. The Recovery & Security Test: Does the system enforce local cryptographic integrity while providing verifiable user backup and recovery?
+Software is assessed in three layers:
+
+1. **Five mandatory eligibility requirements,** drawn mainly from Sovereignty and Longevity: independent data access, practical exit and migration, independent recoverability, custody and recovery, and no irrevocable vendor dependency. A verified failure blocks certification, whatever the score.
+2. **A weighted score of the six principles:** Sovereignty 25%, Longevity 25%, Locality 20%, Predictability 15%, Focused Interoperability 10%, Responsiveness 5%.
+3. **Seven verification tests,** used to gather and check the evidence behind each rating, not as a separate score.
+
+The weights and tiers are proposed editorial policy, not validated measurements or an accredited certification.

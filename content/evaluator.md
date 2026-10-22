@@ -1,11 +1,11 @@
 +++
-title = "The 7-Gate Evaluator"
-description = "Test any tool or proposed architecture against the seven gates."
+title = "Sovereign Software Evaluator"
+description = "Evaluate software against six prioritized principles, five fundamental eligibility requirements, and seven engineering verification tests."
 layout = "evaluator"
-js = true
+scripts = ["scoring.js", "evaluator.js"]
 weight = 3
 +++
 
-Tick each gate your tool or proposal passes. The score, tier and a Markdown audit report update instantly, entirely in your browser.
+Work through the five steps to assess a piece of software against the [Sovereign Software Evaluation Framework](../methodology/), version 2.0. A critical failure of a mandatory requirement cannot be hidden inside a high score, and anything you have not assessed stays unassessed instead of counting as a pass or a zero.
 
-The examples show the range, from a tool that passes all seven gates to a cloud-only workspace that passes none. They are illustrations, not formal audits. Copy the report into a pull request or RFC.
+Nothing is saved or sent anywhere. Download a Markdown report or a JSON file when you are done, and import a JSON file later to continue. The weights, tiers, and thresholds are proposed editorial policy, not an accredited certification.

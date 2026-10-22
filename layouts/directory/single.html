@@ -1,0 +1,78 @@
+{{ define "main" }}
+{{ $e := .Params.entry }}
+{{ $fw := hugo.Data.framework }}
+{{ $complete := eq $e.assessment_status "complete" }}
+<script>window.SOVEREIGN_FRAMEWORK = {{ $fw | jsonify | safeJS }};
+window.SOVEREIGN_ENTRY = {{ $e | jsonify | safeJS }};</script>
+<p class="font-mono text-xs mb-6"><a href="{{ "directory/" | relURL }}">&larr; The Sovereign Software Index</a></p>
+<header class="pt-2 pb-8 mb-8 border-b border-slate-200 space-y-3 max-w-3xl">
+  <p class="dir-cat">{{ $e.category }}</p>
+  <h1 class="text-4xl sm:text-5xl">{{ $e.name }}</h1>
+  <p class="text-lg text-slate-600">{{ $e.summary }}</p>
+</header>
+
+<article class="prose-editorial prose-wide detail">
+  <h2>1. Overview</h2>
+  <p>{{ $e.summary }}</p>
+  <p><strong>Category:</strong> {{ $e.category }}.</p>
+
+  <h2>2. Version and scope assessed</h2>
+  <p>{{ if $e.version_assessed }}Version assessed: {{ $e.version_assessed }}.{{ else }}No version has been assessed. A framework v2.0 assessment applies to one version of the software in one deployment model, and none has been performed for this entry.{{ end }}</p>
+
+  <div id="entry-result" aria-live="polite">
+    <h2>3. Final classification</h2>
+    <p><strong>{{ if $complete }}Computing classification{{ else }}{{ index $fw.classification.labels $e.classification }}{{ end }}</strong></p>
+    <p data-role="score">Weighted score: not available.</p>
+    {{ if not $complete }}<p>This entry has not been assessed under framework v2.0, so no classification is published. The legacy tier below is history only.</p>{{ end }}
+  </div>
+
+  <h2>4. Principle scores</h2>
+  <div class="table-wrap"><table class="fw-table">
+    <caption class="sr-only">Principle ratings for {{ $e.name }}</caption>
+    <thead><tr><th scope="col">Priority</th><th scope="col">Principle</th><th scope="col" class="num">Weight</th><th scope="col" class="num">Rating</th></tr></thead>
+    <tbody>
+    {{ range $fw.principles }}
+      {{ $r := index $e.principles .id }}
+      <tr><td>{{ .priority }}</td><th scope="row">{{ .name }}</th><td class="num">{{ .weight }}%</td><td class="num">{{ if eq $r nil }}Not assessed{{ else }}{{ $r }} / 5{{ end }}</td></tr>
+    {{ end }}
+    </tbody>
+  </table></div>
+
+  <h2>5. Eligibility results</h2>
+  <div class="table-wrap"><table class="fw-table">
+    <caption class="sr-only">Mandatory eligibility for {{ $e.name }}</caption>
+    <thead><tr><th scope="col">Requirement</th><th scope="col">Status</th></tr></thead>
+    <tbody>
+    {{ range $fw.eligibility }}
+      {{ $st := index $e.eligibility .key }}
+      <tr><th scope="row">{{ .id }} {{ .title }}</th><td>{{ range $fw.eligibilityStatuses }}{{ if eq .id $st }}{{ .symbol }} {{ .label }}{{ end }}{{ end }}</td></tr>
+    {{ end }}
+    </tbody>
+  </table></div>
+
+  <h2>6. Evidence and verification</h2>
+  {{ if $e.evidence }}
+  <ul>{{ range $e.evidence }}<li><strong>{{ .target }}:</strong> {{ .text }}{{ with .url }} (<a href="{{ . }}" rel="noopener">source</a>){{ end }}{{ with .confidence }}, confidence {{ . }}{{ end }}</li>{{ end }}</ul>
+  {{ else }}
+  <p>No evidence has been recorded. The description, storage format, and command on this page are descriptive information from the maintainer, not tested observations, and no claim is made that this software passed any test.</p>
+  {{ end }}
+
+  <h2>7. Migration and recovery</h2>
+  <p><strong>Native storage format:</strong> {{ $e.substrate }}.</p>
+  <p><strong>Synchronization or runtime model:</strong> {{ $e.syncModel }}.</p>
+  <p><strong>Example export or inspection command</strong> (not verified against any particular version or data set): <code>{{ $e.extractCmd }}</code></p>
+
+  <h2>8. Architectural strengths</h2>
+  <p>Strengths are not recorded until the software has been assessed.</p>
+
+  <h2>9. Architectural limitations</h2>
+  {{ if $e.limitations }}<ul>{{ range $e.limitations }}<li>{{ . }}</li>{{ end }}</ul><p>These are editorial observations, not tested findings.</p>{{ else }}<p>None documented yet.</p>{{ end }}
+
+  <h2>10. Reassessment history</h2>
+  <ul>
+    <li><strong>Framework v1.0:</strong> {{ $e.legacy_label }}. History only. This is not a current classification and does not imply any rating under v2.0.</li>
+    <li><strong>Framework v2.0:</strong> {{ if $e.assessment_date }}Assessed on {{ $e.assessment_date }}.{{ else }}Not yet assessed. Reassessment is required.{{ end }}</li>
+  </ul>
+  <p class="fw-note">{{ $e.assessment_notes }} To assess this software, use the <a href="{{ "evaluator/" | relURL }}">evaluator</a> and read the <a href="{{ "methodology/" | relURL }}">methodology</a>.</p>
+</article>
+{{ end }}

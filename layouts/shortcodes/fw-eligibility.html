@@ -1,0 +1,12 @@
+{{- $fw := hugo.Data.framework -}}
+<div class="table-wrap"><table class="fw-table">
+  <caption class="sr-only">Mandatory eligibility requirements</caption>
+  <thead><tr><th scope="col">Requirement</th><th scope="col">Principle</th><th scope="col">Question</th></tr></thead>
+  <tbody>
+  {{- range $fw.eligibility }}
+    {{- $pid := .principle }}
+    <tr><th scope="row">{{ .id }} {{ .title }}</th><td>{{ range $fw.principles }}{{ if eq .id $pid }}{{ .name }}{{ end }}{{ end }}</td><td>{{ .question }}</td></tr>
+  {{- end }}
+  </tbody>
+</table></div>
+<p>Statuses: {{ range $i, $s := $fw.eligibilityStatuses }}{{ if $i }}, {{ end }}<strong>{{ $s.symbol }} {{ $s.label }}</strong>{{ end }}.</p>

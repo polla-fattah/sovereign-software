@@ -1,0 +1,30 @@
+{{- $e := . -}}
+{{- $fw := hugo.Data.framework -}}
+{{- $complete := eq $e.assessment_status "complete" -}}
+<article class="dir-card" id="{{ $e.id }}"
+  data-id="{{ $e.id }}" data-name="{{ $e.name }}" data-category="{{ $e.category }}"
+  data-status="{{ $e.assessment_status }}" data-class="{{ $e.classification }}"
+  data-strongest="" data-weakest="" data-score="">
+  <header class="dir-card-head">
+    <span class="dir-cat">{{ $e.category }}</span>
+    <span class="dir-status" data-role="status">{{ if $complete }}Assessment recorded{{ else }}Awaiting assessment{{ end }}</span>
+  </header>
+  <h3 class="dir-name"><a href="{{ printf "directory/%s/" $e.id | relURL }}">{{ $e.name }}</a></h3>
+  <p class="dir-result">
+    <span class="dir-badge dir-b-{{ $e.classification }}" data-role="class">{{ if $complete }}Computing classification{{ else }}{{ index $fw.classification.labels $e.classification }}{{ end }}</span>
+    <span class="dir-score" data-role="score">Weighted score: not available</span>
+  </p>
+  {{- if not $complete }}
+  <p class="dir-note">No framework v2.0 assessment exists yet, so no rating is published. Reassessment is required.</p>
+  {{- end }}
+  <p class="dir-legacy"><strong>Legacy v1 tier:</strong> {{ $e.legacy_label }}. History only, not a current classification.</p>
+  <p class="dir-summary">{{ $e.summary }}</p>
+  <dl class="dir-facts">
+    <div><dt>Native storage format</dt><dd>{{ $e.substrate }}</dd></div>
+    <div><dt>Migration and recovery</dt><dd>{{ $e.syncModel }}. Example command, not verified: <code>{{ $e.extractCmd }}</code></dd></div>
+    <div><dt>Limitations</dt><dd>{{ if $e.limitations }}{{ delimit $e.limitations " " }}{{ else }}None documented yet.{{ end }}</dd></div>
+    <div><dt>Evidence</dt><dd>{{ if $e.evidence }}{{ len $e.evidence }} item{{ if ne (len $e.evidence) 1 }}s{{ end }} recorded.{{ else }}No evidence recorded yet.{{ end }}</dd></div>
+    <div><dt>Assessment date</dt><dd>{{ if $e.assessment_date }}{{ $e.assessment_date }}{{ else }}Not assessed{{ end }}</dd></div>
+  </dl>
+  <p class="dir-link"><a href="{{ printf "directory/%s/" $e.id | relURL }}">Full evaluation</a></p>
+</article>

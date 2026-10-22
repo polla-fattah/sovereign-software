@@ -440,11 +440,57 @@
     return L.join('\n') + '\n';
   }
 
+  /* ---------- directory entries ---------- */
+
+  var CONF_RANK = { low: 0, medium: 1, high: 2 };
+
+  /* Converts an Index record (data/directory.json) into an assessment so that the Index and the
+     evaluator share one scoring implementation. Evidence items look like
+     { target: "sovereignty" | "E1", text, url, confidence }. */
+  function assessmentFromEntry(fw, entry) {
+    var a = emptyAssessment(fw);
+    a.software.name = str(entry.name);
+    a.software.version = str(entry.version_assessed);
+    a.software.category = str(entry.category);
+    a.evaluation.date = str(entry.assessment_date);
+    a.evaluation.notes = Array.isArray(entry.limitations) ? entry.limitations.join('\n') : '';
+    var items = Array.isArray(entry.evidence) ? entry.evidence : [];
+    var ratings = isObj(entry.principles) ? entry.principles : {};
+    fw.principles.forEach(function (p) {
+      var r = ratings[p.id];
+      var out = a.principles[p.id];
+      out.rating = Number.isInteger(r) && r >= 0 && r <= 5 ? r : null;
+      var mine = items.filter(function (i) { return i && i.target === p.id; });
+      out.evidence = mine.map(function (i) { return str(i.text); }).filter(Boolean).join('\n');
+      out.sources = mine.map(function (i) { return str(i.url); }).filter(Boolean).join('\n');
+      var conf = null;
+      mine.forEach(function (i) {
+        if (CONFIDENCE.indexOf(i.confidence) < 0) return;
+        if (conf === null || CONF_RANK[i.confidence] < CONF_RANK[conf]) conf = i.confidence;
+      });
+      out.confidence = conf;
+    });
+    var elig = isObj(entry.eligibility) ? entry.eligibility : {};
+    fw.eligibility.forEach(function (e) {
+      var st = elig[e.key];
+      var out = a.eligibility[e.id];
+      out.status = STATUSES.indexOf(st) >= 0 ? st : 'not_verified';
+      var mine = items.filter(function (i) { return i && (i.target === e.id || i.target === e.key); });
+      var text = mine.map(function (i) { return str(i.text); }).filter(Boolean).join('\n');
+      out.evidence = text;
+      out.justification = text;
+      var url = mine.map(function (i) { return str(i.url); }).filter(isHttpUrl)[0];
+      out.source = url || '';
+    });
+    return a;
+  }
+
   return {
     SCHEMA_VERSION: SCHEMA_VERSION,
     STATUSES: STATUSES,
     CONFIDENCE: CONFIDENCE,
     emptyAssessment: emptyAssessment,
+    assessmentFromEntry: assessmentFromEntry,
     computeResult: computeResult,
     validateAssessment: validateAssessment,
     parseImport: parseImport,
