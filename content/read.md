@@ -24,6 +24,20 @@ The order communicates a relationship, not a scientifically measured ranking. **
 
 These principles do not prescribe a particular programming language, database, license, operating system, or user-interface style. They establish what an implementation must make possible.
 
+### What this builds on, and what it adds
+
+None of these principles is new on its own. User authority over software has been argued by the free software movement since the 1980s; ownership, offline work, and longevity were set out by the local-first software research of 2019; provider independence by the IndieWeb; human-centred data control by MyData; long-term interpretability by digital preservation practice; and resilience against fragile dependencies by permacomputing. The [lineage page](https://sovereign.polla.dev/lineage/) records where this framework agrees with each of them and where it differs.
+
+Sovereign Software is therefore offered as a **synthesis and an evaluation approach**, not as a new philosophy of computing. Its proposed contribution is narrower and testable:
+
+- **Sovereignty as an observable property.** It asks what a user can still do when a vendor, connection, application, or infrastructure becomes unavailable, rather than starting from licences or architectures alone.
+- **Longevity beyond file preservation.** It distinguishes preserving data from preserving function and meaning, so that an export which keeps geometry but loses design intent is not mistaken for preservation.
+- **Non-compensatory eligibility.** Some failures cannot be offset by strengths elsewhere, and missing evidence is reported as missing rather than guessed.
+
+The question that ties the principles and the evaluation together is:
+
+> *How can we determine, through independently reproducible evidence, whether a software system preserves the effective authority of its users when technology, vendors, infrastructure, and organizational circumstances change?*
+
 ---
 
 ## Section 02: The Four Foundational Principles
@@ -158,11 +172,25 @@ A tool cannot earn the highest sovereign classification when verified evidence s
 
 Treat each requirement as **Pass**, **Fail**, **Not Verified**, or **Not Applicable with justification**. A verified failure is not canceled by high marks elsewhere; missing evidence is not a failure and must not be misrepresented as a pass.
 
+These five requirements are minimum eligibility conditions, not the complete definition of Sovereign Software. The principle findings provide the broader assessment of how fully the software embodies Sovereignty, Longevity, Locality, and Transparency and Control. A justified **Not Applicable** should be rare: for example, E3 may be excluded for a narrowly assessed stateless viewer that creates no user records, but not merely because recovery was inconvenient.
+
 ### 6.3 Evidence before a numerical score
 
 The previous six-principle weighted framework (25/25/20/15/10/5) is superseded. Its weights must not be silently reassigned to the four new principles. **No new weighting scheme or tier threshold is adopted by this manifesto without separate justification, representative testing across disciplines, and published methodology.**
 
 Until such a method is validated, publish an evidence-led principle profile and a clearly qualified overall determination, such as *meets the proposed core requirements*, *partially aligned*, *does not meet the proposed core standard*, *fails a fundamental requirement*, or *insufficient evidence*. Each claim should disclose the application version, scope, observations, sources, limitations, and assessment date. Historical classifications remain historical, not automatically renewed.
+
+The determination follows a fixed order of precedence, so that two assessors holding the same evidence reach the same conclusion:
+
+| Order | Determination | When it applies |
+| --- | --- | --- |
+| 1 | **Fails a fundamental requirement** | At least one of the five requirements is verified as Fail. Nothing else overrides it. |
+| 2 | **Insufficient evidence** | No verified failure, but a requirement is Not Verified, a principle is not assessed, or the evidence is otherwise incomplete. |
+| 3 | **Does not meet the proposed core standard** | Evidence is complete, all requirements pass, and at least one principle is not met. |
+| 4 | **Partially aligned** | Evidence is complete, all requirements pass, no principle fails, and at least one is only partially met. |
+| 5 | **Meets the proposed core requirements** | Evidence is complete, all requirements pass, and all four principles are met. |
+
+For example, four passing requirements and one that is Not Verified give *Insufficient evidence*, not *Partially aligned*. The full rules are in the [methodology](https://sovereign.polla.dev/methodology/).
 
 A future scored methodology may be developed, but no arithmetic should permit excellent speed or elegant architecture to compensate for loss of essential user authority.
 

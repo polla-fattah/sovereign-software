@@ -10,6 +10,10 @@
           <blockquote class="border-l-2 border-amber-500 pl-4 sm:pl-6 py-1 text-lg sm:text-xl text-slate-600 dark:text-slate-300 font-serif italic">
             {{ .Site.Params.tagline }}
           </blockquote>
+          <p class="text-base sm:text-lg text-slate-600">
+            An architecture-neutral philosophy and evidence-based evaluation approach. Building on free software, local-first computing, digital preservation, and human-centred governance, it asks whether people keep effective authority over their work as technology, vendors, and circumstances change.
+            <a href="{{ "lineage/" | relURL }}">What this builds on</a>
+          </p>
           <p class="font-mono text-xs"><a href="{{ "read/" | relURL }}">Read or print the full text →</a></p>
           <p class="font-mono text-xs text-slate-500">Framework version {{ $fw.version }} ({{ $fw.status }}), revised {{ $fw.revisionDate }}. <a href="{{ "methodology/" | relURL }}" class="underline">How software is evaluated</a></p>
         </div>
@@ -193,7 +197,7 @@
                 </div>
                 {{ end }}
               </div>
-              <p class="text-sm text-slate-600 dark:text-slate-300">Each principle receives an evidence-based finding: meets, partially meets, or does not meet. Tests must be adapted to the software's actual purpose and deployment setting.</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Each principle receives an evidence-based finding: meets, partially meets, or does not meet. These broader findings are distinct from the minimum eligibility requirements, and tests must be adapted to the software's actual purpose and deployment setting.</p>
             </div>
 
             <div class="space-y-3">
@@ -202,7 +206,7 @@
               <ol class="space-y-1.5 text-sm text-slate-700 dark:text-slate-200 list-decimal pl-5">
                 {{ range $fw.eligibility }}<li>{{ .failure }}</li>{{ end }}
               </ol>
-              <p class="text-sm text-slate-600 dark:text-slate-300">Each is marked Pass, Fail, Not Verified, or Not Applicable with justification. A verified failure is not canceled by high marks elsewhere. Missing evidence is not a failure, and it must not be misrepresented as a pass.</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Each is marked Pass, Fail, Not Verified, or Not Applicable with justification. These are minimum eligibility conditions, not the complete definition of the philosophy. A verified failure is not canceled by high marks elsewhere. Missing evidence is not a failure, and it must not be misrepresented as a pass.</p>
             </div>
 
             <div class="space-y-3">

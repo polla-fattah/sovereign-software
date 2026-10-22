@@ -5,6 +5,13 @@ summary = "Electronic schematic capture and PCB design suite where every net, fo
 substrate = "Plain-Text S-Expressions (.kicad_sch/.kicad_pcb)"
 sync_model = "Git / Local Vendor Libraries"
 extract_cmd = "kicad-cli pcb export gerbers board.kicad_pcb"
+pilot_stage = 4
 legacy_tier = "Tier 1"
 legacy_label = "Tier 1 • Canonical"
 +++
+
+**Verification scenario:** Open the project across machines; compare schematic, PCB, symbols, footprints, 3D models, netlists, and Gerbers.
+
+**What may invalidate an overconfident claim:** Manufacturing Gerbers do not preserve editable circuit meaning or BOM and library dependencies.
+
+**Documentation starting point:** <https://docs.kicad.org/>

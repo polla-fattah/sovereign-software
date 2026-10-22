@@ -35,6 +35,8 @@ Four principles, in a deliberate conceptual order that is a relationship and not
 
 **Five fundamental requirements** express a loss of control that no other quality can excuse: independent retrieval of essential information, a practicable way to leave, recoverability outside a vendor-controlled system, control of already-created work without vendor permission, and authorization and oversight of consequential operations. Each is Pass, Fail, Not Verified, or Not Applicable with justification.
 
+These are minimum eligibility conditions, not a complete definition of the philosophy. The broader principle findings describe how fully the software embodies Sovereignty, Longevity, Locality, and Transparency and Control.
+
 **Findings.** Each principle is assessed as Meets, Partially meets, or Does not meet, with observations, sources, limitations, and confidence, or it is left Not assessed.
 
 **Determinations**, in order of precedence:
@@ -89,6 +91,40 @@ Anything the front matter leaves out is "not assessed". There are no null values
 
 1. Create `content/directory/<id>.md` with the front matter above. The id becomes the URL. Do not add findings, and do not copy one from a similar product.
 2. Run `hugo` and `node --test`. The tests fail if an unverified entry carries a finding.
+
+### Desk review of the original entries
+
+The 25 original entries (27 products, since Beancount and hledger, and NixOS and GNU Guix, are now separate entries with redirects from the old URLs) carry a documentation-informed desk review from 22 October 2026. It is shown on each page as "Planned assessment": a verification scenario, what may invalidate an overconfident claim, and a documentation starting point. It is not a hands-on audit, and every entry stays "Insufficient evidence". Entries are ordered into pilot stages through `pilot_stage` in the front matter:
+
+1. Quick-format and portability controls: Git, SQLite, Todo.txt, Org-mode, Hugo.
+2. Knowledge and document preservation: Obsidian, Logseq, Typst, Paperless-ngx, LibreOffice.
+3. High-integrity and sensitive records: Beancount, hledger, Actual Budget, Pass, KeePassXC, Taskwarrior.
+4. Engineering and creative state: OpenSCAD, KiCad, NGSPICE, REAPER, Darktable.
+5. Multi-host, operational state, and complex recovery: Jujutsu, Fossil, Syncthing, NixOS, GNU Guix, OpenBSD.
+
+The review corrected earlier wording: KeePassXC is no longer marked down for a binary vault, LibreOffice is no longer marked down for start-up speed, REAPER's licence is treated as a custody question, the OpenSCAD and NGSPICE reproducibility claims are bounded, and Syncthing, Paperless-ngx, and Darktable now state their limits. Cards show "Candidate: awaiting assessment" until an entry is assessed, and legacy v1 tiers sit in a collapsed history line.
+
+### Assessment programme (first twelve candidates)
+
+Twelve entries carry a test plan in the body of their file and an `assessment_batch` in the front matter. The plan is shown on the entry page as "Planned assessment". It lists tests, not results, and no finding is recorded until the tests are run.
+
+| Batch | Entries | What it tests |
+|---|---|---|
+| A | Zotero, Joplin, calibre | Export, backup and migration of records and their relationships |
+| B | QGIS, FreeCAD, Blender, Inkscape | Preserved output versus preserved editability, structure, and intent |
+| C | GnuCash, restic, BorgBackup | Recoverability, record integrity, key custody, oversight of consequential operations |
+| D | Forgejo, GNU Octave | Distributed systems, executable research, multiple dependencies |
+
+Every candidate gets the same baseline procedure, adapted to its domain:
+
+1. **Baseline:** record version, operating system, installation method, licence, configuration, plugins, storage model, and network services, and create synthetic data with known expected results.
+2. **Exit and export:** export, open independently, import into a clean installation or another tool, and compare against the baseline.
+3. **Provider withdrawal:** disable external services in an isolated environment and note what already-created work remains available.
+4. **Backup and recovery:** back up, restore to a clean environment, and verify files, metadata, relationships, configuration, and state.
+5. **Consequential operations:** identify destructive or irreversible actions, authorization boundaries, warnings, audit records, and recovery options.
+6. **Evidence:** keep commands, observations, expected versus actual results, logs, and limitations, and assign findings only afterwards.
+
+Destructive, corruption, credential-loss, and interrupted-backup experiments run on disposable data only. Each test records an assessment id, application and exact version, environment, primary principle, requirement (E1 to E5), test id, procedure, the expected result written before the run, the actual observation, supporting material, limitations, confidence, and a Pass, Fail, or Not Verified result. Directly tested behavior, independently corroborated documentation, and vendor declarations are kept distinct, and documentation alone never substitutes for testing a recoverability claim. A second evaluator should review every fundamental failure before publication, and disagreements are recorded rather than averaged.
 
 ### Conducting and documenting an assessment
 

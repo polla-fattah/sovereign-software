@@ -1,6 +1,6 @@
 'use strict';
 /* Reads the Index entries from content/directory/*.md and returns them in the shape the
-   assessment engine expects. It parses only the TOML subset the entries use: strings,
+   assessment engine expects. It parses only the TOML subset the entries use: strings, integers,
    arrays of strings, [tables], and [[arrays of tables]]. Anything left out of the front
    matter is "not assessed", exactly as in layouts/partials/directory-entry.html. */
 const fs = require('node:fs');
@@ -13,6 +13,7 @@ function value(raw, where) {
   if (v[0] === '"' || v[0] === '[') {
     try { return JSON.parse(v); } catch (e) { throw new Error(where + ': unsupported value ' + v); }
   }
+  if (/^-?\d+$/.test(v)) return Number(v);
   throw new Error(where + ': unsupported value ' + v);
 }
 
@@ -46,8 +47,8 @@ function normalise(id, p, fw) {
   fw.principles.forEach((x) => { prin[x.id] = (p.principles && p.principles[x.id]) || null; });
   return {
     id, name: p.title, category: p.category, summary: p.summary, substrate: p.substrate,
-    syncModel: p.sync_model, extractCmd: p.extract_cmd, limitations: p.limitations || [],
-    legacy_tier: p.legacy_tier, legacy_label: p.legacy_label,
+    syncModel: p.sync_model, extractCmd: p.extract_cmd || null, limitations: p.limitations || [],
+    legacy_tier: p.legacy_tier || null, legacy_label: p.legacy_label || null, assessment_batch: p.assessment_batch || null, pilot_stage: p.pilot_stage || null,
     version_assessed: p.version_assessed || null, assessment_date: p.assessment_date || null,
     assessment_status: complete ? 'complete' : 'unverified',
     eligibility: elig, principles: prin, evidence: p.evidence || [],

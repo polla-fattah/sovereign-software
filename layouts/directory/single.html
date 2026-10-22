@@ -59,7 +59,7 @@ window.SOVEREIGN_ENTRY = {{ $e | jsonify | safeJS }};</script>
   <h2>7. Migration and recovery</h2>
   <p><strong>Native storage format:</strong> {{ $e.substrate }}.</p>
   <p><strong>Synchronization or runtime model:</strong> {{ $e.syncModel }}.</p>
-  <p><strong>Example export or inspection command</strong> (not verified against any particular version or data set): <code>{{ $e.extractCmd }}</code></p>
+  {{ with $e.extractCmd }}<p><strong>Example export or inspection command</strong> (not verified against any particular version or data set): <code>{{ . }}</code></p>{{ else }}<p>No export or inspection command is recorded for this entry yet.</p>{{ end }}
 
   <h2>8. Architectural strengths</h2>
   <p>Strengths are not recorded until the software has been assessed.</p>
@@ -69,9 +69,14 @@ window.SOVEREIGN_ENTRY = {{ $e | jsonify | safeJS }};</script>
 
   <h2>10. Reassessment history</h2>
   <ul>
-    <li><strong>Framework v1.0:</strong> {{ $e.legacy_label }}. History only. This is not a current classification and implies no finding under the current framework.</li>
+    {{ with $e.legacy_label }}<li><strong>Framework v1.0:</strong> {{ . }}. History only. This is not a current classification and implies no finding under the current framework.</li>{{ end }}
     <li><strong>Framework v{{ $fw.version }} (proposed):</strong> {{ if $e.assessment_date }}Assessed on {{ $e.assessment_date }}.{{ else }}Not yet assessed. Reassessment is required.{{ end }}</li>
   </ul>
+  {{ with .Content }}
+  <h2>11. Planned assessment</h2>
+  {{ if or $e.assessment_batch $e.pilot_stage }}<p><strong>Candidate, not yet assessed.</strong>{{ with $e.assessment_batch }} Planned in assessment batch {{ . }}.{{ end }}{{ with $e.pilot_stage }} Pilot stage {{ . }}, from a documentation-informed desk review on 22 October 2026. No local installation, backup restore, or migration was run for it.{{ end }} What follows lists tests to run and risks to check, not results. It implies no finding, and inclusion does not imply that the software meets the proposed standard.</p>{{ end }}
+  {{ . }}
+  {{ end }}
   <p class="fw-note">{{ $e.assessment_notes }} The assessment procedure is described in the <a href="{{ "methodology/" | relURL }}">methodology</a>.</p>
 </article>
 {{ end }}

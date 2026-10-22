@@ -13,6 +13,8 @@ aliases = ["/evaluator/"]
 
 > **Central question:** When a software provider, network service, application, or technology changes or disappears, can people retain meaningful control over their work?
 
+Sovereign Software is an architecture-neutral philosophy and evidence-based evaluation approach. Building on free software, local-first computing, digital preservation, and human-centred governance, it asks whether people and organizations keep effective authority over their work as technology, vendors, and circumstances change. The individual principles have long precedents, described on the [lineage page](https://sovereign.polla.dev/lineage/); this methodology is the part the framework proposes to contribute.
+
 The Sovereign Software Manifesto sets out a philosophy. This methodology provides a documented way to examine how a particular software product and deployment align with it. The **Sovereign Index** records the results. This is an **evidence-led, unscored assessment**, not a general quality review, a security certification, or an externally accredited standard.
 
 ## 1. Purpose, scope, and vocabulary
@@ -104,7 +106,11 @@ For software without a distinct vendor, adapt the scenario to abandonment of the
 
 A valid **Not Applicable** is treated as satisfied **for the purposes of the determination only**; it is never reported as an actual Pass. Unsupported Not Applicable is treated as Not Verified.
 
+For example, E3 may be Not Applicable for a narrowly assessed stateless viewer that creates no user records. It is not valid to mark a requirement Not Applicable merely because testing recovery or migration would be inconvenient.
+
 A verified requirement failure is decisive for the overall determination, while the rest of the assessment continues so that strengths, context, and improvement paths remain visible. Missing evidence never becomes a failure or a pass.
+
+These five requirements are minimum eligibility conditions, not the complete definition of the philosophy. The principle findings provide the broader assessment of how fully the software embodies Sovereignty, Longevity, Locality, and Transparency and Control.
 
 ## 4. Principle findings
 
@@ -189,6 +195,8 @@ There is **no minimum character count** that turns an observation into adequate 
 Evidence is sufficient for a final determination when every applicable requirement and principle has a supported decision, material counterevidence has been considered, and the findings are internally consistent. Evidence should match the material risks and scope: a financial application requires stronger scrutiny of authorization and recovery than a simple static document viewer.
 
 Independent review is encouraged, and disagreement should be recorded rather than concealed. The assessor must state whether an audit was independent, commissioned, or self-performed.
+
+Some assessments will necessarily remain partial or end in **Insufficient evidence**, especially when exports, restoration, migration, or consequential behavior cannot be tested directly. That is an honest result, not a defect in the framework; the scope and confidence limits should be reported rather than inferred away.
 
 ## 8. Contextual interpretation and boundaries
 

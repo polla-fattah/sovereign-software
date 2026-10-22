@@ -247,7 +247,7 @@ test('directory entries without a verified assessment are unverified and carry n
       assert.equal(e.determination, 'insufficient_evidence', e.name);
       for (const id of IDS) assert.equal(e.principles[id], null, e.name + ' must not carry an invented finding');
       for (const k of Object.keys(e.eligibility)) assert.equal(e.eligibility[k], 'not_verified', e.name);
-      assert.ok(e.legacy_tier, e.name + ' keeps its legacy tier as metadata');
+      assert.equal(Boolean(e.legacy_tier), Boolean(e.legacy_label), e.name + ' has a legacy tier and label together, or neither');
       for (const gone of ['tier', 'classification', 'score']) assert.equal(gone in e, false, gone + ' must not remain');
     }
     const r = S.computeResult(fw, S.assessmentFromEntry(fw, e));

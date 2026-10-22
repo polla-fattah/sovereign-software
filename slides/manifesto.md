@@ -204,6 +204,8 @@ The highest classification is **not earned** when verified evidence shows that:
 
 **Pass, Fail, Not Verified, or Not Applicable with justification.** Missing evidence is not a failure, and it is not a pass.
 
+These are minimum eligibility conditions; the principle findings provide the broader assessment of how fully the software embodies the philosophy.
+
 ---
 
 <!-- _class: dense -->

@@ -133,7 +133,7 @@ test('the site builds', { skip }, () => { assert.equal(build.status, 0, build.st
 
 test('existing URLs still resolve and the new pages exist', { skip }, () => {
   for (const p of ['index.html', 'manifesto/index.html', 'read/index.html', 'read/sovereign-personal-software-manifesto.md', 'directory/index.html', 'evaluator/index.html',
-    'escape-hatches/index.html', 'slides/index.html', 'methodology/index.html', '404.html', 'robots.txt', 'sitemap.xml']) {
+    'directory/beancount-hledger/index.html', 'directory/nixos-guix/index.html', 'escape-hatches/index.html', 'slides/index.html', 'methodology/index.html', '404.html', 'robots.txt', 'sitemap.xml']) {
     assert.ok(fs.existsSync(path.join(out, p)), p + ' exists');
   }
   for (const e of loadEntries(fw)) assert.ok(fs.existsSync(path.join(out, 'directory', e.id, 'index.html')), 'detail page for ' + e.id);
@@ -207,4 +207,16 @@ test('the maintainer loader and the Hugo template agree on every entry', { skip 
   const loaded = loadEntries(fw);
   assert.equal(built.length, loaded.length);
   built.forEach((b, i) => assert.deepEqual(b, JSON.parse(JSON.stringify(Object.assign({}, loaded[i], { assessment_notes: b.assessment_notes }))), b.id));
+});
+
+test('retired Index claims stay retired and split entries are separate', () => {
+  const entries = loadEntries(fw);
+  const ids = entries.map((e) => e.id);
+  for (const id of ['beancount', 'hledger', 'nixos', 'guix']) assert.ok(ids.includes(id), id + ' has its own entry');
+  assert.ok(!ids.includes('beancount-hledger') && !ids.includes('nixos-guix'));
+  const text = entries.map((e) => [e.summary, ...(e.limitations || [])].join(' ')).join('\n');
+  for (const gone of ['identical meshes', 'Archive Invariant', 'slow start', 'not plain text']) assert.ok(!text.includes(gone), 'retired wording: ' + gone);
+  const byId = Object.fromEntries(entries.map((e) => [e.id, e]));
+  assert.match(byId.syncthing.summary, /not backup/);
+  assert.ok(entries.filter((e) => e.pilot_stage).length === 27, 'all 27 desk-reviewed products carry a pilot stage');
 });

@@ -11,11 +11,12 @@
   <p class="dir-result">
     <span class="dir-badge dir-b-{{ $e.determination }}" data-role="det">{{ if $complete }}Computing determination{{ else }}{{ index $fw.determinations.labels $e.determination }}{{ end }}</span>
   </p>
-  <p class="dir-legacy">Legacy v1 tier: {{ $e.legacy_label }} (history only)</p>
+  <p class="dir-legacy">{{ if $complete }}Assessed under v{{ $fw.version }}{{ else }}Candidate: awaiting assessment{{ with $e.assessment_batch }} (batch {{ . }}){{ end }}{{ with $e.pilot_stage }} (pilot stage {{ . }}){{ end }}{{ end }}</p>
+  {{ with $e.legacy_label }}<details class="dir-legacy"><summary>Legacy v1 history</summary>Legacy v1 tier: {{ . }} (history only)</details>{{ end }}
   <p class="dir-summary">{{ $e.summary }}</p>
   <dl class="dir-facts">
     <div><dt>Native storage format</dt><dd>{{ $e.substrate }}</dd></div>
-    <div><dt>Migration and recovery</dt><dd>{{ $e.syncModel }}. Example (untested): <code>{{ $e.extractCmd }}</code></dd></div>
+    <div><dt>Migration and recovery</dt><dd>{{ $e.syncModel }}.{{ with $e.extractCmd }} Example (untested): <code>{{ . }}</code>{{ end }}</dd></div>
     {{- if $e.limitations }}
     <div><dt>Limitations</dt><dd>{{ delimit $e.limitations " " }}</dd></div>
     {{- end }}
