@@ -11,17 +11,9 @@ window.SOVEREIGN_DIRECTORY = {{ hugo.Data.directory | jsonify | safeJS }};</scri
     <label for="dir-search">Search</label>
     <input type="search" id="dir-search" placeholder="Search names, formats, summaries" autocomplete="off">
   </div>
-  <div class="dir-selects">
-    <div><label for="dir-category">Discipline</label>
-      <select id="dir-category"><option value="">All disciplines</option>{{ range $cats | uniq }}<option value="{{ . }}">{{ . }}</option>{{ end }}</select></div>
-    <div><label for="dir-det">Overall determination</label>
-      <select id="dir-det"><option value="">Any</option>
-        {{ range $id := $fw.determinations.order }}<option value="{{ $id }}">{{ index $fw.determinations.labels $id }}</option>{{ end }}
-      </select></div>
-    <div><label for="dir-status">Assessment status</label>
-      <select id="dir-status"><option value="">Any</option><option value="complete">Assessment recorded</option><option value="unverified">Awaiting assessment</option></select></div>
-    <div><label for="dir-attention">Principle needing attention</label>
-      <select id="dir-attention"><option value="">Any</option>{{ range $fw.principles }}<option value="{{ .id }}">{{ .name }}</option>{{ end }}</select></div>
+  <div class="dir-chips" role="group" aria-label="Discipline">
+    <button type="button" class="dir-chip" data-category="" aria-pressed="true">All</button>
+    {{ range $cats | uniq }}<button type="button" class="dir-chip" data-category="{{ . }}" aria-pressed="false">{{ . }}</button>{{ end }}
   </div>
   <p id="dir-count" class="dir-count" role="status" aria-live="polite">Showing all {{ len hugo.Data.directory }} entries.</p>
   <p id="dir-hint" class="dir-hint" role="status"></p>
