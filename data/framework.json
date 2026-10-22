@@ -1,9 +1,10 @@
 {
   "name": "Sovereign Software Evaluation Framework",
-  "version": "3.0",
+  "version": "3.1",
   "status": "proposed",
   "revisionDate": "2026-10-22",
   "supersedes": [
+    "3.0 (four principles, four determinations, ten-character evidence minimum)",
     "2.0 (six weighted principles, five eligibility gates, seven verification tests)",
     "1.0 (six principles in an earlier order and seven equal pass/fail tests)"
   ],
@@ -125,9 +126,9 @@
     {
       "id": "transparency",
       "order": "IV",
-      "name": "Transparency",
+      "name": "Transparency and Control",
       "tagline": "Consequential behavior remains governable.",
-      "relationship": "Transparency makes authority meaningful in operation.",
+      "relationship": "Transparency and Control make authority meaningful in operation.",
       "definition": "Users can understand, inspect, authorize, and, where feasible, reverse or contest significant actions taken on their behalf.",
       "question": "Can a person understand, authorize, and correct what the software does that matters?",
       "evidence": [
@@ -145,7 +146,7 @@
       },
       "improvement": "Explain the rules behind important operations, make consequential changes traceable, separate suggestions from committed actions, and give users a way to approve, reverse, or contest outcomes.",
       "home": {
-        "title": "Transparency: Authority Must Be Exercisable",
+        "title": "Transparency and Control: Authority Must Be Exercisable",
         "tag": "Inspect • Authorize • Correct",
         "short": "Users can understand, inspect, authorize, and, where feasible, reverse or contest significant actions taken on their behalf.",
         "text": "A person cannot meaningfully govern a tool whose consequential behavior is inscrutable. Sovereign Software explains the rules governing important operations, reveals relevant dependencies and data flows, makes material changes traceable, and distinguishes suggestions from committed actions. Determinism is often the right engineering mechanism, but it is not itself the principle: a deterministic black box can still deny control, while a system that uses statistical models can remain governable when its boundaries and effects are transparent.",
@@ -163,42 +164,42 @@
     {
       "id": "E1",
       "key": "independent_data_access",
-      "title": "Independent retrieval of essential information",
+      "title": "Independent access to essential information",
       "principle": "sovereignty",
-      "failure": "Its users cannot independently retrieve essential information.",
-      "question": "Can users independently retrieve their essential information?"
+      "failure": "The user cannot obtain an intelligible copy of already-created essential records through a documented, workable process.",
+      "question": "Can the user obtain an intelligible copy of already-created essential records using a documented, workable process?"
     },
     {
       "id": "E2",
       "key": "practical_exit",
-      "title": "A practicable way to leave",
+      "title": "Practicable exit and migration",
       "principle": "sovereignty",
-      "failure": "There is no practicable way to leave without unacceptable loss of important records or meaning.",
-      "question": "Is there a practicable way to leave without unacceptable loss of important records or meaning?"
+      "failure": "The user cannot leave for an alternative workflow without unacceptable loss of essential information and meaning.",
+      "question": "Can the user leave for an alternative workflow or implementation without unacceptable loss of essential information and meaning?"
     },
     {
       "id": "E3",
       "key": "independent_recoverability",
-      "title": "Recoverability outside a vendor-controlled system",
+      "title": "Independent interpretation and recovery",
       "principle": "longevity",
-      "failure": "Essential records cannot be recovered or interpreted outside an irreplaceable vendor-controlled system.",
-      "question": "Can essential records be recovered or interpreted outside an irreplaceable vendor-controlled system?"
+      "failure": "Preserved records cannot be interpreted or meaningfully restored without an irreplaceable vendor-controlled system.",
+      "question": "Can preserved records be interpreted and meaningfully restored without an irreplaceable vendor-controlled system?"
     },
     {
       "id": "E4",
       "key": "retained_control",
-      "title": "Control of already-created work without vendor permission",
+      "title": "Continuing authority over already-created work",
       "principle": "sovereignty",
-      "failure": "Continued vendor permission is required to retain effective control over already-created work.",
-      "question": "Can users retain effective control over already-created work without continued vendor permission?"
+      "failure": "Withdrawal of permission, payment, activation, or provider availability removes effective control over existing work.",
+      "question": "If new permission, payment, activation, or provider availability is withdrawn, can the user still retain effective control over existing work?"
     },
     {
       "id": "E5",
       "key": "consequential_oversight",
-      "title": "Authorization and oversight of consequential operations",
+      "title": "Governability of consequential actions",
       "principle": "transparency",
-      "failure": "Consequential operations remove meaningful user authorization or oversight in a way incompatible with the tool's risks.",
-      "question": "Do consequential operations keep meaningful user authorization and oversight, appropriate to the tool's risks?"
+      "failure": "Consequential operations cannot be adequately authorized, inspected, or corrected or contested where feasible, given the risks of this software.",
+      "question": "For the risks of this software, can consequential operations be adequately authorized, inspected, and corrected or contested where feasible?"
     }
   ],
   "tests": [
@@ -245,7 +246,7 @@
     },
     {
       "id": "T4",
-      "title": "Operational transparency",
+      "title": "Operational transparency and control",
       "role": "evidence",
       "supports": ["transparency"],
       "eligibility": ["E5"],
@@ -260,10 +261,10 @@
     },
     {
       "id": "T5",
-      "title": "Security and continuity",
+      "title": "Security, custody, and continuity",
       "role": "cross-cutting",
       "supports": ["sovereignty", "longevity", "locality"],
-      "eligibility": ["E4"],
+      "eligibility": ["E3", "E4", "E5"],
       "question": "Are custody, encryption, backups, restoration, and vendor-failure scenarios credibly addressed?",
       "verify": [
         "Custody of data and keys",
@@ -277,7 +278,7 @@
       "title": "Interoperability and maintainability",
       "role": "supporting",
       "supports": ["sovereignty", "longevity"],
-      "eligibility": [],
+      "eligibility": ["E2", "E3"],
       "question": "Do interfaces, formats, and architectural boundaries materially support freedom and long-term operation?",
       "verify": [
         "Documented interfaces and formats",
@@ -300,46 +301,16 @@
     }
   ],
   "determinations": {
-    "order": ["fails_fundamental", "insufficient_evidence", "meets_core", "partially_aligned"],
+    "order": ["fails_fundamental", "insufficient_evidence", "does_not_meet_core", "partially_aligned", "meets_core"],
     "labels": {
       "meets_core": "Meets the proposed core requirements",
+      "does_not_meet_core": "Does not meet the proposed core standard",
       "partially_aligned": "Partially aligned",
       "fails_fundamental": "Fails a fundamental requirement",
       "insufficient_evidence": "Insufficient evidence"
     },
     "evidence": {
-      "minEvidenceLength": 10,
-      "note": "A determination needs an evidence statement for every principle finding and for every eligibility requirement marked Pass, a justification for every Not Applicable, and no Low or unstated confidence on any finding."
+      "note": "A determination needs a recorded observation for every principle finding and for every requirement marked Pass, a written justification for every Not Applicable, and no Low or unstated confidence on a principle finding. Low confidence alone cannot establish a Pass or a Fail."
     }
-  },
-  "examples": [
-    {
-      "id": "A",
-      "name": "Application A (hypothetical)",
-      "summary": "Fast, elegant, and usable offline, but its records can only be read by the vendor's service and cannot be exported.",
-      "lesson": "Speed, elegant architecture, and offline operation cannot compensate for a loss of fundamental user control. Failing the requirements for independent access, exit, and recoverability is decisive.",
-      "findings": { "sovereignty": "does_not_meet", "longevity": "does_not_meet", "locality": "meets", "transparency": "meets" },
-      "eligibility": { "E1": "fail", "E2": "fail", "E3": "fail", "E4": "pass", "E5": "pass" },
-      "expected": { "determination": "fails_fundamental" }
-    },
-    {
-      "id": "B",
-      "name": "Application B (hypothetical)",
-      "summary": "Documented, recoverable, and under the user's control, but slow and plain to use.",
-      "lesson": "Responsiveness and polish are supporting qualities, not prerequisites. A slow application that keeps users in control of their work can still meet the proposed core requirements.",
-      "findings": { "sovereignty": "meets", "longevity": "meets", "locality": "meets", "transparency": "meets" },
-      "eligibility": { "E1": "pass", "E2": "pass", "E3": "pass", "E4": "pass", "E5": "pass" },
-      "expected": { "determination": "meets_core" }
-    },
-    {
-      "id": "C",
-      "name": "Application C (hypothetical)",
-      "summary": "A managed messaging service with a good export path, whose network dependence is inherent, but whose automated actions are only partly explained.",
-      "lesson": "A dependency inherent to the task is not a failure, and the absence of a fundamental failure is not the same as full alignment. Partial findings give a partially aligned determination.",
-      "findings": { "sovereignty": "meets", "longevity": "meets", "locality": "partial", "transparency": "partial" },
-      "eligibility": { "E1": "pass", "E2": "pass", "E3": "pass", "E4": "pass", "E5": "pass" },
-      "expected": { "determination": "partially_aligned" }
-    }
-  ],
-  "exampleNote": "Hypothetical illustrations for explaining the method. They are not audits of any real product."
+  }
 }

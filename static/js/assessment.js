@@ -58,12 +58,12 @@
 
   function emptyAssessment(fw) {
     var a = { software: { name: '', version: '', category: '' }, evaluation: { date: '', notes: '' }, eligibility: {}, principles: {} };
-    fw.eligibility.forEach(function (e) { a.eligibility[e.id] = { status: 'not_verified', evidence: '', source: '', justification: '' }; });
+    fw.eligibility.forEach(function (e) { a.eligibility[e.id] = { status: 'not_verified', evidence: '', source: '', justification: '', confidence: null }; });
     fw.principles.forEach(function (p) { a.principles[p.id] = { finding: null, evidence: '', limitations: '', confidence: null, sources: '' }; });
     return a;
   }
 
-  /* Converts an Index record (data/directory.json) into an assessment. Evidence items look like
+  /* Converts an Index record (content/directory/*.md) into an assessment. Evidence items look like
      { target: "sovereignty" | "E1", text, url, confidence }. */
   function assessmentFromEntry(fw, entry) {
     var a = emptyAssessment(fw);
@@ -96,6 +96,12 @@
       out.evidence = text;
       out.justification = text;
       out.source = mine.map(function (i) { return str(i.url); }).filter(isHttpUrl)[0] || '';
+      var conf = null;
+      mine.forEach(function (i) {
+        if (CONFIDENCE.indexOf(i.confidence) < 0) return;
+        if (conf === null || CONF_RANK[i.confidence] < CONF_RANK[conf]) conf = i.confidence;
+      });
+      out.confidence = conf;
     });
     return a;
   }
@@ -103,7 +109,6 @@
   /* ---------- evaluation ---------- */
 
   function computeResult(fw, a) {
-    var minEv = fw.determinations.evidence.minEvidenceLength;
     var ids = principleIds(fw);
 
     var profile = [];
@@ -115,7 +120,7 @@
       profile.push({
         id: p.id, order: p.order, name: p.name, finding: f, findingLabel: findingLabel(fw, f),
         confidence: CONFIDENCE.indexOf(pr.confidence) >= 0 ? pr.confidence : null,
-        hasEvidence: trimLen(pr.evidence) >= minEv
+        hasEvidence: trimLen(pr.evidence) > 0
       });
     });
     var complete = missing.length === 0;
@@ -130,9 +135,10 @@
       var effective = status;
       var reason = '';
       if (status === 'not_applicable') {
-        if (trimLen(en.justification) < minEv) { effective = 'not_verified'; reason = 'Not Applicable needs a documented justification'; }
+        if (trimLen(en.justification) === 0) { effective = 'not_verified'; reason = 'Not Applicable needs a documented justification'; }
         else notApplicable.push(e.id);
       }
+      if ((status === 'pass' || status === 'fail') && en.confidence === 'low') { effective = 'not_verified'; reason = 'Low confidence cannot establish a Pass or a Fail'; }
       if (effective === 'fail') failures.push(e.id);
       if (effective === 'not_verified') unverified.push(e.id);
       return { id: e.id, title: e.title, status: status, effective: effective, reason: reason };
@@ -156,7 +162,7 @@
     });
     fw.eligibility.forEach(function (e) {
       var en = a.eligibility[e.id] || {};
-      if (en.status === 'pass' && trimLen(en.evidence) < minEv) evidenceGaps.push(e.id + ': evidence for Pass missing');
+      if (en.status === 'pass' && trimLen(en.evidence) === 0) evidenceGaps.push(e.id + ': evidence for Pass missing');
     });
     var evidenceSufficient = evidenceGaps.length === 0;
 
@@ -164,6 +170,7 @@
     var id;
     var reasons = [];
     var notMeeting = profile.filter(function (c) { return c.finding === 'partial' || c.finding === 'does_not_meet'; });
+    var notMet = profile.filter(function (c) { return c.finding === 'does_not_meet'; });
     if (failures.length) {
       id = 'fails_fundamental';
       failures.forEach(function (eid) {
@@ -176,14 +183,23 @@
       if (unverified.length) reasons.push('Mandatory requirements not yet established: ' + unverified.join(', ') + '. Missing evidence is not a failure, and it is not a pass.');
       if (!complete) reasons.push('Principles not yet assessed: ' + missing.map(function (m) { return findPrinciple(fw, m).name; }).join(', ') + '.');
       if (!evidenceSufficient) reasons.push('Documented evidence is incomplete: ' + evidenceGaps.slice(0, 4).join('; ') + (evidenceGaps.length > 4 ? '; and more' : '') + '.');
-    } else if (notMeeting.length === 0) {
-      id = 'meets_core';
-    } else {
+    } else if (notMet.length) {
+      id = 'does_not_meet_core';
+      notMet.forEach(function (c) { reasons.push(c.name + ': does not meet, so the product cannot meet the proposed core standard even though no fundamental requirement failed.'); });
+    } else if (notMeeting.length) {
       id = 'partially_aligned';
       notMeeting.forEach(function (c) { reasons.push(c.name + ': ' + c.findingLabel.toLowerCase() + '.'); });
+    } else {
+      id = 'meets_core';
     }
 
-    var warnings = [];
+    /* a failed requirement must not sit beside a principle marked Meets; the failure still decides the outcome */
+    var inconsistencies = [];
+    fw.eligibility.forEach(function (e) {
+      var c = profile.filter(function (x) { return x.id === e.principle; })[0];
+      if (failures.indexOf(e.id) >= 0 && c && c.finding === 'meets') inconsistencies.push(e.id + ' failed while ' + c.name + ' is marked Meets. Correct the assessment before publishing.');
+    });
+    var warnings = inconsistencies.slice();
     if (notApplicable.length) warnings.push('Requirements marked Not Applicable: ' + notApplicable.join(', ') + '. This is valid only when they genuinely do not apply.');
     profile.forEach(function (c) { if (c.finding !== null && c.confidence === 'low') warnings.push(c.name + ' is assessed with Low confidence.'); });
 
@@ -201,6 +217,7 @@
       evidenceGaps: evidenceGaps,
       determination: { id: id, label: fw.determinations.labels[id], reasons: reasons },
       warnings: warnings,
+      inconsistencies: inconsistencies,
       weaknesses: weaknesses
     };
   }

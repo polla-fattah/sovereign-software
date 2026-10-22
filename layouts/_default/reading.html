@@ -4,8 +4,11 @@
     <a href="#" onclick="window.print(); return false;">⎙ Print / save as PDF</a>
     {{ with .OutputFormats.Get "md" }}<a href="{{ .RelPermalink }}" download>↓ Download Markdown</a>{{ end }}
   </div>
+  {{- /* a page that opens with its own H1 (the methodology) supplies its own title block */ -}}
+  {{ if not (hasPrefix (strings.TrimLeft (printf " %c" 10) .RawContent) "# ") }}
   <h1 class="text-4xl sm:text-5xl">{{ .Title }}</h1>
   {{ with .Site.Params.tagline }}<blockquote class="my-8">{{ . }}</blockquote>{{ end }}
+  {{ end }}
   <div class="prose-editorial">{{ .Content }}</div>
 </article>
 {{ end }}

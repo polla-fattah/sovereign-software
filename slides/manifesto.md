@@ -67,7 +67,7 @@ The point is not to produce more applications. It is to build tools that are acc
 1. **Sovereignty:** authority belongs to the user
 2. **Longevity:** information outlives software
 3. **Locality:** independence is designed in
-4. **Transparency:** consequential behavior remains governable
+4. **Transparency and Control:** consequential behavior remains governable
 
 *They do not prescribe a language, database, license, operating system, or interface style. They establish what an implementation must make possible.*
 
@@ -78,7 +78,7 @@ The point is not to produce more applications. It is to build tools that are acc
 - **Sovereignty** defines the goal
 - **Longevity** protects it across time
 - **Locality** provides a powerful means of independence
-- **Transparency** makes authority meaningful in operation
+- **Transparency and Control** make authority meaningful in operation
 
 All four matter, and **no single numerical score can excuse a proven loss of fundamental user control**.
 
@@ -120,7 +120,7 @@ Earlier versions ranked six principles and weighted them. That model has been wi
 
 ---
 
-## Transparency
+## Transparency and Control
 
 - You cannot govern a tool whose **consequential behavior is inscrutable**
 - Explain the rules behind important operations; make material changes traceable
@@ -214,6 +214,7 @@ The highest classification is **not earned** when verified evidence shows that:
 - Overall determination:
   - **Meets the proposed core requirements**
   - **Partially aligned**
+  - **Does not meet the proposed core standard**
   - **Fails a fundamental requirement**
   - **Insufficient evidence**
 - Every claim states the **version, scope, and date**; old classifications stay historical

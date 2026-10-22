@@ -9,6 +9,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 const S = require('../static/js/assessment.js');
+const { loadEntries } = require('../scripts/entries.js');
 
 const root = path.join(__dirname, '..');
 const fw = JSON.parse(fs.readFileSync(path.join(root, 'data', 'framework.json'), 'utf8'));
@@ -42,6 +43,8 @@ const det = (a) => rate(a).determination.id;
 test('the framework definition is consistent', () => {
   assert.deepEqual(S.validateFramework(fw), []);
   assert.deepEqual(IDS, ['sovereignty', 'longevity', 'locality', 'transparency']);
+  assert.equal(fw.version, '3.1');
+  assert.equal(fw.principles[3].name, 'Transparency and Control');
   assert.deepEqual(fw.principles.map((p) => p.order), ['I', 'II', 'III', 'IV']);
   assert.equal(fw.eligibility.length, 5);
   assert.equal(fw.tests.length, 7);
@@ -101,12 +104,50 @@ test('evidence gaps give insufficient evidence: no statement, no confidence, or 
   assert.equal(det(build(all('meets'), {}, { confidence: 'medium' })), 'meets_core');
 });
 
-test('partial or unmet principles without a failed requirement give partially aligned', () => {
+test('partial principles without a failed requirement give partially aligned', () => {
   assert.equal(det(build({ ...all('meets'), locality: 'partial' })), 'partially_aligned');
+  assert.equal(det(build(all('partial'))), 'partially_aligned');
+});
+
+test('a principle that does not meet, with every requirement established, does not meet the core standard', () => {
   const r = rate(build({ ...all('meets'), transparency: 'does_not_meet' }));
-  assert.equal(r.determination.id, 'partially_aligned');
+  assert.equal(r.determination.id, 'does_not_meet_core');
+  assert.equal(r.determination.label, 'Does not meet the proposed core standard');
   assert.ok(r.weaknesses.some((w) => w.principle === 'transparency'));
-  assert.ok(r.determination.reasons.some((x) => /Transparency/.test(x)));
+  assert.ok(r.determination.reasons.some((x) => /Transparency and Control/.test(x)));
+  assert.equal(det(build({ ...all('partial'), locality: 'does_not_meet' })), 'does_not_meet_core');
+  /* it never outranks failure or missing evidence */
+  assert.equal(det(build({ ...all('meets'), locality: 'does_not_meet' }, { E5: 'fail' })), 'fails_fundamental');
+  assert.equal(det(build({ ...all('meets'), locality: 'does_not_meet' }, { E5: 'not_verified' })), 'insufficient_evidence');
+  assert.equal(det(build({ ...all('meets'), locality: 'does_not_meet', longevity: null })), 'insufficient_evidence');
+});
+
+test('the order of precedence is the documented five', () => {
+  assert.deepEqual(fw.determinations.order, ['fails_fundamental', 'insufficient_evidence', 'does_not_meet_core', 'partially_aligned', 'meets_core']);
+  assert.deepEqual(Object.keys(fw.determinations.labels).sort(), [...fw.determinations.order].sort());
+});
+
+test('there is no minimum evidence length, and Low confidence cannot establish a Pass or a Fail', () => {
+  assert.ok(!('minEvidenceLength' in fw.determinations.evidence));
+  const short = build(all('meets'));
+  for (const id of IDS) short.principles[id].evidence = 'Tested.';
+  assert.equal(det(short), 'meets_core');
+  const low = build(all('meets'));
+  low.eligibility.E1.confidence = 'low';
+  assert.equal(det(low), 'insufficient_evidence');
+  const lowFail = build(all('meets'), { E1: 'fail' });
+  lowFail.eligibility.E1.confidence = 'low';
+  assert.equal(det(lowFail), 'insufficient_evidence');
+});
+
+test('a failed requirement beside a principle marked Meets is flagged as inconsistent but still fails', () => {
+  const r = rate(build(all('meets'), { E3: 'fail' }));
+  assert.equal(r.determination.id, 'fails_fundamental');
+  assert.equal(r.inconsistencies.length, 1);
+  assert.match(r.inconsistencies[0], /E3 failed while Longevity is marked Meets/);
+  assert.ok(r.warnings.includes(r.inconsistencies[0]));
+  const consistent = rate(build({ ...all('meets'), longevity: 'does_not_meet' }, { E3: 'fail' }));
+  assert.equal(consistent.inconsistencies.length, 0);
 });
 
 test('precedence: failure, then insufficient evidence, then meets, then partially aligned', () => {
@@ -132,8 +173,48 @@ test('verification tests map to principles and requirements that exist', () => {
   assert.equal(fw.tests.find((t) => t.id === 'T5').role, 'cross-cutting');
 });
 
-test('worked examples in the framework data match the engine', () => {
-  for (const ex of fw.examples) {
+/* The worked examples live only in content/methodology.md. This reads them from the page, so the
+   published text and the engine cannot drift apart. */
+function examplesFromMethodology() {
+  const md = fs.readFileSync(path.join(root, 'content', 'methodology.md'), 'utf8');
+  const labels = { 'Partially meets': 'partial', 'Does not meet': 'does_not_meet', 'Meets': 'meets' };
+  const byLabel = Object.fromEntries(Object.entries(fw.determinations.labels).map(([id, l]) => [l, id]));
+  const finding = (text) => {
+    const t = text.replace(/\*\*/g, '').trim();
+    const k = Object.keys(labels).find((l) => t.startsWith(l));
+    assert.ok(k, 'unreadable finding: ' + text);
+    return labels[k];
+  };
+  const parts = md.split(/^### (?=Example [A-Z])/m).slice(1);
+  return parts.map((part) => {
+    const name = part.split('\n')[0];
+    const body = part.split(/^## /m)[0];
+    const findings = {};
+    for (const p of fw.principles) {
+      const row = body.match(new RegExp('^\\| ' + p.name + ' \\| (.+) \\|$', 'm'));
+      const profile = (body.match(/^\*\*Principle profile:\*\* (.+)$/m) || [])[1] || '';
+      const line = profile.match(new RegExp('(?:^|; )' + p.name + ' (\\*\\*)?(Partially meets|Does not meet|Meets)'));
+      assert.ok(row || line, name + ': no finding for ' + p.name);
+      findings[p.id] = finding(row ? row[1] : line[2]);
+    }
+    const reqLine = body.match(/^\*\*Requirements:\*\* (.+)$/m);
+    assert.ok(reqLine, name + ': no requirements line');
+    const eligibility = {};
+    const range = reqLine[1].match(/^E1.E5 (Pass|Fail)/);
+    for (const e of fw.eligibility) {
+      const one = reqLine[1].match(new RegExp(e.id + ' (Pass|Fail)'));
+      eligibility[e.id] = (range || one)[range ? 1 : 1].toLowerCase();
+    }
+    const d = body.match(/^\*\*Determination:\*\* \*\*(.+?)\.\*\*/m);
+    assert.ok(d && byLabel[d[1]], name + ': unknown determination ' + (d && d[1]));
+    return { name, findings, eligibility, expected: byLabel[d[1]] };
+  });
+}
+
+test('worked examples on the methodology page match the engine and are internally consistent', () => {
+  const examples = examplesFromMethodology();
+  assert.deepEqual(examples.map((e) => e.expected), ['fails_fundamental', 'meets_core', 'partially_aligned', 'does_not_meet_core']);
+  for (const ex of examples) {
     const a = S.emptyAssessment(fw);
     for (const id of IDS) {
       a.principles[id].finding = ex.findings[id];
@@ -144,21 +225,21 @@ test('worked examples in the framework data match the engine', () => {
       a.eligibility[e.id].status = ex.eligibility[e.id];
       a.eligibility[e.id].evidence = 'Hypothetical illustration for the methodology.';
     }
-    assert.equal(rate(a).determination.id, ex.expected.determination, ex.id);
+    const r = rate(a);
+    assert.equal(r.determination.id, ex.expected, ex.name);
+    assert.deepEqual(r.inconsistencies, [], ex.name + ' is internally consistent');
   }
-  assert.deepEqual(fw.examples.map((e) => e.expected.determination), ['fails_fundamental', 'meets_core', 'partially_aligned']);
 });
 
 /* ---------- directory entries ---------- */
 
 test('directory entries without a verified assessment are unverified and carry no findings', () => {
-  const dir = JSON.parse(fs.readFileSync(path.join(root, 'data', 'directory.json'), 'utf8'));
+  const dir = loadEntries(fw);
   assert.ok(dir.length > 0);
   const seen = new Set();
   for (const e of dir) {
     assert.ok(e.id && !seen.has(e.id), 'unique id: ' + e.id);
     seen.add(e.id);
-    assert.equal(e.framework_version, fw.version);
     assert.ok(['unverified', 'complete'].includes(e.assessment_status), e.name);
     assert.deepEqual(Object.keys(e.eligibility), fw.eligibility.map((x) => x.key), e.name);
     assert.deepEqual(Object.keys(e.principles), IDS, e.name);
@@ -206,8 +287,18 @@ test('scripts/determine.js reports an entry and the whole Index', () => {
   assert.match(one.stdout, /Sovereignty: Not assessed/);
   const every = run('--all');
   assert.equal(every.status, 0);
-  assert.equal(every.stdout.trim().split('\n').length, JSON.parse(fs.readFileSync(path.join(root, 'data', 'directory.json'), 'utf8')).length);
+  assert.equal(every.stdout.trim().split('\n').length, loadEntries(fw).length);
   const bad = run('no-such-entry');
   assert.equal(bad.status, 1);
   assert.match(bad.stderr, /No entry with id/);
+});
+
+test('the entry loader reads assessed front matter (tables and arrays of tables)', () => {
+  const { parseToml } = require('../scripts/entries.js');
+  const p = parseToml('title = "X"\nlimitations = ["a", "b"]\nassessment_status = "complete"\n\n[principles]\nsovereignty = "meets"\n\n[[evidence]]\ntarget = "sovereignty"\ntext = "Tested."\nconfidence = "high"\n\n[[evidence]]\ntarget = "E1"\ntext = "Tested."\n', 'x');
+  assert.deepEqual(p.limitations, ['a', 'b']);
+  assert.equal(p.principles.sovereignty, 'meets');
+  assert.equal(p.evidence.length, 2);
+  assert.equal(p.evidence[1].target, 'E1');
+  assert.throws(() => parseToml('bad line', 'x'));
 });

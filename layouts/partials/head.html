@@ -1,6 +1,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-{{- $desc := cond (ne .Description "") .Description .Site.Params.description -}}
+{{- $desc := cond (ne .Description "") .Description (.Params.summary | default .Site.Params.description) -}}
 {{- $title := cond (or .IsHome (hasSuffix .Title "Sovereign Personal Software")) (cond .IsHome .Site.Title .Title) (printf "%s · Sovereign Personal Software" .Title) -}}
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $desc }}">
@@ -171,6 +171,7 @@
   .dir-badge { display: inline-block; padding: 0.2rem 0.6rem; border: 1px solid var(--color-forest-ink); font-size: 0.8rem; font-weight: 700; }
   .dir-b-insufficient_evidence { background: #eeeeee; border-style: dashed; }
   .dir-b-meets_core { background: #e3f1e9; }
+  .dir-b-does_not_meet_core { background: #fdeadb; border-color: #8a3a00; }
   .dir-b-partially_aligned { background: #fdf3d8; border-color: #8a6a00; }
   .dir-b-fails_fundamental { background: #fbe4df; border-color: #7a2200; }
   .dir-score, .dir-note, .dir-legacy { font-size: 0.85rem; color: var(--color-faded-pencil); margin: 0; }

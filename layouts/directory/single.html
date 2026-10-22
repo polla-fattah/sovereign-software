@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $e := .Params.entry }}
+{{ $e := partial "directory-entry.html" . }}
 {{ $fw := hugo.Data.framework }}
 {{ $complete := eq $e.assessment_status "complete" }}
 <script>window.SOVEREIGN_FRAMEWORK = {{ $fw | jsonify | safeJS }};
@@ -70,7 +70,7 @@ window.SOVEREIGN_ENTRY = {{ $e | jsonify | safeJS }};</script>
   <h2>10. Reassessment history</h2>
   <ul>
     <li><strong>Framework v1.0:</strong> {{ $e.legacy_label }}. History only. This is not a current classification and implies no finding under the current framework.</li>
-    <li><strong>Framework v3.0 (proposed):</strong> {{ if $e.assessment_date }}Assessed on {{ $e.assessment_date }}.{{ else }}Not yet assessed. Reassessment is required.{{ end }}</li>
+    <li><strong>Framework v{{ $fw.version }} (proposed):</strong> {{ if $e.assessment_date }}Assessed on {{ $e.assessment_date }}.{{ else }}Not yet assessed. Reassessment is required.{{ end }}</li>
   </ul>
   <p class="fw-note">{{ $e.assessment_notes }} The assessment procedure is described in the <a href="{{ "methodology/" | relURL }}">methodology</a>.</p>
 </article>

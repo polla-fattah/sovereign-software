@@ -1,8 +1,9 @@
 {{ define "main" }}
 {{ $fw := hugo.Data.framework }}
-{{ $cats := slice }}{{ range hugo.Data.directory }}{{ $cats = $cats | append .category }}{{ end }}
+{{ $entries := slice }}{{ range .Pages }}{{ $entries = $entries | append (partial "directory-entry.html" .) }}{{ end }}
+{{ $cats := slice }}{{ range $entries }}{{ $cats = $cats | append .category }}{{ end }}
 <script>window.SOVEREIGN_FRAMEWORK = {{ $fw | jsonify | safeJS }};
-window.SOVEREIGN_DIRECTORY = {{ hugo.Data.directory | jsonify | safeJS }};</script>
+window.SOVEREIGN_DIRECTORY = {{ $entries | jsonify | safeJS }};</script>
 {{ partial "page-header.html" . }}
 {{ with .Content }}<div class="prose-editorial max-w-3xl mb-8">{{ . }}</div>{{ end }}
 
@@ -16,12 +17,12 @@ window.SOVEREIGN_DIRECTORY = {{ hugo.Data.directory | jsonify | safeJS }};</scri
     {{ range $cats | uniq }}<button type="button" class="dir-chip" data-category="{{ . }}" aria-pressed="false">{{ . }}</button>{{ end }}
   </div>
   <div class="dir-statusrow">
-    <p id="dir-count" class="dir-count" role="status" aria-live="polite">Showing all {{ len hugo.Data.directory }} entries.</p>
+    <p id="dir-count" class="dir-count" role="status" aria-live="polite">Showing all {{ len $entries }} entries.</p>
     <button type="button" id="dir-clear" class="dir-clear" hidden>Clear filters</button>
   </div>
 </section>
 
 <div id="directory-grid" class="dir-grid">
-  {{ range sort hugo.Data.directory "name" }}{{ partial "directory-card.html" . }}{{ end }}
+  {{ range sort $entries "name" }}{{ partial "directory-card.html" . }}{{ end }}
 </div>
 {{ end }}

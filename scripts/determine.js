@@ -4,14 +4,15 @@
    Usage:
      node scripts/determine.js <entry-id>   show one entry in detail
      node scripts/determine.js --all        one line per entry
-   Run it after editing data/directory.json to see what the site will publish. */
+   Run it after editing an entry in content/directory/ to see what the site will publish. */
 const fs = require('node:fs');
 const path = require('node:path');
 const S = require('../static/js/assessment.js');
+const { loadEntries } = require('./entries.js');
 
 const root = path.join(__dirname, '..');
 const fw = JSON.parse(fs.readFileSync(path.join(root, 'data', 'framework.json'), 'utf8'));
-const dir = JSON.parse(fs.readFileSync(path.join(root, 'data', 'directory.json'), 'utf8'));
+const dir = loadEntries(fw);
 const arg = process.argv[2];
 
 function result(entry) { return S.computeResult(fw, S.assessmentFromEntry(fw, entry)); }

@@ -8,6 +8,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { loadEntries } = require('../scripts/entries.js');
 
 const root = path.join(__dirname, '..');
 const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
@@ -28,7 +29,7 @@ function assertOrder(text, names, label) {
 }
 
 test('the framework has four principles in the documented conceptual order', () => {
-  assert.deepEqual(NAMES, ['Sovereignty', 'Longevity', 'Locality', 'Transparency']);
+  assert.deepEqual(NAMES, ['Sovereignty', 'Longevity', 'Locality', 'Transparency and Control']);
   assert.deepEqual(ORDER, ['I', 'II', 'III', 'IV']);
 });
 
@@ -55,7 +56,7 @@ test('the short manifesto, slides, README, and home page follow the same princip
   const four = slides.slice(slides.indexOf('## Four principles'), slides.indexOf('A relationship, not a ranking'));
   assertOrder(four, NAMES.map((n) => '**' + n + ':'), 'slides principle list');
   const built = read('static/slides/index.html');
-  assertOrder(built.slice(built.indexOf('Four principles')), ['Sovereignty', 'Longevity', 'Locality', 'Transparency'], 'built slides');
+  assertOrder(built.slice(built.indexOf('Four principles')), ['Sovereignty', 'Longevity', 'Locality', 'Transparency and Control'], 'built slides');
   const readme = read('README.md');
   for (const n of NAMES) assert.ok(readme.includes(n), 'README names ' + n);
   const home = read('layouts/index.html');
@@ -104,7 +105,7 @@ test('no em dashes in source files', () => {
 });
 
 test('Index and Escape Hatches data follow the framework keys', () => {
-  const dir = JSON.parse(read('data/directory.json'));
+  const dir = loadEntries(fw);
   const keys = fw.eligibility.map((e) => e.key);
   const cats = new Set();
   for (const e of dir) {
@@ -135,14 +136,14 @@ test('existing URLs still resolve and the new pages exist', { skip }, () => {
     'escape-hatches/index.html', 'slides/index.html', 'methodology/index.html', '404.html', 'robots.txt', 'sitemap.xml']) {
     assert.ok(fs.existsSync(path.join(out, p)), p + ' exists');
   }
-  for (const e of JSON.parse(read('data/directory.json'))) assert.ok(fs.existsSync(path.join(out, 'directory', e.id, 'index.html')), 'detail page for ' + e.id);
+  for (const e of loadEntries(fw)) assert.ok(fs.existsSync(path.join(out, 'directory', e.id, 'index.html')), 'detail page for ' + e.id);
 });
 
 test('built pages show the four principles in the framework order, and the download matches', { skip }, () => {
   for (const p of ['index.html', 'read/index.html', 'methodology/index.html']) {
     const t = html(p);
     assertOrder(t.slice(t.indexOf('Sovereignty')), NAMES.slice(1), p);
-    assert.ok(t.includes('Transparency'), p);
+    assert.ok(t.includes('Transparency and Control'), p);
   }
   const md = html('read/sovereign-personal-software-manifesto.md');
   assertOrder(md, NAMES.map((n, i) => '### Principle ' + ORDER[i] + '. ' + n), 'downloadable markdown');
@@ -177,13 +178,16 @@ test('only the pages that need scripts load them', { skip }, () => {
 
 test('the methodology page covers the framework and states that there is no score', { skip }, () => {
   const t = html('methodology/index.html');
-  for (const h of ['Purpose and Scope', 'Principles and Definitions', 'The Order Is a Relationship, Not a Ranking', 'Why There Are No Weights, Scores, or Tiers', 'Fundamental Eligibility Requirements',
-    'Principle Findings', 'Determination Rules', 'Relationship Between the Supporting Tests and the Principles', 'Evidence Requirements', 'Assessment Confidence and Uncertainty',
-    'Treatment of Unavailable Evidence', 'Version-Specific Assessments', 'Exceptions and Contextual Interpretation', 'Reassessment and Versioning Policy', 'Worked Examples', 'Limitations of the Framework']) {
+  for (const h of ['Purpose, scope, and vocabulary', 'The four foundational principles', 'Fundamental eligibility requirements', 'Principle findings', 'Overall determination and precedence',
+    'Engineering verification procedures', 'Evidence, sufficiency, confidence, and uncertainty', 'Contextual interpretation and boundaries', 'Versioning, publication, and reassessment',
+    'Worked examples', 'Limits and governance of the methodology']) {
     assert.ok(t.includes(h), 'methodology section: ' + h);
   }
   for (const label of Object.values(fw.determinations.labels)) assert.ok(t.includes(label), 'determination: ' + label);
-  assert.ok(t.includes('Application B (hypothetical)'));
+  assert.ok(t.includes('Does not meet the proposed core standard'));
+  assert.ok(t.includes('does not assign a numerical score, weight, tier, seal, or certification'));
+  assert.equal((t.match(/<h1[ >]/g) || []).length, 1, 'the methodology has a single h1');
+  for (const ex of ['Example A', 'Example B', 'Example C', 'Example D']) assert.ok(t.includes(ex), ex);
 });
 
 test('legacy Index entries are not presented as current classifications', { skip }, () => {
@@ -194,3 +198,13 @@ test('legacy Index entries are not presented as current classifications', { skip
 });
 
 test.after(() => { fs.rmSync(out, { recursive: true, force: true }); });
+
+test('the maintainer loader and the Hugo template agree on every entry', { skip }, () => {
+  const page = html('directory/index.html');
+  const m = page.match(/window\.SOVEREIGN_DIRECTORY = (\[[\s\S]*?\]);<\/script>/);
+  assert.ok(m, 'the Index embeds its entries');
+  const built = JSON.parse(m[1]).sort((a, b) => a.id.localeCompare(b.id));
+  const loaded = loadEntries(fw);
+  assert.equal(built.length, loaded.length);
+  built.forEach((b, i) => assert.deepEqual(b, JSON.parse(JSON.stringify(Object.assign({}, loaded[i], { assessment_notes: b.assessment_notes }))), b.id));
+});

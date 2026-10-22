@@ -18,9 +18,9 @@ Four foundational principles express this philosophy, in a deliberate conceptual
 1. **Sovereignty: Authority belongs to the user.** Users retain meaningful control of their data, essential capabilities, and ability to leave or replace providers.
 2. **Longevity: Information outlives software.** Records and intellectual work remain accessible, interpretable, and recoverable after applications, vendors, and runtimes disappear.
 3. **Locality: Independence is designed in.** Capabilities that can reasonably operate on user-controlled hardware do not depend unnecessarily on continuous external connectivity or permission.
-4. **Transparency: Consequential behavior remains governable.** Users can understand, inspect, authorize, and, where feasible, reverse or contest significant actions taken on their behalf.
+4. **Transparency and Control: Consequential behavior remains governable.** Users can understand, inspect, authorize, and, where feasible, reverse or contest significant actions taken on their behalf.
 
-The order communicates a relationship, not a scientifically measured ranking. **Sovereignty defines the goal; Longevity protects it across time; Locality provides a powerful means of independence; Transparency makes authority meaningful in operation.** All four matter, and no single numerical score can excuse a proven loss of fundamental user control.
+The order communicates a relationship, not a scientifically measured ranking. **Sovereignty defines the goal; Longevity protects it across time; Locality provides a powerful means of independence; Transparency and Control make authority meaningful in operation.** All four matter, and no single numerical score can excuse a proven loss of fundamental user control.
 
 These principles do not prescribe a particular programming language, database, license, operating system, or user-interface style. They establish what an implementation must make possible.
 
@@ -66,7 +66,7 @@ Likewise, local data is not automatically safe. Devices fail; encryption keys ar
 
 **If a task can reasonably be performed independently, its execution should not require someone else's permission.**
 
-### Principle IV. Transparency: Authority Must Be Exercisable
+### Principle IV. Transparency and Control: Authority Must Be Exercisable
 
 A person cannot meaningfully govern a tool whose consequential behavior is inscrutable or whose actions cannot be inspected, authorized, or corrected.
 
@@ -142,7 +142,7 @@ Every assessment should examine:
 | **Sovereignty** | Independent access, complete export, practical migration, key custody where applicable, and freedom from revocable vendor control |
 | **Longevity** | Documented formats and schemas, metadata preservation, tested backups, restoration, and independent interpretation |
 | **Locality** | Which essential functions operate without remote permission, and which dependencies are genuinely necessary |
-| **Transparency** | Understandable rules, traceable consequential changes, informed authorization, error visibility, and paths for correction |
+| **Transparency and Control** | Understandable rules, traceable consequential changes, informed authorization, error visibility, and paths for correction |
 
 Tests must be adapted to software's actual purpose and deployment setting. An offline text editor, a distributed messaging system, and a scientific simulation cannot be judged by identical assumptions about networking or operation duration.
 
@@ -162,7 +162,7 @@ Treat each requirement as **Pass**, **Fail**, **Not Verified**, or **Not Applica
 
 The previous six-principle weighted framework (25/25/20/15/10/5) is superseded. Its weights must not be silently reassigned to the four new principles. **No new weighting scheme or tier threshold is adopted by this manifesto without separate justification, representative testing across disciplines, and published methodology.**
 
-Until such a method is validated, publish an evidence-led principle profile and a clearly qualified overall determination, such as *meets the proposed core requirements*, *partially aligned*, *fails a fundamental requirement*, or *insufficient evidence*. Each claim should disclose the application version, scope, observations, sources, limitations, and assessment date. Historical classifications remain historical, not automatically renewed.
+Until such a method is validated, publish an evidence-led principle profile and a clearly qualified overall determination, such as *meets the proposed core requirements*, *partially aligned*, *does not meet the proposed core standard*, *fails a fundamental requirement*, or *insufficient evidence*. Each claim should disclose the application version, scope, observations, sources, limitations, and assessment date. Historical classifications remain historical, not automatically renewed.
 
 A future scored methodology may be developed, but no arithmetic should permit excellent speed or elegant architecture to compensate for loss of essential user authority.
 
@@ -231,7 +231,7 @@ That is the standard by which Sovereign Software asks to be judged.
 
 ## Revision History
 
-- **22 October 2026: Philosophical revision (proposed).** Refined the six-principle model into four foundational principles: Sovereignty, Longevity, Locality, and Transparency. Reclassified deterministic behavior, interoperability, modularity, and responsiveness as supporting engineering characteristics rather than independent philosophical requirements. Withdrew the previous numerical weights and tier thresholds pending separate methodological validation.
+- **22 October 2026: Philosophical revision (proposed).** Refined the six-principle model into four foundational principles: Sovereignty, Longevity, Locality, and Transparency and Control. Reclassified deterministic behavior, interoperability, modularity, and responsiveness as supporting engineering characteristics rather than independent philosophical requirements. Withdrew the previous numerical weights and tier thresholds pending separate methodological validation.
 - **22 October 2026: Prior evaluation framework v2.0.** Six weighted principles with five eligibility gates and seven verification tests. Preserved as historical context; not the current evaluation proposal.
 - **Earlier framework v1.0.** Six principles in an earlier order and seven equal pass/fail tests.
 

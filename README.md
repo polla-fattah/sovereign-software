@@ -1,6 +1,6 @@
 # Sovereign Personal Software
 
-A manifesto for software that stays under the authority of the people who use it, and the evidence-led tools that go with it: the proposed Sovereign Software Evaluation Framework (version 3.0), an index of example software, and practical ways to leave cloud services. The site is built with [Hugo](https://gohugo.io/), loads nothing from third parties, and runs all evaluation in the browser.
+A manifesto for software that stays under the authority of the people who use it, and the evidence-led tools that go with it: the proposed Sovereign Software Evaluation Framework (version 3.1), an index of example software, and practical ways to leave cloud services. The site is built with [Hugo](https://gohugo.io/), loads nothing from third parties, and runs all evaluation in the browser.
 
 **Live site:** https://sovereign.polla.dev/
 
@@ -20,7 +20,7 @@ The framework is **evidence-led and unscored**. It adopts no weights, no numeric
 | Reading edition (`/read/`) | `content/read.md` | The full text for reading and printing. Also published as a downloadable Markdown file |
 | The Manifesto (`/manifesto/`) | `content/manifesto.md` | A one-page summary |
 | Methodology (`/methodology/`) | `content/methodology.md`, `data/framework.json` | The formal reference for findings and determinations. `/evaluator/` redirects here |
-| Sovereign Index (`/directory/`) | `data/directory.json` | Example software and its evidence status. A detail page per entry at `/directory/<id>/` |
+| Sovereign Index (`/directory/`) | `content/directory/*.md` | Example software and its evidence status. A detail page per entry at `/directory/<id>/` |
 | Escape Hatches (`/escape-hatches/`) | `data/escape.json` | Recipes for moving data out of cloud services, with caveats |
 | Slides (`/slides/`) | `slides/manifesto.md` | A presentation of the manifesto, compiled by Marp |
 
@@ -31,7 +31,7 @@ Four principles, in a deliberate conceptual order that is a relationship and not
 1. **Sovereignty:** authority belongs to the user.
 2. **Longevity:** information outlives software.
 3. **Locality:** independence is designed in.
-4. **Transparency:** consequential behavior remains governable.
+4. **Transparency and Control:** consequential behavior remains governable.
 
 **Five fundamental requirements** express a loss of control that no other quality can excuse: independent retrieval of essential information, a practicable way to leave, recoverability outside a vendor-controlled system, control of already-created work without vendor permission, and authorization and oversight of consequential operations. Each is Pass, Fail, Not Verified, or Not Applicable with justification.
 
@@ -41,8 +41,11 @@ Four principles, in a deliberate conceptual order that is a relationship and not
 
 1. **Fails a fundamental requirement:** any verified requirement failure. Nothing else can cancel it.
 2. **Insufficient evidence:** a requirement is not verified, a principle is not assessed, or the evidence is incomplete. This is neither a failure nor a pass.
-3. **Meets the proposed core requirements:** every requirement passes, every principle meets, and the evidence is sufficient.
-4. **Partially aligned:** nothing fails and everything is established, but at least one principle is only partly met or not met.
+3. **Does not meet the proposed core standard:** every requirement is established and the evidence is sufficient, but at least one principle does not meet.
+4. **Partially aligned:** every requirement is established, no principle fails, and at least one principle is only partly met.
+5. **Meets the proposed core requirements:** every requirement is established, every principle meets, and the evidence is sufficient.
+
+A failed requirement beside a principle marked Meets (for example E3 failed and Longevity met) is an inconsistency: the failure still decides the outcome, and the engine flags the entry so it is corrected before publication.
 
 **Seven supporting engineering tests** gather evidence: ownership and exit, preservation and recovery, offline independence, operational transparency, security and continuity, interoperability and maintainability, and human experience and performance. They carry no weight or score, and the last two are supporting quality considerations, not prerequisites.
 
@@ -50,7 +53,7 @@ Four principles, in a deliberate conceptual order that is a relationship and not
 
 There is one definition and one implementation, so nothing is duplicated across pages:
 
-- **`data/framework.json`** is the single source of truth: principles, requirements, finding guidance, tests and their mapping, determination labels, and the worked examples.
+- **`data/framework.json`** is the single source of truth: principles, requirements, finding guidance, tests and their mapping, and determination labels. The worked examples live only in `content/methodology.md`, and a test runs them through the engine.
 - **`static/js/assessment.js`** is the only implementation of the requirement rules, the findings, and the determination. It has no DOM access, so the Index page, the maintainer command, and the Node tests run the same code.
 - **`static/js/directory.js`** is the Index interface (filtering and computed determinations). It calls `assessment.js`.
 - Determinations are never stored in the data. They are computed from the findings and evidence.
@@ -64,44 +67,39 @@ node scripts/determine.js --all   # one line per entry
 
 ### Index entry format
 
-Entries in `data/directory.json` use this model:
+Each software is one Markdown file in `content/directory/`, named by its id (`content/directory/git.md` becomes `/directory/git/`). The front matter is TOML:
 
-```json
-{
-  "id": "example",
-  "name": "Example",
-  "category": "Tasks & Finance",
-  "version_assessed": null,
-  "assessment_status": "unverified",
-  "framework_version": "3.0",
-  "assessment_date": null,
-  "eligibility": { "independent_data_access": "not_verified", "practical_exit": "not_verified", "independent_recoverability": "not_verified", "retained_control": "not_verified", "consequential_oversight": "not_verified" },
-  "principles": { "sovereignty": null, "longevity": null, "locality": null, "transparency": null },
-  "evidence": [],
-  "limitations": [],
-  "legacy_tier": "Tier 1",
-  "legacy_label": "Tier 1 • Canonical",
-  "assessment_notes": "",
-  "determination": "insufficient_evidence",
-  "summary": "", "substrate": "", "syncModel": "", "extractCmd": ""
-}
+```toml
++++
+title = "Example"
+category = "Tasks & Finance"
+summary = "One sentence about how it treats user data."
+substrate = "Native storage format"
+sync_model = "How it synchronises or runs"
+extract_cmd = "a command that exports or inspects the data"
+limitations = ["An editorial observation."]
+legacy_tier = "Tier 1"
+legacy_label = "Tier 1 • Canonical"
++++
 ```
+
+Anything the front matter leaves out is "not assessed". There are no null values and no stored determination: the determination is computed from the findings and evidence.
 
 ### Adding a software entry
 
-1. Add an object like the one above to `data/directory.json`, with a unique `id` (it becomes the URL), a `category`, and descriptive text. Leave `principles` as `null` and every requirement as `not_verified`. Do not copy a finding from a similar product.
-2. Run `hugo` and `node --test`. The tests fail if an unverified entry carries a finding or if an id is duplicated.
+1. Create `content/directory/<id>.md` with the front matter above. The id becomes the URL. Do not add findings, and do not copy one from a similar product.
+2. Run `hugo` and `node --test`. The tests fail if an unverified entry carries a finding.
 
 ### Conducting and documenting an assessment
 
-There is no web form: assessments are recorded by editing `data/directory.json`.
+There is no web form: assessments are recorded by editing the entry file in `content/directory/`.
 
 1. Choose one version of the software and one deployment model, and record it in `version_assessed`.
 2. Work through the five fundamental requirements and the four principles using the [methodology](https://sovereign.polla.dev/methodology/) and the supporting tests (`data/framework.json`) as your checklist.
-3. Record the results in the entry: set each requirement status, each principle finding (`meets`, `partial`, or `does_not_meet`), `assessment_date`, and `assessment_status` to `"complete"`. Add `evidence` items, each with `target` (a principle id such as `"sovereignty"`, or a requirement id such as `"E1"`), `text`, an optional `url`, and `confidence` (`high`, `medium`, or `low`). Add `limitations`.
+3. Record the results in the front matter: `assessment_status = "complete"`, `assessment_date`, `version_assessed`, a `[eligibility]` table (each of the five keys set to `pass`, `fail`, or `not_verified`), a `[principles]` table (each of the four set to `meets`, `partial`, or `does_not_meet`), and one `[[evidence]]` block per observation with `target` (a principle id such as `"sovereignty"`, or a requirement id such as `"E1"`), `text`, an optional `url`, and `confidence` (`high`, `medium`, or `low`). Add `limitations`.
 4. Run `node scripts/determine.js <id>` to see the determination the site will publish, and fix any evidence gaps it reports.
-5. Do not store a determination for a complete entry. It is computed. Keep `"determination": "insufficient_evidence"` only while the entry is unassessed.
-6. Evidence should describe what was tested and how, not repeat the product's own description. A determination needs an evidence statement for every finding and every Pass, and no Low or unstated confidence.
+5. Never store a determination. It is computed from the findings and evidence.
+6. Evidence should describe what was tested and how, not repeat the product's own description. A determination needs a recorded observation for every finding and every Pass, a written justification for every Not Applicable, and no Low or unstated confidence. There is no minimum length, and Low confidence cannot establish a Pass or a Fail.
 7. Keep the legacy tier fields. They are history and are labeled as such on the site.
 
 ### Updating the framework version

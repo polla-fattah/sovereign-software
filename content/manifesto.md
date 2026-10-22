@@ -21,9 +21,9 @@ Four foundational principles express this philosophy, in a deliberate conceptual
 1. **Sovereignty:** Authority belongs to the user. Users retain meaningful control of their data, essential capabilities, and ability to leave or replace providers.
 2. **Longevity:** Information outlives software. Records and intellectual work remain accessible, interpretable, and recoverable after applications, vendors, and runtimes disappear.
 3. **Locality:** Independence is designed in. Capabilities that can reasonably operate on user-controlled hardware do not depend unnecessarily on external connectivity or permission.
-4. **Transparency:** Consequential behavior remains governable. Users can understand, inspect, authorize, and, where feasible, reverse or contest significant actions taken on their behalf.
+4. **Transparency and Control:** Consequential behavior remains governable. Users can understand, inspect, authorize, and, where feasible, reverse or contest significant actions taken on their behalf.
 
-The order communicates a relationship, not a scientifically measured ranking. Sovereignty defines the goal, Longevity protects it across time, Locality provides a powerful means of independence, and Transparency makes authority meaningful in operation. All four matter, and no single numerical score can excuse a proven loss of fundamental user control.
+The order communicates a relationship, not a scientifically measured ranking. Sovereignty defines the goal, Longevity protects it across time, Locality provides a powerful means of independence, and Transparency and Control make authority meaningful in operation. All four matter, and no single numerical score can excuse a proven loss of fundamental user control.
 
 ## 06. Evaluating Sovereign Software
 
@@ -33,4 +33,4 @@ Evidence comes before any score. The framework adopts no weights, numerical scor
 2. **An evidence-led finding for each principle:** meets, partially meets, or does not meet, with observations, sources, limitations, and confidence.
 3. **Seven supporting engineering tests** that gather the evidence. They are not interchangeable pillars, and responsiveness is a supporting quality, not a prerequisite.
 
-The overall determination is qualified: meets the proposed core requirements, partially aligned, fails a fundamental requirement, or insufficient evidence. The framework is a proposed standard, not an accredited certification.
+The overall determination is qualified: meets the proposed core requirements, partially aligned, does not meet the proposed core standard, fails a fundamental requirement, or insufficient evidence. The framework is a proposed standard, not an accredited certification.

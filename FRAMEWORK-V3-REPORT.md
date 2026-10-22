@@ -11,11 +11,28 @@ After the first version of this report, the interactive evaluator was removed at
 - **Removed:** `/evaluator/` (page, form, script, styles), the JSON Schema, Markdown and JSON export and import, the verification-test checklist, and the repository checklist that lived on that page.
 - **Redirect:** `/evaluator/` now redirects to `/methodology/` (a plain meta-refresh page with no script), so old links keep working.
 - **Kept:** the determination engine, now smaller (`static/js/assessment.js`), because the Index computes each entry's determination from its recorded data. The worked examples stay on the methodology page.
-- **Added:** `scripts/determine.js`, a maintainer command: `node scripts/determine.js <id>` shows what the site will publish for an entry, and `--all` lists every entry. Assessments are now recorded by editing `data/directory.json`, and the README documents the steps.
+- **Added:** `scripts/determine.js`, a maintainer command: `node scripts/determine.js <id>` shows what the site will publish for an entry, and `--all` lists every entry. Assessments are now recorded by editing the entry file, and the README documents the steps.
 - **Updated:** navigation (four links), footer, home Section 06, methodology (the file-format section became "How Assessments Are Recorded"), slides (still 24), README, and the tests.
 - **Tests:** 30 pass (16 engine and maintainer-command tests, 14 consistency and built-site tests). The build makes 35 pages.
 - **A regression I caused and fixed:** removing the evaluator styles also removed a shared rule that styled the Index search box and filters, which made `/directory/` overflow at 320 px. It is restored, and every page was rechecked at 320, 375, 768, 1024, and 1440 px.
 - **Trade-off to be aware of:** there is no longer a public self-service way to try the method. Anyone can read the methodology and the worked examples, but recording an assessment needs a file edit and the command above.
+
+## Update: one Markdown file per software
+
+The Index data moved from `data/directory.json` to `content/directory/<id>.md`, one file per software with TOML front matter. The folder stays `content/directory/` (not `_directory`) because the folder name is the URL, and `/directory/<id>/` stays unchanged. Fields left out of an entry mean "not assessed", so there are no nulls and no stored determination. `layouts/partials/directory-entry.html` and `scripts/entries.js` apply the same defaults, and a test checks that they agree. The content adapter was deleted. Tests: 31 pass.
+
+## Update: framework v3.1
+
+The methodology page is now your `Sovereign_Software_Methodology_v3.1.md` (with em dashes replaced), and the framework data, engine, Index, home page, slides, README and tests follow it.
+
+- **Version:** 3.1 (proposed). The fourth principle is **Transparency and Control** again, everywhere. This reverses the earlier shortening to "Transparency".
+- **Five determinations**, in order: Fails a fundamental requirement, Insufficient evidence, Does not meet the proposed core standard (new), Partially aligned, Meets the proposed core requirements. A principle that does not meet, with every requirement established, now gives the new determination and no longer "Partially aligned".
+- **Evidence:** the ten-character minimum is gone. A finding or a Pass needs a recorded observation, a Not Applicable needs a written justification, and Low confidence cannot establish a Pass or a Fail.
+- **Consistency rule:** a failed requirement beside its principle marked Meets is reported as an inconsistency (the failure still decides the outcome).
+- **Requirements** are retitled as in v3.1 (E1 Independent access to essential information, E2 Practicable exit and migration, E3 Independent interpretation and recovery, E4 Continuing authority over already-created work, E5 Governability of consequential actions). Tests T4 to T6 and their requirement mapping follow the methodology table.
+- **Examples:** A to D as in the methodology. The old generated methodology layout and its shortcodes were deleted, since the page is plain Markdown now. `data/framework.json` still holds the examples as engine test fixtures.
+- **Tests:** 36 pass.
+- **Not changed:** the 25 Index entries are still all "Insufficient evidence". The manifesto's own wording is changed only where it names the principle or lists the determinations.
 
 ## 1. What changed
 
