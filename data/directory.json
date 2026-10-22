@@ -5,29 +5,27 @@
     "category": "VCS & Core",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "The archetype of sovereign software. Full commit history lives on your local disk, verified via cryptographic hashes, with 100% offline branching, diffing, and merging.",
     "substrate": "Content-Addressable Merkle DAG (.git)",
     "syncModel": "Decentralized SSH / HTTPS push-pull",
@@ -39,22 +37,20 @@
     "category": "VCS & Core",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [
@@ -62,8 +58,8 @@
     ],
     "legacy_tier": "Tier 2",
     "legacy_label": "Tier 2 • Sovereign Core",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Next-generation version control where even conflicts and rebases are recorded as deterministic, first-class mathematical states in an undoable local operation log.",
     "substrate": "Append-only Operation Log + Git Backend",
     "syncModel": "Git-compatible remotes / Native local",
@@ -75,29 +71,27 @@
     "category": "VCS & Core",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Library of Congress permanent archival standard. Delivers microsecond local queries with zero server daemons, zero configuration, and guaranteed backward compatibility through 2050.",
     "substrate": "Single Cross-Platform B-Tree Disk File",
     "syncModel": "Local Embedded Engine (Zero Network)",
@@ -109,29 +103,27 @@
     "category": "VCS & Core",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Engineered by the creator of SQLite. Packages version control, tickets, bug tracking, and wiki documentation into one durable SQLite file that runs an instant local web UI that works offline.",
     "substrate": "Single Standalone SQLite Database File",
     "syncModel": "Peer-to-peer HTTP/SSH sync",
@@ -143,29 +135,27 @@
     "category": "Tasks & Finance",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Command-line task manager with deterministic date and priority grammars and a complete JSON export, kept separate from long-form notes.",
     "substrate": "Local task database with open JSON export",
     "syncModel": "Local hooks / sync server / Syncthing",
@@ -177,29 +167,27 @@
     "category": "Tasks & Finance",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "The simplest possible task format: one line per task, with priority, project and context markers readable by any text tool.",
     "substrate": "Single plain-text file, one task per line",
     "syncModel": "Git / Syncthing",
@@ -211,29 +199,27 @@
     "category": "Tasks & Finance",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Plain-Text Accounting (PTA). Enforces strict double-entry mathematical invariants locally without bank scraping breakages or recurring cloud subscriptions.",
     "substrate": "UTF-8 Plain-Text Double-Entry Ledgers",
     "syncModel": "Git Version Control / File Sync",
@@ -245,29 +231,27 @@
     "category": "Tasks & Finance",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 2",
     "legacy_label": "Tier 2 • Sovereign Core",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Local-first zero-based budgeting. Runs entirely offline against a local SQLite database and synchronizes across devices via verifiable Hybrid Logical Clock CRDT messages.",
     "substrate": "Client-Side SQLite + Merkle CRDTs",
     "syncModel": "Self-Hosted Docker Sync with E2EE",
@@ -279,22 +263,20 @@
     "category": "Knowledge & Office",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [
@@ -302,8 +284,8 @@
     ],
     "legacy_tier": "Tier 2",
     "legacy_label": "Tier 2 • Sovereign Core",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Notes stay as standard UTF-8 Markdown files in a local folder you can edit in Vim, VS Code or bash.",
     "substrate": "Local Directory of Plain Markdown (.md)",
     "syncModel": "Decoupled (Syncthing, Git, or paid first-party sync)",
@@ -315,29 +297,27 @@
     "category": "Knowledge & Office",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 2",
     "legacy_label": "Tier 2 • Sovereign Core",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Open-source outliner that stores notes as plain Markdown or Org files in a local folder, so the same 'File Over App' guarantee holds without a proprietary application.",
     "substrate": "Local Directory of Markdown / Org Files",
     "syncModel": "Decoupled (Syncthing or Git)",
@@ -349,29 +329,27 @@
     "category": "Knowledge & Office",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "The grand-ancestor of sovereign personal computing. Unifies structured prose, deterministic agendas, tables, and literate programming inside immortal plain text.",
     "substrate": "Plain-Text .org Outlines",
     "syncModel": "Git / rsync / Syncthing",
@@ -383,29 +361,27 @@
     "category": "Knowledge & Office",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Deterministic document typesetting from plain text that recompiles multi-page documents in milliseconds, offline.",
     "substrate": "Plain-Text Markup (.typ)",
     "syncModel": "Single zero-dependency native binary",
@@ -417,29 +393,27 @@
     "category": "Knowledge & Office",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Static site generator that compiles a whole site from plain files in milliseconds, offline. This site is built with it.",
     "substrate": "Plain-Text Markdown (.md) + TOML/YAML front matter",
     "syncModel": "Single zero-dependency native binary",
@@ -451,22 +425,20 @@
     "category": "Knowledge & Office",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [
@@ -474,8 +446,8 @@
     ],
     "legacy_tier": "Tier 2",
     "legacy_label": "Tier 2 • Sovereign Core",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Enforces the Archive Invariant: never locks or mutates original documents inside a proprietary blob. Stores untouched PDFs on disk alongside archival PDF/A files.",
     "substrate": "Pristine Original PDFs + PDF/A + SQLite",
     "syncModel": "Self-Hosted Container / Local Filesystem",
@@ -487,22 +459,20 @@
     "category": "Knowledge & Office",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [
@@ -510,8 +480,8 @@
     ],
     "legacy_tier": "Tier 2",
     "legacy_label": "Tier 2 • Sovereign Core",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Full desktop office suite running 100% offline. Native files are standard zip containers holding documented XML (`content.xml`) extractable with basic POSIX unzip.",
     "substrate": "ISO/IEC 26300 OpenDocument XML (.odt/.ods)",
     "syncModel": "Local Filesystem",
@@ -523,29 +493,27 @@
     "category": "Engineering & CAD",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Code-first 3D solid modeling. Eliminates the non-deterministic Topological Naming Problem of GUI CAD kernels; identical script inputs yield identical meshes.",
     "substrate": "Programmatic CSG Plain-Text Scripts (.scad)",
     "syncModel": "Git Version Control",
@@ -557,29 +525,27 @@
     "category": "Engineering & CAD",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Electronic schematic capture and PCB design suite where every net, footprint, and trace is stored in human-readable S-expressions with zero cloud licensing.",
     "substrate": "Plain-Text S-Expressions (.kicad_sch/.kicad_pcb)",
     "syncModel": "Git / Local Vendor Libraries",
@@ -591,29 +557,27 @@
     "category": "Engineering & CAD",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Deterministic analog and mixed-signal circuit simulator solving differential equations directly from human-readable netlists without network dependencies.",
     "substrate": "Plain-Text SPICE Netlists (.cir / .sp)",
     "syncModel": "Standalone POSIX CLI",
@@ -625,22 +589,20 @@
     "category": "Media & Creative",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [
@@ -648,8 +610,8 @@
     ],
     "legacy_tier": "Tier 2",
     "legacy_label": "Tier 2 • Sovereign Core",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Professional Digital Audio Workstation with no cloud accounts and plain-text project files parseable with standard text tools.",
     "substrate": "Human-Readable ASCII Project Files (.RPP)",
     "syncModel": "Portable local install (~15MB), proprietary licence",
@@ -661,29 +623,27 @@
     "category": "Media & Creative",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Non-destructive raw photography workflow. Never alters original sensor data; all exposure curves and crops reside in sibling XML sidecar files.",
     "substrate": "Immutable RAW + ISO Standard .xmp Sidecars",
     "syncModel": "Local Disk Hierarchy",
@@ -695,29 +655,27 @@
     "category": "OS & Infra",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Secrets live as individual GPG-encrypted files in a directory you control, with no third-party vault server.",
     "substrate": "GPG-encrypted files in a plain directory",
     "syncModel": "Git / Syncthing (no commercial cloud)",
@@ -729,22 +687,20 @@
     "category": "OS & Infra",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [
@@ -752,8 +708,8 @@
     ],
     "legacy_tier": "Tier 2",
     "legacy_label": "Tier 2 • Sovereign Core",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Open-source password manager with a documented, encrypted vault file on your disk.",
     "substrate": "Open KDBX vault (binary, documented format)",
     "syncModel": "Git / Syncthing (no commercial cloud)",
@@ -765,29 +721,27 @@
     "category": "OS & Infra",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "The canonical decoupled synchronization layer. Replicates folders across devices with cryptographic device IDs and explicit conflict file preservation.",
     "substrate": "Direct Peer-to-Peer Block Exchange (BEP)",
     "syncModel": "End-to-End TLS over LAN / Relay",
@@ -799,29 +753,27 @@
     "category": "OS & Infra",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [],
     "legacy_tier": "Tier 1",
     "legacy_label": "Tier 1 • Canonical",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "While mainstream OS platforms mutate global state imperatively, NixOS/Guix treat the entire operating system as a deterministic, rollback-capable function of plain text.",
     "substrate": "Declarative Plain-Text System Configs",
     "syncModel": "Reproducible Content-Addressed Store",
@@ -833,22 +785,20 @@
     "category": "OS & Infra",
     "version_assessed": null,
     "assessment_status": "unverified",
-    "framework_version": "2.0",
+    "framework_version": "3.0",
     "assessment_date": null,
     "eligibility": {
       "independent_data_access": "not_verified",
-      "practical_migration": "not_verified",
+      "practical_exit": "not_verified",
       "independent_recoverability": "not_verified",
-      "custody_and_recovery": "not_verified",
-      "vendor_independence": "not_verified"
+      "retained_control": "not_verified",
+      "consequential_oversight": "not_verified"
     },
     "principles": {
       "sovereignty": null,
       "longevity": null,
       "locality": null,
-      "predictability": null,
-      "interoperability": null,
-      "responsiveness": null
+      "transparency": null
     },
     "evidence": [],
     "limitations": [
@@ -856,8 +806,8 @@
     ],
     "legacy_tier": "Tier 2",
     "legacy_label": "Tier 2 • Sovereign Core",
-    "assessment_notes": "The legacy tier comes from the previous framework (v1.0) and is kept as history only. No v2.0 assessment has been performed, so no ratings or classification are published.",
-    "classification": "unverified",
+    "assessment_notes": "The legacy tier comes from framework v1.0 and is kept as history only. No assessment under the current proposed framework has been performed, so no findings or determination are published.",
+    "determination": "insufficient_evidence",
     "summary": "Small, auditable operating system whose configuration lives in plain-text files.",
     "substrate": "Plain-text configuration files in /etc",
     "syncModel": "Local filesystem / Git",

@@ -5,8 +5,8 @@ disableKinds = ["taxonomy", "term", "RSS"]
 enableRobotsTXT = true
 
 [params]
-  specVersion = "v2.4 (CANONICAL)"
-  quote = "Your data belongs to you. Your tools should respect your time, preserve your freedom, and remain useful without depending on someone else’s infrastructure."
+  tagline = "Software should serve people without claiming permanent custody over their information, choices, or work."
+  description = "Software should remain under human authority, preserve human knowledge, function independently wherever possible, and make consequential behavior understandable and controllable."
 
 [markup]
   [markup.goldmark]

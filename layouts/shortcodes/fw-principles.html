@@ -1,18 +1,17 @@
 {{- $fw := hugo.Data.framework -}}
 {{- range $fw.principles }}
 <section class="fw-principle" id="principle-{{ .id }}">
-  <h3>{{ .priority }}. {{ .name }} <span class="fw-weight">{{ .weight }}%</span></h3>
+  <h3>{{ .order }}. {{ .name }}: {{ .tagline }}</h3>
   <p>{{ .definition }}</p>
   <p><strong>Foundational question:</strong> {{ .question }}</p>
   {{- if .dimensions }}
   <ul>
     {{- range .dimensions }}
-    <li><strong>{{ .name }}:</strong> {{ .question }} Examine: {{ delimit .examine "; " }}.</li>
+    <li><strong>{{ .name }}:</strong> {{ .question }}</li>
     {{- end }}
   </ul>
-  {{- else }}
-  <p><strong>Evaluation considerations:</strong> {{ delimit .considerations "; " }}.</p>
   {{- end }}
+  <p><strong>Central evidence:</strong> {{ delimit .evidence ", " }}.</p>
   <p>{{ .note }}</p>
 </section>
 {{- end }}

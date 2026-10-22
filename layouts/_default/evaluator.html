@@ -15,12 +15,12 @@ window.SOVEREIGN_CATEGORIES = {{ $cats | uniq | jsonify | safeJS }};</script>
   <div class="flex flex-wrap items-start justify-between gap-3">
     <div class="space-y-1 max-w-2xl">
       <h2 id="tpl-h" class="text-2xl font-bold">Use the framework in your repository</h2>
-      <p class="text-sm">Save this as <code>.github/PULL_REQUEST_TEMPLATE.md</code> so each pull request asks the seven verification questions. It is generated from the same framework data as the evaluator.</p>
+      <p class="text-sm">Save this as <code>.github/PULL_REQUEST_TEMPLATE.md</code> so each pull request is checked against the seven supporting engineering tests. It is generated from the same framework data as the evaluator.</p>
     </div>
     <button type="button" id="copy-checklist" title="Copy template" aria-label="Copy template" class="inline-flex items-center justify-center w-8 h-8 p-0"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg></button>
   </div>
   <pre id="pr-template-code" class="ev-pre">## Sovereign Software Verification
-Every pull request or architectural change should be checked against the seven verification tests. Tick what applies and note the evidence.
+Every pull request or architectural change should be checked against the supporting engineering tests. Tick what applies and note the evidence.
 {{ range hugo.Data.framework.tests }}
 - [ ] **{{ .id }}. {{ .title }}:** {{ delimit .verify "; " }}.
 {{- end }}</pre>

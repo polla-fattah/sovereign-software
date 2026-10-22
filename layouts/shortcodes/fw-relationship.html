@@ -1,0 +1,10 @@
+{{- $fw := hugo.Data.framework -}}
+<div class="table-wrap"><table class="fw-table">
+  <caption class="sr-only">How the four principles relate</caption>
+  <thead><tr><th scope="col">Order</th><th scope="col">Principle</th><th scope="col">Its role in the relationship</th></tr></thead>
+  <tbody>
+  {{- range $fw.principles }}
+    <tr><td>{{ .order }}</td><th scope="row">{{ .name }}</th><td>{{ .relationship }}</td></tr>
+  {{- end }}
+  </tbody>
+</table></div>

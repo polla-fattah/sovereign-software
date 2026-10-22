@@ -1,574 +1,344 @@
 {
   "name": "Sovereign Software Evaluation Framework",
-  "version": "2.0",
+  "version": "3.0",
+  "status": "proposed",
   "revisionDate": "2026-10-22",
-  "previousVersion": "1.0 (seven equally weighted pass/fail gates)",
-  "policyNote": "The priorities, weights and thresholds are the manifesto's proposed normative framework. They are editorial policy, not experimentally validated measurements and not an externally accredited certification scheme.",
-  "scale": [
-    {
-      "value": 0,
-      "label": "Fundamental failure",
-      "short": "Failure"
-    },
-    {
-      "value": 1,
-      "label": "Very weak implementation",
-      "short": "Very weak"
-    },
-    {
-      "value": 2,
-      "label": "Partial implementation with serious limitations",
-      "short": "Partial"
-    },
-    {
-      "value": 3,
-      "label": "Adequate implementation",
-      "short": "Adequate"
-    },
-    {
-      "value": 4,
-      "label": "Strong implementation",
-      "short": "Strong"
-    },
-    {
-      "value": 5,
-      "label": "Exemplary implementation",
-      "short": "Exemplary"
-    }
+  "supersedes": [
+    "2.0 (six weighted principles, five eligibility gates, seven verification tests)",
+    "1.0 (six principles in an earlier order and seven equal pass/fail tests)"
   ],
-  "confidenceLevels": [
-    "high",
-    "medium",
-    "low"
+  "policyNote": "This is a proposed, evidence-led framework. It adopts no weighting scheme, numerical score, or tier threshold, and it is not an externally accredited certification scheme.",
+  "findingLevels": [
+    { "id": "meets", "label": "Meets", "symbol": "✓" },
+    { "id": "partial", "label": "Partially meets", "symbol": "◐" },
+    { "id": "does_not_meet", "label": "Does not meet", "symbol": "✕" }
   ],
+  "confidenceLevels": ["high", "medium", "low"],
   "principles": [
     {
       "id": "sovereignty",
-      "priority": "I",
+      "order": "I",
       "name": "Sovereignty",
-      "weight": 25,
-      "hierarchy": "Sovereignty determines authority.",
-      "protects": "control",
-      "definition": "Users retain ultimate authority over their data, essential software functionality, migration paths, and relevant cryptographic keys. Sovereignty requires practical, verifiable independence from arbitrary vendor decisions.",
-      "question": "Who ultimately controls the software and its information?",
-      "considerations": [
-        "Data ownership and access",
-        "Export and migration independence",
-        "Account and licensing restrictions",
-        "Control of essential operations",
-        "Infrastructure independence or practical alternatives",
-        "Cryptographic key custody and recovery where applicable",
-        "Ability to exit the software ecosystem without unacceptable loss",
-        "Transparency of mandatory external dependencies"
+      "tagline": "Authority belongs to the user.",
+      "relationship": "Sovereignty defines the goal.",
+      "definition": "Users retain meaningful control of their data, essential capabilities, and ability to leave or replace providers. Sovereignty requires practical, not merely contractual, authority over one's records and essential workflows.",
+      "question": "If the vendor changed its rules tomorrow, would the user still hold meaningful authority over their work?",
+      "evidence": [
+        "Independent access",
+        "Complete export",
+        "Practical migration",
+        "Key custody where applicable",
+        "Freedom from revocable vendor control"
       ],
-      "note": "An optional cloud service does not automatically violate sovereignty. A mandatory vendor-controlled service that can revoke access to essential functionality is a much more serious concern.",
-      "anchors": {
-        "0": "A vendor can revoke access to the user's data or essential functions at will, with no practical exit.",
-        "3": "Data and essential functions are usable without the vendor, but exit paths or key custody have notable gaps.",
-        "5": "The user holds the data, the keys, and the means to run and migrate without any vendor permission."
+      "note": "Sovereignty does not mean that every user must personally operate a server. A managed service can respect sovereignty if meaningful exit, independent access, recovery, and replaceability remain available. Conversely, local installation alone is not proof of sovereignty if essential functions are subject to revocable remote licensing or information is trapped in an undocumented format.",
+      "levels": {
+        "meets": "Users can access, export, back up, restore, and migrate their information through documented means, and no revocable vendor decision removes their essential capabilities.",
+        "partial": "Exit and access are possible but incomplete, costly, or dependent on undocumented steps, or some essential capability remains subject to vendor permission.",
+        "does_not_meet": "Essential information or functions can be withdrawn by a vendor, with no practical way to leave without unacceptable loss."
       },
-      "improvement": "Remove mandatory vendor-controlled services from essential workflows, document a complete export and migration path, and give users custody of their keys.",
+      "improvement": "Document a complete export and migration path, remove revocable vendor control over essential functions, and explain key custody and recovery honestly.",
       "home": {
-        "short": "Users retain ultimate authority over their data, essential functions, migration paths, and cryptographic keys.",
-        "tag": "Authority & Custody",
-        "text": "Personal information must never become inaccessible because a subscription expires, an account is suspended, or a service shuts down. Users retain ultimate authority over their data, essential functions, migration paths, and cryptographic keys, with practical, verifiable independence from arbitrary vendor decisions. Ownership also brings custody, so verifiable backups and key recovery belong in the core experience.",
-        "takeaway": "Ownership is meaningful only when you retain both the ability to leave and the resilience to recover.",
-        "title": "Sovereignty: The User Is the Owner"
+        "title": "Sovereignty: The User Is the Authority",
+        "tag": "Authority • Exit",
+        "short": "Users retain meaningful control of their data, essential capabilities, and ability to leave or replace providers.",
+        "text": "An individual or organization should not lose access to essential information merely because a subscription expires, an identity provider changes its rules, or a service is discontinued. Sovereignty requires practical, not merely contractual, authority: users can access, export, back up, restore, and migrate their information through documented means. A managed service can respect sovereignty if meaningful exit and independent access remain available, and local installation alone proves nothing if essential functions can be revoked remotely.",
+        "takeaway": "The ability to leave without losing what is yours is a practical test of ownership."
       }
     },
     {
       "id": "longevity",
-      "priority": "II",
+      "order": "II",
       "name": "Longevity",
-      "weight": 25,
-      "hierarchy": "Longevity preserves that authority through time.",
-      "protects": "continuity",
-      "definition": "Human information and essential intellectual work remain accessible, interpretable, recoverable, and transferable beyond the lifespan of the applications, vendors, and runtime technologies that produced them. Longevity is assessed across data, functional, and knowledge dimensions.",
-      "question": "Will the user's information remain useful after the original software disappears?",
+      "tagline": "Information outlives software.",
+      "relationship": "Longevity protects it across time.",
+      "definition": "Records and intellectual work remain accessible, interpretable, and recoverable after applications, vendors, and runtimes disappear. Preserving bytes is insufficient if their meaning, relationships, or means of recovery disappear.",
+      "question": "Will the user's information remain understandable and recoverable after the original software is gone?",
       "dimensions": [
         {
           "id": "data",
           "name": "Data longevity",
-          "question": "Can users preserve, inspect, and recover their records independently of the original application?",
-          "examine": [
-            "Open or documented formats",
-            "Export completeness",
-            "Schema documentation",
-            "Format stability",
-            "Preservation of important relationships and metadata",
-            "Archival compatibility",
-            "Backup and restoration"
-          ]
+          "question": "Can records and relevant metadata be preserved, inspected, exported, and restored independently of the original application?",
+          "examine": ["Documented formats", "Metadata preservation", "Complete exports", "Tested backups and restoration"]
         },
         {
           "id": "functional",
           "name": "Functional longevity",
-          "question": "Can essential workflows continue when the original application or provider disappears?",
-          "examine": [
-            "Availability of independent implementations",
-            "Documented data structures and interfaces",
-            "Local execution or practical migration alternatives",
-            "Toolchain reproducibility",
-            "Dependence on discontinued proprietary infrastructure"
-          ]
+          "question": "Can essential workflows continue through maintained software, independent implementations, or practicable migration when the original application or provider disappears?",
+          "examine": ["Independent implementations", "Practicable migration", "Maintained alternatives"]
         },
         {
           "id": "knowledge",
           "name": "Knowledge longevity",
-          "question": "Can future users understand the preserved information?",
-          "examine": [
-            "Documentation",
-            "Schemas and metadata",
-            "Encoding and units",
-            "Data relationships",
-            "Contextual meaning",
-            "Recovery instructions"
-          ]
+          "question": "Are formats, schemas, relationships, units, provenance, and recovery procedures documented well enough for future people and tools to understand preserved information?",
+          "examine": ["Schemas and relationships", "Units and provenance", "Recovery procedures"]
         }
       ],
-      "note": "Plain text is not required internally. An application using SQLite or another documented binary format can satisfy Longevity through reliable, independently verifiable preservation and recovery mechanisms.",
-      "anchors": {
-        "0": "Records live in an undocumented format that only the original service can read.",
-        "3": "Data can be exported in documented formats, but recovery, documentation, or relationships are incomplete.",
-        "5": "Complete, documented, independently recoverable data with surviving documentation and tested restoration."
+      "evidence": [
+        "Documented formats and schemas",
+        "Metadata preservation",
+        "Tested backups",
+        "Restoration",
+        "Independent interpretation"
+      ],
+      "note": "Human-readable text is valuable but is not the only credible route. A documented binary format, such as SQLite, can support longevity when independent tooling, complete exports, and tested recovery procedures exist. Open format names alone do not guarantee preservation: backups must be usable, and archives must be periodically verified and migrated when necessary. No design can promise eternal compatibility. Sovereign Software minimizes irreversible loss and maximizes independent recovery.",
+      "levels": {
+        "meets": "Records and their meaning can be preserved, interpreted, and restored by an independent party, with documented formats and tested recovery.",
+        "partial": "Data can be exported, but documentation, relationships, metadata, or restoration are incomplete or untested.",
+        "does_not_meet": "Records are held in an undocumented format or system that only the original vendor can interpret or restore."
       },
-      "improvement": "Publish format and schema documentation, make exports complete, and test backup and restoration regularly.",
+      "improvement": "Publish format and schema documentation, preserve metadata and relationships in exports, and test backup and restoration regularly.",
       "home": {
-        "short": "Information remains accessible, interpretable, and recoverable beyond the applications and vendors that produced it.",
+        "title": "Longevity: Information Should Outlive Software",
         "tag": "Data • Function • Knowledge",
-        "text": "Information and intellectual work must stay accessible, interpretable, recoverable, and transferable beyond the applications and vendors that produced them. Longevity is assessed across three dimensions: data (open, documented, recoverable formats), function (workflows that survive the vendor), and knowledge (documentation that future users can understand). Plain text is not required: a documented binary format such as SQLite<sup><a href=\"#ref-1\" class=\"cite\">[1]</a></sup> can satisfy it.",
-        "takeaway": "Applications are temporary. Human information deserves a longer life.",
-        "title": "Longevity: Information Outlives Software"
+        "short": "Records and intellectual work remain accessible, interpretable, and recoverable after applications, vendors, and runtimes disappear.",
+        "text": "Applications are temporary, while research, designs, records, and creative work may matter for generations. Longevity has three dimensions: data (records and metadata can be preserved and restored independently), function (essential workflows can continue through maintained software or practicable migration), and knowledge (formats, schemas, and recovery procedures are documented well enough for future people and tools). A documented binary format such as SQLite can qualify, but open format names alone guarantee nothing.",
+        "takeaway": "Applications are temporary. Human information deserves a longer life."
       }
     },
     {
       "id": "locality",
-      "priority": "III",
+      "order": "III",
       "name": "Locality",
-      "weight": 20,
-      "hierarchy": "Locality reduces dependence on external infrastructure.",
-      "protects": "independence",
-      "definition": "Core functionality executes on hardware controlled by the user, without mandatory continuous network access.",
-      "question": "Can the software remain useful when disconnected from external infrastructure?",
-      "considerations": [
-        "Offline availability of essential workflows",
-        "Local state storage and modification",
-        "Network-independent operation",
-        "Offline authentication where appropriate",
-        "Graceful disconnection and reconnection",
-        "Optional and replaceable synchronization",
-        "Local or user-controlled computation"
+      "tagline": "Independence is designed in.",
+      "relationship": "Locality provides a powerful means of independence.",
+      "definition": "Capabilities that can reasonably operate on user-controlled hardware do not depend unnecessarily on continuous external connectivity or permission.",
+      "question": "Which essential functions keep working without remote permission, and are the remaining dependencies genuinely necessary?",
+      "evidence": [
+        "Which essential functions operate without remote permission",
+        "Which dependencies are genuinely necessary"
       ],
-      "note": "Distinguish core operations from features that inherently require communication. Messaging another remote user requires a network, but reading stored messages, composing drafts, browsing history, and exporting data should not require unnecessary remote authorization.",
-      "anchors": {
-        "0": "Nothing essential works without a live connection to the vendor.",
-        "3": "Core workflows work offline, with some functions or authentication needing the network.",
-        "5": "All essential workflows work fully offline, and synchronization is optional and replaceable."
+      "note": "Locality is not an absolutist demand that every product run fully offline. Real-time communication, shared remote resources, and distributed services necessarily involve networks. The relevant question is whether a dependency is inherent to the task or imposed by a business or architectural decision that unnecessarily weakens user authority. Likewise, local data is not automatically safe: devices fail, keys are lost, and files become corrupted, so locality must be complemented by credible backups, security protections, and recovery paths.",
+      "levels": {
+        "meets": "Everything that can reasonably work on the user's hardware does, and remaining network dependencies are inherent to the task.",
+        "partial": "Core work is possible without the network, but some dependencies are imposed by business or architectural choices rather than by the task.",
+        "does_not_meet": "Reading, creating, or searching the user's own work requires someone else's permission or connectivity without a reason inherent to the task."
       },
-      "improvement": "Move essential state and logic onto the device, make synchronization optional, and allow offline authentication.",
+      "improvement": "Move work that can run locally onto user-controlled hardware, make synchronization optional, and explain which dependencies are inherent to the task.",
       "home": {
-        "short": "Core functionality runs on the user's hardware, without mandatory continuous network access.",
-        "tag": "Local-First • Offline",
-        "text": "The network should enhance an application, not determine whether it can function. Core functionality runs on hardware the user controls. Local storage is the primary working environment<sup><a href=\"#ref-2\" class=\"cite\">[2]</a></sup>, and synchronization is an optional, replaceable layer with explicit status and deterministic conflict recovery. Features that inherently need communication are the exception, not the model.",
-        "takeaway": "Offline operation is not an emergency fallback. It is the baseline operating model.",
-        "title": "Locality: The Device Comes First"
+        "title": "Locality: Independence by Design",
+        "tag": "Local Capability • Necessary Dependencies",
+        "short": "Capabilities that can reasonably operate on user-controlled hardware do not depend unnecessarily on external connectivity or permission.",
+        "text": "The network should extend what software can do, not arbitrarily determine whether a person can reach work already on their device. Where technically appropriate, reading, editing, searching, and essential calculation should stay available on hardware the user controls, and a failed synchronization should not erase the ability to work. Locality is not an absolutist offline demand: the question is whether a dependency is inherent to the task or imposed unnecessarily. Local data also needs credible backups and recovery paths.",
+        "takeaway": "If a task can reasonably be performed independently, its execution should not require someone else's permission."
       }
     },
     {
-      "id": "predictability",
-      "priority": "IV",
-      "name": "Predictability",
-      "weight": 15,
-      "hierarchy": "Predictability creates trustworthy behavior.",
-      "protects": "trust",
-      "definition": "Critical state transitions, calculations, and rule engines follow explicit, explainable, testable, and reproducible behavior.",
-      "question": "Can users understand and trust how the software behaves?",
-      "considerations": [
-        "Deterministic critical state transitions",
-        "Documented business rules",
-        "Explicit error handling",
-        "Reproducibility within defined assumptions",
-        "Safe synchronization and conflict resolution",
-        "Auditability",
-        "Controlled AI-assisted actions",
-        "Human authorization for consequential ambiguous mutations"
+      "id": "transparency",
+      "order": "IV",
+      "name": "Transparency",
+      "tagline": "Consequential behavior remains governable.",
+      "relationship": "Transparency makes authority meaningful in operation.",
+      "definition": "Users can understand, inspect, authorize, and, where feasible, reverse or contest significant actions taken on their behalf.",
+      "question": "Can a person understand, authorize, and correct what the software does that matters?",
+      "evidence": [
+        "Understandable rules",
+        "Traceable consequential changes",
+        "Informed authorization",
+        "Error visibility",
+        "Paths for correction"
       ],
-      "note": "Predictability is not absolute bit-for-bit reproducibility of every complex numerical operation. Numerical tolerances, platform differences, and domain-specific constraints must be acknowledged.",
-      "anchors": {
-        "0": "Behavior is opaque or changes unpredictably, and failures are silent.",
-        "3": "Critical behavior is mostly documented and testable, with some unexplained or implicit behavior.",
-        "5": "Critical behavior is specified, tested, auditable, and explained, and AI actions need explicit authorization."
+      "note": "Deterministic algorithms are often the right mechanism for ledgers, schedules, access rules, and state transitions, but determinism is not itself the philosophical principle. A deterministic black box may still deny users meaningful control, while a system using statistical models may remain governable when its boundaries, permissions, evidence, and effects are transparent. Safety-critical, irreversible, and financial operations need especially explicit specifications, validation, authorization, and audit trails. Complex numerical systems should be judged within documented assumptions and tolerances rather than by demanding identical output everywhere.",
+      "levels": {
+        "meets": "Important operations follow explained rules, material changes are traceable, suggestions are distinct from committed actions, and users can approve, reverse, or contest outcomes appropriate to the risk.",
+        "partial": "Rules or effects are partly documented or visible, but some consequential behavior cannot be inspected, authorized, or corrected.",
+        "does_not_meet": "Significant actions happen without visibility, authorization, or recourse."
       },
-      "improvement": "Document the rules behind critical operations, surface errors explicitly, and require user authorization before consequential automated changes.",
+      "improvement": "Explain the rules behind important operations, make consequential changes traceable, separate suggestions from committed actions, and give users a way to approve, reverse, or contest outcomes.",
       "home": {
-        "short": "Critical state transitions, calculations, and rule engines are explicit, explainable, and testable.",
-        "tag": "Rules Over Guesswork",
-        "text": "Schedules, financial ledgers, and state machines represent deliberate commitments, so their behavior must be explicit, explainable, testable, and reproducible within stated assumptions. Sovereign software uses deterministic rules for critical operations and surfaces ambiguous inputs instead of silently guessing. Probabilistic AI may assist at the boundary, but proposed actions are validated and authorized by the user before execution.",
-        "takeaway": "Intelligence may assist at the boundary. Predictability must govern at the core.",
-        "title": "Predictability: Rules Must Govern"
-      }
-    },
-    {
-      "id": "interoperability",
-      "priority": "V",
-      "name": "Focused Interoperability",
-      "weight": 10,
-      "hierarchy": "Focused Interoperability allows independent tools to cooperate.",
-      "protects": "freedom of choice",
-      "definition": "Applications maintain coherent responsibilities while exchanging information through open, documented, and replaceable interfaces.",
-      "question": "Can this application cooperate with and be replaced by other tools?",
-      "considerations": [
-        "Standardized interchange formats",
-        "Documented APIs and protocols",
-        "Import and export compatibility",
-        "Separation of concerns",
-        "Modularity",
-        "Avoidance of unnecessary feature duplication",
-        "Freedom to replace components",
-        "Maintainable system boundaries"
-      ],
-      "note": "A comprehensive application is not automatically a bad monolith. Evaluate whether its architecture is coherent, maintainable, and interoperable rather than merely counting features.",
-      "anchors": {
-        "0": "Closed interfaces and formats make cooperation or replacement impractical.",
-        "3": "Open formats exist for the main data, but interfaces or boundaries are partly undocumented.",
-        "5": "Documented open interfaces, coherent boundaries, and freely replaceable components."
-      },
-      "improvement": "Adopt standard interchange formats, document the integration interfaces, and clarify the application's responsibilities.",
-      "home": {
-        "short": "Applications keep coherent responsibilities and exchange information through open, documented, replaceable interfaces.",
-        "tag": "Coherent • Composable",
-        "text": "Managing operational actions is fundamentally distinct from preserving long-form knowledge or editing raw media. Sovereign tools keep coherent responsibilities<sup><a href=\"#ref-3\" class=\"cite\">[3]</a></sup> and connect through open, documented, replaceable interfaces: URI schemes, plain-text sidecars, local sockets, CLI pipes, and open interchange standards. A comprehensive application is not automatically a bad monolith when its architecture stays coherent and replaceable.",
-        "takeaway": "Separate responsibilities. Connect information. Preserve freedom of choice.",
-        "title": "Focused Interoperability: Connect, Don't Fuse"
-      }
-    },
-    {
-      "id": "responsiveness",
-      "priority": "VI",
-      "name": "Responsiveness",
-      "weight": 5,
-      "hierarchy": "Responsiveness protects human attention.",
-      "protects": "human attention",
-      "definition": "Software respects human attention through immediate perceptual feedback, efficient operation, and minimal unnecessary interaction friction.",
-      "question": "Does the software help users work efficiently without wasting their attention?",
-      "considerations": [
-        "Local input responsiveness",
-        "Immediate feedback",
-        "Avoidance of artificial waits",
-        "Efficient common operations",
-        "Appropriate progress indicators",
-        "Nonblocking interfaces",
-        "Minimal unnecessary interruptions",
-        "Accessible and understandable interactions"
-      ],
-      "note": "The 100 millisecond target applies primarily to perceptual feedback for routine interactions. It is not a universal completion deadline for expensive operations. Typing should feel immediate and buttons should acknowledge activation promptly, while a complex simulation may legitimately take minutes. Computationally expensive operations are not disqualifying.",
-      "anchors": {
-        "0": "The interface freezes or gives no feedback during routine actions.",
-        "3": "Routine interactions feel prompt; some operations lack progress feedback or block the interface.",
-        "5": "Immediate feedback everywhere, non-blocking expensive operations, clear progress, and no artificial friction."
-      },
-      "improvement": "Acknowledge input immediately, move expensive work off the interface thread, and show progress for long operations.",
-      "home": {
-        "short": "Software respects human attention through immediate feedback and efficient operation.",
-        "tag": "Attention",
-        "text": "Software should reduce cognitive effort, not become another source of work. Routine local interactions should give immediate perceptual feedback, targeting under 100 milliseconds. The target applies to feedback on routine interaction, not to every operation: a long simulation can legitimately take minutes if the interface stays responsive and shows progress. Responsiveness also demands restraint from unnecessary notifications, telemetry, and background churn.",
-        "takeaway": "Good software helps users complete their work without becoming work itself.",
-        "note": "The 100ms figure follows the widely cited response-time limits of Miller (1968)<sup><a href=\"#ref-4\" class=\"cite\">[4]</a></sup> and Nielsen (1993)<sup><a href=\"#ref-5\" class=\"cite\">[5]</a></sup>: about 0.1s feels instantaneous, about 1s keeps flow, about 10s is the limit of focused attention. They are practical guidelines, not precise laws.",
-        "title": "Responsiveness: Respect Human Attention"
+        "title": "Transparency: Authority Must Be Exercisable",
+        "tag": "Inspect • Authorize • Correct",
+        "short": "Users can understand, inspect, authorize, and, where feasible, reverse or contest significant actions taken on their behalf.",
+        "text": "A person cannot meaningfully govern a tool whose consequential behavior is inscrutable. Sovereign Software explains the rules governing important operations, reveals relevant dependencies and data flows, makes material changes traceable, and distinguishes suggestions from committed actions. Determinism is often the right engineering mechanism, but it is not itself the principle: a deterministic black box can still deny control, while a system that uses statistical models can remain governable when its boundaries and effects are transparent.",
+        "takeaway": "The machine may assist in decisions; it must not quietly take ownership of them."
       }
     }
   ],
   "eligibilityStatuses": [
-    {
-      "id": "pass",
-      "label": "Pass",
-      "symbol": "✓"
-    },
-    {
-      "id": "fail",
-      "label": "Fail",
-      "symbol": "✕"
-    },
-    {
-      "id": "not_verified",
-      "label": "Not Verified",
-      "symbol": "?"
-    },
-    {
-      "id": "not_applicable",
-      "label": "Not Applicable",
-      "symbol": "–"
-    }
+    { "id": "pass", "label": "Pass", "symbol": "✓" },
+    { "id": "fail", "label": "Fail", "symbol": "✕" },
+    { "id": "not_verified", "label": "Not Verified", "symbol": "?" },
+    { "id": "not_applicable", "label": "Not Applicable", "symbol": "–" }
   ],
   "eligibility": [
     {
       "id": "E1",
       "key": "independent_data_access",
-      "title": "Independent Data Access",
+      "title": "Independent retrieval of essential information",
       "principle": "sovereignty",
-      "question": "Can users retrieve their essential data without ongoing permission from the original provider?"
+      "failure": "Its users cannot independently retrieve essential information.",
+      "question": "Can users independently retrieve their essential information?"
     },
     {
       "id": "E2",
-      "key": "practical_migration",
-      "title": "Practical Exit and Migration",
+      "key": "practical_exit",
+      "title": "A practicable way to leave",
       "principle": "sovereignty",
-      "question": "Is there a documented and workable means of leaving the application without unacceptable loss of essential information?"
+      "failure": "There is no practicable way to leave without unacceptable loss of important records or meaning.",
+      "question": "Is there a practicable way to leave without unacceptable loss of important records or meaning?"
     },
     {
       "id": "E3",
       "key": "independent_recoverability",
-      "title": "Independent Recoverability",
+      "title": "Recoverability outside a vendor-controlled system",
       "principle": "longevity",
-      "question": "Can essential preserved records be reconstructed or interpreted using documented methods without relying exclusively on a disappearing proprietary service?"
+      "failure": "Essential records cannot be recovered or interpreted outside an irreplaceable vendor-controlled system.",
+      "question": "Can essential records be recovered or interpreted outside an irreplaceable vendor-controlled system?"
     },
     {
       "id": "E4",
-      "key": "custody_and_recovery",
-      "title": "Custody and Recovery",
-      "principle": "longevity",
-      "question": "Are there credible safeguards against irreversible loss, including backup, restore, and key-recovery considerations where applicable?"
+      "key": "retained_control",
+      "title": "Control of already-created work without vendor permission",
+      "principle": "sovereignty",
+      "failure": "Continued vendor permission is required to retain effective control over already-created work.",
+      "question": "Can users retain effective control over already-created work without continued vendor permission?"
     },
     {
       "id": "E5",
-      "key": "vendor_independence",
-      "title": "No Irrevocable Vendor Dependency",
-      "principle": "sovereignty",
-      "question": "Can users retain their data and meaningful control if the vendor discontinues its services?"
+      "key": "consequential_oversight",
+      "title": "Authorization and oversight of consequential operations",
+      "principle": "transparency",
+      "failure": "Consequential operations remove meaningful user authorization or oversight in a way incompatible with the tool's risks.",
+      "question": "Do consequential operations keep meaningful user authorization and oversight, appropriate to the tool's risks?"
     }
   ],
   "tests": [
     {
       "id": "T1",
-      "title": "Ownership and Exit Test",
-      "primary": "sovereignty",
-      "supports": [
-        "sovereignty"
-      ],
-      "eligibility": [
-        "E1",
-        "E2",
-        "E5"
-      ],
+      "title": "Ownership and exit",
+      "role": "evidence",
+      "supports": ["sovereignty"],
+      "eligibility": ["E1", "E2", "E4"],
+      "question": "Can essential information be accessed, exported, and migrated independently?",
       "verify": [
-        "Independent data access",
-        "Practical export",
-        "Migration to another tool",
-        "Vendor exit",
-        "Relevant cryptographic key custody"
+        "Independent access to essential information",
+        "Complete export",
+        "Practical migration to another tool",
+        "Key custody and recovery explained, where applicable"
       ]
     },
     {
       "id": "T2",
-      "title": "Preservation and Recovery Test",
-      "primary": "longevity",
-      "supports": [
-        "longevity"
-      ],
-      "eligibility": [
-        "E3",
-        "E4"
-      ],
+      "title": "Preservation and recovery",
+      "role": "evidence",
+      "supports": ["longevity"],
+      "eligibility": ["E3"],
+      "question": "Can an independent party interpret and restore the important records?",
       "verify": [
-        "Long-term readable or documented formats",
-        "Complete recovery of meaningful information",
-        "Tested backups and restoration",
-        "Independent reconstruction",
-        "Surviving documentation and schemas"
+        "Documented formats and schemas",
+        "Metadata and relationships preserved",
+        "Backups tested and restoration demonstrated",
+        "Independent interpretation of the records"
       ]
     },
     {
       "id": "T3",
-      "title": "Offline Independence Test",
-      "primary": "locality",
-      "supports": [
-        "locality"
-      ],
+      "title": "Offline independence",
+      "role": "evidence",
+      "supports": ["locality"],
       "eligibility": [],
+      "question": "Which functions continue when external services are unavailable, and why?",
       "verify": [
-        "Essential local functions without internet access",
-        "Graceful disconnection",
-        "Local data access and modification",
-        "Optional synchronization boundaries"
+        "Functions that continue without external services",
+        "Each remaining dependency shown to be inherent to the task",
+        "A failed synchronization does not remove the ability to work"
       ]
     },
     {
       "id": "T4",
-      "title": "Deterministic Behavior Test",
-      "primary": "predictability",
-      "supports": [
-        "predictability"
-      ],
-      "eligibility": [],
+      "title": "Operational transparency",
+      "role": "evidence",
+      "supports": ["transparency"],
+      "eligibility": ["E5"],
+      "question": "Can consequential actions, permissions, dependencies, and outcomes be inspected and controlled?",
       "verify": [
-        "Critical state-machine behavior",
-        "Defined numerical assumptions and tolerances",
-        "Reproducible calculations where appropriate",
-        "Conflict handling",
-        "Human authorization for consequential AI-generated actions"
+        "Rules for important operations are explained",
+        "Consequential actions and outcomes are traceable",
+        "Suggestions are distinct from committed actions",
+        "Approval, reversal, or contest is available where appropriate",
+        "Errors are visible"
       ]
     },
     {
       "id": "T5",
-      "title": "Interoperability and Responsibility Test",
-      "primary": "interoperability",
-      "supports": [
-        "interoperability"
-      ],
-      "eligibility": [],
+      "title": "Security and continuity",
+      "role": "cross-cutting",
+      "supports": ["sovereignty", "longevity", "locality"],
+      "eligibility": ["E4"],
+      "question": "Are custody, encryption, backups, restoration, and vendor-failure scenarios credibly addressed?",
       "verify": [
-        "Open interfaces and formats",
-        "Replaceable components",
-        "Documented integration",
-        "Coherent functional boundaries"
+        "Custody of data and keys",
+        "Encryption and trust boundaries",
+        "Backups and restoration",
+        "Vendor-failure scenarios"
       ]
     },
     {
       "id": "T6",
-      "title": "Responsiveness and Attention Test",
-      "primary": "responsiveness",
-      "supports": [
-        "responsiveness"
-      ],
+      "title": "Interoperability and maintainability",
+      "role": "supporting",
+      "supports": ["sovereignty", "longevity"],
       "eligibility": [],
+      "question": "Do interfaces, formats, and architectural boundaries materially support freedom and long-term operation?",
       "verify": [
-        "Routine input feedback",
-        "Perceived latency",
-        "Nonblocking expensive operations",
-        "Interface clarity",
-        "Avoidance of artificial friction"
+        "Documented interfaces and formats",
+        "Replaceable components",
+        "Boundaries that support long-term maintenance"
       ]
     },
     {
       "id": "T7",
-      "title": "Dependency, Security, and Continuity Test",
-      "primary": null,
-      "crossCutting": true,
-      "supports": [
-        "sovereignty",
-        "longevity",
-        "locality",
-        "predictability"
-      ],
-      "eligibility": [
-        "E5"
-      ],
+      "title": "Human experience and performance",
+      "role": "supporting",
+      "supports": [],
+      "eligibility": [],
+      "question": "Is the software usable, accessible, and reasonably responsive for its domain?",
       "verify": [
-        "Unnecessary vendor dependencies",
-        "Undisclosed telemetry",
-        "Recovery from service failure",
-        "Authentication and encryption boundaries",
-        "Dependency maintenance",
-        "Sustainable continuity"
+        "Usable for its intended tasks",
+        "Accessible",
+        "Reasonably responsive for its domain"
       ]
     }
   ],
-  "classification": {
-    "order": [
-      "not_certified",
-      "unverified",
-      "tier1",
-      "tier2",
-      "tier3"
-    ],
+  "determinations": {
+    "order": ["fails_fundamental", "insufficient_evidence", "meets_core", "partially_aligned"],
     "labels": {
-      "tier1": "Tier 1: Exemplary Sovereign Software",
-      "tier2": "Tier 2: Strong Sovereign Software",
-      "tier3": "Tier 3: Partial Alignment",
-      "not_certified": "Not Certified: Critical Failure",
-      "unverified": "Unverified: Insufficient Evidence"
-    },
-    "tier1": {
-      "minScore": 90,
-      "minEveryPrinciple": 3
-    },
-    "tier2": {
-      "minScore": 75,
-      "minPrinciples": {
-        "sovereignty": 3,
-        "longevity": 3
-      }
+      "meets_core": "Meets the proposed core requirements",
+      "partially_aligned": "Partially aligned",
+      "fails_fundamental": "Fails a fundamental requirement",
+      "insufficient_evidence": "Insufficient evidence"
     },
     "evidence": {
       "minEvidenceLength": 10,
-      "note": "Tiers 1 and 2 require a documented evidence statement for every principle rating and for every eligibility requirement marked Pass or Not Applicable, and no Low confidence rating."
+      "note": "A determination needs an evidence statement for every principle finding and for every eligibility requirement marked Pass, a justification for every Not Applicable, and no Low or unstated confidence on any finding."
     }
   },
   "examples": [
     {
       "id": "A",
       "name": "Application A (hypothetical)",
-      "summary": "Fast, offline, predictable and interoperable, but the user cannot leave with their data and cannot recover it without the vendor.",
-      "lesson": "Excellent results in the lower-priority principles cannot compensate for fundamental shortcomings in Sovereignty and Longevity. The numerical score looks respectable, but the verified failures of mandatory requirements prevent certification.",
-      "ratings": {
-        "sovereignty": 1,
-        "longevity": 1,
-        "locality": 5,
-        "predictability": 5,
-        "interoperability": 5,
-        "responsiveness": 5
-      },
-      "eligibility": {
-        "E1": "pass",
-        "E2": "fail",
-        "E3": "fail",
-        "E4": "pass",
-        "E5": "fail"
-      },
-      "expected": {
-        "score": 60,
-        "classification": "not_certified"
-      }
+      "summary": "Fast, elegant, and usable offline, but its records can only be read by the vendor's service and cannot be exported.",
+      "lesson": "Speed, elegant architecture, and offline operation cannot compensate for a loss of fundamental user control. Failing the requirements for independent access, exit, and recoverability is decisive.",
+      "findings": { "sovereignty": "does_not_meet", "longevity": "does_not_meet", "locality": "meets", "transparency": "meets" },
+      "eligibility": { "E1": "fail", "E2": "fail", "E3": "fail", "E4": "pass", "E5": "pass" },
+      "expected": { "determination": "fails_fundamental" }
     },
     {
       "id": "B",
       "name": "Application B (hypothetical)",
-      "summary": "Sovereign and durable, with documented recoverable data, but sluggish in everyday use.",
-      "lesson": "Weak responsiveness alone does not disqualify an otherwise sovereign application. Responsiveness carries 5% of the weight and is not a mandatory requirement, so the application stays eligible and reaches Tier 2. It cannot reach Tier 1, which requires every principle to be rated at least 3.",
-      "ratings": {
-        "sovereignty": 5,
-        "longevity": 5,
-        "locality": 4,
-        "predictability": 4,
-        "interoperability": 4,
-        "responsiveness": 2
-      },
-      "eligibility": {
-        "E1": "pass",
-        "E2": "pass",
-        "E3": "pass",
-        "E4": "pass",
-        "E5": "pass"
-      },
-      "expected": {
-        "score": 88,
-        "classification": "tier2"
-      }
+      "summary": "Documented, recoverable, and under the user's control, but slow and plain to use.",
+      "lesson": "Responsiveness and polish are supporting qualities, not prerequisites. A slow application that keeps users in control of their work can still meet the proposed core requirements.",
+      "findings": { "sovereignty": "meets", "longevity": "meets", "locality": "meets", "transparency": "meets" },
+      "eligibility": { "E1": "pass", "E2": "pass", "E3": "pass", "E4": "pass", "E5": "pass" },
+      "expected": { "determination": "meets_core" }
     },
     {
       "id": "C",
       "name": "Application C (hypothetical)",
-      "summary": "Strong in five principles but its records can only be read by the vendor's service.",
-      "lesson": "A score of 85 does not rescue an application whose preserved records cannot be recovered independently. A verified critical failure of a mandatory requirement overrides any numerical score.",
-      "ratings": {
-        "sovereignty": 5,
-        "longevity": 2,
-        "locality": 5,
-        "predictability": 5,
-        "interoperability": 5,
-        "responsiveness": 5
-      },
-      "eligibility": {
-        "E1": "pass",
-        "E2": "pass",
-        "E3": "fail",
-        "E4": "pass",
-        "E5": "pass"
-      },
-      "expected": {
-        "score": 85,
-        "classification": "not_certified"
-      }
+      "summary": "A managed messaging service with a good export path, whose network dependence is inherent, but whose automated actions are only partly explained.",
+      "lesson": "A dependency inherent to the task is not a failure, and the absence of a fundamental failure is not the same as full alignment. Partial findings give a partially aligned determination.",
+      "findings": { "sovereignty": "meets", "longevity": "meets", "locality": "partial", "transparency": "partial" },
+      "eligibility": { "E1": "pass", "E2": "pass", "E3": "pass", "E4": "pass", "E5": "pass" },
+      "expected": { "determination": "partially_aligned" }
     }
   ],
   "exampleNote": "Hypothetical illustrations for explaining the method. They are not audits of any real product."

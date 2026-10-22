@@ -1,29 +1,33 @@
-/* Sovereign Software Evaluation Framework: scoring engine.
-   The single implementation of the weighted score, eligibility rules, classification,
-   export and import. It reads the framework definition (weights, thresholds) from
-   data/framework.json and never touches the DOM, so the browser and the Node tests
-   run the same code. */
+/* Sovereign Software Evaluation Framework: assessment engine.
+   The single implementation of eligibility rules, principle findings, the qualified overall
+   determination, export, and import. It reads the framework definition from data/framework.json
+   and never touches the DOM, so the browser and the Node tests run the same code.
+   The framework adopts no weighting scheme, numerical score, or tier threshold. */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();
-  else root.SovereignScoring = factory();
+  else root.SovereignAssessment = factory();
 })(typeof self !== 'undefined' ? self : this, function () {
   'use strict';
 
-  var SCHEMA_VERSION = '2.0';
+  var SCHEMA_VERSION = '3.0';
   var MAX_IMPORT_CHARS = 1000000;
   var MAX_TEXT = 5000;
   var MAX_SHORT = 200;
   var CONFIDENCE = ['high', 'medium', 'low'];
   var STATUSES = ['pass', 'fail', 'not_verified', 'not_applicable'];
+  var FINDINGS = ['meets', 'partial', 'does_not_meet'];
 
   /* ---------- helpers ---------- */
 
   function isObj(x) { return x !== null && typeof x === 'object' && !Array.isArray(x); }
   function str(x) { return typeof x === 'string' ? x : ''; }
   function trimLen(x) { return str(x).trim().length; }
-  function round6(n) { return Math.round(n * 1e6) / 1e6; }
   function principleIds(fw) { return fw.principles.map(function (p) { return p.id; }); }
   function findPrinciple(fw, id) { return fw.principles.filter(function (p) { return p.id === id; })[0]; }
+  function findingLabel(fw, id) {
+    var f = fw.findingLevels.filter(function (l) { return l.id === id; })[0];
+    return f ? f.label : 'Not assessed';
+  }
 
   function isHttpUrl(s) {
     if (typeof s !== 'string') return false;
@@ -32,32 +36,24 @@
     try { var u = new URL(t); return u.protocol === 'http:' || u.protocol === 'https:'; } catch (e) { return false; }
   }
 
-  /* Display value that never rounds up across a threshold (89.96 shows as 89.9, not 90). */
-  function formatScore(n) {
-    if (n === null || n === undefined) return null;
-    var f = Math.floor(n * 10 + 1e-9) / 10;
-    return f.toFixed(f % 1 === 0 ? 0 : 1);
-  }
-
   /* ---------- framework checks ---------- */
 
   function validateFramework(fw) {
     var errors = [];
-    var sum = 0;
-    fw.principles.forEach(function (p) {
-      if (typeof p.weight !== 'number' || p.weight < 0) errors.push('Invalid weight for ' + p.id);
-      sum += p.weight;
-    });
-    if (round6(sum) !== 100) errors.push('Weights sum to ' + sum + ', not 100');
     var ids = principleIds(fw);
-    fw.tests.forEach(function (t) {
-      t.supports.forEach(function (s) { if (ids.indexOf(s) < 0) errors.push(t.id + ' supports unknown principle ' + s); });
-      if (t.primary && ids.indexOf(t.primary) < 0) errors.push(t.id + ' has unknown primary principle');
+    if (new Set(ids).size !== ids.length) errors.push('Duplicate principle ids');
+    if (ids.length !== 4) errors.push('The framework defines ' + ids.length + ' principles, not four');
+    fw.principles.forEach(function (p) {
+      if (!p.levels || FINDINGS.some(function (f) { return typeof p.levels[f] !== 'string'; })) errors.push(p.id + ' lacks guidance for every finding level');
+      if ('weight' in p) errors.push(p.id + ' has a weight, but this framework adopts none');
     });
     var eids = fw.eligibility.map(function (e) { return e.id; });
+    fw.eligibility.forEach(function (e) { if (ids.indexOf(e.principle) < 0) errors.push(e.id + ' maps to an unknown principle'); });
     fw.tests.forEach(function (t) {
+      t.supports.forEach(function (s) { if (ids.indexOf(s) < 0) errors.push(t.id + ' supports unknown principle ' + s); });
       (t.eligibility || []).forEach(function (e) { if (eids.indexOf(e) < 0) errors.push(t.id + ' maps to unknown requirement ' + e); });
     });
+    Object.keys(fw.determinations.labels).forEach(function (k) { if (fw.determinations.order.indexOf(k) < 0) errors.push('Determination ' + k + ' has no precedence'); });
     return errors;
   }
 
@@ -76,7 +72,7 @@
       a.eligibility[e.id] = { status: 'not_verified', evidence: '', source: '', justification: '' };
     });
     fw.principles.forEach(function (p) {
-      a.principles[p.id] = { rating: null, evidence: '', limitations: '', confidence: null, sources: '' };
+      a.principles[p.id] = { finding: null, evidence: '', limitations: '', confidence: null, sources: '' };
     });
     fw.tests.forEach(function (t) {
       a.tests[t.id] = { checked: t.verify.map(function () { return false; }), notes: '' };
@@ -84,32 +80,31 @@
     return a;
   }
 
-  /* ---------- scoring ---------- */
+  /* ---------- evaluation ---------- */
 
   function computeResult(fw, a) {
-    var cls = fw.classification;
-    var minEv = cls.evidence.minEvidenceLength;
+    var minEv = fw.determinations.evidence.minEvidenceLength;
     var ids = principleIds(fw);
 
-    var contributions = [];
+    var profile = [];
     var missing = [];
-    var total = 0;
     fw.principles.forEach(function (p) {
-      var r = a.principles[p.id] ? a.principles[p.id].rating : null;
-      var assessed = typeof r === 'number' && r >= 0 && r <= 5;
-      var raw = assessed ? (r * p.weight) / 5 : null;
-      var contrib = assessed ? round6(raw) : null;   /* rounded for display only */
-      if (assessed) total += raw; else missing.push(p.id);
-      contributions.push({ id: p.id, name: p.name, priority: p.priority, weight: p.weight, rating: assessed ? r : null, contribution: contrib });
+      var pr = a.principles[p.id] || {};
+      var f = FINDINGS.indexOf(pr.finding) >= 0 ? pr.finding : null;
+      if (f === null) missing.push(p.id);
+      profile.push({
+        id: p.id, order: p.order, name: p.name, finding: f, findingLabel: findingLabel(fw, f),
+        confidence: CONFIDENCE.indexOf(pr.confidence) >= 0 ? pr.confidence : null,
+        hasEvidence: trimLen(pr.evidence) >= minEv
+      });
     });
     var complete = missing.length === 0;
-    var score = complete ? round6(total) : null;
 
     /* eligibility */
     var failures = [];
     var unverified = [];
     var notApplicable = [];
-    var eligibilityDetail = fw.eligibility.map(function (e) {
+    var detail = fw.eligibility.map(function (e) {
       var en = a.eligibility[e.id] || {};
       var status = STATUSES.indexOf(en.status) >= 0 ? en.status : 'not_verified';
       var effective = status;
@@ -128,15 +123,17 @@
       notApplicable: notApplicable,
       satisfied: failures.length === 0 && unverified.length === 0,
       verdict: failures.length ? 'failed' : (unverified.length ? 'unverified' : 'satisfied'),
-      detail: eligibilityDetail
+      detail: detail
     };
 
-    /* evidence sufficiency (required for Tier 1 and Tier 2) */
+    /* evidence: every claim needs observations, and no finding may rest on Low or unstated confidence */
     var evidenceGaps = [];
-    fw.principles.forEach(function (p) {
-      var pr = a.principles[p.id] || {};
-      if (trimLen(pr.evidence) < minEv) evidenceGaps.push(p.name + ': evidence statement missing');
-      if (pr.confidence === 'low' || CONFIDENCE.indexOf(pr.confidence) < 0) evidenceGaps.push(p.name + ': confidence is ' + (pr.confidence === 'low' ? 'Low' : 'not stated'));
+    profile.forEach(function (c) {
+      if (c.finding === null) return;
+      var pr = a.principles[c.id];
+      if (!c.hasEvidence) evidenceGaps.push(c.name + ': evidence statement missing');
+      if (c.confidence === null) evidenceGaps.push(c.name + ': confidence not stated');
+      else if (c.confidence === 'low') evidenceGaps.push(c.name + ': confidence is Low');
     });
     fw.eligibility.forEach(function (e) {
       var en = a.eligibility[e.id] || {};
@@ -144,54 +141,36 @@
     });
     var evidenceSufficient = evidenceGaps.length === 0;
 
-    /* classification, in the documented order of precedence */
-    var id, reasons = [];
-    var ratingOf = function (pid) { return a.principles[pid].rating; };
+    /* determination, in the documented order of precedence */
+    var id;
+    var reasons = [];
+    var notMeeting = profile.filter(function (c) { return c.finding === 'partial' || c.finding === 'does_not_meet'; });
     if (failures.length) {
-      id = 'not_certified';
-      reasons.push('Verified failure of mandatory eligibility: ' + failures.join(', ') + '. A high score cannot compensate for it.');
-    } else if (unverified.length) {
-      id = 'unverified';
-      reasons.push('Mandatory eligibility not established: ' + unverified.join(', ') + '.');
-    } else if (!complete) {
-      id = 'unverified';
-      reasons.push('Quality assessment incomplete: not yet assessed: ' + missing.map(function (m) { return findPrinciple(fw, m).name; }).join(', ') + '.');
+      id = 'fails_fundamental';
+      failures.forEach(function (eid) {
+        var e = fw.eligibility.filter(function (x) { return x.id === eid; })[0];
+        reasons.push(eid + ' failed: ' + e.failure);
+      });
+      reasons.push('Strengths elsewhere do not cancel a verified failure.');
+    } else if (unverified.length || !complete || !evidenceSufficient) {
+      id = 'insufficient_evidence';
+      if (unverified.length) reasons.push('Mandatory requirements not yet established: ' + unverified.join(', ') + '. Missing evidence is not a failure, and it is not a pass.');
+      if (!complete) reasons.push('Principles not yet assessed: ' + missing.map(function (m) { return findPrinciple(fw, m).name; }).join(', ') + '.');
+      if (!evidenceSufficient) reasons.push('Documented evidence is incomplete: ' + evidenceGaps.slice(0, 4).join('; ') + (evidenceGaps.length > 4 ? '; and more' : '') + '.');
+    } else if (notMeeting.length === 0) {
+      id = 'meets_core';
     } else {
-      var minAll = Math.min.apply(null, ids.map(ratingOf));
-      var t1 = cls.tier1, t2 = cls.tier2;
-      var tier2Ratings = Object.keys(t2.minPrinciples).every(function (pid) { return ratingOf(pid) >= t2.minPrinciples[pid]; });
-      if (score >= t1.minScore && minAll >= t1.minEveryPrinciple && evidenceSufficient) {
-        id = 'tier1';
-      } else if (score >= t2.minScore && tier2Ratings && evidenceSufficient) {
-        id = 'tier2';
-        if (score < t1.minScore) reasons.push('Score below ' + t1.minScore + ' for Tier 1.');
-        else if (minAll < t1.minEveryPrinciple) reasons.push('A principle is rated below ' + t1.minEveryPrinciple + ', which Tier 1 does not allow.');
-      } else {
-        id = 'tier3';
-        if (score < t2.minScore) reasons.push('Score below ' + t2.minScore + ' for Tier 2.');
-        Object.keys(t2.minPrinciples).forEach(function (pid) {
-          if (ratingOf(pid) < t2.minPrinciples[pid]) reasons.push(findPrinciple(fw, pid).name + ' is below ' + t2.minPrinciples[pid] + ', which Tier 2 requires.');
-        });
-        if (!evidenceSufficient) reasons.push('Documented evidence is insufficient for a higher tier.');
-      }
+      id = 'partially_aligned';
+      notMeeting.forEach(function (c) { reasons.push(c.name + ': ' + c.findingLabel.toLowerCase() + '.'); });
     }
 
     /* warnings */
     var warnings = [];
-    if (failures.length && score !== null) warnings.push('The numerical score is ' + formatScore(score) + ' but a verified critical failure prevents certification.');
-    fw.principles.forEach(function (p) {
-      var pr = a.principles[p.id] || {};
-      if (typeof pr.rating === 'number' && pr.confidence === 'low') warnings.push(p.name + ' is rated with Low confidence.');
-    });
     if (notApplicable.length) warnings.push('Requirements marked Not Applicable: ' + notApplicable.join(', ') + '. This is valid only when they genuinely do not apply.');
-    if (!evidenceSufficient && complete) warnings.push('Evidence is incomplete for: ' + evidenceGaps.slice(0, 4).join('; ') + (evidenceGaps.length > 4 ? '; and more' : '') + '.');
+    profile.forEach(function (c) { if (c.finding !== null && c.confidence === 'low') warnings.push(c.name + ' is assessed with Low confidence.'); });
 
-    /* weaknesses and recommendations (priority order) */
-    var weaknesses = [];
-    fw.principles.forEach(function (p) {
-      var r = a.principles[p.id] ? a.principles[p.id].rating : null;
-      if (typeof r === 'number' && r <= 2) weaknesses.push({ principle: p.id, name: p.name, rating: r, recommendation: p.improvement });
-    });
+    /* weaknesses and recommendations */
+    var weaknesses = notMeeting.map(function (c) { return { principle: c.id, name: c.name, finding: c.finding, findingLabel: c.findingLabel, recommendation: findPrinciple(fw, c.id).improvement }; });
     var actions = [];
     failures.forEach(function (eid) {
       var e = fw.eligibility.filter(function (x) { return x.id === eid; })[0];
@@ -202,16 +181,15 @@
       actions.push('Verify requirement ' + eid + ' (' + e.title + ') with evidence.');
     });
 
-    /* evidence coverage */
+    /* evidence coverage: verification items checked, per principle and for supporting tests */
     var coverage = fw.principles.map(function (p) {
-      var pr = a.principles[p.id] || {};
       var checked = 0, total = 0;
       fw.tests.forEach(function (t) {
         if (t.supports.indexOf(p.id) < 0) return;
         var tt = a.tests[t.id] || { checked: [] };
         t.verify.forEach(function (_, i) { total++; if (tt.checked && tt.checked[i] === true) checked++; });
       });
-      return { id: p.id, name: p.name, hasEvidence: trimLen(pr.evidence) >= minEv, verificationChecked: checked, verificationTotal: total };
+      return { id: p.id, name: p.name, verificationChecked: checked, verificationTotal: total };
     });
 
     return {
@@ -220,13 +198,11 @@
       assessedCount: ids.length - missing.length,
       totalPrinciples: ids.length,
       missing: missing,
-      score: score,
-      scoreDisplay: formatScore(score),
-      contributions: contributions,
+      profile: profile,
       eligibility: eligibility,
       evidenceSufficient: evidenceSufficient,
       evidenceGaps: evidenceGaps,
-      classification: { id: id, label: cls.labels[id], certified: id === 'tier1' || id === 'tier2' || id === 'tier3', reasons: reasons },
+      determination: { id: id, label: fw.determinations.labels[id], reasons: reasons },
       warnings: warnings,
       weaknesses: weaknesses,
       actions: actions,
@@ -290,9 +266,9 @@
     fw.principles.forEach(function (p) {
       var r = isObj(pr[p.id]) ? pr[p.id] : {};
       var out = a.principles[p.id];
-      if (r.rating !== undefined && r.rating !== null) {
-        if (!Number.isInteger(r.rating) || r.rating < 0 || r.rating > 5) errors.push(p.name + ': rating must be a whole number from 0 to 5 or null');
-        else out.rating = r.rating;
+      if (r.finding !== undefined && r.finding !== null) {
+        if (FINDINGS.indexOf(r.finding) < 0) errors.push(p.name + ': invalid finding');
+        else out.finding = r.finding;
       }
       if (r.confidence !== undefined && r.confidence !== null) {
         if (CONFIDENCE.indexOf(r.confidence) < 0) errors.push(p.name + ': invalid confidence');
@@ -332,9 +308,9 @@
   /* ---------- export ---------- */
 
   function toJSON(fw, a, result) {
-    var out = {
+    return JSON.stringify({
       schemaVersion: SCHEMA_VERSION,
-      framework: { name: fw.name, version: fw.version },
+      framework: { name: fw.name, version: fw.version, status: fw.status },
       software: a.software,
       evaluation: a.evaluation,
       eligibility: a.eligibility,
@@ -343,11 +319,9 @@
       derived: {
         note: 'Derived values are informational. They are recomputed from the data above when the file is imported.',
         complete: result.complete,
-        score: result.score,
-        classification: result.classification.id
+        determination: result.determination.id
       }
-    };
-    return JSON.stringify(out, null, 2);
+    }, null, 2);
   }
 
   function cell(s) { return String(s === null || s === undefined ? '' : s).replace(/\r?\n/g, ' ').replace(/\|/g, '\\|').trim() || ' '; }
@@ -361,50 +335,48 @@
     var name = a.software.name.trim() || 'Unnamed software';
     L.push('# Sovereign Software Assessment: ' + name);
     L.push('');
-    L.push('- **Framework:** ' + fw.name + ' v' + fw.version);
+    L.push('- **Framework:** ' + fw.name + ' v' + fw.version + ' (' + fw.status + ')');
     L.push('- **Software:** ' + name + (a.software.version ? ' ' + a.software.version : ''));
     if (a.software.category) L.push('- **Category:** ' + a.software.category);
     if (a.software.platform) L.push('- **Platform:** ' + a.software.platform);
     if (a.software.deployment) L.push('- **Deployment model:** ' + a.software.deployment);
-    L.push('- **Evaluation date:** ' + (a.evaluation.date || 'not recorded'));
+    L.push('- **Assessment date:** ' + (a.evaluation.date || 'not recorded'));
     if (a.evaluation.evaluator) L.push('- **Evaluator:** ' + a.evaluation.evaluator);
     L.push('');
-    L.push('## Result');
+    L.push('## Determination');
     L.push('');
-    L.push('- **Classification:** ' + result.classification.label);
-    L.push('- **Weighted score:** ' + (result.complete ? result.scoreDisplay + ' / 100' : 'not available (assessment incomplete: ' + result.assessedCount + ' of ' + result.totalPrinciples + ' principles rated)'));
-    L.push('- **Mandatory eligibility:** ' + result.eligibility.verdict);
-    result.classification.reasons.forEach(function (r) { L.push('- ' + r); });
+    L.push('- **Overall determination:** ' + result.determination.label);
+    L.push('- **Principles assessed:** ' + result.assessedCount + ' of ' + result.totalPrinciples);
+    L.push('- **Fundamental requirements:** ' + result.eligibility.verdict);
+    result.determination.reasons.forEach(function (r) { L.push('- ' + r); });
     result.warnings.forEach(function (w) { L.push('- Warning: ' + w); });
     L.push('');
-    L.push('## Mandatory eligibility');
+    L.push('## Fundamental eligibility requirements');
     L.push('');
     L.push('| Requirement | Status | Evidence |');
     L.push('|---|---|---|');
-    fw.eligibility.forEach(function (e, i) {
+    fw.eligibility.forEach(function (e) {
       var en = a.eligibility[e.id];
-      var label = fw.eligibilityStatuses.filter(function (s) { return s.id === en.status; })[0].label;
+      var st = fw.eligibilityStatuses.filter(function (s) { return s.id === en.status; })[0];
       var ev = en.status === 'not_applicable' ? 'Justification: ' + en.justification : en.evidence;
-      L.push('| ' + e.id + ' ' + cell(e.title) + ' | ' + label + ' | ' + cell(ev) + (en.source ? ' (' + cell(en.source) + ')' : '') + ' |');
+      L.push('| ' + e.id + ' ' + cell(e.title) + ' | ' + st.label + ' | ' + cell(ev) + (en.source ? ' (' + cell(en.source) + ')' : '') + ' |');
     });
     L.push('');
-    L.push('## Weighted principle scores');
+    L.push('## Principle profile');
     L.push('');
-    L.push('| Priority | Principle | Weight | Rating | Contribution |');
-    L.push('|---|---|---:|---:|---:|');
-    result.contributions.forEach(function (c) {
-      L.push('| ' + c.priority + ' | ' + cell(c.name) + ' | ' + c.weight + ' | ' + (c.rating === null ? 'not assessed' : c.rating + ' / 5') + ' | ' + (c.contribution === null ? 'n/a' : formatScore(c.contribution) + ' / ' + c.weight) + ' |');
+    L.push('| Principle | Finding | Confidence |');
+    L.push('|---|---|---|');
+    result.profile.forEach(function (c) {
+      L.push('| ' + c.order + '. ' + cell(c.name) + ' | ' + c.findingLabel + ' | ' + (c.confidence ? c.confidence : 'not stated') + ' |');
     });
     L.push('');
     L.push('## Evidence and limitations');
     fw.principles.forEach(function (p) {
       var pr = a.principles[p.id];
       L.push('');
-      L.push('### ' + p.priority + '. ' + p.name);
+      L.push('### ' + p.order + '. ' + p.name);
       L.push('');
-      L.push('- **Confidence:** ' + (pr.confidence ? pr.confidence : 'not stated'));
-      L.push('');
-      L.push('**Evidence**');
+      L.push('**Observations**');
       L.push('');
       L.push(quote(pr.evidence));
       L.push('');
@@ -419,7 +391,7 @@
       }
     });
     L.push('');
-    L.push('## Engineering verification');
+    L.push('## Supporting engineering tests');
     L.push('');
     fw.tests.forEach(function (t) {
       var tt = a.tests[t.id];
@@ -429,14 +401,14 @@
     L.push('');
     L.push('## Recommended improvements');
     L.push('');
-    var recs = result.actions.concat(result.weaknesses.map(function (w) { return w.name + ' (rated ' + w.rating + '/5): ' + w.recommendation; }));
-    if (!recs.length) L.push('_No specific improvements flagged by the rating rules._');
+    var recs = result.actions.concat(result.weaknesses.map(function (w) { return w.name + ' (' + w.findingLabel.toLowerCase() + '): ' + w.recommendation; }));
+    if (!recs.length) L.push('_No specific improvements flagged by the findings._');
     recs.forEach(function (r) { L.push('- ' + r); });
     if (a.evaluation.notes.trim()) { L.push(''); L.push('## Notes'); L.push(''); L.push(quote(a.evaluation.notes)); }
     L.push('');
     L.push('---');
     L.push('');
-    L.push('_This assessment is not externally certified. The tiers and thresholds are proposed editorial policy of the Sovereign Software Evaluation Framework v' + fw.version + ', and "meets the proposed standard" does not imply third-party accreditation._');
+    L.push('_This assessment is not externally certified. The ' + fw.name + ' v' + fw.version + ' is a proposed, evidence-led framework: it adopts no numerical score, weighting, or tier threshold, and "meets the proposed core requirements" does not imply third-party accreditation._');
     return L.join('\n') + '\n';
   }
 
@@ -445,7 +417,7 @@
   var CONF_RANK = { low: 0, medium: 1, high: 2 };
 
   /* Converts an Index record (data/directory.json) into an assessment so that the Index and the
-     evaluator share one scoring implementation. Evidence items look like
+     evaluator share one implementation. Evidence items look like
      { target: "sovereignty" | "E1", text, url, confidence }. */
   function assessmentFromEntry(fw, entry) {
     var a = emptyAssessment(fw);
@@ -455,11 +427,10 @@
     a.evaluation.date = str(entry.assessment_date);
     a.evaluation.notes = Array.isArray(entry.limitations) ? entry.limitations.join('\n') : '';
     var items = Array.isArray(entry.evidence) ? entry.evidence : [];
-    var ratings = isObj(entry.principles) ? entry.principles : {};
+    var findings = isObj(entry.principles) ? entry.principles : {};
     fw.principles.forEach(function (p) {
-      var r = ratings[p.id];
       var out = a.principles[p.id];
-      out.rating = Number.isInteger(r) && r >= 0 && r <= 5 ? r : null;
+      out.finding = FINDINGS.indexOf(findings[p.id]) >= 0 ? findings[p.id] : null;
       var mine = items.filter(function (i) { return i && i.target === p.id; });
       out.evidence = mine.map(function (i) { return str(i.text); }).filter(Boolean).join('\n');
       out.sources = mine.map(function (i) { return str(i.url); }).filter(Boolean).join('\n');
@@ -488,6 +459,7 @@
   return {
     SCHEMA_VERSION: SCHEMA_VERSION,
     STATUSES: STATUSES,
+    FINDINGS: FINDINGS,
     CONFIDENCE: CONFIDENCE,
     emptyAssessment: emptyAssessment,
     assessmentFromEntry: assessmentFromEntry,
@@ -497,7 +469,6 @@
     validateFramework: validateFramework,
     toJSON: toJSON,
     toMarkdown: toMarkdown,
-    formatScore: formatScore,
     isHttpUrl: isHttpUrl
   };
 });

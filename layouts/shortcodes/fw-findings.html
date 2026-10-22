@@ -1,0 +1,12 @@
+{{- $fw := hugo.Data.framework -}}
+<div class="table-wrap"><table class="fw-table">
+  <caption class="sr-only">What each finding level means for each principle</caption>
+  <thead><tr><th scope="col">Principle</th>{{ range $fw.findingLevels }}<th scope="col">{{ .symbol }} {{ .label }}</th>{{ end }}</tr></thead>
+  <tbody>
+  {{- range $fw.principles }}
+    {{- $p := . }}
+    <tr><th scope="row">{{ .name }}</th>{{ range $fw.findingLevels }}<td>{{ index $p.levels .id }}</td>{{ end }}</tr>
+  {{- end }}
+  <tr><th scope="row">Any principle</th><td colspan="3">Not assessed: unknown or no evidence. This is a distinct state. It is not a pass, and it is not a failure.</td></tr>
+  </tbody>
+</table></div>

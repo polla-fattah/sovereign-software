@@ -3,19 +3,17 @@
 {{- $complete := eq $e.assessment_status "complete" -}}
 <article class="dir-card" id="{{ $e.id }}"
   data-id="{{ $e.id }}" data-name="{{ $e.name }}" data-category="{{ $e.category }}"
-  data-status="{{ $e.assessment_status }}" data-class="{{ $e.classification }}"
-  data-strongest="" data-weakest="" data-score="">
+  data-status="{{ $e.assessment_status }}" data-det="{{ $e.determination }}" data-attention="">
   <header class="dir-card-head">
     <span class="dir-cat">{{ $e.category }}</span>
     <span class="dir-status" data-role="status">{{ if $complete }}Assessment recorded{{ else }}Awaiting assessment{{ end }}</span>
   </header>
-  <h3 class="dir-name"><a href="{{ printf "directory/%s/" $e.id | relURL }}">{{ $e.name }}</a></h3>
+  <h2 class="dir-name"><a href="{{ printf "directory/%s/" $e.id | relURL }}">{{ $e.name }}</a></h2>
   <p class="dir-result">
-    <span class="dir-badge dir-b-{{ $e.classification }}" data-role="class">{{ if $complete }}Computing classification{{ else }}{{ index $fw.classification.labels $e.classification }}{{ end }}</span>
-    <span class="dir-score" data-role="score">Weighted score: not available</span>
+    <span class="dir-badge dir-b-{{ $e.determination }}" data-role="det">{{ if $complete }}Computing determination{{ else }}{{ index $fw.determinations.labels $e.determination }}{{ end }}</span>
   </p>
   {{- if not $complete }}
-  <p class="dir-note">No framework v2.0 assessment exists yet, so no rating is published. Reassessment is required.</p>
+  <p class="dir-note">No assessment under the current proposed framework exists yet, so no finding is published. Reassessment is required.</p>
   {{- end }}
   <p class="dir-legacy"><strong>Legacy v1 tier:</strong> {{ $e.legacy_label }}. History only, not a current classification.</p>
   <p class="dir-summary">{{ $e.summary }}</p>

@@ -1,161 +1,150 @@
 +++
 title = "How Sovereign Software Is Evaluated"
-description = "The formal reference for the Sovereign Software Evaluation Framework v2.0: six prioritized principles, five eligibility requirements, weighted scoring, seven verification tests, and classification rules."
+description = "The formal reference for the proposed Sovereign Software Evaluation Framework v3.0: four principles, five fundamental requirements, evidence-led findings, and qualified determinations, with no numerical score."
 layout = "methodology"
 weight = 4
 +++
 
-This page is the formal reference for the **Sovereign Software Evaluation Framework, version 2.0**. The [manifesto](../read/) states the philosophy, the [evaluator](../evaluator/) applies this method in your browser, and the [Index](../directory/) records assessments made with it. Everything on this page is generated from the same versioned data file that the evaluator uses, so the two cannot disagree about weights, requirements, or thresholds.
+This page is the formal reference for the **Sovereign Software Evaluation Framework, version 3.0 (proposed)**. The [manifesto](../read/) states the philosophy, the [evaluator](../evaluator/) applies this method in your browser, and the [Index](../directory/) records assessments made with it. Everything on this page is generated from the same versioned data file that the evaluator uses, so the two cannot disagree about principles, requirements, or rules.
 
-The framework is a proposed editorial standard. It is not an externally accredited certification scheme, and "meets the proposed standard" never means third-party approval.
+The framework is deliberately **evidence-led and unscored**. It adopts no weighting scheme, numerical score, or tier threshold, and it is not an externally accredited certification scheme. "Meets the proposed core requirements" never means third-party approval.
 
 ## 1. Purpose and Scope
 
-The framework answers one question: how well does a piece of software protect its user's long-term control over their software and information? It is designed for personal and professional software that holds user data, from notes and ledgers to CAD and operating systems. It is not a general quality rating. A program can be excellent software and still be poor sovereign software, and the reverse.
+The framework asks one question: when the software, the vendor, the network, or the fashionable technology changes, does the person still retain meaningful control over their work? It is designed for software that holds user information, from notes and ledgers to simulation and operating systems.
 
-It evaluates one specific version of a product, in a stated deployment model, using documented evidence.
+It is not a general quality rating. A program can be excellent software and still fall short as sovereign software, and the reverse. It evaluates one specific version of a product, in a stated deployment model, using documented evidence.
 
 ## 2. Principles and Definitions
 
-The six principles remain the foundation. Their order and weights express evaluation priority, not permission to ignore the lower-weighted principles.
+Four principles express the philosophy. They define what an implementation must make possible. They do not prescribe a language, a database, a license, an operating system, or a user-interface style.
 
 {{< fw-principles >}}
 
-## 3. Rationale for the Priority Order
+## 3. The Order Is a Relationship, Not a Ranking
 
-The order follows a chain of reasoning, from authority to attention:
+The principles are presented in a deliberate conceptual order. The order describes how they relate. It is not a scientifically measured ranking.
 
-* **Sovereignty determines authority.** If someone else can revoke your access, nothing else about the software is yours.
-* **Longevity preserves that authority through time.** Authority over information that cannot be read in ten years has little value.
-* **Locality reduces dependence on external infrastructure.** Local operation is how authority and preservation are practically exercised.
-* **Predictability creates trustworthy behavior.** Control is only useful when you can understand and trust what the software does.
-* **Focused Interoperability allows independent tools to cooperate.** It protects freedom of choice once the foundations hold.
-* **Responsiveness protects human attention.** It matters in every interaction, but it is the easiest property to improve and the least likely to trap anyone.
+{{< fw-relationship >}}
 
-An extremely fast application that traps essential data cannot earn the highest classification. A slower application with documented, recoverable information should not be rejected on responsiveness alone. This hierarchy is a deliberate normative engineering framework. It is not an established scientific law.
+All four matter. No single score can excuse a proven loss of fundamental user control, and that is why the framework relies on fundamental requirements and evidence, not on arithmetic.
 
-## 4. Explanation of Weights
+## 4. Why There Are No Weights, Scores, or Tiers
 
-{{< fw-weights >}}
+An earlier version of this framework (2.0) weighted six principles at 25, 25, 20, 15, 10, and 5 and assigned tiers by score. That model is superseded. Its weights are not silently reassigned to the four current principles, because the principles changed in meaning and number, and because the weights themselves were never validated.
 
-The weights total 100. Sovereignty and Longevity together contribute half of the numerical evaluation because they protect the user's long-term control over software and information. The weights are the manifesto's proposed normative priorities, not experimentally validated measurements. They can be changed in one place, `data/framework.json`, and the evaluator, this page, and the tests all follow.
+**No weighting scheme or tier threshold is adopted without separate justification, representative testing across disciplines, and a published methodology.** Until such a method exists, the framework publishes an evidence-led principle profile and a clearly qualified overall determination. A scored method may be developed in the future, but no arithmetic should ever allow excellent speed or elegant architecture to compensate for the loss of essential user authority.
 
-## 5. Mandatory Eligibility Requirements
+## 5. Fundamental Eligibility Requirements
 
-Before the numerical score can lead to a certified tier, five requirements must be established with evidence. They draw on Sovereignty and Longevity because a failure there is a failure of the framework's purpose.
+Five requirements express the loss of fundamental control that no other quality can excuse. They are drawn from verified evidence, not from impressions.
 
 {{< fw-eligibility >}}
 
-* A **verified failure** of any requirement prevents every certified tier.
-* An **unverified** requirement prevents a final certification decision, but it is never presented as a failure.
+* A **verified failure** of any requirement means the software cannot earn the highest classification, whatever else it does well.
+* A requirement that is **not verified** prevents a determination. It is never presented as a failure, and it is never counted as a pass.
 * **Not Applicable** is accepted only with a documented justification, and only when the requirement genuinely does not apply to the software. Without a justification it is treated as Not Verified.
-* Eligibility rests on evidence and observed capabilities, not on a self-reported score. The evaluator lets you continue the assessment when a requirement fails, so you can still see the software's strengths and weaknesses.
+* The evaluator lets you continue the assessment when a requirement fails, so you can still see the software's strengths and weaknesses.
 
-## 6. Numerical Rating Anchors
+## 6. Principle Findings
 
-Each principle is rated on a whole-number scale from 0 to 5, or marked as not assessed.
+Each principle receives an evidence-based finding. There is no number. A finding must come with the observations behind it.
 
-{{< fw-anchors >}}
+{{< fw-findings >}}
 
-The anchors are guidance for consistent rating. A rating of 1, 2 or 4 sits between the described levels. Every rating should come with an evidence statement, any known limitations, and a confidence level.
+The descriptions are guidance for consistent judgment. Every finding should state its observations, the sources where a reader can check them, the known limitations, and a level of confidence (High, Medium, or Low).
 
-## 7. The Scoring Formula
+## 7. Determination Rules
 
-For a fully assessed application:
+The overall determination is qualified, and it follows a fixed order of precedence.
 
-> **Weighted score = the sum, over the six principles, of (rating / 5) × weight**
+{{< fw-determinations >}}
 
-The maximum is 100. For example, with ratings of 5, 2, 5, 5, 5 and 5 in priority order, the contributions are 25, 10, 20, 15, 10 and 5, for a total of 85. If any principle is not assessed, no final score is shown. The evaluator displays how many principles have been rated and which ones are missing. Scores are shown rounded down to one decimal place, so a value never appears to reach a threshold it has not reached.
+A principle assessed as not met does not by itself make the determination a failure. The fundamental requirements carry that role. A principle that is only partially met, or not met, gives "partially aligned" and appears in the weaknesses with a recommendation. These rules are proposed editorial policy.
 
-The formula is implemented once, in a single script that the evaluator, the Index, and the automated tests all use.
+## 8. Relationship Between the Supporting Tests and the Principles
 
-## 8. Classification Thresholds
-
-{{< fw-tiers >}}
-
-The order of precedence is fixed: a verified critical failure, then incomplete or unverified mandatory evidence, then incomplete quality assessment, then Tier 1, Tier 2 and Tier 3. A critical failure cannot be bypassed by achieving a high numerical score. The thresholds are proposed editorial policy.
-
-## 9. Relationship Between the Tests and the Principles
-
-The seven engineering tests from the original manifesto remain, but they are now verification instruments. They gather evidence. They do not produce a separate, equally weighted score.
+The seven engineering tests gather evidence. They are not interchangeable philosophical pillars, and they carry no weight or score of their own.
 
 {{< fw-tests >}}
 
-The six principles determine the score, and the seven tests collect and verify the evidence behind each rating. Test 7 is cross-cutting: it maps to the principles it informs and has no weight of its own. A single finding is recorded once, under the principle it primarily affects, and other principles may cite it but are not scored on it again. The evaluator shows how many verification items you checked for each principle as evidence coverage, and it never turns those counts into a score.
+The principles define the destination, and the tests show whether the software reaches it. The last two tests are supporting quality and implementation considerations. Interoperability and maintainability matter because they can reduce lock-in and support recovery. Human experience and performance matter for any good product. **Neither responsiveness nor narrow functional scope is a prerequisite for being Sovereign Software.** A sub-100 millisecond interaction target is useful in many interfaces, but it is not a universal sovereignty test.
 
-## 10. Evidence Requirements
+A finding is recorded once, under the principle it primarily affects. Other principles may cite it, but it is not counted again. The evaluator shows how many verification items you checked for each principle as evidence coverage, and it never turns those counts into a score.
 
-Tier 1 and Tier 2 require sufficient documented evidence. In this framework that means:
+## 9. Evidence Requirements
 
-* every principle rating has an evidence statement of at least ten characters;
-* every eligibility requirement marked Pass has an evidence statement, and every Not Applicable has a justification;
-* no principle is rated with Low confidence or with no stated confidence.
+A determination of "meets the proposed core requirements" or "partially aligned" requires sufficient documented evidence. In this framework that means:
 
-Product descriptions are not tested observations. Evidence should say what was checked, how, against which version, and where the reader can verify it, with a source link where one exists. A software tool should not be recorded as passing a test that was not actually performed.
+* every principle finding has an observations statement of at least ten characters;
+* every fundamental requirement marked Pass has an evidence statement, and every Not Applicable has a justification;
+* no finding rests on Low or unstated confidence.
 
-## 11. Assessment Confidence and Uncertainty
+Product descriptions are not tested observations. Evidence should say what was checked, how, against which version, and where a reader can verify it. Software must not be recorded as passing a test that was not actually performed. Each claim discloses the application version, the scope, the observations, the sources, the limitations, and the assessment date.
 
-Each rating carries a confidence level of High, Medium, or Low. Low confidence is allowed and often honest, but it prevents Tier 1 and Tier 2 and appears as a warning in the results. Ratings are judgments, so two evaluators may differ. Recording the evidence and confidence makes those differences visible and open to challenge.
+## 10. Assessment Confidence and Uncertainty
 
-## 12. Treatment of Unavailable Evidence
+Each finding carries a confidence level. Low confidence is often honest, but a finding that rests on it does not support a determination: it gives "insufficient evidence". Findings are judgments, so two evaluators may differ. Recording evidence and confidence makes those differences visible and open to challenge.
 
-Missing evidence is never converted into a pass, and it is never converted into a zero.
+## 11. Treatment of Unavailable Evidence
 
-* An unassessed principle is **not assessed**, not 0. It withholds the final score and the classification becomes Unverified.
-* An unverified eligibility requirement withholds certification and is not counted as a failure.
-* A provisional score that ignores unassessed principles is deliberately not offered, because it would not be comparable with a complete score.
+Missing evidence is never converted into a pass, and it is never converted into a failure.
 
-## 13. Version-Specific Assessments
+* An unassessed principle is **not assessed**. The determination becomes "insufficient evidence".
+* An unverified requirement withholds the determination and is not counted as a failure.
+* A provisional determination that ignores what has not been assessed is deliberately not offered.
 
-Software changes. An assessment applies to the version, platform, and deployment model that were evaluated, and it records the date and the framework version. A new major version of a product, a change of license or hosting model, or the discontinuation of a service can change the result and calls for a new assessment. Self-hosted and vendor-hosted deployments of the same product can deserve different ratings.
+## 12. Version-Specific Assessments
 
-## 14. Exceptions and Contextual Interpretation
+Software changes. An assessment applies to the version, platform, and deployment model that were evaluated, and it records the assessment date and the framework version. A new major version of a product, a change of license or hosting model, or the discontinuation of a service can change the result and calls for a new assessment. Self-hosted and vendor-hosted deployments of the same product can deserve different findings. Historical classifications remain historical and are not automatically renewed.
 
-The framework is applied with judgment, and exceptions must be deliberate, bounded, and documented.
+## 13. Exceptions and Contextual Interpretation
 
-* **Core versus communication.** A messaging application inherently needs a network to reach another person. Locality asks whether reading stored messages, composing drafts, browsing history, and exporting data still work without unnecessary remote authorization.
-* **Binary formats are acceptable.** Longevity does not require plain text. SQLite or another documented binary format can satisfy it with independently verifiable preservation and recovery.
-* **Expensive computation.** The 100 millisecond target applies to perceptual feedback for routine interactions. A long simulation is not a defect, and engineering and scientific applications are not disqualified because heavy operations take longer. Immediate acknowledgement, progress, and the ability to cancel are what count.
-* **Numerical reproducibility.** Predictability allows stated numerical tolerances and platform differences. It does not demand bit-for-bit identical output everywhere.
-* **Comprehensive applications.** A broad application is not automatically a bad monolith. Its architecture is judged on coherence and replaceability.
-* **Optional cloud services.** An optional service the user can decline or replace is not a sovereignty violation. A mandatory vendor-controlled service that can revoke essential functionality is a serious concern.
+Tests must be adapted to the software's actual purpose and deployment setting. An offline text editor, a distributed messaging system, and a scientific simulation cannot be judged by identical assumptions about networking or operation duration.
 
-## 15. Reassessment and Versioning Policy
+* **Inherent versus imposed dependencies.** A messaging service inherently needs a network. Locality asks whether a dependency is inherent to the task or imposed by a business or architectural decision.
+* **Managed services.** A managed service can respect sovereignty if meaningful exit, independent access, recovery, and replaceability remain available. Local installation alone proves nothing if essential functions can be revoked remotely.
+* **Binary formats are acceptable.** Longevity does not require plain text. A documented binary format, such as SQLite, can support it when independent tooling, complete exports, and tested recovery exist.
+* **Determinism is not the principle.** Transparency concerns governability. A deterministic black box can still deny control, and a statistical system can remain governable when its boundaries, permissions, and effects are transparent.
+* **Numerical reproducibility** is judged within documented assumptions and tolerances, not by demanding identical output everywhere.
+* **Comprehensive applications.** Software does not become non-sovereign merely for offering many features.
 
-* **Framework versions.** The framework is versioned. This page describes version 2.0, which replaced version 1.0, a model of seven equally weighted pass/fail tests. The manifesto records the change history.
-* **Historical assessments** keep the framework version they were made under. They are never rewritten silently. When thresholds or weights change, old assessments are reassessed and marked, and are not reinterpreted.
-* **Legacy classifications.** Index entries that were classified under version 1.0 keep that classification only as labeled history. They are shown as Unverified under version 2.0 until they are actually reassessed, and no ratings are inferred from the old tier.
+## 14. Reassessment and Versioning Policy
+
+* **Framework versions.** This page describes version 3.0, which is proposed. It supersedes version 2.0 (six weighted principles, five eligibility gates, and seven verification tests) and version 1.0 (six principles in an earlier order and seven equal pass/fail tests). The manifesto records the change history.
+* **Historical assessments** keep the framework version they were made under. They are never rewritten silently, and they are not reinterpreted when the framework changes.
+* **Legacy classifications.** Index entries that were classified under version 1.0 keep that classification only as labeled history. They are shown as having insufficient evidence under version 3.0 until they are actually reassessed. No findings are inferred from the old tier.
 * **Reassessment** is proposed when a product releases a new major version, changes its license or hosting model, or when the evidence is more than a year old.
 
-## 16. Worked Examples
+## 15. Worked Examples
 
 The examples are hypothetical illustrations of how the rules behave. They are not audits of any real product.
 
 {{< fw-examples >}}
 
-## 17. Limitations of the Framework
+## 16. Limitations of the Framework
 
-* The priorities, weights and thresholds are normative choices. Reasonable people could choose differently, and they have no experimental validation.
-* Ratings are judgments. They depend on the evaluator's knowledge, the evidence available, and the version assessed.
-* Whole-number ratings and pass/fail eligibility are coarse, and a single score cannot describe every trade-off. Read the principle scores, the evidence, and the limitations along with the tier.
+* The principles, the requirements, and the determination rules are normative choices. Reasonable people could choose differently.
+* Findings are judgments. They depend on the evaluator's knowledge, the evidence available, and the version assessed.
+* Three finding levels and pass/fail requirements are coarse. Read the principle profile, the evidence, and the limitations along with the determination.
 * Self-assessment can be biased. Without independent review the result is an opinion supported by evidence, not a verified fact.
 * The framework measures how well software protects user control. It does not measure features, usability, security in depth, or fitness for any particular task.
-* The tiers are proposed editorial policy. Nobody grants a certificate, and no third party has accredited the scheme.
+* A scored method has not been validated, and none is offered. Nobody grants a certificate, and no third party has accredited the scheme.
 
 ## Distinguishing the Terms
 
 | Term | What it is | Example |
 | --- | --- | --- |
-| Philosophical principle | A statement of what matters | Sovereignty: the user retains ultimate authority |
-| Engineering requirement | A condition the software must satisfy | E2: a documented, workable exit and migration path |
-| Verification test | An instrument that gathers evidence | T1: the Ownership and Exit Test |
-| Assessment score | A weighted number from the ratings | 85 out of 100 |
-| Certification decision | A classification under the proposed rules | Not Certified: Critical Failure |
+| Philosophical principle | A statement of what matters | Sovereignty: authority belongs to the user |
+| Fundamental requirement | A condition whose verified failure cannot be offset | E2: a practicable way to leave without unacceptable loss |
+| Supporting engineering test | An instrument that gathers evidence | T1: the Ownership and exit test |
+| Finding | An evidence-based judgment about one principle | Longevity: partially meets |
+| Overall determination | A qualified conclusion under the proposed rules | Fails a fundamental requirement |
 
-A high weighted score never overrides a critical eligibility failure.
+A strength in one area never overrides a verified failure of a fundamental requirement.
 
 ## Assessment File Format
 
-The evaluator exports assessments as Markdown and as JSON, both generated in your browser. Nothing is sent anywhere. The JSON file carries a `schemaVersion` of `2.0`, the framework name and version, the software identity, the evaluation details, the status and evidence of each eligibility requirement, the rating, evidence, limitations, confidence and sources of each principle, and the checked items of each verification test. It also carries a `derived` block with the score and classification, which is informational: those values are recomputed from the rest of the file on import, so an edited file cannot claim a classification it has not earned.
+The evaluator exports assessments as Markdown and as JSON, both generated in your browser. Nothing is sent anywhere. The JSON file carries a `schemaVersion` of `3.0`, the framework name, version, and status, the software identity, the evaluation details, the status and evidence of each fundamental requirement, the finding, observations, limitations, confidence, and sources of each principle, and the checked items of each supporting test. It also carries a `derived` block with the determination, which is informational: it is recomputed from the rest of the file on import, so an edited file cannot claim a determination it has not earned.
 
-The formal description is the [JSON Schema](../schema/assessment-2.0.schema.json). Imports are validated, unknown or malformed data is rejected with a clear message, and URLs must use http or https. Because the schema version is stored in every file, older assessments stay interpretable if the methodology changes.
+The formal description is the [JSON Schema](../schema/assessment-3.0.schema.json). Imports are validated, malformed data is rejected with a clear message, and URLs must use http or https. Files in the superseded 2.0 layout are not accepted, because their ratings and weights have no equivalent in this framework.

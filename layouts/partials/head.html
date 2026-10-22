@@ -1,6 +1,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-{{- $desc := cond (ne .Description "") .Description .Site.Params.quote -}}
+{{- $desc := cond (ne .Description "") .Description .Site.Params.description -}}
 {{- $title := cond (or .IsHome (hasSuffix .Title "Sovereign Personal Software")) (cond .IsHome .Site.Title .Title) (printf "%s · Sovereign Personal Software" .Title) -}}
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $desc }}">
@@ -188,26 +188,22 @@
   .ev-import input { max-width: 12rem; font-size: 0.8rem; }
   .ev-lesson { margin-top: 0.5rem; font-size: 0.95rem; }
   .ev-noscript { padding: 1rem; border: 1px solid var(--color-hairline-gray); background: #fff; }
-  .ev-score { font-size: 2.25rem; font-weight: 700; color: var(--color-forest-ink); margin: 0.25rem 0; line-height: 1.1; }
   .ev-warn { color: #7a2200; font-weight: 600; }
   .ev-verdict { display: inline-block; padding: 0.4rem 0.8rem; border: 2px solid var(--color-forest-ink); font-weight: 700; margin: 0 0 0.75rem; }
-  .ev-v-tier1, .ev-v-tier2 { background: #e3f1e9; }
-  .ev-v-tier3 { background: #fdf3d8; border-color: #8a6a00; }
-  .ev-v-not_certified { background: #fbe4df; border-color: #7a2200; color: #5c1800; }
-  .ev-v-unverified { background: #eeeeee; border-style: dashed; color: #333; }
+  .ev-v-meets_core { background: #e3f1e9; }
+  .ev-v-partially_aligned { background: #fdf3d8; border-color: #8a6a00; }
+  .ev-v-fails_fundamental { background: #fbe4df; border-color: #7a2200; color: #5c1800; }
+  .ev-v-insufficient_evidence { background: #eeeeee; border-style: dashed; color: #333; }
+  .ev-profile { list-style: none; padding: 0; margin: 0.5rem 0 1rem; display: grid; gap: 0.6rem; }
+  .ev-profile-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.15rem 0.75rem; border: 1px solid var(--color-hairline-gray); padding: 0.6rem 0.8rem; background: #fff; }
+  .ev-finding { font-weight: 700; color: var(--color-forest-ink); }
+  .ev-profile-meta { grid-column: 1 / -1; font-size: 0.85rem; color: var(--color-faded-pencil); }
+  .ev-f-does_not_meet .ev-finding { color: #7a2200; }
+  .ev-f-partial .ev-finding { color: #5c3a00; }
   .ev-facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.3rem 1rem; margin: 0.75rem 0; }
   .ev-facts dt { font-weight: 600; color: var(--color-forest-ink); }
   .ev-facts dd { margin: 0; min-width: 0; }
   .ev-list { padding-left: 1.25rem; list-style: disc; }
-  .ev-bars { list-style: none; padding: 0; margin: 0.5rem 0 1rem; display: grid; gap: 0.85rem; }
-  .ev-bar-head { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: space-between; font-size: 0.95rem; }
-  .ev-bar-text { font-size: 0.85rem; color: var(--color-faded-pencil); margin-bottom: 0.25rem; }
-  .ev-track { height: 0.9rem; background: #ece6e1; border: 1px solid #8a8a8a; }
-  .ev-track-full { width: 100%; }
-  .ev-track-empty { background: repeating-linear-gradient(45deg, #fff, #fff 6px, #ece6e1 6px, #ece6e1 12px); border-style: dashed; }
-  .ev-fill { height: 100%; background: var(--color-forest-ink); }
-  .ev-fill-quality { background: var(--color-vivid-emerald); }
-  @media (prefers-reduced-motion: no-preference) { .ev-fill { transition: width 0.25s ease; } }
   #import-errors:focus { outline: 3px solid #7a2200; }
   #import-errors:empty { display: none; }
   #import-errors { border: 2px solid #7a2200; padding: 0.75rem 1rem; margin: 0.75rem 0; background: #fbe4df; }
@@ -230,10 +226,10 @@
   .dir-name a:hover { text-decoration: underline; }
   .dir-result { margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 0.75rem; align-items: center; }
   .dir-badge { display: inline-block; padding: 0.2rem 0.6rem; border: 1px solid var(--color-forest-ink); font-size: 0.8rem; font-weight: 700; }
-  .dir-b-unverified { background: #eeeeee; border-style: dashed; }
-  .dir-b-tier1, .dir-b-tier2 { background: #e3f1e9; }
-  .dir-b-tier3 { background: #fdf3d8; border-color: #8a6a00; }
-  .dir-b-not_certified { background: #fbe4df; border-color: #7a2200; }
+  .dir-b-insufficient_evidence { background: #eeeeee; border-style: dashed; }
+  .dir-b-meets_core { background: #e3f1e9; }
+  .dir-b-partially_aligned { background: #fdf3d8; border-color: #8a6a00; }
+  .dir-b-fails_fundamental { background: #fbe4df; border-color: #7a2200; }
   .dir-score, .dir-note, .dir-legacy { font-size: 0.85rem; color: var(--color-faded-pencil); margin: 0; }
   .dir-summary { margin: 0; font-size: 0.95rem; }
   .dir-facts { display: grid; gap: 0.5rem; margin: 0.25rem 0 0; font-size: 0.85rem; }
@@ -244,15 +240,11 @@
   .detail h2 { font-size: 1.5rem; margin-top: 2.25rem; padding-top: 1rem; }
 
 
-  /* Home: weight bars */
-  .home-weights { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
-  .home-track { height: 0.7rem; background: #ece6e1; border: 1px solid #8a8a8a; margin-top: 0.2rem; }
-  .home-fill { height: 100%; background: var(--color-forest-ink); }
 
 
   /* Escape hatches: framework connections */
   .eh-extra { padding-top: 0.75rem; border-top: 1px solid var(--color-hairline-gray); font-size: 0.85rem; }
-  .eh-extra h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-faded-pencil); margin: 0 0 0.4rem; }
+  .eh-extra h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-faded-pencil); margin: 0 0 0.4rem; }
   .eh-extra ul { padding-left: 1.1rem; list-style: disc; margin: 0 0 0.6rem; }
   .eh-caveat { margin: 0; color: #5c3a00; }
 
@@ -267,6 +259,7 @@
   .ev-actions button { white-space: normal; text-align: left; max-width: 100%; }
   @media (max-width: 359px) { header.sticky .btn-ghost { display: none; } #mobile-nav-select { max-width: 7.5rem; } }
 
+  .reading a, .prose-editorial a, .detail a { overflow-wrap: anywhere; }
   /* Citations and footnotes: show as [n] */
   sup { font-size: 0.75em; line-height: 0; vertical-align: super; }
   sup a, a.cite { text-decoration: none; color: #02744b; font-weight: 600; }

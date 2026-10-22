@@ -1,5 +1,5 @@
 # {{ .Title }}
 
-> “{{ .Description }}”
+> {{ .Site.Params.tagline }}
 
 {{ .RawContent }}

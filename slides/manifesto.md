@@ -3,7 +3,7 @@ marp: true
 theme: sovereign
 paginate: true
 title: A Manifesto for Sovereign Personal Software
-description: Slides for presenting the manifesto and its evaluation framework
+description: Slides for presenting the manifesto and its evidence-led evaluation framework
 footer: sovereign.polla.dev
 ---
 
@@ -13,7 +13,7 @@ footer: sovereign.polla.dev
 
 # A Manifesto for Sovereign Personal Software
 
-Your data belongs to you.
+Software should serve people without claiming permanent custody over their information, choices, or work.
 
 **Dr. Polla Fattah**
 
@@ -27,11 +27,11 @@ Open with the one-line claim. Say how long you will take and that the full text,
 
 ## The problem
 
-- Productivity and engineering tools increasingly depend on **remote cloud infrastructure**
-- **Recurring subscriptions**, opaque interfaces, and features built for retention rather than for the user
-- When the vendor changes terms, raises prices, or disappears, **your work goes with it**
+- Many applications make ordinary work depend on **remote services, vendor accounts, and opaque decisions**
+- Business models can change **without the user's consent**
+- Convenience becomes dependence when a person **cannot continue working, retrieve records, or leave** without unacceptable loss
 
-**Who really owns the software you depend on?**
+**Who holds the authority over the software you depend on?**
 
 <!--
 Ask the room for one tool they could not use tomorrow if their account were suspended. Let them answer before moving on.
@@ -43,169 +43,128 @@ Ask the room for one tool they could not use tomorrow if their account were susp
 
 ## The idea
 
-> Your data belongs to you. Your tools should respect your time, preserve your freedom, and remain useful without depending on someone else's infrastructure.
+> Software should remain under human authority, preserve human knowledge, function independently wherever possible, and make consequential behavior understandable and controllable.
 
-*Software should adapt to people, not force people to adapt to software.*
+*Sovereign Software does not reject networks, commercial software, or AI. It rejects unnecessary surrender of control.*
 
 ---
 
 ## Why now: AI changes the economics
 
-- AI coding agents make **custom software much cheaper to build**
-- Cheaper code does not remove the laws of engineering: **architecture, verification, security, maintenance**
-- Individuals and small teams can build tools around their own workflows
-- **Software no longer requires a mass market to justify its existence**
+- AI-assisted tools lower some barriers, so **tailored software** becomes feasible for individuals and small communities
+- But lower development cost **does not guarantee lower lifetime cost**
+- Security, migration, maintenance, documentation, and recovery still need sustained attention
+- AI-generated code can be **faster to create without being easier to trust or preserve**
 
 <!--
-The last point is an opinion, so present it as one. The second point is the guard rail: AI lowers the cost of writing code, not the cost of getting it right.
+The point is not to produce more applications. It is to build tools that are accountable to the people who use them.
 -->
 
 ---
 
-## Six principles, in order of priority
+## Four principles
 
-1. **Sovereignty:** you retain ultimate authority over data, functions, migration, and keys
-2. **Longevity:** your records stay accessible and recoverable beyond the software that made them
-3. **Locality:** core functionality runs on your hardware, without mandatory network access
-4. **Predictability:** critical behavior is explicit, explainable, and testable
-5. **Focused interoperability:** coherent tools, connected by open, replaceable interfaces
-6. **Responsiveness:** software respects human attention
+1. **Sovereignty:** authority belongs to the user
+2. **Longevity:** information outlives software
+3. **Locality:** independence is designed in
+4. **Transparency:** consequential behavior remains governable
+
+*They do not prescribe a language, database, license, operating system, or interface style. They establish what an implementation must make possible.*
+
+---
+
+## A relationship, not a ranking
+
+- **Sovereignty** defines the goal
+- **Longevity** protects it across time
+- **Locality** provides a powerful means of independence
+- **Transparency** makes authority meaningful in operation
+
+All four matter, and **no single numerical score can excuse a proven loss of fundamental user control**.
 
 <!--
-The order is deliberate and is the basis of the evaluation. Sovereignty determines authority, Longevity preserves it through time, Locality reduces dependence, Predictability creates trust, Interoperability allows cooperation, and Responsiveness protects attention. Lower priority does not mean optional.
+Earlier versions ranked six principles and weighted them. That model has been withdrawn. The order now describes how the principles relate. It is not a measured ranking.
 -->
 
 ---
 
-## Why this order
+## Sovereignty: the user is the authority
 
-- **Sovereignty determines authority.** If someone else can revoke your access, nothing else is yours
-- **Longevity preserves that authority through time.** Control of unreadable data is worth little
-- Together they carry **half of the weight** in evaluation
-- A very fast application that traps your data cannot earn the top classification
-- A slower application with recoverable, documented data should not be rejected for speed alone
+- Practical, **not merely contractual**, authority over records and essential workflows
+- Access, export, back up, restore, and migrate through documented means
+- Explain key ownership and recovery honestly
+- A managed service **can** respect sovereignty if exit, independent access, and recovery remain
+- Local installation **alone** proves nothing if essential functions can be revoked remotely
 
-*A deliberate normative framework, not a scientific law.*
-
----
-
-## Sovereignty and Longevity
-
-<div class="cols">
-<div>
-
-### Sovereignty
-
-- Inspect, export, back up, migrate, and restore without vendor permission
-- Custody comes with ownership: backups and key recovery must be easy
-- An optional cloud service is fine; a mandatory one that can revoke access is not
-
-</div>
-<div>
-
-### Longevity
-
-- **Data:** open, documented, recoverable formats
-- **Function:** workflows that survive the vendor
-- **Knowledge:** documentation future users can understand
-- Plain text is not required; a documented format like SQLite can qualify
-
-</div>
-</div>
+**The ability to leave without losing what is yours is a practical test of ownership.**
 
 ---
 
-## Locality and Predictability
+## Longevity: information outlives software
 
-<div class="cols">
-<div>
-
-### Locality
-
-- The device comes first; essential workflows work **offline**
-- Sync is a separate, optional, replaceable layer
-- Features that inherently need communication are the exception, not the model
-
-</div>
-<div>
-
-### Predictability
-
-- Intelligence may assist; **rules must govern**
-- Ambiguous input is reported, never silently guessed
-- AI proposals are staged and **authorized by the user**
-- Numerical tolerances are stated, not hidden
-
-</div>
-</div>
+- **Data:** records and metadata can be preserved, inspected, exported, and restored independently
+- **Function:** essential workflows continue through maintained software or practicable migration
+- **Knowledge:** formats, schemas, units, provenance, and recovery steps are documented for future people and tools
+- A documented binary format, such as SQLite, can qualify; **open format names alone guarantee nothing**
+- No design can promise eternal compatibility
 
 ---
 
-## Interoperability and Responsiveness
+## Locality: independence by design
 
-<div class="cols">
-<div>
-
-### Focused interoperability
-
-- Coherent responsibilities, connected through documented interfaces
-- Change one tool without losing what another holds
-- A comprehensive application is not automatically a bad monolith
-
-</div>
-<div>
-
-### Responsiveness
-
-- Immediate feedback on routine interaction; target under **100 ms**
-- Not a deadline for every operation: expensive work should show progress and be cancellable
-- No invasive notifications, telemetry, or background churn
-
-</div>
-</div>
-
-<!--
-The 100 ms figure comes from classic response-time research (Miller 1968, Nielsen 1993). Treat it as a practical guideline, not a law. A CAD render should acknowledge the click at once, even if the result takes minutes. This is why Responsiveness carries 5 percent and is not a mandatory requirement.
--->
+- The network should **extend** what software can do, not arbitrarily decide whether you can reach your own work
+- Where appropriate, reading, editing, searching, and essential calculation stay on hardware you control
+- A failed sync should not erase the ability to work
+- Not absolutist: ask whether a dependency is **inherent to the task** or imposed
+- Local data is not automatically safe: backups and recovery are still needed
 
 ---
 
-## The architecture of personal computing
+## Transparency
 
-- **Execution layer:** what needs to be done, when, and in what state?
-- **Integration layer:** open, documented bridges between tools
-- **Preservation layer:** what has been created, experienced, and understood?
+- You cannot govern a tool whose **consequential behavior is inscrutable**
+- Explain the rules behind important operations; make material changes traceable
+- Distinguish **suggestions from committed actions**; let users approve, reverse, or contest
+- **Determinism is not itself the principle:** a deterministic black box can still deny control, and a statistical system can stay governable
 
-Each layer stays **independently usable, inspectable, and replaceable**.
+**The machine may assist in decisions; it must not quietly take ownership of them.**
 
-**Preservation is an architectural obligation**, not a secondary storage feature.
+---
+
+## Architecture in service of the principles
+
+- **Execution:** carrying out tasks and calculations
+- **Preservation:** retaining records and recovery information so they stay intelligible
+- **Exchange:** moving information between tools through documented formats and interfaces
+
+These are **conceptual responsibilities**, not three applications. An integrated application can embody all three.
+
+**Interoperability is a means of preserving sovereignty and longevity**, not a demand for small programs.
 
 ---
 
 ## AI without artificial dependency
 
-Optional AI assistance is acceptable only when:
+AI is used only under boundaries that preserve human authority:
 
-1. Core functionality works with **all AI services off**
-2. The user explicitly authorizes any proposed change
-3. Critical data pipelines stay deterministic and repeatable
-4. Privacy, cost, and network calls are transparent
-5. The model is **replaceable** with no loss of access to records
-6. What you keep is stored in **your own durable formats**
+1. Records stay accessible if a model or provider disappears
+2. Core workflows that do not need AI stay usable without it
+3. Consequential AI changes are validated and authorized by risk
+4. Network calls, privacy effects, and costs are disclosed
+5. What you keep from AI can be stored in independent formats
+6. Important decisions can be inspected, explained, and corrected
 
-**AI may help build or operate the tool. It must never hold the tool, or your information, hostage.**
+**AI may extend human ability. It must not become a condition for retaining human work or authority.**
 
 ---
 
 ## Synchronization without surrender
 
-- Concurrent offline edits **inevitably diverge**
-- Syntactic conflicts: converge with verifiable structures, such as **CRDTs** or append-only operation logs
-- Semantic conflicts: **keep both versions** and offer a non-destructive way to resolve them
-- No algorithm can promise to guess intent correctly, so make conflicts visible and recoverable
-- **Synchronized copies are not backups**
-
-*Complexity must always justify its existence.*
+- Syncing must not quietly **transfer custody or conceal loss**
+- An automatic merge can fix the data structure and still **misunderstand intent**
+- Document conflict rules, keep recoverable history, and expose conflicts that need a decision
+- Know where data is stored, who can read it, and how it is encrypted
+- **Replicated data is not a tested backup**
 
 <!--
 CRDT reference: Shapiro, Preguiça, Baquero, Zawirski, SSS 2011. The broader argument for local-first software: Kleppmann et al., Onward! 2019.
@@ -215,54 +174,71 @@ CRDT reference: Shapiro, Preguiça, Baquero, Zawirski, SSS 2011. The broader arg
 
 <!-- _class: dense -->
 
-## How software is evaluated: version 2.0
+## Evaluation: evidence before a score
 
-**Three layers instead of seven equal gates**
+A manifesto is useful when its claims can be challenged with evidence.
 
-1. **Five mandatory eligibility requirements:** data access, exit and migration, independent recoverability, custody and recovery, no irrevocable vendor dependency
-2. **Weighted score of six principles:** 25, 25, 20, 15, 10, 5
-3. **Seven verification tests** that collect the evidence
+1. **Five fundamental requirements:** verified failures cannot be offset
+2. **An evidence-led finding for each of the four principles**
+3. **Seven supporting engineering tests** that gather the evidence
 
-A verified failure of any requirement blocks certification, **whatever the score**.
+**No weights, no numerical score, no tiers.** The earlier six-principle weighting is withdrawn, and any future scored method needs separate justification, testing across disciplines, and published methodology.
 
 <!--
-The seven original tests are kept, but as evidence instruments. They no longer produce a separate 7 out of 7. The weights are the manifesto's proposed priorities, not measurements.
+Weights are not silently reassigned to the new principles. No arithmetic should let excellent speed or elegant architecture compensate for the loss of essential user authority.
 -->
 
 ---
 
 <!-- _class: dense -->
 
-## Score, tiers, and one rule that cannot be bypassed
+## Five fundamental requirements
 
-- Each principle is rated **0 to 5**, or **not assessed** (which is not zero)
-- Score = sum of (rating / 5) x weight, out of **100**
-- **Tier 1:** all requirements met, score 90 or more, no principle below 3, evidence
-- **Tier 2:** score 75 or more, Sovereignty and Longevity each at least 3
-- **Tier 3:** complete, no critical failure, short of Tier 2
-- **Not Certified:** a verified failure. **Unverified:** incomplete evidence
+The highest classification is **not earned** when verified evidence shows that:
 
-*Proposed editorial policy, not an accredited certification.*
+1. Users cannot independently retrieve essential information
+2. There is no practicable way to leave without unacceptable loss
+3. Essential records cannot be recovered outside a vendor-controlled system
+4. Vendor permission is required to keep control of already-created work
+5. Consequential operations remove meaningful authorization or oversight
+
+**Pass, Fail, Not Verified, or Not Applicable with justification.** Missing evidence is not a failure, and it is not a pass.
+
+---
+
+<!-- _class: dense -->
+
+## Findings and a qualified determination
+
+- Each principle: **meets, partially meets, or does not meet**, with observations, sources, limitations, and confidence
+- Overall determination:
+  - **Meets the proposed core requirements**
+  - **Partially aligned**
+  - **Fails a fundamental requirement**
+  - **Insufficient evidence**
+- Every claim states the **version, scope, and date**; old classifications stay historical
+
+*A proposed standard, not an accredited certification.*
 
 <!--
-Worked example from the methodology page: ratings 5, 2, 5, 5, 5, 5 give 85 out of 100, yet a failed independent-recoverability requirement makes it Not Certified. Another: a slow but sovereign application with ratings 5, 5, 4, 4, 4, 2 scores 88 and is Tier 2.
+Worked examples on the methodology page: a fast, polished application that cannot export its data fails a fundamental requirement. A slow application that keeps users in control can still meet the core requirements. Neither responsiveness nor narrow scope is a prerequisite.
 -->
 
 ---
 
 <!-- _class: dense -->
 
-## Seven verification tests
+## Seven supporting engineering tests
 
-1. **Ownership and exit** (Sovereignty)
-2. **Preservation and recovery** (Longevity)
-3. **Offline independence** (Locality)
-4. **Deterministic behavior** (Predictability)
-5. **Interoperability and responsibility** (Focused Interoperability)
-6. **Responsiveness and attention** (Responsiveness)
-7. **Dependency, security, and continuity** (cross-cutting)
+1. **Ownership and exit**
+2. **Preservation and recovery**
+3. **Offline independence**
+4. **Operational transparency**
+5. **Security and continuity**
+6. **Interoperability and maintainability** (supporting quality)
+7. **Human experience and performance** (supporting quality)
 
-*The principles determine the score. The tests collect and verify the evidence, and a finding is never counted twice.*
+*They gather evidence. They are not interchangeable philosophical pillars. A sub-100 ms target is useful, but it is not a universal sovereignty test.*
 
 ---
 
@@ -270,30 +246,29 @@ Worked example from the methodology page: ratings 5, 2, 5, 5, 5, 5 give 85 out o
 
 ## What sovereign software refuses to become
 
-- **Mandatory cloud lock-in:** accounts and subscriptions required for local functions
-- **Unchecked AI mutation:** non-deterministic inference in critical state
-- **Invasive telemetry:** undisclosed tracking or phone-home analytics
-- **Incoherent feature bloat:** duplicated tools and no coherent boundaries
-- **Silent sync corruption:** overwriting offline work without a trace
-- **Unrecoverable custody:** fragile backup procedures
-- **Proprietary silos:** undocumented formats that block inspection or migration
+- **Captive data:** records that cannot be retrieved, interpreted, or migrated
+- **Revocable access to your own work:** cut off by an arbitrary account or subscription decision
+- **Irrecoverable dependence:** useless when one vendor, binary, or runtime disappears
+- **Opaque consequential automation:** significant actions without visibility, authorization, or recourse
+- **Silent loss through synchronization**
+- **Concealed dependencies and surveillance**
 
-*The ability to add a feature is never sufficient reason to add it.*
+*It does not reject sophistication, commerce, cloud, AI, or features. The issue is the distribution of authority.*
 
 ---
 
 ## A reference implementation: ToDoz
 
-- An open-source, offline-first task manager, built **deliberately to embody** these principles
+- An open-source, offline-first task manager, built **deliberately around the philosophy of sovereign software**
 - Flutter, SQLite, and a lightweight **self-hosted** sync service
 - Recurrence, reminders, and filters run on **deterministic rules**
 - Built with AI coding agents: **AI in the build, not in the product**
-- The app contains no AI features today
+- It was built around an **earlier, six-principle formulation**; it has not yet been reassessed against the four-principle framework
 
 *todoz.polla.dev*
 
 <!--
-Make the distinction explicit: AI lowered the cost of building ToDoz, it did not add weight to ToDoz. Cheap code tempts you to add features, so the discipline of refusing them matters more.
+Be honest here: ToDoz predates the four-principle revision. It is a reference implementation of the philosophy, not an assessed example of the new framework.
 -->
 
 ---
@@ -302,25 +277,25 @@ Make the distinction explicit: AI lowered the cost of building ToDoz, it did not
 
 - **The manifesto:** full text, a reading and print edition, and a Markdown download
 - **Evaluator:** assess any software in the browser; export and import Markdown or JSON
-- **Methodology:** the formal reference for scoring and classification
-- **Index:** example software, each **awaiting assessment** under version 2.0
+- **Methodology:** the formal reference for findings and determinations
+- **Index:** example software, each **awaiting assessment**
 - **Escape hatches:** recipes for moving data out of cloud services, with their caveats
 
 The site follows its own rules: it loads **nothing from third parties**, with no trackers and no cookies.
 
 <!--
-Be explicit that Index entries carry no ratings yet. Their old version 1 tiers are kept as history only, and no score has been invented for them.
+Be explicit that Index entries carry no findings yet. Their old version 1 tiers are kept as history only.
 -->
 
 ---
 
 ## Honest limits
 
-- This is a **position**, not a standard. The tests aid judgment; they are not a certification
-- The **weights and thresholds are normative choices**, not validated measurements
-- Ratings are judgments and depend on evidence and the version assessed
-- The Index has **no assessed entries yet**; legacy tiers are history only
-- The response-time figures are guidelines and apply best to direct interaction
+- This is a **position**, supported by evidence, not a standard
+- The framework is **proposed** and replaces two earlier versions
+- It deliberately offers **no numerical score**; findings are judgments
+- The Index has **no assessed entries yet**
+- Response-time research is supporting usability guidance, not part of the definition
 
 **Disagreement is welcome. The source is open.**
 
@@ -328,22 +303,21 @@ Be explicit that Index entries carry no ratings yet. Their old version 1 tiers a
 
 <!-- _class: dense -->
 
-## References
+## Selected references
 
-1. Kleppmann, Wiggins, van Hardenberg, McGranaghan. Local-first software. *Onward! 2019*, pp. 154-178.
-2. Miller. Response time in man-computer conversational transactions. *AFIPS FJCC* 33, 1968, pp. 267-277.
-3. Nielsen. *Usability Engineering*. Academic Press, 1993, ch. 5.
-4. McIlroy, Pinson, Tague. UNIX Time-Sharing System: Foreword. *Bell System Technical Journal* 57(6), 1978, pp. 1899-1904.
-5. SQLite: Recommended Storage Format for Datasets (US Library of Congress designation).
-6. Shapiro, Preguiça, Baquero, Zawirski. Conflict-free replicated data types. *SSS 2011*, LNCS 6976, pp. 386-400.
+1. Kleppmann, Wiggins, van Hardenberg, McGranaghan. Local-first software: you own your data, in spite of the cloud. *Onward!*, 2019.
+2. SQLite. Recommended Storage Format for Datasets (Library of Congress preservation designation).
+3. Shapiro, Preguiça, Baquero, Zawirski. Conflict-free replicated data types. *SSS*, 2011.
+4. McIlroy, Pinson, Tague. UNIX Time-Sharing System: Foreword. *Bell System Technical Journal*, 1978. (Historical context for modular tools.)
+5. Nielsen. *Usability Engineering*, 1993. (Supporting usability guidance.)
 
 ---
 
 ## For discussion
 
 - Which tool you use every day **fails the exit test**: could you leave it with your data intact?
-- Would you **weight the principles differently**, and why?
-- Where should AI live: **in the build, or in the product**?
+- When is a network dependency **inherent to the task**, and when is it imposed?
+- Is a **qualified, evidence-led** judgment better than a score? What would a score hide?
 - Which principle is hardest to apply to **research software**?
 
 ---

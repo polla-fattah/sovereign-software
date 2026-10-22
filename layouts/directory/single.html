@@ -17,30 +17,29 @@ window.SOVEREIGN_ENTRY = {{ $e | jsonify | safeJS }};</script>
   <p><strong>Category:</strong> {{ $e.category }}.</p>
 
   <h2>2. Version and scope assessed</h2>
-  <p>{{ if $e.version_assessed }}Version assessed: {{ $e.version_assessed }}.{{ else }}No version has been assessed. A framework v2.0 assessment applies to one version of the software in one deployment model, and none has been performed for this entry.{{ end }}</p>
+  <p>{{ if $e.version_assessed }}Version assessed: {{ $e.version_assessed }}.{{ else }}No version has been assessed. An assessment applies to one version of the software in one deployment model, and none has been performed for this entry.{{ end }}</p>
 
   <div id="entry-result" aria-live="polite">
-    <h2>3. Final classification</h2>
-    <p><strong>{{ if $complete }}Computing classification{{ else }}{{ index $fw.classification.labels $e.classification }}{{ end }}</strong></p>
-    <p data-role="score">Weighted score: not available.</p>
-    {{ if not $complete }}<p>This entry has not been assessed under framework v2.0, so no classification is published. The legacy tier below is history only.</p>{{ end }}
+    <h2>3. Overall determination</h2>
+    <p><strong>{{ if $complete }}Computing determination{{ else }}{{ index $fw.determinations.labels $e.determination }}{{ end }}</strong></p>
+    {{ if not $complete }}<p>This entry has not been assessed under the current proposed framework, so no determination is published. The legacy tier below is history only.</p>{{ end }}
   </div>
 
-  <h2>4. Principle scores</h2>
+  <h2>4. Principle profile</h2>
   <div class="table-wrap"><table class="fw-table">
-    <caption class="sr-only">Principle ratings for {{ $e.name }}</caption>
-    <thead><tr><th scope="col">Priority</th><th scope="col">Principle</th><th scope="col" class="num">Weight</th><th scope="col" class="num">Rating</th></tr></thead>
+    <caption class="sr-only">Principle findings for {{ $e.name }}</caption>
+    <thead><tr><th scope="col">Order</th><th scope="col">Principle</th><th scope="col">Finding</th></tr></thead>
     <tbody>
     {{ range $fw.principles }}
-      {{ $r := index $e.principles .id }}
-      <tr><td>{{ .priority }}</td><th scope="row">{{ .name }}</th><td class="num">{{ .weight }}%</td><td class="num">{{ if eq $r nil }}Not assessed{{ else }}{{ $r }} / 5{{ end }}</td></tr>
+      {{ $f := index $e.principles .id }}
+      <tr><td>{{ .order }}</td><th scope="row">{{ .name }}</th><td>{{ if eq $f nil }}Not assessed{{ else }}{{ range $fw.findingLevels }}{{ if eq .id $f }}{{ .symbol }} {{ .label }}{{ end }}{{ end }}{{ end }}</td></tr>
     {{ end }}
     </tbody>
   </table></div>
 
-  <h2>5. Eligibility results</h2>
+  <h2>5. Fundamental requirements</h2>
   <div class="table-wrap"><table class="fw-table">
-    <caption class="sr-only">Mandatory eligibility for {{ $e.name }}</caption>
+    <caption class="sr-only">Fundamental requirements for {{ $e.name }}</caption>
     <thead><tr><th scope="col">Requirement</th><th scope="col">Status</th></tr></thead>
     <tbody>
     {{ range $fw.eligibility }}
@@ -70,8 +69,8 @@ window.SOVEREIGN_ENTRY = {{ $e | jsonify | safeJS }};</script>
 
   <h2>10. Reassessment history</h2>
   <ul>
-    <li><strong>Framework v1.0:</strong> {{ $e.legacy_label }}. History only. This is not a current classification and does not imply any rating under v2.0.</li>
-    <li><strong>Framework v2.0:</strong> {{ if $e.assessment_date }}Assessed on {{ $e.assessment_date }}.{{ else }}Not yet assessed. Reassessment is required.{{ end }}</li>
+    <li><strong>Framework v1.0:</strong> {{ $e.legacy_label }}. History only. This is not a current classification and implies no finding under the current framework.</li>
+    <li><strong>Framework v3.0 (proposed):</strong> {{ if $e.assessment_date }}Assessed on {{ $e.assessment_date }}.{{ else }}Not yet assessed. Reassessment is required.{{ end }}</li>
   </ul>
   <p class="fw-note">{{ $e.assessment_notes }} To assess this software, use the <a href="{{ "evaluator/" | relURL }}">evaluator</a> and read the <a href="{{ "methodology/" | relURL }}">methodology</a>.</p>
 </article>

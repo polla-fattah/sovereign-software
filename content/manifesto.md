@@ -8,29 +8,29 @@ weight = 1
 
 # A Manifesto for Sovereign Personal Software
 
-> “Your data belongs to you. Your tools should respect your time, preserve your freedom, and remain useful without depending on someone else’s infrastructure.”
+> Software should serve people without claiming permanent custody over their information, choices, or work.
 
 ## 01. The Core Manifesto
 
 Software should adapt to people, not force people to adapt to software.
 
-Six foundational principles define Sovereign Personal Software, in order of priority:
+**Sovereign Software** is software designed so that ultimate authority remains with the person or organization using it, not with a vendor, an infrastructure operator, or an unaccountable algorithm. It need not reject networks, commercial software, artificial intelligence, or complex engineering. It rejects *unnecessary surrender of control*.
 
-1. **Sovereignty:** Users retain ultimate authority over their data, essential functionality, migration paths, and cryptographic keys.
-2. **Longevity:** Human records and intellectual work remain accessible, interpretable, recoverable, and transferable beyond the applications, vendors, and runtimes that produced them.
-3. **Locality:** Core functionality runs on the user's hardware, without mandatory continuous network access.
-4. **Predictability:** Critical state transitions, calculations, and rule engines are explicit, explainable, and testable.
-5. **Focused Interoperability:** Applications keep coherent responsibilities and exchange information through open, documented, replaceable interfaces.
-6. **Responsiveness:** Software respects human attention through immediate feedback and efficient operation.
+Four foundational principles express this philosophy, in a deliberate conceptual order:
 
-The order is deliberate. Sovereignty determines authority, and Longevity preserves that authority through time, so together they carry half of the weight in evaluation. Lower priority does not mean optional: it expresses how the principles are weighted, not permission to ignore them.
+1. **Sovereignty:** Authority belongs to the user. Users retain meaningful control of their data, essential capabilities, and ability to leave or replace providers.
+2. **Longevity:** Information outlives software. Records and intellectual work remain accessible, interpretable, and recoverable after applications, vendors, and runtimes disappear.
+3. **Locality:** Independence is designed in. Capabilities that can reasonably operate on user-controlled hardware do not depend unnecessarily on external connectivity or permission.
+4. **Transparency:** Consequential behavior remains governable. Users can understand, inspect, authorize, and, where feasible, reverse or contest significant actions taken on their behalf.
 
-## 06. Evaluation
+The order communicates a relationship, not a scientifically measured ranking. Sovereignty defines the goal, Longevity protects it across time, Locality provides a powerful means of independence, and Transparency makes authority meaningful in operation. All four matter, and no single numerical score can excuse a proven loss of fundamental user control.
 
-Software is assessed in three layers:
+## 06. Evaluating Sovereign Software
 
-1. **Five mandatory eligibility requirements,** drawn mainly from Sovereignty and Longevity: independent data access, practical exit and migration, independent recoverability, custody and recovery, and no irrevocable vendor dependency. A verified failure blocks certification, whatever the score.
-2. **A weighted score of the six principles:** Sovereignty 25%, Longevity 25%, Locality 20%, Predictability 15%, Focused Interoperability 10%, Responsiveness 5%.
-3. **Seven verification tests,** used to gather and check the evidence behind each rating, not as a separate score.
+Evidence comes before any score. The framework adopts no weights, numerical score, or tier threshold. Software is assessed in three layers:
 
-The weights and tiers are proposed editorial policy, not validated measurements or an accredited certification.
+1. **Five fundamental requirements:** independent retrieval of essential information, a practicable way to leave, recoverability outside a vendor-controlled system, control of already-created work without vendor permission, and authorization and oversight of consequential operations. A verified failure is not canceled by strengths elsewhere, and missing evidence is neither a failure nor a pass.
+2. **An evidence-led finding for each principle:** meets, partially meets, or does not meet, with observations, sources, limitations, and confidence.
+3. **Seven supporting engineering tests** that gather the evidence. They are not interchangeable pillars, and responsiveness is a supporting quality, not a prerequisite.
+
+The overall determination is qualified: meets the proposed core requirements, partially aligned, fails a fundamental requirement, or insufficient evidence. The framework is a proposed standard, not an accredited certification.

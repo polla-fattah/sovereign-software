@@ -5,7 +5,7 @@
     {{ with .OutputFormats.Get "md" }}<a href="{{ .RelPermalink }}" download>↓ Download Markdown</a>{{ end }}
   </div>
   <h1 class="text-4xl sm:text-5xl">{{ .Title }}</h1>
-  {{ with .Description }}<blockquote class="my-8">“{{ . }}”</blockquote>{{ end }}
+  {{ with .Site.Params.tagline }}<blockquote class="my-8">{{ . }}</blockquote>{{ end }}
   <div class="prose-editorial">{{ .Content }}</div>
 </article>
 {{ end }}

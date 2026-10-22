@@ -1,15 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://sovereign.polla.dev/schema/assessment-2.0.schema.json",
-  "title": "Sovereign Software Assessment, schema version 2.0",
-  "description": "Export format of the Sovereign Software Evaluator. Derived values (score, classification) are informational and are recomputed on import.",
+  "$id": "https://sovereign.polla.dev/schema/assessment-3.0.schema.json",
+  "title": "Sovereign Software Assessment, schema version 3.0",
+  "description": "Export format of the Sovereign Software Evaluator. The determination is informational and is recomputed on import. The framework adopts no numerical score.",
   "type": "object",
   "required": [
     "schemaVersion"
   ],
   "properties": {
     "schemaVersion": {
-      "const": "2.0"
+      "const": "3.0"
     },
     "framework": {
       "type": "object",
@@ -18,6 +18,9 @@
           "type": "string"
         },
         "version": {
+          "type": "string"
+        },
+        "status": {
           "type": "string"
         }
       }
@@ -215,13 +218,13 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "rating": {
-              "type": [
-                "integer",
-                "null"
-              ],
-              "minimum": 0,
-              "maximum": 5
+            "finding": {
+              "enum": [
+                null,
+                "meets",
+                "partial",
+                "does_not_meet"
+              ]
             },
             "evidence": {
               "type": "string",
@@ -250,13 +253,13 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "rating": {
-              "type": [
-                "integer",
-                "null"
-              ],
-              "minimum": 0,
-              "maximum": 5
+            "finding": {
+              "enum": [
+                null,
+                "meets",
+                "partial",
+                "does_not_meet"
+              ]
             },
             "evidence": {
               "type": "string",
@@ -285,13 +288,13 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "rating": {
-              "type": [
-                "integer",
-                "null"
-              ],
-              "minimum": 0,
-              "maximum": 5
+            "finding": {
+              "enum": [
+                null,
+                "meets",
+                "partial",
+                "does_not_meet"
+              ]
             },
             "evidence": {
               "type": "string",
@@ -316,87 +319,17 @@
             }
           }
         },
-        "predictability": {
+        "transparency": {
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "rating": {
-              "type": [
-                "integer",
-                "null"
-              ],
-              "minimum": 0,
-              "maximum": 5
-            },
-            "evidence": {
-              "type": "string",
-              "maxLength": 5000
-            },
-            "limitations": {
-              "type": "string",
-              "maxLength": 5000
-            },
-            "confidence": {
+            "finding": {
               "enum": [
                 null,
-                "high",
-                "medium",
-                "low"
+                "meets",
+                "partial",
+                "does_not_meet"
               ]
-            },
-            "sources": {
-              "type": "string",
-              "maxLength": 5000,
-              "description": "One http or https URL per line"
-            }
-          }
-        },
-        "interoperability": {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "rating": {
-              "type": [
-                "integer",
-                "null"
-              ],
-              "minimum": 0,
-              "maximum": 5
-            },
-            "evidence": {
-              "type": "string",
-              "maxLength": 5000
-            },
-            "limitations": {
-              "type": "string",
-              "maxLength": 5000
-            },
-            "confidence": {
-              "enum": [
-                null,
-                "high",
-                "medium",
-                "low"
-              ]
-            },
-            "sources": {
-              "type": "string",
-              "maxLength": 5000,
-              "description": "One http or https URL per line"
-            }
-          }
-        },
-        "responsiveness": {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "rating": {
-              "type": [
-                "integer",
-                "null"
-              ],
-              "minimum": 0,
-              "maximum": 5
             },
             "evidence": {
               "type": "string",
@@ -436,9 +369,9 @@
               "items": {
                 "type": "boolean"
               },
-              "minItems": 5,
-              "maxItems": 5,
-              "description": "Verification items in order: Independent data access; Practical export; Migration to another tool; Vendor exit; Relevant cryptographic key custody"
+              "minItems": 4,
+              "maxItems": 4,
+              "description": "Verification items in order: Independent access to essential information; Complete export; Practical migration to another tool; Key custody and recovery explained, where applicable"
             },
             "notes": {
               "type": "string",
@@ -455,9 +388,9 @@
               "items": {
                 "type": "boolean"
               },
-              "minItems": 5,
-              "maxItems": 5,
-              "description": "Verification items in order: Long-term readable or documented formats; Complete recovery of meaningful information; Tested backups and restoration; Independent reconstruction; Surviving documentation and schemas"
+              "minItems": 4,
+              "maxItems": 4,
+              "description": "Verification items in order: Documented formats and schemas; Metadata and relationships preserved; Backups tested and restoration demonstrated; Independent interpretation of the records"
             },
             "notes": {
               "type": "string",
@@ -474,9 +407,9 @@
               "items": {
                 "type": "boolean"
               },
-              "minItems": 4,
-              "maxItems": 4,
-              "description": "Verification items in order: Essential local functions without internet access; Graceful disconnection; Local data access and modification; Optional synchronization boundaries"
+              "minItems": 3,
+              "maxItems": 3,
+              "description": "Verification items in order: Functions that continue without external services; Each remaining dependency shown to be inherent to the task; A failed synchronization does not remove the ability to work"
             },
             "notes": {
               "type": "string",
@@ -495,7 +428,7 @@
               },
               "minItems": 5,
               "maxItems": 5,
-              "description": "Verification items in order: Critical state-machine behavior; Defined numerical assumptions and tolerances; Reproducible calculations where appropriate; Conflict handling; Human authorization for consequential AI-generated actions"
+              "description": "Verification items in order: Rules for important operations are explained; Consequential actions and outcomes are traceable; Suggestions are distinct from committed actions; Approval, reversal, or contest is available where appropriate; Errors are visible"
             },
             "notes": {
               "type": "string",
@@ -514,7 +447,7 @@
               },
               "minItems": 4,
               "maxItems": 4,
-              "description": "Verification items in order: Open interfaces and formats; Replaceable components; Documented integration; Coherent functional boundaries"
+              "description": "Verification items in order: Custody of data and keys; Encryption and trust boundaries; Backups and restoration; Vendor-failure scenarios"
             },
             "notes": {
               "type": "string",
@@ -531,9 +464,9 @@
               "items": {
                 "type": "boolean"
               },
-              "minItems": 5,
-              "maxItems": 5,
-              "description": "Verification items in order: Routine input feedback; Perceived latency; Nonblocking expensive operations; Interface clarity; Avoidance of artificial friction"
+              "minItems": 3,
+              "maxItems": 3,
+              "description": "Verification items in order: Documented interfaces and formats; Replaceable components; Boundaries that support long-term maintenance"
             },
             "notes": {
               "type": "string",
@@ -550,9 +483,9 @@
               "items": {
                 "type": "boolean"
               },
-              "minItems": 6,
-              "maxItems": 6,
-              "description": "Verification items in order: Unnecessary vendor dependencies; Undisclosed telemetry; Recovery from service failure; Authentication and encryption boundaries; Dependency maintenance; Sustainable continuity"
+              "minItems": 3,
+              "maxItems": 3,
+              "description": "Verification items in order: Usable for its intended tasks; Accessible; Reasonably responsive for its domain"
             },
             "notes": {
               "type": "string",
@@ -572,19 +505,12 @@
         "complete": {
           "type": "boolean"
         },
-        "score": {
-          "type": [
-            "number",
-            "null"
-          ]
-        },
-        "classification": {
+        "determination": {
           "enum": [
-            "tier1",
-            "tier2",
-            "tier3",
-            "not_certified",
-            "unverified"
+            "meets_core",
+            "partially_aligned",
+            "fails_fundamental",
+            "insufficient_evidence"
           ]
         }
       }

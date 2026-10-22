@@ -6,7 +6,7 @@ window.SOVEREIGN_DIRECTORY = {{ hugo.Data.directory | jsonify | safeJS }};</scri
 {{ partial "page-header.html" . }}
 {{ with .Content }}<div class="prose-editorial max-w-3xl mb-8">{{ . }}</div>{{ end }}
 
-<section class="dir-controls" aria-label="Filter and sort the Index">
+<section class="dir-controls" aria-label="Filter the Index">
   <div class="dir-search">
     <label for="dir-search">Search</label>
     <input type="search" id="dir-search" placeholder="Search names, formats, summaries" autocomplete="off">
@@ -14,24 +14,20 @@ window.SOVEREIGN_DIRECTORY = {{ hugo.Data.directory | jsonify | safeJS }};</scri
   <div class="dir-selects">
     <div><label for="dir-category">Discipline</label>
       <select id="dir-category"><option value="">All disciplines</option>{{ range $cats | uniq }}<option value="{{ . }}">{{ . }}</option>{{ end }}</select></div>
-    <div><label for="dir-tier">Verified tier</label>
-      <select id="dir-tier"><option value="">Any</option>
-        {{ range $id := slice "tier1" "tier2" "tier3" "not_certified" }}<option value="{{ $id }}">{{ index $fw.classification.labels $id }}</option>{{ end }}
+    <div><label for="dir-det">Overall determination</label>
+      <select id="dir-det"><option value="">Any</option>
+        {{ range $id := $fw.determinations.order }}<option value="{{ $id }}">{{ index $fw.determinations.labels $id }}</option>{{ end }}
       </select></div>
     <div><label for="dir-status">Assessment status</label>
       <select id="dir-status"><option value="">Any</option><option value="complete">Assessment recorded</option><option value="unverified">Awaiting assessment</option></select></div>
-    <div><label for="dir-strongest">Strongest principle</label>
-      <select id="dir-strongest"><option value="">Any</option>{{ range $fw.principles }}<option value="{{ .id }}">{{ .name }}</option>{{ end }}</select></div>
-    <div><label for="dir-weakest">Weakest principle</label>
-      <select id="dir-weakest"><option value="">Any</option>{{ range $fw.principles }}<option value="{{ .id }}">{{ .name }}</option>{{ end }}</select></div>
-    <div><label for="dir-sort">Sort by</label>
-      <select id="dir-sort"><option value="name">Name</option><option value="score">Weighted score (complete assessments only)</option></select></div>
+    <div><label for="dir-attention">Principle needing attention</label>
+      <select id="dir-attention"><option value="">Any</option>{{ range $fw.principles }}<option value="{{ .id }}">{{ .name }}</option>{{ end }}</select></div>
   </div>
   <p id="dir-count" class="dir-count" role="status" aria-live="polite">Showing all {{ len hugo.Data.directory }} entries.</p>
   <p id="dir-hint" class="dir-hint" role="status"></p>
 </section>
 
 <div id="directory-grid" class="dir-grid">
-  {{ range hugo.Data.directory }}{{ partial "directory-card.html" . }}{{ end }}
+  {{ range sort hugo.Data.directory "name" }}{{ partial "directory-card.html" . }}{{ end }}
 </div>
 {{ end }}

@@ -18,7 +18,7 @@
       },
       {
         "principle": "Recoverability",
-        "text": "Keep the original export archive as an independent recovery copy (E3, E4)."
+        "text": "Keep the original export archive as an independent recovery copy (E3)."
       }
     ],
     "caveat": "Conversion is lossy. Databases, relations, comments, and page history may not survive the move, and links between pages often need repair. Compare the result with the original before you rely on it."
@@ -34,7 +34,7 @@
     "connections": [
       {
         "principle": "Sovereignty",
-        "text": "A ledger file you hold cannot be locked behind a subscription (E1, E5)."
+        "text": "A ledger file you hold cannot be locked behind a subscription (E1, E4)."
       },
       {
         "principle": "Longevity",
@@ -42,7 +42,7 @@
       },
       {
         "principle": "Recoverability",
-        "text": "Keeping the ledger in version control gives you a history to recover from (E4)."
+        "text": "Keeping the ledger in version control gives you a history to recover from (E3)."
       }
     ],
     "caveat": "CSV exports can lose category structure, split transactions, and history. Reconcile balances against the original service before you stop using it."
@@ -58,7 +58,7 @@
     "connections": [
       {
         "principle": "Sovereignty",
-        "text": "Your messages no longer depend on a provider keeping your account open (E1, E5)."
+        "text": "Your messages no longer depend on a provider keeping your account open (E1, E4)."
       },
       {
         "principle": "Longevity",
@@ -66,7 +66,7 @@
       },
       {
         "principle": "Recoverability",
-        "text": "A local copy is an independent backup if the account is suspended (E3, E4)."
+        "text": "A local copy is an independent backup if the account is suspended (E3)."
       }
     ],
     "caveat": "IMAP sync copies messages, but usually not provider-side labels, filters, or contacts. Check what your provider offers for those. A synchronized copy is not a backup unless you also keep versions of it."
