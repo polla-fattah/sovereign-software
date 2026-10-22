@@ -49,7 +49,7 @@
   });
 
   var search = document.getElementById('dir-search');
-  var chips = Array.prototype.slice.call(document.querySelectorAll('.dir-chip'));
+  var select = document.getElementById('dir-category');
   var count = document.getElementById('dir-count');
   var clear = document.getElementById('dir-clear');
   var category = '';
@@ -83,13 +83,12 @@
 
   function setCategory(value) {
     category = value;
-    chips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-category') === value ? 'true' : 'false'); });
+    select.value = value;
+    select.className = value ? 'is-set' : '';
   }
 
   search.addEventListener('input', apply);
-  chips.forEach(function (chip) {
-    chip.addEventListener('click', function () { setCategory(chip.getAttribute('data-category')); apply(); });
-  });
+  select.addEventListener('change', function () { setCategory(select.value); apply(); });
   clear.addEventListener('click', function () { search.value = ''; setCategory(''); apply(); search.focus(); });
   apply();
 })();

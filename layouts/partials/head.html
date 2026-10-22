@@ -147,14 +147,14 @@
 
   /* ---------- Index ---------- */
   .dir-controls { display: grid; gap: 1.25rem; margin-bottom: 2rem; padding: 1.25rem 1.5rem; border: 1px solid var(--color-hairline-gray); background: #fff; }
-  .dir-chips { margin-top: 0.25rem; }
   .dir-controls :focus-visible, .toc a:focus-visible { outline: 3px solid var(--color-vivid-emerald); outline-offset: 2px; }
   .dir-controls label { font-size: 0.85rem; font-weight: 600; color: var(--color-forest-ink); }
   .dir-controls input[type=search] { width: 100%; padding: 0.55rem 0.7rem; border: 1px solid #8a8a8a; background: #fff; color: #333; font: inherit; font-size: 0.95rem; border-radius: 0; }
-  .dir-search { max-width: 28rem; display: grid; gap: 0.3rem; }
-  .dir-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .dir-chip { padding: 0.4rem 0.95rem; font-size: 0.875rem; cursor: pointer; }
-  .dir-chip[aria-pressed="true"] { background: #e3f1e9 !important; border-color: var(--color-forest-ink) !important; font-weight: 700; }
+  .dir-fields { display: flex; flex-wrap: wrap; gap: 1rem 1.25rem; align-items: flex-end; }
+  .dir-search { flex: 1 1 16rem; max-width: 28rem; display: grid; gap: 0.3rem; }
+  .dir-select { flex: 0 1 17rem; display: grid; gap: 0.3rem; }
+  .dir-select select { width: 100%; padding: 0.55rem 2.25rem 0.55rem 0.7rem; border: 1px solid #8a8a8a; border-radius: 0; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23123f2e' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 0.85rem center; color: #333; font: inherit; font-size: 0.95rem; cursor: pointer; -webkit-appearance: none; appearance: none; text-overflow: ellipsis; }
+  .dir-select select.is-set { background-color: #e3f1e9; border-color: var(--color-forest-ink); font-weight: 600; }
   .dir-statusrow { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; }
   .dir-clear { padding: 0.25rem 0.8rem; font-size: 0.8rem; cursor: pointer; }
   .dir-count, .dir-hint { margin: 0; font-size: 0.9rem; color: var(--color-faded-pencil); }

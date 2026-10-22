@@ -8,13 +8,18 @@ window.SOVEREIGN_DIRECTORY = {{ $entries | jsonify | safeJS }};</script>
 {{ with .Content }}<div class="prose-editorial max-w-3xl mb-8">{{ . }}</div>{{ end }}
 
 <section class="dir-controls" aria-label="Filter the Index">
-  <div class="dir-search">
-    <label for="dir-search">Search</label>
-    <input type="search" id="dir-search" placeholder="Search names, formats, summaries" autocomplete="off">
-  </div>
-  <div class="dir-chips" role="group" aria-label="Discipline">
-    <button type="button" class="dir-chip" data-category="" aria-pressed="true">All</button>
-    {{ range $cats | uniq }}<button type="button" class="dir-chip" data-category="{{ . }}" aria-pressed="false">{{ . }}</button>{{ end }}
+  <div class="dir-fields">
+    <div class="dir-search">
+      <label for="dir-search">Search</label>
+      <input type="search" id="dir-search" placeholder="Search names, formats, summaries" autocomplete="off">
+    </div>
+    <div class="dir-select">
+      <label for="dir-category">Discipline</label>
+      <select id="dir-category">
+        <option value="">All disciplines ({{ len $entries }})</option>
+        {{ range sort ($cats | uniq) }}{{ $c := . }}<option value="{{ $c }}">{{ $c }} ({{ len (where $entries "category" $c) }})</option>{{ end }}
+      </select>
+    </div>
   </div>
   <div class="dir-statusrow">
     <p id="dir-count" class="dir-count" role="status" aria-live="polite">Showing all {{ len $entries }} entries.</p>
