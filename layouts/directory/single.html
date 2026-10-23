@@ -2,6 +2,7 @@
 {{ $e := partial "directory-entry.html" . }}
 {{ $fw := hugo.Data.framework }}
 {{ $complete := eq $e.assessment_status "complete" }}
+{{ $hasRecordedReview := .Params.assessment_notes }}
 <script>window.SOVEREIGN_FRAMEWORK = {{ $fw | jsonify | safeJS }};
 window.SOVEREIGN_ENTRY = {{ $e | jsonify | safeJS }};</script>
 <p class="font-mono text-xs mb-6"><a href="{{ "directory/" | relURL }}">&larr; The Sovereign Software Index</a></p>
@@ -32,7 +33,9 @@ window.SOVEREIGN_ENTRY = {{ $e | jsonify | safeJS }};</script>
     <tbody>
     {{ range $fw.principles }}
       {{ $f := index $e.principles .id }}
-      <tr><td>{{ .order }}</td><th scope="row">{{ .name }}</th><td>{{ if eq $f nil }}Not assessed{{ else }}{{ range $fw.findingLevels }}{{ if eq .id $f }}{{ .symbol }} {{ .label }}{{ end }}{{ end }}{{ end }}</td></tr>
+      {{ $label := "Not assessed" }}
+      {{ range $fw.findingLevels }}{{ if eq .id $f }}{{ $label = printf "%s %s" .symbol .label }}{{ end }}{{ end }}
+      <tr><td>{{ .order }}</td><th scope="row">{{ .name }}</th><td>{{ $label }}</td></tr>
     {{ end }}
     </tbody>
   </table></div>
@@ -44,7 +47,9 @@ window.SOVEREIGN_ENTRY = {{ $e | jsonify | safeJS }};</script>
     <tbody>
     {{ range $fw.eligibility }}
       {{ $st := index $e.eligibility .key }}
-      <tr><th scope="row">{{ .id }} {{ .title }}</th><td>{{ range $fw.eligibilityStatuses }}{{ if eq .id $st }}{{ .symbol }} {{ .label }}{{ end }}{{ end }}</td></tr>
+      {{ $label := "? Not Verified" }}
+      {{ range $fw.eligibilityStatuses }}{{ if eq .id $st }}{{ $label = printf "%s %s" .symbol .label }}{{ end }}{{ end }}
+      <tr><th scope="row">{{ .id }} {{ .title }}</th><td>{{ $label }}</td></tr>
     {{ end }}
     </tbody>
   </table></div>
@@ -62,16 +67,23 @@ window.SOVEREIGN_ENTRY = {{ $e | jsonify | safeJS }};</script>
   {{ with $e.extractCmd }}<p><strong>Example export or inspection command</strong> (not verified against any particular version or data set): <code>{{ . }}</code></p>{{ else }}<p>No export or inspection command is recorded for this entry yet.</p>{{ end }}
 
   <h2>8. Architectural strengths</h2>
-  <p>Strengths are not recorded until the software has been assessed.</p>
+  {{ if $hasRecordedReview }}<p>Established strengths and their scope are recorded in the evidence and assessment findings on this page.</p>{{ else }}<p>Strengths are not recorded until the software has been assessed.</p>{{ end }}
 
   <h2>9. Architectural limitations</h2>
-  {{ if $e.limitations }}<ul>{{ range $e.limitations }}<li>{{ . }}</li>{{ end }}</ul><p>These are editorial observations, not tested findings.</p>{{ else }}<p>None documented yet.</p>{{ end }}
+  {{ if $e.limitations }}<ul>{{ range $e.limitations }}<li>{{ . }}</li>{{ end }}</ul>{{ if not $hasRecordedReview }}<p>These are editorial observations, not tested findings.</p>{{ end }}{{ else }}<p>None documented yet.</p>{{ end }}
 
   {{ with .Content }}
-  <h2>10. Planned assessment</h2>
-  {{ if or $e.assessment_batch $e.pilot_stage }}<p><strong>Candidate, not yet assessed.</strong>{{ with $e.assessment_batch }} Planned in assessment batch {{ . }}.{{ end }}{{ with $e.pilot_stage }} Pilot stage {{ . }}, from a documentation-informed desk review on 22 October 2026. No local installation, backup restore, or migration was run for it.{{ end }} What follows lists tests to run and risks to check, not results. It implies no finding, and inclusion does not imply that the software meets the proposed standard.</p>{{ end }}
+  <h2>10. {{ if $hasRecordedReview }}Assessment findings and remaining work{{ else }}Planned assessment{{ end }}</h2>
+  {{ if and (not $hasRecordedReview) (or $e.assessment_batch $e.pilot_stage) }}<p><strong>Candidate, not yet assessed.</strong>{{ with $e.assessment_batch }} Planned in assessment batch {{ . }}.{{ end }}{{ with $e.pilot_stage }} Pilot stage {{ . }}, from a documentation-informed desk review on 22 October 2026. No local installation, backup restore, or migration was run for it.{{ end }} What follows lists tests to run and risks to check, not results. It implies no finding, and inclusion does not imply that the software meets the proposed standard.</p>{{ end }}
   {{ . }}
   {{ end }}
+
+  <div class="my-8 p-6 bg-slate-50 border border-slate-200 rounded-xl space-y-2">
+    <h3 class="text-base font-semibold text-slate-900 mt-0 mb-1">Contribute verification evidence for {{ $e.name }}</h3>
+    <p class="text-sm text-slate-600 mb-2">Have you tested clean-machine restoration, format migration, or failure rollback for {{ $e.name }}? We welcome reproducible laboratory logs, synthetic test fixtures, and independent assessments to resolve open findings.</p>
+    <p class="text-xs text-slate-500 mb-0"><a href="{{ "methodology/" | relURL }}" class="underline font-medium text-amber-700">Read the evaluation protocol</a> &middot; <a href="https://github.com/polla-fattah/sovereign-software#call-for-verification-and-contribution" class="underline font-medium text-amber-700" rel="noopener">Submit verification records on GitHub</a></p>
+  </div>
+
   <p class="fw-note">{{ $e.assessment_notes }} The assessment procedure is described in the <a href="{{ "methodology/" | relURL }}">methodology</a>.</p>
 </article>
 {{ end }}

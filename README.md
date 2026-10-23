@@ -4,6 +4,8 @@ A manifesto for software that stays under the authority of the people who use it
 
 **Live site:** https://sovereign.polla.dev/
 
+**Research evidence:** [Start here](evidence/README.md) for the application-by-application index, current open questions, completed rating reviews and unfinished drafts.
+
 > Software should serve people without claiming permanent custody over their information, choices, or work.
 
 ## Purpose
@@ -97,7 +99,7 @@ Anything the front matter leaves out is "not assessed". There are no null values
 
 ### Desk review of the original entries
 
-The 25 original entries (27 products, since Beancount and hledger, and NixOS and GNU Guix, are now separate entries with redirects from the old URLs) carry a documentation-informed desk review from 22 October 2026. It is shown on each page as "Planned assessment": a verification scenario, what may invalidate an overconfident claim, and a documentation starting point. It is not a hands-on audit, and every entry stays "Insufficient evidence". Entries are ordered into pilot stages through `pilot_stage` in the front matter:
+The 25 original entries (27 products, since Beancount and hledger, and NixOS and GNU Guix, are now separate entries with redirects from the old URLs) carry a documentation-informed desk review from 22 October 2026. The original "Planned assessment" section records a verification scenario, what may invalidate an overconfident claim, and a documentation starting point. That initial desk review was not a hands-on audit, and every entry remained "Insufficient evidence" at that stage. Later collected findings and completed rating decisions are indexed in [the evidence starting point](evidence/README.md); the original plans are not the current progress register. Entries are ordered into pilot stages through `pilot_stage` in the front matter:
 
 1. Quick-format and portability controls: Git, SQLite, Todo.txt, Org-mode, Hugo.
 2. Knowledge and document preservation: Obsidian, Logseq, Typst, Paperless-ngx, LibreOffice.
@@ -147,6 +149,41 @@ There is no web form: assessments are recorded by editing the entry file in `con
 3. Run `node --test`.
 
 Any future scored method needs separate justification, representative testing across disciplines, and a published methodology before it is adopted.
+
+## Call for verification and contribution
+
+Sovereign Personal Software is an evidence-led research initiative. The 68 software candidates in our directory represent strong architectures for user authority, but most currently hold an overall determination of **Insufficient evidence** because fundamental requirements (especially **E2** practical exit, **E3** independent recovery, and **E5** consequential oversight) require direct, hands-on laboratory verification rather than vendor promises or open-source assumptions.
+
+We invite researchers, software engineers, digital preservation specialists, and system administrators to help verify these tools and advance the catalog.
+
+### How you can contribute
+
+1. **Conduct laboratory verification trials:**
+   - Pick an application from the [Application Evidence Index](evidence/application-index.md).
+   - Construct a synthetic test dataset matching the declared domain preservation profile (`Section 1 of the methodology`).
+   - Run the [six-stage laboratory execution protocol](content/methodology.md#61-six-stage-laboratory-execution-protocol) in an isolated environment (clean virtual machine or container):
+     - Test clean-machine restoration without network access (**T2**, **E3**).
+     - Test cross-tool migration into an independent alternative tool (**T1**, **T6**, **E2**).
+     - Test destructive operations, sync conflicts, and rollback behavior (**T4**, **T5**, **E5**).
+   - Record commands, sha256 checksums, expected versus actual observations, and limitations.
+
+2. **Participate as an independent second assessor:**
+   - Under the [Two-Assessor Protocol](content/methodology.md#71-two-assessor-protocol-and-reassessment), high-stakes entries require two independent assessments.
+   - Run parallel trials on the same pinned version and help document agreements or reconciliation notes.
+
+3. **Propose new candidate applications:**
+   - Follow the [Index entry format](#index-entry-format) to add missing tools in `content/directory/<id>.md`.
+   - Ensure the entry includes a declared substrate, sync model, baseline domain profile, and reproducible inspection command.
+
+4. **Refine migration runbooks:**
+   - Help test and expand the command-line escape hatches in `content/escape-hatches.md`.
+   - Document real-world data conversion losses, link breakages, and schema edge cases when migrating out of proprietary cloud platforms.
+
+### Contribution guidelines
+
+- **Evidence before findings:** Never award an eligibility `Pass` or positive principle finding based on documentation or marketing alone. Submit the exact command log, fixture hashes, and version environment.
+- **No em dashes and no scoring:** Maintain consistency with framework conventions. The evaluation is unscored and qualitative.
+- **Validate locally:** Always run `node scripts/determine.js <id>` and `node --test` before opening a pull request.
 
 ## Editing content
 

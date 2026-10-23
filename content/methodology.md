@@ -221,3 +221,8 @@ Consider a collaborative research repository used by a university laboratory whe
 ## 9. Limits and governance of the methodology
 
 This is a **normative evaluation framework**, not a scientific measurement scale. It does not establish comprehensive security, privacy, functional correctness, performance, legal compliance, or fitness-for-purpose certification. Assessors must disclose conflicts of interest, distinguish vendor claims from directly verified facts, and publish the complete evidence and principle profile alongside every determination.
+
+### Independent contributions and peer evaluation
+
+Because the methodology relies on reproducible empirical evidence rather than authority or claims, we actively welcome independent assessments, two-assessor evaluations, and fixture contributions. Researchers, engineers, and digital preservation practitioners who execute laboratory trials according to the six-stage protocol are encouraged to submit reproduction logs and evidence records through the [public research repository](https://github.com/polla-fattah/sovereign-software).
+
