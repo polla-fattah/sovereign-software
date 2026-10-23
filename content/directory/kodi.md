@@ -5,22 +5,21 @@ summary = "Media centre application that plays a local library and keeps its lib
 substrate = "Media files in folders, with SQLite library databases"
 sync_model = "Local application; optional network sources"
 extract_cmd = "ls ~/.kodi/userdata/Database"
+limitations = ["Source/retained-input inspection only; no installation or application restore performed.","Watched/resume/artwork round-trip comparison, independent database reading, profile migration/downgrade and observed cleanup/source-removal behavior remain untested."]
 assessment_status = "complete"
-assessment_date = "2026-10-22"
-version_assessed = "Documentation review; release not pinned"
+assessment_date = "2026-10-24"
+version_assessed = "Pinned evidence a097d6978028aef8840b23695a57c606697f156a"
+assessment_notes = "Individually reconciled in rating batch 11 on 24 October 2026. E3/E5 remain Not Verified for explicit missing coverage; dependent unsupported findings corrected. Previously resolved questions are retained, not counted again. E1/E4/Locality were not re-certified by this targeted review."
 
 [eligibility]
 independent_data_access = "pass"
-practical_exit = "partial"
-independent_recoverability = "partial"
+practical_exit = "not_verified"
+independent_recoverability = "not_verified"
 retained_control = "pass"
 consequential_oversight = "not_verified"
 
 [principles]
-sovereignty = "partial"
-longevity = "partial"
 locality = "meets"
-transparency = "partial"
 
 [[evidence]]
 target = "E1"
@@ -36,8 +35,8 @@ confidence = "high"
 
 [[evidence]]
 target = "E3"
-text = "NFO files are text-editable and library export is documented, but databases, cached artwork, add-ons, and profiles need a clean independent restore test."
-url = "https://kodi.wiki/view/NFO_files/Creating"
+text = "The export code distinguishes a dated videodb.xml folder with artwork directories from per-item NFO export; import reads that XML and reconstructs source paths only when the scraper add-on exists. The import code explicitly notes scraper settings are not exported. This route is therefore not demonstrated to recreate an entire profile."
+url = "https://github.com/xbmc/xbmc/blob/a097d6978028aef8840b23695a57c606697f156a/xbmc/video/VideoDatabase.cpp"
 confidence = "medium"
 
 [[evidence]]
@@ -48,20 +47,20 @@ confidence = "high"
 
 [[evidence]]
 target = "E5"
-text = "Playback and library curation are user-directed, but scraper provenance, add-on behavior, and deletion safeguards were not assessed."
-url = "https://kodi.wiki/view/Settings/Media/Library"
-confidence = "low"
+text = "Library cleanup distinguishes absent files under reachable sources from unavailable source directories. For unavailable sources, silent mode retains entries; interactive mode can ask, while missing files under reachable parents can be removed from the database without asking. This concerns library records/history, not an assertion that Clean Library deletes media bytes."
+url = "https://github.com/xbmc/xbmc/blob/a097d6978028aef8840b23695a57c606697f156a/xbmc/video/VideoDatabase.cpp"
+confidence = "medium"
 
 [[evidence]]
 target = "sovereignty"
-text = "Local data folders and editable NFO exports support user control, while add-on and database dependencies limit exit confidence."
-url = "https://kodi.wiki/view/Backup"
+text = "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Kodi does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+url = "https://github.com/xbmc/xbmc/blob/a097d6978028aef8840b23695a57c606697f156a/xbmc/video/VideoDatabase.cpp"
 confidence = "medium"
 
 [[evidence]]
 target = "longevity"
-text = "Text-based NFO metadata is durable, but artwork fidelity, database versions, and add-on state require preservation testing."
-url = "https://kodi.wiki/view/Import-export_library"
+text = "E3 is not established for Kodi's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+url = "https://github.com/xbmc/xbmc/blob/a097d6978028aef8840b23695a57c606697f156a/xbmc/video/VideoDatabase.cpp"
 confidence = "medium"
 
 [[evidence]]
@@ -72,12 +71,40 @@ confidence = "high"
 
 [[evidence]]
 target = "transparency"
-text = "The wiki identifies what is and is not captured by exports, but automated metadata and add-on decisions remain unverified."
-url = "https://kodi.wiki/view/Import-export_library"
+text = "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+url = "https://github.com/xbmc/xbmc/blob/a097d6978028aef8840b23695a57c606697f156a/xbmc/video/VideoDatabase.cpp"
+confidence = "medium"
+
+[[evidence]]
+target = "E3"
+text = "Source distinguishes per-item NFO from a dated XML/artwork export and makes reconstruction depend on available scraper add-ons; scraper settings are not exported in that route. Complete watched/resume, profile, settings/add-on and media dependency recovery remains unestablished."
+url = "https://github.com/xbmc/xbmc/blob/a097d6978028aef8840b23695a57c606697f156a/xbmc/video/VideoDatabase.cpp"
+confidence = "medium"
+
+[[evidence]]
+target = "E5"
+text = "Library cleanup treats missing files on reachable sources differently from unavailable sources, with conditional prompts and silent retention. This concerns library records, not automatically media-byte deletion. Effective source/remove/add-on authority and correction of record/history loss remain insufficiently covered."
+url = "https://github.com/xbmc/xbmc/blob/a097d6978028aef8840b23695a57c606697f156a/xbmc/video/VideoDatabase.cpp"
 confidence = "medium"
 
 +++
 
-**Preliminary desk assessment:** Kodi is described as media centre application that plays a local library and keeps its library state in local databases. Its primary preservation surface is Media files in folders, with SQLite library databases, with independence shaped by local application; optional network sources. This is a useful lead for assessment, not a verified finding: version-pinned export, restoration, migration, offline, and consequential-behavior tests remain required. The current determination is **Insufficient evidence** until those observations are recorded.
+**Evidence update: 23 October 2026**
+
+- [x] Resolved: The export code distinguishes a dated videodb.xml folder with artwork directories from per-item NFO export; import reads that XML and reconstructs source paths only when the scraper add-on exists. The import code explicitly notes scraper settings are not exported. This route is therefore not demonstrated to recreate an entire profile. [Source](https://github.com/xbmc/xbmc/blob/a097d6978028aef8840b23695a57c606697f156a/xbmc/video/VideoDatabase.cpp).
+- [x] Resolved: Library cleanup distinguishes absent files under reachable sources from unavailable source directories. For unavailable sources, silent mode retains entries; interactive mode can ask, while missing files under reachable parents can be removed from the database without asking. This concerns library records/history, not an assertion that Clean Library deletes media bytes. [Source](https://github.com/xbmc/xbmc/blob/a097d6978028aef8840b23695a57c606697f156a/xbmc/video/VideoDatabase.cpp).
+- [ ] Open: Watched/resume/artwork round-trip comparison, independent database reading, profile migration/downgrade and observed cleanup/source-removal behavior remain untested. E5 needs effective cleanup/source/removal settings, add-on authority and recoverable library/history states; record cleanup and media deletion are distinct.
+
+**Assessment follow-up:** These bounded findings are incorporated into the evidence above. Eligibility and principle ratings are deliberately unchanged; their reconciliation and any blank-status fixes are deferred to the next pass. Reproduction details and retained inputs are in evidence/third-pass/batch-11/.
 
 **Human-readable criteria:** Can a creator archive source material and editable state, reopen the project after version changes, and export important work in interoperable formats?
+
+**Rating reconciliation: 24 October 2026**
+
+E3 and E5 remain **Not Verified** for the existing declared scope. Longevity and Transparency and Control are **Not assessed** pending their required minimums. Sovereignty is also **Not assessed** because the required access/exit/custody minimums are not all established. This is a targeted evidence decision, not a finding that the product fails. Existing E1, E4 and Locality findings were not re-certified.
+
+**Remaining:** Watched/resume/artwork round-trip comparison, independent database reading, profile migration/downgrade and observed cleanup/source-removal behavior remain untested. E5 needs effective cleanup/source/removal settings, add-on authority and recoverable library/history states; record cleanup and media deletion are distinct.
+
+**Next without installing locally:** Use a synthetic profile/database/NFO/artwork/media-reference packet with expected watched/resume records; inspect it independently and obtain same-version cleanup/source/add-on authority and restoration evidence.
+
+The individual decision and provenance are retained in `evidence/rating-reconciliation/batch-11/`. Overall: **Insufficient evidence**.

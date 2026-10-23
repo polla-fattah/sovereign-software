@@ -5,10 +5,12 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
+const crypto = require('node:crypto');
 const os = require('node:os');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 const { loadEntries } = require('../scripts/entries.js');
+const { loadLedgers, auditReviewed } = require('../scripts/rating-audit.js');
 
 const root = path.join(__dirname, '..');
 const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
@@ -222,7 +224,154 @@ test('unverified Index entries are not presented as current classifications', { 
   assert.ok(gitPage.includes('Insufficient evidence'));
 });
 
+test('resolved evidence appears on all thirty updated application assessment pages', { skip }, () => {
+  const additionalClosures = loadLedgers(root).flatMap(l => l.applications).reduce((counts, a) => { counts[a.id] = (counts[a.id] || 0) + (a.findings || []).length; return counts; }, {});
+  const assessmentDates = Object.fromEntries(loadEntries(fw).map(e => [e.id, e.assessment_date]));
+  const batch3Counts = { gitea: 2, forgejo: 2, 'paperless-ngx': 3, kopia: 2, restic: 3, borgbackup: 3 };
+  const batch4Counts = { calibre: 2, audacity: 2, ardour: 2, 'musescore-studio': 2, 'zim-wiki': 3, taskwarrior: 3 };
+  const batch5Counts = { blender: 2, inkscape: 2, krita: 2, gimp: 2, kicad: 2, openscad: 2 };
+  for (const id of ['anki', 'joplin', 'actual-budget', 'qgis', 'freecad', 'zotero', 'cadquery', 'darktable', 'jabref', 'gnu-octave', 'kdenlive', 'keepassxc', 'gitea', 'forgejo', 'paperless-ngx', 'kopia', 'restic', 'borgbackup', 'calibre', 'audacity', 'ardour', 'musescore-studio', 'zim-wiki', 'taskwarrior', 'blender', 'inkscape', 'krita', 'gimp', 'kicad', 'openscad']) {
+    const page = html('directory/' + id + '/index.html');
+    assert.ok(page.includes('Assessment findings and remaining work'), id + ' shows recorded findings');
+    assert.ok(page.includes('Resolved:') && page.includes('Open:'), id + ' shows resolved and remaining gaps');
+    if (batch3Counts[id]) assert.equal((page.match(/Resolved:/g) || []).length, batch3Counts[id] + (additionalClosures[id] || 0), id + ' renders historical and additional closures');
+    if (batch4Counts[id]) assert.equal((page.match(/Resolved:/g) || []).length, batch4Counts[id] + (additionalClosures[id] || 0), id + ' renders historical and additional batch 4 closures');
+    if (batch5Counts[id]) assert.equal((page.match(/Resolved:/g) || []).length, batch5Counts[id] + (additionalClosures[id] || 0), id + ' renders historical and additional batch 5 closures');
+    assert.ok(page.includes(assessmentDates[id]) && /(?:github\.com\/[^\s"<>]+\/blob|codeberg\.org\/[^\s"<>]+\/src\/commit|gitlab\.com\/[^\s"<>]+\/-\/blob)\/[a-f0-9]{40}\//.test(page), id + ' includes dated pinned evidence');
+    assert.ok(!page.includes('Candidate, not yet assessed.'), id + ' is not presented as only a plan');
+  }
+});
+
 test.after(() => { fs.rmSync(out, { recursive: true, force: true }); });
+
+test('the remaining 38 reviews record 77 bounded closures in actual assessment evidence', { skip }, () => {
+  const inventory = JSON.parse(read('evidence/third-pass/remaining-review-findings.json'));
+  const reconciliation = { applications: loadLedgers(root).flatMap(l => l.applications) };
+  const entries = Object.fromEntries(loadEntries(fw).map(e => [e.id, e]));
+  assert.equal(inventory.applications.length, 38);
+  assert.equal(new Set(inventory.applications.map(a => a.id)).size, 38);
+  assert.equal(inventory.applications.reduce((n, a) => n + a.findings.length, 0), 77);
+  for (const app of inventory.applications) {
+    const page = html('directory/' + app.id + '/index.html');
+    const source = read('content/directory/' + app.id + '.md');
+    const note = read('evidence/doc-reviews/' + app.id + '.md');
+    assert.equal((page.match(/Resolved:/g) || []).length, app.findings.length, app.id);
+    assert.ok(page.includes('Open:') && page.includes(entries[app.id].assessment_date), app.id);
+    const updated = reconciliation.applications.findLast(a => a.id === app.id);
+    const remaining = updated ? updated.remaining : app.open;
+    assert.ok(source.includes(remaining) && note.includes(remaining), app.id + ' preserves current remaining work');
+    assert.ok(note.includes('batch-' + app.batch + '/README.md#' + app.id));
+    for (const finding of app.findings) {
+      assert.ok(entries[app.id].evidence.some(e => e.target === finding.target && e.text === finding.text && e.url === finding.url), app.id + ' actual evidence matches closure');
+      assert.ok(page.includes(finding.url.replaceAll('&', '&amp;')), app.id + ' renders source');
+      assert.ok(note.includes(finding.text), app.id + ' review matches closure');
+    }
+  }
+});
+
+test('changes from the historical rating baseline are individually recorded', () => {
+  const baseline = JSON.parse(read('evidence/third-pass/deferred-ratings-baseline.json'));
+  const ledger = { field_changes: loadLedgers(root).flatMap(l => l.field_changes) };
+  assert.equal(baseline.applications.length, 38);
+  for (const app of baseline.applications) {
+    const source = read('content/directory/' + app.id + '.md').replace(/\r\n/g, '\n');
+    for (const table of ['eligibility', 'principles']) {
+      let expected = app[table];
+      for (const change of ledger.field_changes.filter(c => c.id === app.id && c.table === table)) {
+        const line = new RegExp('^' + change.key + ' = ([^\\n]*)\\n?', 'm');
+        const old = expected.match(line);
+        assert.equal(old ? JSON.parse(old[1]) : null, change.before, app.id + ' recorded previous value');
+        expected = expected.replace(line, change.after === null ? '' : change.key + ' = ' + JSON.stringify(change.after) + '\n');
+      }
+      assert.equal(source.match(new RegExp('\\[' + table + '\\]([\\s\\S]*?)(?=\\n\\[)'))[0], expected, app.id + ' changes need an explicit ledger entry');
+    }
+  }
+});
+
+test('all raw requirement values are valid and no rendered criterion cell is blank', { skip }, () => {
+  const { parseToml } = require('../scripts/entries.js');
+  for (const entry of loadEntries(fw)) {
+    const source = read('content/directory/' + entry.id + '.md');
+    const raw = parseToml(source.split('+++')[1], entry.id);
+    for (const [key, value] of Object.entries(raw.eligibility || {})) {
+      assert.ok(fw.eligibilityStatuses.some(s => s.id === value), entry.id + ' ' + key + ': ' + value);
+    }
+    for (const value of Object.values(raw.principles || {})) assert.ok(fw.findingLevels.some(s => s.id === value), entry.id);
+    const page = html('directory/' + entry.id + '/index.html');
+    const area = page.slice(page.indexOf('4. Principle profile'), page.indexOf('6. Evidence and verification'));
+    assert.equal((area.match(/<tr>/g) || []).length, 11, entry.id + ' four principles, five requirements, two headers');
+    assert.ok(!/<td>\s*<\/td>/.test(area), entry.id + ' has a blank finding');
+  }
+});
+
+test('batch 1 ratings, declared limits, evidence and actual pages agree', { skip }, () => {
+  const ledger = JSON.parse(read('evidence/rating-reconciliation/batch-1/decisions.json'));
+  const entries = Object.fromEntries(loadEntries(fw).map(e => [e.id, e]));
+  const engine = require('../static/js/assessment.js');
+  assert.equal(ledger.applications.length, 6);
+  assert.equal(ledger.schema_repairs.length, 46);
+  assert.equal(new Set(ledger.schema_repairs.map(r => r.id)).size, 32);
+  const { parseToml } = require('../scripts/entries.js');
+  for (const change of ledger.field_changes) {
+    const raw = parseToml(read('content/directory/' + change.id + '.md').split('+++')[1], change.id);
+    assert.equal(raw[change.table][change.key] === undefined ? null : raw[change.table][change.key], change.after, change.id + ' final change-ledger value');
+    assert.ok(change.reason);
+  }
+  for (const app of ledger.applications) {
+    const entry = entries[app.id];
+    assert.equal(entry.eligibility.independent_recoverability, app.E3[0]);
+    assert.equal(entry.eligibility.consequential_oversight, app.E5[0]);
+    assert.equal(entry.principles.longevity, app.longevity[0]);
+    assert.equal(entry.principles.transparency, app.transparency[0]);
+    for (const target of ['E3', 'E5', 'longevity', 'transparency']) {
+      assert.ok(entry.evidence.some(e => e.target === target && e.text === app[target][1]), app.id + ' decision evidence');
+    }
+    const result = engine.computeResult(fw, engine.assessmentFromEntry(fw, entry));
+    assert.deepEqual(result.inconsistencies, [], app.id + ' reconciled E3/E5 pairing');
+    assert.ok(html('directory/' + app.id + '/index.html').includes('Rating reconciliation: 23 October 2026'));
+  }
+  const git = engine.computeResult(fw, engine.assessmentFromEntry(fw, entries.git));
+  const sqlite = engine.computeResult(fw, engine.assessmentFromEntry(fw, entries.sqlite));
+  assert.equal(git.determination.id, 'partially_aligned');
+  assert.equal(sqlite.determination.id, 'insufficient_evidence');
+  assert.ok(sqlite.eligibility.unverified.includes('E2'));
+});
+
+test('rating-batch runtime checks and retained material match their declared plan', () => {
+  const base = 'evidence/rating-reconciliation/batch-1/';
+  const result = JSON.parse(read(base + 'runtime-results.json'));
+  const hash = file => crypto.createHash('sha256').update(fs.readFileSync(path.join(root, file))).digest('hex');
+  assert.equal(result.plan_sha256, hash(base + 'plan.json'));
+  assert.equal(result.runner_sha256, hash(base + 'check_runtime.py'));
+  assert.equal(result.installation_performed, false);
+  assert.ok(Object.values(result.git.checks).every(Boolean));
+  assert.ok(Object.values(result.sqlite.checks).every(Boolean));
+  for (const artifact of result.artifacts) assert.equal(artifact.sha256, hash(base + artifact.path));
+});
+
+test('remaining-batch retained inputs match their plans, hashes and pinned Git objects', () => {
+  for (let batch = 6; batch <= 12; batch++) {
+    const base = 'evidence/third-pass/batch-' + batch + '/';
+    const plan = JSON.parse(read(base + 'inspection-plan.json'));
+    const result = JSON.parse(read(base + 'artifact-results.json'));
+    assert.equal(result.inputs.length, plan.inputs.length);
+    assert.equal(result.downloaded_application_implementation_executed, false);
+    assert.equal(result.inspection_code_sha256, crypto.createHash('sha256').update(fs.readFileSync(path.join(root, 'evidence/third-pass/inspect_remaining.py'))).digest('hex'));
+    assert.equal(result.published_schema_ddl_executed, plan.inputs.some(i => i.probe === 'sql-schema'));
+    if (plan.available_tool_experiments) {
+      assert.equal(result.runtime_check_code_sha256, crypto.createHash('sha256').update(fs.readFileSync(path.join(root, 'evidence/third-pass/remaining_runtime_checks.py'))).digest('hex'));
+    }
+    for (const item of result.inputs) {
+      const bytes = fs.readFileSync(path.join(root, base, item.local_path));
+      assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), item.sha256, item.local_path);
+      if (item.git_blob_sha) {
+        const hash = crypto.createHash('sha1').update('blob ' + bytes.length + '\0').update(bytes).digest('hex');
+        assert.equal(hash, item.git_blob_sha, item.local_path);
+      }
+      assert.ok(plan.inputs.some(p => p.application === item.application && p.path === item.path && p.raw_url === item.raw_url));
+    }
+  }
+});
 
 test('the maintainer loader and the Hugo template agree on every entry', { skip }, () => {
   const page = html('directory/index.html');
@@ -244,4 +393,92 @@ test('retired Index claims stay retired and split entries are separate', () => {
   const byId = Object.fromEntries(entries.map((e) => [e.id, e]));
   assert.match(byId.syncthing.summary, /not backup/);
   assert.ok(entries.filter((e) => e.pilot_stage).length === 27, 'all 27 desk-reviewed products carry a pilot stage');
+});
+
+
+test('every completed rating batch agrees with actual assessments and recorded history', { skip }, () => {
+  const result = auditReviewed(root);
+  assert.deepEqual(result.errors, []);
+  assert.equal(result.reviewed.length, 68);
+  assert.equal(result.unreviewed.length, 0);
+  assert.equal(result.batches, 12);
+  const ledgers = loadLedgers(root);
+  const entries = Object.fromEntries(loadEntries(fw).map(e => [e.id, e]));
+  const latest = new Map(ledgers.flatMap(l => l.applications.map(a => [a.id, { ...a, review_date: l.review_date }])));
+  for (const app of latest.values()) {
+    const page = html('directory/' + app.id + '/index.html');
+    const note = read('evidence/doc-reviews/' + app.id + '.md');
+    const reviewed = new Date(app.review_date + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+    assert.ok(page.includes('Rating reconciliation: ' + reviewed));
+    for (const finding of app.findings || []) {
+      assert.ok(entries[app.id].evidence.some(e => e.target === finding.target && e.text === finding.text && e.url === finding.url));
+      assert.ok(note.includes(finding.text));
+      assert.ok(page.includes(finding.url.replaceAll('&', '&amp;')));
+    }
+  }
+  const cli = spawnSync(process.execPath, ['scripts/rating-audit.js'], { cwd: root, encoding: 'utf8' });
+  assert.equal(cli.status, 0, cli.stderr);
+  assert.match(cli.stdout, /68 targeted reconciliations.*0 pending/);
+});
+
+test('rating batch 2 pinned sources, manual locators and independent fixture observations are reproducible', () => {
+  const base = 'evidence/rating-reconciliation/batch-2/';
+  const result = JSON.parse(read(base + 'inspection-results.json'));
+  const ledger = JSON.parse(read(base + 'decisions.json'));
+  const plan = JSON.parse(read(base + 'inspection-plan.json'));
+  const hash = file => crypto.createHash('sha256').update(fs.readFileSync(path.join(root, file))).digest('hex');
+  for (const [key, file] of [['plan_sha256', 'plan.json'], ['inspection_plan_sha256', 'inspection-plan.json'], ['runner_sha256', 'inspect_evidence.py']]) assert.equal(result[key], hash(base + file));
+  assert.equal(result.applications_installed_or_executed, false);
+  assert.equal(result.upstream_test_suites_executed, false);
+  assert.equal(result.inputs.length, plan.inputs.length);
+  assert.equal(result.retained_backup_sources.length, 15);
+  for (const item of result.inputs) {
+    const bytes = fs.readFileSync(path.join(root, base, item.local_path));
+    assert.equal(hash(base + item.local_path), item.sha256);
+    assert.equal(crypto.createHash('sha1').update('blob ' + bytes.length + String.fromCharCode(0)).update(bytes).digest('hex'), item.git_blob_sha);
+    assert.ok(plan.inputs.some(i => i.application === item.application && i.path === item.path && i.git_blob_sha === item.git_blob_sha));
+  }
+  for (const item of result.fixtures.concat(result.retained_backup_sources)) assert.equal(hash(item.local_path), item.sha256);
+  assert.equal(ledger.applications.reduce((n, a) => n + a.findings.length, 0), 8);
+  for (const app of ledger.applications) for (const finding of app.findings) {
+    const source = read(base + 'inputs/' + app.id + '/' + finding.path);
+    for (const locator of finding.locators) assert.ok(source.includes(locator), app.id + ': manual-source locator, not an executed behavior test');
+    for (const support of finding.supporting_sources || []) {
+      const secondary = read(base + 'inputs/' + app.id + '/' + support.path);
+      for (const locator of support.locators) assert.ok(secondary.includes(locator), app.id + ': complementary source locator');
+    }
+  }
+  const anki = result.fixtures.find(f => f.application === 'anki').inspection;
+  assert.equal(anki.integrity_check, 'ok');
+  assert.equal(anki.notes, 1);
+  assert.equal(anki.cards, 1);
+  assert.equal(anki.joined_card_note_rows.length, 1);
+  assert.equal(anki.all_sound_references_mapped, true);
+  assert.equal(anki.media[0].bytes, 4);
+  const zotero = result.fixtures.find(f => f.application === 'zotero').inspection;
+  assert.equal(zotero.integrity_check, 'ok');
+  assert.ok(Object.values(zotero.selected_counts).every(n => n === 0));
+});
+
+test('the rating audit detects decision drift and unsupported positive findings in an isolated fixture', () => {
+  const fixture = fs.mkdtempSync(path.join(os.tmpdir(), 'sovereign-rating-audit-'));
+  try {
+    for (const dir of ['data', 'content/directory', 'evidence/doc-reviews', 'evidence/rating-reconciliation/batch-2']) fs.mkdirSync(path.join(fixture, dir), { recursive: true });
+    for (const file of ['data/framework.json', 'content/directory/anki.md', 'evidence/doc-reviews/anki.md']) fs.copyFileSync(path.join(root, file), path.join(fixture, file));
+    const source = read('content/directory/anki.md');
+    const ledger = JSON.parse(read('evidence/rating-reconciliation/batch-2/decisions.json'));
+    ledger.applications = ledger.applications.filter(a => a.id === 'anki');
+    ledger.field_changes = ledger.field_changes.filter(c => c.id === 'anki');
+    fs.writeFileSync(path.join(fixture, 'evidence/rating-reconciliation/batch-2/decisions.json'), JSON.stringify(ledger));
+    assert.deepEqual(auditReviewed(fixture).errors, []);
+    const entryPath = path.join(fixture, 'content/directory/anki.md');
+    fs.writeFileSync(entryPath, source.replace('consequential_oversight = "not_verified"', 'consequential_oversight = "pass"'));
+    assert.ok(auditReviewed(fixture).errors.some(e => e.includes('anki/E5: decision differs')));
+    fs.writeFileSync(entryPath, source.replace('[principles]', '[principles]\ntransparency = "meets"'));
+    assert.ok(auditReviewed(fixture).errors.some(e => e.includes('E5 is Not Verified') && e.includes('positive finding')));
+    fs.writeFileSync(entryPath, source.replace('practical_exit = "not_verified"', 'practical_exit = "pass"'));
+    assert.ok(auditReviewed(fixture).errors.some(e => e.includes('anki/eligibility/practical_exit: current field differs')));
+  } finally {
+    fs.rmSync(fixture, { recursive: true, force: true });
+  }
 });

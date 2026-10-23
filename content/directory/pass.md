@@ -6,22 +6,22 @@ substrate = "GPG-encrypted files in a plain directory"
 sync_model = "Git / Syncthing (no commercial cloud)"
 extract_cmd = "gpg -d ~/.password-store/infra/root.gpg"
 pilot_stage = 3
+limitations = ["Source/retained-input inspection only; no installation or application restore performed.","Actual private-key/trust recovery, prior-history decryption after recipient changes, importer completeness and observed offline behavior remain untested."]
 assessment_status = "complete"
-assessment_date = "2026-10-22"
-version_assessed = "Documentation review; release not pinned"
+assessment_date = "2026-10-24"
+version_assessed = "Pinned evidence 3ca13cd8882cae4083c1c478858adbf2e82dd037"
+assessment_notes = "Individually reconciled in rating batch 9 on 24 October 2026. E3/E5 remain Not Verified for explicit missing coverage; dependent unsupported findings corrected. Previously resolved questions are retained, not counted again. E1/E4/Locality were not re-certified by this targeted review."
 
 [eligibility]
 independent_data_access = "pass"
 practical_exit = "pass"
-independent_recoverability = "partial"
+independent_recoverability = "not_verified"
 retained_control = "pass"
 consequential_oversight = "not_verified"
 
 [principles]
 sovereignty = "meets"
-longevity = "meets"
 locality = "meets"
-transparency = "partial"
 
 [[evidence]]
 target = "E1"
@@ -37,8 +37,8 @@ confidence = "medium"
 
 [[evidence]]
 target = "E3"
-text = "Each entry is a standard encrypted file readable by common Unix tools, but complete recovery of extensions and key management was not tested."
-url = "https://www.passwordstore.org/"
+text = "The show/edit paths directly call GPG decryption on individual .gpg entry files. Store recovery therefore depends on the corresponding decryption keys and GPG environment, not a pass-only proprietary reader. No synthetic key-restoration run is claimed."
+url = "https://github.com/zx2c4/password-store/blob/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh"
 confidence = "medium"
 
 [[evidence]]
@@ -49,9 +49,9 @@ confidence = "high"
 
 [[evidence]]
 target = "E5"
-text = "Credentials are consequential, but clipboard, agent, and key-revocation safeguards were not tested."
-url = "https://www.passwordstore.org/"
-confidence = "low"
+text = "Delete removes the working file and, in a Git-backed store, records git rm plus a normal commit rather than history erasure. Re-encryption likewise adds a commit. Importantly yesno returns success without prompting when stdin is not a terminal, so the advertised confirmation is conditional even without --force; older encrypted history is not thereby revoked."
+url = "https://github.com/zx2c4/password-store/blob/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh"
+confidence = "medium"
 
 [[evidence]]
 target = "sovereignty"
@@ -61,8 +61,8 @@ confidence = "high"
 
 [[evidence]]
 target = "longevity"
-text = "Plain file layout and standard cryptography support preservation, with key custody as the critical condition."
-url = "https://www.passwordstore.org/"
+text = "E3 is not established for Pass's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+url = "https://github.com/zx2c4/password-store/blob/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh"
 confidence = "medium"
 
 [[evidence]]
@@ -73,8 +73,20 @@ confidence = "high"
 
 [[evidence]]
 target = "transparency"
-text = "The format and tooling are simple and inspectable, but operational secret-handling risks need scenario testing."
-url = "https://www.passwordstore.org/"
+text = "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+url = "https://github.com/zx2c4/password-store/blob/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh"
+confidence = "medium"
+
+[[evidence]]
+target = "E3"
+text = "Source delegates individual entry decryption to GPG, so the preserved files are not tied to a pass-only proprietary reader. However no corresponding private-key/trust/recipient environment was reconstructed or old encrypted history checked after recipient changes. The declared key and history recovery remains unverified."
+url = "https://github.com/zx2c4/password-store/blob/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh"
+confidence = "medium"
+
+[[evidence]]
+target = "E5"
+text = "Git-backed removal/re-encryption records normal commits rather than erasing old history, and the yes/no helper bypasses prompting on non-terminal input. These are important command/history boundaries, not complete evidence of effective secret-use/export, recipient-change and correction controls in the assessed configuration."
+url = "https://github.com/zx2c4/password-store/blob/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh"
 confidence = "medium"
 
 +++
@@ -85,6 +97,22 @@ confidence = "medium"
 
 **Documentation starting point:** <https://www.passwordstore.org/>
 
-**Preliminary desk assessment:** Pass is described as secrets live as individual gpg-encrypted files in a directory you control, with no third-party vault server. Its primary preservation surface is GPG-encrypted files in a plain directory, with independence shaped by git / syncthing (no commercial cloud). This is a useful lead for assessment, not a verified finding: version-pinned export, restoration, migration, offline, and consequential-behavior tests remain required. The current determination is **Insufficient evidence** until those observations are recorded.
+**Evidence update: 23 October 2026**
+
+- [x] Resolved: The show/edit paths directly call GPG decryption on individual .gpg entry files. Store recovery therefore depends on the corresponding decryption keys and GPG environment, not a pass-only proprietary reader. No synthetic key-restoration run is claimed. [Source](https://github.com/zx2c4/password-store/blob/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh).
+- [x] Resolved: Delete removes the working file and, in a Git-backed store, records git rm plus a normal commit rather than history erasure. Re-encryption likewise adds a commit. Importantly yesno returns success without prompting when stdin is not a terminal, so the advertised confirmation is conditional even without --force; older encrypted history is not thereby revoked. [Source](https://github.com/zx2c4/password-store/blob/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh).
+- [ ] Open: Actual private-key/trust recovery, prior-history decryption after recipient changes, importer completeness and observed offline behavior remain untested. E5 needs effective non-interactive/force, recipient-change, secret-use/export and historical-ciphertext recourse boundaries.
+
+**Assessment follow-up:** These bounded findings are incorporated into the evidence above. Eligibility and principle ratings are deliberately unchanged; their reconciliation and any blank-status fixes are deferred to the next pass. Reproduction details and retained inputs are in evidence/third-pass/batch-9/.
 
 **Human-readable criteria:** Can an administrator reproduce, inspect, recover, and operate the system from user-controlled configuration and packages without a vendor-controlled permission path?
+
+**Rating reconciliation: 24 October 2026**
+
+E3 and E5 remain **Not Verified** for the existing declared scope. Longevity and Transparency and Control are **Not assessed** pending their required minimums. This is a targeted evidence decision, not a finding that the product fails. Existing E1, E4 and Locality findings were not re-certified.
+
+**Remaining:** Actual private-key/trust recovery, prior-history decryption after recipient changes, importer completeness and observed offline behavior remain untested. E5 needs effective non-interactive/force, recipient-change, secret-use/export and historical-ciphertext recourse boundaries.
+
+**Next without installing locally:** Inspect a synthetic store with non-secret GPG test credentials, recipient policy and Git history, then obtain independently recorded key/trust restoration and approval/history behavior. Do not supply or use real private keys.
+
+The individual decision and provenance are retained in `evidence/rating-reconciliation/batch-9/`. Overall: **Insufficient evidence**.

@@ -31,7 +31,10 @@ function build(findings, elig = {}, opts = {}) {
   for (const e of fw.eligibility) {
     const status = elig[e.id] || elig.all || 'pass';
     a.eligibility[e.id].status = status;
-    if (withEvidence && status === 'pass') a.eligibility[e.id].evidence = EVIDENCE;
+    if (withEvidence && (status === 'pass' || status === 'fail')) {
+      a.eligibility[e.id].evidence = EVIDENCE;
+      a.eligibility[e.id].confidence = opts.confidence === undefined ? 'high' : opts.confidence;
+    }
     if (status === 'not_applicable') a.eligibility[e.id].justification = 'This requirement does not apply to this software.';
   }
   return a;
@@ -150,6 +153,22 @@ test('a failed requirement beside a principle marked Meets is flagged as inconsi
   assert.equal(consistent.inconsistencies.length, 0);
 });
 
+test('positive Sovereignty requires established E1, E2 and E4 minimums', () => {
+  for (const requirement of ['E1', 'E2', 'E4']) {
+    for (const finding of ['meets', 'partial']) {
+      const r = rate(build({ ...all('meets'), sovereignty: finding }, { [requirement]: 'not_verified' }));
+      assert.equal(r.determination.id, 'insufficient_evidence');
+      assert.equal(r.inconsistencies.length, 1);
+      assert.match(r.inconsistencies[0], new RegExp(requirement + ' is Not Verified while Sovereignty'));
+    }
+    const failed = rate(build({ ...all('meets'), sovereignty: 'partial' }, { [requirement]: 'fail' }));
+    assert.equal(failed.determination.id, 'fails_fundamental');
+    assert.equal(failed.inconsistencies.length, 1);
+    const unassessed = rate(build({ ...all('meets'), sovereignty: null }, { [requirement]: 'not_verified' }));
+    assert.deepEqual(unassessed.inconsistencies, []);
+  }
+});
+
 test('precedence: failure, then insufficient evidence, then meets, then partially aligned', () => {
   assert.equal(det(build({ ...all('meets'), locality: null }, { E1: 'fail', E2: 'not_verified' })), 'fails_fundamental');
   assert.equal(det(build({ ...all('partial'), locality: null }, { E2: 'not_verified' })), 'insufficient_evidence');
@@ -224,6 +243,7 @@ test('worked examples on the methodology page match the engine and are internall
     for (const e of fw.eligibility) {
       a.eligibility[e.id].status = ex.eligibility[e.id];
       a.eligibility[e.id].evidence = 'Hypothetical illustration for the methodology.';
+      a.eligibility[e.id].confidence = 'high';
     }
     const r = rate(a);
     assert.equal(r.determination.id, ex.expected, ex.name);
@@ -283,7 +303,7 @@ test('scripts/determine.js reports an entry and the whole Index', () => {
   const one = run('anki');
   assert.equal(one.status, 0, one.stderr);
   assert.match(one.stdout, /Determination: Insufficient evidence/);
-  assert.match(one.stdout, /Sovereignty: Meets/);
+  assert.match(one.stdout, /Sovereignty: Not assessed/);
   const every = run('--all');
   assert.equal(every.status, 0);
   assert.equal(every.stdout.trim().split('\n').length, loadEntries(fw).length);
@@ -300,4 +320,44 @@ test('the entry loader reads assessed front matter (tables and arrays of tables)
   assert.equal(p.evidence.length, 2);
   assert.equal(p.evidence[1].target, 'E1');
   assert.throws(() => parseToml('bad line', 'x'));
+});
+
+test('invalid requirement and principle values normalize without inventing a Pass', () => {
+  const { normalise } = require('../scripts/entries.js');
+  const entry = normalise('synthetic', { title: 'Synthetic', eligibility: { independent_recoverability: 'partial', consequential_oversight: 'meets' }, principles: { longevity: 'unknown' } }, fw);
+  assert.equal(entry.eligibility.independent_recoverability, 'not_verified');
+  assert.equal(entry.eligibility.consequential_oversight, 'not_verified');
+  assert.equal(entry.principles.longevity, null);
+});
+
+test('unsupported Pass or Fail never becomes an effective requirement finding', () => {
+  for (const status of ['pass', 'fail']) {
+    for (const property of ['evidence', 'confidence']) {
+      const a = build(all('meets'), { E3: status });
+      a.eligibility.E3[property] = property === 'evidence' ? '' : null;
+      const r = rate(a);
+      assert.equal(r.eligibility.detail.find(e => e.id === 'E3').effective, 'not_verified');
+      assert.equal(r.determination.id, 'insufficient_evidence');
+    }
+  }
+});
+
+test('positive Longevity and Transparency findings are flagged when E3/E5 are unverified', () => {
+  for (const [id, principle] of [['E3', 'longevity'], ['E5', 'transparency']]) {
+    for (const finding of ['meets', 'partial']) {
+      const r = rate(build({ ...all('meets'), [principle]: finding }, { [id]: 'not_verified' }));
+      assert.ok(r.inconsistencies.some(message => message.includes(id + ' is Not Verified')));
+    }
+    const r = rate(build({ ...all('meets'), [principle]: null }, { [id]: 'not_verified' }));
+    assert.deepEqual(r.inconsistencies, []);
+  }
+});
+
+
+test('failed E3/E5 cannot coexist silently with a partially positive dependent principle', () => {
+  for (const [id, principle] of [['E3', 'longevity'], ['E5', 'transparency']]) {
+    const r = rate(build({ ...all('meets'), [principle]: 'partial' }, { [id]: 'fail' }));
+    assert.equal(r.determination.id, 'fails_fundamental');
+    assert.ok(r.inconsistencies.some(message => message.includes(id + ' failed') && message.includes('Partially meets')));
+  }
 });

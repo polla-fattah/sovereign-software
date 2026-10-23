@@ -5,11 +5,12 @@ summary = "Non-destructive raw photography workflow that leaves original files u
 substrate = "Immutable RAW + ISO Standard .xmp Sidecars"
 sync_model = "Local Disk Hierarchy"
 extract_cmd = "darktable-cli image.RAW image.RAW.xmp export.jpg"
-limitations = ["Sidecar files do not hold all library metadata; for example, custom sort order is not stored there."]
+limitations = ["XMP parameters contain versioned module-specific binary data. Decoding their bytes does not reproduce the image or preserve every database-only library field."]
 pilot_stage = 4
 assessment_status = "complete"
-assessment_date = "2026-10-22"
-version_assessed = "Documentation review; release not pinned"
+assessment_date = "2026-10-24"
+version_assessed = "Source commit 6556cd7dbb0e69f95d165dda8b69e7270c327f6d; XMP benchmark fixture and parameter encoder/decoder inspected; no image rendering"
+assessment_notes = "Individually reconciled in rating batch 5 on 24 October 2026. E3/E5 remain Not Verified for explicit missing coverage; dependent unsupported findings corrected. Previously resolved questions are retained, not counted again. E1/E4/Locality were not re-certified by this targeted review."
 
 [eligibility]
 independent_data_access = "pass"
@@ -19,16 +20,13 @@ retained_control = "pass"
 consequential_oversight = "not_verified"
 
 [principles]
-sovereignty = "partial"
-longevity = "partial"
 locality = "meets"
-transparency = "partial"
 
 [[evidence]]
 target = "E1"
-text = "darktable keeps original images untouched and documents XMP and DTDATA sidecars for edits and metadata."
-url = "https://docs.darktable.org/usermanual/development/en/overview/sidecar-files/sidecar/"
-confidence = "medium"
+text = "Resolved: standard XML parsing of the retained darktable-bench-4.2.xmp fixture exposed 69 history entries with operation names and module versions. The fixture contains inspectable edit structure beyond a preview; the result is scoped to this historical sidecar."
+url = "https://github.com/darktable-org/darktable/blob/6556cd7dbb0e69f95d165dda8b69e7270c327f6d/src/tests/benchmark/darktable-bench-4.2.xmp"
+confidence = "high"
 
 [[evidence]]
 target = "E2"
@@ -38,8 +36,8 @@ confidence = "medium"
 
 [[evidence]]
 target = "E3"
-text = "The manual warns that both sidecars and database/configuration files matter for full restoration; a clean restore was not performed."
-url = "https://docs.darktable.org/usermanual/development/en/preferences-settings/backups/"
+text = "Resolved: the pinned source specifies hex encoding or a gz prefix plus a two-digit compression factor and Base64/zlib payload. Standard Python decoded and hashed 160 parameter/mask blocks, including 95 compressed blocks. Module semantics, image reproduction, and complete library recovery remain unverified."
+url = "https://github.com/darktable-org/darktable/blob/6556cd7dbb0e69f95d165dda8b69e7270c327f6d/src/common/exif.cc#L3649-L3785"
 confidence = "medium"
 
 [[evidence]]
@@ -56,14 +54,14 @@ confidence = "medium"
 
 [[evidence]]
 target = "sovereignty"
-text = "Originals and sidecars remain under user control, but the complete library state is split across files and databases."
-url = "https://docs.darktable.org/usermanual/development/en/overview/sidecar-files/sidecar/"
+text = "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Darktable does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+url = "https://github.com/darktable-org/darktable/blob/6556cd7dbb0e69f95d165dda8b69e7270c327f6d/src/common/exif.cc#L3649-L3785"
 confidence = "medium"
 
 [[evidence]]
 target = "longevity"
-text = "Sidecars and raw originals support preservation, but DTDATA, database records, settings, and version compatibility create recovery limits."
-url = "https://docs.darktable.org/usermanual/development/en/preferences-settings/backups/"
+text = "E3 is not established for Darktable's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+url = "https://github.com/darktable-org/darktable/blob/6556cd7dbb0e69f95d165dda8b69e7270c327f6d/src/common/exif.cc#L3649-L3785"
 confidence = "medium"
 
 [[evidence]]
@@ -74,9 +72,22 @@ confidence = "medium"
 
 [[evidence]]
 target = "transparency"
-text = "Non-destructive edits are represented in sidecars, but database/sidecar precedence can make changes surprising without careful configuration."
+text = "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
 url = "https://docs.darktable.org/usermanual/development/en/overview/sidecar-files/sidecar/"
 confidence = "medium"
+
+[[evidence]]
+target = "E3"
+text = "The historical XMP history and 160 decoded parameter/mask blocks are independently inspectable, but module-version semantics and equivalent image reconstruction were not recovered. Original images, library organization, database/sidecar precedence and DTDATA-dependent meaning remain outside the observed fixture coverage."
+url = "https://github.com/darktable-org/darktable/blob/6556cd7dbb0e69f95d165dda8b69e7270c327f6d/src/common/exif.cc#L3649-L3785"
+confidence = "medium"
+
+[[evidence]]
+target = "E5"
+text = "Inspectable non-destructive history is positive evidence, but it does not establish effective sidecar/database conflict precedence, original/export overwrite protection, deletion authority or available correction across the library and editing workflow."
+url = "https://docs.darktable.org/usermanual/development/en/overview/sidecar-files/sidecar/"
+confidence = "medium"
+
 +++
 
 **Verification scenario:** Rebuild edits from RAW plus XMP and database data on a clean machine; test duplicates, tags, sorting, and sidecar settings.
@@ -85,6 +96,22 @@ confidence = "medium"
 
 **Documentation starting point:** <https://docs.darktable.org/usermanual/development/en/overview/sidecar-files/sidecar/>
 
-**Preliminary desk assessment:** Darktable is described as non-destructive raw photography workflow that leaves original files unchanged and stores edits in xmp sidecar files and a library database. Its primary preservation surface is Immutable RAW + ISO Standard .xmp Sidecars, with independence shaped by local disk hierarchy. This is a useful lead for assessment, not a verified finding: version-pinned export, restoration, migration, offline, and consequential-behavior tests remain required. The current determination is **Insufficient evidence** until those observations are recorded.
+**Assessment update, 23 October 2026:**
+
+- [x] Resolved: The actual XMP fixture exposes 69 history entries, operation names, and module versions without darktable.
+- [x] Resolved: The parameter encoding is available and decodable: 160 parameter/mask blocks, including 95 compressed blocks, were decoded and hashed.
+- [ ] Open: Module-specific semantics, image render equivalence, DTDATA, complete library organization, and database/version recovery. E5 needs database/sidecar conflict policy, deletion/export overwrite safeguards and usable correction records.
+
+**Assessment:** Independent inspection establishes structural and byte-level access to the selected sidecar. It does not establish equivalent editing in another application or a full library restore. The overall determination remains **Insufficient evidence**.
 
 **Human-readable criteria:** Can a creator archive source material and editable state, reopen the project after version changes, and export important work in interoperable formats?
+
+**Rating reconciliation: 24 October 2026**
+
+E3 and E5 remain **Not Verified** for the existing declared scope. Longevity and Transparency and Control are **Not assessed** pending their required minimums. Sovereignty is also **Not assessed** because the required access/exit/custody minimums are not all established. This is a targeted evidence decision, not a finding that the product fails. Existing E1, E4 and Locality findings were not re-certified.
+
+**Remaining:** Module-specific semantics, image render equivalence, DTDATA, complete library organization, and database/version recovery. E5 needs database/sidecar conflict policy, deletion/export overwrite safeguards and usable correction records.
+
+**Next without installing locally:** Acquire a synthetic RAW/sidecar/library packet with expected module/history/organization and reference renders; compare records with existing parsers and obtain matching primary-source or external deletion/overwrite/conflict evidence.
+
+The individual decision and provenance are retained in `evidence/rating-reconciliation/batch-5/`. Overall: **Insufficient evidence**.

@@ -5,22 +5,22 @@ summary = "Note-taking application that stores notes as plain Markdown files in 
 substrate = "Markdown files in a user-chosen folder"
 sync_model = "Local folder with optional Nextcloud or ownCloud sync"
 extract_cmd = "grep -rl \"keyword\" ~/Notes"
+limitations = ["Tag/trash associations have database state that is not demonstrated recoverable from note text alone.","Confirmation code is present, but effective settings and recoverability remain untested."]
 assessment_status = "complete"
-assessment_date = "2026-10-22"
-version_assessed = "Documentation review; release not pinned"
+assessment_date = "2026-10-23"
+version_assessed = "Source commit 21b4d8554828bf77f89be5b25da7a6722ebc7b8f"
+assessment_notes = "Rating reconciliation batch 1: E3 Not Verified; E5 Not Verified. Longevity Not assessed; Transparency and Control Not assessed. See the declared scope and reasons below; earlier bounded evidence findings remain recorded."
 
 [eligibility]
 independent_data_access = "pass"
 practical_exit = "pass"
-independent_recoverability = "partial"
+independent_recoverability = "not_verified"
 retained_control = "pass"
 consequential_oversight = "not_verified"
 
 [principles]
 sovereignty = "meets"
-longevity = "meets"
 locality = "meets"
-transparency = "partial"
 
 [[evidence]]
 target = "E1"
@@ -36,8 +36,8 @@ confidence = "high"
 
 [[evidence]]
 target = "E3"
-text = "Notes are independently readable, but attachments, app metadata, scripts, and history were not restored independently."
-url = "https://next.qownnotes.org/getting-started/concept.html"
+text = "The database schema defines tag records with parent_id, noteTagLink records keyed by tag_id, note filename and subfolder path, and trashItem metadata. Tags and their associations therefore have explicit database state beyond Markdown note text. Copying only note files cannot be assumed to preserve this state; no populated database or missing-database reconstruction was tested."
+url = "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/services/databaseservice.cpp"
 confidence = "medium"
 
 [[evidence]]
@@ -48,9 +48,9 @@ confidence = "high"
 
 [[evidence]]
 target = "E5"
-text = "Note-taking is user-directed, but scripts, sync conflicts, and attachment correction workflows were not assessed."
-url = "https://next.qownnotes.org/getting-started/concept.html"
-confidence = "low"
+text = "The inspected note-removal path asks about backlinks when relevant and checks a user-question result before invoking note.remove(true). Bulk deletion separately warns that selected folders' files and subfolders will be removed. This establishes application-level confirmation branches, not universal prompting under saved dialog preferences or successful local/server trash restoration."
+url = "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/managers/noteoperationsmanager.cpp"
+confidence = "medium"
 
 [[evidence]]
 target = "sovereignty"
@@ -60,8 +60,8 @@ confidence = "high"
 
 [[evidence]]
 target = "longevity"
-text = "Markdown is durable and human-readable, while app-specific metadata and attachments need preservation procedures."
-url = "https://qownnotes.com/"
+text = "E3 remains Not Verified for the existing essential-record scope. The methodology requires established E3 before a positive Longevity finding, so the earlier positive rating is withdrawn pending recovery evidence; source/format strengths are retained as facts, not graded as a failure."
+url = "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/services/databaseservice.cpp"
 confidence = "medium"
 
 [[evidence]]
@@ -72,12 +72,53 @@ confidence = "high"
 
 [[evidence]]
 target = "transparency"
-text = "The project explains its plain-file model and synchronization limits, but extensions and history require testing."
-url = "https://next.qownnotes.org/getting-started/concept.html"
-confidence = "high"
+text = "E5 remains Not Verified. The methodology's Partially meets threshold requires demonstrated minimum oversight, so the earlier positive Transparency and Control finding is withdrawn rather than retained on the strength of one documented control. This is Not assessed, not Does not meet."
+url = "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/managers/noteoperationsmanager.cpp"
+confidence = "medium"
+
+[[evidence]]
+target = "E3"
+text = "The retained schema places hierarchical tags, note-tag associations and trash metadata outside Markdown prose. A populated database/native-folder recovery and relationship reconstruction have not been demonstrated. This is an incomplete essential-record preservation check, not a reason to infer a failure or promote the invalid partial value."
+url = "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/services/databaseservice.cpp"
+confidence = "medium"
+
+[[evidence]]
+target = "E5"
+text = "The retained note-removal implementation has backlink and bulk-folder confirmation branches, but saved dialog preferences, local/server trash restoration, other deletion modes and concurrent edits remain unverified. This closes a control-implementation question without establishing risk-appropriate authorization and correction for the whole assessed workflow."
+url = "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/managers/noteoperationsmanager.cpp"
+confidence = "medium"
 
 +++
 
-**Preliminary desk assessment:** QOwnNotes is described as note-taking application that stores notes as plain markdown files in a folder, with optional nextcloud integration. Its primary preservation surface is Markdown files in a user-chosen folder, with independence shaped by local folder with optional nextcloud or owncloud sync. This is a useful lead for assessment, not a verified finding: version-pinned export, restoration, migration, offline, and consequential-behavior tests remain required. The current determination is **Insufficient evidence** until those observations are recorded.
+**Evidence update: 23 October 2026**
+
+- [x] Resolved: The database schema defines tag records with parent_id, noteTagLink records keyed by tag_id, note filename and subfolder path, and trashItem metadata. Tags and their associations therefore have explicit database state beyond Markdown note text. Copying only note files cannot be assumed to preserve this state; no populated database or missing-database reconstruction was tested. [Source](https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/services/databaseservice.cpp).
+- [x] Resolved: The inspected note-removal path asks about backlinks when relevant and checks a user-question result before invoking note.remove(true). Bulk deletion separately warns that selected folders' files and subfolders will be removed. This establishes application-level confirmation branches, not universal prompting under saved dialog preferences or successful local/server trash restoration. [Source](https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/managers/noteoperationsmanager.cpp).
+- [ ] Open: A complete notes.sqlite/native-folder move and tag reconstruction, Markdown export loss, actual trash recovery and deletion modes, simultaneous edits, network settings and older versions.
+
+**Assessment follow-up:** E3/E5 and their associated principle findings are now reconciled in rating batch 1 below. Earlier source/fixture observations remain valid within their stated scope; they are not themselves blanket Pass decisions.
 
 **Human-readable criteria:** Can a person preserve content, structure, links, metadata, and history in an independently readable form, then restore and edit it without a vendor account?
+
+## Rating reconciliation: 23 October 2026
+
+**Scope:** The existing source-pinned application scope; no new application execution. Individual-custodian perspective. The existing broad preservation/workflow scope is retained, rather than narrowed to the one successfully inspected source path.
+
+| Criterion | Current finding |
+|---|---|
+| E3 Independent interpretation and recovery | Not Verified |
+| E5 Governability of consequential actions | Not Verified |
+| Longevity | Not assessed |
+| Transparency and Control | Not assessed |
+
+**E3:** The retained schema places hierarchical tags, note-tag associations and trash metadata outside Markdown prose. A populated database/native-folder recovery and relationship reconstruction have not been demonstrated. This is an incomplete essential-record preservation check, not a reason to infer a failure or promote the invalid partial value.
+
+**E5:** The retained note-removal implementation has backlink and bulk-folder confirmation branches, but saved dialog preferences, local/server trash restoration, other deletion modes and concurrent edits remain unverified. This closes a control-implementation question without establishing risk-appropriate authorization and correction for the whole assessed workflow.
+
+**longevity:** E3 remains Not Verified for the existing essential-record scope. The methodology requires established E3 before a positive Longevity finding, so the earlier positive rating is withdrawn pending recovery evidence; source/format strengths are retained as facts, not graded as a failure.
+
+**transparency:** E5 remains Not Verified. The methodology's Partially meets threshold requires demonstrated minimum oversight, so the earlier positive Transparency and Control finding is withdrawn rather than retained on the strength of one documented control. This is Not assessed, not Does not meet.
+
+**Evidence record:** evidence/rating-reconciliation/batch-1/README.md and runtime-results.json. No target software was installed. Source inspections remain source inspections; no application-level recovery or destructive action was executed.
+
+**Remaining work:** The existing open recovery and consequential-action scenarios remain pending; the individually explained E3/E5 blockers above determine the current Not Verified and Not assessed findings.

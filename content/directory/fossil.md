@@ -6,9 +6,11 @@ substrate = "Single Standalone SQLite Database File"
 sync_model = "Peer-to-peer HTTP/SSH sync"
 extract_cmd = "fossil ui repository.fossil"
 pilot_stage = 5
+limitations = ["Pinned source inspection, not application execution.","Full repository restoration, private/shunned artifacts, account/settings coverage and real purge recovery remain untested."]
 assessment_status = "complete"
-assessment_date = "2026-10-22"
-version_assessed = "Documentation review; release not pinned"
+assessment_date = "2026-10-23"
+version_assessed = "Pinned source 9f1ea15e06b9be018175d231a939d19372fd4b8b"
+assessment_notes = "Rating reconciliation batch 1: E3 Not Verified; E5 Not Verified. Longevity Not assessed; Transparency and Control Not assessed. See the declared scope and reasons below; earlier bounded evidence findings remain recorded."
 
 [eligibility]
 independent_data_access = "pass"
@@ -19,9 +21,7 @@ consequential_oversight = "not_verified"
 
 [principles]
 sovereignty = "meets"
-longevity = "partial"
 locality = "meets"
-transparency = "partial"
 
 [[evidence]]
 target = "E1"
@@ -37,8 +37,8 @@ confidence = "medium"
 
 [[evidence]]
 target = "E3"
-text = "The repository is SQLite-backed and Fossil documents backup and restore, but clones do not necessarily contain every remote configuration or private artifact."
-url = "https://fossil-scm.org/home/doc/trunk/www/backup.md"
+text = "The pinned export implementation limits --git export to check-ins, excluding tickets, wiki, technical notes and attachments. Git migration cannot replace a complete Fossil repository backup."
+url = "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/export.c"
 confidence = "medium"
 
 [[evidence]]
@@ -49,8 +49,8 @@ confidence = "medium"
 
 [[evidence]]
 target = "E5"
-text = "Distributed history and local repository state are inspectable, but sync omissions, private branches, and configuration drift require explicit operational review."
-url = "https://fossil-scm.org/home/doc/trunk/www/backup.md"
+text = "Purge retains removed artifacts in local purgeevent/purgeitem graveyard tables, with undo and --explain/--dry-run. Obliterate removes that recovery path and prompts unless --force bypasses confirmation. These graveyard tables are not synchronized."
+url = "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/purge.c"
 confidence = "medium"
 
 [[evidence]]
@@ -61,8 +61,8 @@ confidence = "medium"
 
 [[evidence]]
 target = "longevity"
-text = "Repository history is durable, but Fossil’s own documentation warns that ordinary clones are incomplete backups for some data."
-url = "https://fossil-scm.org/home/doc/trunk/www/backup.md"
+text = "E3 remains Not Verified for the existing essential-record scope. The methodology requires established E3 before a positive Longevity finding, so the earlier positive rating is withdrawn pending recovery evidence; source/format strengths are retained as facts, not graded as a failure."
+url = "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/export.c"
 confidence = "medium"
 
 [[evidence]]
@@ -73,9 +73,21 @@ confidence = "medium"
 
 [[evidence]]
 target = "transparency"
-text = "The single-file and command-line model is inspectable, but sync and configuration exceptions can create hidden divergence without careful backup procedures."
-url = "https://fossil-scm.org/home/doc/trunk/www/backup.md"
+text = "E5 remains Not Verified. The methodology's Partially meets threshold requires demonstrated minimum oversight, so the earlier positive Transparency and Control finding is withdrawn rather than retained on the strength of one documented control. This is Not assessed, not Does not meet."
+url = "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/purge.c"
 confidence = "medium"
+[[evidence]]
+target = "E3"
+text = "The retained source proves Git export omits wiki, tickets, technical notes and attachments, but that is a limitation of this exit route, not proof that native Fossil recovery fails. Complete native restoration of artifacts, accounts, settings, private/shunned content and attachments has not been demonstrated. E3 therefore remains Not Verified."
+url = "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/export.c"
+confidence = "medium"
+
+[[evidence]]
+target = "E5"
+text = "Purge preview, local graveyard undo and obliterate confirmation are positively established by source inspection. They do not cover the full consequential-operation surface: synchronization/configuration propagation, shunning/rebuild and effective recovery have not been sufficiently established. A guarded purge routine alone does not establish whole-scope E5."
+url = "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/purge.c"
+confidence = "medium"
+
 +++
 
 **Verification scenario:** Clone a repository, transfer wiki, tickets, users, and attachments, and operate without the origin server.
@@ -84,6 +96,35 @@ confidence = "medium"
 
 **Documentation starting point:** <https://fossil-scm.org/home/doc/trunk/www/index.wiki>
 
-**Preliminary desk assessment:** Fossil SCM is described as engineered by the creator of sqlite. packages version control, tickets, bug tracking, and wiki documentation into one durable sqlite file that runs an instant local web ui that works offline. Its primary preservation surface is Single Standalone SQLite Database File, with independence shaped by peer-to-peer http/ssh sync. This is a useful lead for assessment, not a verified finding: version-pinned export, restoration, migration, offline, and consequential-behavior tests remain required. The current determination is **Insufficient evidence** until those observations are recorded.
+**Evidence update: 23 October 2026**
+
+- [x] Resolved: The pinned export implementation limits --git export to check-ins, excluding tickets, wiki, technical notes and attachments. Git migration cannot replace a complete Fossil repository backup. [Source](https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/export.c).
+- [x] Resolved: Purge retains removed artifacts in local purgeevent/purgeitem graveyard tables, with undo and --explain/--dry-run. Obliterate removes that recovery path and prompts unless --force bypasses confirmation. These graveyard tables are not synchronized. [Source](https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/purge.c).
+- [ ] Open: Full repository restoration, private/shunned artifacts, account/settings coverage and real purge recovery remain untested.
+
+**Assessment follow-up:** E3/E5 and their associated principle findings are now reconciled in rating batch 1 below. Earlier source/fixture observations remain valid within their stated scope; they are not themselves blanket Pass decisions.
 
 **Human-readable criteria:** Can users retain complete history and metadata, operate and recover locally, migrate to another implementation, and understand the effects of synchronization or automation?
+
+## Rating reconciliation: 23 October 2026
+
+**Scope:** The existing source-pinned application scope; no new application execution. Individual-custodian perspective. The existing broad preservation/workflow scope is retained, rather than narrowed to the one successfully inspected source path.
+
+| Criterion | Current finding |
+|---|---|
+| E3 Independent interpretation and recovery | Not Verified |
+| E5 Governability of consequential actions | Not Verified |
+| Longevity | Not assessed |
+| Transparency and Control | Not assessed |
+
+**E3:** The retained source proves Git export omits wiki, tickets, technical notes and attachments, but that is a limitation of this exit route, not proof that native Fossil recovery fails. Complete native restoration of artifacts, accounts, settings, private/shunned content and attachments has not been demonstrated. E3 therefore remains Not Verified.
+
+**E5:** Purge preview, local graveyard undo and obliterate confirmation are positively established by source inspection. They do not cover the full consequential-operation surface: synchronization/configuration propagation, shunning/rebuild and effective recovery have not been sufficiently established. A guarded purge routine alone does not establish whole-scope E5.
+
+**longevity:** E3 remains Not Verified for the existing essential-record scope. The methodology requires established E3 before a positive Longevity finding, so the earlier positive rating is withdrawn pending recovery evidence; source/format strengths are retained as facts, not graded as a failure.
+
+**transparency:** E5 remains Not Verified. The methodology's Partially meets threshold requires demonstrated minimum oversight, so the earlier positive Transparency and Control finding is withdrawn rather than retained on the strength of one documented control. This is Not assessed, not Does not meet.
+
+**Evidence record:** evidence/rating-reconciliation/batch-1/README.md and runtime-results.json. No target software was installed. Source inspections remain source inspections; no application-level recovery or destructive action was executed.
+
+**Remaining work:** The existing open recovery and consequential-action scenarios remain pending; the individually explained E3/E5 blockers above determine the current Not Verified and Not assessed findings.

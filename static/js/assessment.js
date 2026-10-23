@@ -138,7 +138,11 @@
         if (trimLen(en.justification) === 0) { effective = 'not_verified'; reason = 'Not Applicable needs a documented justification'; }
         else notApplicable.push(e.id);
       }
-      if ((status === 'pass' || status === 'fail') && en.confidence === 'low') { effective = 'not_verified'; reason = 'Low confidence cannot establish a Pass or a Fail'; }
+      if (status === 'pass' || status === 'fail') {
+        if (trimLen(en.evidence) === 0) { effective = 'not_verified'; reason = 'Pass or Fail needs a recorded evidence statement'; }
+        else if (en.confidence === 'low') { effective = 'not_verified'; reason = 'Low confidence cannot establish a Pass or a Fail'; }
+        else if (en.confidence !== 'medium' && en.confidence !== 'high') { effective = 'not_verified'; reason = 'Pass or Fail needs stated Medium or High confidence'; }
+      }
       if (effective === 'fail') failures.push(e.id);
       if (effective === 'not_verified') unverified.push(e.id);
       return { id: e.id, title: e.title, status: status, effective: effective, reason: reason };
@@ -198,6 +202,12 @@
     fw.eligibility.forEach(function (e) {
       var c = profile.filter(function (x) { return x.id === e.principle; })[0];
       if (failures.indexOf(e.id) >= 0 && c && c.finding === 'meets') inconsistencies.push(e.id + ' failed while ' + c.name + ' is marked Meets. Correct the assessment before publishing.');
+      if ((e.principle === 'sovereignty' || e.id === 'E3' || e.id === 'E5') && failures.indexOf(e.id) >= 0 && c && c.finding === 'partial') {
+        inconsistencies.push(e.id + ' failed while ' + c.name + ' is marked Partially meets. A positive finding requires the established minimum.');
+      }
+      if ((e.principle === 'sovereignty' || e.id === 'E3' || e.id === 'E5') && unverified.indexOf(e.id) >= 0 && c && (c.finding === 'meets' || c.finding === 'partial')) {
+        inconsistencies.push(e.id + ' is Not Verified while ' + c.name + ' has a positive finding. Reconcile the evidence and requirement before publishing.');
+      }
     });
     var warnings = inconsistencies.slice();
     if (notApplicable.length) warnings.push('Requirements marked Not Applicable: ' + notApplicable.join(', ') + '. This is valid only when they genuinely do not apply.');

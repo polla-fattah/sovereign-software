@@ -3,9 +3,21 @@
 {{- $p := .Params -}}
 {{- $fw := hugo.Data.framework -}}
 {{- $elig := dict -}}
-{{- range $fw.eligibility -}}{{- $elig = merge $elig (dict .key (index (default dict $p.eligibility) .key | default "not_verified")) -}}{{- end -}}
+{{- $validStatuses := slice -}}
+{{- range $fw.eligibilityStatuses -}}{{- $validStatuses = $validStatuses | append .id -}}{{- end -}}
+{{- range $fw.eligibility -}}
+  {{- $status := index (default dict $p.eligibility) .key | default "not_verified" -}}
+  {{- if not (in $validStatuses $status) -}}{{- $status = "not_verified" -}}{{- end -}}
+  {{- $elig = merge $elig (dict .key $status) -}}
+{{- end -}}
 {{- $prin := dict -}}
-{{- range $fw.principles -}}{{- $prin = merge $prin (dict .id (index (default dict $p.principles) .id)) -}}{{- end -}}
+{{- $validFindings := slice -}}
+{{- range $fw.findingLevels -}}{{- $validFindings = $validFindings | append .id -}}{{- end -}}
+{{- range $fw.principles -}}
+  {{- $finding := index (default dict $p.principles) .id -}}
+  {{- if not (in $validFindings $finding) -}}{{- $finding = false -}}{{- end -}}
+  {{- $prin = merge $prin (dict .id (cond (eq $finding false) nil $finding)) -}}
+{{- end -}}
 {{- $complete := eq $p.assessment_status "complete" -}}
 {{- return (dict
   "id" .File.ContentBaseName

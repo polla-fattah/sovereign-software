@@ -8,8 +8,9 @@ extract_cmd = "unzip -p model.FCStd Document.xml | head -n 20"
 limitations = ["Project interpretation depends on the application version and workbench."]
 assessment_batch = "B"
 assessment_status = "complete"
-assessment_date = "2026-10-22"
-version_assessed = "Documentation review; release not pinned"
+assessment_date = "2026-10-24"
+version_assessed = "Source commit d48752f2851906f93e060cc996ba9fba1e5a05f8 and retained PadTest.fcstd fixture; no CAD execution"
+assessment_notes = "Individually reconciled in rating batch 4 on 24 October 2026. E3/E5 remain Not Verified for explicit missing coverage; dependent unsupported findings corrected. Previously resolved questions are retained, not counted again. E1/E4/Locality were not re-certified by this targeted review."
 
 [eligibility]
 independent_data_access = "pass"
@@ -19,16 +20,13 @@ retained_control = "pass"
 consequential_oversight = "not_verified"
 
 [principles]
-sovereignty = "partial"
-longevity = "partial"
 locality = "meets"
-transparency = "partial"
 
 [[evidence]]
 target = "E1"
-text = "FreeCAD saves local FCStd documents and supports many import/export formats including STEP, IGES, STL, DXF, and IFC."
-url = "https://www.freecad.org/features.php?lang=en-UNIVERSALITSOLUTIONS"
-confidence = "medium"
+text = "Resolved: standard ZIP/XML tools opened PadTest.fcstd and parsed its Document.xml. Thirteen named typed objects, including sketches, pads, and a body, are visible alongside typed Constraints, Length, Support, and link properties. Shape payloads and GUI data are separate members. No geometry was reconstructed."
+url = "https://github.com/FreeCAD/FreeCAD/blob/d48752f2851906f93e060cc996ba9fba1e5a05f8/data/tests/PadTest.fcstd"
+confidence = "high"
 
 [[evidence]]
 target = "E2"
@@ -38,8 +36,8 @@ confidence = "medium"
 
 [[evidence]]
 target = "E3"
-text = "The FCStd file is a zip-based compound format, but the full document structure and version recovery path were not independently restored."
-url = "https://www.freecad.org/manual/a-freecad-manual.pdf"
+text = "Resolved: saveToFile writes Document.xml and other payloads with a ZIP writer; with backup policy enabled it uses a temporary filename and BackupPolicy, including count and timestamped naming preferences. Effective user settings, crash durability, full reconstruction, and version recovery remain unverified."
+url = "https://github.com/FreeCAD/FreeCAD/blob/d48752f2851906f93e060cc996ba9fba1e5a05f8/src/App/Document.cpp#L1968-L2106"
 confidence = "medium"
 
 [[evidence]]
@@ -56,14 +54,14 @@ confidence = "medium"
 
 [[evidence]]
 target = "sovereignty"
-text = "Local FCStd files and broad exports support custody, but editable migration may lose parametric meaning."
-url = "https://www.freecad.org/features.php?lang=en-UNIVERSALITSOLUTIONS"
+text = "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for FreeCAD does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+url = "https://github.com/FreeCAD/FreeCAD/blob/d48752f2851906f93e060cc996ba9fba1e5a05f8/src/App/Document.cpp#L1968-L2106"
 confidence = "medium"
 
 [[evidence]]
 target = "longevity"
-text = "A zip-based format and open exports help preservation, but the complete FCStd structure is application-specific."
-url = "https://www.freecad.org/manual/a-freecad-manual.pdf"
+text = "E3 is not established for FreeCAD's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+url = "https://github.com/FreeCAD/FreeCAD/blob/d48752f2851906f93e060cc996ba9fba1e5a05f8/src/App/Document.cpp#L1968-L2106"
 confidence = "medium"
 
 [[evidence]]
@@ -74,9 +72,22 @@ confidence = "medium"
 
 [[evidence]]
 target = "transparency"
-text = "The model tree and Python layers are inspectable, but dependency and workbench behavior remain partly unverified."
+text = "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
 url = "https://www.freecad.org/features.php?lang=en-UNIVERSALITSOLUTIONS"
 confidence = "medium"
+
+[[evidence]]
+target = "E3"
+text = "Independent ZIP/XML inspection exposes typed sketches, pads and constraints, but separate shape payloads were not interpreted into equivalent geometry or engineering intent. Temporary-save/backup policy source is conditional. Units, constraints, external references and compatible reconstruction remain incomplete for the original CAD profile."
+url = "https://github.com/FreeCAD/FreeCAD/blob/d48752f2851906f93e060cc996ba9fba1e5a05f8/src/App/Document.cpp#L1968-L2106"
+confidence = "medium"
+
+[[evidence]]
+target = "E5"
+text = "A document tree and Python interface make some operations inspectable, and save backup policy is visible in source. They do not establish workbench/script authorization, transaction/undo scope, geometry-changing effects or reliable correction after destructive save/recompute across the declared model."
+url = "https://www.freecad.org/features.php?lang=en-UNIVERSALITSOLUTIONS"
+confidence = "medium"
+
 +++
 
 **Primary investigation:** Preservation of editable engineering intent, not only final geometry.
@@ -101,6 +112,22 @@ confidence = "medium"
 
 **Two-assessor protocol scope note:** Pre-registered under the `cad_engineering` domain profile. Both assessors evaluate whether exported STEP/BREP and native `.FCStd` XML preserve units, tolerances, and editable feature trees across versions.
 
-**Preliminary desk assessment:** FreeCAD is described as parametric 3d cad modeller with a python interface, with project files that are zip archives. Its primary preservation surface is Project archive (.FCStd, a zip containing Document.xml and shapes), with independence shaped by local desktop application; version control via external tools. This is a useful lead for assessment, not a verified finding: version-pinned export, restoration, migration, offline, and consequential-behavior tests remain required. The current determination is **Insufficient evidence** until those observations are recorded.
+**Assessment update, 23 October 2026:**
+
+- [x] Resolved: the retained FCStd parses independently as ZIP/XML and exposes 13 typed objects with named engineering properties.
+- [x] Resolved: save/backup handling is available in the inspected implementation, including temporary-file writing and configurable backup policy.
+- [ ] Open: units/constraint semantics, geometry reconstruction, STEP loss, external dependencies, version compatibility, and crash recovery. E5 needs script/workbench execution control, transaction/undo boundaries and destructive save/recompute correction evidence.
+
+**Assessment:** Direct artifact inspection establishes structural access, while source inspection establishes the save/backup design. Complete engineering recovery remains Not Verified; the overall determination remains **Insufficient evidence**.
 
 **Human-readable criteria:** Can an independent party preserve the source model, units, dependencies, and editable structure, reproduce the result, and exchange it without losing important design meaning?
+
+**Rating reconciliation: 24 October 2026**
+
+E3 and E5 remain **Not Verified** for the existing declared scope. Longevity and Transparency and Control are **Not assessed** pending their required minimums. Sovereignty is also **Not assessed** because the required access/exit/custody minimums are not all established. This is a targeted evidence decision, not a finding that the product fails. Existing E1, E4 and Locality findings were not re-certified.
+
+**Remaining:** units/constraint semantics, geometry reconstruction, STEP loss, external dependencies, version compatibility, and crash recovery. E5 needs script/workbench execution control, transaction/undo boundaries and destructive save/recompute correction evidence.
+
+**Next without installing locally:** Inspect a synthetic FCStd plus dependency and expected units/constraint/geometry manifest, with independent geometry comparisons supplied upstream or by another assessor. Add pinned transaction/script/save-control evidence without executing CAD locally.
+
+The individual decision and provenance are retained in `evidence/rating-reconciliation/batch-4/`. Overall: **Insufficient evidence**.

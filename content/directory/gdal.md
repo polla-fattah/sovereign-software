@@ -5,27 +5,26 @@ summary = "Library and command-line tools for reading, converting, and inspectin
 substrate = "Open geospatial formats through a translation library"
 sync_model = "Local command-line tools"
 extract_cmd = "ogrinfo -so data.gpkg"
+limitations = ["Source/retained-input inspection only; no installation or application restore performed.","Driver-specific lossy conversion, geometry fidelity, actual overwrite behavior, sidecar-removal comparison and cross-version compatibility remain untested."]
 assessment_status = "complete"
-assessment_date = "2026-10-22"
-version_assessed = "Documentation review; release not pinned"
+assessment_date = "2026-10-24"
+version_assessed = "Pinned evidence 0e24e0288164b5237df0aeb82ab742909e719479"
+assessment_notes = "Individually reconciled in rating batch 10 on 24 October 2026. E3/E5 remain Not Verified for explicit missing coverage; dependent unsupported findings corrected. Previously resolved questions are retained, not counted again. E1/E4/Locality were not re-certified by this targeted review."
 
 [eligibility]
 independent_data_access = "pass"
-practical_exit = "pass"
+practical_exit = "not_verified"
 independent_recoverability = "not_verified"
 retained_control = "pass"
 consequential_oversight = "not_verified"
 
 [principles]
-sovereignty = "meets"
-longevity = "partial"
 locality = "meets"
-transparency = "meets"
 
 [[evidence]]
 target = "E1"
-text = "GDAL provides command-line and library tools to inspect and translate raster and vector datasets."
-url = "https://gdal.org/en/"
+text = "The PAM implementation explicitly loads/saves .aux.xml alongside the dataset, or in a configured proxy directory, for metadata unsupported by the driver format. Copying only a raster can therefore omit separately stored metadata; the dataset's file list is a better preservation boundary than its main filename alone."
+url = "https://github.com/OSGeo/gdal/blob/0e24e0288164b5237df0aeb82ab742909e719479/gcore/gdalpamdataset.cpp"
 confidence = "medium"
 
 [[evidence]]
@@ -36,8 +35,8 @@ confidence = "medium"
 
 [[evidence]]
 target = "E3"
-text = "The documentation identifies format drivers and translation options, but a representative round-trip and independent restoration were not performed."
-url = "https://gdal.org/en/stable/programs/gdal_translate.html"
+text = "An upstream GeoPackage 1.4 fixture opened with the available SQLite library independently of GDAL, passed integrity_check, and exposed 10 poly features, its attribute schema, POLYGON geometry-column metadata and EPSG:27700 SRS records. Geometry coordinates were not decoded and no conversion round trip was run."
+url = "https://github.com/OSGeo/gdal/blob/0e24e0288164b5237df0aeb82ab742909e719479/autotest/ogr/data/gpkg/poly_golden_gpkg_1_4.gpkg"
 confidence = "medium"
 
 [[evidence]]
@@ -54,14 +53,14 @@ confidence = "medium"
 
 [[evidence]]
 target = "sovereignty"
-text = "User-controlled files and broad format support provide strong custody and exit."
-url = "https://gdal.org/en/"
+text = "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for GDAL does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+url = "https://gdal.org/en/stable/programs/gdal_translate.html"
 confidence = "medium"
 
 [[evidence]]
 target = "longevity"
-text = "Open geospatial formats and documented drivers support preservation, but metadata, coordinate systems, and driver options can be lost in conversion."
-url = "https://gdal.org/en/stable/programs/gdal_translate.html"
+text = "E3 is not established for GDAL's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+url = "https://github.com/OSGeo/gdal/blob/0e24e0288164b5237df0aeb82ab742909e719479/autotest/ogr/data/gpkg/poly_golden_gpkg_1_4.gpkg"
 confidence = "medium"
 
 [[evidence]]
@@ -72,11 +71,46 @@ confidence = "medium"
 
 [[evidence]]
 target = "transparency"
-text = "Options expose data type, metadata, and transformation choices, supporting review of consequential conversions."
+text = "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
 url = "https://gdal.org/en/stable/programs/gdal_translate.html"
 confidence = "medium"
+
+[[evidence]]
+target = "E3"
+text = "An independent GeoPackage read exposes attributes, feature counts, geometry metadata and SRS records, but geometry coordinates were not decoded or reconstructed. PAM sidecars/proxy metadata and driver-specific fidelity remain essential boundaries; main-file access is not complete geospatial recovery."
+url = "https://github.com/OSGeo/gdal/blob/0e24e0288164b5237df0aeb82ab742909e719479/autotest/ogr/data/gpkg/poly_golden_gpkg_1_4.gpkg"
+confidence = "medium"
+
+[[evidence]]
+target = "E5"
+text = "Strict/options documentation makes some transformations explicit, but effective caller overwrite authority, lossy conversion warnings, sidecar handling and usable correction are not established across the assessed drivers/datasets. Inspectable options alone do not prove the required oversight."
+url = "https://gdal.org/en/stable/programs/gdal_translate.html"
+confidence = "medium"
+
+[[evidence]]
+target = "E2"
+text = "The former E2 Pass does not establish preservation of essential geometry, CRS, sidecar and driver metadata in an alternative workflow. Format breadth and one readable GeoPackage schema do not complete that migration comparison."
+url = "https://gdal.org/en/stable/programs/gdal_translate.html"
+confidence = "medium"
+
 +++
 
-**Preliminary desk assessment:** GDAL is described as library and command-line tools for reading, converting, and inspecting raster and vector geospatial data. Its primary preservation surface is Open geospatial formats through a translation library, with independence shaped by local command-line tools. This is a useful lead for assessment, not a verified finding: version-pinned export, restoration, migration, offline, and consequential-behavior tests remain required. The current determination is **Insufficient evidence** until those observations are recorded.
+**Evidence update: 23 October 2026**
+
+- [x] Resolved: An upstream GeoPackage 1.4 fixture opened with the available SQLite library independently of GDAL, passed integrity_check, and exposed 10 poly features, its attribute schema, POLYGON geometry-column metadata and EPSG:27700 SRS records. Geometry coordinates were not decoded and no conversion round trip was run. [Source](https://github.com/OSGeo/gdal/blob/0e24e0288164b5237df0aeb82ab742909e719479/autotest/ogr/data/gpkg/poly_golden_gpkg_1_4.gpkg).
+- [x] Resolved: The PAM implementation explicitly loads/saves .aux.xml alongside the dataset, or in a configured proxy directory, for metadata unsupported by the driver format. Copying only a raster can therefore omit separately stored metadata; the dataset's file list is a better preservation boundary than its main filename alone. [Source](https://github.com/OSGeo/gdal/blob/0e24e0288164b5237df0aeb82ab742909e719479/gcore/gdalpamdataset.cpp).
+- [ ] Open: Driver-specific lossy conversion, geometry fidelity, actual overwrite behavior, sidecar-removal comparison and cross-version compatibility remain untested. E5 needs driver/caller-specific overwrite and loss decisions, retained transformation parameters and available correction.
+
+**Assessment follow-up:** These bounded findings are incorporated into the evidence above. Eligibility and principle ratings are deliberately unchanged; their reconciliation and any blank-status fixes are deferred to the next pass. Reproduction details and retained inputs are in evidence/third-pass/batch-10/.
 
 **Human-readable criteria:** Can an independent party reproduce the analysis from preserved data, code, units, dependencies, and provenance, and exchange results without hidden loss?
+
+**Rating reconciliation: 24 October 2026**
+
+E3 and E5 remain **Not Verified** for the existing declared scope. Longevity and Transparency and Control are **Not assessed** pending their required minimums. Sovereignty is also **Not assessed** because the required access/exit/custody minimums are not all established. The prior E2 Pass is withdrawn; its essential-record migration comparison remains incomplete. This is a targeted evidence decision, not a finding that the product fails. Existing E1, E4 and Locality findings were not re-certified.
+
+**Remaining:** Driver-specific lossy conversion, geometry fidelity, actual overwrite behavior, sidecar-removal comparison and cross-version compatibility remain untested. E5 needs driver/caller-specific overwrite and loss decisions, retained transformation parameters and available correction.
+
+**Next without installing locally:** Acquire representative dataset/file-list/sidecar packets with expected coordinates, CRS, metadata and nodata semantics; compare independent readers and same-version conversion/overwrite observations.
+
+The individual decision and provenance are retained in `evidence/rating-reconciliation/batch-10/`. Overall: **Insufficient evidence**.

@@ -42,9 +42,17 @@ function frontMatter(file) {
 function normalise(id, p, fw) {
   const complete = p.assessment_status === 'complete';
   const elig = {};
-  fw.eligibility.forEach((e) => { elig[e.key] = (p.eligibility && p.eligibility[e.key]) || 'not_verified'; });
+  const statuses = fw.eligibilityStatuses.map(e => e.id);
+  fw.eligibility.forEach((e) => {
+    const raw = p.eligibility && p.eligibility[e.key];
+    elig[e.key] = statuses.includes(raw) ? raw : 'not_verified';
+  });
   const prin = {};
-  fw.principles.forEach((x) => { prin[x.id] = (p.principles && p.principles[x.id]) || null; });
+  const findings = fw.findingLevels.map(e => e.id);
+  fw.principles.forEach((x) => {
+    const raw = p.principles && p.principles[x.id];
+    prin[x.id] = findings.includes(raw) ? raw : null;
+  });
   return {
     id, name: p.title, category: p.category, summary: p.summary, substrate: p.substrate,
     syncModel: p.sync_model, extractCmd: p.extract_cmd || null, limitations: p.limitations || [],
@@ -56,11 +64,11 @@ function normalise(id, p, fw) {
   };
 }
 
-function loadEntries(fw) {
-  return fs.readdirSync(dir)
+function loadEntries(fw, entryDir = dir) {
+  return fs.readdirSync(entryDir)
     .filter((f) => f.endsWith('.md') && !f.startsWith('_'))
     .sort()
-    .map((f) => normalise(f.replace(/\.md$/, ''), frontMatter(path.join(dir, f)), fw));
+    .map((f) => normalise(f.replace(/\.md$/, ''), frontMatter(path.join(entryDir, f)), fw));
 }
 
-module.exports = { loadEntries, parseToml };
+module.exports = { loadEntries, parseToml, normalise };

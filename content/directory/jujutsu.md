@@ -5,24 +5,23 @@ summary = "Next-generation version control where even conflicts and rebases are 
 substrate = "Append-only Operation Log + Git Backend"
 sync_model = "Git-compatible remotes / Native local"
 extract_cmd = "jj op log --limit 20"
-limitations = ["Young project: its storage format is still evolving."]
+limitations = ["Pinned source inspection, not application execution.","Conflicted-change export, actual operation-store copying, older-version recovery and abandon/garbage-collection behavior remain untested."]
 pilot_stage = 5
 assessment_status = "complete"
-assessment_date = "2026-10-22"
-version_assessed = "Documentation review; release not pinned"
+assessment_date = "2026-10-23"
+version_assessed = "Pinned source 531e8da8066271040b4b1e74ce17a8a941544cce"
+assessment_notes = "Rating reconciliation batch 1: E3 Not Verified; E5 Not Verified. Longevity Not assessed; Transparency and Control Not assessed. See the declared scope and reasons below; earlier bounded evidence findings remain recorded."
 
 [eligibility]
 independent_data_access = "pass"
 practical_exit = "pass"
-independent_recoverability = "partial"
+independent_recoverability = "not_verified"
 retained_control = "pass"
 consequential_oversight = "not_verified"
 
 [principles]
 sovereignty = "meets"
-longevity = "partial"
 locality = "meets"
-transparency = "partial"
 
 [[evidence]]
 target = "E1"
@@ -38,9 +37,9 @@ confidence = "medium"
 
 [[evidence]]
 target = "E3"
-text = "Repository history can be copied and exported through version-control workflows, but recovery and long-term compatibility across jj versions were not tested."
-url = "https://martinvonz.github.io/jj/"
-confidence = "low"
+text = "Git export invokes export_refs, not an operation-store archive. The separately inspected operation-log model retains repository views, workspace commits and operation metadata: Git export alone does not establish preservation of that full recovery history."
+url = "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/git/export.rs"
+confidence = "medium"
 
 [[evidence]]
 target = "E4"
@@ -50,9 +49,9 @@ confidence = "medium"
 
 [[evidence]]
 target = "E5"
-text = "Version-control actions are user-directed, but destructive operations, conflict resolution, and recovery from ambiguous history were not tested."
-url = "https://martinvonz.github.io/jj/"
-confidence = "low"
+text = "Undo restores a parent operation and refuses operations from another workspace unless explicitly overridden. Its implementation warns that undoing workspace removal restores the repository record but not the workspace directory."
+url = "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/undo.rs"
+confidence = "medium"
 
 [[evidence]]
 target = "sovereignty"
@@ -62,8 +61,8 @@ confidence = "medium"
 
 [[evidence]]
 target = "longevity"
-text = "Git compatibility improves portability, but jj-specific operation and repository evolution need version-pinned restoration tests."
-url = "https://martinvonz.github.io/jj/"
+text = "E3 remains Not Verified for the existing essential-record scope. The methodology requires established E3 before a positive Longevity finding, so the earlier positive rating is withdrawn pending recovery evidence; source/format strengths are retained as facts, not graded as a failure."
+url = "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/git/export.rs"
 confidence = "medium"
 
 [[evidence]]
@@ -74,9 +73,21 @@ confidence = "medium"
 
 [[evidence]]
 target = "transparency"
-text = "The project publishes documentation and an interoperability path, but the semantics of every rewrite and conflict action were not assessed."
-url = "https://martinvonz.github.io/jj/"
-confidence = "low"
+text = "E5 remains Not Verified. The methodology's Partially meets threshold requires demonstrated minimum oversight, so the earlier positive Transparency and Control finding is withdrawn rather than retained on the strength of one documented control. This is Not assessed, not Does not meet."
+url = "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/undo.rs"
+confidence = "medium"
+
+[[evidence]]
+target = "E3"
+text = "The retained operation-log model explains repository-state recovery, while git export exports refs rather than archiving the jj operation store. Independent interpretation and restoration of the preserved operation store, conflicts and workspace state remain unestablished. Invalid partial is replaced by Not Verified, not automatically converted to Pass or Fail."
+url = "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/git/export.rs"
+confidence = "medium"
+
+[[evidence]]
+target = "E5"
+text = "The retained undo implementation provides real cross-workspace guards and explains that a removed workspace directory is not recreated by undo. However operation abandonment/garbage collection, colocated Git changes and actual correction/retention boundaries remain insufficiently covered. These source controls alone do not justify a whole-scope E5 Pass."
+url = "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/undo.rs"
+confidence = "medium"
 
 +++
 
@@ -86,6 +97,35 @@ confidence = "low"
 
 **Documentation starting point:** <https://jj-vcs.github.io/jj/latest/>
 
-**Preliminary desk assessment:** Jujutsu (jj) is described as next-generation version control where even conflicts and rebases are recorded as deterministic, first-class mathematical states in an undoable local operation log. Its primary preservation surface is Append-only Operation Log + Git Backend, with independence shaped by git-compatible remotes / native local. This is a useful lead for assessment, not a verified finding: version-pinned export, restoration, migration, offline, and consequential-behavior tests remain required. The current determination is **Insufficient evidence** until those observations are recorded.
+**Evidence update: 23 October 2026**
+
+- [x] Resolved: Undo restores a parent operation and refuses operations from another workspace unless explicitly overridden. Its implementation warns that undoing workspace removal restores the repository record but not the workspace directory. [Source](https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/undo.rs).
+- [x] Resolved: Git export invokes export_refs, not an operation-store archive. The separately inspected operation-log model retains repository views, workspace commits and operation metadata: Git export alone does not establish preservation of that full recovery history. [Source](https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/git/export.rs).
+- [ ] Open: Conflicted-change export, actual operation-store copying, older-version recovery and abandon/garbage-collection behavior remain untested.
+
+**Assessment follow-up:** E3/E5 and their associated principle findings are now reconciled in rating batch 1 below. Earlier source/fixture observations remain valid within their stated scope; they are not themselves blanket Pass decisions.
 
 **Human-readable criteria:** Can users retain complete history and metadata, operate and recover locally, migrate to another implementation, and understand the effects of synchronization or automation?
+
+## Rating reconciliation: 23 October 2026
+
+**Scope:** The existing source-pinned application scope; no new application execution. Individual-custodian perspective. The existing broad preservation/workflow scope is retained, rather than narrowed to the one successfully inspected source path.
+
+| Criterion | Current finding |
+|---|---|
+| E3 Independent interpretation and recovery | Not Verified |
+| E5 Governability of consequential actions | Not Verified |
+| Longevity | Not assessed |
+| Transparency and Control | Not assessed |
+
+**E3:** The retained operation-log model explains repository-state recovery, while git export exports refs rather than archiving the jj operation store. Independent interpretation and restoration of the preserved operation store, conflicts and workspace state remain unestablished. Invalid partial is replaced by Not Verified, not automatically converted to Pass or Fail.
+
+**E5:** The retained undo implementation provides real cross-workspace guards and explains that a removed workspace directory is not recreated by undo. However operation abandonment/garbage collection, colocated Git changes and actual correction/retention boundaries remain insufficiently covered. These source controls alone do not justify a whole-scope E5 Pass.
+
+**longevity:** E3 remains Not Verified for the existing essential-record scope. The methodology requires established E3 before a positive Longevity finding, so the earlier positive rating is withdrawn pending recovery evidence; source/format strengths are retained as facts, not graded as a failure.
+
+**transparency:** E5 remains Not Verified. The methodology's Partially meets threshold requires demonstrated minimum oversight, so the earlier positive Transparency and Control finding is withdrawn rather than retained on the strength of one documented control. This is Not assessed, not Does not meet.
+
+**Evidence record:** evidence/rating-reconciliation/batch-1/README.md and runtime-results.json. No target software was installed. Source inspections remain source inspections; no application-level recovery or destructive action was executed.
+
+**Remaining work:** The existing open recovery and consequential-action scenarios remain pending; the individually explained E3/E5 blockers above determine the current Not Verified and Not assessed findings.
