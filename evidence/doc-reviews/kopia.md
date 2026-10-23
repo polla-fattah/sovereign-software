@@ -4,6 +4,15 @@ Reviewed 22 October 2026 from the Kopia documentation (kopia.io/docs), the kopia
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Source follow-up: 23 October 2026
+
+2 specific source questions are resolved in [batch 3](../third-pass/batch-3/README.md#kopia) and incorporated into the [application assessment](../../content/directory/kopia.md). These pinned implementation findings supersede the corresponding documentation-only uncertainty below; the original review is retained as a dated record.
+
++- [x] Resolved: snapshot verify defaults verify-files-percent to 0. The verifier gates reading entire file objects on a random percentage comparison; 100 requests full reads for all visited file objects, whereas the default is not full file-content verification. Snapshot selection, errors and stopping limits still bound coverage; no corrupted-repository test was run.
+- [x] Resolved: The ZIP output's CreateSymlink only logs that it is not implemented and returns success; directory callbacks also emit no entries. Its files carry mode and modification time. The TAR writer instead emits directory and symlink headers with link targets and UID/GID, but this implementation sets no ACL/xattr fields. ZIP is therefore not a complete filesystem-metadata exit path.
+
+Remaining: Encrypted repository/password recovery on another machine, content and filesystem-metadata comparisons, executed TAR/ZIP export inspection, corruption detection and snapshot deletion/maintenance.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -49,3 +58,20 @@ Reviewed 22 October 2026 from the Kopia documentation (kopia.io/docs), the kopia
 6. Delete a snapshot, run full maintenance, and observe what is removed and when; try `sync-to` with and without `--delete`.
 7. Check the update check and any outbound traffic with the network blocked, and read the flags page for the exact switch.
 8. Not read: the encryption, compression, ECC, actions, caching, and sharding pages; the snapshot delete and `repository set-parameters` references; the Repository Server pages; the full release notes for LZ4 removal; the licence file text.
+
+## Rating reconciliation: 23 October 2026
+
+This dated follow-up supersedes the earlier rating freeze, not the historical observations above. [Individual decision and coverage](../rating-reconciliation/batch-2/README.md#kopia); [actual assessment](../../content/directory/kopia.md).
+
+- E3: Not Verified. Full-file verification is percentage-gated, and the inspected ZIP writer omits symlink/directory output while TAR preserves more structure without setting ACL/xattr fields. None of those facts establishes complete decryption/restoration of the existing filesystem scope. Password-dependent repository recovery, executed exports and baseline comparisons remain absent.
+- E5: Not Verified. Additional pinned source resolves explicit snapshot deletion: without --delete the command reports the selected snapshot and returns before DeleteManifest; the confirmed branch reports deletion and calls DeleteManifest. Source IDs and source-wide selections reach that same gate. Automated retention/maintenance safety, restore overwrite/delete and available recovery are still insufficiently covered for whole-scope E5.
+- Longevity and Transparency and Control: Not assessed; their E3/E5 minimums are not established.
+- Sovereignty: Not assessed because E2 is Not Verified.
+
+- [x] Resolved: The explicit snapshot-delete command reports a preview and returns before DeleteManifest unless --delete is set. Confirmed snapshot-ID, root-object-ID and source-wide selections use the shared deletion gate; this does not cover automated maintenance. [Pinned source](https://github.com/kopia/kopia/blob/0835005737025dc3e5203df0138c8265686cb4b3/cli/command_snapshot_delete.go).
+
+Remaining: A populated synthetic encrypted repository, preserved test password/configuration, full-file verification and baseline-matched restore/export records, plus policy/maintenance and restore overwrite/delete safeguards remain missing. The explicit snapshot-delete confirmation question is now answered; it does not establish maintenance rollback.
+
+Next without a local installation: Reuse a version-matched public or assessor-generated synthetic repository packet with verify-files-percent=100 output, expected content/metadata and restore results. Obtain separate retention/maintenance and overwrite/delete before/after records; compare TAR and ZIP independently without installing Kopia here.
+
+Source branches were inspected, not run. Hashes and the Anki/Zotero fixture queries were independently rechecked with Python/SQLite. No target app or upstream test suite was executed. Existing E1/E4/Locality findings were outside this targeted re-certification.

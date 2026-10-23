@@ -4,6 +4,15 @@ Reviewed 22 October 2026 from the Ardour manual and ardour.org only. Latest stab
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Follow-up: 23 October 2026
+
+2 bounded questions are resolved in [batch 4](../third-pass/batch-4/README.md#ardour) and incorporated into the [application assessment](../../content/directory/ardour.md). The original documentation review below remains a dated record; these narrower findings supersede its corresponding uncertainties.
+
+- [x] Resolved: Standard XML parsing of the historical 1region session reads session version 3001, sample-rate 48000, two routes and one external MIDI source. Both the region source-0 and master-source-0 references resolve to source ID 118, named MIDI 1-1.mid. This establishes readable session relationships; the referenced media was not opened and no sound was rendered.
+- [x] Resolved: UnknownProcessor copies the missing processor's XML state and returns a copy when saving, retaining stored state rather than implementing the missing plugin. Its run method does not recreate plugin processing and silences excess outputs when saved I/O information is available. State preservation therefore does not imply audio equivalence or successful later plugin reactivation.
+
+Remaining: Complete archived-session restore including media and plugins, missing-plugin playback and later reactivation, stem migration losses, snapshots/crash recovery, version compatibility and update-check control.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -35,3 +44,21 @@ Reviewed 22 October 2026 from the Ardour manual and ardour.org only. Latest stab
 4. Opening a session saved by a newer version in an older one.
 5. Stem export round trip into a second DAW, listing lost structure (routing, automation, plugin chains).
 6. Whether the startup update check can be disabled.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-3/README.md#ardour); [actual assessment](../../content/directory/ardour.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The historical session XML resolves an external MIDI source, while the missing-plugin implementation retains XML state without reproducing processing. Complete media, routing/automation meaning, plugin dependencies and compatible session reconstruction are not demonstrated by that readable reference graph.
+- E5: Not Verified. Conditional history saving and attempted backup restoration are established in source. Unused-source cleanup stages files, clears history and saves state, and a distinct flush clears the staged files. Authorization in the calling UI, configuration and meaningful recourse across cleanup/plugin/save changes remain insufficiently covered.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+- [x] Resolved: Session undo history is saved only when configured, with a configured depth and available history. The source first renames an existing history file to backup and attempts restoration of that backup after a write failure. This is conditional error-handling code, not observed crash recovery. [Pinned source](https://github.com/Ardour/ardour/blob/b896344c8d16f89e04a235562ab31594605c6715/libs/ardour/session_state.cc).
+- [x] Resolved: Unused-source cleanup moves selected media into dead-source directories, then clears session history and saves state. A separate trash-cleanup routine clears those directories. Staging unused media is not the same as a reversible edit or indefinite backup. [Pinned source](https://github.com/Ardour/ardour/blob/b896344c8d16f89e04a235562ab31594605c6715/libs/ardour/session_state.cc).
+
+Remaining: Complete archived-session restore including media and plugins, missing-plugin playback and later reactivation, stem migration losses, snapshots/crash recovery, version compatibility and update-check control. E5 also needs cleanup/flush UI authorization, effective history settings and overwrite/plugin-change recourse; staged dead-source storage is not an indefinite undo guarantee.
+
+Next without a local installation: Collect a synthetic archived session including all media and plugin-dependency/state information, expected routing/automation and stems; inspect the archive independently and obtain version-matched cleanup/history recovery evidence.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

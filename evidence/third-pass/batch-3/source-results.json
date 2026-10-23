@@ -1,0 +1,1147 @@
+{
+  "review_date": "2026-10-23",
+  "recorded_at_utc": "2026-10-22T23:04:07.719264+00:00",
+  "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "applications_installed_or_executed": false,
+  "upstream_test_suites_executed": false,
+  "inspection_plan_sha256": "4ca6dd71f0e38eb3ac0d71363e06815f3e2b5987c1c480df2e4ccb0c264fd2f6",
+  "inputs": [
+    {
+      "application": "gitea",
+      "repository": "go-gitea/gitea",
+      "path": "cmd/dump.go",
+      "commit": "ad37b88631ade5af5db738a4ebe4ab89ed8d237d",
+      "url": "https://github.com/go-gitea/gitea/blob/ad37b88631ade5af5db738a4ebe4ab89ed8d237d/cmd/dump.go",
+      "raw_url": "https://raw.githubusercontent.com/go-gitea/gitea/ad37b88631ade5af5db738a4ebe4ab89ed8d237d/cmd/dump.go",
+      "local_path": "inputs/gitea/cmd/dump.go",
+      "bytes": 9860,
+      "sha256": "ce24a81ddb9dbc375d414366013c3827be7d4d69762cd9b07e39953a22951625"
+    },
+    {
+      "application": "gitea",
+      "repository": "go-gitea/gitea",
+      "path": "cmd/dump_repo.go",
+      "commit": "ad37b88631ade5af5db738a4ebe4ab89ed8d237d",
+      "url": "https://github.com/go-gitea/gitea/blob/ad37b88631ade5af5db738a4ebe4ab89ed8d237d/cmd/dump_repo.go",
+      "raw_url": "https://raw.githubusercontent.com/go-gitea/gitea/ad37b88631ade5af5db738a4ebe4ab89ed8d237d/cmd/dump_repo.go",
+      "local_path": "inputs/gitea/cmd/dump_repo.go",
+      "bytes": 5416,
+      "sha256": "2798e34d4701819dc1b552491d65edc7b770c91929396e051ea1bbaf4405350e"
+    },
+    {
+      "application": "gitea",
+      "repository": "go-gitea/gitea",
+      "path": "services/migrations/dump.go",
+      "commit": "ad37b88631ade5af5db738a4ebe4ab89ed8d237d",
+      "url": "https://github.com/go-gitea/gitea/blob/ad37b88631ade5af5db738a4ebe4ab89ed8d237d/services/migrations/dump.go",
+      "raw_url": "https://raw.githubusercontent.com/go-gitea/gitea/ad37b88631ade5af5db738a4ebe4ab89ed8d237d/services/migrations/dump.go",
+      "local_path": "inputs/gitea/services/migrations/dump.go",
+      "bytes": 20998,
+      "sha256": "a0917ef6394185fe344ac96fd30263a084d24d1bd023b49fc99432acbf5ddbf2"
+    },
+    {
+      "application": "gitea",
+      "repository": "go-gitea/gitea",
+      "path": "modules/migration/issue.go",
+      "commit": "ad37b88631ade5af5db738a4ebe4ab89ed8d237d",
+      "url": "https://github.com/go-gitea/gitea/blob/ad37b88631ade5af5db738a4ebe4ab89ed8d237d/modules/migration/issue.go",
+      "raw_url": "https://raw.githubusercontent.com/go-gitea/gitea/ad37b88631ade5af5db738a4ebe4ab89ed8d237d/modules/migration/issue.go",
+      "local_path": "inputs/gitea/modules/migration/issue.go",
+      "bytes": 1835,
+      "sha256": "3a86a4624e01307bd2c081f2548db243c8f617211190ec283ff0ca2a5eb54985"
+    },
+    {
+      "application": "gitea",
+      "repository": "go-gitea/gitea",
+      "path": "modules/migration/review.go",
+      "commit": "ad37b88631ade5af5db738a4ebe4ab89ed8d237d",
+      "url": "https://github.com/go-gitea/gitea/blob/ad37b88631ade5af5db738a4ebe4ab89ed8d237d/modules/migration/review.go",
+      "raw_url": "https://raw.githubusercontent.com/go-gitea/gitea/ad37b88631ade5af5db738a4ebe4ab89ed8d237d/modules/migration/review.go",
+      "local_path": "inputs/gitea/modules/migration/review.go",
+      "bytes": 2259,
+      "sha256": "e55b305f83e03f3beecf983a55d6724b699aa4a6240f465850d2feb8ff32f8a4"
+    },
+    {
+      "application": "gitea",
+      "repository": "go-gitea/gitea",
+      "path": "modules/migration/schemas/issue.json",
+      "commit": "ad37b88631ade5af5db738a4ebe4ab89ed8d237d",
+      "url": "https://github.com/go-gitea/gitea/blob/ad37b88631ade5af5db738a4ebe4ab89ed8d237d/modules/migration/schemas/issue.json",
+      "raw_url": "https://raw.githubusercontent.com/go-gitea/gitea/ad37b88631ade5af5db738a4ebe4ab89ed8d237d/modules/migration/schemas/issue.json",
+      "local_path": "inputs/gitea/modules/migration/schemas/issue.json",
+      "bytes": 2525,
+      "sha256": "ac2cbec88c79d6cb8dfeed01eddd9a974edef4f5caa2098b8859b2b8046260d2"
+    },
+    {
+      "application": "forgejo",
+      "repository": "forgejo/forgejo",
+      "path": "cmd/dump.go",
+      "commit": "b021976fb1a87ec18543c3a5586ecfabcc1c06e7",
+      "url": "https://codeberg.org/forgejo/forgejo/src/commit/b021976fb1a87ec18543c3a5586ecfabcc1c06e7/cmd/dump.go",
+      "raw_url": "https://codeberg.org/forgejo/forgejo/raw/commit/b021976fb1a87ec18543c3a5586ecfabcc1c06e7/cmd/dump.go",
+      "local_path": "inputs/forgejo/cmd/dump.go",
+      "bytes": 16900,
+      "sha256": "b69d9fcf1e4aeef43076eded25cc36acb48ed35153a9284b8e7df9128dc33843"
+    },
+    {
+      "application": "forgejo",
+      "repository": "forgejo/forgejo",
+      "path": "cmd/dump_repo.go",
+      "commit": "b021976fb1a87ec18543c3a5586ecfabcc1c06e7",
+      "url": "https://codeberg.org/forgejo/forgejo/src/commit/b021976fb1a87ec18543c3a5586ecfabcc1c06e7/cmd/dump_repo.go",
+      "raw_url": "https://codeberg.org/forgejo/forgejo/raw/commit/b021976fb1a87ec18543c3a5586ecfabcc1c06e7/cmd/dump_repo.go",
+      "local_path": "inputs/forgejo/cmd/dump_repo.go",
+      "bytes": 5546,
+      "sha256": "d3c821702f604a2e8b64ff288f883f7832b6c9a66e50bcd3b66ef3839560a3a8"
+    },
+    {
+      "application": "paperless-ngx",
+      "repository": "paperless-ngx/paperless-ngx",
+      "path": "src/documents/management/commands/document_exporter.py",
+      "commit": "f71a9a6eda217a0f3e84ff9a40e0e57d10e7d9ae",
+      "url": "https://github.com/paperless-ngx/paperless-ngx/blob/f71a9a6eda217a0f3e84ff9a40e0e57d10e7d9ae/src/documents/management/commands/document_exporter.py",
+      "raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/f71a9a6eda217a0f3e84ff9a40e0e57d10e7d9ae/src/documents/management/commands/document_exporter.py",
+      "local_path": "inputs/paperless-ngx/src/documents/management/commands/document_exporter.py",
+      "bytes": 26523,
+      "sha256": "4fff582ed9f2d5f55ec9cc75a4adb01571483e761d2940b21eccb923e01acf9e"
+    },
+    {
+      "application": "paperless-ngx",
+      "repository": "paperless-ngx/paperless-ngx",
+      "path": "src/documents/management/commands/document_importer.py",
+      "commit": "f71a9a6eda217a0f3e84ff9a40e0e57d10e7d9ae",
+      "url": "https://github.com/paperless-ngx/paperless-ngx/blob/f71a9a6eda217a0f3e84ff9a40e0e57d10e7d9ae/src/documents/management/commands/document_importer.py",
+      "raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/f71a9a6eda217a0f3e84ff9a40e0e57d10e7d9ae/src/documents/management/commands/document_importer.py",
+      "local_path": "inputs/paperless-ngx/src/documents/management/commands/document_importer.py",
+      "bytes": 29946,
+      "sha256": "fd7fc9858aed67e7f8e5664f902ecf85fc87d0d1744b69de674a84325eeb55ff"
+    },
+    {
+      "application": "paperless-ngx",
+      "repository": "paperless-ngx/paperless-ngx",
+      "path": "src/documents/management/commands/mixins.py",
+      "commit": "f71a9a6eda217a0f3e84ff9a40e0e57d10e7d9ae",
+      "url": "https://github.com/paperless-ngx/paperless-ngx/blob/f71a9a6eda217a0f3e84ff9a40e0e57d10e7d9ae/src/documents/management/commands/mixins.py",
+      "raw_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/f71a9a6eda217a0f3e84ff9a40e0e57d10e7d9ae/src/documents/management/commands/mixins.py",
+      "local_path": "inputs/paperless-ngx/src/documents/management/commands/mixins.py",
+      "bytes": 4899,
+      "sha256": "4ec0f1ee8d1750c8ca9043a60ff3577d381199f66c2a45b26991bde5efe5b75b"
+    },
+    {
+      "application": "kopia",
+      "repository": "kopia/kopia",
+      "path": "cli/command_snapshot_verify.go",
+      "commit": "0835005737025dc3e5203df0138c8265686cb4b3",
+      "url": "https://github.com/kopia/kopia/blob/0835005737025dc3e5203df0138c8265686cb4b3/cli/command_snapshot_verify.go",
+      "raw_url": "https://raw.githubusercontent.com/kopia/kopia/0835005737025dc3e5203df0138c8265686cb4b3/cli/command_snapshot_verify.go",
+      "local_path": "inputs/kopia/cli/command_snapshot_verify.go",
+      "bytes": 8685,
+      "sha256": "8af6689cb4f519b0c0f014713c9f168d4e6d3b9cfa271fbc773c04cbda5ed74c"
+    },
+    {
+      "application": "kopia",
+      "repository": "kopia/kopia",
+      "path": "snapshot/snapshotfs/snapshot_verifier.go",
+      "commit": "0835005737025dc3e5203df0138c8265686cb4b3",
+      "url": "https://github.com/kopia/kopia/blob/0835005737025dc3e5203df0138c8265686cb4b3/snapshot/snapshotfs/snapshot_verifier.go",
+      "raw_url": "https://raw.githubusercontent.com/kopia/kopia/0835005737025dc3e5203df0138c8265686cb4b3/snapshot/snapshotfs/snapshot_verifier.go",
+      "local_path": "inputs/kopia/snapshot/snapshotfs/snapshot_verifier.go",
+      "bytes": 8647,
+      "sha256": "baf6d6ed1e8df372e9a3d78bc88ae6bdb9811f8a54204d7ed06db37f646c61b7"
+    },
+    {
+      "application": "kopia",
+      "repository": "kopia/kopia",
+      "path": "snapshot/restore/tar_output.go",
+      "commit": "0835005737025dc3e5203df0138c8265686cb4b3",
+      "url": "https://github.com/kopia/kopia/blob/0835005737025dc3e5203df0138c8265686cb4b3/snapshot/restore/tar_output.go",
+      "raw_url": "https://raw.githubusercontent.com/kopia/kopia/0835005737025dc3e5203df0138c8265686cb4b3/snapshot/restore/tar_output.go",
+      "local_path": "inputs/kopia/snapshot/restore/tar_output.go",
+      "bytes": 3442,
+      "sha256": "622b2970a2dd74a872d5b128d7dd4f8331029fcbae5949ec21e3c8af1474b9b8"
+    },
+    {
+      "application": "kopia",
+      "repository": "kopia/kopia",
+      "path": "snapshot/restore/zip_output.go",
+      "commit": "0835005737025dc3e5203df0138c8265686cb4b3",
+      "url": "https://github.com/kopia/kopia/blob/0835005737025dc3e5203df0138c8265686cb4b3/snapshot/restore/zip_output.go",
+      "raw_url": "https://raw.githubusercontent.com/kopia/kopia/0835005737025dc3e5203df0138c8265686cb4b3/snapshot/restore/zip_output.go",
+      "local_path": "inputs/kopia/snapshot/restore/zip_output.go",
+      "bytes": 2686,
+      "sha256": "c1fb0a97b9e7db825e3992150909008ccfdd3172f286b1a44462da2048905306"
+    },
+    {
+      "application": "restic",
+      "repository": "restic/restic",
+      "path": "cmd/restic/cmd_check.go",
+      "commit": "dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4",
+      "url": "https://github.com/restic/restic/blob/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/cmd/restic/cmd_check.go",
+      "raw_url": "https://raw.githubusercontent.com/restic/restic/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/cmd/restic/cmd_check.go",
+      "local_path": "inputs/restic/cmd/restic/cmd_check.go",
+      "bytes": 18136,
+      "sha256": "d46a84d773be5663f32a846490eb7b288d3f58364a1741e0c25df09bc0adcd7c"
+    },
+    {
+      "application": "restic",
+      "repository": "restic/restic",
+      "path": "cmd/restic/cmd_forget.go",
+      "commit": "dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4",
+      "url": "https://github.com/restic/restic/blob/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/cmd/restic/cmd_forget.go",
+      "raw_url": "https://raw.githubusercontent.com/restic/restic/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/cmd/restic/cmd_forget.go",
+      "local_path": "inputs/restic/cmd/restic/cmd_forget.go",
+      "bytes": 13186,
+      "sha256": "4df5a5174f06e85f88dd3c3e90908b25a5a9cdcc60a3ce61e13187af8c948767"
+    },
+    {
+      "application": "restic",
+      "repository": "restic/restic",
+      "path": "cmd/restic/cmd_prune.go",
+      "commit": "dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4",
+      "url": "https://github.com/restic/restic/blob/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/cmd/restic/cmd_prune.go",
+      "raw_url": "https://raw.githubusercontent.com/restic/restic/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/cmd/restic/cmd_prune.go",
+      "local_path": "inputs/restic/cmd/restic/cmd_prune.go",
+      "bytes": 10826,
+      "sha256": "6321a31a994bf914aab97bb8f5ca8b77c8a332b930f802ee2549eb2a0246d427"
+    },
+    {
+      "application": "restic",
+      "repository": "restic/restic",
+      "path": "internal/repository/prune.go",
+      "commit": "dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4",
+      "url": "https://github.com/restic/restic/blob/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/internal/repository/prune.go",
+      "raw_url": "https://raw.githubusercontent.com/restic/restic/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/internal/repository/prune.go",
+      "local_path": "inputs/restic/internal/repository/prune.go",
+      "bytes": 23779,
+      "sha256": "97e9ad6b4f9732dd6ceed8f3b9188cf3cd35636bf2b3163ecc1d225255e1ebb1"
+    },
+    {
+      "application": "restic",
+      "repository": "restic/restic",
+      "path": "internal/dump/tar.go",
+      "commit": "dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4",
+      "url": "https://github.com/restic/restic/blob/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/internal/dump/tar.go",
+      "raw_url": "https://raw.githubusercontent.com/restic/restic/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/internal/dump/tar.go",
+      "local_path": "inputs/restic/internal/dump/tar.go",
+      "bytes": 3090,
+      "sha256": "3be9fded1da20670024e3e46a1606a00a036b34bcfafa0703d30ad5d1e17bbdb"
+    },
+    {
+      "application": "restic",
+      "repository": "restic/restic",
+      "path": "internal/dump/zip.go",
+      "commit": "dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4",
+      "url": "https://github.com/restic/restic/blob/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/internal/dump/zip.go",
+      "raw_url": "https://raw.githubusercontent.com/restic/restic/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/internal/dump/zip.go",
+      "local_path": "inputs/restic/internal/dump/zip.go",
+      "bytes": 1245,
+      "sha256": "fc29c7ca7ad0d8dfbea4ccae2c249dc9e324730004c2cdb010a2968f73ff863b"
+    },
+    {
+      "application": "borgbackup",
+      "repository": "borgbackup/borg",
+      "path": "src/borg/archiver/tar_cmds.py",
+      "commit": "45f8b178ae892ae73fcaa3127c951b0044cd7a7e",
+      "url": "https://github.com/borgbackup/borg/blob/45f8b178ae892ae73fcaa3127c951b0044cd7a7e/src/borg/archiver/tar_cmds.py",
+      "raw_url": "https://raw.githubusercontent.com/borgbackup/borg/45f8b178ae892ae73fcaa3127c951b0044cd7a7e/src/borg/archiver/tar_cmds.py",
+      "local_path": "inputs/borgbackup/src/borg/archiver/tar_cmds.py",
+      "bytes": 42552,
+      "sha256": "c7de740f11ef31893d9370ec0b6c33a21899cf5a1f130e84ef438141ad454681"
+    },
+    {
+      "application": "borgbackup",
+      "repository": "borgbackup/borg",
+      "path": "src/borg/archiver/check_cmd.py",
+      "commit": "45f8b178ae892ae73fcaa3127c951b0044cd7a7e",
+      "url": "https://github.com/borgbackup/borg/blob/45f8b178ae892ae73fcaa3127c951b0044cd7a7e/src/borg/archiver/check_cmd.py",
+      "raw_url": "https://raw.githubusercontent.com/borgbackup/borg/45f8b178ae892ae73fcaa3127c951b0044cd7a7e/src/borg/archiver/check_cmd.py",
+      "local_path": "inputs/borgbackup/src/borg/archiver/check_cmd.py",
+      "bytes": 22982,
+      "sha256": "f050a7d5b3c5d9bc772627e2521fd366a8bdaf81fb3cae9c7bdcdbedea6a0c52"
+    },
+    {
+      "application": "borgbackup",
+      "repository": "borgbackup/borg",
+      "path": "src/borg/archiver/delete_cmd.py",
+      "commit": "45f8b178ae892ae73fcaa3127c951b0044cd7a7e",
+      "url": "https://github.com/borgbackup/borg/blob/45f8b178ae892ae73fcaa3127c951b0044cd7a7e/src/borg/archiver/delete_cmd.py",
+      "raw_url": "https://raw.githubusercontent.com/borgbackup/borg/45f8b178ae892ae73fcaa3127c951b0044cd7a7e/src/borg/archiver/delete_cmd.py",
+      "local_path": "inputs/borgbackup/src/borg/archiver/delete_cmd.py",
+      "bytes": 4429,
+      "sha256": "1c4252f9d2b56bfe263f2b441d6397c98d8f45848abaf2fe07415f01bd7f2d77"
+    },
+    {
+      "application": "borgbackup",
+      "repository": "borgbackup/borg",
+      "path": "src/borg/archiver/undelete_cmd.py",
+      "commit": "45f8b178ae892ae73fcaa3127c951b0044cd7a7e",
+      "url": "https://github.com/borgbackup/borg/blob/45f8b178ae892ae73fcaa3127c951b0044cd7a7e/src/borg/archiver/undelete_cmd.py",
+      "raw_url": "https://raw.githubusercontent.com/borgbackup/borg/45f8b178ae892ae73fcaa3127c951b0044cd7a7e/src/borg/archiver/undelete_cmd.py",
+      "local_path": "inputs/borgbackup/src/borg/archiver/undelete_cmd.py",
+      "bytes": 3923,
+      "sha256": "f7bedee0552d2123cd40fb7e04c88b7372253566dc7871bb4030bf13f9ad9088"
+    },
+    {
+      "application": "borgbackup",
+      "repository": "borgbackup/borg",
+      "path": "src/borg/archiver/compact_cmd.py",
+      "commit": "45f8b178ae892ae73fcaa3127c951b0044cd7a7e",
+      "url": "https://github.com/borgbackup/borg/blob/45f8b178ae892ae73fcaa3127c951b0044cd7a7e/src/borg/archiver/compact_cmd.py",
+      "raw_url": "https://raw.githubusercontent.com/borgbackup/borg/45f8b178ae892ae73fcaa3127c951b0044cd7a7e/src/borg/archiver/compact_cmd.py",
+      "local_path": "inputs/borgbackup/src/borg/archiver/compact_cmd.py",
+      "bytes": 37395,
+      "sha256": "c1e2e83578cb662a30af0e8307844d3950d42a9561a0059e0a4da7ccd92df9cb"
+    }
+  ],
+  "resolved_source_questions": [
+    {
+      "application": "gitea",
+      "id": "dump-store-coverage",
+      "anchors_found": true,
+      "locations": [
+        {
+          "path": "cmd/dump.go",
+          "anchor": "\"gitea-db.sql\"",
+          "lines": [
+            193,
+            215
+          ]
+        },
+        {
+          "path": "cmd/dump.go",
+          "anchor": "\"app.ini\"",
+          "lines": [
+            221
+          ]
+        },
+        {
+          "path": "cmd/dump.go",
+          "anchor": "\"skip-db\"",
+          "lines": [
+            88,
+            183
+          ]
+        },
+        {
+          "path": "cmd/dump.go",
+          "anchor": "storage.LFS.IterateObjects",
+          "lines": [
+            172
+          ]
+        },
+        {
+          "path": "cmd/dump.go",
+          "anchor": "storage.Attachments.IterateObjects",
+          "lines": [
+            272
+          ]
+        },
+        {
+          "path": "cmd/dump.go",
+          "anchor": "storage.Packages.IterateObjects",
+          "lines": [
+            286
+          ]
+        }
+      ],
+      "scope": "Static source inspection; not an executed application test"
+    },
+    {
+      "application": "gitea",
+      "id": "repository-export-structure",
+      "anchors_found": true,
+      "locations": [
+        {
+          "path": "services/migrations/dump.go",
+          "anchor": "\"repo.yml\"",
+          "lines": [
+            108
+          ]
+        },
+        {
+          "path": "services/migrations/dump.go",
+          "anchor": "\"issue.yml\"",
+          "lines": [
+            382
+          ]
+        },
+        {
+          "path": "services/migrations/dump.go",
+          "anchor": "yaml.Marshal(issues)",
+          "lines": [
+            388
+          ]
+        },
+        {
+          "path": "services/migrations/dump.go",
+          "anchor": "g.createItems(g.commentDir()",
+          "lines": [
+            438
+          ]
+        },
+        {
+          "path": "services/migrations/dump.go",
+          "anchor": "g.createItems(g.reviewDir()",
+          "lines": [
+            648
+          ]
+        },
+        {
+          "path": "services/migrations/dump.go",
+          "anchor": "\"release_assets\"",
+          "lines": [
+            300,
+            711
+          ]
+        }
+      ],
+      "scope": "Static source inspection; not an executed application test"
+    },
+    {
+      "application": "forgejo",
+      "id": "dump-store-coverage",
+      "anchors_found": true,
+      "locations": [
+        {
+          "path": "cmd/dump.go",
+          "anchor": "\"forgejo-db.sql\"",
+          "lines": [
+            505,
+            527
+          ]
+        },
+        {
+          "path": "cmd/dump.go",
+          "anchor": "\"app.ini\"",
+          "lines": [
+            337
+          ]
+        },
+        {
+          "path": "cmd/dump.go",
+          "anchor": "storage.LFS.IterateObjects",
+          "lines": [
+            543
+          ]
+        },
+        {
+          "path": "cmd/dump.go",
+          "anchor": "storage.Attachments.IterateObjects",
+          "lines": [
+            365
+          ]
+        },
+        {
+          "path": "cmd/dump.go",
+          "anchor": "storage.Packages.IterateObjects",
+          "lines": [
+            379
+          ]
+        },
+        {
+          "path": "cmd/dump.go",
+          "anchor": "\"skip-repository\"",
+          "lines": [
+            199,
+            323
+          ]
+        }
+      ],
+      "scope": "Static source inspection; not an executed application test"
+    },
+    {
+      "application": "forgejo",
+      "id": "dump-repo-output-protection",
+      "anchors_found": true,
+      "locations": [
+        {
+          "path": "cmd/dump_repo.go",
+          "anchor": "os.ReadDir(repoDir); len(dir) > 0",
+          "lines": [
+            182
+          ]
+        },
+        {
+          "path": "cmd/dump_repo.go",
+          "anchor": "repo_dir %q is not empty",
+          "lines": [
+            183
+          ]
+        },
+        {
+          "path": "cmd/dump_repo.go",
+          "anchor": "migrations.DumpRepository(",
+          "lines": [
+            187
+          ]
+        }
+      ],
+      "scope": "Static source inspection; not an executed application test"
+    },
+    {
+      "application": "paperless-ngx",
+      "id": "manifest-and-file-coverage",
+      "anchors_found": true,
+      "locations": [
+        {
+          "path": "src/documents/management/commands/document_exporter.py",
+          "anchor": "manifest_key_to_object_query",
+          "lines": [
+            338,
+            386,
+            404
+          ]
+        },
+        {
+          "path": "src/documents/management/commands/document_exporter.py",
+          "anchor": "Document.global_objects.order_by(\"id\").all()",
+          "lines": [
+            370
+          ]
+        },
+        {
+          "path": "src/documents/management/commands/document_exporter.py",
+          "anchor": "document_dict[EXPORTER_FILE_NAME]",
+          "lines": [
+            554
+          ]
+        },
+        {
+          "path": "src/documents/management/commands/document_exporter.py",
+          "anchor": "sink.add_file(document.source_path",
+          "lines": [
+            587
+          ]
+        },
+        {
+          "path": "src/documents/management/commands/document_exporter.py",
+          "anchor": "if not self.no_archive and document.has_archive_version",
+          "lines": [
+            565
+          ]
+        }
+      ],
+      "scope": "Static source inspection; not an executed application test"
+    },
+    {
+      "application": "paperless-ngx",
+      "id": "version-mismatch-behaviour",
+      "anchors_found": true,
+      "locations": [
+        {
+          "path": "src/documents/management/commands/document_importer.py",
+          "anchor": "self.version != version.__full_version_str__",
+          "lines": [
+            313,
+            348
+          ]
+        },
+        {
+          "path": "src/documents/management/commands/document_importer.py",
+          "anchor": "self.style.WARNING(",
+          "lines": [
+            238,
+            249,
+            255,
+            315
+          ]
+        },
+        {
+          "path": "src/documents/management/commands/document_importer.py",
+          "anchor": " Continuing, but import may fail.",
+          "lines": [
+            319
+          ]
+        }
+      ],
+      "scope": "Static source inspection; not an executed application test"
+    },
+    {
+      "application": "paperless-ngx",
+      "id": "export-secret-scope",
+      "anchors_found": true,
+      "locations": [
+        {
+          "path": "src/documents/management/commands/document_exporter.py",
+          "anchor": "No passphrase was given, sensitive fields will be in plaintext",
+          "lines": [
+            394
+          ]
+        },
+        {
+          "path": "src/documents/management/commands/document_exporter.py",
+          "anchor": "if not self.passphrase:",
+          "lines": [
+            642
+          ]
+        },
+        {
+          "path": "src/documents/management/commands/mixins.py",
+          "anchor": "\"paperless_mail.mailaccount\"",
+          "lines": [
+            57
+          ]
+        },
+        {
+          "path": "src/documents/management/commands/mixins.py",
+          "anchor": "\"refresh_token\"",
+          "lines": [
+            60
+          ]
+        },
+        {
+          "path": "src/documents/management/commands/mixins.py",
+          "anchor": "\"socialaccount.socialtoken\"",
+          "lines": [
+            65
+          ]
+        },
+        {
+          "path": "src/documents/management/commands/mixins.py",
+          "anchor": "\"token_secret\"",
+          "lines": [
+            68
+          ]
+        }
+      ],
+      "scope": "Static source inspection; not an executed application test"
+    },
+    {
+      "application": "kopia",
+      "id": "verification-data-sampling",
+      "anchors_found": true,
+      "locations": [
+        {
+          "path": "cli/command_snapshot_verify.go",
+          "anchor": "Default(\"0\").Float64Var(&c.verifyCommandFilesPercent)",
+          "lines": [
+            48
+          ]
+        },
+        {
+          "path": "snapshot/snapshotfs/snapshot_verifier.go",
+          "anchor": "100*rand.Float64() < v.opts.VerifyFilesPercent",
+          "lines": [
+            175
+          ]
+        },
+        {
+          "path": "snapshot/snapshotfs/snapshot_verifier.go",
+          "anchor": "v.readEntireObject(ctx, oid, entryPath)",
+          "lines": [
+            176
+          ]
+        },
+        {
+          "path": "snapshot/snapshotfs/snapshot_verifier.go",
+          "anchor": "v.rep.OpenObject(ctx, oid)",
+          "lines": [
+            220
+          ]
+        }
+      ],
+      "scope": "Static source inspection; not an executed application test"
+    },
+    {
+      "application": "kopia",
+      "id": "tar-zip-loss-boundary",
+      "anchors_found": true,
+      "locations": [
+        {
+          "path": "snapshot/restore/tar_output.go",
+          "anchor": "Typeflag: tar.TypeDir",
+          "lines": [
+            37
+          ]
+        },
+        {
+          "path": "snapshot/restore/tar_output.go",
+          "anchor": "Typeflag: tar.TypeSymlink",
+          "lines": [
+            120
+          ]
+        },
+        {
+          "path": "snapshot/restore/tar_output.go",
+          "anchor": "Linkname: target",
+          "lines": [
+            121
+          ]
+        },
+        {
+          "path": "snapshot/restore/tar_output.go",
+          "anchor": "Uid:",
+          "lines": [
+            35,
+            84,
+            118
+          ]
+        },
+        {
+          "path": "snapshot/restore/tar_output.go",
+          "anchor": "Gid:",
+          "lines": [
+            36,
+            85,
+            119
+          ]
+        },
+        {
+          "path": "snapshot/restore/zip_output.go",
+          "anchor": "create symlink not implemented yet",
+          "lines": [
+            96
+          ]
+        },
+        {
+          "path": "snapshot/restore/zip_output.go",
+          "anchor": "h.SetMode(f.Mode())",
+          "lines": [
+            71
+          ]
+        }
+      ],
+      "scope": "Static source inspection; not an executed application test"
+    },
+    {
+      "application": "restic",
+      "id": "check-data-coverage",
+      "anchors_found": true,
+      "locations": [
+        {
+          "path": "cmd/restic/cmd_check.go",
+          "anchor": "\"read-data\", false",
+          "lines": [
+            84
+          ]
+        },
+        {
+          "path": "cmd/restic/cmd_check.go",
+          "anchor": "\"read-data-subset\"",
+          "lines": [
+            85
+          ]
+        },
+        {
+          "path": "cmd/restic/cmd_check.go",
+          "anchor": "if readDataFilter != nil",
+          "lines": [
+            394
+          ]
+        },
+        {
+          "path": "cmd/restic/cmd_check.go",
+          "anchor": "chkr.ReadPacks(",
+          "lines": [
+            397
+          ]
+        }
+      ],
+      "scope": "Static source inspection; not an executed application test"
+    },
+    {
+      "application": "restic",
+      "id": "forget-prune-preview",
+      "anchors_found": true,
+      "locations": [
+        {
+          "path": "cmd/restic/cmd_forget.go",
+          "anchor": "if !opts.DryRun {",
+          "lines": [
+            319
+          ]
+        },
+        {
+          "path": "cmd/restic/cmd_forget.go",
+          "anchor": "restic.ParallelRemove(",
+          "lines": [
+            322
+          ]
+        },
+        {
+          "path": "cmd/restic/cmd_forget.go",
+          "anchor": "pruneOptions.DryRun = opts.DryRun",
+          "lines": [
+            359
+          ]
+        },
+        {
+          "path": "internal/repository/prune.go",
+          "anchor": "if plan.opts.DryRun {",
+          "lines": [
+            595
+          ]
+        },
+        {
+          "path": "internal/repository/prune.go",
+          "anchor": "Always quit here if DryRun was set!",
+          "lines": [
+            602
+          ]
+        }
+      ],
+      "scope": "Static source inspection; not an executed application test"
+    },
+    {
+      "application": "restic",
+      "id": "tar-zip-metadata-boundary",
+      "anchors_found": true,
+      "locations": [
+        {
+          "path": "internal/dump/tar.go",
+          "anchor": "PAXRecords: parseXattrs",
+          "lines": [
+            68
+          ]
+        },
+        {
+          "path": "internal/dump/tar.go",
+          "anchor": "SCHILY.acl.access",
+          "lines": [
+            115
+          ]
+        },
+        {
+          "path": "internal/dump/tar.go",
+          "anchor": "SCHILY.xattr.",
+          "lines": [
+            128
+          ]
+        },
+        {
+          "path": "internal/dump/tar.go",
+          "anchor": "header.Linkname = node.LinkTarget",
+          "lines": [
+            88
+          ]
+        },
+        {
+          "path": "internal/dump/zip.go",
+          "anchor": "header.SetMode(node.Mode)",
+          "lines": [
+            41
+          ]
+        },
+        {
+          "path": "internal/dump/zip.go",
+          "anchor": "w.Write([]byte(node.LinkTarget))",
+          "lines": [
+            56
+          ]
+        }
+      ],
+      "scope": "Static source inspection; not an executed application test"
+    },
+    {
+      "application": "borgbackup",
+      "id": "tar-metadata-boundary",
+      "anchors_found": true,
+      "locations": [
+        {
+          "path": "src/borg/archiver/tar_cmds.py",
+          "anchor": "def item_to_tarinfo(",
+          "lines": [
+            48
+          ]
+        },
+        {
+          "path": "src/borg/archiver/tar_cmds.py",
+          "anchor": "def item_to_paxheaders(",
+          "lines": [
+            115
+          ]
+        },
+        {
+          "path": "src/borg/archiver/tar_cmds.py",
+          "anchor": "SCHILY_XATTR",
+          "lines": [
+            142
+          ]
+        },
+        {
+          "path": "src/borg/archiver/tar_cmds.py",
+          "anchor": "SCHILY_ACL_ACCESS",
+          "lines": [
+            148
+          ]
+        },
+        {
+          "path": "src/borg/archiver/tar_cmds.py",
+          "anchor": "ph[\"BORG.item.meta\"]",
+          "lines": [
+            157
+          ]
+        },
+        {
+          "path": "src/borg/archiver/tar_cmds.py",
+          "anchor": "tarinfo.type = tarfile.LNKTYPE",
+          "lines": [
+            84
+          ]
+        }
+      ],
+      "scope": "Static source inspection; not an executed application test"
+    },
+    {
+      "application": "borgbackup",
+      "id": "check-repair-boundary",
+      "anchors_found": true,
+      "locations": [
+        {
+          "path": "src/borg/archiver/check_cmd.py",
+          "anchor": "verify_data=args.verify_data",
+          "lines": [
+            141
+          ]
+        },
+        {
+          "path": "src/borg/archiver/check_cmd.py",
+          "anchor": "if args.repair:",
+          "lines": [
+            57,
+            114
+          ]
+        },
+        {
+          "path": "src/borg/archiver/check_cmd.py",
+          "anchor": "Type 'YES'",
+          "lines": [
+            63
+          ]
+        },
+        {
+          "path": "src/borg/archiver/check_cmd.py",
+          "anchor": "\"--verify-data\"",
+          "lines": [
+            375
+          ]
+        },
+        {
+          "path": "src/borg/archiver/check_cmd.py",
+          "anchor": "POTENTIALLY DANGEROUS FEATURE",
+          "lines": [
+            312
+          ]
+        }
+      ],
+      "scope": "Static source inspection; not an executed application test"
+    },
+    {
+      "application": "borgbackup",
+      "id": "delete-undelete-compaction-boundary",
+      "anchors_found": true,
+      "locations": [
+        {
+          "path": "src/borg/archiver/delete_cmd.py",
+          "anchor": "if not dry_run:",
+          "lines": [
+            49
+          ]
+        },
+        {
+          "path": "src/borg/archiver/delete_cmd.py",
+          "anchor": "manifest.archives.delete_by_id(id)",
+          "lines": [
+            50
+          ]
+        },
+        {
+          "path": "src/borg/archiver/undelete_cmd.py",
+          "anchor": "manifest.archives.undelete_by_id(id)",
+          "lines": [
+            43
+          ]
+        },
+        {
+          "path": "src/borg/archiver/compact_cmd.py",
+          "anchor": "elif not self.dry_run:",
+          "lines": [
+            204
+          ]
+        },
+        {
+          "path": "src/borg/archiver/compact_cmd.py",
+          "anchor": "self.manifest.archives.nuke_by_id(id)",
+          "lines": [
+            210
+          ]
+        },
+        {
+          "path": "src/borg/archiver/compact_cmd.py",
+          "anchor": "self.mark_soft_deleted_used()",
+          "lines": [
+            203
+          ]
+        }
+      ],
+      "scope": "Static source inspection; not an executed application test"
+    }
+  ],
+  "parsed_structures": {
+    "paperless_manifest_queries": {
+      "correspondents": "Correspondent.objects.all()",
+      "tags": "Tag.objects.all()",
+      "document_types": "DocumentType.objects.all()",
+      "storage_paths": "StoragePath.objects.all()",
+      "mail_accounts": "MailAccount.objects.all()",
+      "mail_rules": "MailRule.objects.all()",
+      "saved_views": "SavedView.objects.all()",
+      "saved_view_filter_rules": "SavedViewFilterRule.objects.all()",
+      "groups": "Group.objects.all()",
+      "users": "User.objects.exclude(username__in=_excluded_usernames).all()",
+      "ui_settings": "UiSettings.objects.exclude(user__username__in=_excluded_usernames)",
+      "content_types": "ContentType.objects.all()",
+      "permissions": "Permission.objects.all()",
+      "user_object_permissions": "UserObjectPermission.objects.exclude(user__username__in=_excluded_usernames)",
+      "group_object_permissions": "GroupObjectPermission.objects.all()",
+      "workflow_triggers": "WorkflowTrigger.objects.all()",
+      "workflow_actions": "WorkflowAction.objects.all()",
+      "workflow_email_actions": "WorkflowActionEmail.objects.all()",
+      "workflow_webhook_actions": "WorkflowActionWebhook.objects.all()",
+      "workflows": "Workflow.objects.all()",
+      "custom_fields": "CustomField.objects.all()",
+      "custom_field_instances": "CustomFieldInstance.global_objects.all()",
+      "document_barcodes": "DocumentBarcode.objects.all()",
+      "app_configs": "ApplicationConfiguration.objects.all()",
+      "notes": "Note.global_objects.all()",
+      "documents": "Document.global_objects.order_by('id').all()",
+      "share_links": "ShareLink.global_objects.all()",
+      "share_link_bundles": "ShareLinkBundle.objects.order_by('id').all()",
+      "social_accounts": "SocialAccount.objects.exclude(user__username__in=_excluded_usernames)",
+      "social_apps": "SocialApp.objects.all()",
+      "social_tokens": "SocialToken.objects.exclude(account__user__username__in=_excluded_usernames)",
+      "authenticators": "Authenticator.objects.exclude(user__username__in=_excluded_usernames)"
+    },
+    "paperless_encrypted_fields": [
+      {
+        "exporter_key": "mail_accounts",
+        "model_name": "paperless_mail.mailaccount",
+        "fields": [
+          "password",
+          "refresh_token"
+        ]
+      },
+      {
+        "exporter_key": "social_tokens",
+        "model_name": "socialaccount.socialtoken",
+        "fields": [
+          "token",
+          "token_secret"
+        ]
+      }
+    ],
+    "gitea_issue_schema": {
+      "title": "Issue",
+      "description": "Issues associated to a repository within a forge (Gitea, GitLab, etc.).",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "number": {
+            "description": "Unique identifier, relative to the repository.",
+            "type": "number"
+          },
+          "poster_id": {
+            "description": "Unique identifier of the user who authored the issue.",
+            "type": "number"
+          },
+          "poster_name": {
+            "description": "Name of the user who authored the issue.",
+            "type": "string"
+          },
+          "poster_email": {
+            "description": "Email of the user who authored the issue.",
+            "type": "string"
+          },
+          "title": {
+            "description": "Short description displayed as the title.",
+            "type": "string"
+          },
+          "content": {
+            "description": "Long, multiline, description.",
+            "type": "string"
+          },
+          "ref": {
+            "description": "Target branch in the repository.",
+            "type": "string"
+          },
+          "milestone": {
+            "description": "Name of the milestone.",
+            "type": "string"
+          },
+          "state": {
+            "description": "A 'closed' issue will not see any activity in the future, otherwise it is 'open'.",
+            "enum": [
+              "closed",
+              "open"
+            ]
+          },
+          "is_locked": {
+            "description": "A locked issue can only be modified by privileged users.",
+            "type": "boolean"
+          },
+          "created": {
+            "description": "Creation time.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated": {
+            "description": "Last update time.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "closed": {
+            "description": "The last time 'state' changed to 'closed'.",
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "labels": {
+            "description": "List of labels.",
+            "type": "array",
+            "items": {
+              "$ref": "label.json"
+            }
+          },
+          "reactions": {
+            "description": "List of reactions.",
+            "type": "array",
+            "items": {
+              "$ref": "reaction.json"
+            }
+          },
+          "assignees": {
+            "description": "List of assignees.",
+            "type": "array",
+            "items": {
+              "description": "Name of a user assigned to the issue.",
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "number",
+          "poster_id",
+          "poster_name",
+          "title",
+          "content",
+          "state",
+          "is_locked",
+          "created",
+          "updated"
+        ]
+      },
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$id": "http://example.com/issue.json",
+      "$$target": "issue.json"
+    }
+  }
+}

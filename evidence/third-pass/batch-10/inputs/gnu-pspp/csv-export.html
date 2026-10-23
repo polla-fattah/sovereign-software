@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<!-- Created by GNU Texinfo 7.2, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- This manual is for GNU PSPP version 2.1.2,
+software for statistical analysis.
+
+Copyright © 1997, 1998, 2004, 2005, 2009, 2012, 2013, 2014, 2016, 2019, 2020, 2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3
+or any later version published by the Free Software Foundation;
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License". -->
+<title>SAVE TRANSLATE /TYPE=CSV and TYPE=TAB (PSPP)</title>
+
+<meta name="description" content="SAVE TRANSLATE /TYPE=CSV and TYPE=TAB (PSPP)">
+<meta name="keywords" content="SAVE TRANSLATE /TYPE=CSV and TYPE=TAB (PSPP)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Function-Index.html" rel="index" title="Function Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="SAVE-TRANSLATE.html" rel="up" title="SAVE TRANSLATE">
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+div.display {margin-left: 3.2em}
+pre.display-preformatted {font-family: inherit}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.gnu.org/software/gnulib/manual.css">
+
+
+</head>
+
+<body lang="en">
+<div class="subsection-level-extent" id="SAVE-TRANSLATE-_002fTYPE_003dCSV-and-TYPE_003dTAB">
+<div class="nav-panel">
+<p>
+Up: <a href="SAVE-TRANSLATE.html" accesskey="u" rel="up">SAVE TRANSLATE</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Function-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<h4 class="subsection" id="Writing-Comma_002d-and-Tab_002dSeparated-Data-Files"><span>9.8.1 Writing Comma- and Tab-Separated Data Files<a class="copiable-link" href="#Writing-Comma_002d-and-Tab_002dSeparated-Data-Files"> &para;</a></span></h4>
+
+<div class="display">
+<pre class="display-preformatted">SAVE TRANSLATE
+        /OUTFILE={&rsquo;<var class="var">file_name</var>&rsquo;,<var class="var">file_handle</var>}
+        /TYPE=CSV
+        [/REPLACE]
+        [/MISSING={IGNORE,RECODE}]
+
+        [/DROP=<var class="var">var_list</var>]
+        [/KEEP=<var class="var">var_list</var>]
+        [/RENAME=(<var class="var">src_names</var>=<var class="var">target_names</var>)...]
+        [/UNSELECTED={RETAIN,DELETE}]
+
+        [/FIELDNAMES]
+        [/CELLS={VALUES,LABELS}]
+        [/TEXTOPTIONS DELIMITER=&rsquo;<var class="var">delimiter</var>&rsquo;]
+        [/TEXTOPTIONS QUALIFIER=&rsquo;<var class="var">qualifier</var>&rsquo;]
+        [/TEXTOPTIONS DECIMAL={DOT,COMMA}]
+        [/TEXTOPTIONS FORMAT={PLAIN,VARIABLE}]
+</pre></div>
+
+<p>The SAVE TRANSLATE command with TYPE=CSV or TYPE=TAB writes data in a
+comma- or tab-separated value format similar to that described by
+RFC&nbsp;4180.  Each variable becomes one output column, and each case
+becomes one line of output.  If FIELDNAMES is specified, an additional
+line at the top of the output file lists variable names.
+</p>
+<p>The CELLS and TEXTOPTIONS FORMAT settings determine how values are
+written to the output file:
+</p>
+<dl class="table">
+<dt>CELLS=VALUES FORMAT=PLAIN (the default settings)</dt>
+<dd><p>Writes variables to the output in &ldquo;plain&rdquo; formats that ignore the
+details of variable formats.  Numeric values are written as plain
+decimal numbers with enough digits to indicate their exact values in
+machine representation.  Numeric values include &lsquo;<samp class="samp">e</samp>&rsquo; followed by
+an exponent if the exponent value would be less than -4 or greater
+than 16.  Dates are written in MM/DD/YYYY format and times in HH:MM:SS
+format.  WKDAY and MONTH values are written as decimal numbers.
+</p>
+<p>Numeric values use, by default, the decimal point character set with
+SET DECIMAL (see <a class="pxref" href="SET.html#SET-DECIMAL">SET DECIMAL</a>).  Use DECIMAL=DOT or DECIMAL=COMMA
+to force a particular decimal point character.
+</p>
+</dd>
+<dt>CELLS=VALUES FORMAT=VARIABLE</dt>
+<dd><p>Writes variables using their print formats.  Leading and trailing
+spaces are removed from numeric values, and trailing spaces are
+removed from string values.
+</p>
+</dd>
+<dt>CELLS=LABEL FORMAT=PLAIN</dt>
+<dt>CELLS=LABEL FORMAT=VARIABLE</dt>
+<dd><p>Writes value labels where they exist, and otherwise writes the values
+themselves as described above.
+</p></dd>
+</dl>
+
+<p>Regardless of CELLS and TEXTOPTIONS FORMAT, numeric system-missing
+values are output as a single space.
+</p>
+<p>For TYPE=TAB, tab characters delimit values.  For TYPE=CSV, the
+TEXTOPTIONS DELIMITER and DECIMAL settings determine the character
+that separate values within a line.  If DELIMITER is specified, then
+the specified string separate values.  If DELIMITER is not specified,
+then the default is a comma with DECIMAL=DOT or a semicolon with
+DECIMAL=COMMA.  If DECIMAL is not given either, it is implied by the
+decimal point character set with SET DECIMAL (see <a class="pxref" href="SET.html#SET-DECIMAL">SET DECIMAL</a>).
+</p>
+<p>The TEXTOPTIONS QUALIFIER setting specifies a character that is output
+before and after a value that contains the delimiter character or the
+qualifier character.  The default is a double quote (&lsquo;<samp class="samp">&quot;</samp>&rsquo;).  A
+qualifier character that appears within a value is doubled.
+</p>
+</div>
+<hr>
+<div class="nav-panel">
+<p>
+Up: <a href="SAVE-TRANSLATE.html">SAVE TRANSLATE</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Function-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+</body>
+</html>

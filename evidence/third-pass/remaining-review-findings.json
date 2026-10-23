@@ -1,0 +1,938 @@
+{
+  "review_date": "2026-10-23",
+  "applications": [
+    {
+      "batch": 6,
+      "id": "emacs-org-mode",
+      "name": "Org-mode",
+      "scope": "published Org structure and Babel evaluation controls",
+      "version": "Source commit 38e0eaeec4b1b3482be1afbf77373457bacd93f2",
+      "findings": [
+        {
+          "target": "E1",
+          "url": "https://github.com/bzg/org-mode/blob/38e0eaeec4b1b3482be1afbf77373457bacd93f2/testing/examples/babel.org",
+          "confidence": "high",
+          "text": "Standard text inspection of the upstream babel.org fixture identifies 33 headings, links/properties and 45 source blocks, including Emacs Lisp, shell and Org blocks. These structures are readable without Emacs. No block was executed and no export, formula evaluation or attachment restoration was performed."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/bzg/org-mode/blob/38e0eaeec4b1b3482be1afbf77373457bacd93f2/lisp/ob-core.el",
+          "text": "The pinned source sets org-confirm-babel-evaluate to t and explicitly handles no/never and no-export/never-export evaluation arguments. Confirmation can be disabled or supplied as a function. This establishes the defined default and control branches, not the effective configuration of every buffer or proof that opening/exporting arbitrary documents is safe."
+        }
+      ],
+      "open": "Independent full semantic parsing, export losses, ID/attachment/include relocation, actual Babel prompt/export behavior under local settings, cryptography, undo and older-version compatibility.",
+      "limitations": [
+        "Readable Org syntax does not recover evaluated formulas, attachments or arbitrary Babel results.",
+        "Babel controls are configurable; source defaults do not establish a user's effective security settings."
+      ]
+    },
+    {
+      "batch": 6,
+      "id": "logseq",
+      "name": "Logseq",
+      "scope": "DB export identity options and SQLite backup failure cleanup",
+      "version": "Source commit 05c3ae73e08498e9e20f1b11c3eac5525e5e588d",
+      "findings": [
+        {
+          "target": "E2",
+          "url": "https://github.com/logseq/logseq/blob/05c3ae73e08498e9e20f1b11c3eac5525e5e588d/deps/db/src/logseq/db/sqlite/export.cljs",
+          "text": "The DB exporter has explicit options for UUIDs, timestamps, shallow copies and ontology exclusion. Node/property/class timestamps are conditional; content-reference exports retain referenced UUIDs, while partial-map merging warns against use for full-graph export. Thus export modes are not equivalent preservation packages. This is a source-level distinction, not an executed Markdown/EDN/SQLite migration."
+        },
+        {
+          "target": "E3",
+          "url": "https://github.com/logseq/logseq/blob/05c3ae73e08498e9e20f1b11c3eac5525e5e588d/deps/db/src/logseq/db/sqlite/backup.cljs",
+          "text": "The Node SQLite backup helper calls the SQLite backup API, removes the destination file when synchronous or asynchronous backup fails, and closes the opened source connection in the file-based wrapper. This identifies error cleanup; it does not establish a complete graph backup including asset files, successful restoration, or safety if a caller supplies an existing destination."
+        }
+      ],
+      "open": "A populated DB independently queried, complete asset-inclusive graph export/restore, file-to-DB conversion, task/property/ref fidelity, automatic-backup retention and cross-version outcomes.",
+      "limitations": [
+        "Identity/timestamp/ontology preservation depends on the selected exporter and options.",
+        "SQLite backup error cleanup is not proof of complete asset-inclusive recovery."
+      ]
+    },
+    {
+      "batch": 6,
+      "id": "obsidian",
+      "name": "Obsidian",
+      "scope": "published JSON Canvas structure and referenced-file dependency",
+      "version": "Official JSON Canvas source commit 456f843cb293df4f4ab1763e22ccb46a80b307c8",
+      "findings": [
+        {
+          "target": "E1",
+          "url": "https://github.com/obsidianmd/jsoncanvas/blob/456f843cb293df4f4ab1763e22ccb46a80b307c8/sample.canvas",
+          "confidence": "high",
+          "text": "The official JSON Canvas sample parses with standard JSON: five nodes and one edge, with both edge endpoints resolving to node IDs. Text, geometry, a group label and three file-node paths are readable without Obsidian. This is independent interpretation of this Canvas sample, not an executed vault migration or recovery of every Obsidian feature."
+        },
+        {
+          "target": "E2",
+          "url": "https://github.com/obsidianmd/jsoncanvas/blob/456f843cb293df4f4ab1763e22ccb46a80b307c8/spec/1.0.md",
+          "text": "JSON Canvas 1.0 defines file nodes by vault-relative file paths and optional subpaths, rather than embedding those files' contents. The sample references readme.md, _site/logo.svg and spec/1.0.md. Retaining the .canvas alone therefore does not preserve its referenced content. This format specification is not access to the closed-source application's implementation or a guarantee about plugins and Bases."
+        }
+      ],
+      "open": "A complete representative vault including attachments/Bases/plugins/settings, semantic rendering, recovery snapshots and sync conflicts, trash/rename controls and cross-version behavior.",
+      "limitations": [
+        "Canvas file references require the separately preserved files and paths.",
+        "The official Canvas specification does not establish behavior of Obsidian's closed-source application or plugins."
+      ]
+    },
+    {
+      "batch": 6,
+      "id": "qownnotes",
+      "name": "QOwnNotes",
+      "scope": "tag/trash database relationships and note-removal confirmation path",
+      "version": "Source commit 21b4d8554828bf77f89be5b25da7a6722ebc7b8f",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/services/databaseservice.cpp",
+          "text": "The database schema defines tag records with parent_id, noteTagLink records keyed by tag_id, note filename and subfolder path, and trashItem metadata. Tags and their associations therefore have explicit database state beyond Markdown note text. Copying only note files cannot be assumed to preserve this state; no populated database or missing-database reconstruction was tested."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/managers/noteoperationsmanager.cpp",
+          "text": "The inspected note-removal path asks about backlinks when relevant and checks a user-question result before invoking note.remove(true). Bulk deletion separately warns that selected folders' files and subfolders will be removed. This establishes application-level confirmation branches, not universal prompting under saved dialog preferences or successful local/server trash restoration."
+        }
+      ],
+      "open": "A complete notes.sqlite/native-folder move and tag reconstruction, Markdown export loss, actual trash recovery and deletion modes, simultaneous edits, network settings and older versions.",
+      "limitations": [
+        "Tag/trash associations have database state that is not demonstrated recoverable from note text alone.",
+        "Confirmation code is present, but effective settings and recoverability remain untested."
+      ]
+    },
+    {
+      "batch": 6,
+      "id": "bibdesk",
+      "name": "BibDesk",
+      "scope": "static-group representation and linked-file encoding",
+      "version": "Official Subversion source r30791",
+      "findings": [
+        {
+          "target": "E2",
+          "url": "https://svn.code.sf.net/p/bibdesk/svn/!svn/bc/30791/trunk/bibdesk/BDSKStaticGroup.m",
+          "text": "The static-group dictionary representation stores an escaped group name and a comma-joined list of publication cite keys, deduplicating keys as it builds the list. This exposes how group membership can be represented independently; it does not establish that another BibTeX editor retains the group dictionary or that smart-group queries round-trip."
+        },
+        {
+          "target": "E3",
+          "url": "https://svn.code.sf.net/p/bibdesk/svn/!svn/bc/30791/trunk/bibdesk/BDSKLinkedFile.m",
+          "text": "The linked-file reader recognizes Base64 binary-plist data and extracts bookmark or legacy aliasData plus relativePath; a non-plist value is treated as a relative path. These are links and macOS bookmark/alias data, not attached-document payloads. Preserving a bibliographic record alone does not establish that the referenced files move or remain resolvable on another platform."
+        }
+      ],
+      "open": "A real .bib with groups and linked files parsed/re-saved by independent tools, smart-group preservation, actual path relocation, macOS-version compatibility and complete document recovery.",
+      "limitations": [
+        "A readable group representation does not establish retention by other bibliography managers.",
+        "Linked-file encodings reference separate documents and can include platform-specific bookmark/alias data."
+      ]
+    },
+    {
+      "batch": 6,
+      "id": "libreoffice",
+      "name": "LibreOffice",
+      "scope": "ODT annotation structure and backup replacement behavior",
+      "version": "Source commit 568bac1a5c057f8ec1f43f6d3dae1a9ad0509708",
+      "findings": [
+        {
+          "target": "E1",
+          "url": "https://github.com/LibreOffice/core/blob/568bac1a5c057f8ec1f43f6d3dae1a9ad0509708/sw/qa/extras/odfexport/data/resolved-comment.odt",
+          "confidence": "high",
+          "text": "The published resolved-comment.odt opens as ZIP and its content.xml parses independently. It contains two office:annotation elements, two matching annotation-end elements, creator/date fields and document paragraphs/styles. This establishes accessible comment structures for this fixture, not correct rendering of resolved-comment state, tracked changes, spreadsheets, macros or password-protected documents."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/LibreOffice/core/blob/568bac1a5c057f8ec1f43f6d3dae1a9ad0509708/sfx2/source/doc/docfile.cxx",
+          "text": "DoBackup_Impl first requires an existing source document and uses NameClash::OVERWRITE when transferring the backup; failure can set ERRCODE_SFX_CANTCREATEBACKUP. Internal transactional backups and a backup-restore error path also exist separately. A persistent backup is not necessarily an unlimited version history, and these branches do not establish crash durability or the user's configured backup/autorecovery policy."
+        }
+      ],
+      "open": "Current ODT/ODS/DOCX/XLSX comparisons including tracked changes/formulas/macros, encrypted-package inspection, actual repeated saves and crash recovery, older versions and external dependencies.",
+      "limitations": [
+        "Independent ODT annotation parsing is not complete office-document rendering or formula/macro recovery.",
+        "Backup replacement and transactional recovery paths are distinct; effective settings and failure outcomes remain unverified."
+      ]
+    },
+    {
+      "batch": 7,
+      "id": "beancount",
+      "name": "Beancount",
+      "scope": "plain-text vesting/lot records and automatic padding",
+      "version": "Source commit 9747213802acb733ce53acc6e963f5961f47d6cd",
+      "findings": [
+        {
+          "target": "E1",
+          "confidence": "high",
+          "url": "https://github.com/beancount/beancount/blob/9747213802acb733ce53acc6e963f5961f47d6cd/examples/vesting/vesting.beancount",
+          "text": "The published vesting ledger is independently readable text containing dated directives, multiple commodities, explicit share-cost literals such as {131.3700 USD}, metadata links and postings with deliberately omitted amounts. It distinguishes records from evaluation rules; simply summing the visible numbers is not a validated independent balance or cost-basis reconstruction."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/beancount/beancount/blob/9747213802acb733ce53acc6e963f5961f47d6cd/beancount/ops/pad.py",
+          "text": "The padding pass synthesizes and inserts Transaction entries after Pad directives to satisfy later balance checks. Its source states that it operates per account/per currency rather than automatically across parent-child account relationships. A pad-generated balancing entry is therefore an accounting transformation to inspect, not evidence that every original transaction was present or correct."
+        }
+      ],
+      "open": "Independent exact balance/lot/FX reproduction, plugin effects, migration to another ledger, v2/v3 compatibility, report fidelity and actual editing/recovery.",
+      "limitations": [
+        "Readable postings with omitted amounts/costs still require accounting interpretation.",
+        "Automatic padding can add balancing entries; balance success alone does not prove historical completeness."
+      ]
+    },
+    {
+      "batch": 7,
+      "id": "hledger",
+      "name": "hledger",
+      "scope": "published journal structure and import checkpoint/dry-run semantics",
+      "version": "Source commit cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd",
+      "findings": [
+        {
+          "target": "E1",
+          "confidence": "high",
+          "url": "https://github.com/hledgerorg/hledger/blob/cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd/examples/borrowing.journal",
+          "text": "The upstream borrowing example is readable as ordinary journal text, including dated transactions, posting account paths, amounts and explanatory comments. This establishes inspectable source records rather than a binary-only ledger. It does not establish independently recomputed balances, commodity-cost handling or lossless Beancount conversion."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/hledgerorg/hledger/blob/cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd/hledger/Hledger/Cli/Commands/Import.hs",
+          "text": "Import sets new_=True and defers saving .latest state until successful processing. Its dry-run branch prints prospective transactions; the reader receives _dryrun with an explicit no-archive/no-data-file-removal/no-generating-command policy. Non-dry import appends transactions and then saves checkpoint dates. Idempotence therefore depends on checkpoint/input handling, not a universal duplicate-proof import guarantee."
+        }
+      ],
+      "open": "Runtime JSON/text/Beancount round trips, balances/costs/comments/tags comparison, duplicate imports with and without checkpoints, clean-directory restore and old/new version behavior.",
+      "limitations": [
+        "The journal example was read, not evaluated by hledger or another accounting engine.",
+        "Import checkpoint state and input rules must be preserved to assess duplicate handling."
+      ]
+    },
+    {
+      "batch": 7,
+      "id": "gnucash",
+      "name": "GnuCash",
+      "scope": "independent XML account/split reading and value-versus-quantity representation",
+      "version": "Source commit fec5643cd22cbafc7b16047f35cbe852395da947",
+      "findings": [
+        {
+          "target": "E1",
+          "confidence": "high",
+          "url": "https://github.com/Gnucash/gnucash/blob/fec5643cd22cbafc7b16047f35cbe852395da947/doc/examples/reg_doc_example.gnucash",
+          "text": "Standard XML parsing of the published sample reads 65 account records and two transactions. Every split account reference resolves, and exact rational arithmetic gives a zero sum of split values within each transaction. This checks this small fixture's explicit links and transaction values, not a full trial balance, exchange-rate validation, schedules, budgets or a populated modern book."
+        },
+        {
+          "target": "E3",
+          "url": "https://github.com/Gnucash/gnucash/blob/fec5643cd22cbafc7b16047f35cbe852395da947/libgnucash/backend/xml/gnc-transaction-xml-v2.cpp",
+          "text": "The XML transaction serializer writes transaction currency and separate split value, quantity, account and reconciliation fields. Value and quantity are distinct preservation fields, so reducing a multi-commodity book to a single amount column can discard meaning. The implementation is inspectable; complete cross-backend or CSV reconstruction has not been executed."
+        }
+      ],
+      "open": "Representative XML/SQLite backend comparison with schedules/budgets/FX/reconciliation, CSV loss profile, timestamps/backups/log replay, deletion controls and older releases.",
+      "limitations": [
+        "The exact-arithmetic checks cover two sample transactions, not a complete financial audit.",
+        "Split value, quantity and commodity context cannot be treated as interchangeable fields."
+      ]
+    },
+    {
+      "batch": 7,
+      "id": "money-manager-ex",
+      "name": "Money Manager Ex",
+      "scope": "published SQL schema and encryption-upgrade compatibility",
+      "version": "Source commit a4aa421415143406e2557b334137ca1b90b58218",
+      "findings": [
+        {
+          "target": "E1",
+          "confidence": "high",
+          "url": "https://github.com/moneymanagerex/moneymanagerex/blob/a4aa421415143406e2557b334137ca1b90b58218/src/table/tables_en.sql",
+          "text": "The published, generated SQL schema successfully instantiated in an in-memory SQLite database, yielding 67 schema objects and integrity_check=ok. Account, transaction and related table definitions are available independently. This is an empty schema reconstruction, not an opened .mmb with financial records, attachment files or validated balances."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/moneymanagerex/moneymanagerex/blob/a4aa421415143406e2557b334137ca1b90b58218/src/db/dbwrapper.cpp",
+          "text": "The database-open path tries the newer SQLCipher configuration and falls back to the older AES-128 cipher. On the legacy path it offers a warning that rekeying prevents older MMEX versions opening the database, and only rekeys after a Yes response; page-size migration may occur first. This resolves the implemented upgrade warning/control, not actual decryption, cancellation or cross-version recovery."
+        }
+      ],
+      "open": "A populated .mmb/.emb independently inspected, full transaction/transfer/split/attachment export/import comparison, real encryption migration, deleted-record retention and backups.",
+      "limitations": [
+        "Creating a schema is not recovery of a populated MMEX database.",
+        "Rekeying can change compatibility; the inspected prompt is not an executed decryption/recovery test."
+      ]
+    },
+    {
+      "batch": 7,
+      "id": "todo-txt",
+      "name": "todo.txt",
+      "scope": "published task grammar and reference-client completion/archive transformations",
+      "version": "Format commit 1d90c086533a2574f6039a756ada760ec672a53e; reference CLI commit a9846a232c86937a218d1be45bc4c7631855ee16",
+      "findings": [
+        {
+          "target": "E1",
+          "url": "https://github.com/todotxt/todo.txt/blob/1d90c086533a2574f6039a756ada760ec672a53e/README.md",
+          "text": "The official grammar specifies leading priority, optional creation date, completion marker/date, project/context tokens and extensible key:value metadata. Its published examples are retained for independent text inspection. The specification explicitly notes client differences in priority preservation on completion; a due: or rec: token is not by itself proof of shared scheduling behavior across clients."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/todotxt/todo.txt-cli/blob/a9846a232c86937a218d1be45bc4c7631855ee16/todo.sh",
+          "text": "The reference CLI completion branch removes a leading priority before prepending the completion marker/date. The archive path appends x-marked lines to done.txt and then deletes them from todo.txt, using sed's .bak mechanism. These are file-changing transformations, not an immutable task history; actual interrupted writes, backups and alternative-client behavior were not run."
+        }
+      ],
+      "open": "Three-client edits and unknown-tag/priority comparison, recurrence interpretation, actual archive/delete/deduplicate/replace failures and recovery, line-number shifts and older clients.",
+      "limitations": [
+        "Plain-text portability does not standardize every extension's behavior.",
+        "Completion/archive change source files and can remove priority; full recovery remains untested."
+      ]
+    },
+    {
+      "batch": 7,
+      "id": "sqlite",
+      "name": "SQLite",
+      "scope": "controlled logical restore and live WAL-copy/backup contrast",
+      "version": "Executed Python-bundled SQLite 3.45.3; upstream test context commit 31ebfdf4a1483218a7e17499957eca4caabce915",
+      "findings": [
+        {
+          "target": "E3",
+          "confidence": "high",
+          "url": "https://github.com/sqlite/sqlite/blob/31ebfdf4a1483218a7e17499957eca4caabce915/test/dump.sql",
+          "text": "A controlled experiment using Python's bundled SQLite 3.45.3 logically dumped and restored a synthetic database with foreign keys, a view, a trigger, BLOBs and mixed stored types. Row values/types matched, the restored view returned both rows, one trigger was present and foreign_key_check was empty. This tested the installed library, not the pinned newest source, another SQLite implementation, every schema feature or corrupt-file recovery. Reproduction code and results are in batch 7."
+        },
+        {
+          "target": "E1",
+          "confidence": "high",
+          "url": "https://github.com/sqlite/sqlite/blob/31ebfdf4a1483218a7e17499957eca4caabce915/test/dump.sql",
+          "text": "In the same controlled WAL-mode scenario, copying only the main database while its connection stayed open produced a copy with no tables from the uncheckpointed transaction. Connection.backup instead produced both child rows and integrity_check=ok. This demonstrates why a live main-file copy is not universally a complete snapshot; concurrent-writer stress, network filesystems and all crash timings remain untested."
+        }
+      ],
+      "open": "Independent non-SQLite file interpretation, corrupt-file .dump/.recover comparison, concurrency/crash/backend matrices and older-release compatibility with newer features.",
+      "limitations": [
+        "Runtime results apply to bundled SQLite 3.45.3 and the recorded synthetic schema, not the newest source commit.",
+        "A main-file-only copy of an active WAL database can omit committed state.",
+        "Another independent implementation and damaged-file recovery were not tested."
+      ]
+    },
+    {
+      "batch": 8,
+      "id": "git",
+      "name": "Git",
+      "version": "Git 2.54.0.windows.1 and pinned source",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/git-bundle.adoc",
+          "text": "In an isolated Git 2.54.0.windows.1 fixture, a full --all bundle mirrored all recorded branch/tag/stash refs with matching object IDs and passed fsck. Ordinary clone omitted refs/stash, repository-local configuration, the marker hook and submodule working-tree contents; these need separate recovery planning."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/git-bundle.adoc",
+          "text": "The full bundle verified in an empty repository, whereas an incremental v1..main bundle failed verification for missing prerequisite commits. Successful bundle creation therefore does not establish a self-contained backup."
+        }
+      ],
+      "open": "Signed-tag verification, LFS payloads, corruption recovery, submodule restoration and a representative real repository remain untested.",
+      "limitations": [
+        "Only disposable fixtures used with the explicitly recorded installed runtime.",
+        "Signed-tag verification, LFS payloads, corruption recovery, submodule restoration and a representative real repository remain untested."
+      ]
+    },
+    {
+      "batch": 8,
+      "id": "fossil",
+      "name": "Fossil",
+      "version": "Pinned source 9f1ea15e06b9be018175d231a939d19372fd4b8b",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/export.c",
+          "text": "The pinned export implementation limits --git export to check-ins, excluding tickets, wiki, technical notes and attachments. Git migration cannot replace a complete Fossil repository backup."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/purge.c",
+          "text": "Purge retains removed artifacts in local purgeevent/purgeitem graveyard tables, with undo and --explain/--dry-run. Obliterate removes that recovery path and prompts unless --force bypasses confirmation. These graveyard tables are not synchronized."
+        }
+      ],
+      "open": "Full repository restoration, private/shunned artifacts, account/settings coverage and real purge recovery remain untested.",
+      "limitations": [
+        "Pinned source inspection, not application execution.",
+        "Full repository restoration, private/shunned artifacts, account/settings coverage and real purge recovery remain untested."
+      ]
+    },
+    {
+      "batch": 8,
+      "id": "jujutsu",
+      "name": "Jujutsu",
+      "version": "Pinned source 531e8da8066271040b4b1e74ce17a8a941544cce",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E5",
+          "url": "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/undo.rs",
+          "text": "Undo restores a parent operation and refuses operations from another workspace unless explicitly overridden. Its implementation warns that undoing workspace removal restores the repository record but not the workspace directory."
+        },
+        {
+          "target": "E3",
+          "url": "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/git/export.rs",
+          "text": "Git export invokes export_refs, not an operation-store archive. The separately inspected operation-log model retains repository views, workspace commits and operation metadata: Git export alone does not establish preservation of that full recovery history."
+        }
+      ],
+      "open": "Conflicted-change export, actual operation-store copying, older-version recovery and abandon/garbage-collection behavior remain untested.",
+      "limitations": [
+        "Pinned source inspection, not application execution.",
+        "Conflicted-change export, actual operation-store copying, older-version recovery and abandon/garbage-collection behavior remain untested."
+      ]
+    },
+    {
+      "batch": 8,
+      "id": "hugo",
+      "name": "Hugo",
+      "version": "Hugo v0.166.0 and pinned newer source",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E5",
+          "url": "https://github.com/gohugoio/hugo/blob/ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7/testscripts/commands/hugo__clean_destination_dir.txt",
+          "text": "The installed Hugo v0.166.0 fixture retained a deleted page's output after both a normal build and --cleanDestinationDir. Newer pinned upstream tests specify removal of ordinary stale files with configurable keep patterns. This resolves the observed/version-specific boundary, not a general cleanup guarantee."
+        },
+        {
+          "target": "E2",
+          "url": "https://github.com/gohugoio/hugo/blob/ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7/resources/resource_factories/create/create.go",
+          "text": "The pinned remote-resource implementation uses an HTTP cache, checks allowed URLs and direct destination addresses, and makes environment proxies opt-in. A local source tree alone does not establish a network-independent build: remote inputs, caches and policy still matter."
+        }
+      ],
+      "open": "The cause of the installed/newer cleanup difference, a network-blocked production build, module/theme closure and deployment dry-run remain open.",
+      "limitations": [
+        "Only disposable fixtures used with the explicitly recorded installed runtime.",
+        "The cause of the installed/newer cleanup difference, a network-blocked production build, module/theme closure and deployment dry-run remain open."
+      ]
+    },
+    {
+      "batch": 8,
+      "id": "typst",
+      "name": "Typst",
+      "version": "Pinned source 64c5e8c02fe0394d913ead36e42ef8c1334d2107",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E2",
+          "url": "https://github.com/typst/typst/blob/64c5e8c02fe0394d913ead36e42ef8c1334d2107/crates/typst-kit/src/packages.rs",
+          "text": "Package lookup checks configured data/cache locations before obtaining missing preview-namespace packages from Typst Universe; other namespaces are searched locally. Offline operation requires the needed package versions already to be available."
+        },
+        {
+          "target": "E3",
+          "url": "https://github.com/typst/typst/blob/64c5e8c02fe0394d913ead36e42ef8c1334d2107/crates/typst-cli/src/world.rs",
+          "text": "The system world resolves a project filesystem root, a separate package store and lazily discovered fonts. Recovery therefore must account for referenced files, package versions and font inputs; a PDF or single .typ source is not demonstrated to preserve the editable project."
+        }
+      ],
+      "open": "An offline compile, explicit font inventory, cross-version output comparison and web-app export completeness remain untested.",
+      "limitations": [
+        "Pinned source inspection, not application execution.",
+        "An offline compile, explicit font inventory, cross-version output comparison and web-app export completeness remain untested."
+      ]
+    },
+    {
+      "batch": 8,
+      "id": "ngspice",
+      "name": "ngspice",
+      "version": "Pinned source 032b1c32c4dbad45ff132bcfac1dbecadbd8abb0",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/ngspice/ngspice/blob/032b1c32c4dbad45ff132bcfac1dbecadbd8abb0/src/frontend/rawfile.c",
+          "text": "The pinned raw writer emits variable names/types, point counts and real/complex flags before ASCII Values or native sizeof(double) binary writes. Independent binary decoding needs matching numeric/layout assumptions; this is a source-level format finding, not a cross-platform reader test."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/ngspice/ngspice/blob/032b1c32c4dbad45ff132bcfac1dbecadbd8abb0/src/frontend/rawfile.c",
+          "text": "The raw writer selects append modes a/ab versus truncating w/wb from its app argument. Existing output can be overwritten without append; the low-level writer itself does not provide a confirmation dialogue."
+        }
+      ],
+      "open": "Independent decoding of real outputs, wrdata unit/scale comparison, external model closure and version-specific numerical behavior remain untested.",
+      "limitations": [
+        "Pinned source inspection, not application execution.",
+        "Independent decoding of real outputs, wrdata unit/scale comparison, external model closure and version-specific numerical behavior remain untested."
+      ]
+    },
+    {
+      "batch": 9,
+      "id": "nixos",
+      "name": "NixOS",
+      "version": "Pinned evidence 44d27ba452c1c4177882732bd48fabd7d332e38d",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/NixOS/nixpkgs/blob/44d27ba452c1c4177882732bd48fabd7d332e38d/nixos/doc/manual/administration/nixos-state.section.md",
+          "text": "The previously unread state section explicitly requires persistent /nix including daemon database, roots and profiles, plus /boot and /var/lib/nixos for stable UID/GID allocation. With mutable users, passwd/group/shadow and subordinate-ID files must persist too. A configuration file alone is not that state backup."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/NixOS/nixpkgs/blob/44d27ba452c1c4177882732bd48fabd7d332e38d/nixos/doc/manual/administration/rollback.section.md",
+          "text": "The full rollback section distinguishes switching the running system from selecting a bootable generation and making it the boot default. Boot-menu recovery is limited to configurations not garbage-collected; rollback is not represented as reversing service/user data changes."
+        }
+      ],
+      "open": "Pinned-closure rebuilds, offline cache completeness, mutable service/secret restoration and actual rollback/GC trials remain open.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Pinned-closure rebuilds, offline cache completeness, mutable service/secret restoration and actual rollback/GC trials remain open."
+      ]
+    },
+    {
+      "batch": 9,
+      "id": "guix",
+      "name": "GNU Guix",
+      "version": "Pinned evidence a639dc9f4767b55d5a9240a76c82957533273657",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://codeberg.org/guix/guix/src/commit/a639dc9f4767b55d5a9240a76c82957533273657/guix/scripts/archive.scm",
+          "text": "The archive implementation passes export-recursive? to export-paths only when requested with --recursive. A package export without that option is not established to include its dependency closure; listing/extraction and store import are distinct operations, not backups of arbitrary mutable service data."
+        },
+        {
+          "target": "E5",
+          "url": "https://codeberg.org/guix/guix/src/commit/a639dc9f4767b55d5a9240a76c82957533273657/guix/scripts/system.scm",
+          "text": "The system command really parses -n/--dry-run, propagates dry-run? and returns before the activation/bootloader/service-switch branch. This closes the earlier uncertainty about whether system dry-run exists; configuration evaluation and planning must not be confused with a full side-effect-free OS trial."
+        }
+      ],
+      "open": "Channel-pinned rebuilds, network-blocked closure completeness, mutable-data restoration, generation deletion and release-specific compatibility remain untested.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Channel-pinned rebuilds, network-blocked closure completeness, mutable-data restoration, generation deletion and release-specific compatibility remain untested."
+      ]
+    },
+    {
+      "batch": 9,
+      "id": "openbsd",
+      "name": "OpenBSD",
+      "version": "Pinned evidence d962f40cd0b4b974405c3cac59ec7417040c0533",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/openbsd/src/blob/d962f40cd0b4b974405c3cac59ec7417040c0533/sbin/restore/restore.8",
+          "text": "The pinned restore manual specifies a level-0 base followed by the necessary incremental backups, and a pristine filesystem for full -r recovery. It restores ownership/time/mode where possible and warns that active-filesystem incremental dumps may confuse restore. This is a concrete archive-chain dependency, not an /etc-only recovery method."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/openbsd/src/blob/d962f40cd0b4b974405c3cac59ec7417040c0533/sbin/restore/restore.8",
+          "text": "The manual distinguishes -t listing, selective extraction and full -r rebuilding, explicitly warning that -r is hazardous if used carelessly. Inspecting an archive listing therefore precedes a materially different rebuild operation; no blanket confirmation or automatic rollback is established."
+        }
+      ],
+      "open": "An actual dump/restore chain, keydisk recovery, upgrade reversal and filesystem/metadata comparison remain untested.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "An actual dump/restore chain, keydisk recovery, upgrade reversal and filesystem/metadata comparison remain untested."
+      ]
+    },
+    {
+      "batch": 9,
+      "id": "podman",
+      "name": "Podman",
+      "version": "Pinned evidence 5e20fea154919770d36569a09c31b4f7b8dc3a28",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/podman-container-tools/podman/blob/5e20fea154919770d36569a09c31b4f7b8dc3a28/docs/source/markdown/podman-export.1.md",
+          "text": "The pinned export documentation explicitly says container export flattens the filesystem to a single-layer tarball without image layers, history or tags, unlike image save. It cannot be treated as preserving all image provenance or the complete deployment."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/podman-container-tools/podman/blob/5e20fea154919770d36569a09c31b4f7b8dc3a28/cmd/podman/system/prune.go",
+          "text": "The prune command initializes --volumes false and prompts unless --force or --external is used. The prompt enumerates unused volumes only when --volumes is selected. Consequently neither a universal prompt nor volume deletion on every prune is an accurate description."
+        }
+      ],
+      "open": "Named-volume/bind-mount/secret coverage, cross-runtime digest comparisons, ownership restoration, rootless migration and real prune trials remain open.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Named-volume/bind-mount/secret coverage, cross-runtime digest comparisons, ownership restoration, rootless migration and real prune trials remain open."
+      ]
+    },
+    {
+      "batch": 9,
+      "id": "syncthing",
+      "name": "Syncthing",
+      "version": "Pinned evidence d6d0181f7d466381c4b39ec8fd944c364f939b32",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/syncthing/syncthing/blob/d6d0181f7d466381c4b39ec8fd944c364f939b32/lib/versioner/util.go",
+          "text": "The versioner helper resolves .stversions by default or a configured versioning filesystem and archives/restores using filesystem RenameOrCopy with timestamp handling. Archived versions are files, not merely opaque index entries; full metadata fidelity is not established by that code."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/syncthing/syncthing/blob/d6d0181f7d466381c4b39ec8fd944c364f939b32/lib/versioner/trashcan.go",
+          "text": "Trashcan archive uses the original filename rather than the Simple versioner's timestamp-tagged name. Its cleanup returns without removal when cleanoutDays <= 0; otherwise files older than the computed cutoff are removed. This resolves a retention-policy boundary, not proof that synchronization itself is a backup."
+        }
+      ],
+      "open": "Two-peer deletion/conflict propagation, manual metadata recovery, config/database migration, destructive override/revert behavior and network observations remain untested.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Two-peer deletion/conflict propagation, manual metadata recovery, config/database migration, destructive override/revert behavior and network observations remain untested."
+      ]
+    },
+    {
+      "batch": 9,
+      "id": "pass",
+      "name": "pass",
+      "version": "Pinned evidence 3ca13cd8882cae4083c1c478858adbf2e82dd037",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/zx2c4/password-store/blob/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh",
+          "text": "The show/edit paths directly call GPG decryption on individual .gpg entry files. Store recovery therefore depends on the corresponding decryption keys and GPG environment, not a pass-only proprietary reader. No synthetic key-restoration run is claimed."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/zx2c4/password-store/blob/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh",
+          "text": "Delete removes the working file and, in a Git-backed store, records git rm plus a normal commit rather than history erasure. Re-encryption likewise adds a commit. Importantly yesno returns success without prompting when stdin is not a terminal, so the advertised confirmation is conditional even without --force; older encrypted history is not thereby revoked."
+        }
+      ],
+      "open": "Actual private-key/trust recovery, prior-history decryption after recipient changes, importer completeness and observed offline behavior remain untested.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Actual private-key/trust recovery, prior-history decryption after recipient changes, importer completeness and observed offline behavior remain untested."
+      ]
+    },
+    {
+      "batch": 10,
+      "id": "gdal",
+      "name": "GDAL",
+      "version": "Pinned evidence 0e24e0288164b5237df0aeb82ab742909e719479",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/OSGeo/gdal/blob/0e24e0288164b5237df0aeb82ab742909e719479/autotest/ogr/data/gpkg/poly_golden_gpkg_1_4.gpkg",
+          "text": "An upstream GeoPackage 1.4 fixture opened with the available SQLite library independently of GDAL, passed integrity_check, and exposed 10 poly features, its attribute schema, POLYGON geometry-column metadata and EPSG:27700 SRS records. Geometry coordinates were not decoded and no conversion round trip was run."
+        },
+        {
+          "target": "E1",
+          "url": "https://github.com/OSGeo/gdal/blob/0e24e0288164b5237df0aeb82ab742909e719479/gcore/gdalpamdataset.cpp",
+          "text": "The PAM implementation explicitly loads/saves .aux.xml alongside the dataset, or in a configured proxy directory, for metadata unsupported by the driver format. Copying only a raster can therefore omit separately stored metadata; the dataset's file list is a better preservation boundary than its main filename alone."
+        }
+      ],
+      "open": "Driver-specific lossy conversion, geometry fidelity, actual overwrite behavior, sidecar-removal comparison and cross-version compatibility remain untested.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Driver-specific lossy conversion, geometry fidelity, actual overwrite behavior, sidecar-removal comparison and cross-version compatibility remain untested."
+      ]
+    },
+    {
+      "batch": 10,
+      "id": "grass-gis",
+      "name": "GRASS GIS",
+      "version": "Pinned evidence 09ad2796fff4fdfc2a3bee8446868f8be3076db4",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/OSGeo/grass/blob/09ad2796fff4fdfc2a3bee8446868f8be3076db4/scripts/v.pack/v.pack.py",
+          "text": "The native vector pack implementation archives map files, copies connected attribute tables into db.sqlite via db.copy, and includes projection support files. The separately inspected raster pack collects cats/cell/cellhd/cell_misc/colr/fcell/hist and CRS support. Native packs preserve structures that a geometry-only export need not carry; this is not a successful unpack trial."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/OSGeo/grass/blob/09ad2796fff4fdfc2a3bee8446868f8be3076db4/general/g.remove/main.c",
+          "text": "The removal loop prints matched mapset elements and continues without deletion unless force (-f) is set; the implementation explicitly warns that nothing was removed. With force it calls M_do_remove. This establishes a concrete preview/deletion branch, not an automatic recovery guarantee."
+        }
+      ],
+      "open": "Pack/unpack equivalence, external database dependencies, raster/null/category fidelity, older-version opening and interrupted-write recovery remain untested.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Pack/unpack equivalence, external database dependencies, raster/null/category fidelity, older-version opening and interrupted-write recovery remain untested."
+      ]
+    },
+    {
+      "batch": 10,
+      "id": "r-project",
+      "name": "R",
+      "version": "Pinned evidence c267ebb7f9720154535e63642c25a5d91d5f512d",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/r-devel/r-svn/blob/c267ebb7f9720154535e63642c25a5d91d5f512d/src/main/serialize.c",
+          "text": "The serializer writes distinct version-2/version-3 headers with writer/minimum-reader versions; the minimum values in the inspected source are R 2.3.0 and R 3.5.0 respectively, and version 3 also records native encoding. These format-level bounds do not guarantee every object/package class will reconstruct on an older R."
+        },
+        {
+          "target": "E2",
+          "url": "https://github.com/r-devel/r-svn/blob/c267ebb7f9720154535e63642c25a5d91d5f512d/src/library/base/man/readRDS.Rd",
+          "text": "The full readRDS documentation explains that infoRDS reports representation/reader metadata but cannot establish file validity, and explicitly cautions against treating bare RDS as a machine-interchange format. Native-endian serialization and newer compression introduce additional dependencies; cross-tool and CSV preservation remain separate questions."
+        }
+      ],
+      "open": "Factor/date/attribute/NA round trips, a non-R reader, older-release trials, package-library upgrades and workspace overwrite recovery remain untested.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Factor/date/attribute/NA round trips, a non-R reader, older-release trials, package-library upgrades and workspace overwrite recovery remain untested."
+      ]
+    },
+    {
+      "batch": 10,
+      "id": "gnu-pspp",
+      "name": "GNU PSPP",
+      "version": "Pinned evidence retrieved 2026-10-23",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://www.gnu.org/software/pspp/manual/html_node/SAVE-TRANSLATE-_002fTYPE_003dCSV-and-TYPE_003dTAB.html",
+          "text": "The official CSV specification distinguishes VALUES from LABELS output, documents print-format trimming and writes numeric system-missing values as a space. Together with MISSING=RECODE, this can collapse missing-value distinctions; a CSV is not demonstrated to preserve the native dictionary. This is a documented format conclusion, not a conversion experiment."
+        },
+        {
+          "target": "E5",
+          "url": "https://www.gnu.org/software/pspp/manual/html_node/SAVE-TRANSLATE.html",
+          "text": "The official SAVE TRANSLATE specification refuses existing-file overwrite by default and requires REPLACE; MISSING=RECODE, DROP/KEEP and UNSELECTED change the exported representation/case scope. These explicit controls resolve their documented semantics, not proof of an executed safeguard."
+        }
+      ],
+      "open": "Native SAV/POR compression compatibility, independent-reader comparisons, dictionary round trips, transformation reversibility and crash recovery remain untested. Savannah source-file retrieval failed; dated retained official manual pages are used instead.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Native SAV/POR compression compatibility, independent-reader comparisons, dictionary round trips, transformation reversibility and crash recovery remain untested. Savannah source-file retrieval failed; dated retained official manual pages are used instead."
+      ]
+    },
+    {
+      "batch": 10,
+      "id": "kolibri",
+      "name": "Kolibri",
+      "version": "Pinned evidence 303e3baea3e0df85b797111af8ca4d89e7fbbe92",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/learningequality/kolibri/blob/303e3baea3e0df85b797111af8ca4d89e7fbbe92/kolibri/core/deviceadmin/management/commands/dbrestore.py",
+          "text": "The dbrestore command explicitly limits its intended use to restoring the same device, not cross-device replication; --latest selects the current major/minor version's backup and the command refuses a running Kolibri instance. This answers the scope of that recovery route without claiming a restore succeeded."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/learningequality/kolibri/blob/303e3baea3e0df85b797111af8ca4d89e7fbbe92/kolibri/core/auth/management/commands/bulkimportusers.py",
+          "text": "Bulk import excludes retained users, facility administrators and the specified acting user from --delete, then calls hard_delete=True for remaining selected users. Database mutation is inside the not-dryrun branch, including clearing memberships of omitted classes. A CSV omission can therefore be consequential, not merely an update."
+        }
+      ],
+      "open": "Actual backup restoration/content coverage, cross-device migration, user/log export completeness, downgrade behavior and runtime deletion/traffic observations remain untested.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Actual backup restoration/content coverage, cross-device migration, user/log export completeness, downgrade behavior and runtime deletion/traffic observations remain untested."
+      ]
+    },
+    {
+      "batch": 10,
+      "id": "moodle",
+      "name": "Moodle",
+      "version": "Pinned evidence 46c042e7da65f8cb2ec7dc19f46566ce61a393e1",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/moodle/moodle/blob/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/moodle2/backup_final_task.class.php",
+          "text": "The backup task conditionally generates users.xml when user inclusion or kept roles require it, and conditionally includes user files depending also on anonymization. It separately writes files.xml and moodle_backup.xml before packaging. A course backup's user/file coverage is therefore settings-dependent, not equivalent to a complete site backup."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/moodle/moodle/blob/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/util/helper/restore_prechecks_helper.class.php",
+          "text": "The restore precheck code treats a backup from a newer Moodle as a warning, not by itself a blocking error; an excessively old backup format is an error. Cross-site user restoration also branches on user-creation permission. This corrects an overbroad assumption that every downgrade attempt is automatically refused."
+        }
+      ],
+      "open": "Real course/site restore comparisons, student submissions/grade coverage, deleting-target recovery, plugin dependencies and version-specific migrations remain untested.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Real course/site restore comparisons, student submissions/grade coverage, deleting-target recovery, plugin dependencies and version-specific migrations remain untested."
+      ]
+    },
+    {
+      "batch": 11,
+      "id": "shotcut",
+      "name": "Shotcut",
+      "version": "Pinned evidence 34dde4fce394652c00d8f7af9ac2ce37dab1ed92",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/mltframework/shotcut/blob/34dde4fce394652c00d8f7af9ac2ce37dab1ed92/src/mltxmlchecker.cpp",
+          "text": "The XML checker resolves relative media against the project directory, collects missing local resources and rewrites selected replacement paths. A changed resource hash resets stream indices and selected metadata. Relinking can therefore alter project interpretation rather than simply restore a missing filename."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/mltframework/shotcut/blob/34dde4fce394652c00d8f7af9ac2ce37dab1ed92/src/autosavefile.cpp",
+          "text": "Autosaves are .mlt files under the application-data autosave directory with an MD5-derived managed-name filename. The helper removes its file on destruction or managed-file change and can locate an existing stale file. This identifies a transient recovery mechanism, not a durable versioned backup or a successful crash-recovery test."
+        }
+      ],
+      "open": "A complex timeline reopened/rendered independently, filter/proxy closure, actual crash recovery, older-version opening and media consolidation remain untested.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "A complex timeline reopened/rendered independently, filter/proxy closure, actual crash recovery, older-version opening and media consolidation remain untested."
+      ]
+    },
+    {
+      "batch": 11,
+      "id": "reaper",
+      "name": "REAPER",
+      "version": "Pinned evidence c0eafe87863b2bf69c5c822760f1b32a753b211b",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/justinfrankel/reaper-sdk/blob/c0eafe87863b2bf69c5c822760f1b32a753b211b/sdk/reaper_plugin.h",
+          "text": "The official extension SDK defines line-oriented ProjectStateContext AddLine/GetLine interfaces and an explicit project-import interface that generates RPP-compatible state. This establishes an exposed textual project-state interface, not a complete public specification or independent decoding of plugin chunks."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/justinfrankel/reaper-sdk/blob/c0eafe87863b2bf69c5c822760f1b32a753b211b/sdk/reaper_plugin.h",
+          "text": "The SDK separates save/load, undo/redo and cut/copy context flags. Its project-config extension contract says plugins may choose whether to save undo state and ties it to the relevant undo-state flag. Undo coverage for arbitrary extensions therefore cannot be assumed from the existence of REAPER's general undo command."
+        }
+      ],
+      "open": "Actual RPP/plugin-state inspection, backup/autosave defaults, clean-host consolidation, stem equivalence, version compatibility and evaluation-license behavior remain untested; the proprietary core was not inspected.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Actual RPP/plugin-state inspection, backup/autosave defaults, clean-host consolidation, stem equivalence, version compatibility and evaluation-license behavior remain untested; the proprietary core was not inspected."
+      ]
+    },
+    {
+      "batch": 11,
+      "id": "kodi",
+      "name": "Kodi",
+      "version": "Pinned evidence a097d6978028aef8840b23695a57c606697f156a",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/xbmc/xbmc/blob/a097d6978028aef8840b23695a57c606697f156a/xbmc/video/VideoDatabase.cpp",
+          "text": "The export code distinguishes a dated videodb.xml folder with artwork directories from per-item NFO export; import reads that XML and reconstructs source paths only when the scraper add-on exists. The import code explicitly notes scraper settings are not exported. This route is therefore not demonstrated to recreate an entire profile."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/xbmc/xbmc/blob/a097d6978028aef8840b23695a57c606697f156a/xbmc/video/VideoDatabase.cpp",
+          "text": "Library cleanup distinguishes absent files under reachable sources from unavailable source directories. For unavailable sources, silent mode retains entries; interactive mode can ask, while missing files under reachable parents can be removed from the database without asking. This concerns library records/history, not an assertion that Clean Library deletes media bytes."
+        }
+      ],
+      "open": "Watched/resume/artwork round-trip comparison, independent database reading, profile migration/downgrade and observed cleanup/source-removal behavior remain untested.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Watched/resume/artwork round-trip comparison, independent database reading, profile migration/downgrade and observed cleanup/source-removal behavior remain untested."
+      ]
+    },
+    {
+      "batch": 11,
+      "id": "koreader",
+      "name": "KOReader",
+      "version": "Pinned evidence afff28b107a7ea4ab5867b5e65dd054987ca1d99",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/koreader/koreader/blob/afff28b107a7ea4ab5867b5e65dd054987ca1d99/frontend/docsettings.lua",
+          "text": "Sidecars are located beside the book, under a separate document-settings tree, or in a partial-MD5-based hashed tree, and use metadata.<suffix>.lua names. The inspected JSON exporter copies each supplied entry's first record plus selected book fields, not the entire sidecar/settings object. Book-only copying and highlight export are therefore distinct recovery scopes."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/koreader/koreader/blob/afff28b107a7ea4ab5867b5e65dd054987ca1d99/frontend/docsettings.lua",
+          "text": "Sidecar loading actually invokes dofile inside pcall; error-catching is not a sandbox for arbitrary Lua code. Writing serializes settings and maintains a .old backup before replacement, with candidate priority rules. Recovery should inspect untrusted sidecars without executing them; no generic Lua execution was performed in this review."
+        }
+      ],
+      "open": "Actual cross-device/hash-mode migration, annotation-field comparisons across export formats, PDF checksum changes, release compatibility and backup restoration remain untested.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Actual cross-device/hash-mode migration, annotation-field comparisons across export formats, PDF checksum changes, release compatibility and backup restoration remain untested."
+      ]
+    },
+    {
+      "batch": 11,
+      "id": "mpv",
+      "name": "mpv",
+      "version": "Pinned evidence 01a7420cbb4bfcb3ae275b864a8a734c61ee8831",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/mpv-player/mpv/blob/01a7420cbb4bfcb3ae275b864a8a734c61ee8831/player/configfiles.c",
+          "text": "Watch-later filenames are derived from the media path (or basename with the corresponding option), while contents use readable option=value lines and length-quoted strings. Only configured watch-later options are saved, changed values are selective, and unseekable/unknown-time input does not save a start position. This is not a whole-player configuration backup."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/mpv-player/mpv/blob/01a7420cbb4bfcb3ae275b864a8a734c61ee8831/player/configfiles.c",
+          "text": "Resume loading can be disabled and optionally rejects state when media modification time differs; it preserves command-line option precedence when loading the state file. The separate deletion function unlinks watch-later entries and parent redirects. A retained state file is therefore neither an immutable history nor a guaranteed replay on a renamed/moved media path."
+        }
+      ],
+      "open": "Actual playback/cross-machine restore, version-option migration, scripts/subprocess/network observation and output/cache overwrite behavior remain untested.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Actual playback/cross-machine restore, version-option migration, scripts/subprocess/network observation and output/cache overwrite behavior remain untested."
+      ]
+    },
+    {
+      "batch": 11,
+      "id": "jellyfin",
+      "name": "Jellyfin",
+      "version": "Pinned evidence c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81",
+      "scope": "recovery coverage and consequential-operation boundaries",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/jellyfin/jellyfin/blob/c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81/MediaBrowser.XbmcMetadata/Savers/BaseNfoSaver.cs",
+          "text": "The NFO saver writes favourite/rating/playcount/watched/last-played/resume fields for the one configured UserId, returning early when no valid user is selected. NFO can carry selected user state, but this is not an export of every user's records or a substitute for a complete database backup."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/jellyfin/jellyfin/blob/c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81/Jellyfin.Server.Implementations/FullSystemBackup/BackupService.cs",
+          "text": "Restore rejects a manifest from a newer server and requires an exactly matching backup-engine version in the inspected implementation. It then overwrites extracted files and, when database restoration is selected, purges target tables before loading records. These guards and destructive steps are concrete source findings, not a successful restore or universal rollback guarantee."
+        }
+      ],
+      "open": "Same-version/cross-host recovery, complete archive coverage, media-byte preservation, per-user comparison, delete-media scope and observed network behavior remain untested.",
+      "limitations": [
+        "Source/retained-input inspection only; no installation or application restore performed.",
+        "Same-version/cross-host recovery, complete archive coverage, media-byte preservation, per-user comparison, delete-media scope and observed network behavior remain untested."
+      ]
+    },
+    {
+      "batch": 12,
+      "id": "briar",
+      "name": "Briar",
+      "version": "Source d03d6fcd776349ec6c8b7d22035e9bb04aa1787c",
+      "scope": "database/key dependency and timed deletion",
+      "findings": [
+        {
+          "target": "E1",
+          "url": "https://code.briarproject.org/briar/briar/-/blob/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/bramble-core/src/main/java/org/briarproject/bramble/db/H2Database.java",
+          "text": "The database implementation uses split H2 storage with CIPHER=AES and obtains its file password from a supplied secret key. It is not plain SQLite: copying database files alone does not establish readable independent recovery without the key material and a compatible H2/schema reader."
+        },
+        {
+          "target": "E3",
+          "url": "https://code.briarproject.org/briar/briar/-/blob/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/bramble-core/src/main/java/org/briarproject/bramble/account/AccountManagerImpl.java",
+          "text": "Account creation generates a random database key, encrypts it under the password with an optional key strengthener, and stores that encrypted key separately. Sign-in loads/decrypts it; deleteAccount removes both key and database directories. The password alone is not demonstrated to regenerate a lost random key or account."
+        },
+        {
+          "target": "E5",
+          "url": "https://code.briarproject.org/briar/briar/-/blob/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/briar-core/src/main/java/org/briarproject/briar/autodelete/AutoDeleteManagerImpl.java",
+          "text": "Contrary to the earlier documentation search's unknown, the pinned source implements per-contact auto-delete timers with validated bounds, a disabled sentinel, timestamps and rules for mirroring received timer changes. This establishes that timed-deletion controls exist, not that recipients cannot retain copies or that deletion/undo was observed."
+        }
+      ],
+      "open": "Independent encrypted-database reading, key-strengthener portability, protocol interoperability, actual device-loss recovery, deletion timing and UI confirmation/undo behavior remain untested.",
+      "limitations": [
+        "Static primary-source review only; no Briar account created or deleted.",
+        "A timer-control implementation is not proof of secure erasure or recoverability."
+      ]
+    },
+    {
+      "batch": 12,
+      "id": "jami",
+      "name": "Jami",
+      "version": "Source 984f7afbe8d85d119391c2e24e4e1ccbcbf87f28",
+      "scope": "account archive boundaries and export overwrite",
+      "findings": [
+        {
+          "target": "E3",
+          "url": "https://github.com/savoirfairelinux/jami-daemon/blob/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/jamidht/accountarchive.cpp",
+          "text": "The account serializer explicitly builds JSON containing identity keys/certificate, configuration, contacts, conversation-info records and requests. The archive manager separately filters device-local settings and excludes collaborative-document conversation records. This identifies an identity/contact archive route, not demonstrated completeness of message repositories, attachments or collaborative content."
+        },
+        {
+          "target": "E5",
+          "url": "https://github.com/savoirfairelinux/jami-daemon/blob/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/jamidht/archive_account_manager.cpp",
+          "text": "exportArchive refreshes/saves the account archive, then copies it to the destination with overwrite_existing and returns the filesystem result. This low-level export path permits replacing an existing backup; client-side prompts or backup rotation are not established by the daemon implementation."
+        }
+      ],
+      "open": "Actual encrypted archive decoding and clean import, complete history/attachment preservation, outer encryption/version compatibility, conversation deletion propagation and runtime network dependency remain untested.",
+      "limitations": [
+        "Pinned daemon source only; client confirmation and actual device linking were not executed.",
+        "AccountArchive JSON serialization is not a generic decrypted-archive reader test."
+      ],
+      "related": [
+        {
+          "label": "Export filtering and collaborative-document exclusions",
+          "url": "https://github.com/savoirfairelinux/jami-daemon/blob/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/jamidht/archive_account_manager.cpp"
+        }
+      ]
+    }
+  ]
+}

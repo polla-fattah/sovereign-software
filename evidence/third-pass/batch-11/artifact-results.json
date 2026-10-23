@@ -1,0 +1,414 @@
+{
+  "batch": 11,
+  "review_date": "2026-10-23",
+  "recorded_at_utc": "2026-10-23T07:29:41.948096+00:00",
+  "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+  "applications_executed": false,
+  "downloaded_application_implementation_executed": false,
+  "published_schema_ddl_executed": false,
+  "sqlite_reader_version": "3.45.3",
+  "inspection_code_sha256": "7834200af11946de7c4a23b1cf4ddeccfdcf3c29ff56a6ea57583974324e7aa1",
+  "rating_reconciliation": "Deferred to the next pass at the user's request",
+  "inputs": [
+    {
+      "application": "shotcut",
+      "path": "src/autosavefile.cpp",
+      "commit": "34dde4fce394652c00d8f7af9ac2ce37dab1ed92",
+      "raw_url": "https://raw.githubusercontent.com/mltframework/shotcut/34dde4fce394652c00d8f7af9ac2ce37dab1ed92/src/autosavefile.cpp",
+      "url": "https://github.com/mltframework/shotcut/blob/34dde4fce394652c00d8f7af9ac2ce37dab1ed92/src/autosavefile.cpp",
+      "git_blob_sha": "4ef6f7555ee578ff5614e635871bc9764858b500",
+      "local_path": "inputs/shotcut/src/autosavefile.cpp",
+      "bytes": 2618,
+      "sha256": "67a01ec9c3e845b1ba1463ccb7cb7ea4c49b0db325e6bbf58b554010cfe3c98c"
+    },
+    {
+      "application": "shotcut",
+      "path": "src/mltxmlchecker.cpp",
+      "commit": "34dde4fce394652c00d8f7af9ac2ce37dab1ed92",
+      "raw_url": "https://raw.githubusercontent.com/mltframework/shotcut/34dde4fce394652c00d8f7af9ac2ce37dab1ed92/src/mltxmlchecker.cpp",
+      "url": "https://github.com/mltframework/shotcut/blob/34dde4fce394652c00d8f7af9ac2ce37dab1ed92/src/mltxmlchecker.cpp",
+      "git_blob_sha": "5f12a08fe4ccb5d243dc9824d22dd64ea326a3be",
+      "local_path": "inputs/shotcut/src/mltxmlchecker.cpp",
+      "bytes": 41663,
+      "sha256": "b691523e6a99408b4a60c2294e75f563dab045eef86729b8ce87b2956929b10e"
+    },
+    {
+      "application": "koreader",
+      "path": "frontend/docsettings.lua",
+      "commit": "afff28b107a7ea4ab5867b5e65dd054987ca1d99",
+      "raw_url": "https://raw.githubusercontent.com/koreader/koreader/afff28b107a7ea4ab5867b5e65dd054987ca1d99/frontend/docsettings.lua",
+      "url": "https://github.com/koreader/koreader/blob/afff28b107a7ea4ab5867b5e65dd054987ca1d99/frontend/docsettings.lua",
+      "git_blob_sha": "202b392fc9c14159cbad34847f0aeca5e78846e0",
+      "local_path": "inputs/koreader/frontend/docsettings.lua",
+      "bytes": 25909,
+      "sha256": "2ac292560866b8ecae40cfd8afa7bc79adf84d62711619ab3e476edaa82a0ad0"
+    },
+    {
+      "application": "koreader",
+      "path": "plugins/exporter.koplugin/target/json.lua",
+      "commit": "afff28b107a7ea4ab5867b5e65dd054987ca1d99",
+      "raw_url": "https://raw.githubusercontent.com/koreader/koreader/afff28b107a7ea4ab5867b5e65dd054987ca1d99/plugins/exporter.koplugin/target/json.lua",
+      "url": "https://github.com/koreader/koreader/blob/afff28b107a7ea4ab5867b5e65dd054987ca1d99/plugins/exporter.koplugin/target/json.lua",
+      "git_blob_sha": "667593d467e18ce9f726e82b3f61f5b887b59a46",
+      "local_path": "inputs/koreader/plugins/exporter.koplugin/target/json.lua",
+      "bytes": 2362,
+      "sha256": "44b5e603e3408c75a8a093ace6fe6afffe4c2d59a2090f1b8bd794b2479ac055"
+    },
+    {
+      "application": "koreader",
+      "path": "plugins/exporter.koplugin/target/markdown.lua",
+      "commit": "afff28b107a7ea4ab5867b5e65dd054987ca1d99",
+      "raw_url": "https://raw.githubusercontent.com/koreader/koreader/afff28b107a7ea4ab5867b5e65dd054987ca1d99/plugins/exporter.koplugin/target/markdown.lua",
+      "url": "https://github.com/koreader/koreader/blob/afff28b107a7ea4ab5867b5e65dd054987ca1d99/plugins/exporter.koplugin/target/markdown.lua",
+      "git_blob_sha": "11feb956ee2a40411850ac3deb915fd4ab74fa6c",
+      "local_path": "inputs/koreader/plugins/exporter.koplugin/target/markdown.lua",
+      "bytes": 5180,
+      "sha256": "c1f47d5f018be751ba2db6baf11b5fc64e0d2b4e9ed40d7795133e8bbab2abc6"
+    },
+    {
+      "application": "mpv",
+      "path": "player/configfiles.c",
+      "commit": "01a7420cbb4bfcb3ae275b864a8a734c61ee8831",
+      "raw_url": "https://raw.githubusercontent.com/mpv-player/mpv/01a7420cbb4bfcb3ae275b864a8a734c61ee8831/player/configfiles.c",
+      "url": "https://github.com/mpv-player/mpv/blob/01a7420cbb4bfcb3ae275b864a8a734c61ee8831/player/configfiles.c",
+      "git_blob_sha": "46ad9cceadd00398a42d23a29e90da16014948f5",
+      "local_path": "inputs/mpv/player/configfiles.c",
+      "bytes": 15180,
+      "sha256": "7958eed9fb7896075d500f08fe4e1a1e5af926cc9acf5268e360fc380dc74d48"
+    },
+    {
+      "application": "jellyfin",
+      "path": "Jellyfin.Server.Implementations/FullSystemBackup/BackupService.cs",
+      "commit": "c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81",
+      "raw_url": "https://raw.githubusercontent.com/jellyfin/jellyfin/c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81/Jellyfin.Server.Implementations/FullSystemBackup/BackupService.cs",
+      "url": "https://github.com/jellyfin/jellyfin/blob/c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81/Jellyfin.Server.Implementations/FullSystemBackup/BackupService.cs",
+      "git_blob_sha": "7c10a5dc772cd8aeb5250a37444fb8b2a6b4952d",
+      "local_path": "inputs/jellyfin/Jellyfin.Server.Implementations/FullSystemBackup/BackupService.cs",
+      "bytes": 29154,
+      "sha256": "92616161835958958a25e598ca9b7f246b45d2b39343c4a5867fa117e7618d1f"
+    },
+    {
+      "application": "jellyfin",
+      "path": "MediaBrowser.XbmcMetadata/Savers/BaseNfoSaver.cs",
+      "commit": "c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81",
+      "raw_url": "https://raw.githubusercontent.com/jellyfin/jellyfin/c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81/MediaBrowser.XbmcMetadata/Savers/BaseNfoSaver.cs",
+      "url": "https://github.com/jellyfin/jellyfin/blob/c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81/MediaBrowser.XbmcMetadata/Savers/BaseNfoSaver.cs",
+      "git_blob_sha": "5a9bbbef4f9269f35a5b1ccf30d977105eb68c62",
+      "local_path": "inputs/jellyfin/MediaBrowser.XbmcMetadata/Savers/BaseNfoSaver.cs",
+      "bytes": 37999,
+      "sha256": "cce645ecaca664b1bd21d30c44a48bb497f27da9a96f03271164fa8251361809"
+    },
+    {
+      "application": "reaper",
+      "path": "sdk/reaper_plugin.h",
+      "commit": "c0eafe87863b2bf69c5c822760f1b32a753b211b",
+      "raw_url": "https://raw.githubusercontent.com/justinfrankel/reaper-sdk/c0eafe87863b2bf69c5c822760f1b32a753b211b/sdk/reaper_plugin.h",
+      "url": "https://github.com/justinfrankel/reaper-sdk/blob/c0eafe87863b2bf69c5c822760f1b32a753b211b/sdk/reaper_plugin.h",
+      "git_blob_sha": "a11b850df5ae9b14cce2ee7f1d5de34ba551cd65",
+      "local_path": "inputs/reaper/sdk/reaper_plugin.h",
+      "bytes": 73064,
+      "sha256": "e94b69bf3dd5573da6c34ac8f35af6911b302c4f79a33be424d2a8e49ba2651b"
+    },
+    {
+      "application": "kodi",
+      "path": "xbmc/video/VideoDatabase.cpp",
+      "commit": "a097d6978028aef8840b23695a57c606697f156a",
+      "git_blob_sha": "a4d7953145a83ba7c3c983b25e2fea7a69ace4c9",
+      "url": "https://github.com/xbmc/xbmc/blob/a097d6978028aef8840b23695a57c606697f156a/xbmc/video/VideoDatabase.cpp",
+      "raw_url": "https://raw.githubusercontent.com/xbmc/xbmc/a097d6978028aef8840b23695a57c606697f156a/xbmc/video/VideoDatabase.cpp",
+      "local_path": "inputs/kodi/xbmc/video/VideoDatabase.cpp",
+      "bytes": 498204,
+      "sha256": "6fbd17e6108d37be9081e259e15e87cc30ace09e690a5fb9a3cebaf2d250a89f"
+    }
+  ],
+  "observations": {},
+  "source_questions": [
+    {
+      "application": "shotcut",
+      "id": "src/autosavefile.cpp",
+      "anchors": {
+        "src/autosavefile.cpp": [
+          "AutoSaveFile::~AutoSaveFile()",
+          "remove();"
+        ]
+      },
+      "locations": [
+        {
+          "path": "src/autosavefile.cpp",
+          "anchor": "AutoSaveFile::~AutoSaveFile()",
+          "lines": [
+            44
+          ]
+        },
+        {
+          "path": "src/autosavefile.cpp",
+          "anchor": "remove();",
+          "lines": [
+            47,
+            53
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "shotcut",
+      "id": "src/mltxmlchecker.cpp",
+      "anchors": {
+        "src/mltxmlchecker.cpp": [
+          "relinkMismatch",
+          "m_unlinkedFilesModel.appendRow"
+        ]
+      },
+      "locations": [
+        {
+          "path": "src/mltxmlchecker.cpp",
+          "anchor": "relinkMismatch",
+          "lines": [
+            326,
+            341,
+            344,
+            346,
+            348,
+            350
+          ]
+        },
+        {
+          "path": "src/mltxmlchecker.cpp",
+          "anchor": "m_unlinkedFilesModel.appendRow",
+          "lines": [
+            564
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "koreader",
+      "id": "frontend/docsettings.lua",
+      "anchors": {
+        "frontend/docsettings.lua": [
+          "pcall(dofile, candidate_path)",
+          "util.partialMD5(doc_path)"
+        ]
+      },
+      "locations": [
+        {
+          "path": "frontend/docsettings.lua",
+          "anchor": "pcall(dofile, candidate_path)",
+          "lines": [
+            276
+          ]
+        },
+        {
+          "path": "frontend/docsettings.lua",
+          "anchor": "util.partialMD5(doc_path)",
+          "lines": [
+            127
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "koreader",
+      "id": "plugins/exporter.koplugin/target/json.lua",
+      "anchors": {
+        "plugins/exporter.koplugin/target/json.lua": [
+          "table.insert(t.entries, entry[1])"
+        ]
+      },
+      "locations": [
+        {
+          "path": "plugins/exporter.koplugin/target/json.lua",
+          "anchor": "table.insert(t.entries, entry[1])",
+          "lines": [
+            37
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "koreader",
+      "id": "plugins/exporter.koplugin/target/markdown.lua",
+      "anchors": {
+        "plugins/exporter.koplugin/target/markdown.lua": [
+          "md.prepareBookContent"
+        ]
+      },
+      "locations": [
+        {
+          "path": "plugins/exporter.koplugin/target/markdown.lua",
+          "anchor": "md.prepareBookContent",
+          "lines": [
+            111,
+            124
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "mpv",
+      "id": "player/configfiles.c",
+      "anchors": {
+        "player/configfiles.c": [
+          "mp_write_watch_later_conf",
+          "M_SETOPT_PRESERVE_CMDLINE",
+          "unlink(fname)"
+        ]
+      },
+      "locations": [
+        {
+          "path": "player/configfiles.c",
+          "anchor": "mp_write_watch_later_conf",
+          "lines": [
+            299
+          ]
+        },
+        {
+          "path": "player/configfiles.c",
+          "anchor": "M_SETOPT_PRESERVE_CMDLINE",
+          "lines": [
+            115,
+            435
+          ]
+        },
+        {
+          "path": "player/configfiles.c",
+          "anchor": "unlink(fname)",
+          "lines": [
+            395,
+            408
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "jellyfin",
+      "id": "Jellyfin.Server.Implementations/FullSystemBackup/BackupService.cs",
+      "anchors": {
+        "Jellyfin.Server.Implementations/FullSystemBackup/BackupService.cs": [
+          "manifest!.ServerVersion > _applicationHost.ApplicationVersion",
+          "overwrite: true",
+          "PurgeDatabase"
+        ]
+      },
+      "locations": [
+        {
+          "path": "Jellyfin.Server.Implementations/FullSystemBackup/BackupService.cs",
+          "anchor": "manifest!.ServerVersion > _applicationHost.ApplicationVersion",
+          "lines": [
+            116
+          ]
+        },
+        {
+          "path": "Jellyfin.Server.Implementations/FullSystemBackup/BackupService.cs",
+          "anchor": "overwrite: true",
+          "lines": [
+            151
+          ]
+        },
+        {
+          "path": "Jellyfin.Server.Implementations/FullSystemBackup/BackupService.cs",
+          "anchor": "PurgeDatabase",
+          "lines": [
+            206
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "jellyfin",
+      "id": "MediaBrowser.XbmcMetadata/Savers/BaseNfoSaver.cs",
+      "anchors": {
+        "MediaBrowser.XbmcMetadata/Savers/BaseNfoSaver.cs": [
+          "var userId = options.UserId;"
+        ]
+      },
+      "locations": [
+        {
+          "path": "MediaBrowser.XbmcMetadata/Savers/BaseNfoSaver.cs",
+          "anchor": "var userId = options.UserId;",
+          "lines": [
+            863
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "reaper",
+      "id": "sdk/reaper_plugin.h",
+      "anchors": {
+        "sdk/reaper_plugin.h": [
+          "ProjectStateContext",
+          "plug-ins may or may not want to save their undo states"
+        ]
+      },
+      "locations": [
+        {
+          "path": "sdk/reaper_plugin.h",
+          "anchor": "ProjectStateContext",
+          "lines": [
+            359,
+            372,
+            375,
+            619,
+            620,
+            1196,
+            1202,
+            1210,
+            1211
+          ]
+        },
+        {
+          "path": "sdk/reaper_plugin.h",
+          "anchor": "plug-ins may or may not want to save their undo states",
+          "lines": [
+            1208
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "kodi",
+      "id": "xbmc/video/VideoDatabase.cpp",
+      "anchors": {
+        "xbmc/video/VideoDatabase.cpp": [
+          "void CVideoDatabase::ExportToXML",
+          "// FIXME: scraper settings are not exported?",
+          "else if (silent)"
+        ]
+      },
+      "locations": [
+        {
+          "path": "xbmc/video/VideoDatabase.cpp",
+          "anchor": "void CVideoDatabase::ExportToXML",
+          "lines": [
+            11161
+          ]
+        },
+        {
+          "path": "xbmc/video/VideoDatabase.cpp",
+          "anchor": "// FIXME: scraper settings are not exported?",
+          "lines": [
+            12161
+          ]
+        },
+        {
+          "path": "xbmc/video/VideoDatabase.cpp",
+          "anchor": "else if (silent)",
+          "lines": [
+            11064
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    }
+  ]
+}

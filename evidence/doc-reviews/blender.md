@@ -4,6 +4,15 @@ Reviewed 22 October 2026 from the Blender Manual (5.2 LTS), blender.org, and the
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1. A few long developer pages were only available as summaries, and the blend-file format page returned 404.
 
+## Evidence follow-up: 23 October 2026
+
+Two bounded questions are resolved in [batch 5](../third-pass/batch-5/README.md#blender) and reflected in the [application page](../../content/directory/blender.md). Existing eligibility and principle ratings remain unchanged until the next-pass reconciliation, as requested by the user.
+
+- [x] Resolved: The source documents and interprets the SDNA sections NAME, TYPE, TLEN and STRC, exposing member names, types, sizes and structure records. The repository also retains a historical blend-format explanation and reader tools targeting Blender 2.48/2.5-era files. Format knowledge is available, but neither those historical tools nor this inspection establish reconstruction of every current blend file or scene semantics.
+- [x] Resolved: Pack All packs supported file/tiled images, eligible external fonts, sounds and volumes, and handles geometry-node bakes on non-linked objects. Movie/image-sequence image sources are skipped, with a warning on the verbose path; linked-object bake processing is skipped. The command is not proof that every external dependency has become self-contained.
+
+Remaining: An actual current-version blend-file interpretation, complete offline scene/dependency rebuild, pack/move comparison, editable export losses, version compatibility and script/undo safeguards.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -33,3 +42,18 @@ Reviewed 22 October 2026 from the Blender Manual (5.2 LTS), blender.org, and the
 2. Export the same scene to glTF, USD, and OBJ, reimport, and list what is lost beyond the documented limits.
 3. Open the file in an older Blender and re-save, and note what is dropped.
 4. Not found: a file-format specification for third parties, Find Missing Files, default of Allow Online Access, default undo steps, whether undo survives a save, warnings on applying modifiers, and the `.blend@` file.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-6/README.md#blender); [actual assessment](../../content/directory/blender.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. Published SDNA definitions explain binary structure layout, while Pack All deliberately skips some external image/movie/linked bake dependencies. Neither a current scene was independently reconstructed nor its complete assets, scripts, node semantics and compatible runtime retained and compared. Available format knowledge is not complete scene survival.
+- E5: Not Verified. Undo/recovery documentation and pack warnings do not establish effective Python/driver/plugin authorization, save/export overwrite control or correction across asset packing and destructive scene changes. Known pack exclusions are dependency facts, not proof of governable execution.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: An actual current-version blend-file interpretation, complete offline scene/dependency rebuild, pack/move comparison, editable export losses, version compatibility and script/undo safeguards. E5 needs effective script/driver/plugin trust, overwrite and destructive-edit controls plus recoverable scene state.
+
+Next without a local installation: Obtain a complete synthetic scene/dependency manifest, native source and interchange/reference outputs with expected object/node/animation semantics; inspect preserved files and reuse version-matched script/undo/save observations.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

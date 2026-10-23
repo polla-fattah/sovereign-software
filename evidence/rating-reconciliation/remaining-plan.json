@@ -1,0 +1,1126 @@
+{
+  "review_date": "2026-10-24",
+  "authorization": "User requested every remaining application individually, with actual assessments updated, without installing target software.",
+  "total_pending": 56,
+  "original_completed": 12,
+  "method": "Preserve each existing version/role/domain scope. Evaluate retained source/fixture observations individually; use additional primary-source inspection for explicit unresolved questions. A resolved sub-question is not automatically E3/E5 Pass. Concrete comprehensive source evidence may support Medium-confidence findings, but missing coverage stays Not Verified, not Fail.",
+  "scope_guard": "No narrowing a broad application profile to a small fixture to obtain Pass. E1/E4/Locality are not re-certified by this targeted E3/E5 review; any related E2/Sovereignty correction is individually recorded. Do not treat documentation presence as proof of recovery.",
+  "sequence": [
+    {
+      "batch": 3,
+      "applications": [
+        "calibre",
+        "audacity",
+        "ardour",
+        "musescore-studio",
+        "zim-wiki",
+        "taskwarrior"
+      ]
+    },
+    {
+      "batch": 4,
+      "applications": [
+        "actual-budget",
+        "qgis",
+        "freecad",
+        "gitea",
+        "forgejo",
+        "paperless-ngx"
+      ]
+    },
+    {
+      "batch": 5,
+      "applications": [
+        "cadquery",
+        "darktable",
+        "jabref",
+        "gnu-octave",
+        "kdenlive",
+        "keepassxc"
+      ]
+    },
+    {
+      "batch": 6,
+      "applications": [
+        "blender",
+        "inkscape",
+        "krita",
+        "gimp",
+        "kicad",
+        "openscad"
+      ]
+    },
+    {
+      "batch": 7,
+      "applications": [
+        "logseq",
+        "obsidian",
+        "bibdesk",
+        "libreoffice",
+        "beancount",
+        "hledger"
+      ]
+    },
+    {
+      "batch": 8,
+      "applications": [
+        "gnucash",
+        "money-manager-ex",
+        "todo-txt",
+        "hugo",
+        "typst",
+        "ngspice"
+      ]
+    },
+    {
+      "batch": 9,
+      "applications": [
+        "nixos",
+        "guix",
+        "openbsd",
+        "podman",
+        "syncthing",
+        "pass"
+      ]
+    },
+    {
+      "batch": 10,
+      "applications": [
+        "gdal",
+        "grass-gis",
+        "r-project",
+        "gnu-pspp",
+        "kolibri",
+        "moodle"
+      ]
+    },
+    {
+      "batch": 11,
+      "applications": [
+        "shotcut",
+        "reaper",
+        "kodi",
+        "koreader",
+        "mpv",
+        "jellyfin"
+      ]
+    },
+    {
+      "batch": 12,
+      "applications": [
+        "briar",
+        "jami"
+      ]
+    }
+  ],
+  "baseline": [
+    {
+      "id": "actual-budget",
+      "version": "Source commit d1a536f35c5a114eda0582d5a1d744a9103cc90e; export, import, and automatic backup implementation inspected",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "36a02c9a8bc9cf12ea2924076b43857c2dd680598ddc3cfd70aa64c96558305b"
+    },
+    {
+      "id": "ardour",
+      "version": "Source commit b896344c8d16f89e04a235562ab31594605c6715; session XML source relationships and missing-processor state retention",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "8b80a1e5c2177224c84cfd450c82093ce81aab20ab8bd6bb26ab2baaf7f322da"
+    },
+    {
+      "id": "audacity",
+      "version": "Source commit f515da46486301d48db89f195729ef0c87980668; published AUP4 SQLite read boundary and encoded project representation",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "f76350053208b4ceb65874fe6fc1e74efce7ca4be88e9367710f06df437d6051"
+    },
+    {
+      "id": "beancount",
+      "version": "Source commit 9747213802acb733ce53acc6e963f5961f47d6cd",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "ee1c6ad1dec11026a160087a2698405657a2704973e9759ff332e29f92fc065c"
+    },
+    {
+      "id": "bibdesk",
+      "version": "Official Subversion source r30791",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "d2f80bbb6a1012049474d615b805be3385820a0dc406f54c75c27257325e839e"
+    },
+    {
+      "id": "blender",
+      "version": "Source commit ded7fde71c04f034d6c065e8d0a75d9f548003a0; published SDNA layout and Pack All coverage",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "8a8950b193f92617e932eb2c9719655bbbe2584f1841df6e8205fc24fb142c82"
+    },
+    {
+      "id": "briar",
+      "version": "Source d03d6fcd776349ec6c8b7d22035e9bb04aa1787c",
+      "eligibility": {
+        "independent_data_access": "not_verified",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "does_not_meet",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "e764897daeef38c344a55dc8a9aeb08e13468cc8dc6db46dcd997f23a098403a"
+    },
+    {
+      "id": "cadquery",
+      "version": "Source commit 33361dc1b5b70bc83ce36f1b34a01ca85dfca80a; STEP fixture, assembly exporter, and CQGI execution source inspected; no CAD execution",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "meets"
+      },
+      "source_sha256": "9b515bb21a3a580ada6777a07693254134682a05ece56bb1c68e77d78a33e273"
+    },
+    {
+      "id": "calibre",
+      "version": "Source commit e2a169f96a30b9be215e3abd78cb0599e7a4479a; populated metadata SQLite relationships and preference-restore conditions",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "1336d96300d2ca00bd94e4feb79f1296b0fff7ce29654bc216e28aea8a6cc360"
+    },
+    {
+      "id": "darktable",
+      "version": "Source commit 6556cd7dbb0e69f95d165dda8b69e7270c327f6d; XMP benchmark fixture and parameter encoder/decoder inspected; no image rendering",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "07ab0993b762f9fa815f3af62c1d70113dd4352ef7ec317b995fd5dfa83cc5ce"
+    },
+    {
+      "id": "forgejo",
+      "version": "Source commit b021976fb1a87ec18543c3a5586ecfabcc1c06e7; dump storage layout and dump-repo destination protection",
+      "eligibility": {
+        "independent_data_access": "not_verified",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "partial",
+        "transparency": "partial"
+      },
+      "source_sha256": "0cd08805d86ed4a029ffa56c315ea01d1ba6adecd85be5c0ec180013e72c7755"
+    },
+    {
+      "id": "freecad",
+      "version": "Source commit d48752f2851906f93e060cc996ba9fba1e5a05f8 and retained PadTest.fcstd fixture; no CAD execution",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "f97317f32a50fa7fd20fd67027647e43923b8f7210923007cd9d5c4d4622d4f4"
+    },
+    {
+      "id": "gdal",
+      "version": "Pinned evidence 0e24e0288164b5237df0aeb82ab742909e719479",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "meets"
+      },
+      "source_sha256": "a869d99cdd6c13d7f23ad9bb22399609438745d9aa374cb83b2d824b8493470d"
+    },
+    {
+      "id": "gimp",
+      "version": "Source commit 84709e20bc45311322a318b20669dc6b52118353; legacy XCF layer records and OpenRaster raster/mode boundaries",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "9f1bea6d5cd307bdfd7835a9892a41a157cf3fe6c8575afe51d8eeaf0e1664ea"
+    },
+    {
+      "id": "gitea",
+      "version": "Source commit ad37b88631ade5af5db738a4ebe4ab89ed8d237d; dump storage coverage and repository export layout",
+      "eligibility": {
+        "independent_data_access": "not_verified",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "partial",
+        "transparency": "partial"
+      },
+      "source_sha256": "5fa58ecdafa2036511ed85356ec5f5ee8e3e362c26c297efaf64a7ec69f66b52"
+    },
+    {
+      "id": "gnu-octave",
+      "version": "Source commit 5208f34c2b13b447c68c956be2a0b1d67476a80d; Dense/sparse Octave-text fixtures and ASCII/save implementation inspected; no Octave execution",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "meets"
+      },
+      "source_sha256": "95153ec0bb262b60f2aefcb591723e2d29a8a32a4e127197f571ce26c0f38eac"
+    },
+    {
+      "id": "gnu-pspp",
+      "version": "Pinned evidence retrieved 2026-10-23",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "meets"
+      },
+      "source_sha256": "7476db1f670552e4e5cbe86d1fbd06a59e4af8d7f7375b91146f7d7a8ba71b69"
+    },
+    {
+      "id": "gnucash",
+      "version": "Source commit fec5643cd22cbafc7b16047f35cbe852395da947",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "b8260eededd6d0f0cecc53f93faf376965b16b4e6c52ad354f27064969243814"
+    },
+    {
+      "id": "grass-gis",
+      "version": "Pinned evidence 09ad2796fff4fdfc2a3bee8446868f8be3076db4",
+      "eligibility": {
+        "independent_data_access": "not_verified",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "28c24f5443fe52fcfad13cfea35433f7eebee84362ed354c72246daf68c3bbd6"
+    },
+    {
+      "id": "guix",
+      "version": "Pinned evidence a639dc9f4767b55d5a9240a76c82957533273657",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "not_verified",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "partial",
+        "transparency": "partial"
+      },
+      "source_sha256": "c972a6b6418297d6429565daf37137240f01d0dd552b4f83da83d3b1354829b4"
+    },
+    {
+      "id": "hledger",
+      "version": "Source commit cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "67d9fc5b86c28b0d1d5d4fe7f6953a9ef80dcf15c55fc0ca2e49f3ff741f8714"
+    },
+    {
+      "id": "hugo",
+      "version": "Hugo v0.166.0 and pinned newer source",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "42a95497a6954f22ef7fb165426eb22c803d27ffaf9460dc3d1701fd37ecb3f5"
+    },
+    {
+      "id": "inkscape",
+      "version": "Source commit 9055f262b58743a1f7caee54c1132f029341fe0a; sample SVG metadata/embedded assets and Plain SVG action registration",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "9288b8d0dda1b957711c0d5cb72cf9991d465a0d3a423fa8f87efe70361fd666"
+    },
+    {
+      "id": "jabref",
+      "version": "Source commit 1e2e9a089986e317cd7f82f4c0114b8950164925; BibTeX grouping fixture and group/file-field serializers inspected",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "a7f7768c94246e8f6bf04937509ebe62678dfb2ceacc7369b11d99b90cc7ff2c"
+    },
+    {
+      "id": "jami",
+      "version": "Source 984f7afbe8d85d119391c2e24e4e1ccbcbf87f28",
+      "eligibility": {
+        "independent_data_access": "not_verified",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "partial",
+        "transparency": "partial"
+      },
+      "source_sha256": "2c384de43ebb51580b5de4227f28a97e0fc3819fd988a21629cda3d9441ec455"
+    },
+    {
+      "id": "jellyfin",
+      "version": "Pinned evidence c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "e581250284e482864cf7dac86dfbcbe9e0316402a4926d25ef36c109bf7aa739"
+    },
+    {
+      "id": "kdenlive",
+      "version": "Source commit 80b74ffa95390f4cc8d75a4e886e7ff47373583e; Nested-effects project fixture and archive path-rewrite implementation inspected; no rendering",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "7f546ceed6e9e07171dd58958807c388179361d1474a03d5b6454577684a8c1e"
+    },
+    {
+      "id": "keepassxc",
+      "version": "Source commit d5e43b779d5e23c23963d53b806dcda5dd38f50e; Historical XML fixture and CSV/XML export call paths inspected; no encrypted-vault execution",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "c22090b2cd95360ec162c6148e9f2839846b9064adb0bcb4925031ba0b0142cb"
+    },
+    {
+      "id": "kicad",
+      "version": "Source commit ba5ed30c1bee8bcfa7db6dc423f1d20224c4e3a5; PCB S-expression connectivity and project-archive inclusion limits",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "00cf213ad0fee9fb183ba1c17af794276af2fa912cf45045b7df72754ef3dc07"
+    },
+    {
+      "id": "kodi",
+      "version": "Pinned evidence a097d6978028aef8840b23695a57c606697f156a",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "ab94b4692f81b0f39cfb9344d7dcf23ba9a45688ba621419efbf1560e13134e6"
+    },
+    {
+      "id": "kolibri",
+      "version": "Pinned evidence 303e3baea3e0df85b797111af8ca4d89e7fbbe92",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "7657b6d476fd4da10bba01582604358e5045c078387c181d4ab03f41b1f505db"
+    },
+    {
+      "id": "koreader",
+      "version": "Pinned evidence afff28b107a7ea4ab5867b5e65dd054987ca1d99",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "07e28fa489299e67e2fc578c81dc58b1f32e48b45b06024b733e7742378c56fa"
+    },
+    {
+      "id": "krita",
+      "version": "Source commit b5b6dd3c8b53944f67a824f7f938f4bbfa80275d; KRA archive relationships and OpenRaster editable-state limits",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "a90a6a694217605cd909d5009eacc3b4ab1bef88cd93125cd5aa01dbdfa1a19e"
+    },
+    {
+      "id": "libreoffice",
+      "version": "Source commit 568bac1a5c057f8ec1f43f6d3dae1a9ad0509708",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "9fd31eb300fa7072bcba4f8fbc92cdc702525178920c3fc3bf318ace9e8c1890"
+    },
+    {
+      "id": "logseq",
+      "version": "Source commit 05c3ae73e08498e9e20f1b11c3eac5525e5e588d",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "3c2051cbb25fec1468b5f9712edda45e0e19daa397b4eb7bee633e7e3e3eb7c0"
+    },
+    {
+      "id": "money-manager-ex",
+      "version": "Source commit a4aa421415143406e2557b334137ca1b90b58218",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "37d86fe9ba182b8265ae6d945c75c438065d36c4de13d0b8387a93aa57393e98"
+    },
+    {
+      "id": "moodle",
+      "version": "Pinned evidence 46c042e7da65f8cb2ec7dc19f46566ce61a393e1",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "partial",
+        "transparency": "partial"
+      },
+      "source_sha256": "a15cb41e4fc85585f4d48e682ad63f7cc876f84273484a3cbfac659822154020"
+    },
+    {
+      "id": "mpv",
+      "version": "Pinned evidence 01a7420cbb4bfcb3ae275b864a8a734c61ee8831",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "febae15746c290bfff0d45e0bf383d555e5c211b944685906add3faea1f3ff0c"
+    },
+    {
+      "id": "musescore-studio",
+      "version": "Source commit 4676f83f368f1afc9cad6815eb5401a2ec8aca2b; historical MSCZ archive readability and save/backup conditions",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "2d7dad5693645ccd409f82e2fb260e0e9b3111688997d3b6362277941ca16036"
+    },
+    {
+      "id": "ngspice",
+      "version": "Pinned source 032b1c32c4dbad45ff132bcfac1dbecadbd8abb0",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "7889f558eebc0d45d0d6518f3b1ca9bdbbe774e96e03be8b59492478fb790920"
+    },
+    {
+      "id": "nixos",
+      "version": "Pinned evidence 44d27ba452c1c4177882732bd48fabd7d332e38d",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "6bbd7f3cb807b2410739de3965298283b8e2cdb1339b6652d9d09dbd7e3760d1"
+    },
+    {
+      "id": "obsidian",
+      "version": "Official JSON Canvas source commit 456f843cb293df4f4ab1763e22ccb46a80b307c8",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "18cff4d7cf78f81f3908b95115ef0c7abe33280adb27b6d0a2f7970945d22cba"
+    },
+    {
+      "id": "openbsd",
+      "version": "Pinned evidence d962f40cd0b4b974405c3cac59ec7417040c0533",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "2b75fae9e5bbaf5eca70a4103f3b3491ba124de74ad7bf46a918f5a4dcce2a41"
+    },
+    {
+      "id": "openscad",
+      "version": "Source commit d7a210ed01e5db9f09a8164894b0d0b07d7f2c67; 3MF package/expectation inspection and binary STL information limits",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "fcdf621def3981e2e59fbb806cec867b8c67026167539b354b8d48e7983feb2f"
+    },
+    {
+      "id": "paperless-ngx",
+      "version": "Source commit f71a9a6eda217a0f3e84ff9a40e0e57d10e7d9ae; export manifest coverage, importer version checks and secret handling",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "c8ff99013be32341625b5ae99568376a050ac5fce9ba66596295ec8529625e7e"
+    },
+    {
+      "id": "pass",
+      "version": "Pinned evidence 3ca13cd8882cae4083c1c478858adbf2e82dd037",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "24da8bd3a6abcd2cd13e49c31e4e4b02d733d093d0bc92941e7c366c174dbf60"
+    },
+    {
+      "id": "podman",
+      "version": "Pinned evidence 5e20fea154919770d36569a09c31b4f7b8dc3a28",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "37a322c0d9f762c3efce03fe9e093dc4979187f650d3c6d82ef6bb90ca51b022"
+    },
+    {
+      "id": "qgis",
+      "version": "Source commit b7db8233afbfe8d1e9870da61a2696592295932c and project1.qgz fixture identifying QGIS 3.11.0-Master",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "8bda983109139852066a2a16d6d994421a24ddf590d8fb65fe3774fe1f4d9fdd"
+    },
+    {
+      "id": "r-project",
+      "version": "Pinned evidence c267ebb7f9720154535e63642c25a5d91d5f512d",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "7cabcc018344e51e6060805c79122750a5624b9c22e31407e11cce909d35757a"
+    },
+    {
+      "id": "reaper",
+      "version": "Pinned evidence c0eafe87863b2bf69c5c822760f1b32a753b211b",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "f8acbc5865f96ca7f72c3953b8721af20dd31dbc35dfedc75e0ad3b0bf7483e7"
+    },
+    {
+      "id": "shotcut",
+      "version": "Pinned evidence 34dde4fce394652c00d8f7af9ac2ce37dab1ed92",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "5372b3b55f9e6c78f25d5aabf71d1a61e2a2731f62dad03c5dd6d86a34f129d6"
+    },
+    {
+      "id": "syncthing",
+      "version": "Pinned evidence d6d0181f7d466381c4b39ec8fd944c364f939b32",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "not_verified",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "partial",
+        "longevity": "partial",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "2e38b05198748dd82fbffcc66d4f22d6b90a48304f8eb95198db43424217ae22"
+    },
+    {
+      "id": "taskwarrior",
+      "version": "Source commit c280c347c1adc47e9bb1ad42c92958e2d7f92e9c; JSON fixture interpretation, export scope and duplicate-UUID import updates",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "fb8409f6bf77e03d87fdabbc3287cb4331c83aa193f739aaaa92614436afe110"
+    },
+    {
+      "id": "todo-txt",
+      "version": "Format commit 1d90c086533a2574f6039a756ada760ec672a53e; reference CLI commit a9846a232c86937a218d1be45bc4c7631855ee16",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "c3dc4d87b29814d8bf454ef04a1d9eede7436b1164827c427cbc9d4a202b329a"
+    },
+    {
+      "id": "typst",
+      "version": "Pinned source 64c5e8c02fe0394d913ead36e42ef8c1334d2107",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "39faba64e1d1a39bae415423466913283501cc0402d70f004f771a4c397e3451"
+    },
+    {
+      "id": "zim-wiki",
+      "version": "Source commit d82c631fa20f03764aa336a9357add0cd32714fc; published notebook/format structure, rename links and deletion/trash boundaries",
+      "eligibility": {
+        "independent_data_access": "pass",
+        "practical_exit": "pass",
+        "independent_recoverability": "not_verified",
+        "retained_control": "pass",
+        "consequential_oversight": "not_verified"
+      },
+      "principles": {
+        "sovereignty": "meets",
+        "longevity": "meets",
+        "locality": "meets",
+        "transparency": "partial"
+      },
+      "source_sha256": "4eb149bd1de9d4e6adcb3e1eb2fe1a293d5a47de873adf1d213a866eca26a117"
+    }
+  ]
+}

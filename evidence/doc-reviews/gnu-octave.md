@@ -6,6 +6,8 @@ Reviewed 22 October 2026 from the Octave website (octave.org) and the online man
 
 ## What the documentation says
 
+Follow-up, 23 October 2026: resolved questions and remaining work are recorded in the [second third-pass batch](../third-pass/batch-2/README.md#gnu-octave) and reflected in the [application assessment](../../content/directory/gnu-octave.md). The earlier review below is superseded where that evidence answers or corrects it.
+
 **Storage and access (E1, E3)**
 - `save` writes Octave text by default, and also Octave binary, HDF5, MATLAB v4, v6 and v7 binary, and plain ASCII. Files can be gzip-compressed. `load` detects the format automatically. [Simple File I/O](https://docs.octave.org/latest/Simple-File-I_002fO.html)
 - `save_precision` defaults to 17 digits, described as enough for lossless double values. Single-precision options (`-float-binary`, `-float-hdf5`) keep only single precision. [Simple File I/O](https://docs.octave.org/latest/Simple-File-I_002fO.html)
@@ -47,3 +49,18 @@ Reviewed 22 October 2026 from the Octave website (octave.org) and the online man
 6. Find the correct manual pages for `delete`, `unlink`, `rmdir`, and command history (history file location and retention).
 7. Read the Governance and Code of Conduct pages in full, and the maintainer succession position.
 8. Confirm the 11.3.0 date on an official release page, since the download page omits it.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-5/README.md#gnu-octave); [actual assessment](../../content/directory/gnu-octave.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. Dense/sparse Octave-text values were independently read, while plain ASCII source demonstrably omits complex components and higher-dimensional variables. Binary MAT/HDF5, structs/classes, executable package dependencies and equivalent seeded calculations remain unestablished for the existing scientific-work profile.
+- E5: Not Verified. The source distinguishes temporary-file replacement on non-append save from direct append writes. That is not proof of arbitrary script/package authorization, inspectable numerical mutations, output overwrite control or usable recovery after interrupted saves and execution side effects.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: Binary MAT/HDF5 round trips, structs/classes/complex values, seeded numerical reproduction, dependencies, and real save-failure recovery. E5 needs effective script/package and file-write control, visible parameter/state changes and failure/correction boundaries.
+
+Next without a local installation: Inspect synthetic binary/text scientific-data exports with expected types/shapes/complex values and reproducible script/environment records; use version-matched external numerical/save-failure observations rather than executing the target locally.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

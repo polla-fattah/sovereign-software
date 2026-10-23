@@ -4,6 +4,17 @@ Reviewed 22 October 2026 from the GDAL documentation (gdal.org, stable branch) o
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 10](../third-pass/batch-10/README.md#gdal) and reflected in the [application page](../../content/directory/gdal.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: An upstream GeoPackage 1.4 fixture opened with the available SQLite library independently of GDAL, passed integrity_check, and exposed 10 poly features, its attribute schema, POLYGON geometry-column metadata and EPSG:27700 SRS records. Geometry coordinates were not decoded and no conversion round trip was run.
+- [x] Resolved: The PAM implementation explicitly loads/saves .aux.xml alongside the dataset, or in a configured proxy directory, for metadata unsupported by the driver format. Copying only a raster can therefore omit separately stored metadata; the dataset's file list is a better preservation boundary than its main filename alone.
+
+Remaining: Driver-specific lossy conversion, geometry fidelity, actual overwrite behavior, sidecar-removal comparison and cross-version compatibility remain untested.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -47,3 +58,19 @@ Reviewed 22 October 2026 from the GDAL documentation (gdal.org, stable branch) o
 5. Open a GeoPackage written with `VERSION=1.4` in an older GDAL and in plain SQLite.
 6. Run with the network disabled and observe connections for local-file operations (telemetry and update checks not found in the docs).
 7. Not read: the remaining 46,000 characters of the config options page, the NEWS file, the repository README and LICENSE.TXT, the driver list, and any backward-compatibility policy (the dev practices page did not cover one).
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-10/README.md#gdal); [actual assessment](../../content/directory/gdal.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. An independent GeoPackage read exposes attributes, feature counts, geometry metadata and SRS records, but geometry coordinates were not decoded or reconstructed. PAM sidecars/proxy metadata and driver-specific fidelity remain essential boundaries; main-file access is not complete geospatial recovery.
+- E5: Not Verified. Strict/options documentation makes some transformations explicit, but effective caller overwrite authority, lossy conversion warnings, sidecar handling and usable correction are not established across the assessed drivers/datasets. Inspectable options alone do not prove the required oversight.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+- E2: Not Verified. The former E2 Pass does not establish preservation of essential geometry, CRS, sidecar and driver metadata in an alternative workflow. Format breadth and one readable GeoPackage schema do not complete that migration comparison.
+
+Remaining: Driver-specific lossy conversion, geometry fidelity, actual overwrite behavior, sidecar-removal comparison and cross-version compatibility remain untested. E5 needs driver/caller-specific overwrite and loss decisions, retained transformation parameters and available correction.
+
+Next without a local installation: Acquire representative dataset/file-list/sidecar packets with expected coordinates, CRS, metadata and nodata semantics; compare independent readers and same-version conversion/overwrite observations.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

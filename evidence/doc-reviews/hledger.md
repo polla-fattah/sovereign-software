@@ -4,6 +4,17 @@ Reviewed 22 October 2026 from hledger.org (home, install, export, workflows, rel
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 7](../third-pass/batch-7/README.md#hledger) and reflected in the [application page](../../content/directory/hledger.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: The upstream borrowing example is readable as ordinary journal text, including dated transactions, posting account paths, amounts and explanatory comments. This establishes inspectable source records rather than a binary-only ledger. It does not establish independently recomputed balances, commodity-cost handling or lossless Beancount conversion.
+- [x] Resolved: Import sets new_=True and defers saving .latest state until successful processing. Its dry-run branch prints prospective transactions; the reader receives _dryrun with an explicit no-archive/no-data-file-removal/no-generating-command policy. Non-dry import appends transactions and then saves checkpoint dates. Idempotence therefore depends on checkpoint/input handling, not a universal duplicate-proof import guarantee.
+
+Remaining: Runtime JSON/text/Beancount round trips, balances/costs/comments/tags comparison, duplicate imports with and without checkpoints, clean-directory restore and old/new version behavior.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -43,3 +54,19 @@ Reviewed 22 October 2026 from hledger.org (home, install, export, workflows, rel
 5. Restore a journal from git into a clean directory and compare reports.
 6. Not read: the rest of the manual (the `add`, `import`, `check`, `close`, `rewrite` sections), the remaining 436,000 characters of release notes, the journal format spec, the privacy or telemetry statements (if any), the CREDITS and finance pages, and the licence text on hledger.org.
 7. The release date of 1.52.4 on the install page is absent; confirm against the release notes page directly.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-7/README.md#hledger); [actual assessment](../../content/directory/hledger.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. Readable journal text and documented version-control workflows preserve source records, while no clean reconstruction establishes equivalent balances, costs, comments/tags and import context. The original finance profile requires independent semantic interpretation, not merely copying journal bytes.
+- E5: Not Verified. Import dry-run and deferred checkpoint updates are concrete safeguards; non-dry import appends transactions and persists checkpoint state. Effective duplicate handling, import/checkpoint configuration, source mutation visibility and recourse after bad imports are not sufficiently covered for whole-scope E5.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+- E2: Not Verified. The former E2 Pass does not establish independent-workflow preservation of essential cost/commodity, posting and metadata semantics. Text access and file selection alone do not demonstrate the declared alternative-ledger transition.
+
+Remaining: Runtime JSON/text/Beancount round trips, balances/costs/comments/tags comparison, duplicate imports with and without checkpoints, clean-directory restore and old/new version behavior. E5 needs effective import/checkpoint controls, duplicate cases, visible changes and safe correction; dry-run is a bounded control, not universal idempotence.
+
+Next without a local installation: Inspect synthetic journals plus input/checkpoint/configuration records and expected balances/costs; obtain independent-reader or external round-trip comparisons and same-version dry-run/duplicate/correction evidence.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

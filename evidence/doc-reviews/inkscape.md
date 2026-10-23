@@ -4,6 +4,15 @@ Reviewed 22 October 2026 from the Inkscape wiki (release notes, file-save page),
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Evidence follow-up: 23 October 2026
+
+Two bounded questions are resolved in [batch 5](../third-pass/batch-5/README.md#inkscape) and reflected in the [application page](../../content/directory/inkscape.md). Existing eligibility and principle ratings remain unchanged until the next-pass reconciliation, as requested by the user.
+
+- [x] Resolved: Standard XML parsing reads the historical gears SVG's eight path elements, four use references, Layer 1 metadata and a gears path-effect record with teeth=10 and phi=20. A separate data-URI SVG yielded a 235-byte embedded PNG payload through Base64 decoding. Editor metadata and an embedded asset are independently inspectable; no SVG rendering or live-effect re-editing was reproduced.
+- [x] Resolved: Plain SVG is registered with prune-proprietary-namespaces and prune-inkscape-namespaces actions, unlike the native SVG registration's editor-metadata handling. This identifies an explicit difference in the configured output pipeline, not an executed export or an exhaustive list of lost attributes. Layer/live-effect editability must not be inferred merely from preserved visible paths.
+
+Remaining: An executed native/Plain SVG comparison, independent rendering/editing, fonts and linked-image relocation, PDF/PNG losses, current-version multipage behavior, crash recovery and network behavior.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -47,3 +56,19 @@ Reviewed 22 October 2026 from the Inkscape wiki (release notes, file-save page),
 6. Open a file from 1.4.4 in 1.4.2 and in 1.5 development, with and without multiple pages.
 7. Run offline with a network monitor and check for any traffic at startup, on opening, and when using the Extensions manager.
 8. Read, once inkscape.org is reachable: the official manual pages on undo, the Inkscape SVG namespace, the release page, privacy and governance pages, the software licence text, and the finalized 1.4.x release notes.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-6/README.md#inkscape); [actual assessment](../../content/directory/inkscape.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. Independent SVG/XML and embedded-image inspection recovers some paths, references and live-effect metadata, but no current native/Plain SVG reconstruction establishes equivalent objects/effects, fonts, linked assets and multipage meaning. Namespace pruning is a known export distinction, not complete recovery.
+- E5: Not Verified. The generic publishing/accessibility note does not establish control of document mutations. Save/export overwrite, extension/script execution, external-link transmission and undo/recovery boundaries remain insufficiently evidenced for the original artwork workflow.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+- E2: Not Verified. The former E2 Pass is not supported for the full editable-artwork scope. Plain SVG namespace pruning and historical path inspection do not establish preservation of essential live effects, layers, linked assets and editable relationships in a replacement workflow.
+
+Remaining: An executed native/Plain SVG comparison, independent rendering/editing, fonts and linked-image relocation, PDF/PNG losses, current-version multipage behavior, crash recovery and network behavior. E5 needs extension/external-link and save/export overwrite controls, visible changes and available undo/recovery.
+
+Next without a local installation: Inspect a native/Plain SVG pair with fonts/assets and expected layer/effect/object relationships, plus independent render/edit comparisons. Add primary-source or external tests of extension, overwrite and undo controls.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

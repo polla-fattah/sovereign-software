@@ -1,8 +1,28 @@
 # Org-mode: documentation review
 
+## Rating reconciliation: 23 October 2026
+
+The current [rating review](../rating-reconciliation/batch-1/README.md#emacs-org-mode) supersedes the earlier rating freeze. E3: Not Verified; E5: Not Verified; Longevity: Not assessed; Transparency and Control: Not assessed. The actual application page contains the same decisions and supporting evidence.
+
+Remaining: The existing open recovery and consequential-action scenarios remain pending; the individually explained E3/E5 blockers above determine the current Not Verified and Not assessed findings.
+
+Earlier evidence findings below remain historical observations with their original limits, not automatic Pass results.
+
+
 Reviewed 22 October 2026 from the Org Manual, orgmode.org (including Worg pages), and the GNU ELPA package page only. The manual is headed "for Org version 9.8". The ELPA page lists org-9.8.10.tar dated 2026-Aug-31; the Org release-notes page names version 9.8 but gives no date or year. Licence: contributions fall under "the same licensing terms as those under which GNU Emacs is published", with the FSF as copyright holder; the licence version was not stated on the pages read. The manual itself is under the GNU FDL 1.3 or later.
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
+
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 6](../third-pass/batch-6/README.md#emacs-org-mode) and reflected in the [application page](../../content/directory/emacs-org-mode.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: Standard text inspection of the upstream babel.org fixture identifies 33 headings, links/properties and 45 source blocks, including Emacs Lisp, shell and Org blocks. These structures are readable without Emacs. No block was executed and no export, formula evaluation or attachment restoration was performed.
+- [x] Resolved: The pinned source sets org-confirm-babel-evaluate to t and explicitly handles no/never and no-export/never-export evaluation arguments. Confirmation can be disabled or supplied as a function. This establishes the defined default and control branches, not the effective configuration of every buffer or proof that opening/exporting arbitrary documents is safe.
+
+Remaining: Independent full semantic parsing, export losses, ID/attachment/include relocation, actual Babel prompt/export behavior under local settings, cryptography, undo and older-version compatibility.
 
 ## What the documentation says
 

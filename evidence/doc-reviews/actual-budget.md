@@ -6,6 +6,8 @@ Reviewed 22 October 2026 from the project's official documentation only. Latest 
 
 ## What the documentation says
 
+Follow-up, 23 October 2026: two questions are now resolved in the [third-pass evidence](../third-pass/README.md#actual-budget) and reflected in the [application assessment](../../content/directory/actual-budget.md). The review below preserves the earlier documentation record; its gap list is superseded where the follow-up answers it.
+
 **Storage and access (E1, E3)**
 - Local-first: data is stored on the user's device and, by default, on their own sync server. Works regardless of network connection. [sync](https://actualbudget.org/docs/getting-started/sync)
 - The budget is SQLite. The restore page tells users to open `db.sqlite` from an unzipped backup, and mentions `metadata.json`. No formal schema specification was found; migrations are in the repository. [restore](https://actualbudget.org/docs/backup-restore/restore)
@@ -39,3 +41,18 @@ Reviewed 22 October 2026 from the project's official documentation only. Latest 
 3. Recovery after loss of the sync server.
 4. Pages not read: faq, vision, reconciliation, schedules, rules, install, troubleshooting.
 5. Whether rule-driven and bank-sync changes are visible and reversible.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-4/README.md#actual-budget); [actual assessment](../../content/directory/actual-budget.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. Export and automatic-backup source identify SQLite/metadata packaging, cache removal and discarded CRDT/clock context; import replaces sync/encryption identity. No balance-, rule- and schedule-preserving reconstruction of the declared budget and server context is recorded. These transformations define required recovery comparisons, not complete E3.
+- E5: Not Verified. Budgeting and optional bank sync involve consequential financial changes, but the collected export/backup code does not establish authorization, inspectable changes and correction for bank imports, rule execution, encryption transitions and sync conflicts. No financial transaction is inferred to be governable merely because the budget is local.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: balances, rules, schedules, bank-provider credentials, encryption behavior, and full sync-server recovery. E5 needs bank-import/rule/sync authorization, change visibility and correction boundaries in the configured budget.
+
+Next without a local installation: Inspect a synthetic Actual export and expected balances/rules/schedules with SQLite/JSON tools; obtain pinned implementation or externally recorded bank-import, rule, undo and sync/encryption evidence. Use synthetic credentials only.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

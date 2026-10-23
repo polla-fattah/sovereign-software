@@ -1,0 +1,243 @@
+{
+  "inputs": [
+    {
+      "application": "nixos",
+      "path": "nixos/doc/manual/administration/nixos-state.section.md",
+      "commit": "44d27ba452c1c4177882732bd48fabd7d332e38d",
+      "raw_url": "https://raw.githubusercontent.com/NixOS/nixpkgs/44d27ba452c1c4177882732bd48fabd7d332e38d/nixos/doc/manual/administration/nixos-state.section.md",
+      "url": "https://github.com/NixOS/nixpkgs/blob/44d27ba452c1c4177882732bd48fabd7d332e38d/nixos/doc/manual/administration/nixos-state.section.md",
+      "git_blob_sha": "9819d613198c38bb018ffcf3bbc5bc39f54e467a"
+    },
+    {
+      "application": "nixos",
+      "path": "nixos/doc/manual/administration/rollback.section.md",
+      "commit": "44d27ba452c1c4177882732bd48fabd7d332e38d",
+      "raw_url": "https://raw.githubusercontent.com/NixOS/nixpkgs/44d27ba452c1c4177882732bd48fabd7d332e38d/nixos/doc/manual/administration/rollback.section.md",
+      "url": "https://github.com/NixOS/nixpkgs/blob/44d27ba452c1c4177882732bd48fabd7d332e38d/nixos/doc/manual/administration/rollback.section.md",
+      "git_blob_sha": "290d685a2a18d6707b379a3b52d7eefdcb822484"
+    },
+    {
+      "application": "openbsd",
+      "path": "sbin/dump/dump.8",
+      "commit": "d962f40cd0b4b974405c3cac59ec7417040c0533",
+      "raw_url": "https://raw.githubusercontent.com/openbsd/src/d962f40cd0b4b974405c3cac59ec7417040c0533/sbin/dump/dump.8",
+      "url": "https://github.com/openbsd/src/blob/d962f40cd0b4b974405c3cac59ec7417040c0533/sbin/dump/dump.8",
+      "git_blob_sha": "22c0c8e89632116b4ecf34ca48792608117122e5"
+    },
+    {
+      "application": "openbsd",
+      "path": "sbin/restore/restore.8",
+      "commit": "d962f40cd0b4b974405c3cac59ec7417040c0533",
+      "raw_url": "https://raw.githubusercontent.com/openbsd/src/d962f40cd0b4b974405c3cac59ec7417040c0533/sbin/restore/restore.8",
+      "url": "https://github.com/openbsd/src/blob/d962f40cd0b4b974405c3cac59ec7417040c0533/sbin/restore/restore.8",
+      "git_blob_sha": "7465254a9edccba3f39bb5f897565fd38f69a92f"
+    },
+    {
+      "application": "podman",
+      "path": "cmd/podman/containers/export.go",
+      "commit": "5e20fea154919770d36569a09c31b4f7b8dc3a28",
+      "raw_url": "https://raw.githubusercontent.com/podman-container-tools/podman/5e20fea154919770d36569a09c31b4f7b8dc3a28/cmd/podman/containers/export.go",
+      "url": "https://github.com/podman-container-tools/podman/blob/5e20fea154919770d36569a09c31b4f7b8dc3a28/cmd/podman/containers/export.go",
+      "git_blob_sha": "e0061f3b5b24058d2ab702ef25ed4230025499d2"
+    },
+    {
+      "application": "podman",
+      "path": "cmd/podman/system/prune.go",
+      "commit": "5e20fea154919770d36569a09c31b4f7b8dc3a28",
+      "raw_url": "https://raw.githubusercontent.com/podman-container-tools/podman/5e20fea154919770d36569a09c31b4f7b8dc3a28/cmd/podman/system/prune.go",
+      "url": "https://github.com/podman-container-tools/podman/blob/5e20fea154919770d36569a09c31b4f7b8dc3a28/cmd/podman/system/prune.go",
+      "git_blob_sha": "0df3225408ef1972a24832636793d9d7276c28a5"
+    },
+    {
+      "application": "syncthing",
+      "path": "lib/versioner/simple.go",
+      "commit": "d6d0181f7d466381c4b39ec8fd944c364f939b32",
+      "raw_url": "https://raw.githubusercontent.com/syncthing/syncthing/d6d0181f7d466381c4b39ec8fd944c364f939b32/lib/versioner/simple.go",
+      "url": "https://github.com/syncthing/syncthing/blob/d6d0181f7d466381c4b39ec8fd944c364f939b32/lib/versioner/simple.go",
+      "git_blob_sha": "25ec04a1581b166e881cf52bbb579f6fe5b70f5f"
+    },
+    {
+      "application": "syncthing",
+      "path": "lib/versioner/trashcan.go",
+      "commit": "d6d0181f7d466381c4b39ec8fd944c364f939b32",
+      "raw_url": "https://raw.githubusercontent.com/syncthing/syncthing/d6d0181f7d466381c4b39ec8fd944c364f939b32/lib/versioner/trashcan.go",
+      "url": "https://github.com/syncthing/syncthing/blob/d6d0181f7d466381c4b39ec8fd944c364f939b32/lib/versioner/trashcan.go",
+      "git_blob_sha": "2e228900dbd8e66d9ab494d76644a884da3f2609"
+    },
+    {
+      "application": "pass",
+      "path": "src/password-store.sh",
+      "commit": "3ca13cd8882cae4083c1c478858adbf2e82dd037",
+      "raw_url": "https://raw.githubusercontent.com/zx2c4/password-store/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh",
+      "url": "https://github.com/zx2c4/password-store/blob/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh",
+      "git_blob_sha": "22e818fd548a45e6a337c6618c6f711281d70199"
+    },
+    {
+      "application": "guix",
+      "path": "guix/scripts/archive.scm",
+      "commit": "a639dc9f4767b55d5a9240a76c82957533273657",
+      "raw_url": "https://codeberg.org/guix/guix/raw/commit/a639dc9f4767b55d5a9240a76c82957533273657/guix/scripts/archive.scm",
+      "url": "https://codeberg.org/guix/guix/src/commit/a639dc9f4767b55d5a9240a76c82957533273657/guix/scripts/archive.scm"
+    },
+    {
+      "application": "guix",
+      "path": "guix/scripts/system.scm",
+      "commit": "a639dc9f4767b55d5a9240a76c82957533273657",
+      "raw_url": "https://codeberg.org/guix/guix/raw/commit/a639dc9f4767b55d5a9240a76c82957533273657/guix/scripts/system.scm",
+      "url": "https://codeberg.org/guix/guix/src/commit/a639dc9f4767b55d5a9240a76c82957533273657/guix/scripts/system.scm"
+    },
+    {
+      "application": "podman",
+      "path": "docs/source/markdown/podman-export.1.md",
+      "commit": "5e20fea154919770d36569a09c31b4f7b8dc3a28",
+      "raw_url": "https://raw.githubusercontent.com/podman-container-tools/podman/5e20fea154919770d36569a09c31b4f7b8dc3a28/docs/source/markdown/podman-export.1.md",
+      "url": "https://github.com/podman-container-tools/podman/blob/5e20fea154919770d36569a09c31b4f7b8dc3a28/docs/source/markdown/podman-export.1.md",
+      "git_blob_sha": "70c8919219e915714913c0a059977b7ebb351c13"
+    },
+    {
+      "application": "syncthing",
+      "path": "lib/versioner/versioner.go",
+      "commit": "d6d0181f7d466381c4b39ec8fd944c364f939b32",
+      "raw_url": "https://raw.githubusercontent.com/syncthing/syncthing/d6d0181f7d466381c4b39ec8fd944c364f939b32/lib/versioner/versioner.go",
+      "url": "https://github.com/syncthing/syncthing/blob/d6d0181f7d466381c4b39ec8fd944c364f939b32/lib/versioner/versioner.go",
+      "git_blob_sha": "0f44bbfa733d33435542971c85559a6b87407185"
+    },
+    {
+      "application": "syncthing",
+      "path": "lib/versioner/util.go",
+      "commit": "d6d0181f7d466381c4b39ec8fd944c364f939b32",
+      "raw_url": "https://raw.githubusercontent.com/syncthing/syncthing/d6d0181f7d466381c4b39ec8fd944c364f939b32/lib/versioner/util.go",
+      "url": "https://github.com/syncthing/syncthing/blob/d6d0181f7d466381c4b39ec8fd944c364f939b32/lib/versioner/util.go",
+      "git_blob_sha": "dc2e723add87ad856a06ecafefa599711198bb2c"
+    }
+  ],
+  "source_questions": [
+    {
+      "application": "nixos",
+      "id": "nixos/doc/manual/administration/nixos-state.section.md",
+      "anchors": {
+        "nixos/doc/manual/administration/nixos-state.section.md": [
+          "# NixOS {#sec-nixos-state}"
+        ]
+      }
+    },
+    {
+      "application": "nixos",
+      "id": "nixos/doc/manual/administration/rollback.section.md",
+      "anchors": {
+        "nixos/doc/manual/administration/rollback.section.md": [
+          "configuration that hasn't been garbage-collected. These configurations"
+        ]
+      }
+    },
+    {
+      "application": "openbsd",
+      "id": "sbin/dump/dump.8",
+      "anchors": {
+        "sbin/dump/dump.8": [
+          "A level 0, full backup,"
+        ]
+      }
+    },
+    {
+      "application": "openbsd",
+      "id": "sbin/restore/restore.8",
+      "anchors": {
+        "sbin/restore/restore.8": [
+          "The target file system should be made pristine with"
+        ]
+      }
+    },
+    {
+      "application": "podman",
+      "id": "cmd/podman/containers/export.go",
+      "anchors": {
+        "cmd/podman/containers/export.go": [
+          "\texportDescription = \"Exports container's filesystem contents as a tar archive\" +"
+        ]
+      }
+    },
+    {
+      "application": "podman",
+      "id": "cmd/podman/system/prune.go",
+      "anchors": {
+        "cmd/podman/system/prune.go": [
+          "\tflags.BoolVarP(&force, \"force\", \"f\", false, \"Do not prompt for confirmation.  The default is false\")"
+        ]
+      }
+    },
+    {
+      "application": "syncthing",
+      "id": "lib/versioner/simple.go",
+      "anchors": {
+        "lib/versioner/simple.go": [
+          "func newSimple(cfg config.FolderConfiguration) Versioner {"
+        ]
+      }
+    },
+    {
+      "application": "syncthing",
+      "id": "lib/versioner/trashcan.go",
+      "anchors": {
+        "lib/versioner/trashcan.go": [
+          "func newTrashcan(cfg config.FolderConfiguration) Versioner {"
+        ]
+      }
+    },
+    {
+      "application": "pass",
+      "id": "src/password-store.sh",
+      "anchors": {
+        "src/password-store.sh": [
+          "\t    $PROGRAM insert [--echo,-e | --multiline,-m] [--force,-f] pass-name"
+        ]
+      }
+    },
+    {
+      "application": "guix",
+      "id": "guix/scripts/archive.scm",
+      "anchors": {
+        "guix/scripts/archive.scm": [
+          "  -r, --recursive        combined with '--export', include dependencies\"))"
+        ]
+      }
+    },
+    {
+      "application": "guix",
+      "id": "guix/scripts/system.scm",
+      "anchors": {
+        "guix/scripts/system.scm": [
+          "    (if (or dry-run? derivations-only?)"
+        ]
+      }
+    },
+    {
+      "application": "podman",
+      "id": "docs/source/markdown/podman-export.1.md",
+      "anchors": {
+        "docs/source/markdown/podman-export.1.md": [
+          "podman\\-export - Export a container's filesystem contents as a tar archive"
+        ]
+      }
+    },
+    {
+      "application": "syncthing",
+      "id": "lib/versioner/versioner.go",
+      "anchors": {
+        "lib/versioner/versioner.go": [
+          "type Versioner interface {"
+        ]
+      }
+    },
+    {
+      "application": "syncthing",
+      "id": "lib/versioner/util.go",
+      "anchors": {
+        "lib/versioner/util.go": [
+          "func archiveFile(method fs.CopyRangeMethod, srcFs, dstFs fs.Filesystem, filePath string, tagger fileTagger) error {"
+        ]
+      }
+    }
+  ],
+  "ratings_reconciliation": "Deferred; preserve original eligibility and principle tables"
+}

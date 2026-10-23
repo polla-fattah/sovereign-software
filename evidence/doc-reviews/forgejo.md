@@ -4,6 +4,15 @@ Reviewed 22 October 2026 from the Forgejo documentation (v17.0 admin and user pa
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Source follow-up: 23 October 2026
+
+2 specific source questions are resolved in [batch 3](../third-pass/batch-3/README.md#forgejo) and incorporated into the [application assessment](../../content/directory/forgejo.md). These pinned implementation findings supersede the corresponding documentation-only uncertainty below; the original review is retained as a dated record.
+
+- [x] Resolved: The inspected dump writes forgejo-db.sql and app.ini and collects repositories, data and configured LFS, attachment and package objects. Skip flags can omit stores; skipping repositories also bypasses their LFS branch. Database and file jobs run concurrently, so their inclusion alone does not establish a consistent live backup.
+- [x] Resolved: Before calling DumpRepository, dump-repo checks whether repo_dir is a directory and refuses an existing non-empty destination. The source explicitly links this guard to error cleanup that can remove repo_dir. This resolves the implemented protection for this command, not deletion, purge or administrator authorization more generally.
+
+Remaining: Clean instance restoration and relationship/permission comparison; live versus stopped consistency; cross-version and cross-forge migration; purge recovery and external CI/authentication dependencies.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -43,3 +52,18 @@ Reviewed 22 October 2026 from the Forgejo documentation (v17.0 admin and user pa
 6. Upgrade one major series, then try the older binary and confirm the refusal and the restore path.
 7. Delete a test user with `--purge` and check whether anything is recoverable without the backup.
 8. Not read: repository-migration contributor page, administrator and permission docs, privacy statements, CODEOWNERS, governance repository, the end of the command-line page, and the dump archive layout.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-4/README.md#forgejo); [actual assessment](../../content/directory/forgejo.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The dump collects several stores concurrently and can omit repository/LFS branches; inclusion alone does not prove point-in-time consistency. Full user, permission, pull-request/review and attachment reconstruction is not established. A complete independent forge recovery cannot be inferred from a Git clone or dump command.
+- E5: Not Verified. The pinned dump-repo destination guard protects against cleanup deleting a pre-existing non-empty destination. It does not establish administrator/collaborator authority, hook/permission mutation, repository purge or complete recourse in the declared shared project scope.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: Clean instance restoration and relationship/permission comparison; live versus stopped consistency; cross-version and cross-forge migration; purge recovery and external CI/authentication dependencies. E5 needs administrator/contributor permission, hook and purge safeguards, with recoverable state and external-service boundaries.
+
+Next without a local installation: Use a synthetic complete Forgejo dump with declared stopped/live consistency and expected role/relationship/object hashes; inspect the packet and seek matching primary-source or recorded administrator/contributor deletion/recovery checks.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

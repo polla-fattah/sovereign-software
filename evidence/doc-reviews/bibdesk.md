@@ -4,6 +4,17 @@ Reviewed 22 October 2026 from the BibDesk site, manual, release notes, and Sourc
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 6](../third-pass/batch-6/README.md#bibdesk) and reflected in the [application page](../../content/directory/bibdesk.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: The static-group dictionary representation stores an escaped group name and a comma-joined list of publication cite keys, deduplicating keys as it builds the list. This exposes how group membership can be represented independently; it does not establish that another BibTeX editor retains the group dictionary or that smart-group queries round-trip.
+- [x] Resolved: The linked-file reader recognizes Base64 binary-plist data and extracts bookmark or legacy aliasData plus relativePath; a non-plist value is treated as a relative path. These are links and macOS bookmark/alias data, not attached-document payloads. Preserving a bibliographic record alone does not establish that the referenced files move or remain resolvable on another platform.
+
+Remaining: A real .bib with groups and linked files parsed/re-saved by independent tools, smart-group preservation, actual path relocation, macOS-version compatibility and complete document recovery.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -36,3 +47,18 @@ Reviewed 22 October 2026 from the BibDesk site, manual, release notes, and Sourc
 3. Whether smart and static groups survive a save in another editor.
 4. Pages not read: template export chapters, character conversion, sharing preferences, and the remaining wiki pages.
 5. Behavior on the current macOS and on Apple Silicon, and what happens to the app if the maintainers stop.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-7/README.md#bibdesk); [actual assessment](../../content/directory/bibdesk.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The static-group representation exposes membership cite keys, but linked-file data can contain macOS bookmarks/aliases and paths rather than document payloads. A real populated bibliography, smart groups, relocated files and compatible reader have not been reconstructed and compared.
+- E5: Not Verified. Inspectable BibTeX does not establish authorization or correction for generated cite keys, attachment relocation/deletion, automated metadata and destructive edits. The group/link serializer evidence does not cover those consequential operations or their effective macOS configuration.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: A real .bib with groups and linked files parsed/re-saved by independent tools, smart-group preservation, actual path relocation, macOS-version compatibility and complete document recovery. E5 needs attachment and cite-key mutation controls, automatic metadata review and available correction in the assessed macOS workflow.
+
+Next without a local installation: Use a synthetic populated bibliography with group definitions and actual file dependencies; parse it and decode supported link records independently, then obtain macOS/version-matched metadata/file/undo evidence.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

@@ -1,0 +1,16 @@
+{
+  "review_date": "2026-10-24",
+  "applications": [
+    "cadquery",
+    "darktable",
+    "jabref",
+    "gnu-octave",
+    "kdenlive",
+    "keepassxc"
+  ],
+  "parent_plan": "../remaining-plan.json",
+  "role": "Existing declared application role and configuration, unchanged.",
+  "scope": "Keep the existing assessment version and essential-record profile; individual scope, preserved observations and missing coverage are recorded in each application's decision.",
+  "method": "Preserve each existing version/role/domain scope. Evaluate retained source/fixture observations individually; use additional primary-source inspection for explicit unresolved questions. A resolved sub-question is not automatically E3/E5 Pass. Concrete comprehensive source evidence may support Medium-confidence findings, but missing coverage stays Not Verified, not Fail.",
+  "installations": "No target application installation, build or implementation execution. Retained source is data, and existing independent parsers are used only where recorded."
+}

@@ -4,6 +4,17 @@ Reviewed 22 October 2026 from the GnuCash Guide and Manual (v5), gnucash.org (do
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1. Every statement below rests on a fetched page summary, not on a verbatim reading of the full page.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 7](../third-pass/batch-7/README.md#gnucash) and reflected in the [application page](../../content/directory/gnucash.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: Standard XML parsing of the published sample reads 65 account records and two transactions. Every split account reference resolves, and exact rational arithmetic gives a zero sum of split values within each transaction. This checks this small fixture's explicit links and transaction values, not a full trial balance, exchange-rate validation, schedules, budgets or a populated modern book.
+- [x] Resolved: The XML transaction serializer writes transaction currency and separate split value, quantity, account and reconciliation fields. Value and quantity are distinct preservation fields, so reducing a multi-commodity book to a single amount column can discard meaning. The implementation is inspectable; complete cross-backend or CSV reconstruction has not been executed.
+
+Remaining: Representative XML/SQLite backend comparison with schedules/budgets/FX/reconciliation, CSV loss profile, timestamps/backups/log replay, deletion controls and older releases.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -50,3 +61,18 @@ Reviewed 22 October 2026 from the GnuCash Guide and Manual (v5), gnucash.org (do
 6. Delete a reconciled transaction and an account holding transactions; record the warnings and what remains traceable.
 7. Observe network traffic at launch for any update check or telemetry (no statement found).
 8. Pages not read or failed: Guide and Manual reconcile page (404), the Help index (404), the licence page on the website (404), any privacy page, the full 5.17 notes beyond the news page's first 100,000 characters.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-8/README.md#gnucash); [actual assessment](../../content/directory/gnucash.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The small XML sample's split references resolve and explicit transaction values balance, but no representative schedules/budgets/FX/reconciliation book was reconstructed. Separate value and quantity semantics are essential; serializer inspection and a balanced two-transaction sample do not establish full XML/SQLite or historical recovery.
+- E5: Not Verified. Local files/backups and balanced arithmetic do not establish import authorization, correction of transactions/schedules, deleted-record recourse or effective backend/backup/log consistency. The existing evidence does not comprehensively cover the consequential financial operations.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: Representative XML/SQLite backend comparison with schedules/budgets/FX/reconciliation, CSV loss profile, timestamps/backups/log replay, deletion controls and older releases. E5 needs import/delete/change review, effective backup/log policies and recoverable transaction/schedule states; arithmetic balance is separate.
+
+Next without a local installation: Inspect a synthetic XML/SQLite book packet with expected splits, values/quantities, schedules and reconciliation, then obtain independent balance comparisons and version-matched import/delete/log recovery observations.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

@@ -1,0 +1,191 @@
+{
+  "inputs": [
+    {
+      "application": "emacs-org-mode",
+      "path": "lisp/ob-core.el",
+      "commit": "38e0eaeec4b1b3482be1afbf77373457bacd93f2",
+      "raw_url": "https://raw.githubusercontent.com/bzg/org-mode/38e0eaeec4b1b3482be1afbf77373457bacd93f2/lisp/ob-core.el",
+      "url": "https://github.com/bzg/org-mode/blob/38e0eaeec4b1b3482be1afbf77373457bacd93f2/lisp/ob-core.el",
+      "git_blob_sha": "e512f0ffcb1ff80dd8736f90dc2dba21375f9f7c"
+    },
+    {
+      "application": "emacs-org-mode",
+      "path": "testing/examples/babel.org",
+      "commit": "38e0eaeec4b1b3482be1afbf77373457bacd93f2",
+      "raw_url": "https://raw.githubusercontent.com/bzg/org-mode/38e0eaeec4b1b3482be1afbf77373457bacd93f2/testing/examples/babel.org",
+      "url": "https://github.com/bzg/org-mode/blob/38e0eaeec4b1b3482be1afbf77373457bacd93f2/testing/examples/babel.org",
+      "git_blob_sha": "d46afeb5e9c668400d4d6b05ed272a2d4c3871c8",
+      "probe": "org"
+    },
+    {
+      "application": "logseq",
+      "path": "deps/db/src/logseq/db/sqlite/backup.cljs",
+      "commit": "05c3ae73e08498e9e20f1b11c3eac5525e5e588d",
+      "raw_url": "https://raw.githubusercontent.com/logseq/logseq/05c3ae73e08498e9e20f1b11c3eac5525e5e588d/deps/db/src/logseq/db/sqlite/backup.cljs",
+      "url": "https://github.com/logseq/logseq/blob/05c3ae73e08498e9e20f1b11c3eac5525e5e588d/deps/db/src/logseq/db/sqlite/backup.cljs",
+      "git_blob_sha": "6dda40705f65ef97db7f71c9ce7a27b664acd8a3"
+    },
+    {
+      "application": "logseq",
+      "path": "deps/db/src/logseq/db/sqlite/export.cljs",
+      "commit": "05c3ae73e08498e9e20f1b11c3eac5525e5e588d",
+      "raw_url": "https://raw.githubusercontent.com/logseq/logseq/05c3ae73e08498e9e20f1b11c3eac5525e5e588d/deps/db/src/logseq/db/sqlite/export.cljs",
+      "url": "https://github.com/logseq/logseq/blob/05c3ae73e08498e9e20f1b11c3eac5525e5e588d/deps/db/src/logseq/db/sqlite/export.cljs",
+      "git_blob_sha": "ccc7f82a6824a942a3e85fae2abe26da831e27bc"
+    },
+    {
+      "application": "obsidian",
+      "path": "sample.canvas",
+      "commit": "456f843cb293df4f4ab1763e22ccb46a80b307c8",
+      "raw_url": "https://raw.githubusercontent.com/obsidianmd/jsoncanvas/456f843cb293df4f4ab1763e22ccb46a80b307c8/sample.canvas",
+      "url": "https://github.com/obsidianmd/jsoncanvas/blob/456f843cb293df4f4ab1763e22ccb46a80b307c8/sample.canvas",
+      "git_blob_sha": "27b6571127e5256434cd3edad6ec662522d74a8c",
+      "probe": "json"
+    },
+    {
+      "application": "obsidian",
+      "path": "spec/1.0.md",
+      "commit": "456f843cb293df4f4ab1763e22ccb46a80b307c8",
+      "raw_url": "https://raw.githubusercontent.com/obsidianmd/jsoncanvas/456f843cb293df4f4ab1763e22ccb46a80b307c8/spec/1.0.md",
+      "url": "https://github.com/obsidianmd/jsoncanvas/blob/456f843cb293df4f4ab1763e22ccb46a80b307c8/spec/1.0.md",
+      "git_blob_sha": "a463e34c90fadf7981e54a73a865a7866fa5cc61"
+    },
+    {
+      "application": "qownnotes",
+      "path": "src/services/databaseservice.cpp",
+      "commit": "21b4d8554828bf77f89be5b25da7a6722ebc7b8f",
+      "raw_url": "https://raw.githubusercontent.com/pbek/QOwnNotes/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/services/databaseservice.cpp",
+      "url": "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/services/databaseservice.cpp",
+      "git_blob_sha": "058cb3b8ac3f6bb1341499455f048ef0cf0ddacb"
+    },
+    {
+      "application": "qownnotes",
+      "path": "src/managers/noteoperationsmanager.cpp",
+      "commit": "21b4d8554828bf77f89be5b25da7a6722ebc7b8f",
+      "raw_url": "https://raw.githubusercontent.com/pbek/QOwnNotes/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/managers/noteoperationsmanager.cpp",
+      "url": "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/managers/noteoperationsmanager.cpp",
+      "git_blob_sha": "e7c26688770650d39dddbe990acf24a549483a2a"
+    },
+    {
+      "application": "libreoffice",
+      "path": "sfx2/source/doc/docfile.cxx",
+      "commit": "568bac1a5c057f8ec1f43f6d3dae1a9ad0509708",
+      "raw_url": "https://raw.githubusercontent.com/LibreOffice/core/568bac1a5c057f8ec1f43f6d3dae1a9ad0509708/sfx2/source/doc/docfile.cxx",
+      "url": "https://github.com/LibreOffice/core/blob/568bac1a5c057f8ec1f43f6d3dae1a9ad0509708/sfx2/source/doc/docfile.cxx"
+    },
+    {
+      "application": "libreoffice",
+      "path": "sw/qa/extras/odfexport/data/resolved-comment.odt",
+      "commit": "568bac1a5c057f8ec1f43f6d3dae1a9ad0509708",
+      "git_blob_sha": "e136cac3d82527f934063667d04ca04c516d7e9b",
+      "raw_url": "https://raw.githubusercontent.com/LibreOffice/core/568bac1a5c057f8ec1f43f6d3dae1a9ad0509708/sw/qa/extras/odfexport/data/resolved-comment.odt",
+      "url": "https://github.com/LibreOffice/core/blob/568bac1a5c057f8ec1f43f6d3dae1a9ad0509708/sw/qa/extras/odfexport/data/resolved-comment.odt",
+      "probe": "zip-xml"
+    },
+    {
+      "application": "bibdesk",
+      "path": "BDSKStaticGroup.m",
+      "commit": "SVN r30791",
+      "url": "https://svn.code.sf.net/p/bibdesk/svn/!svn/bc/30791/trunk/bibdesk/BDSKStaticGroup.m",
+      "raw_url": "https://svn.code.sf.net/p/bibdesk/svn/!svn/bc/30791/trunk/bibdesk/BDSKStaticGroup.m"
+    },
+    {
+      "application": "bibdesk",
+      "path": "BDSKLinkedFile.m",
+      "commit": "SVN r30791",
+      "url": "https://svn.code.sf.net/p/bibdesk/svn/!svn/bc/30791/trunk/bibdesk/BDSKLinkedFile.m",
+      "raw_url": "https://svn.code.sf.net/p/bibdesk/svn/!svn/bc/30791/trunk/bibdesk/BDSKLinkedFile.m"
+    }
+  ],
+  "source_questions": [
+    {
+      "application": "emacs-org-mode",
+      "id": "babel-controls",
+      "anchors": {
+        "lisp/ob-core.el": [
+          "(defcustom org-confirm-babel-evaluate t",
+          "never-export",
+          "(defun org-babel-confirm-evaluate"
+        ]
+      }
+    },
+    {
+      "application": "logseq",
+      "id": "export-options",
+      "anchors": {
+        "deps/db/src/logseq/db/sqlite/export.cljs": [
+          "include-timestamps?",
+          "exclude-ontology?",
+          "Do not* use for a full graph"
+        ]
+      }
+    },
+    {
+      "application": "logseq",
+      "id": "backup-cleanup",
+      "anchors": {
+        "deps/db/src/logseq/db/sqlite/backup.cljs": [
+          "sqlite-backup-fn db path",
+          "remove-file-if-exists! path",
+          "(.close db)"
+        ]
+      }
+    },
+    {
+      "application": "qownnotes",
+      "id": "tags-and-trash",
+      "anchors": {
+        "src/services/databaseservice.cpp": [
+          "CREATE TABLE tag",
+          "CREATE TABLE noteTagLink",
+          "CREATE TABLE trashItem"
+        ]
+      }
+    },
+    {
+      "application": "qownnotes",
+      "id": "delete-authorization",
+      "anchors": {
+        "src/managers/noteoperationsmanager.cpp": [
+          "remove-note-with-backlinks",
+          "_mainWindow->currentNote.remove(true)",
+          "All files and folders in these folders will be removed"
+        ]
+      }
+    },
+    {
+      "application": "bibdesk",
+      "id": "group-encoding",
+      "anchors": {
+        "BDSKStaticGroup.m": [
+          "dictionaryValue",
+          "componentsJoinedByString:@\",\"",
+          "@\"group name\""
+        ]
+      }
+    },
+    {
+      "application": "bibdesk",
+      "id": "file-link-encoding",
+      "anchors": {
+        "BDSKLinkedFile.m": [
+          "initWithBase64String:",
+          "objectForKey:BOOKMARK_KEY",
+          "objectForKey:RELATIVEPATH_KEY"
+        ]
+      }
+    },
+    {
+      "application": "libreoffice",
+      "id": "backup-overwrite",
+      "anchors": {
+        "sfx2/source/doc/docfile.cxx": [
+          "void SfxMedium::DoBackup_Impl",
+          "NameClash::OVERWRITE",
+          "ERRCODE_SFX_CANTCREATEBACKUP"
+        ]
+      }
+    }
+  ],
+  "ratings_reconciliation": "Deferred; preserve original eligibility and principle tables"
+}

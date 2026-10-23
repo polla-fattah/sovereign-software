@@ -6,6 +6,8 @@ Reviewed 22 October 2026 from the JabRef documentation (docs.jabref.org), jabref
 
 ## What the documentation says
 
+Follow-up, 23 October 2026: resolved questions and remaining work are recorded in the [second third-pass batch](../third-pass/batch-2/README.md#jabref) and reflected in the [application assessment](../../content/directory/jabref.md). The earlier review below is superseded where that evidence answers or corrects it.
+
 **Storage and access (E1, E3)**
 - The library is a plain text file, and JabRef stores data directly in BibTeX or biblatex `.bib` files, not in an internal format. A file is preserved when opened and re-saved. [docs home](https://docs.jabref.org/), [BibTeX and biblatex](https://docs.jabref.org/cite/bibtex-and-biblatex)
 - Group definitions are saved as an `@COMMENT` block inside the `.bib` file. Explicit-selection groups depend on each entry having a unique citation key, otherwise assignments "may not be restored". [groups](https://docs.jabref.org/finding-sorting-and-cleaning-entries/groups)
@@ -47,3 +49,19 @@ Reviewed 22 October 2026 from the JabRef documentation (docs.jabref.org), jabref
 6. Run `-g` and `-w` on a copy and record what changes in the `.bib` and the PDFs.
 7. Not read: undo/redo and entry-deletion pages, preferences for update checks and fetchers, the custom export and import filter pages, the full privacy policy service list, and the changelog beyond 100,000 characters.
 8. Confirm the current stable version: the releases API gave v5.15 (2024) as latest non-prerelease, which should be rechecked on the releases page.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-5/README.md#jabref); [actual assessment](../../content/directory/jabref.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The BibTeX sample exposes records/group hierarchy and serializers document escaped file fields and recursive group depth. Complete memberships, custom fields/types and existing linked-file relocation have not been reconstructed with an independent reader. Bibliographic text readability alone does not cover the original research profile.
+- E5: Not Verified. User-directed editing and inspectable BibTeX are not complete safeguards for automatic metadata replacement, file rename/move/delete, merge operations and citation changes. The collected grouping/file-field evidence does not sufficiently establish authorization, visible diffs and correction for those operations.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+- E2: Not Verified. The prior E2 Pass does not establish independent-workflow preservation of essential group memberships, custom metadata and linked files. Exposing serializer formats or a command-line export is not that migration comparison.
+
+Remaining: Entry memberships, custom types/fields, other readers' handling of metadata comments, linked-file relocation, and cross-version recovery. E5 needs metadata-fetch/merge/file-operation review, visible changes and rollback or recourse for the configured library.
+
+Next without a local installation: Use a populated synthetic BibTeX library and actual linked-file tree with expected groups/memberships; independently parse it and seek version-matched automated-metadata, merge and file-operation control evidence.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

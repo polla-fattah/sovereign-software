@@ -1,0 +1,22 @@
+{
+  "declared_before_execution": "2026-10-23",
+  "purpose": "Reconcile collected evidence with E3/E5 and Longevity/Transparency decisions, without installing target software.",
+  "applications": ["git", "sqlite", "fossil", "jujutsu", "emacs-org-mode", "qownnotes"],
+  "git": {
+    "profile": "vcs_core",
+    "role": "Individual custodian of a local repository",
+    "configuration": "Installed Git; synthetic tracked history, branch, annotated unsigned tag, stash, ignore rules, local configuration and one submodule. Global/system configuration and executable hooks are disabled by the runner.",
+    "backup_contract": "Full main/submodule bundles plus separate local configuration. Reconstruct after original paths become unavailable; compare all refs, history metadata, tracked file bytes, config, submodule commit and fsck.",
+    "consequential_operations": "Preview and execute a tracked-history reset, recover its committed tip using reflog, inspect clean -n, then explicitly force deletion on a disposable copy and recover the untracked file from a separate backup.",
+    "departures": "No LFS, executable hooks, signed-tag authenticity, hosted permissions, network isolation, remotes or corruption injection. These were not silently satisfied: the earlier broader candidate scenario remains open and judgments are limited to this configured local core workflow."
+  },
+  "sqlite": {
+    "profile": "Embedded relational-engine profile: schema, rows, types, keys, relationships, view and trigger definitions; not the application-specific meaning of arbitrary databases",
+    "role": "Developer/custodian using Python's installed SQLite API, explicit transactions, foreign_keys ON and trace callback ON",
+    "recovery": "Repeat the previously recorded dump/backup evidence and inspect schema/rows/view/foreign keys; confirm a restored trigger actually executes.",
+    "consequential_operations": "Rollback a DELETE, rollback to a savepoint, observe a rejected foreign-key write, rollback a DROP TABLE, commit an authorized change and reopen it; record SQL trace.",
+    "departures": "Not a GUI or arbitrary client, not the newest upstream revision, not another SQLite implementation, not a filesystem/crash/corruption stress test. Audit/authorization is supplied at this API boundary, not automatically enforced on every client."
+  },
+  "other_applications": "Source/fixture evidence already retained is reviewed as evidence, not reported as runtime success. Incomplete requirement coverage stays Not Verified and does not justify a positive principle finding.",
+  "schema_repair": "Invalid requirement values become not_verified unless an individually justified decision establishes pass/fail. No automatic partial-to-pass or meets-to-pass rule."
+}

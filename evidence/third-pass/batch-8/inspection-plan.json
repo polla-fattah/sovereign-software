@@ -1,0 +1,229 @@
+{
+  "available_tool_experiments": true,
+  "inputs": [
+    {
+      "application": "git",
+      "path": "Documentation/git-bundle.adoc",
+      "commit": "7e34d8174dcda3435d1404c9a30bef46afe6c13e",
+      "raw_url": "https://raw.githubusercontent.com/git/git/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/git-bundle.adoc",
+      "url": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/git-bundle.adoc",
+      "git_blob_sha": "cd722bd674f0348606b0e26857eec17bfe56ded1"
+    },
+    {
+      "application": "fossil",
+      "path": "src/export.c",
+      "commit": "9f1ea15e06b9be018175d231a939d19372fd4b8b",
+      "raw_url": "https://raw.githubusercontent.com/drhsqlite/fossil-mirror/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/export.c",
+      "url": "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/export.c",
+      "git_blob_sha": "3c3258fddc31887e1c12327dd6d5db278c5efafe"
+    },
+    {
+      "application": "fossil",
+      "path": "src/purge.c",
+      "commit": "9f1ea15e06b9be018175d231a939d19372fd4b8b",
+      "raw_url": "https://raw.githubusercontent.com/drhsqlite/fossil-mirror/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/purge.c",
+      "url": "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/purge.c",
+      "git_blob_sha": "07c8c1d3186f44c49db03f443cd9f6610a9dd15d"
+    },
+    {
+      "application": "jujutsu",
+      "path": "cli/src/commands/undo.rs",
+      "commit": "531e8da8066271040b4b1e74ce17a8a941544cce",
+      "raw_url": "https://raw.githubusercontent.com/jj-vcs/jj/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/undo.rs",
+      "url": "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/undo.rs",
+      "git_blob_sha": "a1a0cbe1347fcf075de32b9e4a18d8b7a15971c2"
+    },
+    {
+      "application": "jujutsu",
+      "path": "cli/src/commands/git/export.rs",
+      "commit": "531e8da8066271040b4b1e74ce17a8a941544cce",
+      "raw_url": "https://raw.githubusercontent.com/jj-vcs/jj/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/git/export.rs",
+      "url": "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/git/export.rs",
+      "git_blob_sha": "0239ccfb98f37f4282adb476bcd33fe6e593c5f6"
+    },
+    {
+      "application": "hugo",
+      "path": "config/security/securityConfig.go",
+      "commit": "ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7",
+      "raw_url": "https://raw.githubusercontent.com/gohugoio/hugo/ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7/config/security/securityConfig.go",
+      "url": "https://github.com/gohugoio/hugo/blob/ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7/config/security/securityConfig.go",
+      "git_blob_sha": "a2708288a3213f58c02be97b7156d5beddd25014"
+    },
+    {
+      "application": "hugo",
+      "path": "resources/resource_factories/create/create.go",
+      "commit": "ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7",
+      "raw_url": "https://raw.githubusercontent.com/gohugoio/hugo/ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7/resources/resource_factories/create/create.go",
+      "url": "https://github.com/gohugoio/hugo/blob/ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7/resources/resource_factories/create/create.go",
+      "git_blob_sha": "1570c264892dde0f644d46d646291c8052e0f625"
+    },
+    {
+      "application": "typst",
+      "path": "crates/typst-cli/src/world.rs",
+      "commit": "64c5e8c02fe0394d913ead36e42ef8c1334d2107",
+      "raw_url": "https://raw.githubusercontent.com/typst/typst/64c5e8c02fe0394d913ead36e42ef8c1334d2107/crates/typst-cli/src/world.rs",
+      "url": "https://github.com/typst/typst/blob/64c5e8c02fe0394d913ead36e42ef8c1334d2107/crates/typst-cli/src/world.rs",
+      "git_blob_sha": "19d795e070e76b0b3b4178944348510288592953"
+    },
+    {
+      "application": "typst",
+      "path": "crates/typst-kit/src/packages.rs",
+      "commit": "64c5e8c02fe0394d913ead36e42ef8c1334d2107",
+      "raw_url": "https://raw.githubusercontent.com/typst/typst/64c5e8c02fe0394d913ead36e42ef8c1334d2107/crates/typst-kit/src/packages.rs",
+      "url": "https://github.com/typst/typst/blob/64c5e8c02fe0394d913ead36e42ef8c1334d2107/crates/typst-kit/src/packages.rs",
+      "git_blob_sha": "a5603579cb239232f4e4b8ade235f0dbc35733c4"
+    },
+    {
+      "application": "ngspice",
+      "path": "src/frontend/rawfile.c",
+      "commit": "032b1c32c4dbad45ff132bcfac1dbecadbd8abb0",
+      "raw_url": "https://raw.githubusercontent.com/ngspice/ngspice/032b1c32c4dbad45ff132bcfac1dbecadbd8abb0/src/frontend/rawfile.c",
+      "url": "https://github.com/ngspice/ngspice/blob/032b1c32c4dbad45ff132bcfac1dbecadbd8abb0/src/frontend/rawfile.c",
+      "git_blob_sha": "4ccf4082dd980451838db8fd1c38c64d8c278525"
+    },
+    {
+      "application": "jujutsu",
+      "path": "docs/operation-log.md",
+      "commit": "531e8da8066271040b4b1e74ce17a8a941544cce",
+      "raw_url": "https://raw.githubusercontent.com/jj-vcs/jj/531e8da8066271040b4b1e74ce17a8a941544cce/docs/operation-log.md",
+      "url": "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/docs/operation-log.md",
+      "git_blob_sha": "be2a22c75eb74b266c3ac94e482c3b3a54d11f2d"
+    },
+    {
+      "application": "jujutsu",
+      "path": "docs/git-compatibility.md",
+      "commit": "531e8da8066271040b4b1e74ce17a8a941544cce",
+      "raw_url": "https://raw.githubusercontent.com/jj-vcs/jj/531e8da8066271040b4b1e74ce17a8a941544cce/docs/git-compatibility.md",
+      "url": "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/docs/git-compatibility.md",
+      "git_blob_sha": "ab8f854ae6aced6a1a0b93038c4bc22eb35d72c9"
+    },
+    {
+      "application": "hugo",
+      "path": "testscripts/commands/hugo__clean_destination_dir.txt",
+      "commit": "ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7",
+      "raw_url": "https://raw.githubusercontent.com/gohugoio/hugo/ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7/testscripts/commands/hugo__clean_destination_dir.txt",
+      "url": "https://github.com/gohugoio/hugo/blob/ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7/testscripts/commands/hugo__clean_destination_dir.txt",
+      "git_blob_sha": "c3273227eb6d168b74fb3206ddb37f78351ab4c2"
+    }
+  ],
+  "source_questions": [
+    {
+      "application": "git",
+      "id": "Documentation/git-bundle.adoc",
+      "anchors": {
+        "Documentation/git-bundle.adoc": [
+          "git-bundle(1)"
+        ]
+      }
+    },
+    {
+      "application": "fossil",
+      "id": "src/export.c",
+      "anchors": {
+        "src/export.c": [
+          "** https://git-scm.com/docs/git-check-ref-format"
+        ]
+      }
+    },
+    {
+      "application": "fossil",
+      "id": "src/purge.c",
+      "anchors": {
+        "src/purge.c": [
+          "** related functionality for removing check-ins from a repository.  It also"
+        ]
+      }
+    },
+    {
+      "application": "jujutsu",
+      "id": "cli/src/commands/undo.rs",
+      "anchors": {
+        "cli/src/commands/undo.rs": [
+          "    allow_cross_workspace: bool,"
+        ]
+      }
+    },
+    {
+      "application": "jujutsu",
+      "id": "cli/src/commands/git/export.rs",
+      "anchors": {
+        "cli/src/commands/git/export.rs": [
+          "    let stats = git::export_refs(tx.repo_mut())?;"
+        ]
+      }
+    },
+    {
+      "application": "hugo",
+      "id": "config/security/securityConfig.go",
+      "anchors": {
+        "config/security/securityConfig.go": [
+          "func (c Config) CheckAllowedHTTPURL(u string) error {"
+        ]
+      }
+    },
+    {
+      "application": "hugo",
+      "id": "resources/resource_factories/create/create.go",
+      "anchors": {
+        "resources/resource_factories/create/create.go": [
+          "\t\t\t\trs.Logger.Warnf(\"Failed to check remote resource: %s\", err)"
+        ]
+      }
+    },
+    {
+      "application": "typst",
+      "id": "crates/typst-cli/src/world.rs",
+      "anchors": {
+        "crates/typst-cli/src/world.rs": [
+          "                crate::fonts::discover_fonts(&world_args.font)"
+        ]
+      }
+    },
+    {
+      "application": "typst",
+      "id": "crates/typst-kit/src/packages.rs",
+      "anchors": {
+        "crates/typst-kit/src/packages.rs": [
+          "        // This means that we do not check the integrity of an existing moved"
+        ]
+      }
+    },
+    {
+      "application": "ngspice",
+      "id": "src/frontend/rawfile.c",
+      "anchors": {
+        "src/frontend/rawfile.c": [
+          "    fprintf(fp, \"No. Variables: %d\\n\", nvars);"
+        ]
+      }
+    },
+    {
+      "application": "jujutsu",
+      "id": "docs/operation-log.md",
+      "anchors": {
+        "docs/operation-log.md": [
+          "Jujutsu records each operation that modifies the repo in the \"operation log\"."
+        ]
+      }
+    },
+    {
+      "application": "jujutsu",
+      "id": "docs/git-compatibility.md",
+      "anchors": {
+        "docs/git-compatibility.md": [
+          "Jujutsu has two backends for storing commits. One of them uses a regular Git"
+        ]
+      }
+    },
+    {
+      "application": "hugo",
+      "id": "testscripts/commands/hugo__clean_destination_dir.txt",
+      "anchors": {
+        "testscripts/commands/hugo__clean_destination_dir.txt": [
+          "# --- Scenario 1: Without static directory ---"
+        ]
+      }
+    }
+  ],
+  "ratings_reconciliation": "Deferred; preserve original eligibility and principle tables"
+}

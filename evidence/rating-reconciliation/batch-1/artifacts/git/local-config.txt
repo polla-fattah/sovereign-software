@@ -1,0 +1,15 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[user]
+	name = Synthetic custodian
+	email = audit@example.invalid
+[submodule "modules/demo"]
+	url = C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\sub-source
+	active = true
+[audit]
+	marker = separate configuration survives

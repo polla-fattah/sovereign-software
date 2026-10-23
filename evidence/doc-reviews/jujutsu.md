@@ -1,8 +1,28 @@
 # Jujutsu: documentation review
 
+## Rating reconciliation: 23 October 2026
+
+The current [rating review](../rating-reconciliation/batch-1/README.md#jujutsu) supersedes the earlier rating freeze. E3: Not Verified; E5: Not Verified; Longevity: Not assessed; Transparency and Control: Not assessed. The actual application page contains the same decisions and supporting evidence.
+
+Remaining: The existing open recovery and consequential-action scenarios remain pending; the individually explained E3/E5 blockers above determine the current Not Verified and Not assessed findings.
+
+Earlier evidence findings below remain historical observations with their original limits, not automatic Pass results.
+
+
 Reviewed 22 October 2026 from the Jujutsu documentation (docs.jj-vcs.dev, which the older jj-vcs.github.io address redirects to), the GitHub repository README, GOVERNANCE.md, and CHANGELOG.md only. Latest release in the changelog: 0.46.0, dated 2026-10-07 (the heading gives a full date). The GitHub Releases page showed no releases, so the version rests on the changelog alone. Licence: Apache-2.0 per the repository README.
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
+
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 8](../third-pass/batch-8/README.md#jujutsu) and reflected in the [application page](../../content/directory/jujutsu.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: Undo restores a parent operation and refuses operations from another workspace unless explicitly overridden. Its implementation warns that undoing workspace removal restores the repository record but not the workspace directory.
+- [x] Resolved: Git export invokes export_refs, not an operation-store archive. The separately inspected operation-log model retains repository views, workspace commits and operation metadata: Git export alone does not establish preservation of that full recovery history.
+
+Remaining: Conflicted-change export, actual operation-store copying, older-version recovery and abandon/garbage-collection behavior remain untested.
 
 ## What the documentation says
 

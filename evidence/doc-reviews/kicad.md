@@ -4,6 +4,15 @@ Reviewed 22 October 2026 from the KiCad 10.0 manuals (docs.kicad.org), the devel
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Evidence follow-up: 23 October 2026
+
+Two bounded questions are resolved in [batch 5](../third-pass/batch-5/README.md#kicad) and reflected in the [application page](../../content/directory/kicad.md). Existing eligibility and principle ratings remain unchanged until the next-pass reconciliation, as requested by the user.
+
+- [x] Resolved: A standalone S-expression parser read the published version-20221018 board: nine footprints, seventeen pads, twenty-six segments and four vias. All seventeen pad net references resolve to declared net IDs; five 3D-model references use the external KICAD6_3DMODEL_DIR variable. This recovers explicit connectivity/asset references, not electrical correctness, fabrication validity or availability of the model files.
+- [x] Resolved: Project archiving traverses the selected project directory and includes recognized extensions/named library tables. STEP/VRML and other extra-file extensions are conditional on Include Extra Files; hidden directories such as .git and .history are excluded. This is file selection, not a demonstrated resolution/copy of every externally referenced library or 3D model.
+
+Remaining: Hierarchical schematic/custom-library reconstruction, complete archive/move including external models, manufacturing and editable export comparison, old/new-version saves, .history recovery and schematic-to-PCB update effects.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -48,3 +57,18 @@ Reviewed 22 October 2026 from the KiCad 10.0 manuals (docs.kicad.org), the devel
 7. Read the remainder of the PCB Editor manual (undo, delete, export chapters), the schematic manual (ERC), the release notes for 10.0, and the per-file format pages.
 8. Check the network traffic on first run and at startup, and confirm the update check default (the docs do not state it).
 9. Not found: any succession or continuity statement, and a stability promise for the file formats.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-6/README.md#kicad); [actual assessment](../../content/directory/kicad.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The standalone PCB parser resolves pad/net relationships and identifies external 3D-model variables, while archive source selects files rather than resolving every dependency. Hierarchical schematics, custom libraries, external models and cross-version editable/fabrication meaning have not been reconstructed.
+- E5: Not Verified. Electrical correctness and manufacturing suitability are not themselves E5 authorization tests. The evidence does not sufficiently establish schematic-to-board mutation review, destructive library/board changes, output overwrite or release/correction controls in the existing engineering workflow.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: Hierarchical schematic/custom-library reconstruction, complete archive/move including external models, manufacturing and editable export comparison, old/new-version saves, .history recovery and schematic-to-PCB update effects. E5 needs inspectable schematic-to-PCB updates, destructive edit/output overwrite controls and available correction; accuracy claims are separate.
+
+Next without a local installation: Inspect a complete synthetic schematic/PCB/library/model packet and expected connectivity/units manifest, with independent output comparisons. Obtain primary-source or external update/undo/overwrite evidence.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

@@ -1,0 +1,455 @@
+{
+  "review_date": "2026-10-24",
+  "purpose": "Individual reconciliation against each existing scope. Completed review is not product certification or proof that every gap is resolved.",
+  "applications": [
+    {
+      "id": "cadquery",
+      "name": "CadQuery",
+      "version": "Source commit 33361dc1b5b70bc83ce36f1b34a01ca85dfca80a; STEP fixture, assembly exporter, and CQGI execution source inspected; no CAD execution",
+      "E3": [
+        "not_verified",
+        "The STEP fixture exposes product names, solids and colors, and assembly export enables names/layers/colors. Geometry equivalence and the editable source's constraints, parameters and OCCT/runtime dependencies have not been reconstructed. Readable Python plus STEP entity counts do not establish the declared engineering-intent recovery.",
+        "https://cadquery.readthedocs.io/en/latest/importexport.html",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "CQGI executes model text with real Python builtins and captures exceptions; the inspected path does not establish a sandbox. No effective execution authorization, dependency trust, output-overwrite visibility or correction after model side effects is established for the declared workflow.",
+        "https://github.com/CadQuery/cadquery/blob/33361dc1b5b70bc83ce36f1b34a01ca85dfca80a/cadquery/cqgi.py#L104-L125",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for CadQuery's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://cadquery.readthedocs.io/en/latest/importexport.html",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://github.com/CadQuery/cadquery/blob/33361dc1b5b70bc83ce36f1b34a01ca85dfca80a/cadquery/cqgi.py#L104-L125",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "practical_exit": "not_verified",
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Geometry equivalence, editable constraints in another CAD tool, complete offline rebuild, and execution/overwrite safeguards. E5 needs model/dependency execution authority, overwrite controls and correction boundaries; exception capture is not isolation.",
+      "current_remaining": "Geometry equivalence, editable constraints in another CAD tool, complete offline rebuild, and execution/overwrite safeguards. E5 needs model/dependency execution authority, overwrite controls and correction boundaries; exception capture is not isolation.",
+      "next": "Inspect source, pinned dependency records and STEP/native output with expected geometry/constraint manifests supplied by upstream or an assessor. Review execution/overwrite safeguards without running untrusted model code.",
+      "E2": [
+        "not_verified",
+        "STEP name/color/layer output does not establish migration of the essential parametric constraints and editable intent into an independent CAD workflow. The former E2 Pass is therefore unestablished, not a verified failure of every possible exit route.",
+        "https://github.com/CadQuery/cadquery/blob/33361dc1b5b70bc83ce36f1b34a01ca85dfca80a/cadquery/occ_impl/exporters/assembly.py#L104-L132",
+        "medium"
+      ],
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for CadQuery does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://github.com/CadQuery/cadquery/blob/33361dc1b5b70bc83ce36f1b34a01ca85dfca80a/cadquery/occ_impl/exporters/assembly.py#L104-L132",
+        "medium"
+      ]
+    },
+    {
+      "id": "darktable",
+      "name": "Darktable",
+      "version": "Source commit 6556cd7dbb0e69f95d165dda8b69e7270c327f6d; XMP benchmark fixture and parameter encoder/decoder inspected; no image rendering",
+      "E3": [
+        "not_verified",
+        "The historical XMP history and 160 decoded parameter/mask blocks are independently inspectable, but module-version semantics and equivalent image reconstruction were not recovered. Original images, library organization, database/sidecar precedence and DTDATA-dependent meaning remain outside the observed fixture coverage.",
+        "https://github.com/darktable-org/darktable/blob/6556cd7dbb0e69f95d165dda8b69e7270c327f6d/src/common/exif.cc#L3649-L3785",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Inspectable non-destructive history is positive evidence, but it does not establish effective sidecar/database conflict precedence, original/export overwrite protection, deletion authority or available correction across the library and editing workflow.",
+        "https://docs.darktable.org/usermanual/development/en/overview/sidecar-files/sidecar/",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for Darktable's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/darktable-org/darktable/blob/6556cd7dbb0e69f95d165dda8b69e7270c327f6d/src/common/exif.cc#L3649-L3785",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://docs.darktable.org/usermanual/development/en/overview/sidecar-files/sidecar/",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Module-specific semantics, image render equivalence, DTDATA, complete library organization, and database/version recovery. E5 needs database/sidecar conflict policy, deletion/export overwrite safeguards and usable correction records.",
+      "current_remaining": "Module-specific semantics, image render equivalence, DTDATA, complete library organization, and database/version recovery. E5 needs database/sidecar conflict policy, deletion/export overwrite safeguards and usable correction records.",
+      "next": "Acquire a synthetic RAW/sidecar/library packet with expected module/history/organization and reference renders; compare records with existing parsers and obtain matching primary-source or external deletion/overwrite/conflict evidence.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Darktable does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://github.com/darktable-org/darktable/blob/6556cd7dbb0e69f95d165dda8b69e7270c327f6d/src/common/exif.cc#L3649-L3785",
+        "medium"
+      ]
+    },
+    {
+      "id": "jabref",
+      "name": "JabRef",
+      "version": "Source commit 1e2e9a089986e317cd7f82f4c0114b8950164925; BibTeX grouping fixture and group/file-field serializers inspected",
+      "E3": [
+        "not_verified",
+        "The BibTeX sample exposes records/group hierarchy and serializers document escaped file fields and recursive group depth. Complete memberships, custom fields/types and existing linked-file relocation have not been reconstructed with an independent reader. Bibliographic text readability alone does not cover the original research profile.",
+        "https://github.com/JabRef/jabref/blob/1e2e9a089986e317cd7f82f4c0114b8950164925/jablib/src/main/java/org/jabref/logic/bibtex/FileFieldWriter.java",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "User-directed editing and inspectable BibTeX are not complete safeguards for automatic metadata replacement, file rename/move/delete, merge operations and citation changes. The collected grouping/file-field evidence does not sufficiently establish authorization, visible diffs and correction for those operations.",
+        "https://docs.jabref.org/",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for JabRef's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/JabRef/jabref/blob/1e2e9a089986e317cd7f82f4c0114b8950164925/jablib/src/main/java/org/jabref/logic/bibtex/FileFieldWriter.java",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://docs.jabref.org/",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "practical_exit": "not_verified",
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Entry memberships, custom types/fields, other readers' handling of metadata comments, linked-file relocation, and cross-version recovery. E5 needs metadata-fetch/merge/file-operation review, visible changes and rollback or recourse for the configured library.",
+      "current_remaining": "Entry memberships, custom types/fields, other readers' handling of metadata comments, linked-file relocation, and cross-version recovery. E5 needs metadata-fetch/merge/file-operation review, visible changes and rollback or recourse for the configured library.",
+      "next": "Use a populated synthetic BibTeX library and actual linked-file tree with expected groups/memberships; independently parse it and seek version-matched automated-metadata, merge and file-operation control evidence.",
+      "E2": [
+        "not_verified",
+        "The prior E2 Pass does not establish independent-workflow preservation of essential group memberships, custom metadata and linked files. Exposing serializer formats or a command-line export is not that migration comparison.",
+        "https://docs.jabref.org/advanced/commandline",
+        "medium"
+      ],
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for JabRef does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://docs.jabref.org/advanced/commandline",
+        "medium"
+      ]
+    },
+    {
+      "id": "gnu-octave",
+      "name": "GNU Octave",
+      "version": "Source commit 5208f34c2b13b447c68c956be2a0b1d67476a80d; Dense/sparse Octave-text fixtures and ASCII/save implementation inspected; no Octave execution",
+      "E3": [
+        "not_verified",
+        "Dense/sparse Octave-text values were independently read, while plain ASCII source demonstrably omits complex components and higher-dimensional variables. Binary MAT/HDF5, structs/classes, executable package dependencies and equivalent seeded calculations remain unestablished for the existing scientific-work profile.",
+        "https://docs.octave.org/octave-10.2.0.pdf",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "The source distinguishes temporary-file replacement on non-append save from direct append writes. That is not proof of arbitrary script/package authorization, inspectable numerical mutations, output overwrite control or usable recovery after interrupted saves and execution side effects.",
+        "https://github.com/gnu-octave/octave/blob/5208f34c2b13b447c68c956be2a0b1d67476a80d/liboctinterp/load-save/load-save.cc#L1564-L1670",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for GNU Octave's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://docs.octave.org/octave-10.2.0.pdf",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://github.com/gnu-octave/octave/blob/5208f34c2b13b447c68c956be2a0b1d67476a80d/liboctinterp/load-save/load-save.cc#L1564-L1670",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Binary MAT/HDF5 round trips, structs/classes/complex values, seeded numerical reproduction, dependencies, and real save-failure recovery. E5 needs effective script/package and file-write control, visible parameter/state changes and failure/correction boundaries.",
+      "current_remaining": "Binary MAT/HDF5 round trips, structs/classes/complex values, seeded numerical reproduction, dependencies, and real save-failure recovery. E5 needs effective script/package and file-write control, visible parameter/state changes and failure/correction boundaries.",
+      "next": "Inspect synthetic binary/text scientific-data exports with expected types/shapes/complex values and reproducible script/environment records; use version-matched external numerical/save-failure observations rather than executing the target locally.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for GNU Octave does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://docs.octave.org/octave-10.2.0.pdf",
+        "medium"
+      ]
+    },
+    {
+      "id": "kdenlive",
+      "name": "Kdenlive",
+      "version": "Source commit 80b74ffa95390f4cc8d75a4e886e7ff47373583e; Nested-effects project fixture and archive path-rewrite implementation inspected; no rendering",
+      "E3": [
+        "not_verified",
+        "The XML fixture reveals timeline/effect/resource relationships, and archive code rewrites resource/proxy/title paths. It does not include an observed complete dependency archive or independent reconstruction with equivalent keyframes, effects and media. Rendering/interchange and version/crash recovery remain incomplete.",
+        "https://github.com/KDE/kdenlive/blob/80b74ffa95390f4cc8d75a4e886e7ff47373583e/src/project/dialogs/archivewidget.cpp#L964-L1013",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "User-directed video editing is not sufficient evidence for save/archive overwrite, render/share approval, asset deletion or correction after missing assets and project mutations. The archive-path routine does not cover the consequential-action surface.",
+        "https://docs.kdenlive.org/en/project_and_asset_management/file_management.html",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for Kdenlive's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/KDE/kdenlive/blob/80b74ffa95390f4cc8d75a4e886e7ff47373583e/src/project/dialogs/archivewidget.cpp#L964-L1013",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://docs.kdenlive.org/en/project_and_asset_management/file_management.html",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Complete archive/move/restore, missing assets, render equivalence, keyframes, OTIO losses, and version/crash recovery. E5 needs asset/save/render/share authorization, inspectable project changes and available correction after destructive edits or overwrite.",
+      "current_remaining": "Complete archive/move/restore, missing assets, render equivalence, keyframes, OTIO losses, and version/crash recovery. E5 needs asset/save/render/share authorization, inspectable project changes and available correction after destructive edits or overwrite.",
+      "next": "Acquire a complete synthetic project/archive/media packet with expected timeline/keyframes and reference renders or OTIO comparisons; inspect XML/assets and seek same-version save/render/archive control evidence.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Kdenlive does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://github.com/KDE/kdenlive/blob/80b74ffa95390f4cc8d75a4e886e7ff47373583e/src/project/dialogs/archivewidget.cpp#L964-L1013",
+        "medium"
+      ]
+    },
+    {
+      "id": "keepassxc",
+      "name": "KeePassXC",
+      "version": "Source commit d5e43b779d5e23c23963d53b806dcda5dd38f50e; Historical XML fixture and CSV/XML export call paths inspected; no encrypted-vault execution",
+      "E3": [
+        "not_verified",
+        "The plaintext historical XML fixture's attachments resolve, but no encrypted KDBX was decrypted or restored across independent clients with preserved history, keys and passkeys. The inspected CSV and KDBX 4+ XML routes omit essential payloads in different ways. Those bounded export limitations are not full native-vault recovery or proof all recovery paths fail.",
+        "https://github.com/keepassxreboot/keepassxc/blob/d5e43b779d5e23c23963d53b806dcda5dd38f50e/src/format/KdbxWriter.cpp",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "The collected exporter/writer evidence does not establish effective approval for secret disclosure, browser/Auto-Type use, merge/overwrite or key/hardware recovery. Password custody and local availability alone do not demonstrate governability of those high-risk actions.",
+        "https://keepassxc.org/docs/KeePassXC_GettingStarted",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for KeePassXC's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/keepassxreboot/keepassxc/blob/d5e43b779d5e23c23963d53b806dcda5dd38f50e/src/format/KdbxWriter.cpp",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://keepassxc.org/docs/KeePassXC_GettingStarted",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "practical_exit": "not_verified",
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Actual KDBX decryption and cross-client restore, version-specific CLI export/import, passkeys, hardware/key-file recovery, and merges. E5 needs secret-use/export approval, browser/Auto-Type authority, merge/overwrite visibility and key-change/correction boundaries.",
+      "current_remaining": "Actual KDBX decryption and cross-client restore, version-specific CLI export/import, passkeys, hardware/key-file recovery, and merges. E5 needs secret-use/export approval, browser/Auto-Type authority, merge/overwrite visibility and key-change/correction boundaries.",
+      "next": "Use a synthetic encrypted KDBX with non-secret test credentials, attachments/history/passkeys and expected records; seek independent-client and same-version approval/merge recovery evidence without handling real passwords or installing the target.",
+      "E2": [
+        "not_verified",
+        "The former E2 Pass does not establish a complete usable alternative-vault migration: the inspected CSV and KDBX 4+ XML routes omit essential history/attachments or other fields. Another KDBX route may work, but that complete comparison remains missing.",
+        "https://github.com/keepassxreboot/keepassxc/blob/d5e43b779d5e23c23963d53b806dcda5dd38f50e/src/format/CsvExporter.cpp#L60-L106",
+        "medium"
+      ],
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for KeePassXC does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://github.com/keepassxreboot/keepassxc/blob/d5e43b779d5e23c23963d53b806dcda5dd38f50e/src/format/CsvExporter.cpp#L60-L106",
+        "medium"
+      ]
+    }
+  ],
+  "field_changes": [
+    {
+      "id": "cadquery",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for CadQuery's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "cadquery",
+      "table": "principles",
+      "key": "transparency",
+      "before": "meets",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "cadquery",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "pass",
+      "after": "not_verified",
+      "reason": "STEP name/color/layer output does not establish migration of the essential parametric constraints and editable intent into an independent CAD workflow. The former E2 Pass is therefore unestablished, not a verified failure of every possible exit route."
+    },
+    {
+      "id": "cadquery",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for CadQuery does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "darktable",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for Darktable's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "darktable",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "darktable",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "partial",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Darktable does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "jabref",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for JabRef's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "jabref",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "jabref",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "pass",
+      "after": "not_verified",
+      "reason": "The prior E2 Pass does not establish independent-workflow preservation of essential group memberships, custom metadata and linked files. Exposing serializer formats or a command-line export is not that migration comparison."
+    },
+    {
+      "id": "jabref",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for JabRef does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "gnu-octave",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for GNU Octave's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "gnu-octave",
+      "table": "principles",
+      "key": "transparency",
+      "before": "meets",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "gnu-octave",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for GNU Octave does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "kdenlive",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "E3 is not established for Kdenlive's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "kdenlive",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "kdenlive",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "partial",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Kdenlive does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "keepassxc",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "E3 is not established for KeePassXC's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "keepassxc",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "keepassxc",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "pass",
+      "after": "not_verified",
+      "reason": "The former E2 Pass does not establish a complete usable alternative-vault migration: the inspected CSV and KDBX 4+ XML routes omit essential history/attachments or other fields. Another KDBX route may work, but that complete comparison remains missing."
+    },
+    {
+      "id": "keepassxc",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for KeePassXC does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    }
+  ]
+}

@@ -4,6 +4,17 @@ Reviewed 22 October 2026 from the official Guix repository on Codeberg (README, 
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1. The manual is the development (master) copy and is not labelled as covering 1.5.0 specifically.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 9](../third-pass/batch-9/README.md#guix) and reflected in the [application page](../../content/directory/guix.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: The archive implementation passes export-recursive? to export-paths only when requested with --recursive. A package export without that option is not established to include its dependency closure; listing/extraction and store import are distinct operations, not backups of arbitrary mutable service data.
+- [x] Resolved: The system command really parses -n/--dry-run, propagates dry-run? and returns before the activation/bootloader/service-switch branch. This closes the earlier uncertainty about whether system dry-run exists; configuration evaluation and planning must not be confused with a full side-effect-free OS trial.
+
+Remaining: Channel-pinned rebuilds, network-blocked closure completeness, mutable-data restoration, generation deletion and release-specific compatibility remain untested.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -47,3 +58,18 @@ Reviewed 22 October 2026 from the official Guix repository on Codeberg (README, 
 5. Read the unread manual regions: Invoking guix package, Features, Substitutes (full text), Invoking guix gc, Security Updates, Contributing, the licence of the manual.
 6. Retry guix.gnu.org pages (403 here): download page, 1.5.0 release notes, privacy and governance statements, and whether the 1.5.0 manual differs from master.
 7. Confirm the release date (21 vs 23 January 2026) and whether rootless daemon mode changes where state is stored.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-9/README.md#guix); [actual assessment](../../content/directory/guix.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. Archive export is recursive only when requested and is not arbitrary mutable-service backup. Channels, source/substitute closure, hardware and persistent service data have not been reconstructed in a network-blocked deployment. Declarative Scheme/profile generations do not alone establish complete E3.
+- E5: Not Verified. System dry-run propagation avoids the inspected activation/bootloader/service-switch branch, but configuration evaluation/planning is not proven side-effect-free. Generation deletion, effective privilege/substitute policy and correction of service/mutable-state changes remain insufficiently covered.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: Channel-pinned rebuilds, network-blocked closure completeness, mutable-data restoration, generation deletion and release-specific compatibility remain untested. E5 needs configuration-evaluation, activation and generation-deletion authority and mutable-service recourse; dry-run is a bounded branch.
+
+Next without a local installation: Inspect channel-pinned recursive archives, source/substitute manifests and synthetic persistent data with expected service state; reuse same-version dry-run/activation/generation-deletion and offline restore evidence.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

@@ -4,6 +4,15 @@ Reviewed 22 October 2026 from the Krita Manual (docs.krita.org), krita.org, and 
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Evidence follow-up: 23 October 2026
+
+Two bounded questions are resolved in [batch 5](../third-pass/batch-5/README.md#krita) and reflected in the [application page](../../content/directory/krita.md). Existing eligibility and principle ratings remain unchanged until the next-pass reconciliation, as requested by the user.
+
+- [x] Resolved: The retained KRA opened as a seven-member ZIP. Namespace-aware maindoc.xml parsing identifies a 100-by-100 RGBA image and Layer 1, whose filename layer0 maps to the archive's built image/layers/layer0 payload; ICC files and preview.png are also present. This historical fixture has no mergedimage.png. Layer pixels and color-profile semantics were not decoded or rebuilt.
+- [x] Resolved: The OpenRaster visitor saves generator, clone and external layers through their raster projection, preserves groups as stacks, and skips fake nodes such as reference-image/grid layers. Its adjustment-layer branch creates a Krita-specific filter element but does not append it to the stack in that branch. ORA therefore cannot be assumed to preserve every native editable construct; no export/import was executed.
+
+Remaining: Native pixel reconstruction, masks/vector/text/animation and color fidelity across ORA/PSD/PNG, actual adjustment-layer export behavior, version round trips, backup/autosave recovery and update/network controls.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -40,3 +49,18 @@ Reviewed 22 October 2026 from the Krita Manual (docs.krita.org), krita.org, and 
 5. Kill Krita mid-edit and test autosave recovery; save twice and confirm the `~` backup is overwritten.
 6. Read the file format specification pages, if any, and the Recent News and update-check behaviour on a network-blocked machine.
 7. Governance, funding, and succession: not found in the docs; check krita.org about pages.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-6/README.md#krita); [actual assessment](../../content/directory/krita.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The historical KRA exposes a layer/payload relationship and profiles but its pixel data/color semantics were not independently rebuilt. OpenRaster source projects or skips some native constructs, so neither equivalent layers/masks/animation nor complete native recovery follows from ZIP readability.
+- E5: Not Verified. User-directed image editing does not establish plugin/script authority, save/export overwrite decisions or correction after layer and animation changes. Conditional backups/autosave and effective settings still lack sufficient evidence for this profile.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: Native pixel reconstruction, masks/vector/text/animation and color fidelity across ORA/PSD/PNG, actual adjustment-layer export behavior, version round trips, backup/autosave recovery and update/network controls. E5 needs save/autosave, plugin/script and destructive-edit/overwrite visibility and correction boundaries.
+
+Next without a local installation: Use a synthetic KRA with representative layers/masks/text/animation and dependency/color manifest, native/interchange exports and reference comparisons; inspect archives and seek matching save/undo/autosave controls.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

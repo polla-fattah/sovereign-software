@@ -1,0 +1,986 @@
+{
+  "batch": 7,
+  "review_date": "2026-10-23",
+  "recorded_at_utc": "2026-10-23T07:29:33.597951+00:00",
+  "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+  "applications_executed": true,
+  "downloaded_application_implementation_executed": false,
+  "published_schema_ddl_executed": true,
+  "sqlite_reader_version": "3.45.3",
+  "inspection_code_sha256": "7834200af11946de7c4a23b1cf4ddeccfdcf3c29ff56a6ea57583974324e7aa1",
+  "rating_reconciliation": "Deferred to the next pass at the user's request",
+  "inputs": [
+    {
+      "application": "beancount",
+      "path": "examples/vesting/vesting.beancount",
+      "commit": "9747213802acb733ce53acc6e963f5961f47d6cd",
+      "raw_url": "https://raw.githubusercontent.com/beancount/beancount/9747213802acb733ce53acc6e963f5961f47d6cd/examples/vesting/vesting.beancount",
+      "url": "https://github.com/beancount/beancount/blob/9747213802acb733ce53acc6e963f5961f47d6cd/examples/vesting/vesting.beancount",
+      "git_blob_sha": "e01f0da95869ca76b7e97ac1cd6225e4b607121d",
+      "probe": "ledger",
+      "local_path": "inputs/beancount/examples/vesting/vesting.beancount",
+      "bytes": 3839,
+      "sha256": "4613fab30ae29b330fee8b7aabcc14b933959b74ee57d9af2e560bc331fb1e8c"
+    },
+    {
+      "application": "beancount",
+      "path": "beancount/ops/pad.py",
+      "commit": "9747213802acb733ce53acc6e963f5961f47d6cd",
+      "raw_url": "https://raw.githubusercontent.com/beancount/beancount/9747213802acb733ce53acc6e963f5961f47d6cd/beancount/ops/pad.py",
+      "url": "https://github.com/beancount/beancount/blob/9747213802acb733ce53acc6e963f5961f47d6cd/beancount/ops/pad.py",
+      "git_blob_sha": "5f827fb126ad8a2572d6433fddda47621ef66ae6",
+      "local_path": "inputs/beancount/beancount/ops/pad.py",
+      "bytes": 8616,
+      "sha256": "fa6fdcdd3fe37d6a583c817ce2c401dc8236d28e68ac51330dae7e945043f1d5"
+    },
+    {
+      "application": "gnucash",
+      "path": "doc/examples/reg_doc_example.gnucash",
+      "commit": "fec5643cd22cbafc7b16047f35cbe852395da947",
+      "raw_url": "https://raw.githubusercontent.com/Gnucash/gnucash/fec5643cd22cbafc7b16047f35cbe852395da947/doc/examples/reg_doc_example.gnucash",
+      "url": "https://github.com/Gnucash/gnucash/blob/fec5643cd22cbafc7b16047f35cbe852395da947/doc/examples/reg_doc_example.gnucash",
+      "git_blob_sha": "c9759e27283331c85a7936973c27293386364cff",
+      "probe": "gnucash",
+      "local_path": "inputs/gnucash/doc/examples/reg_doc_example.gnucash",
+      "bytes": 33712,
+      "sha256": "92c68ea463f2bba2325b40cfc2762c18db559bf7ba6a9236b5bd96378eccf395"
+    },
+    {
+      "application": "gnucash",
+      "path": "libgnucash/backend/xml/gnc-transaction-xml-v2.cpp",
+      "commit": "fec5643cd22cbafc7b16047f35cbe852395da947",
+      "raw_url": "https://raw.githubusercontent.com/Gnucash/gnucash/fec5643cd22cbafc7b16047f35cbe852395da947/libgnucash/backend/xml/gnc-transaction-xml-v2.cpp",
+      "url": "https://github.com/Gnucash/gnucash/blob/fec5643cd22cbafc7b16047f35cbe852395da947/libgnucash/backend/xml/gnc-transaction-xml-v2.cpp",
+      "git_blob_sha": "83c70f57e8f482b6dcff947d42701c971015545c",
+      "local_path": "inputs/gnucash/libgnucash/backend/xml/gnc-transaction-xml-v2.cpp",
+      "bytes": 16590,
+      "sha256": "ea0f086471934aa71886744deaccdbd4d5ad30ff3c6282bd45172f248e68b7c5"
+    },
+    {
+      "application": "money-manager-ex",
+      "path": "src/table/tables_en.sql",
+      "commit": "a4aa421415143406e2557b334137ca1b90b58218",
+      "raw_url": "https://raw.githubusercontent.com/moneymanagerex/moneymanagerex/a4aa421415143406e2557b334137ca1b90b58218/src/table/tables_en.sql",
+      "url": "https://github.com/moneymanagerex/moneymanagerex/blob/a4aa421415143406e2557b334137ca1b90b58218/src/table/tables_en.sql",
+      "git_blob_sha": "44efd87cc2118c72e2e4121d3a8eeaea4419bd1b",
+      "probe": "sql-schema",
+      "local_path": "inputs/money-manager-ex/src/table/tables_en.sql",
+      "bytes": 30646,
+      "sha256": "a3a870a429d666930c9aad969bfffc4f3d93f1f0bf9e69f570bab26734d5de9d"
+    },
+    {
+      "application": "money-manager-ex",
+      "path": "src/db/dbwrapper.cpp",
+      "commit": "a4aa421415143406e2557b334137ca1b90b58218",
+      "raw_url": "https://raw.githubusercontent.com/moneymanagerex/moneymanagerex/a4aa421415143406e2557b334137ca1b90b58218/src/db/dbwrapper.cpp",
+      "url": "https://github.com/moneymanagerex/moneymanagerex/blob/a4aa421415143406e2557b334137ca1b90b58218/src/db/dbwrapper.cpp",
+      "git_blob_sha": "8a97ee196bbad0193f5b66d9eac63eaf7034c8ff",
+      "local_path": "inputs/money-manager-ex/src/db/dbwrapper.cpp",
+      "bytes": 4796,
+      "sha256": "15a9dfb7aa2ebc29f97b564e9325cc95096804a41a6eac4d88e0bbf478e01f3d"
+    },
+    {
+      "application": "todo-txt",
+      "path": "README.md",
+      "commit": "1d90c086533a2574f6039a756ada760ec672a53e",
+      "raw_url": "https://raw.githubusercontent.com/todotxt/todo.txt/1d90c086533a2574f6039a756ada760ec672a53e/README.md",
+      "url": "https://github.com/todotxt/todo.txt/blob/1d90c086533a2574f6039a756ada760ec672a53e/README.md",
+      "git_blob_sha": "238cfef3847fd1b16fd69517e4bf30c401037d73",
+      "probe": "todo-spec",
+      "local_path": "inputs/todo-txt/README.md",
+      "bytes": 7116,
+      "sha256": "e07244551f5c07aa0382ea43f519bb83c7fd02219627de06159f9ade6c2887db"
+    },
+    {
+      "application": "sqlite",
+      "path": "test/dump.sql",
+      "commit": "31ebfdf4a1483218a7e17499957eca4caabce915",
+      "raw_url": "https://raw.githubusercontent.com/sqlite/sqlite/31ebfdf4a1483218a7e17499957eca4caabce915/test/dump.sql",
+      "url": "https://github.com/sqlite/sqlite/blob/31ebfdf4a1483218a7e17499957eca4caabce915/test/dump.sql",
+      "git_blob_sha": "c7672a1fb77886bf8eff79e900f4298abee93cc3",
+      "local_path": "inputs/sqlite/test/dump.sql",
+      "bytes": 736,
+      "sha256": "b242c3ef518e95885ad3a65d821da17062cde11227a5a0ba6cfd6dbdcaa8a923"
+    },
+    {
+      "application": "hledger",
+      "path": "examples/borrowing.journal",
+      "commit": "cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd",
+      "raw_url": "https://raw.githubusercontent.com/hledgerorg/hledger/cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd/examples/borrowing.journal",
+      "url": "https://github.com/hledgerorg/hledger/blob/cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd/examples/borrowing.journal",
+      "git_blob_sha": "ffe190f83d715ff17dcf50955bfa20abba060de2",
+      "probe": "ledger",
+      "local_path": "inputs/hledger/examples/borrowing.journal",
+      "bytes": 1341,
+      "sha256": "79b95b8d1b6ed22cc749d54ebd4ba838647d207bc7647dce56fe9a12e8a97df6"
+    },
+    {
+      "application": "hledger",
+      "path": "hledger/Hledger/Cli/Commands/Import.hs",
+      "commit": "cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd",
+      "raw_url": "https://raw.githubusercontent.com/hledgerorg/hledger/cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd/hledger/Hledger/Cli/Commands/Import.hs",
+      "url": "https://github.com/hledgerorg/hledger/blob/cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd/hledger/Hledger/Cli/Commands/Import.hs",
+      "git_blob_sha": "96387960f4fc006b229b1b41a73621a142cc4706",
+      "local_path": "inputs/hledger/hledger/Hledger/Cli/Commands/Import.hs",
+      "bytes": 6102,
+      "sha256": "87d0d8f6cb26b16eebfe6604e98f6193757e808a9cc76e3a2363f5be7a558950"
+    },
+    {
+      "application": "todo-txt",
+      "path": "todo.sh",
+      "commit": "a9846a232c86937a218d1be45bc4c7631855ee16",
+      "raw_url": "https://raw.githubusercontent.com/todotxt/todo.txt-cli/a9846a232c86937a218d1be45bc4c7631855ee16/todo.sh",
+      "url": "https://github.com/todotxt/todo.txt-cli/blob/a9846a232c86937a218d1be45bc4c7631855ee16/todo.sh",
+      "local_path": "inputs/todo-txt/todo.sh",
+      "bytes": 53900,
+      "sha256": "403804e78e01a5b082ecaa685368a18be98fde6fd0c4a7101c24d08bdbfa22f9"
+    }
+  ],
+  "observations": {
+    "beancount:examples/vesting/vesting.beancount": {
+      "dated_directives": [
+        [
+          "1990-12-02",
+          "commodity HOOL"
+        ],
+        [
+          "2013-01-28",
+          "commodity HOOL.UNVEST"
+        ],
+        [
+          "2013-01-28",
+          "open Income:US:Hooli:Awards        HOOL.UNVEST"
+        ],
+        [
+          "2014-01-28",
+          "open Expenses:Hooli:Vested         HOOL.UNVEST"
+        ],
+        [
+          "2014-04-02",
+          "* \"Award S0012345\""
+        ],
+        [
+          "2014-04-02",
+          "open Assets:US:Hooli:Unvested:S0012345"
+        ],
+        [
+          "2014-07-02",
+          "* \"Award C123456\""
+        ],
+        [
+          "2014-07-02",
+          "open Assets:US:Hooli:Unvested:C123456"
+        ],
+        [
+          "2013-04-04",
+          "open Income:US:Hooli:RSU"
+        ],
+        [
+          "2015-01-01",
+          "open Expenses:Taxes:TY2015:US:StateNY"
+        ],
+        [
+          "2015-01-01",
+          "open Expenses:Taxes:TY2015:US:Federal"
+        ],
+        [
+          "2015-01-01",
+          "open Expenses:Taxes:TY2015:US:SocSec"
+        ],
+        [
+          "2015-01-01",
+          "open Expenses:Taxes:TY2015:US:SDI"
+        ],
+        [
+          "2015-01-01",
+          "open Expenses:Taxes:TY2015:US:Medicare"
+        ],
+        [
+          "2015-01-01",
+          "open Expenses:Taxes:TY2015:US:CityNYC"
+        ],
+        [
+          "2013-01-28",
+          "open Assets:US:Hooli:RSURefund"
+        ],
+        [
+          "2013-04-04",
+          "open Assets:US:Schwab:HOOL"
+        ],
+        [
+          "2001-01-01",
+          "open Assets:US:BofA:Checking"
+        ],
+        [
+          "2015-05-27",
+          "* \"Vesting Event - S0012345 - HOOL\" #award-S0012345 ^392f97dd62d0"
+        ],
+        [
+          "2015-05-27",
+          "* \"Vesting Event - C123456 - HOOL\" #award-C123456 ^392f97dd62d0"
+        ],
+        [
+          "2015-05-25",
+          "* \"Conversion into shares\" ^392f97dd62d0"
+        ],
+        [
+          "2015-05-25",
+          "* \"Conversion into shares\" ^392f97dd62d0"
+        ],
+        [
+          "2015-06-13",
+          "* \"HOOLI INC       PAYROLL\" ^392f97dd62d0"
+        ],
+        [
+          "2015-06-14",
+          "balance Assets:US:Hooli:RSURefund  0 USD"
+        ],
+        [
+          "2015-06-04",
+          "balance Assets:US:Hooli:Unvested:S0012345  1645 HOOL.UNVEST"
+        ],
+        [
+          "2015-06-04",
+          "balance Assets:US:Hooli:Unvested:C123456    705 HOOL.UNVEST"
+        ],
+        [
+          "2015-06-02",
+          "price HOOL.UNVEST               132.4300 USD.UNVEST"
+        ]
+      ],
+      "posting_lines": [
+        "  Income:US:Hooli:Awards                -1680 HOOL.UNVEST",
+        "  Assets:US:Hooli:Unvested:S0012345      1680 HOOL.UNVEST",
+        "  Assets:US:Hooli:Unvested:C123456        720 HOOL.UNVEST",
+        "  Income:US:Hooli:Awards                 -720 HOOL.UNVEST",
+        "  Income:US:Hooli:RSU                    -4597.95 USD",
+        "  Assets:US:Hooli:RSURefund               2458.97 USD",
+        "  Expenses:Taxes:TY2015:US:Medicare         66.68 USD",
+        "  Expenses:Taxes:TY2015:US:Federal        1149.48 USD",
+        "  Expenses:Taxes:TY2015:US:CityNYC         195.42 USD",
+        "  Expenses:Taxes:TY2015:US:SDI               0.00 USD",
+        "  Expenses:Taxes:TY2015:US:StateNY         442.32 USD",
+        "  Expenses:Taxes:TY2015:US:SocSec          285.08 USD",
+        "  Income:US:Hooli:RSU                    -1970.55 USD",
+        "  Assets:US:Hooli:RSURefund               1053.84 USD",
+        "  Expenses:Taxes:TY2015:US:Medicare         28.58 USD",
+        "  Expenses:Taxes:TY2015:US:Federal         492.63 USD",
+        "  Expenses:Taxes:TY2015:US:CityNYC          83.75 USD",
+        "  Expenses:Taxes:TY2015:US:SDI               0.00 USD",
+        "  Expenses:Taxes:TY2015:US:StateNY         189.57 USD",
+        "  Expenses:Taxes:TY2015:US:SocSec          122.18 USD",
+        "  Assets:US:Schwab:HOOL                        18 HOOL {131.3700 USD}",
+        "  Assets:US:Hooli:Unvested:S0012345           -35 HOOL.UNVEST",
+        "  Expenses:Hooli:Vested                        35 HOOL.UNVEST",
+        "  Assets:US:Schwab:HOOL                         8 HOOL {131.3700 USD}",
+        "  Assets:US:Hooli:Unvested:C123456            -15 HOOL.UNVEST",
+        "  Expenses:Hooli:Vested                        15 HOOL.UNVEST",
+        "  Assets:US:Hooli:RSURefund                -94.31 USD",
+        "  Assets:US:Hooli:RSURefund                 -2.88 USD",
+        "  Assets:US:BofA:Checking                   97.19 USD"
+      ],
+      "cost_literals": [
+        "{131.3700 USD}",
+        "{131.3700 USD}",
+        "{131.3700 USD}"
+      ],
+      "balances_recomputed": false
+    },
+    "gnucash:doc/examples/reg_doc_example.gnucash": {
+      "accounts": {
+        "f52c28f32edd309e768494995470343b": "Root Account",
+        "90313cf9a5c83a232cb040ba2fe315be": "Assets",
+        "794a0c0fac9d75f85cf7c99141c9caac": "Current Assets",
+        "086750b574471db8bf9013a7c4516684": "Checking Account",
+        "8d14317b74f23ce9383aa9a5496e598d": "Savings Account",
+        "e17476f2631150b017d921b268717ebc": "Cash in Wallet",
+        "523fb1ab7f08a6742b2ab388911ebadc": "Liabilities",
+        "c45e071f4aa038273e475390587647b2": "Accounts Payable",
+        "7a29621d137450f471af6bfaa1e35053": "Credit Card",
+        "857d3d75a307fea7a67ffee01d6149d3": "Income",
+        "8129715732e1c9db56eca8324ec14c49": "Bonus",
+        "ce268024e2dd02d61cf4474733cd9e4d": "Gifts Received",
+        "2d4ce2cd1c624fbeb4f4e103b2769469": "Interest Income",
+        "535d2553cd6912454568dfcec98cc529": "Checking Interest",
+        "5d9dfeb763644700e845740f3370e37b": "Other Interest",
+        "d0705964deab90988adf162e0ca1422a": "Savings Interest",
+        "76e6ac24cc73c420aef6eacd90bea52a": "Other Income",
+        "5abc829d5fb3cb4ff9d082fbdb2beb6d": "Salary",
+        "b49c132fd93c94675a901feb8c5df41a": "Expenses",
+        "82273c86d49f9d4402b6e1683e508851": "Adjustment",
+        "ad1e02d787aa1f9adce351e566ec36e9": "Auto",
+        "e58820fbd0776b52e5f887b05d65e4bc": "Fees",
+        "716c03ee8edf200384eb974fa160f10c": "Gas",
+        "b4b53eeb3c3911fdb6b034e5f6159210": "Parking",
+        "48ecd41fdc87b028871e373d5f2696d0": "Repair and Maintenance",
+        "2afac437f2942085eb8438777c8e7664": "Bank Service Charge",
+        "d03f14bdd9ff91c9ad4b58f5ecd128c9": "Books",
+        "a3ab90677502fa28398928aaae74a4b3": "Cable",
+        "845aea6cf3402b138be1bcb6bbd62bc7": "Charity",
+        "149d644ed5739e3fdcf8d055303140de": "Clothes",
+        "ae0c566389d0793885fa84b832f2fa66": "Computer",
+        "551ae0be599587fe1d3b632dc8dec6bd": "Dining",
+        "149be45e6a809b502d193a493359fde0": "Education",
+        "c998b22d52f575df48366602c6ff014f": "Entertainment",
+        "0bb0849c1e98c0bb2e7a52197a7680b0": "Music/Movies",
+        "bfc24687a26fa633460d2e2e897ff204": "Recreation",
+        "e74ef040bbb69e3c916874e557b7bc2c": "Travel",
+        "357268fa361598b83ab7b15cf68b0a82": "Gifts",
+        "618f2818560d9aba57c90c84efe94c2e": "Groceries",
+        "63692016cd20647b409dd605ebbae423": "Hobbies",
+        "57ca4d5b0d28d3a53ea5097166a49a9a": "Insurance",
+        "64fc42a31ad325b2ce8230786c4c5df3": "Auto Insurance",
+        "caba6b72e398e9455501f5f0673cf862": "Health Insurance",
+        "d0f8c2bcc1b14dd8803e8697a0967ed7": "Life Insurance",
+        "cd01ed6df94c2adb82a096f8d727f93a": "Laundry/Dry Cleaning",
+        "5e7b77203a1c874d7b56949dddd8eb59": "Medical Expenses",
+        "fdafa8797a747488d8ee136e2e84c70c": "Miscellaneous",
+        "c40b6bda49fa977259b3aa8d96912f8b": "Online Services",
+        "89450de1eb7f9c77d17088ac47a55aa2": "Phone",
+        "9469e63390002cc99f667bd2b82df5bf": "Public Transportation",
+        "2fe6361be5fcdcdc976e98e5910c17af": "Subscriptions",
+        "3b060543186f1a7c52a61a2c78528fcd": "Supplies",
+        "f6873b456152dce60dd05126746ae596": "Taxes",
+        "d49dae34bcc2cb308e6a4ee85034440e": "Federal",
+        "6e4d3b741c5b3f726910378c2305cf54": "Medicare",
+        "626197bf467921b6a9bcb4df088e2938": "Other Tax",
+        "e9df87b4fc8f0705728d8f371a1561ba": "Social Security",
+        "c5cc79f79dfd5557bf029d0f01d56af1": "State/Province",
+        "f00c527ac3e9c539e05132ef6cf8e5fa": "Utilities",
+        "8a8b8299c7d4202793ea4b8fd7e46fc4": "Electric",
+        "0af3359e08a467d4c17d60f58b286200": "Garbage collection",
+        "50ec6a2eba07a1f7ec5fdf1f5530dcc1": "Gas",
+        "af84301fe4702073af1135d89385efe7": "Water",
+        "3bceb6ba629ba0e51430abcea01bc95f": "Equity",
+        "99fa355648ceb345777b6c968f46f6aa": "Opening Balances"
+      },
+      "transactions": [
+        {
+          "id": "686a709da476660e5b8925b54388aa51",
+          "description": "Opening Balance",
+          "splits": 2,
+          "value_sum": "0",
+          "account_refs": [
+            "086750b574471db8bf9013a7c4516684",
+            "99fa355648ceb345777b6c968f46f6aa"
+          ]
+        },
+        {
+          "id": "eda07820de774d334e106a1566ae085b",
+          "description": "Car Repair",
+          "splits": 3,
+          "value_sum": "0",
+          "account_refs": [
+            "48ecd41fdc87b028871e373d5f2696d0",
+            "716c03ee8edf200384eb974fa160f10c",
+            "086750b574471db8bf9013a7c4516684"
+          ]
+        }
+      ],
+      "all_value_sums_zero": true,
+      "unresolved_account_refs": [],
+      "prices_schedules_budgets_or_reconcile_semantics_validated": false
+    },
+    "money-manager-ex:src/table/tables_en.sql": {
+      "schema": [
+        [
+          "ACCOUNTLIST_V1",
+          "table",
+          "CREATE TABLE ACCOUNTLIST_V1(\nACCOUNTID integer primary key\n, ACCOUNTNAME TEXT COLLATE NOCASE NOT NULL UNIQUE\n, ACCOUNTTYPE TEXT NOT NULL /* Cash, Checking, Term, Investment, Credit Card, Loan, Asset, Shares */\n, ACCOUNTNUM TEXT\n, STATUS TEXT NOT NULL /* Open, Closed */\n, NOTES TEXT\n, HELDAT TEXT\n, WEBSITE TEXT\n, CONTACTINFO TEXT\n, ACCESSINFO TEXT\n, INITIALBAL numeric\n, INITIALDATE TEXT\n, FAVORITEACCT TEXT NOT NULL\n, CURRENCYID integer NOT NULL\n, STATEMENTLOCKED integer\n, STATEMENTDATE TEXT\n, MINIMUMBALANCE numeric\n, CREDITLIMIT numeric\n, INTERESTRATE numeric\n, PAYMENTDUEDATE text\n, MINIMUMPAYMENT numeric\n)"
+        ],
+        [
+          "ASSETS_V1",
+          "table",
+          "CREATE TABLE ASSETS_V1(\nASSETID integer primary key\n, STARTDATE TEXT NOT NULL\n, ASSETNAME TEXT COLLATE NOCASE NOT NULL\n, ASSETSTATUS TEXT /* Open, Closed */\n, CURRENCYID integer\n, VALUECHANGEMODE TEXT /* Percentage, Linear */\n, VALUE numeric\n, VALUECHANGE TEXT /* None, Appreciates, Depreciates */\n, NOTES TEXT\n, VALUECHANGERATE numeric\n, ASSETTYPE TEXT /* Property, Automobile, Household Object, Art, Jewellery, Cash, Other */\n)"
+        ],
+        [
+          "ATTACHMENT_V1",
+          "table",
+          "CREATE TABLE ATTACHMENT_V1 (\nATTACHMENTID INTEGER NOT NULL PRIMARY KEY\n, REFTYPE TEXT NOT NULL /* Transaction, Stock, Asset, Bank Account, Repeating Transaction, Payee */\n, REFID INTEGER NOT NULL\n, DESCRIPTION TEXT COLLATE NOCASE\n, FILENAME TEXT NOT NULL COLLATE NOCASE\n)"
+        ],
+        [
+          "BILLSDEPOSITS_V1",
+          "table",
+          "CREATE TABLE BILLSDEPOSITS_V1(\nBDID integer primary key\n, ACCOUNTID integer NOT NULL\n, TOACCOUNTID integer\n, PAYEEID integer NOT NULL\n, TRANSCODE TEXT NOT NULL /* Withdrawal, Deposit, Transfer */\n, TRANSAMOUNT numeric NOT NULL\n, STATUS TEXT /* None, Reconciled, Void, Follow up, Duplicate */\n, TRANSACTIONNUMBER TEXT\n, NOTES TEXT\n, CATEGID integer\n, TRANSDATE TEXT\n, FOLLOWUPID integer\n, TOTRANSAMOUNT numeric\n, REPEATS integer\n, NEXTOCCURRENCEDATE TEXT\n, NUMOCCURRENCES integer\n, COLOR integer DEFAULT -1\n)"
+        ],
+        [
+          "BUDGETSPLITTRANSACTIONS_V1",
+          "table",
+          "CREATE TABLE BUDGETSPLITTRANSACTIONS_V1(\nSPLITTRANSID integer primary key\n, TRANSID integer NOT NULL\n, CATEGID integer\n, SPLITTRANSAMOUNT numeric\n, NOTES TEXT\n)"
+        ],
+        [
+          "BUDGETTABLE_V1",
+          "table",
+          "CREATE TABLE BUDGETTABLE_V1(\nBUDGETENTRYID integer primary key\n, BUDGETYEARID integer\n, CATEGID integer\n, PERIOD TEXT NOT NULL /* None, Weekly, Bi-Weekly, Monthly, Monthly, Bi-Monthly, Quarterly, Half-Yearly, Yearly, Daily*/\n, AMOUNT numeric NOT NULL\n, NOTES TEXT\n, ACTIVE integer\n)"
+        ],
+        [
+          "BUDGETYEAR_V1",
+          "table",
+          "CREATE TABLE BUDGETYEAR_V1(\nBUDGETYEARID integer primary key\n, BUDGETYEARNAME TEXT NOT NULL UNIQUE\n)"
+        ],
+        [
+          "CATEGORY_V1",
+          "table",
+          "CREATE TABLE CATEGORY_V1\n( CATEGID INTEGER PRIMARY KEY,\n  CATEGNAME TEXT NOT NULL COLLATE NOCASE,\n  ACTIVE INTEGER,\n  PARENTID INTEGER,\n  UNIQUE(CATEGNAME, PARENTID)\n)"
+        ],
+        [
+          "CHECKINGACCOUNT_V1",
+          "table",
+          "CREATE TABLE CHECKINGACCOUNT_V1(\nTRANSID integer primary key\n, ACCOUNTID integer NOT NULL\n, TOACCOUNTID integer\n, PAYEEID integer NOT NULL\n, TRANSCODE TEXT NOT NULL /* Withdrawal, Deposit, Transfer */\n, TRANSAMOUNT numeric NOT NULL\n, STATUS TEXT /* None, Reconciled, Void, Follow up, Duplicate */\n, TRANSACTIONNUMBER TEXT\n, NOTES TEXT\n, CATEGID integer\n, TRANSDATE TEXT\n, LASTUPDATEDTIME TEXT\n, DELETEDTIME TEXT\n, FOLLOWUPID integer\n, TOTRANSAMOUNT numeric\n, COLOR integer DEFAULT -1\n)"
+        ],
+        [
+          "CURRENCYFORMATS_V1",
+          "table",
+          "CREATE TABLE CURRENCYFORMATS_V1(\nCURRENCYID integer primary key\n, CURRENCYNAME TEXT COLLATE NOCASE NOT NULL UNIQUE\n, PFX_SYMBOL TEXT\n, SFX_SYMBOL TEXT\n, DECIMAL_POINT TEXT\n, GROUP_SEPARATOR TEXT\n, UNIT_NAME TEXT COLLATE NOCASE\n, CENT_NAME TEXT COLLATE NOCASE\n, SCALE integer\n, BASECONVRATE numeric\n, CURRENCY_SYMBOL TEXT COLLATE NOCASE NOT NULL UNIQUE\n, CURRENCY_TYPE TEXT NOT NULL /* Fiat, Crypto */\n)"
+        ],
+        [
+          "CURRENCYHISTORY_V1",
+          "table",
+          "CREATE TABLE CURRENCYHISTORY_V1(\nCURRHISTID INTEGER PRIMARY KEY\n, CURRENCYID INTEGER NOT NULL\n, CURRDATE TEXT NOT NULL\n, CURRVALUE NUMERIC NOT NULL\n, CURRUPDTYPE INTEGER\n, UNIQUE(CURRENCYID, CURRDATE)\n)"
+        ],
+        [
+          "CUSTOMFIELDDATA_V1",
+          "table",
+          "CREATE TABLE CUSTOMFIELDDATA_V1 (\nFIELDATADID INTEGER NOT NULL PRIMARY KEY\n, FIELDID INTEGER NOT NULL\n, REFID INTEGER NOT NULL\n, CONTENT TEXT\n, UNIQUE(FIELDID, REFID)\n)"
+        ],
+        [
+          "CUSTOMFIELD_V1",
+          "table",
+          "CREATE TABLE CUSTOMFIELD_V1 (\nFIELDID INTEGER NOT NULL PRIMARY KEY\n, REFTYPE TEXT NOT NULL /* Transaction, Stock, Asset, Bank Account, Repeating Transaction, Payee */\n, DESCRIPTION TEXT COLLATE NOCASE\n, TYPE TEXT NOT NULL /* String, Integer, Decimal, Boolean, Date, Time, SingleChoice, MultiChoice */\n, PROPERTIES TEXT NOT NULL\n)"
+        ],
+        [
+          "IDX_ACCOUNTLIST_ACCOUNTTYPE",
+          "index",
+          "CREATE INDEX IDX_ACCOUNTLIST_ACCOUNTTYPE ON ACCOUNTLIST_V1(ACCOUNTTYPE)"
+        ],
+        [
+          "IDX_ASSETS_ASSETTYPE",
+          "index",
+          "CREATE INDEX IDX_ASSETS_ASSETTYPE ON ASSETS_V1(ASSETTYPE)"
+        ],
+        [
+          "IDX_ATTACHMENT_REF",
+          "index",
+          "CREATE INDEX IDX_ATTACHMENT_REF ON ATTACHMENT_V1 (REFTYPE, REFID)"
+        ],
+        [
+          "IDX_BILLSDEPOSITS_ACCOUNT",
+          "index",
+          "CREATE INDEX IDX_BILLSDEPOSITS_ACCOUNT ON BILLSDEPOSITS_V1 (ACCOUNTID, TOACCOUNTID)"
+        ],
+        [
+          "IDX_BUDGETSPLITTRANSACTIONS_TRANSID",
+          "index",
+          "CREATE INDEX IDX_BUDGETSPLITTRANSACTIONS_TRANSID ON BUDGETSPLITTRANSACTIONS_V1(TRANSID)"
+        ],
+        [
+          "IDX_BUDGETTABLE_BUDGETYEARID",
+          "index",
+          "CREATE INDEX IDX_BUDGETTABLE_BUDGETYEARID ON BUDGETTABLE_V1(BUDGETYEARID)"
+        ],
+        [
+          "IDX_BUDGETYEAR_BUDGETYEARNAME",
+          "index",
+          "CREATE INDEX IDX_BUDGETYEAR_BUDGETYEARNAME ON BUDGETYEAR_V1(BUDGETYEARNAME)"
+        ],
+        [
+          "IDX_CATEGORY_CATEGNAME",
+          "index",
+          "CREATE INDEX IDX_CATEGORY_CATEGNAME ON CATEGORY_V1(CATEGNAME)"
+        ],
+        [
+          "IDX_CATEGORY_CATEGNAME_PARENTID",
+          "index",
+          "CREATE INDEX IDX_CATEGORY_CATEGNAME_PARENTID ON CATEGORY_V1(CATEGNAME, PARENTID)"
+        ],
+        [
+          "IDX_CHECKINGACCOUNT",
+          "index",
+          "CREATE INDEX IDX_CHECKINGACCOUNT ON TRANSLINK_V1 (CHECKINGACCOUNTID)"
+        ],
+        [
+          "IDX_CHECKINGACCOUNT_ACCOUNT",
+          "index",
+          "CREATE INDEX IDX_CHECKINGACCOUNT_ACCOUNT ON CHECKINGACCOUNT_V1 (ACCOUNTID, TOACCOUNTID)"
+        ],
+        [
+          "IDX_CHECKINGACCOUNT_TRANSDATE",
+          "index",
+          "CREATE INDEX IDX_CHECKINGACCOUNT_TRANSDATE ON CHECKINGACCOUNT_V1 (TRANSDATE)"
+        ],
+        [
+          "IDX_CURRENCYFORMATS_SYMBOL",
+          "index",
+          "CREATE INDEX IDX_CURRENCYFORMATS_SYMBOL ON CURRENCYFORMATS_V1(CURRENCY_SYMBOL)"
+        ],
+        [
+          "IDX_CURRENCYHISTORY_CURRENCYID_CURRDATE",
+          "index",
+          "CREATE INDEX IDX_CURRENCYHISTORY_CURRENCYID_CURRDATE ON CURRENCYHISTORY_V1(CURRENCYID, CURRDATE)"
+        ],
+        [
+          "IDX_CUSTOMFIELDDATA_REF",
+          "index",
+          "CREATE INDEX IDX_CUSTOMFIELDDATA_REF ON CUSTOMFIELDDATA_V1 (FIELDID, REFID)"
+        ],
+        [
+          "IDX_CUSTOMFIELD_REF",
+          "index",
+          "CREATE INDEX IDX_CUSTOMFIELD_REF ON CUSTOMFIELD_V1 (REFTYPE)"
+        ],
+        [
+          "IDX_INFOTABLE_INFONAME",
+          "index",
+          "CREATE INDEX IDX_INFOTABLE_INFONAME ON INFOTABLE_V1(INFONAME)"
+        ],
+        [
+          "IDX_LINKRECORD",
+          "index",
+          "CREATE INDEX IDX_LINKRECORD ON TRANSLINK_V1 (LINKTYPE, LINKRECORDID)"
+        ],
+        [
+          "IDX_PAYEE_INFONAME",
+          "index",
+          "CREATE INDEX IDX_PAYEE_INFONAME ON PAYEE_V1(PAYEENAME)"
+        ],
+        [
+          "IDX_SETTING_SETTINGNAME",
+          "index",
+          "CREATE INDEX IDX_SETTING_SETTINGNAME ON SETTING_V1(SETTINGNAME)"
+        ],
+        [
+          "IDX_SHAREINFO",
+          "index",
+          "CREATE INDEX IDX_SHAREINFO ON SHAREINFO_V1 (CHECKINGACCOUNTID)"
+        ],
+        [
+          "IDX_SPLITTRANSACTIONS_TRANSID",
+          "index",
+          "CREATE INDEX IDX_SPLITTRANSACTIONS_TRANSID ON SPLITTRANSACTIONS_V1(TRANSID)"
+        ],
+        [
+          "IDX_STOCKHISTORY_SYMBOL",
+          "index",
+          "CREATE INDEX IDX_STOCKHISTORY_SYMBOL ON STOCKHISTORY_V1(SYMBOL)"
+        ],
+        [
+          "IDX_STOCK_HELDAT",
+          "index",
+          "CREATE INDEX IDX_STOCK_HELDAT ON STOCK_V1(HELDAT)"
+        ],
+        [
+          "IDX_TAGLINK",
+          "index",
+          "CREATE INDEX IDX_TAGLINK ON TAGLINK_V1 (REFTYPE, REFID, TAGID)"
+        ],
+        [
+          "IDX_TAGNAME",
+          "index",
+          "CREATE INDEX IDX_TAGNAME ON TAG_V1 (TAGNAME)"
+        ],
+        [
+          "IDX_USAGE_DATE",
+          "index",
+          "CREATE INDEX IDX_USAGE_DATE ON USAGE_V1 (USAGEDATE)"
+        ],
+        [
+          "INDEX_REPORT_NAME",
+          "index",
+          "CREATE INDEX INDEX_REPORT_NAME ON REPORT_V1(REPORTNAME)"
+        ],
+        [
+          "INFOTABLE_V1",
+          "table",
+          "CREATE TABLE INFOTABLE_V1(\nINFOID integer not null primary key\n, INFONAME TEXT COLLATE NOCASE NOT NULL UNIQUE\n, INFOVALUE TEXT NOT NULL\n)"
+        ],
+        [
+          "PAYEE_V1",
+          "table",
+          "CREATE TABLE PAYEE_V1(\nPAYEEID integer primary key\n, PAYEENAME TEXT COLLATE NOCASE NOT NULL UNIQUE\n, CATEGID integer\n, NUMBER TEXT\n, WEBSITE TEXT\n, NOTES TEXT\n, ACTIVE integer\n, PATTERN TEXT DEFAULT ''\n)"
+        ],
+        [
+          "REPORT_V1",
+          "table",
+          "CREATE TABLE REPORT_V1(\nREPORTID integer not null primary key\n, REPORTNAME TEXT COLLATE NOCASE NOT NULL UNIQUE\n, GROUPNAME TEXT COLLATE NOCASE\n, ACTIVE integer\n, SQLCONTENT TEXT\n, LUACONTENT TEXT\n, TEMPLATECONTENT TEXT\n, DESCRIPTION TEXT\n)"
+        ],
+        [
+          "SETTING_V1",
+          "table",
+          "CREATE TABLE SETTING_V1(\nSETTINGID integer not null primary key\n, SETTINGNAME TEXT COLLATE NOCASE NOT NULL UNIQUE\n, SETTINGVALUE TEXT\n)"
+        ],
+        [
+          "SHAREINFO_V1",
+          "table",
+          "CREATE TABLE SHAREINFO_V1 (\nSHAREINFOID integer NOT NULL primary key\n, CHECKINGACCOUNTID integer NOT NULL\n, SHARENUMBER numeric\n, SHAREPRICE numeric\n, SHARECOMMISSION numeric\n, SHARELOT TEXT\n)"
+        ],
+        [
+          "SPLITTRANSACTIONS_V1",
+          "table",
+          "CREATE TABLE SPLITTRANSACTIONS_V1(\nSPLITTRANSID integer primary key\n, TRANSID integer NOT NULL\n, CATEGID integer\n, SPLITTRANSAMOUNT numeric\n, NOTES TEXT\n)"
+        ],
+        [
+          "STOCKHISTORY_V1",
+          "table",
+          "CREATE TABLE STOCKHISTORY_V1(\nHISTID integer primary key\n, SYMBOL TEXT NOT NULL\n, DATE TEXT NOT NULL\n, VALUE numeric NOT NULL\n, UPDTYPE integer\n, UNIQUE(SYMBOL, DATE)\n)"
+        ],
+        [
+          "STOCK_V1",
+          "table",
+          "CREATE TABLE STOCK_V1(\nSTOCKID integer primary key\n, HELDAT integer\n, PURCHASEDATE TEXT NOT NULL\n, STOCKNAME TEXT COLLATE NOCASE NOT NULL\n, SYMBOL TEXT\n, NUMSHARES numeric\n, PURCHASEPRICE numeric NOT NULL\n, NOTES TEXT\n, CURRENTPRICE numeric NOT NULL\n, VALUE numeric\n, COMMISSION numeric\n)"
+        ],
+        [
+          "TAGLINK_V1",
+          "table",
+          "CREATE TABLE TAGLINK_V1(\nTAGLINKID INTEGER PRIMARY KEY\n, REFTYPE TEXT NOT NULL\n, REFID INTEGER NOT NULL\n, TAGID INTEGER NOT NULL\n, FOREIGN KEY (TAGID) REFERENCES TAG_V1 (TAGID)\n, UNIQUE(REFTYPE, REFID, TAGID)\n)"
+        ],
+        [
+          "TAG_V1",
+          "table",
+          "CREATE TABLE TAG_V1(\nTAGID INTEGER PRIMARY KEY\n, TAGNAME TEXT COLLATE NOCASE NOT NULL UNIQUE\n, ACTIVE INTEGER\n)"
+        ],
+        [
+          "TRANSLINK_V1",
+          "table",
+          "CREATE TABLE TRANSLINK_V1 (\nTRANSLINKID  integer NOT NULL primary key\n, CHECKINGACCOUNTID integer NOT NULL\n, LINKTYPE TEXT NOT NULL /* Asset, Stock */\n, LINKRECORDID integer NOT NULL\n)"
+        ],
+        [
+          "USAGE_V1",
+          "table",
+          "CREATE TABLE USAGE_V1 (\nUSAGEID INTEGER NOT NULL PRIMARY KEY\n, USAGEDATE TEXT NOT NULL\n, JSONCONTENT TEXT NOT NULL\n)"
+        ],
+        [
+          "sqlite_autoindex_ACCOUNTLIST_V1_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_BUDGETYEAR_V1_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_CATEGORY_V1_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_CURRENCYFORMATS_V1_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_CURRENCYFORMATS_V1_2",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_CURRENCYHISTORY_V1_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_CUSTOMFIELDDATA_V1_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_INFOTABLE_V1_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_PAYEE_V1_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_REPORT_V1_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_SETTING_V1_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_STOCKHISTORY_V1_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_TAGLINK_V1_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_TAG_V1_1",
+          "index",
+          null
+        ]
+      ],
+      "integrity_check": [
+        [
+          "ok"
+        ]
+      ],
+      "populated_application_data_restored": false
+    },
+    "todo-txt:README.md": {
+      "published_example_blocks": [
+        "(A) Thank Mom for the meatballs @phone\n(B) Schedule Goodwill pickup +GarageSale @phone\nPost signs around the neighborhood +GarageSale\n@GroceryStore pies\n",
+        "(A) Thank Mom for the meatballs @phone\n(B) Schedule Goodwill pickup +GarageSale @phone\n",
+        "(B) Schedule Goodwill pickup +GarageSale @phone\nPost signs around the neighborhood +GarageSale\n",
+        "(A) Call Mom\n",
+        "Really gotta call Mom (A) @phone @someday\n(b) Get back to the boss\n(B)->Submit TPS report\n",
+        "2011-03-02 Document +TodoTxt task format\n(A) 2011-03-02 Call Mom\n",
+        "(A) Call Mom 2011-03-02\n",
+        "(A) Call Mom +Family +PeaceLoveAndHappiness @iphone @phone\n",
+        "Email SoAndSo at soandso@example.com\n",
+        "Learn how to add 2+2\n",
+        "x 2011-03-03 Call Mom\n",
+        "xylophone lesson\nX 2012-01-01 Make resolutions\n(A) x Find ticket prices\n",
+        "x 2011-03-02 2011-03-01 Review Tim's pull request +TodoTxtTouch @github\n"
+      ],
+      "clients_executed": false
+    },
+    "hledger:examples/borrowing.journal": {
+      "dated_directives": [],
+      "posting_lines": [],
+      "cost_literals": [],
+      "balances_recomputed": false
+    }
+  },
+  "source_questions": [
+    {
+      "application": "beancount",
+      "id": "automatic-pad",
+      "anchors": {
+        "beancount/ops/pad.py": [
+          "Synthesize and insert Transaction entries",
+          "single currency only"
+        ]
+      },
+      "locations": [
+        {
+          "path": "beancount/ops/pad.py",
+          "anchor": "Synthesize and insert Transaction entries",
+          "lines": [
+            32
+          ]
+        },
+        {
+          "path": "beancount/ops/pad.py",
+          "anchor": "single currency only",
+          "lines": [
+            38
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "hledger",
+      "id": "import-checkpoints",
+      "anchors": {
+        "hledger/Hledger/Cli/Commands/Import.hs": [
+          "new_=True",
+          "new_save_=False",
+          "_dryrun=dryRun",
+          "saveLatestDatesForFiles latestdatesforfiles"
+        ]
+      },
+      "locations": [
+        {
+          "path": "hledger/Hledger/Cli/Commands/Import.hs",
+          "anchor": "new_=True",
+          "lines": [
+            62
+          ]
+        },
+        {
+          "path": "hledger/Hledger/Cli/Commands/Import.hs",
+          "anchor": "new_save_=False",
+          "lines": [
+            63
+          ]
+        },
+        {
+          "path": "hledger/Hledger/Cli/Commands/Import.hs",
+          "anchor": "_dryrun=dryRun",
+          "lines": [
+            66
+          ]
+        },
+        {
+          "path": "hledger/Hledger/Cli/Commands/Import.hs",
+          "anchor": "saveLatestDatesForFiles latestdatesforfiles",
+          "lines": [
+            92,
+            117
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "gnucash",
+      "id": "split-serialization",
+      "anchors": {
+        "libgnucash/backend/xml/gnc-transaction-xml-v2.cpp": [
+          "split:value",
+          "split:quantity",
+          "split:account"
+        ]
+      },
+      "locations": [
+        {
+          "path": "libgnucash/backend/xml/gnc-transaction-xml-v2.cpp",
+          "anchor": "split:value",
+          "lines": [
+            109,
+            339
+          ]
+        },
+        {
+          "path": "libgnucash/backend/xml/gnc-transaction-xml-v2.cpp",
+          "anchor": "split:quantity",
+          "lines": [
+            111,
+            340
+          ]
+        },
+        {
+          "path": "libgnucash/backend/xml/gnc-transaction-xml-v2.cpp",
+          "anchor": "split:account",
+          "lines": [
+            116,
+            341
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "money-manager-ex",
+      "id": "cipher-migration",
+      "anchors": {
+        "src/db/dbwrapper.cpp": [
+          "cipher.InitializeVersionDefault(4)",
+          "wxSQLite3CipherAes128",
+          "Rekeying with the new cipher will prevent opening this database in older versions",
+          "msgDlg.ShowModal() == wxID_YES"
+        ]
+      },
+      "locations": [
+        {
+          "path": "src/db/dbwrapper.cpp",
+          "anchor": "cipher.InitializeVersionDefault(4)",
+          "lines": [
+            47
+          ]
+        },
+        {
+          "path": "src/db/dbwrapper.cpp",
+          "anchor": "wxSQLite3CipherAes128",
+          "lines": [
+            67
+          ]
+        },
+        {
+          "path": "src/db/dbwrapper.cpp",
+          "anchor": "Rekeying with the new cipher will prevent opening this database in older versions",
+          "lines": [
+            80
+          ]
+        },
+        {
+          "path": "src/db/dbwrapper.cpp",
+          "anchor": "msgDlg.ShowModal() == wxID_YES",
+          "lines": [
+            82
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "todo-txt",
+      "id": "completion-and-archive",
+      "anchors": {
+        "todo.sh": [
+          "grep \"^x \" \"$TODO_FILE\" >> \"$DONE_FILE\"",
+          "sed -i.bak '/^x /d'",
+          "sed -i.bak \"${item}s/^(.) //\""
+        ]
+      },
+      "locations": [
+        {
+          "path": "todo.sh",
+          "anchor": "grep \"^x \" \"$TODO_FILE\" >> \"$DONE_FILE\"",
+          "lines": [
+            1263
+          ]
+        },
+        {
+          "path": "todo.sh",
+          "anchor": "sed -i.bak '/^x /d'",
+          "lines": [
+            1265
+          ]
+        },
+        {
+          "path": "todo.sh",
+          "anchor": "sed -i.bak \"${item}s/^(.) //\"",
+          "lines": [
+            1362
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    }
+  ],
+  "sqlite_library_experiment": {
+    "runtime": "Python bundled SQLite",
+    "version": "3.45.3",
+    "not_a_test_of_pinned_current_upstream_commit": true,
+    "main_file_only_tables_while_wal_open": [],
+    "backup_child_rows": 2,
+    "backup_integrity": [
+      [
+        "ok"
+      ]
+    ],
+    "dump_restore_rows_equal": true,
+    "restored_rows": [
+      [
+        1,
+        "00FF",
+        "text",
+        "text"
+      ],
+      [
+        2,
+        "4142",
+        "real",
+        12.5
+      ]
+    ],
+    "restored_view": [
+      [
+        1,
+        "example"
+      ],
+      [
+        2,
+        "example"
+      ]
+    ],
+    "restored_trigger_count": 1,
+    "foreign_key_check": [],
+    "source_dump_sha256": "6d11bc48f99e73c8f7f02c01809ec61d41a47659fafb9e00538a0c54e74b5b16"
+  },
+  "executed_components": [
+    "Python bundled SQLite 3.45.3"
+  ]
+}

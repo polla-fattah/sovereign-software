@@ -4,6 +4,17 @@ Reviewed 22 October 2026 from the Hugo documentation (gohugo.io) and the officia
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 8](../third-pass/batch-8/README.md#hugo) and reflected in the [application page](../../content/directory/hugo.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: The installed Hugo v0.166.0 fixture retained a deleted page's output after both a normal build and --cleanDestinationDir. Newer pinned upstream tests specify removal of ordinary stale files with configurable keep patterns. This resolves the observed/version-specific boundary, not a general cleanup guarantee.
+- [x] Resolved: The pinned remote-resource implementation uses an HTTP cache, checks allowed URLs and direct destination addresses, and makes environment proxies opt-in. A local source tree alone does not establish a network-independent build: remote inputs, caches and policy still matter.
+
+Remaining: The cause of the installed/newer cleanup difference, a network-blocked production build, module/theme closure and deployment dry-run remain open.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -43,3 +54,19 @@ Reviewed 22 October 2026 from the Hugo documentation (gohugo.io) and the officia
 5. Run `hugo deploy` with dry-run against a throwaway target; check what it would delete.
 6. Read next: Hugo Modules introduction, the installation pages (editions, Dart Sass), the licence page, the hugo-deploy guide, the repository's security policy and release notes for deprecations, and the official statements on telemetry and update checks (not found).
 7. Confirm the release year for v0.168.0 from the tag or a changelog.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-8/README.md#hugo); [actual assessment](../../content/directory/hugo.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. Ordinary content/config/layout files and successful local builds do not establish a clean, network-blocked reconstruction with all theme/module, remote-resource, cache and toolchain inputs. Those dependencies are explicit in the source. The earlier disposable build remains valid within its recorded limits, not whole-project E3.
+- E5: Not Verified. The installed cleanup check and newer-source expectations differ, so a universal stale-output guarantee would be unsupported. Effective destination selection, cleanup keep patterns, executable/remote build policy and deployment preview/correction are not sufficiently covered for the declared publishing workflow.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+- E2: Not Verified. The former E2 Pass does not establish an alternative publishing workflow preserving templates, module/theme behavior and remote-input semantics. An ordinary source tree or generated HTML alone does not complete that declared project migration.
+
+Remaining: The cause of the installed/newer cleanup difference, a network-blocked production build, module/theme closure and deployment dry-run remain open. E5 needs destination/cleanup policy and deployment preview/correction evidence; newer tests do not overwrite the observed installed-version result.
+
+Next without a local installation: Retain a complete synthetic source/module/theme/font/remote-input packet with hashes and exact Hugo version; seek a network-blocked rebuild and version-matched cleanup/deployment comparison from an existing runtime or external assessor.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

@@ -1,0 +1,24 @@
+{
+  "review_date": "2026-10-24",
+  "declared_before_additional_checks": true,
+  "applications": [
+    "calibre",
+    "audacity",
+    "ardour",
+    "musescore-studio",
+    "zim-wiki",
+    "taskwarrior"
+  ],
+  "role": "Individual custodian, using the existing declared application profile",
+  "scope": {
+    "calibre": "Existing 150-book library profile including files, covers, organization, custom metadata and conversion settings.",
+    "audacity": "Editable project and audio, track/label structure, format/version boundaries, plugins and recovery. Do not silently replace AUP3 with the retained AUP4 fixture.",
+    "ardour": "Complete session, external media, routing/automation and plugin state; historical XML alone is not a complete archive.",
+    "musescore-studio": "Editable score including musical/lyric/structural meaning and export fidelity. The retained MuseScore 2.0.2 fixture is not evidence of current-version round trips.",
+    "zim-wiki": "Existing knowledge_notes profile with hierarchy, cross-links, tags/tasks, dates and attachments; the XML test container is not a native notebook.",
+    "taskwarrior": "Existing recurring-task profile with annotations, UDAs, dependencies, dates and completion history; filtered JSON and minimal import literals do not replace it."
+  },
+  "method": "Recheck hashes and independent fixture observations; read additional version-pinned source to settle explicit control/backup questions. Comprehensive medium-confidence source evidence may support a qualified E5 if it covers the relevant risks. Do not require local installation by default, but do not mistake source assertions for executed behavior.",
+  "decision_rule": "Keep unresolved broad criteria Not Verified rather than Fail. Positive Longevity/Transparency require established E3/E5. Correct dependent Sovereignty/E2 claims when the reviewed evidence directly exposes an unsupported pairing. E1/E4/Locality are outside this targeted recertification unless an explicit correction is recorded.",
+  "installations": "None. Do not download, build, import or execute target implementation. Source files are retained as data; only existing Python/SQLite/XML/ZIP readers run."
+}

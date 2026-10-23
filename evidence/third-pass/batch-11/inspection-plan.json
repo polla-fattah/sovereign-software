@@ -1,0 +1,187 @@
+{
+  "inputs": [
+    {
+      "application": "shotcut",
+      "path": "src/autosavefile.cpp",
+      "commit": "34dde4fce394652c00d8f7af9ac2ce37dab1ed92",
+      "raw_url": "https://raw.githubusercontent.com/mltframework/shotcut/34dde4fce394652c00d8f7af9ac2ce37dab1ed92/src/autosavefile.cpp",
+      "url": "https://github.com/mltframework/shotcut/blob/34dde4fce394652c00d8f7af9ac2ce37dab1ed92/src/autosavefile.cpp",
+      "git_blob_sha": "4ef6f7555ee578ff5614e635871bc9764858b500"
+    },
+    {
+      "application": "shotcut",
+      "path": "src/mltxmlchecker.cpp",
+      "commit": "34dde4fce394652c00d8f7af9ac2ce37dab1ed92",
+      "raw_url": "https://raw.githubusercontent.com/mltframework/shotcut/34dde4fce394652c00d8f7af9ac2ce37dab1ed92/src/mltxmlchecker.cpp",
+      "url": "https://github.com/mltframework/shotcut/blob/34dde4fce394652c00d8f7af9ac2ce37dab1ed92/src/mltxmlchecker.cpp",
+      "git_blob_sha": "5f12a08fe4ccb5d243dc9824d22dd64ea326a3be"
+    },
+    {
+      "application": "koreader",
+      "path": "frontend/docsettings.lua",
+      "commit": "afff28b107a7ea4ab5867b5e65dd054987ca1d99",
+      "raw_url": "https://raw.githubusercontent.com/koreader/koreader/afff28b107a7ea4ab5867b5e65dd054987ca1d99/frontend/docsettings.lua",
+      "url": "https://github.com/koreader/koreader/blob/afff28b107a7ea4ab5867b5e65dd054987ca1d99/frontend/docsettings.lua",
+      "git_blob_sha": "202b392fc9c14159cbad34847f0aeca5e78846e0"
+    },
+    {
+      "application": "koreader",
+      "path": "plugins/exporter.koplugin/target/json.lua",
+      "commit": "afff28b107a7ea4ab5867b5e65dd054987ca1d99",
+      "raw_url": "https://raw.githubusercontent.com/koreader/koreader/afff28b107a7ea4ab5867b5e65dd054987ca1d99/plugins/exporter.koplugin/target/json.lua",
+      "url": "https://github.com/koreader/koreader/blob/afff28b107a7ea4ab5867b5e65dd054987ca1d99/plugins/exporter.koplugin/target/json.lua",
+      "git_blob_sha": "667593d467e18ce9f726e82b3f61f5b887b59a46"
+    },
+    {
+      "application": "koreader",
+      "path": "plugins/exporter.koplugin/target/markdown.lua",
+      "commit": "afff28b107a7ea4ab5867b5e65dd054987ca1d99",
+      "raw_url": "https://raw.githubusercontent.com/koreader/koreader/afff28b107a7ea4ab5867b5e65dd054987ca1d99/plugins/exporter.koplugin/target/markdown.lua",
+      "url": "https://github.com/koreader/koreader/blob/afff28b107a7ea4ab5867b5e65dd054987ca1d99/plugins/exporter.koplugin/target/markdown.lua",
+      "git_blob_sha": "11feb956ee2a40411850ac3deb915fd4ab74fa6c"
+    },
+    {
+      "application": "mpv",
+      "path": "player/configfiles.c",
+      "commit": "01a7420cbb4bfcb3ae275b864a8a734c61ee8831",
+      "raw_url": "https://raw.githubusercontent.com/mpv-player/mpv/01a7420cbb4bfcb3ae275b864a8a734c61ee8831/player/configfiles.c",
+      "url": "https://github.com/mpv-player/mpv/blob/01a7420cbb4bfcb3ae275b864a8a734c61ee8831/player/configfiles.c",
+      "git_blob_sha": "46ad9cceadd00398a42d23a29e90da16014948f5"
+    },
+    {
+      "application": "jellyfin",
+      "path": "Jellyfin.Server.Implementations/FullSystemBackup/BackupService.cs",
+      "commit": "c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81",
+      "raw_url": "https://raw.githubusercontent.com/jellyfin/jellyfin/c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81/Jellyfin.Server.Implementations/FullSystemBackup/BackupService.cs",
+      "url": "https://github.com/jellyfin/jellyfin/blob/c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81/Jellyfin.Server.Implementations/FullSystemBackup/BackupService.cs",
+      "git_blob_sha": "7c10a5dc772cd8aeb5250a37444fb8b2a6b4952d"
+    },
+    {
+      "application": "jellyfin",
+      "path": "MediaBrowser.XbmcMetadata/Savers/BaseNfoSaver.cs",
+      "commit": "c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81",
+      "raw_url": "https://raw.githubusercontent.com/jellyfin/jellyfin/c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81/MediaBrowser.XbmcMetadata/Savers/BaseNfoSaver.cs",
+      "url": "https://github.com/jellyfin/jellyfin/blob/c7ce6a1b56ee7dcc1896250df0f2f9deaa828a81/MediaBrowser.XbmcMetadata/Savers/BaseNfoSaver.cs",
+      "git_blob_sha": "5a9bbbef4f9269f35a5b1ccf30d977105eb68c62"
+    },
+    {
+      "application": "reaper",
+      "path": "sdk/reaper_plugin.h",
+      "commit": "c0eafe87863b2bf69c5c822760f1b32a753b211b",
+      "raw_url": "https://raw.githubusercontent.com/justinfrankel/reaper-sdk/c0eafe87863b2bf69c5c822760f1b32a753b211b/sdk/reaper_plugin.h",
+      "url": "https://github.com/justinfrankel/reaper-sdk/blob/c0eafe87863b2bf69c5c822760f1b32a753b211b/sdk/reaper_plugin.h",
+      "git_blob_sha": "a11b850df5ae9b14cce2ee7f1d5de34ba551cd65"
+    },
+    {
+      "application": "kodi",
+      "path": "xbmc/video/VideoDatabase.cpp",
+      "commit": "a097d6978028aef8840b23695a57c606697f156a",
+      "git_blob_sha": "a4d7953145a83ba7c3c983b25e2fea7a69ace4c9",
+      "url": "https://github.com/xbmc/xbmc/blob/a097d6978028aef8840b23695a57c606697f156a/xbmc/video/VideoDatabase.cpp",
+      "raw_url": "https://raw.githubusercontent.com/xbmc/xbmc/a097d6978028aef8840b23695a57c606697f156a/xbmc/video/VideoDatabase.cpp"
+    }
+  ],
+  "source_questions": [
+    {
+      "application": "shotcut",
+      "id": "src/autosavefile.cpp",
+      "anchors": {
+        "src/autosavefile.cpp": [
+          "AutoSaveFile::~AutoSaveFile()",
+          "remove();"
+        ]
+      }
+    },
+    {
+      "application": "shotcut",
+      "id": "src/mltxmlchecker.cpp",
+      "anchors": {
+        "src/mltxmlchecker.cpp": [
+          "relinkMismatch",
+          "m_unlinkedFilesModel.appendRow"
+        ]
+      }
+    },
+    {
+      "application": "koreader",
+      "id": "frontend/docsettings.lua",
+      "anchors": {
+        "frontend/docsettings.lua": [
+          "pcall(dofile, candidate_path)",
+          "util.partialMD5(doc_path)"
+        ]
+      }
+    },
+    {
+      "application": "koreader",
+      "id": "plugins/exporter.koplugin/target/json.lua",
+      "anchors": {
+        "plugins/exporter.koplugin/target/json.lua": [
+          "table.insert(t.entries, entry[1])"
+        ]
+      }
+    },
+    {
+      "application": "koreader",
+      "id": "plugins/exporter.koplugin/target/markdown.lua",
+      "anchors": {
+        "plugins/exporter.koplugin/target/markdown.lua": [
+          "md.prepareBookContent"
+        ]
+      }
+    },
+    {
+      "application": "mpv",
+      "id": "player/configfiles.c",
+      "anchors": {
+        "player/configfiles.c": [
+          "mp_write_watch_later_conf",
+          "M_SETOPT_PRESERVE_CMDLINE",
+          "unlink(fname)"
+        ]
+      }
+    },
+    {
+      "application": "jellyfin",
+      "id": "Jellyfin.Server.Implementations/FullSystemBackup/BackupService.cs",
+      "anchors": {
+        "Jellyfin.Server.Implementations/FullSystemBackup/BackupService.cs": [
+          "manifest!.ServerVersion > _applicationHost.ApplicationVersion",
+          "overwrite: true",
+          "PurgeDatabase"
+        ]
+      }
+    },
+    {
+      "application": "jellyfin",
+      "id": "MediaBrowser.XbmcMetadata/Savers/BaseNfoSaver.cs",
+      "anchors": {
+        "MediaBrowser.XbmcMetadata/Savers/BaseNfoSaver.cs": [
+          "var userId = options.UserId;"
+        ]
+      }
+    },
+    {
+      "application": "reaper",
+      "id": "sdk/reaper_plugin.h",
+      "anchors": {
+        "sdk/reaper_plugin.h": [
+          "ProjectStateContext",
+          "plug-ins may or may not want to save their undo states"
+        ]
+      }
+    },
+    {
+      "application": "kodi",
+      "id": "xbmc/video/VideoDatabase.cpp",
+      "anchors": {
+        "xbmc/video/VideoDatabase.cpp": [
+          "void CVideoDatabase::ExportToXML",
+          "// FIXME: scraper settings are not exported?",
+          "else if (silent)"
+        ]
+      }
+    }
+  ],
+  "ratings_reconciliation": "Deferred; preserve original eligibility and principle tables"
+}

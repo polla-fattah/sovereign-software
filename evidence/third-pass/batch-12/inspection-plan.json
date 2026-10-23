@@ -1,0 +1,146 @@
+{
+  "inputs": [
+    {
+      "application": "jami",
+      "path": "src/archiver.cpp",
+      "commit": "984f7afbe8d85d119391c2e24e4e1ccbcbf87f28",
+      "raw_url": "https://raw.githubusercontent.com/savoirfairelinux/jami-daemon/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/archiver.cpp",
+      "url": "https://github.com/savoirfairelinux/jami-daemon/blob/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/archiver.cpp",
+      "git_blob_sha": "811414a5af3bdfd35d7cf5a75880fc14bdbd84f0"
+    },
+    {
+      "application": "jami",
+      "path": "src/jamidht/accountarchive.cpp",
+      "commit": "984f7afbe8d85d119391c2e24e4e1ccbcbf87f28",
+      "raw_url": "https://raw.githubusercontent.com/savoirfairelinux/jami-daemon/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/jamidht/accountarchive.cpp",
+      "url": "https://github.com/savoirfairelinux/jami-daemon/blob/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/jamidht/accountarchive.cpp",
+      "git_blob_sha": "68232e5a693833d04d5676b1cfe106d0b68c1f9a"
+    },
+    {
+      "application": "jami",
+      "path": "src/jamidht/archive_account_manager.cpp",
+      "commit": "984f7afbe8d85d119391c2e24e4e1ccbcbf87f28",
+      "raw_url": "https://raw.githubusercontent.com/savoirfairelinux/jami-daemon/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/jamidht/archive_account_manager.cpp",
+      "url": "https://github.com/savoirfairelinux/jami-daemon/blob/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/jamidht/archive_account_manager.cpp",
+      "git_blob_sha": "58551c03774c068025e9831f5a40a42c25a5df1a"
+    },
+    {
+      "application": "jami",
+      "path": "src/jami/conversation_interface.h",
+      "commit": "984f7afbe8d85d119391c2e24e4e1ccbcbf87f28",
+      "raw_url": "https://raw.githubusercontent.com/savoirfairelinux/jami-daemon/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/jami/conversation_interface.h",
+      "url": "https://github.com/savoirfairelinux/jami-daemon/blob/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/jami/conversation_interface.h",
+      "git_blob_sha": "a1dea09fde2bbbabe54111bdafd35928e32d9876"
+    },
+    {
+      "application": "briar",
+      "path": "briar-core/src/main/java/org/briarproject/briar/autodelete/AutoDeleteManagerImpl.java",
+      "commit": "d03d6fcd776349ec6c8b7d22035e9bb04aa1787c",
+      "raw_url": "https://code.briarproject.org/briar/briar/-/raw/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/briar-core/src/main/java/org/briarproject/briar/autodelete/AutoDeleteManagerImpl.java",
+      "url": "https://code.briarproject.org/briar/briar/-/blob/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/briar-core/src/main/java/org/briarproject/briar/autodelete/AutoDeleteManagerImpl.java"
+    },
+    {
+      "application": "briar",
+      "path": "bramble-core/src/main/java/org/briarproject/bramble/identity/IdentityManagerImpl.java",
+      "commit": "d03d6fcd776349ec6c8b7d22035e9bb04aa1787c",
+      "raw_url": "https://code.briarproject.org/briar/briar/-/raw/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/bramble-core/src/main/java/org/briarproject/bramble/identity/IdentityManagerImpl.java",
+      "url": "https://code.briarproject.org/briar/briar/-/blob/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/bramble-core/src/main/java/org/briarproject/bramble/identity/IdentityManagerImpl.java"
+    },
+    {
+      "application": "briar",
+      "path": "bramble-core/src/main/java/org/briarproject/bramble/db/H2Database.java",
+      "commit": "d03d6fcd776349ec6c8b7d22035e9bb04aa1787c",
+      "raw_url": "https://code.briarproject.org/briar/briar/-/raw/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/bramble-core/src/main/java/org/briarproject/bramble/db/H2Database.java",
+      "url": "https://code.briarproject.org/briar/briar/-/blob/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/bramble-core/src/main/java/org/briarproject/bramble/db/H2Database.java"
+    },
+    {
+      "application": "briar",
+      "path": "bramble-core/src/main/java/org/briarproject/bramble/account/AccountManagerImpl.java",
+      "commit": "d03d6fcd776349ec6c8b7d22035e9bb04aa1787c",
+      "raw_url": "https://code.briarproject.org/briar/briar/-/raw/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/bramble-core/src/main/java/org/briarproject/bramble/account/AccountManagerImpl.java",
+      "url": "https://code.briarproject.org/briar/briar/-/blob/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/bramble-core/src/main/java/org/briarproject/bramble/account/AccountManagerImpl.java"
+    }
+  ],
+  "source_questions": [
+    {
+      "application": "jami",
+      "id": "src/archiver.cpp",
+      "anchors": {
+        "src/archiver.cpp": [
+          "compressGzip",
+          "decompressGzip"
+        ]
+      }
+    },
+    {
+      "application": "jami",
+      "id": "src/jamidht/accountarchive.cpp",
+      "anchors": {
+        "src/jamidht/accountarchive.cpp": [
+          "Conf::RING_ACCOUNT_KEY",
+          "Conf::CONVERSATIONS_KEY"
+        ]
+      }
+    },
+    {
+      "application": "jami",
+      "id": "src/jamidht/archive_account_manager.cpp",
+      "anchors": {
+        "src/jamidht/archive_account_manager.cpp": [
+          "std::filesystem::copy_options::overwrite_existing",
+          "ConversationMode::DOCUMENT"
+        ]
+      }
+    },
+    {
+      "application": "jami",
+      "id": "src/jami/conversation_interface.h",
+      "anchors": {
+        "src/jami/conversation_interface.h": [
+          "removeConversation",
+          "removeCollaborativeDocumentLocally"
+        ]
+      }
+    },
+    {
+      "application": "briar",
+      "id": "briar-core/src/main/java/org/briarproject/briar/autodelete/AutoDeleteManagerImpl.java",
+      "anchors": {
+        "briar-core/src/main/java/org/briarproject/briar/autodelete/AutoDeleteManagerImpl.java": [
+          "validateTimer(timer);",
+          "NO_AUTO_DELETE_TIMER"
+        ]
+      }
+    },
+    {
+      "application": "briar",
+      "id": "bramble-core/src/main/java/org/briarproject/bramble/identity/IdentityManagerImpl.java",
+      "anchors": {
+        "bramble-core/src/main/java/org/briarproject/bramble/identity/IdentityManagerImpl.java": [
+          "crypto.generateAgreementKeyPair()"
+        ]
+      }
+    },
+    {
+      "application": "briar",
+      "id": "bramble-core/src/main/java/org/briarproject/bramble/db/H2Database.java",
+      "anchors": {
+        "bramble-core/src/main/java/org/briarproject/bramble/db/H2Database.java": [
+          "CIPHER=AES",
+          "key.getBytes()"
+        ]
+      }
+    },
+    {
+      "application": "briar",
+      "id": "bramble-core/src/main/java/org/briarproject/bramble/account/AccountManagerImpl.java",
+      "anchors": {
+        "bramble-core/src/main/java/org/briarproject/bramble/account/AccountManagerImpl.java": [
+          "crypto.generateSecretKey()",
+          "IoUtils.deleteFileOrDir(databaseConfig.getDatabaseKeyDirectory())"
+        ]
+      }
+    }
+  ],
+  "ratings_reconciliation": "Deferred; preserve original eligibility and principle tables"
+}

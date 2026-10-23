@@ -1,0 +1,656 @@
+{
+  "batch": 10,
+  "review_date": "2026-10-23",
+  "recorded_at_utc": "2026-10-23T07:29:41.723581+00:00",
+  "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+  "applications_executed": false,
+  "downloaded_application_implementation_executed": false,
+  "published_schema_ddl_executed": false,
+  "sqlite_reader_version": "3.45.3",
+  "inspection_code_sha256": "7834200af11946de7c4a23b1cf4ddeccfdcf3c29ff56a6ea57583974324e7aa1",
+  "rating_reconciliation": "Deferred to the next pass at the user's request",
+  "inputs": [
+    {
+      "application": "gdal",
+      "path": "gcore/gdalpamdataset.cpp",
+      "commit": "0e24e0288164b5237df0aeb82ab742909e719479",
+      "raw_url": "https://raw.githubusercontent.com/OSGeo/gdal/0e24e0288164b5237df0aeb82ab742909e719479/gcore/gdalpamdataset.cpp",
+      "url": "https://github.com/OSGeo/gdal/blob/0e24e0288164b5237df0aeb82ab742909e719479/gcore/gdalpamdataset.cpp",
+      "git_blob_sha": "73de51c74e9ce63187f2a529491d8271424cdcb3",
+      "local_path": "inputs/gdal/gcore/gdalpamdataset.cpp",
+      "bytes": 69389,
+      "sha256": "61fdad223886e9667be77e5f014c48105cd5d8a49b013d35bbf98d6d16fb5a44"
+    },
+    {
+      "application": "grass-gis",
+      "path": "general/g.remove/main.c",
+      "commit": "09ad2796fff4fdfc2a3bee8446868f8be3076db4",
+      "raw_url": "https://raw.githubusercontent.com/OSGeo/grass/09ad2796fff4fdfc2a3bee8446868f8be3076db4/general/g.remove/main.c",
+      "url": "https://github.com/OSGeo/grass/blob/09ad2796fff4fdfc2a3bee8446868f8be3076db4/general/g.remove/main.c",
+      "git_blob_sha": "3d1130884759f23cbd6b3e312228d8403f6c8c8c",
+      "local_path": "inputs/grass-gis/general/g.remove/main.c",
+      "bytes": 8794,
+      "sha256": "4d7a281f024b14f9cdd32e8f9c365d9cc4dd96045cb27ed40c9bd874c0d9f0a8"
+    },
+    {
+      "application": "grass-gis",
+      "path": "scripts/r.pack/r.pack.py",
+      "commit": "09ad2796fff4fdfc2a3bee8446868f8be3076db4",
+      "raw_url": "https://raw.githubusercontent.com/OSGeo/grass/09ad2796fff4fdfc2a3bee8446868f8be3076db4/scripts/r.pack/r.pack.py",
+      "url": "https://github.com/OSGeo/grass/blob/09ad2796fff4fdfc2a3bee8446868f8be3076db4/scripts/r.pack/r.pack.py",
+      "git_blob_sha": "1ca877dcc97ffadbd83628718b295eb87eb7bc62",
+      "local_path": "inputs/grass-gis/scripts/r.pack/r.pack.py",
+      "bytes": 6525,
+      "sha256": "b0952ccb8e1639f3d1115160713428d369868393c99c462aee5892957fedcfba"
+    },
+    {
+      "application": "grass-gis",
+      "path": "scripts/v.pack/v.pack.py",
+      "commit": "09ad2796fff4fdfc2a3bee8446868f8be3076db4",
+      "raw_url": "https://raw.githubusercontent.com/OSGeo/grass/09ad2796fff4fdfc2a3bee8446868f8be3076db4/scripts/v.pack/v.pack.py",
+      "url": "https://github.com/OSGeo/grass/blob/09ad2796fff4fdfc2a3bee8446868f8be3076db4/scripts/v.pack/v.pack.py",
+      "git_blob_sha": "00d684efb11f2a215e5c8c80f99347a26596596c",
+      "local_path": "inputs/grass-gis/scripts/v.pack/v.pack.py",
+      "bytes": 3966,
+      "sha256": "4fb2b14a6a156bfee6c9a8a006bd2738fc61f7a3389c6f2bf04a0225ed0664fe"
+    },
+    {
+      "application": "r-project",
+      "path": "src/library/base/man/readRDS.Rd",
+      "commit": "c267ebb7f9720154535e63642c25a5d91d5f512d",
+      "raw_url": "https://raw.githubusercontent.com/r-devel/r-svn/c267ebb7f9720154535e63642c25a5d91d5f512d/src/library/base/man/readRDS.Rd",
+      "url": "https://github.com/r-devel/r-svn/blob/c267ebb7f9720154535e63642c25a5d91d5f512d/src/library/base/man/readRDS.Rd",
+      "git_blob_sha": "6f3137e0d387b5337393c5c11b5bda7c2ee3efb5",
+      "local_path": "inputs/r-project/src/library/base/man/readRDS.Rd",
+      "bytes": 5939,
+      "sha256": "f05b9eca10aa72b43e6151c164695814bab97f3139ef13b0ac1546afb0e548d7"
+    },
+    {
+      "application": "r-project",
+      "path": "src/main/serialize.c",
+      "commit": "c267ebb7f9720154535e63642c25a5d91d5f512d",
+      "raw_url": "https://raw.githubusercontent.com/r-devel/r-svn/c267ebb7f9720154535e63642c25a5d91d5f512d/src/main/serialize.c",
+      "url": "https://github.com/r-devel/r-svn/blob/c267ebb7f9720154535e63642c25a5d91d5f512d/src/main/serialize.c",
+      "git_blob_sha": "82fec2d16cb46ba50975b91b8e0655b5c3080c3d",
+      "local_path": "inputs/r-project/src/main/serialize.c",
+      "bytes": 101005,
+      "sha256": "7f34b189adcaaece999325ac45185710d69fc08e7b55cc13689d0dd01eb7b769"
+    },
+    {
+      "application": "kolibri",
+      "path": "kolibri/core/deviceadmin/management/commands/dbrestore.py",
+      "commit": "303e3baea3e0df85b797111af8ca4d89e7fbbe92",
+      "raw_url": "https://raw.githubusercontent.com/learningequality/kolibri/303e3baea3e0df85b797111af8ca4d89e7fbbe92/kolibri/core/deviceadmin/management/commands/dbrestore.py",
+      "url": "https://github.com/learningequality/kolibri/blob/303e3baea3e0df85b797111af8ca4d89e7fbbe92/kolibri/core/deviceadmin/management/commands/dbrestore.py",
+      "git_blob_sha": "2e5a44f4fe7d9756693e89228ba8b20cd68e4e4d",
+      "local_path": "inputs/kolibri/kolibri/core/deviceadmin/management/commands/dbrestore.py",
+      "bytes": 4540,
+      "sha256": "db97038e272aa72b7d539127f620491e8bb4dc6a09d7b6ed5d08ca5138ed8083"
+    },
+    {
+      "application": "kolibri",
+      "path": "kolibri/core/auth/management/commands/bulkimportusers.py",
+      "commit": "303e3baea3e0df85b797111af8ca4d89e7fbbe92",
+      "raw_url": "https://raw.githubusercontent.com/learningequality/kolibri/303e3baea3e0df85b797111af8ca4d89e7fbbe92/kolibri/core/auth/management/commands/bulkimportusers.py",
+      "url": "https://github.com/learningequality/kolibri/blob/303e3baea3e0df85b797111af8ca4d89e7fbbe92/kolibri/core/auth/management/commands/bulkimportusers.py",
+      "git_blob_sha": "14004f1ad8b1c28931d8fb53f1892f4e96b7a22f",
+      "local_path": "inputs/kolibri/kolibri/core/auth/management/commands/bulkimportusers.py",
+      "bytes": 37848,
+      "sha256": "ef5e9dc7856a55ce2f357607ae19549e1ff14c4b5c8754306d3446e89664aa4c"
+    },
+    {
+      "application": "moodle",
+      "path": "public/backup/util/helper/restore_prechecks_helper.class.php",
+      "commit": "46c042e7da65f8cb2ec7dc19f46566ce61a393e1",
+      "raw_url": "https://raw.githubusercontent.com/moodle/moodle/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/util/helper/restore_prechecks_helper.class.php",
+      "url": "https://github.com/moodle/moodle/blob/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/util/helper/restore_prechecks_helper.class.php",
+      "git_blob_sha": "4dac448851c909344e31ad9f3d5690a4a7763372",
+      "local_path": "inputs/moodle/public/backup/util/helper/restore_prechecks_helper.class.php",
+      "bytes": 9911,
+      "sha256": "f36f7d3b9a3a37fab48dbc1bdf6d8a65dcde8636829ada267bf94c91e1c447b8"
+    },
+    {
+      "application": "moodle",
+      "path": "public/backup/moodle2/backup_final_task.class.php",
+      "commit": "46c042e7da65f8cb2ec7dc19f46566ce61a393e1",
+      "raw_url": "https://raw.githubusercontent.com/moodle/moodle/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/moodle2/backup_final_task.class.php",
+      "url": "https://github.com/moodle/moodle/blob/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/moodle2/backup_final_task.class.php",
+      "git_blob_sha": "ebeb057100158e34f172f3856a4e54cc80599b7f",
+      "local_path": "inputs/moodle/public/backup/moodle2/backup_final_task.class.php",
+      "bytes": 8830,
+      "sha256": "0ee36afe52a1464dbb7c1bf0f49e8539f1b19801d03130ff374e3ffbd72970a3"
+    },
+    {
+      "application": "moodle",
+      "path": "public/backup/moodle2/restore_course_task.class.php",
+      "commit": "46c042e7da65f8cb2ec7dc19f46566ce61a393e1",
+      "raw_url": "https://raw.githubusercontent.com/moodle/moodle/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/moodle2/restore_course_task.class.php",
+      "url": "https://github.com/moodle/moodle/blob/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/moodle2/restore_course_task.class.php",
+      "git_blob_sha": "f8365b5a3fce3835d98b7be79af74177e7be3cfc",
+      "local_path": "inputs/moodle/public/backup/moodle2/restore_course_task.class.php",
+      "bytes": 11520,
+      "sha256": "2da038d76b29302036e7121659a52005571db9a1f019cac0e092ca2a5f0bbfa5"
+    },
+    {
+      "application": "gdal",
+      "path": "autotest/ogr/data/gpkg/poly_golden_gpkg_1_4.gpkg",
+      "commit": "0e24e0288164b5237df0aeb82ab742909e719479",
+      "raw_url": "https://raw.githubusercontent.com/OSGeo/gdal/0e24e0288164b5237df0aeb82ab742909e719479/autotest/ogr/data/gpkg/poly_golden_gpkg_1_4.gpkg",
+      "url": "https://github.com/OSGeo/gdal/blob/0e24e0288164b5237df0aeb82ab742909e719479/autotest/ogr/data/gpkg/poly_golden_gpkg_1_4.gpkg",
+      "git_blob_sha": "f381872b4a9e76ea2dc83485ea866146acec8915",
+      "probe": "sqlite",
+      "local_path": "inputs/gdal/autotest/ogr/data/gpkg/poly_golden_gpkg_1_4.gpkg",
+      "bytes": 106496,
+      "sha256": "cfb56011578ede8b4adc179e986b0358100e49b268acbaa7e3a92c93f84440f3"
+    },
+    {
+      "application": "gnu-pspp",
+      "path": "save-translate.html",
+      "raw_url": "https://www.gnu.org/software/pspp/manual/html_node/SAVE-TRANSLATE.html",
+      "url": "https://www.gnu.org/software/pspp/manual/html_node/SAVE-TRANSLATE.html",
+      "retrieved": "2026-10-23",
+      "probe": "text",
+      "local_path": "inputs/gnu-pspp/save-translate.html",
+      "bytes": 5888,
+      "sha256": "f39d4709161e4a462a8f46ea4db106f79b1fa731b54f0d82e665a7e47bd264de"
+    },
+    {
+      "application": "gnu-pspp",
+      "path": "csv-export.html",
+      "raw_url": "https://www.gnu.org/software/pspp/manual/html_node/SAVE-TRANSLATE-_002fTYPE_003dCSV-and-TYPE_003dTAB.html",
+      "url": "https://www.gnu.org/software/pspp/manual/html_node/SAVE-TRANSLATE-_002fTYPE_003dCSV-and-TYPE_003dTAB.html",
+      "retrieved": "2026-10-23",
+      "probe": "text",
+      "local_path": "inputs/gnu-pspp/csv-export.html",
+      "bytes": 6160,
+      "sha256": "4a9d950f39c720e3c0ccbdde0e875f3c9a0e48485c1499156971c327635835ca"
+    }
+  ],
+  "observations": {
+    "gdal:autotest/ogr/data/gpkg/poly_golden_gpkg_1_4.gpkg": {
+      "integrity_check": [
+        [
+          "ok"
+        ]
+      ],
+      "schema": [
+        [
+          "gpkg_contents",
+          "table",
+          "CREATE TABLE gpkg_contents (table_name TEXT NOT NULL PRIMARY KEY,data_type TEXT NOT NULL,identifier TEXT UNIQUE,description TEXT DEFAULT '',last_change DATETIME NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now')),min_x DOUBLE, min_y DOUBLE,max_x DOUBLE, max_y DOUBLE,srs_id INTEGER,CONSTRAINT fk_gc_r_srs_id FOREIGN KEY (srs_id) REFERENCES gpkg_spatial_ref_sys(srs_id))"
+        ],
+        [
+          "gpkg_extensions",
+          "table",
+          "CREATE TABLE gpkg_extensions (table_name TEXT,column_name TEXT,extension_name TEXT NOT NULL,definition TEXT NOT NULL,scope TEXT NOT NULL,CONSTRAINT ge_tce UNIQUE (table_name, column_name, extension_name))"
+        ],
+        [
+          "gpkg_geometry_columns",
+          "table",
+          "CREATE TABLE gpkg_geometry_columns (table_name TEXT NOT NULL,column_name TEXT NOT NULL,geometry_type_name TEXT NOT NULL,srs_id INTEGER NOT NULL,z TINYINT NOT NULL,m TINYINT NOT NULL,CONSTRAINT pk_geom_cols PRIMARY KEY (table_name, column_name),CONSTRAINT uk_gc_table_name UNIQUE (table_name),CONSTRAINT fk_gc_tn FOREIGN KEY (table_name) REFERENCES gpkg_contents(table_name),CONSTRAINT fk_gc_srs FOREIGN KEY (srs_id) REFERENCES gpkg_spatial_ref_sys (srs_id))"
+        ],
+        [
+          "gpkg_ogr_contents",
+          "table",
+          "CREATE TABLE gpkg_ogr_contents(table_name TEXT NOT NULL PRIMARY KEY,feature_count INTEGER DEFAULT NULL)"
+        ],
+        [
+          "gpkg_spatial_ref_sys",
+          "table",
+          "CREATE TABLE gpkg_spatial_ref_sys (srs_name TEXT NOT NULL,srs_id INTEGER NOT NULL PRIMARY KEY,organization TEXT NOT NULL,organization_coordsys_id INTEGER NOT NULL,definition  TEXT NOT NULL,description TEXT)"
+        ],
+        [
+          "gpkg_tile_matrix",
+          "table",
+          "CREATE TABLE gpkg_tile_matrix (table_name TEXT NOT NULL,zoom_level INTEGER NOT NULL,matrix_width INTEGER NOT NULL,matrix_height INTEGER NOT NULL,tile_width INTEGER NOT NULL,tile_height INTEGER NOT NULL,pixel_x_size DOUBLE NOT NULL,pixel_y_size DOUBLE NOT NULL,CONSTRAINT pk_ttm PRIMARY KEY (table_name, zoom_level),CONSTRAINT fk_tmm_table_name FOREIGN KEY (table_name) REFERENCES gpkg_contents(table_name))"
+        ],
+        [
+          "gpkg_tile_matrix_matrix_height_insert",
+          "trigger",
+          "CREATE TRIGGER 'gpkg_tile_matrix_matrix_height_insert' BEFORE INSERT ON 'gpkg_tile_matrix' FOR EACH ROW BEGIN SELECT RAISE(ABORT, 'insert on table ''gpkg_tile_matrix'' violates constraint: matrix_height cannot be less than 1') WHERE (NEW.matrix_height < 1); END"
+        ],
+        [
+          "gpkg_tile_matrix_matrix_height_update",
+          "trigger",
+          "CREATE TRIGGER 'gpkg_tile_matrix_matrix_height_update' BEFORE UPDATE OF matrix_height ON 'gpkg_tile_matrix' FOR EACH ROW BEGIN SELECT RAISE(ABORT, 'update on table ''gpkg_tile_matrix'' violates constraint: matrix_height cannot be less than 1') WHERE (NEW.matrix_height < 1); END"
+        ],
+        [
+          "gpkg_tile_matrix_matrix_width_insert",
+          "trigger",
+          "CREATE TRIGGER 'gpkg_tile_matrix_matrix_width_insert' BEFORE INSERT ON 'gpkg_tile_matrix' FOR EACH ROW BEGIN SELECT RAISE(ABORT, 'insert on table ''gpkg_tile_matrix'' violates constraint: matrix_width cannot be less than 1') WHERE (NEW.matrix_width < 1); END"
+        ],
+        [
+          "gpkg_tile_matrix_matrix_width_update",
+          "trigger",
+          "CREATE TRIGGER 'gpkg_tile_matrix_matrix_width_update' BEFORE UPDATE OF matrix_width ON 'gpkg_tile_matrix' FOR EACH ROW BEGIN SELECT RAISE(ABORT, 'update on table ''gpkg_tile_matrix'' violates constraint: matrix_width cannot be less than 1') WHERE (NEW.matrix_width < 1); END"
+        ],
+        [
+          "gpkg_tile_matrix_pixel_x_size_insert",
+          "trigger",
+          "CREATE TRIGGER 'gpkg_tile_matrix_pixel_x_size_insert' BEFORE INSERT ON 'gpkg_tile_matrix' FOR EACH ROW BEGIN SELECT RAISE(ABORT, 'insert on table ''gpkg_tile_matrix'' violates constraint: pixel_x_size must be greater than 0') WHERE NOT (NEW.pixel_x_size > 0); END"
+        ],
+        [
+          "gpkg_tile_matrix_pixel_x_size_update",
+          "trigger",
+          "CREATE TRIGGER 'gpkg_tile_matrix_pixel_x_size_update' BEFORE UPDATE OF pixel_x_size ON 'gpkg_tile_matrix' FOR EACH ROW BEGIN SELECT RAISE(ABORT, 'update on table ''gpkg_tile_matrix'' violates constraint: pixel_x_size must be greater than 0') WHERE NOT (NEW.pixel_x_size > 0); END"
+        ],
+        [
+          "gpkg_tile_matrix_pixel_y_size_insert",
+          "trigger",
+          "CREATE TRIGGER 'gpkg_tile_matrix_pixel_y_size_insert' BEFORE INSERT ON 'gpkg_tile_matrix' FOR EACH ROW BEGIN SELECT RAISE(ABORT, 'insert on table ''gpkg_tile_matrix'' violates constraint: pixel_y_size must be greater than 0') WHERE NOT (NEW.pixel_y_size > 0); END"
+        ],
+        [
+          "gpkg_tile_matrix_pixel_y_size_update",
+          "trigger",
+          "CREATE TRIGGER 'gpkg_tile_matrix_pixel_y_size_update' BEFORE UPDATE OF pixel_y_size ON 'gpkg_tile_matrix' FOR EACH ROW BEGIN SELECT RAISE(ABORT, 'update on table ''gpkg_tile_matrix'' violates constraint: pixel_y_size must be greater than 0') WHERE NOT (NEW.pixel_y_size > 0); END"
+        ],
+        [
+          "gpkg_tile_matrix_set",
+          "table",
+          "CREATE TABLE gpkg_tile_matrix_set (table_name TEXT NOT NULL PRIMARY KEY,srs_id INTEGER NOT NULL,min_x DOUBLE NOT NULL,min_y DOUBLE NOT NULL,max_x DOUBLE NOT NULL,max_y DOUBLE NOT NULL,CONSTRAINT fk_gtms_table_name FOREIGN KEY (table_name) REFERENCES gpkg_contents(table_name),CONSTRAINT fk_gtms_srs FOREIGN KEY (srs_id) REFERENCES gpkg_spatial_ref_sys (srs_id))"
+        ],
+        [
+          "gpkg_tile_matrix_zoom_level_insert",
+          "trigger",
+          "CREATE TRIGGER 'gpkg_tile_matrix_zoom_level_insert' BEFORE INSERT ON 'gpkg_tile_matrix' FOR EACH ROW BEGIN SELECT RAISE(ABORT, 'insert on table ''gpkg_tile_matrix'' violates constraint: zoom_level cannot be less than 0') WHERE (NEW.zoom_level < 0); END"
+        ],
+        [
+          "gpkg_tile_matrix_zoom_level_update",
+          "trigger",
+          "CREATE TRIGGER 'gpkg_tile_matrix_zoom_level_update' BEFORE UPDATE of zoom_level ON 'gpkg_tile_matrix' FOR EACH ROW BEGIN SELECT RAISE(ABORT, 'update on table ''gpkg_tile_matrix'' violates constraint: zoom_level cannot be less than 0') WHERE (NEW.zoom_level < 0); END"
+        ],
+        [
+          "poly",
+          "table",
+          "CREATE TABLE \"poly\" ( \"fid\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \"geom\" POLYGON, \"AREA\" REAL, \"EAS_ID\" INTEGER, \"PRFEDEA\" TEXT(16))"
+        ],
+        [
+          "rtree_poly_geom",
+          "table",
+          "CREATE VIRTUAL TABLE \"rtree_poly_geom\" USING rtree(id, minx, maxx, miny, maxy)"
+        ],
+        [
+          "rtree_poly_geom_delete",
+          "trigger",
+          "CREATE TRIGGER \"rtree_poly_geom_delete\" AFTER DELETE ON \"poly\" WHEN old.\"geom\" NOT NULL BEGIN DELETE FROM \"rtree_poly_geom\" WHERE id = OLD.\"fid\"; END"
+        ],
+        [
+          "rtree_poly_geom_insert",
+          "trigger",
+          "CREATE TRIGGER \"rtree_poly_geom_insert\" AFTER INSERT ON \"poly\" WHEN (new.\"geom\" NOT NULL AND NOT ST_IsEmpty(NEW.\"geom\")) BEGIN INSERT OR REPLACE INTO \"rtree_poly_geom\" VALUES (NEW.\"fid\",ST_MinX(NEW.\"geom\"), ST_MaxX(NEW.\"geom\"),ST_MinY(NEW.\"geom\"), ST_MaxY(NEW.\"geom\")); END"
+        ],
+        [
+          "rtree_poly_geom_node",
+          "table",
+          "CREATE TABLE \"rtree_poly_geom_node\"(nodeno INTEGER PRIMARY KEY,data)"
+        ],
+        [
+          "rtree_poly_geom_parent",
+          "table",
+          "CREATE TABLE \"rtree_poly_geom_parent\"(nodeno INTEGER PRIMARY KEY,parentnode)"
+        ],
+        [
+          "rtree_poly_geom_rowid",
+          "table",
+          "CREATE TABLE \"rtree_poly_geom_rowid\"(rowid INTEGER PRIMARY KEY,nodeno)"
+        ],
+        [
+          "rtree_poly_geom_update2",
+          "trigger",
+          "CREATE TRIGGER \"rtree_poly_geom_update2\" AFTER UPDATE OF \"geom\" ON \"poly\" WHEN OLD.\"fid\" = NEW.\"fid\" AND (NEW.\"geom\" ISNULL OR ST_IsEmpty(NEW.\"geom\")) BEGIN DELETE FROM \"rtree_poly_geom\" WHERE id = OLD.\"fid\"; END"
+        ],
+        [
+          "rtree_poly_geom_update4",
+          "trigger",
+          "CREATE TRIGGER \"rtree_poly_geom_update4\" AFTER UPDATE ON \"poly\" WHEN OLD.\"fid\" != NEW.\"fid\" AND (NEW.\"geom\" ISNULL OR ST_IsEmpty(NEW.\"geom\")) BEGIN DELETE FROM \"rtree_poly_geom\" WHERE id IN (OLD.\"fid\", NEW.\"fid\"); END"
+        ],
+        [
+          "rtree_poly_geom_update5",
+          "trigger",
+          "CREATE TRIGGER \"rtree_poly_geom_update5\" AFTER UPDATE ON \"poly\" WHEN OLD.\"fid\" != NEW.\"fid\" AND (NEW.\"geom\" NOTNULL AND NOT ST_IsEmpty(NEW.\"geom\")) BEGIN DELETE FROM \"rtree_poly_geom\" WHERE id = OLD.\"fid\"; INSERT OR REPLACE INTO \"rtree_poly_geom\" VALUES (NEW.\"fid\",ST_MinX(NEW.\"geom\"), ST_MaxX(NEW.\"geom\"),ST_MinY(NEW.\"geom\"), ST_MaxY(NEW.\"geom\")); END"
+        ],
+        [
+          "rtree_poly_geom_update6",
+          "trigger",
+          "CREATE TRIGGER \"rtree_poly_geom_update6\" AFTER UPDATE OF \"geom\" ON \"poly\" WHEN OLD.\"fid\" = NEW.\"fid\" AND (NEW.\"geom\" NOTNULL AND NOT ST_IsEmpty(NEW.\"geom\")) AND (OLD.\"geom\" NOTNULL AND NOT ST_IsEmpty(OLD.\"geom\")) BEGIN UPDATE \"rtree_poly_geom\" SET minx = ST_MinX(NEW.\"geom\"), maxx = ST_MaxX(NEW.\"geom\"),miny = ST_MinY(NEW.\"geom\"), maxy = ST_MaxY(NEW.\"geom\") WHERE id = NEW.\"fid\";END"
+        ],
+        [
+          "rtree_poly_geom_update7",
+          "trigger",
+          "CREATE TRIGGER \"rtree_poly_geom_update7\" AFTER UPDATE OF \"geom\" ON \"poly\" WHEN OLD.\"fid\" = NEW.\"fid\" AND (NEW.\"geom\" NOTNULL AND NOT ST_IsEmpty(NEW.\"geom\")) AND (OLD.\"geom\" ISNULL OR ST_IsEmpty(OLD.\"geom\")) BEGIN INSERT INTO \"rtree_poly_geom\" VALUES (NEW.\"fid\",ST_MinX(NEW.\"geom\"), ST_MaxX(NEW.\"geom\"),ST_MinY(NEW.\"geom\"), ST_MaxY(NEW.\"geom\")); END"
+        ],
+        [
+          "sqlite_autoindex_gpkg_contents_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_gpkg_contents_2",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_gpkg_extensions_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_gpkg_geometry_columns_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_gpkg_geometry_columns_2",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_gpkg_ogr_contents_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_gpkg_tile_matrix_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_gpkg_tile_matrix_set_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_sequence",
+          "table",
+          "CREATE TABLE sqlite_sequence(name,seq)"
+        ],
+        [
+          "trigger_delete_feature_count_poly",
+          "trigger",
+          "CREATE TRIGGER \"trigger_delete_feature_count_poly\" AFTER DELETE ON \"poly\" BEGIN UPDATE gpkg_ogr_contents SET feature_count = feature_count - 1 WHERE lower(table_name) = lower('poly'); END"
+        ],
+        [
+          "trigger_insert_feature_count_poly",
+          "trigger",
+          "CREATE TRIGGER \"trigger_insert_feature_count_poly\" AFTER INSERT ON \"poly\" BEGIN UPDATE gpkg_ogr_contents SET feature_count = feature_count + 1 WHERE lower(table_name) = lower('poly'); END"
+        ]
+      ],
+      "gpkg_contents": [
+        [
+          "poly",
+          "features",
+          "poly",
+          "",
+          "2000-01-01T00:00:00.000Z",
+          478315.53125,
+          4762880.5,
+          481645.3125,
+          4765610.5,
+          27700
+        ]
+      ],
+      "gpkg_geometry_columns": [
+        [
+          "poly",
+          "geom",
+          "POLYGON",
+          27700,
+          0,
+          0
+        ]
+      ],
+      "gpkg_spatial_ref_sys": [
+        [
+          "Undefined Cartesian SRS",
+          -1,
+          "NONE",
+          -1
+        ],
+        [
+          "Undefined geographic SRS",
+          0,
+          "NONE",
+          0
+        ],
+        [
+          "WGS 84 geodetic",
+          4326,
+          "EPSG",
+          4326
+        ],
+        [
+          "OSGB36 / British National Grid",
+          27700,
+          "EPSG",
+          27700
+        ]
+      ],
+      "feature_rows": {
+        "poly": 10
+      },
+      "geometry_decoded_or_gdal_roundtrip_tested": false
+    },
+    "gnu-pspp:save-translate.html": {
+      "characters": 5887,
+      "lines": 126,
+      "executed": false
+    },
+    "gnu-pspp:csv-export.html": {
+      "characters": 6159,
+      "lines": 135,
+      "executed": false
+    }
+  },
+  "source_questions": [
+    {
+      "application": "gdal",
+      "id": "gcore/gdalpamdataset.cpp",
+      "anchors": {
+        "gcore/gdalpamdataset.cpp": [
+          " * with the .aux.xml extension."
+        ]
+      },
+      "locations": [
+        {
+          "path": "gcore/gdalpamdataset.cpp",
+          "anchor": " * with the .aux.xml extension.",
+          "lines": [
+            44
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "grass-gis",
+      "id": "general/g.remove/main.c",
+      "anchors": {
+        "general/g.remove/main.c": [
+          "        _(\"Force removal (required for actual deletion of files)\");"
+        ]
+      },
+      "locations": [
+        {
+          "path": "general/g.remove/main.c",
+          "anchor": "        _(\"Force removal (required for actual deletion of files)\");",
+          "lines": [
+            131
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "grass-gis",
+      "id": "scripts/r.pack/r.pack.py",
+      "anchors": {
+        "scripts/r.pack/r.pack.py": [
+          "    tar.add(infile, recursive=True)"
+        ]
+      },
+      "locations": [
+        {
+          "path": "scripts/r.pack/r.pack.py",
+          "anchor": "    tar.add(infile, recursive=True)",
+          "lines": [
+            183
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "grass-gis",
+      "id": "scripts/v.pack/v.pack.py",
+      "anchors": {
+        "scripts/v.pack/v.pack.py": [
+          "        tar.add(sqlitedb, \"db.sqlite\")"
+        ]
+      },
+      "locations": [
+        {
+          "path": "scripts/v.pack/v.pack.py",
+          "anchor": "        tar.add(sqlitedb, \"db.sqlite\")",
+          "lines": [
+            119
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "r-project",
+      "id": "src/library/base/man/readRDS.Rd",
+      "anchors": {
+        "src/library/base/man/readRDS.Rd": [
+          "  connection) are not suitable as an interchange format between"
+        ]
+      },
+      "locations": [
+        {
+          "path": "src/library/base/man/readRDS.Rd",
+          "anchor": "  connection) are not suitable as an interchange format between",
+          "lines": [
+            97
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "r-project",
+      "id": "src/main/serialize.c",
+      "anchors": {
+        "src/main/serialize.c": [
+          "\tOutInteger(stream, R_Version(3,5,0));"
+        ]
+      },
+      "locations": [
+        {
+          "path": "src/main/serialize.c",
+          "anchor": "\tOutInteger(stream, R_Version(3,5,0));",
+          "lines": [
+            1451
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "kolibri",
+      "id": "kolibri/core/deviceadmin/management/commands/dbrestore.py",
+      "anchors": {
+        "kolibri/core/deviceadmin/management/commands/dbrestore.py": [
+          "        \"Restores a database backup of Kolibri. This is not intended for \""
+        ]
+      },
+      "locations": [
+        {
+          "path": "kolibri/core/deviceadmin/management/commands/dbrestore.py",
+          "anchor": "        \"Restores a database backup of Kolibri. This is not intended for \"",
+          "lines": [
+            24
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "kolibri",
+      "id": "kolibri/core/auth/management/commands/bulkimportusers.py",
+      "anchors": {
+        "kolibri/core/auth/management/commands/bulkimportusers.py": [
+          "            user.delete(hard_delete=True)"
+        ]
+      },
+      "locations": [
+        {
+          "path": "kolibri/core/auth/management/commands/bulkimportusers.py",
+          "anchor": "            user.delete(hard_delete=True)",
+          "lines": [
+            764
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "moodle",
+      "id": "public/backup/util/helper/restore_prechecks_helper.class.php",
+      "anchors": {
+        "public/backup/util/helper/restore_prechecks_helper.class.php": [
+          "            $warnings[] = get_string('noticenewerbackup','',$message);"
+        ]
+      },
+      "locations": [
+        {
+          "path": "public/backup/util/helper/restore_prechecks_helper.class.php",
+          "anchor": "            $warnings[] = get_string('noticenewerbackup','',$message);",
+          "lines": [
+            105
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "moodle",
+      "id": "public/backup/moodle2/backup_final_task.class.php",
+      "anchors": {
+        "public/backup/moodle2/backup_final_task.class.php": [
+          "            $this->add_step(new backup_users_structure_step('users', 'users.xml'));"
+        ]
+      },
+      "locations": [
+        {
+          "path": "public/backup/moodle2/backup_final_task.class.php",
+          "anchor": "            $this->add_step(new backup_users_structure_step('users', 'users.xml'));",
+          "lines": [
+            80
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "moodle",
+      "id": "public/backup/moodle2/restore_course_task.class.php",
+      "anchors": {
+        "public/backup/moodle2/restore_course_task.class.php": [
+          "        if ($this->get_target() != backup::TARGET_CURRENT_DELETING and $this->get_target() != backup::TARGET_EXISTING_DELETING) {"
+        ]
+      },
+      "locations": [
+        {
+          "path": "public/backup/moodle2/restore_course_task.class.php",
+          "anchor": "        if ($this->get_target() != backup::TARGET_CURRENT_DELETING and $this->get_target() != backup::TARGET_EXISTING_DELETING) {",
+          "lines": [
+            230,
+            240
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    }
+  ]
+}

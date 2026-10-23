@@ -4,6 +4,17 @@ Reviewed 22 October 2026 from the Beancount documentation and repository only. C
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1. Several documentation pages are dated (the language syntax page says "Updated: April 2016" and contains out-of-date notes), so claims need checking against the version tested.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 7](../third-pass/batch-7/README.md#beancount) and reflected in the [application page](../../content/directory/beancount.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: The published vesting ledger is independently readable text containing dated directives, multiple commodities, explicit share-cost literals such as {131.3700 USD}, metadata links and postings with deliberately omitted amounts. It distinguishes records from evaluation rules; simply summing the visible numbers is not a validated independent balance or cost-basis reconstruction.
+- [x] Resolved: The padding pass synthesizes and inserts Transaction entries after Pad directives to satisfy later balance checks. Its source states that it operates per account/per currency rather than automatically across parent-child account relationships. A pad-generated balancing entry is therefore an accounting transformation to inspect, not evidence that every original transaction was present or correct.
+
+Remaining: Independent exact balance/lot/FX reproduction, plugin effects, migration to another ledger, v2/v3 compatibility, report fidelity and actual editing/recovery.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -36,3 +47,19 @@ Reviewed 22 October 2026 from the Beancount documentation and repository only. C
 3. Whether ledgers written for v2 load unchanged in v3.
 4. Pages not read: options reference, precision and tolerances, beangulp and beanquery docs, Fava docs.
 5. The editing and backup practices the maintainers actually recommend.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-7/README.md#beancount); [actual assessment](../../content/directory/beancount.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The ledger exposes dated directives, costs, commodities, metadata and omitted amounts, but independent exact balance/lot/FX interpretation and plugin-expanded meaning are not established. Readable text is not a complete replacement evaluator or a reconstruction of all essential accounting invariants.
+- E5: Not Verified. Padding synthesizes accounting transactions with account/currency-specific limits. That is an inspectable transformation, not proof of complete original data or automatic accounting correctness. Effective plugin/import authorization, change review and reversal across the declared ledger remain insufficiently evidenced.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+- E2: Not Verified. The former E2 Pass does not establish an alternative accounting workflow preserving omitted-amount inference, lots, prices, currencies and plugin-derived meaning. Ordinary ledger text readability does not complete that semantic migration.
+
+Remaining: Independent exact balance/lot/FX reproduction, plugin effects, migration to another ledger, v2/v3 compatibility, report fidelity and actual editing/recovery. E5 needs plugin/import and generated-transaction review, visible source changes and correction/restore boundaries; balancing alone does not establish oversight.
+
+Next without a local installation: Use a synthetic ledger with expected balances, lots/FX, plugin configuration and source hashes; compare an independent evaluator or supplied result record, and inspect pad/import/plugin diffs and recovery evidence.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

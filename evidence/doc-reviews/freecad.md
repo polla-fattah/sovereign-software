@@ -6,6 +6,8 @@ Reviewed 22 October 2026 from freecad.org (downloads, features, privacy pages) a
 
 ## What the documentation says
 
+Follow-up, 23 October 2026: two questions are now resolved in the [third-pass evidence](../third-pass/README.md#freecad) and reflected in the [application assessment](../../content/directory/freecad.md). The review below preserves the earlier documentation record; its gap list is superseded where the follow-up answers it.
+
 **Storage and access (E1, E3)**
 - The features page says FreeCAD imports and exports "dozens of different file formats", naming STEP, IGES, OBJ, STL, DWG, DXF, plus the native FCStd. It says files are "truly yours, forever". [features](https://www.freecad.org/features.php)
 - The README gives no description of FCStd; it only asks bug reporters to attach "FCStd as ZIP file". That FCStd is a zip, with `Document.xml`, is not stated on the pages I could read. [GitHub](https://github.com/FreeCAD/FreeCAD)
@@ -41,3 +43,18 @@ Reviewed 22 October 2026 from freecad.org (downloads, features, privacy pages) a
 5. Force a crash or kill the process mid-edit and check what recovery or backup files appear (name, location, content).
 6. Run offline with a network monitor and check for update checks, since the privacy page is silent on them.
 7. Not read: the wiki pages on the FCStd format, Std Save, Std Undo/Redo, preferences (autosave, backup count), and add-on manager; the PDF manual; the FPA site; AI_POLICY.md; the full 1.1.4 notes. Retry with a different route, as the wiki blocked automated fetching.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-4/README.md#freecad); [actual assessment](../../content/directory/freecad.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. Independent ZIP/XML inspection exposes typed sketches, pads and constraints, but separate shape payloads were not interpreted into equivalent geometry or engineering intent. Temporary-save/backup policy source is conditional. Units, constraints, external references and compatible reconstruction remain incomplete for the original CAD profile.
+- E5: Not Verified. A document tree and Python interface make some operations inspectable, and save backup policy is visible in source. They do not establish workbench/script authorization, transaction/undo scope, geometry-changing effects or reliable correction after destructive save/recompute across the declared model.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: units/constraint semantics, geometry reconstruction, STEP loss, external dependencies, version compatibility, and crash recovery. E5 needs script/workbench execution control, transaction/undo boundaries and destructive save/recompute correction evidence.
+
+Next without a local installation: Inspect a synthetic FCStd plus dependency and expected units/constraint/geometry manifest, with independent geometry comparisons supplied upstream or by another assessor. Add pinned transaction/script/save-control evidence without executing CAD locally.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

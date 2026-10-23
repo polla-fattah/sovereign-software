@@ -1,0 +1,142 @@
+{
+  "review_date": "2026-10-24",
+  "purpose": "Individual reconciliation against each existing scope. Completed review is not product certification or proof that every gap is resolved.",
+  "applications": [
+    {
+      "id": "briar",
+      "name": "Briar",
+      "version": "Source d03d6fcd776349ec6c8b7d22035e9bb04aa1787c",
+      "E3": [
+        "not_verified",
+        "Source requires an AES-encrypted H2 database, a separately preserved random database key encrypted under the password, and any configured key-strengthener material. No compatible independent account/database/message reconstruction was demonstrated. Losing that key is not the same as provider withdrawal with all legitimate recovery material preserved, so it does not prove a general E3 Fail.",
+        "https://code.briarproject.org/briar/briar/-/blob/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/bramble-core/src/main/java/org/briarproject/bramble/account/AccountManagerImpl.java",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Per-contact auto-delete bounds, disabled state and timer-mirroring logic are established in source. Effective UI authorization, deletion timing/propagation, account deletion recourse and recipient-retained copies remain insufficiently covered. Timer existence is not guaranteed erasure or observed undo.",
+        "https://code.briarproject.org/briar/briar/-/blob/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/briar-core/src/main/java/org/briarproject/briar/autodelete/AutoDeleteManagerImpl.java",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for Briar's existing essential-record scope. The earlier Does not meet is not sustained merely by encryption, absent export evidence or an untested lost-key scenario; sufficient direct failure evidence for the provider-withdrawal scope is missing. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://code.briarproject.org/briar/briar/-/blob/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/bramble-core/src/main/java/org/briarproject/bramble/account/AccountManagerImpl.java",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://code.briarproject.org/briar/briar/-/blob/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/briar-core/src/main/java/org/briarproject/briar/autodelete/AutoDeleteManagerImpl.java",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Independent encrypted-database reading, key-strengthener portability, protocol interoperability, actual device-loss recovery, deletion timing and UI confirmation/undo behavior remain untested. E5 needs configured UI/timer/account-deletion authority, propagation visibility and realistic correction/recipient-copy boundaries.",
+      "current_remaining": "Independent encrypted-database reading, key-strengthener portability, protocol interoperability, actual device-loss recovery, deletion timing and UI confirmation/undo behavior remain untested. E5 needs configured UI/timer/account-deletion authority, propagation visibility and realistic correction/recipient-copy boundaries.",
+      "next": "Use a synthetic account with non-secret test key/password/strengthener material, compatible H2/schema records and expected messages/contacts; inspect data independently and seek version-matched device-loss/timer/account-deletion observations. Do not supply real messaging keys.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Briar does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://code.briarproject.org/briar/briar/-/blob/d03d6fcd776349ec6c8b7d22035e9bb04aa1787c/bramble-core/src/main/java/org/briarproject/bramble/account/AccountManagerImpl.java",
+        "medium"
+      ]
+    },
+    {
+      "id": "jami",
+      "name": "Jami",
+      "version": "Source 984f7afbe8d85d119391c2e24e4e1ccbcbf87f28",
+      "E3": [
+        "not_verified",
+        "Account archive source identifies identity/config/contact/conversation-info records, while some device-local and collaborative records are excluded or separate. Complete encrypted archive import with message repositories, attachments and collaborative content has not been demonstrated. Identity backup is not established as full conversation recovery.",
+        "https://github.com/savoirfairelinux/jami-daemon/blob/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/jamidht/accountarchive.cpp",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "The daemon export path permits replacing an existing archive and reports its filesystem result; client-side confirmation/rotation is not established there. Effective client/device authority, key/export approval, conversation deletion propagation and recourse remain insufficiently covered.",
+        "https://github.com/savoirfairelinux/jami-daemon/blob/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/jamidht/archive_account_manager.cpp",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for Jami's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/savoirfairelinux/jami-daemon/blob/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/jamidht/accountarchive.cpp",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://github.com/savoirfairelinux/jami-daemon/blob/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/jamidht/archive_account_manager.cpp",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Actual encrypted archive decoding and clean import, complete history/attachment preservation, outer encryption/version compatibility, conversation deletion propagation and runtime network dependency remain untested. E5 needs client-side export/overwrite and device/conversation deletion controls, inspectable consequences and usable recovery boundaries.",
+      "current_remaining": "Actual encrypted archive decoding and clean import, complete history/attachment preservation, outer encryption/version compatibility, conversation deletion propagation and runtime network dependency remain untested. E5 needs client-side export/overwrite and device/conversation deletion controls, inspectable consequences and usable recovery boundaries.",
+      "next": "Inspect a synthetic encrypted archive plus separately required message/attachment repositories with dummy identity material and expected content; obtain same-version client prompt/overwrite/import/deletion and network-dependency records.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Jami does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://github.com/savoirfairelinux/jami-daemon/blob/984f7afbe8d85d119391c2e24e4e1ccbcbf87f28/src/jamidht/accountarchive.cpp",
+        "medium"
+      ]
+    }
+  ],
+  "field_changes": [
+    {
+      "id": "briar",
+      "table": "principles",
+      "key": "longevity",
+      "before": "does_not_meet",
+      "after": null,
+      "reason": "E3 is not established for Briar's existing essential-record scope. The earlier Does not meet is not sustained merely by encryption, absent export evidence or an untested lost-key scenario; sufficient direct failure evidence for the provider-withdrawal scope is missing. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "briar",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "briar",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "partial",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Briar does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "jami",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for Jami's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "jami",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "jami",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "partial",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Jami does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    }
+  ]
+}

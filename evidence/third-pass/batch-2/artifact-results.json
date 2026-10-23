@@ -1,0 +1,1676 @@
+{
+  "observed_at_utc": "2026-10-22T22:52:07.338193+00:00",
+  "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "target_applications_executed": false,
+  "fixtures": [
+    {
+      "application": "cadquery",
+      "repository": "CadQuery/cadquery",
+      "commit": "33361dc1b5b70bc83ce36f1b34a01ca85dfca80a",
+      "path": "tests/testdata/red_cube_blue_cylinder.step",
+      "url": "https://raw.githubusercontent.com/CadQuery/cadquery/33361dc1b5b70bc83ce36f1b34a01ca85dfca80a/tests/testdata/red_cube_blue_cylinder.step",
+      "local_path": "inputs/fixtures/cadquery/tests/testdata/red_cube_blue_cylinder.step",
+      "bytes": 18322,
+      "sha256": "1fd5c7d9325bcfb9863365faf84554f89e7e7a5e86760a0fc8d5db00619d9ef5",
+      "inspection": {
+        "iso_10303_21": true,
+        "entity_types": {
+          "ADVANCED_BREP_SHAPE_REPRESENTATION": 2,
+          "ADVANCED_FACE": 9,
+          "APPLICATION_CONTEXT": 1,
+          "APPLICATION_PROTOCOL_DEFINITION": 1,
+          "AXIS2_PLACEMENT_3D": 13,
+          "CARTESIAN_POINT": 35,
+          "CIRCLE": 2,
+          "CLOSED_SHELL": 2,
+          "COLOUR_RGB": 9,
+          "CYLINDRICAL_SURFACE": 1,
+          "DIMENSIONAL_EXPONENTS": 2,
+          "DIRECTION": 38,
+          "EDGE_CURVE": 14,
+          "EDGE_LOOP": 10,
+          "FACE_OUTER_BOUND": 10,
+          "FILL_AREA_STYLE": 9,
+          "FILL_AREA_STYLE_COLOUR": 9,
+          "LENGTH_MEASURE_WITH_UNIT": 1,
+          "LINE": 12,
+          "MANIFOLD_SOLID_BREP": 2,
+          "MECHANICAL_DESIGN_GEOMETRIC_PRESENTATION_REPRESENTATION": 1,
+          "ORIENTED_EDGE": 28,
+          "PLANE": 8,
+          "PRESENTATION_STYLE_ASSIGNMENT": 9,
+          "PRODUCT": 2,
+          "PRODUCT_CATEGORY": 1,
+          "PRODUCT_CATEGORY_RELATIONSHIP": 2,
+          "PRODUCT_CONTEXT": 1,
+          "PRODUCT_DEFINITION": 2,
+          "PRODUCT_DEFINITION_CONTEXT": 1,
+          "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE": 2,
+          "PRODUCT_DEFINITION_SHAPE": 2,
+          "PRODUCT_RELATED_PRODUCT_CATEGORY": 2,
+          "SHAPE_DEFINITION_REPRESENTATION": 2,
+          "STYLED_ITEM": 9,
+          "SURFACE_SIDE_STYLE": 9,
+          "SURFACE_STYLE_FILL_AREA": 9,
+          "SURFACE_STYLE_USAGE": 9,
+          "UNCERTAINTY_MEASURE_WITH_UNIT": 1,
+          "VECTOR": 12,
+          "VERTEX_POINT": 10
+        },
+        "products": [
+          [
+            "blue_cylinder",
+            "blue_cylinder"
+          ],
+          [
+            "red_cube",
+            "red_cube"
+          ]
+        ],
+        "colour_records": [
+          "COLOUR_RGB( '', 0.866666674600000, 0.321568638100000, 0.156862750600000 )",
+          "COLOUR_RGB( '', 0.866666674600000, 0.321568638100000, 0.156862750600000 )",
+          "COLOUR_RGB( '', 0.866666674600000, 0.321568638100000, 0.156862750600000 )",
+          "COLOUR_RGB( '', 0.231372550100000, 0.380392164000000, 0.705882370500000 )",
+          "COLOUR_RGB( '', 0.866666674600000, 0.321568638100000, 0.156862750600000 )",
+          "COLOUR_RGB( '', 0.866666674600000, 0.321568638100000, 0.156862750600000 )",
+          "COLOUR_RGB( '', 0.231372550100000, 0.380392164000000, 0.705882370500000 )",
+          "COLOUR_RGB( '', 0.866666674600000, 0.321568638100000, 0.156862750600000 )",
+          "COLOUR_RGB( '', 0.231372550100000, 0.380392164000000, 0.705882370500000 )"
+        ],
+        "geometry_reconstructed": false
+      }
+    },
+    {
+      "application": "darktable",
+      "repository": "darktable-org/darktable",
+      "commit": "6556cd7dbb0e69f95d165dda8b69e7270c327f6d",
+      "path": "src/tests/benchmark/darktable-bench-4.2.xmp",
+      "url": "https://raw.githubusercontent.com/darktable-org/darktable/6556cd7dbb0e69f95d165dda8b69e7270c327f6d/src/tests/benchmark/darktable-bench-4.2.xmp",
+      "local_path": "inputs/fixtures/darktable/src/tests/benchmark/darktable-bench-4.2.xmp",
+      "bytes": 43124,
+      "sha256": "2a16d0e7620ec2f3420dc317e05315a2be3c2dac7bd6bcf9d84219d4e45c6a3d",
+      "inspection": {
+        "root_tag": "{adobe:ns:meta/}xmpmeta",
+        "history_count": 69,
+        "operations": [
+          "mask_manager",
+          "rawprepare",
+          "demosaic",
+          "colorin",
+          "colorout",
+          "gamma",
+          "temperature",
+          "highlights",
+          "cacorrect",
+          "hotpixels",
+          "rawdenoise",
+          "bilateral",
+          "lens",
+          "hazeremoval",
+          "ashift",
+          "flip",
+          "liquify",
+          "retouch",
+          "exposure",
+          "toneequal",
+          "graduatednd",
+          "profile_gamma",
+          "channelmixerrgb",
+          "nlmeans",
+          "colorchecker",
+          "atrous",
+          "lowpass",
+          "highpass",
+          "sharpen",
+          "colormapping",
+          "colorbalance",
+          "rgbcurve",
+          "rgblevels",
+          "basecurve",
+          "colisa",
+          "tonecurve",
+          "levels",
+          "shadhi",
+          "bilat",
+          "bilat",
+          "colorcorrection",
+          "colorcontrast",
+          "velvia",
+          "colorzones",
+          "bloom",
+          "colorize",
+          "lowlight",
+          "monochrome",
+          "grain",
+          "soften",
+          "splittoning",
+          "vignette",
+          "colorreconstruct",
+          "dither",
+          "borders",
+          "watermark",
+          "filmicrgb",
+          "filmicrgb",
+          "denoiseprofile",
+          "denoiseprofile",
+          "retouch",
+          "retouch",
+          "crop",
+          "censorize",
+          "cacorrectrgb",
+          "colorbalancergb",
+          "diffuse",
+          "clipping",
+          "blurs"
+        ],
+        "module_versions": [
+          "1",
+          "11",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "decoded_parameter_blocks": [
+          {
+            "property": "mask_points",
+            "compressed": false,
+            "bytes": 28,
+            "sha256": "1b2a6f46d912732754024ffea1b56508928e20a0a441de4d3258188fbfa2c215"
+          },
+          {
+            "property": "mask_src",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "e86538ea018cfe79e8b154d62fa7b9a2eca8710aa46af51ef2d469c6489fc5a9"
+          },
+          {
+            "property": "mask_points",
+            "compressed": false,
+            "bytes": 16,
+            "sha256": "2ac269273ac9135c72bec1ec0feb92ddba2dff52da79a246af721074d50691cd"
+          },
+          {
+            "property": "mask_src",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          },
+          {
+            "property": "mask_points",
+            "compressed": true,
+            "bytes": 352,
+            "sha256": "197757f07ca3bcdc51fa21ed485998c2a2833eb61fe005bc8b72799376968c72"
+          },
+          {
+            "property": "mask_src",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          },
+          {
+            "property": "mask_points",
+            "compressed": false,
+            "bytes": 16,
+            "sha256": "67df5c4c616ed1704fa15c7500c02451363059cd97380d30e0e676ee1369d41a"
+          },
+          {
+            "property": "mask_src",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          },
+          {
+            "property": "mask_points",
+            "compressed": false,
+            "bytes": 16,
+            "sha256": "637d97e5a2ecbd70492df9941d52d614f2b5e4679b5a0fbedaa6e490f776242e"
+          },
+          {
+            "property": "mask_src",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "6036792f7e83e53220ecc316948abee2f2b21c45db86c209f8de6bd24a97f5da"
+          },
+          {
+            "property": "mask_points",
+            "compressed": false,
+            "bytes": 16,
+            "sha256": "ae708b176379987997a660ff928aaacf26d4bdbdcdb29e4766a0d64937e8c818"
+          },
+          {
+            "property": "mask_src",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          },
+          {
+            "property": "mask_points",
+            "compressed": false,
+            "bytes": 16,
+            "sha256": "e444d4ff12247dca7d348e17799926255d395825ff842dce70a41b57d53f8b09"
+          },
+          {
+            "property": "mask_src",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "df3338450788890610a2beb7e766f5a8cdc67acf3039ef4db00f85548515aced"
+          },
+          {
+            "property": "mask_points",
+            "compressed": false,
+            "bytes": 32,
+            "sha256": "1e20ebc4ec6423169bf182b32bed965406069c991768ac6612b630cb71dfebb5"
+          },
+          {
+            "property": "mask_src",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          },
+          {
+            "property": "mask_points",
+            "compressed": false,
+            "bytes": 28,
+            "sha256": "f641109ec033df455075bbf6eac0af4b03e608dc788039165869b0320d18bb60"
+          },
+          {
+            "property": "mask_src",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "60fb7ea010d9c47a1ef465c38a05d449df7228b08568f8f6717e2a044edb9f4b"
+          },
+          {
+            "property": "mask_points",
+            "compressed": true,
+            "bytes": 324,
+            "sha256": "9dd9498133d8131e45de7c3035453ddcd069833eddf1bc71bba9830b347fdbff"
+          },
+          {
+            "property": "mask_src",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          },
+          {
+            "property": "mask_points",
+            "compressed": false,
+            "bytes": 16,
+            "sha256": "390498d27e7fda9ece53c1e0cd0778db6ae12fc8fb4c065651121ed870520d6e"
+          },
+          {
+            "property": "mask_src",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 4,
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "1933aa773b37ddd715cbb1b9e4e1bfa712551ab1b1ff7f8d3df7594fef8f91ec"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 28,
+            "sha256": "35fad8fb8c3603d5e685f922e740a285f533368453061f5c45e5dfffc2a93340"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "ae0ebe1be6993c3dfd789928ed72302c3d890de512aaf94b06c07b1ac1c1d6df"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 24,
+            "sha256": "a04b247e092e750123411dda988a6cca2fdbaeff117b5418bbe1da15d9e84191"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "ae0ebe1be6993c3dfd789928ed72302c3d890de512aaf94b06c07b1ac1c1d6df"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 1044,
+            "sha256": "a4a7a911ea7a5bf7ff2e875bf4c937c90c17323494c58c41e04bb2ee78e65b88"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "ae0ebe1be6993c3dfd789928ed72302c3d890de512aaf94b06c07b1ac1c1d6df"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 520,
+            "sha256": "2b4a171005ee5899e087b1d73ef67fd0290fa684e5691fd8495222b84c307c57"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "ae0ebe1be6993c3dfd789928ed72302c3d890de512aaf94b06c07b1ac1c1d6df"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "ae0ebe1be6993c3dfd789928ed72302c3d890de512aaf94b06c07b1ac1c1d6df"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 16,
+            "sha256": "d3a6c6da911fe64e2d29d050a00481615b94ce4c94762358fbf4890c89c4798f"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "ae0ebe1be6993c3dfd789928ed72302c3d890de512aaf94b06c07b1ac1c1d6df"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 20,
+            "sha256": "4d27a7bba2a1042d4af769432b06e96b8d1047d7d47211e1bf5cb1d7f45a4a91"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "acc39f6bfab50c4b72a31aa110e2f72641e5fe03544d1513a26fb5c672730cb9"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "01acecb507abfe1a354aa8064f4af5d3f1acd019e37db3c11c97523b71c76e9d"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "ae0ebe1be6993c3dfd789928ed72302c3d890de512aaf94b06c07b1ac1c1d6df"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 16,
+            "sha256": "dc4fac7b9a4c8afbce3809578136e98600ab173bdd09ba44ccd8cb15c1c54ee1"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "acc39f6bfab50c4b72a31aa110e2f72641e5fe03544d1513a26fb5c672730cb9"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 164,
+            "sha256": "02f9c39599f3fc6a72dcd8d9f39dc5e92e72918fcc0b48c6caba456e0de9e1d1"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "acc39f6bfab50c4b72a31aa110e2f72641e5fe03544d1513a26fb5c672730cb9"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 20,
+            "sha256": "16d9dae970ac02ee000fd786bd74704bb1a570637f61d7347237259aa5d8c2b2"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 304,
+            "sha256": "c5fea5956f99b76220f3a7301832989c3b5926cd646afea1bfca3c5860785fe0"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "ae0ebe1be6993c3dfd789928ed72302c3d890de512aaf94b06c07b1ac1c1d6df"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "e49a88982fd42384a50fcf65657b349f5eef9661d834dfb5dce067acd24b3b9c"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 892,
+            "sha256": "e1135bf982b3a0a02d9058b97b101d670d77f8aa1acb6e5fab1b7eea1164268e"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "ae0ebe1be6993c3dfd789928ed72302c3d890de512aaf94b06c07b1ac1c1d6df"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 4,
+            "sha256": "ad95131bc0b799c0b1af477fb14fcf26a6a9f76079e48bf090acb7e8367bfd0e"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "ae0ebe1be6993c3dfd789928ed72302c3d890de512aaf94b06c07b1ac1c1d6df"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 7600,
+            "sha256": "db839a848174050fb0b1cc1357abddfe9bf40eab1ba34f82208aeefc53c277f4"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 13256,
+            "sha256": "f22af8ebcc2a445670dc5baecf8f805766aa8067317ff057b9915d49f8c367e0"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "3c7ce6eda7d6856d61b8accc87660a9eb9ad9d72aa83d47d25997678bbad7e8c"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 24,
+            "sha256": "1bdd946874be06563dbf709d4dfaf05c8b167c8df8a055ab7278c8f341a5b28f"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 72,
+            "sha256": "2df69f8fa400aa6b8aaf01230bc1b4b00cd0499b2f15d4c2638e379f3a33d3fb"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 24,
+            "sha256": "82440e2663aa93c2b10f7c1310a838455e5b89c2afb33dcc747ac529775408dc"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 28,
+            "sha256": "e389d931bdbef1a62b791ca2b0ea2b77532fd925ea5a5f48e206b877df1d2364"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 160,
+            "sha256": "9097f1bf60ea7f64e69cb7b32247edebcb3bd386d65981bc2cbb802b33be8c41"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 16,
+            "sha256": "e7e6dbff43e0375fad9358e9126077c12dfd8234d116f61aee027f1225443b29"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 1180,
+            "sha256": "0c4e0c9ec26e8e11de8e766f561c3b318b082d69114ac8574ec90a4c81c7768f"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 248,
+            "sha256": "155f7814864fbbe23894d1a617b0e94bf86378fe9ac9b3e3eae9c1a5beb003c9"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "a2e57ea7bfe535858df540163bab651067a2c76b74bcc6889485b29b9106105e"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 28,
+            "sha256": "c97356aba0112f9e8e9e49a5f2c1dd63c3379d43b01b262a8ac6cfb596a75276"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "e13bb9cbf34e9d6b76650ae3973e8d335480299a38ed2568fc5476c027421118"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "b06a2ca5f671f8e97ddbdc0c30c6b51602d9db81bd0f4828e0b5373b5689f118"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "c88921629b4da09a9862dba42b042e9b8972ddf8d71c9bb130c23267e926e82d"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 12,
+            "sha256": "818fdda402a6c7333ab402aae4f93bf394db70e645e64ec062962c00baf15983"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 16600,
+            "sha256": "5b2ca70ab40bc36ecc55b65c67241627bdf244c0b394cdd6872e333c4384a35d"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 68,
+            "sha256": "f9aba967e1847c6da55c709094e870ae9b265bbcfcca9ae83ea6355638352027"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 516,
+            "sha256": "9dd1cf7ac17723629ba1aec56344511fb05bf0b8ae6487c0ee082c67b8d8dd49"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 44,
+            "sha256": "d3a6825dae483be58ac0934fed7522a7618cc52e0591fe47958ac72f2334eefc"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 520,
+            "sha256": "7951865c56463c9edd0459dde0bb54ca620f03f62215ad862e1a2cb83e0976c9"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 12,
+            "sha256": "8fbc1d52b40660c3e3fd2b0eec3b02ed931fcd65a9026ba93aa1e97d127bf234"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 520,
+            "sha256": "722fed2a6fd0bc889262ee77a9d55c8099935e8cbaecb62ed7e0ad2833d674f2"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 28,
+            "sha256": "b5e5b7920ecd70694c7a7d249301fa5848ea5982a301e9f0d9c424e1fcb1c9df"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 48,
+            "sha256": "484abffe892acee64c300200217c2e97b7cd9c325ef8e4031d22a29ba611b96b"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 20,
+            "sha256": "3d5323bddb73c3ec170230c865b763577f78e9a5461877e3718f8190bf3846e5"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 20,
+            "sha256": "dce466e8c22ae37c8d5d812bae899d17ecd3324e9f21e2bed564db7c9f3d99f7"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 20,
+            "sha256": "28be9646061c07f91b31a1d52eabfd353a7d4bea0a5f04455c1c51b9810bff08"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 20,
+            "sha256": "5a8e0015d2a89a5dbf47b41acaed54d0dfc64175aa6e37299ad67d290a39e608"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 8,
+            "sha256": "b1df5a0b28ef6fc8d936fe84740e87cbe34bf6eba7ae371d97945281e961793c"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 520,
+            "sha256": "2214a0605315ae2401c39be002784c359007e9b4c6bd625c2c276165eea75016"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 12,
+            "sha256": "df4176ba7dc17d8d8cd155ae83c5fae6309d1f4d473f1bf247fa4e3b10f1a375"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 20,
+            "sha256": "3e3987d2ca681370b70415fd955266e127c892c7e0f123d6488992340342cce1"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "51d607573a03585307b99e5e43cf45bdfed1dde3bdd6efc06709e65fcad3e927"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 52,
+            "sha256": "61fb6d025cae2e10f15b94424a25be3f03d62f64bc19b33e8d15e442eaf361b2"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 16,
+            "sha256": "11474706d3bddb3523616ef815f2b033ba0fbc61d470ff4d56b5e5a496f49e84"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "24ca7588774512887d0ce66302dfcc608d67011a1abbc148ece0c299fa69bb31"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 16,
+            "sha256": "54774a30f201520fc6ac8a9541db5c8f2a3eb9736cc02d4f5febc99ae2b9eaa8"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 16,
+            "sha256": "05363a29b6964803ce3560ec4123b7143215e927ff3c6d80c735969be37abc26"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 24,
+            "sha256": "e6b2c28ab87d09dff2419f395e2ece825cbeece08e9d6ea32827c6d40d2aeab4"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 44,
+            "sha256": "0fba0b405d8d79cfcfd5609aafd9b9ba72c7b42865445498dcbdd50f853b2c4c"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 20,
+            "sha256": "a0261f1c887615f7594882dcee98ac0da95a6298706e6810706a3fc451b38f81"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "19cd1eab4f6b3d2be6b109e6e1cf3554288d1994784f269d51b90ae882e455c7"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 32,
+            "sha256": "a988ef5c6f733156fc9cf151f6667038d3e6b0f586de54bca90c0156866a50fc"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "ae0ebe1be6993c3dfd789928ed72302c3d890de512aaf94b06c07b1ac1c1d6df"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 116,
+            "sha256": "6b1cb6af0e5b76b2dae55ca3dcd10427135ab16759841f72c5b7872f275f3c1d"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "ae0ebe1be6993c3dfd789928ed72302c3d890de512aaf94b06c07b1ac1c1d6df"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 680,
+            "sha256": "13ef514af3c2d28b5d67f2731f91947b9f25e2a09f448c1d667a9154f0e98843"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 112,
+            "sha256": "239842df9df4b4c42fbb5d041701f0c328bfa38f2c8b10941eb63ecb787387f0"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 112,
+            "sha256": "88ddfc4cdc88e42026463f2ea7b8dd85b4f5d853b769cdea612aba780cd6774a"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 412,
+            "sha256": "92cc9441c29af252d1c449c8be310c41b1bde4b2b98e5f552f42ce6de2ce0e61"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "9be3000b07ac1a50ba9f0187453136fad1f7dffa061283b8ee5f78b18c3c2942"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 412,
+            "sha256": "c3862e94f2c6b372bcbdeb9d41fc0af2a32fda6ceb264c861640773ccab8bc56"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "a2e57ea7bfe535858df540163bab651067a2c76b74bcc6889485b29b9106105e"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 13256,
+            "sha256": "2bd6acc271adb19e0ebac53d07b38b013a5d432b7753996cfaaf4e8a46ff824b"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "e226fb951c81bf8f71385f0e245ffe276275eb7c6317b18806e1ba2bddbd26dd"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 13256,
+            "sha256": "25600c8d12c01d50698419feecc82a3cf1f41d645e9d2d907d3f5cf36a8d57fe"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "3d2db18df2519b84b77fef43621038970843edeeed6ff2bd7348c399f2bbadca"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 24,
+            "sha256": "2327b7d4eefd2d65a333e5a199d107574e928f7a0c1d59ec79a223199cd973f5"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "1933aa773b37ddd715cbb1b9e4e1bfa712551ab1b1ff7f8d3df7594fef8f91ec"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 16,
+            "sha256": "bb697388f813a7ec978e143605d91b3a7ebbb58a87c657a857bb860b906e4b95"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "3d85b6fd2026ebf98c01d83b7eff0c3dff0d23ee818841ef858d14d227a20721"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 20,
+            "sha256": "a94678fa205a7af7e68887851b1cff83ecb241072e87ed52e2bc9bfd7266e7b3"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "a4d320228f90b18a942cb36cc127fff71f2b17ad27a92ca01d4b4bf478245d76"
+          },
+          {
+            "property": "params",
+            "compressed": true,
+            "bytes": 128,
+            "sha256": "a041b3af81cdb206282aa882a5516f57eb37331015caa960ac752bdd9186a77f"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "a4d320228f90b18a942cb36cc127fff71f2b17ad27a92ca01d4b4bf478245d76"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 60,
+            "sha256": "bd7c09d1f49e03bdc4e4da1b8bb9fc0d2eb6631c5e616981c9c68cb6de8ed57d"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "a4d320228f90b18a942cb36cc127fff71f2b17ad27a92ca01d4b4bf478245d76"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 84,
+            "sha256": "0b41a5fbc23c2336e8e4bda53c6ca6efe45d953248e38356fd5e175399f03ecd"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "ae0ebe1be6993c3dfd789928ed72302c3d890de512aaf94b06c07b1ac1c1d6df"
+          },
+          {
+            "property": "params",
+            "compressed": false,
+            "bytes": 36,
+            "sha256": "575881dae5eae307c3d7d3a3b6851a0cc93d67b58c77b0521d9dc40f0ae8de04"
+          },
+          {
+            "property": "blendop_params",
+            "compressed": true,
+            "bytes": 420,
+            "sha256": "a4d320228f90b18a942cb36cc127fff71f2b17ad27a92ca01d4b4bf478245d76"
+          }
+        ],
+        "image_rendered": false
+      }
+    },
+    {
+      "application": "jabref",
+      "repository": "JabRef/jabref",
+      "commit": "1e2e9a089986e317cd7f82f4c0114b8950164925",
+      "path": "jabsrv/src/test/resources/org/jabref/http/server/groups-server-test.bib",
+      "url": "https://raw.githubusercontent.com/JabRef/jabref/1e2e9a089986e317cd7f82f4c0114b8950164925/jabsrv/src/test/resources/org/jabref/http/server/groups-server-test.bib",
+      "local_path": "inputs/fixtures/jabref/jabsrv/src/test/resources/org/jabref/http/server/groups-server-test.bib",
+      "bytes": 484,
+      "sha256": "a3f3b87d75f42be65891853ed354c08f6725ff4b2d788f7a301fc1c0ad8c04c8",
+      "inspection": {
+        "entries": [
+          {
+            "type": "Article",
+            "key": "Smith2020"
+          },
+          {
+            "type": "Misc",
+            "key": "Doe2021"
+          }
+        ],
+        "groups": [
+          {
+            "depth": 0,
+            "kind": "AllEntriesGroup",
+            "name": ""
+          },
+          {
+            "depth": 1,
+            "kind": "StaticGroup",
+            "name": "Papers"
+          },
+          {
+            "depth": 2,
+            "kind": "StaticGroup",
+            "name": "2024"
+          },
+          {
+            "depth": 2,
+            "kind": "StaticGroup",
+            "name": "Machine Learning"
+          },
+          {
+            "depth": 1,
+            "kind": "StaticGroup",
+            "name": "Reading List"
+          }
+        ],
+        "jabref_meta_comment_present": true,
+        "full_bibtex_parser_executed": false
+      }
+    },
+    {
+      "application": "gnu-octave",
+      "repository": "gnu-octave/octave",
+      "commit": "5208f34c2b13b447c68c956be2a0b1d67476a80d",
+      "path": "examples/data/penny.mat",
+      "url": "https://raw.githubusercontent.com/gnu-octave/octave/5208f34c2b13b447c68c956be2a0b1d67476a80d/examples/data/penny.mat",
+      "local_path": "inputs/fixtures/gnu-octave/examples/data/penny.mat",
+      "bytes": 55675,
+      "sha256": "765cefa1b75aa655c72d09d16459fd7f7c242c17e44d90429b6e9b0eb427be34",
+      "inspection": {
+        "file_format": "Octave text, despite .mat extension",
+        "creator_header": "# Created by Octave 3.8.1, Sun Jun 01 16:28:53 2014 CEST <weber@t61>",
+        "name": "P",
+        "type": "matrix",
+        "shape": [
+          128,
+          128
+        ],
+        "stored_values": 16384,
+        "min_stored": 1.0,
+        "max_stored": 255.0,
+        "sum": 1668330.0,
+        "dimensions_validated": true,
+        "octave_executed": false
+      }
+    },
+    {
+      "application": "gnu-octave",
+      "repository": "gnu-octave/octave",
+      "commit": "5208f34c2b13b447c68c956be2a0b1d67476a80d",
+      "path": "examples/data/west0479.mat",
+      "url": "https://raw.githubusercontent.com/gnu-octave/octave/5208f34c2b13b447c68c956be2a0b1d67476a80d/examples/data/west0479.mat",
+      "local_path": "inputs/fixtures/gnu-octave/examples/data/west0479.mat",
+      "bytes": 39123,
+      "sha256": "2fb227adaac714a92027fc249c0e3c43f29f654917d821efdb6e3172da093eff",
+      "inspection": {
+        "file_format": "Octave text, despite .mat extension",
+        "creator_header": "# Created by Octave 5.2.0, Thu Jun 04 22:49:15 2020 EDT <jwe@devnull>",
+        "name": "west0479",
+        "type": "sparse matrix",
+        "shape": [
+          479,
+          479
+        ],
+        "stored_values": 1888,
+        "min_stored": -316220.0,
+        "max_stored": 18449.02,
+        "sum": -1750540.0748997678,
+        "dimensions_validated": true,
+        "octave_executed": false
+      }
+    },
+    {
+      "application": "kdenlive",
+      "repository": "KDE/kdenlive",
+      "commit": "80b74ffa95390f4cc8d75a4e886e7ff47373583e",
+      "path": "tests/dataset/test-nesting-effects.kdenlive",
+      "url": "https://raw.githubusercontent.com/KDE/kdenlive/80b74ffa95390f4cc8d75a4e886e7ff47373583e/tests/dataset/test-nesting-effects.kdenlive",
+      "local_path": "inputs/fixtures/kdenlive/tests/dataset/test-nesting-effects.kdenlive",
+      "bytes": 36342,
+      "sha256": "19966d05a7ecfafc34deed11f4bb77d47e028c9908c720b9c51acf31aeb49612",
+      "inspection": {
+        "root_tag": "mlt",
+        "mlt_version": "7.17.0",
+        "element_counts": {
+          "chain": 5,
+          "entry": 9,
+          "filter": 17,
+          "mlt": 1,
+          "playlist": 17,
+          "producer": 2,
+          "profile": 1,
+          "property": 539,
+          "track": 27,
+          "tractor": 11,
+          "transition": 8
+        },
+        "resource_values": [
+          "0",
+          "black",
+          "red.mpg"
+        ],
+        "document_versions": [
+          "1.1"
+        ],
+        "filters": [
+          {
+            "id": "filter0",
+            "in": null,
+            "out": null,
+            "properties": {
+              "window": "75",
+              "max_gain": "20dB",
+              "mlt_service": "volume",
+              "internal_added": "237",
+              "disable": "1"
+            }
+          },
+          {
+            "id": "filter1",
+            "in": null,
+            "out": null,
+            "properties": {
+              "channel": "-1",
+              "mlt_service": "panner",
+              "internal_added": "237",
+              "start": "0.5",
+              "disable": "1"
+            }
+          },
+          {
+            "id": "filter2",
+            "in": null,
+            "out": null,
+            "properties": {
+              "iec_scale": "0",
+              "mlt_service": "audiolevel",
+              "dbpeak": "1",
+              "disable": "1"
+            }
+          },
+          {
+            "id": "filter3",
+            "in": null,
+            "out": null,
+            "properties": {
+              "window": "75",
+              "max_gain": "20dB",
+              "mlt_service": "volume",
+              "internal_added": "237",
+              "disable": "1"
+            }
+          },
+          {
+            "id": "filter4",
+            "in": null,
+            "out": null,
+            "properties": {
+              "channel": "-1",
+              "mlt_service": "panner",
+              "internal_added": "237",
+              "start": "0.5",
+              "disable": "1"
+            }
+          },
+          {
+            "id": "filter5",
+            "in": null,
+            "out": null,
+            "properties": {
+              "iec_scale": "0",
+              "mlt_service": "audiolevel",
+              "dbpeak": "1",
+              "disable": "0"
+            }
+          },
+          {
+            "id": "filter6",
+            "in": null,
+            "out": null,
+            "properties": {
+              "window": "75",
+              "max_gain": "20dB",
+              "mlt_service": "volume",
+              "internal_added": "237",
+              "disable": "1"
+            }
+          },
+          {
+            "id": "filter7",
+            "in": null,
+            "out": null,
+            "properties": {
+              "channel": "-1",
+              "mlt_service": "panner",
+              "internal_added": "237",
+              "start": "0.5",
+              "disable": "1"
+            }
+          },
+          {
+            "id": "filter8",
+            "in": null,
+            "out": null,
+            "properties": {
+              "iec_scale": "0",
+              "mlt_service": "audiolevel",
+              "dbpeak": "1",
+              "disable": "0"
+            }
+          },
+          {
+            "id": "filter9",
+            "in": null,
+            "out": null,
+            "properties": {
+              "u": "226",
+              "v": "150",
+              "mlt_service": "sepia",
+              "kdenlive_id": "sepia",
+              "kdenlive:collapsed": "0"
+            }
+          },
+          {
+            "id": "filter10",
+            "in": null,
+            "out": null,
+            "properties": {
+              "window": "75",
+              "max_gain": "20dB",
+              "mlt_service": "volume",
+              "internal_added": "237",
+              "disable": "1"
+            }
+          },
+          {
+            "id": "filter11",
+            "in": null,
+            "out": null,
+            "properties": {
+              "channel": "-1",
+              "mlt_service": "panner",
+              "internal_added": "237",
+              "start": "0.5",
+              "disable": "1"
+            }
+          },
+          {
+            "id": "filter12",
+            "in": null,
+            "out": null,
+            "properties": {
+              "window": "75",
+              "max_gain": "20dB",
+              "mlt_service": "volume",
+              "internal_added": "237",
+              "disable": "1"
+            }
+          },
+          {
+            "id": "filter13",
+            "in": null,
+            "out": null,
+            "properties": {
+              "channel": "-1",
+              "mlt_service": "panner",
+              "internal_added": "237",
+              "start": "0.5",
+              "disable": "1"
+            }
+          },
+          {
+            "id": "filter14",
+            "in": null,
+            "out": null,
+            "properties": {
+              "iec_scale": "0",
+              "mlt_service": "audiolevel",
+              "dbpeak": "1",
+              "disable": "1"
+            }
+          },
+          {
+            "id": "filter15",
+            "in": null,
+            "out": null,
+            "properties": {
+              "window": "75",
+              "max_gain": "20dB",
+              "mlt_service": "volume",
+              "internal_added": "237",
+              "disable": "1"
+            }
+          },
+          {
+            "id": "filter16",
+            "in": null,
+            "out": null,
+            "properties": {
+              "channel": "-1",
+              "mlt_service": "panner",
+              "internal_added": "237",
+              "start": "0.5",
+              "disable": "1"
+            }
+          }
+        ],
+        "video_rendered": false
+      }
+    },
+    {
+      "application": "keepassxc",
+      "repository": "keepassxreboot/keepassxc",
+      "commit": "d5e43b779d5e23c23963d53b806dcda5dd38f50e",
+      "path": "tests/data/NewDatabase.xml",
+      "url": "https://raw.githubusercontent.com/keepassxreboot/keepassxc/d5e43b779d5e23c23963d53b806dcda5dd38f50e/tests/data/NewDatabase.xml",
+      "local_path": "inputs/fixtures/keepassxc/tests/data/NewDatabase.xml",
+      "bytes": 15900,
+      "sha256": "ad2a92168118b5959ac72270c85b983c617ec89d5c2e556047acd35ece8b9766",
+      "inspection": {
+        "root_tag": "KeePassFile",
+        "generator": "KeePass",
+        "group_count": 6,
+        "entry_count_including_history": 6,
+        "history_entry_count": 2,
+        "binary_payloads": [
+          {
+            "id": "0",
+            "bytes": 10,
+            "sha256": "84d89877f0d4041efb6bf91a16f0248f2fd573e6af05c19f96bedb9f882f7882"
+          },
+          {
+            "id": "1",
+            "bytes": 11,
+            "sha256": "ca2f2069ea0c6e4658222e06f8dd639659cbb5e67cbbba6734bc334a3799bc68"
+          }
+        ],
+        "attachment_references": [
+          {
+            "key": "myattach.txt",
+            "ref": "1"
+          },
+          {
+            "key": "myattach.txt",
+            "ref": "0"
+          },
+          {
+            "key": "myattach.txt",
+            "ref": "1"
+          },
+          {
+            "key": "myattach.txt",
+            "ref": "1"
+          }
+        ],
+        "all_attachment_refs_resolve": true,
+        "encrypted_vault_opened": false
+      }
+    }
+  ],
+  "sources": [
+    {
+      "application": "cadquery",
+      "repository": "CadQuery/cadquery",
+      "commit": "33361dc1b5b70bc83ce36f1b34a01ca85dfca80a",
+      "path": "cadquery/cqgi.py",
+      "url": "https://raw.githubusercontent.com/CadQuery/cadquery/33361dc1b5b70bc83ce36f1b34a01ca85dfca80a/cadquery/cqgi.py",
+      "local_path": "inputs/source/cadquery/cadquery/cqgi.py",
+      "bytes": 17521,
+      "sha256": "ae110f8d95ce2d83f5dedf41a5f4f421c4cd4f35c9b475b926884ab9ff8bb8c4"
+    },
+    {
+      "application": "cadquery",
+      "repository": "CadQuery/cadquery",
+      "commit": "33361dc1b5b70bc83ce36f1b34a01ca85dfca80a",
+      "path": "cadquery/occ_impl/exporters/assembly.py",
+      "url": "https://raw.githubusercontent.com/CadQuery/cadquery/33361dc1b5b70bc83ce36f1b34a01ca85dfca80a/cadquery/occ_impl/exporters/assembly.py",
+      "local_path": "inputs/source/cadquery/cadquery/occ_impl/exporters/assembly.py",
+      "bytes": 18250,
+      "sha256": "c45be9d5666d8cf3e621711ef6c06f736a9a0f90035628cb5c2e89bd89da343e"
+    },
+    {
+      "application": "darktable",
+      "repository": "darktable-org/darktable",
+      "commit": "6556cd7dbb0e69f95d165dda8b69e7270c327f6d",
+      "path": "src/common/exif.cc",
+      "url": "https://raw.githubusercontent.com/darktable-org/darktable/6556cd7dbb0e69f95d165dda8b69e7270c327f6d/src/common/exif.cc",
+      "local_path": "inputs/source/darktable/src/common/exif.cc",
+      "bytes": 238202,
+      "sha256": "e2dfceda7b9217cb2dfd30c91f1a0a1c8a163e4e10c7708da2011d1e8d3a21e1"
+    },
+    {
+      "application": "jabref",
+      "repository": "JabRef/jabref",
+      "commit": "1e2e9a089986e317cd7f82f4c0114b8950164925",
+      "path": "jablib/src/main/java/org/jabref/logic/bibtex/FileFieldWriter.java",
+      "url": "https://raw.githubusercontent.com/JabRef/jabref/1e2e9a089986e317cd7f82f4c0114b8950164925/jablib/src/main/java/org/jabref/logic/bibtex/FileFieldWriter.java",
+      "local_path": "inputs/source/jabref/jablib/src/main/java/org/jabref/logic/bibtex/FileFieldWriter.java",
+      "bytes": 2322,
+      "sha256": "29a9d4061cee817dba586bad7fec2ca43613d5a9c663c224d6d5ec12073eeb07"
+    },
+    {
+      "application": "jabref",
+      "repository": "JabRef/jabref",
+      "commit": "1e2e9a089986e317cd7f82f4c0114b8950164925",
+      "path": "jablib/src/main/java/org/jabref/logic/exporter/GroupSerializer.java",
+      "url": "https://raw.githubusercontent.com/JabRef/jabref/1e2e9a089986e317cd7f82f4c0114b8950164925/jablib/src/main/java/org/jabref/logic/exporter/GroupSerializer.java",
+      "local_path": "inputs/source/jabref/jablib/src/main/java/org/jabref/logic/exporter/GroupSerializer.java",
+      "bytes": 11558,
+      "sha256": "8974d6e5d8805008885019e60809f54c4afc401b338ec3ef49be8666f13ae9de"
+    },
+    {
+      "application": "gnu-octave",
+      "repository": "gnu-octave/octave",
+      "commit": "5208f34c2b13b447c68c956be2a0b1d67476a80d",
+      "path": "liboctinterp/load-save/ls-mat-ascii.cc",
+      "url": "https://raw.githubusercontent.com/gnu-octave/octave/5208f34c2b13b447c68c956be2a0b1d67476a80d/liboctinterp/load-save/ls-mat-ascii.cc",
+      "local_path": "inputs/source/gnu-octave/liboctinterp/load-save/ls-mat-ascii.cc",
+      "bytes": 9805,
+      "sha256": "b67fa3227e90e7548e2f0dc26574fed9019b8c4af4de2c1be435b21e81fca9db"
+    },
+    {
+      "application": "gnu-octave",
+      "repository": "gnu-octave/octave",
+      "commit": "5208f34c2b13b447c68c956be2a0b1d67476a80d",
+      "path": "liboctinterp/load-save/load-save.cc",
+      "url": "https://raw.githubusercontent.com/gnu-octave/octave/5208f34c2b13b447c68c956be2a0b1d67476a80d/liboctinterp/load-save/load-save.cc",
+      "local_path": "inputs/source/gnu-octave/liboctinterp/load-save/load-save.cc",
+      "bytes": 68805,
+      "sha256": "0ceffe016a4afc111e8f4b0111c75600ec1d0a6324ea64c190280ab85ae7821b"
+    },
+    {
+      "application": "kdenlive",
+      "repository": "KDE/kdenlive",
+      "commit": "80b74ffa95390f4cc8d75a4e886e7ff47373583e",
+      "path": "src/project/dialogs/archivewidget.cpp",
+      "url": "https://raw.githubusercontent.com/KDE/kdenlive/80b74ffa95390f4cc8d75a4e886e7ff47373583e/src/project/dialogs/archivewidget.cpp",
+      "local_path": "inputs/source/kdenlive/src/project/dialogs/archivewidget.cpp",
+      "bytes": 64714,
+      "sha256": "4271e91c3c0cddc16c43f891713871a28d93c1e08f704e6cc7d2b3ad8f0e6415"
+    },
+    {
+      "application": "keepassxc",
+      "repository": "keepassxreboot/keepassxc",
+      "commit": "d5e43b779d5e23c23963d53b806dcda5dd38f50e",
+      "path": "src/cli/Export.cpp",
+      "url": "https://raw.githubusercontent.com/keepassxreboot/keepassxc/d5e43b779d5e23c23963d53b806dcda5dd38f50e/src/cli/Export.cpp",
+      "local_path": "inputs/source/keepassxc/src/cli/Export.cpp",
+      "bytes": 2504,
+      "sha256": "5dc7647a50f62551ec9bad8a73f60c8710c7f52ecdae99e0f974c8b09f6151d2"
+    },
+    {
+      "application": "keepassxc",
+      "repository": "keepassxreboot/keepassxc",
+      "commit": "d5e43b779d5e23c23963d53b806dcda5dd38f50e",
+      "path": "src/core/Database.cpp",
+      "url": "https://raw.githubusercontent.com/keepassxreboot/keepassxc/d5e43b779d5e23c23963d53b806dcda5dd38f50e/src/core/Database.cpp",
+      "local_path": "inputs/source/keepassxc/src/core/Database.cpp",
+      "bytes": 34065,
+      "sha256": "f44d80100cf3a9b70f751958e999fa68bfbf21aa81d46b2aced5dc2f2504f33e"
+    },
+    {
+      "application": "keepassxc",
+      "repository": "keepassxreboot/keepassxc",
+      "commit": "d5e43b779d5e23c23963d53b806dcda5dd38f50e",
+      "path": "src/format/KeePass2Writer.cpp",
+      "url": "https://raw.githubusercontent.com/keepassxreboot/keepassxc/d5e43b779d5e23c23963d53b806dcda5dd38f50e/src/format/KeePass2Writer.cpp",
+      "local_path": "inputs/source/keepassxc/src/format/KeePass2Writer.cpp",
+      "bytes": 6286,
+      "sha256": "c47b5498404e8bbf3f6b41c90ab087c9040049a15d9e8e9cfc7d08bede13f2de"
+    },
+    {
+      "application": "keepassxc",
+      "repository": "keepassxreboot/keepassxc",
+      "commit": "d5e43b779d5e23c23963d53b806dcda5dd38f50e",
+      "path": "src/format/KdbxWriter.cpp",
+      "url": "https://raw.githubusercontent.com/keepassxreboot/keepassxc/d5e43b779d5e23c23963d53b806dcda5dd38f50e/src/format/KdbxWriter.cpp",
+      "local_path": "inputs/source/keepassxc/src/format/KdbxWriter.cpp",
+      "bytes": 2567,
+      "sha256": "2b8a559c554521f3dd735f36fc1fd89a1eb7e79a46678b9b8fdb6c786204150e"
+    },
+    {
+      "application": "keepassxc",
+      "repository": "keepassxreboot/keepassxc",
+      "commit": "d5e43b779d5e23c23963d53b806dcda5dd38f50e",
+      "path": "src/format/KdbxXmlWriter.cpp",
+      "url": "https://raw.githubusercontent.com/keepassxreboot/keepassxc/d5e43b779d5e23c23963d53b806dcda5dd38f50e/src/format/KdbxXmlWriter.cpp",
+      "local_path": "inputs/source/keepassxc/src/format/KdbxXmlWriter.cpp",
+      "bytes": 20956,
+      "sha256": "fe03ff46c36755b4f9462cf99d33d9e28133375195a87bfa2ea6d40392c1d9dc"
+    },
+    {
+      "application": "keepassxc",
+      "repository": "keepassxreboot/keepassxc",
+      "commit": "d5e43b779d5e23c23963d53b806dcda5dd38f50e",
+      "path": "src/format/CsvExporter.cpp",
+      "url": "https://raw.githubusercontent.com/keepassxreboot/keepassxc/d5e43b779d5e23c23963d53b806dcda5dd38f50e/src/format/CsvExporter.cpp",
+      "local_path": "inputs/source/keepassxc/src/format/CsvExporter.cpp",
+      "bytes": 3485,
+      "sha256": "9d1e42b3a698cb8f9647f60cc8e5eadeae2251f56a226f5f8ff3a5e2b9d544c6"
+    }
+  ]
+}

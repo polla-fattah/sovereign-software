@@ -1,0 +1,174 @@
+{
+  "review_date": "2026-10-23",
+  "applications": [
+    {
+      "id": "restic",
+      "scope": "Existing profile retained; see plan.json and actual application page.",
+      "source_controls_established": "The inspected forget command reports retention selections and gates snapshot removal on dry-run; its prune call propagates dry-run, and the prune implementation returns before mutation in that mode. These establish useful retention safeguards, not the whole assessed operation surface: restore overwrite/delete, key-management authorization and recovery from interrupted mutations remain insufficiently evidenced.",
+      "recovery_evidence": "Full-data reading is opt-in and TAR carries more metadata than ZIP, but retained source does not demonstrate decrypting a preserved repository, restoring the declared filesystem records, or comparing ownership, links, ACLs and xattrs with a baseline. These positive implementation findings are not a complete recovery record.",
+      "missing": "A synthetic encrypted repository and expected file/metadata manifest, a matched restore report using preserved recovery material, and records for restore overwrite/delete, key changes and interrupted pruning remain missing. TAR/ZIP source differences and optional full-data checking are already answered; do not reopen those documentation questions.",
+      "next_without_local_installation": "Obtain an upstream or independent version-matched synthetic recovery evidence packet: repository/configuration, non-secret test credentials, baseline manifest, commands and before/after output. Independently compare recovered bytes, paths, links and metadata using existing tools; no local restic installation is required if the restore was reproducibly run elsewhere."
+    },
+    {
+      "id": "borgbackup",
+      "scope": "Existing profile retained; see plan.json and actual application page.",
+      "source_controls_established": "The inspected development branch supplies a repair warning/typed acknowledgement, soft-delete/undelete and compaction dry-run. Normal compaction closes the soft-delete window. These control paths are concrete evidence, but extraction overwrite, credential handling and an observed delete/undelete/compact recovery sequence are not sufficiently covered for the existing backup scope.",
+      "recovery_evidence": "The development source writes interpretable TAR fields plus Borg-specific metadata; ordinary TAR readers do not automatically interpret that extension. No preserved encrypted repository, compatible-key recovery or baseline-matched extraction was exercised. Results cannot be transferred to Borg 1.x or a released Borg 2 binary merely because their documentation looks similar.",
+      "missing": "A declared released version or exact development build, a populated synthetic repository with baseline metadata and preserved recovery material, compatible restore evidence, and before/after delete/undelete/compact, repair and extraction-overwrite records remain missing. Existing source conclusions are limited to the pinned development tree.",
+      "next_without_local_installation": "Request a reproducible packet for the exact assessed commit or explicitly reassess a released version. Use a disposable synthetic repository and expected manifest, with delete/undelete output before compaction and separately backed-up post-compaction evidence. Independent TAR/manifest inspection can happen here without installing Borg."
+    },
+    {
+      "id": "kopia",
+      "scope": "Existing profile retained; see plan.json and actual application page.",
+      "source_controls_established": "Additional pinned source resolves explicit snapshot deletion: without --delete the command reports the selected snapshot and returns before DeleteManifest; the confirmed branch reports deletion and calls DeleteManifest. Source IDs and source-wide selections reach that same gate. Automated retention/maintenance safety, restore overwrite/delete and available recovery are still insufficiently covered for whole-scope E5.",
+      "recovery_evidence": "Full-file verification is percentage-gated, and the inspected ZIP writer omits symlink/directory output while TAR preserves more structure without setting ACL/xattr fields. None of those facts establishes complete decryption/restoration of the existing filesystem scope. Password-dependent repository recovery, executed exports and baseline comparisons remain absent.",
+      "missing": "A populated synthetic encrypted repository, preserved test password/configuration, full-file verification and baseline-matched restore/export records, plus policy/maintenance and restore overwrite/delete safeguards remain missing. The explicit snapshot-delete confirmation question is now answered; it does not establish maintenance rollback.",
+      "next_without_local_installation": "Reuse a version-matched public or assessor-generated synthetic repository packet with verify-files-percent=100 output, expected content/metadata and restore results. Obtain separate retention/maintenance and overwrite/delete before/after records; compare TAR and ZIP independently without installing Kopia here."
+    },
+    {
+      "id": "anki",
+      "scope": "Existing profile retained; see plan.json and actual application page.",
+      "source_controls_established": "Pinned desktop source provides full-sync direction/cancel choices, confirmation paths and a backup call before full download. The undo manager keeps bounded in-memory operations and can clear them. These answer control-path questions but do not establish complete media-inclusive recovery, normal sync conflict handling or restoration after collection-wide destructive actions in the declared learning workflow.",
+      "recovery_evidence": "Reinspection reproduces integrity ok and the one-card/one-note join and sound-name mapping in the retained legacy APKG. Its mapped media member is only four bytes, not proof of usable audio. Modern package decoding, deck/options and scheduling semantics, complete media and a meaningful collection restore are not covered by this historical fixture.",
+      "missing": "A modern synthetic collection package with expected notes/cards, deck/options, scheduling and genuine media, independent decoding/comparison, and full-sync/deletion/recovery output remain missing. Legacy readability, full-sync confirmation/backup calls and bounded undo are already resolved; their coverage limits are explicit.",
+      "next_without_local_installation": "Obtain a current-version APKG/COLPKG test export and expected semantic manifest from upstream fixtures or an external assessor. Independently decode and compare it here, keeping notes, cards, options and scheduling together. A recorded restore/sync exercise elsewhere can supply behavior evidence without a local Anki installation."
+    },
+    {
+      "id": "joplin",
+      "scope": "Existing profile retained; see plan.json and actual application page.",
+      "source_controls_established": "Pinned source adds concrete trash controls: desktop empty-trash asks for confirmation before calling deletion; restore clears deletion state with explicit missing-parent handling; automatic deletion is setting-gated, uses a configured age and logs selected items. These are positive controls, not a complete account of sync conflicts, encryption changes, transmission or recovery after permanent deletion.",
+      "recovery_evidence": "JEX/raw implementation and inspected import assertions explain serialized items, resource copying, new IDs and rewritten links, but no populated 200-note profile was independently reconstructed. Complete notebook/tag/link/resource relationships and the declared encrypted/offline-conflict recovery scenario remain unverified; package structure alone is not meaningful restoration.",
+      "missing": "A populated JEX/raw export with expected notebook/tag/link/resource relationships, independent reconstruction and encrypted/offline-conflict recovery records remain missing. For E5, record sync conflicts, encryption transitions and recovery boundaries after permanent deletion. Trash confirmation, missing-parent restore handling and setting-gated automatic deletion are now answered in source.",
+      "next_without_local_installation": "Acquire a synthetic JEX/raw export plus expected relationship and resource hashes; reconstruct it with archive/text/SQLite tools already available. Add externally recorded two-profile conflict and encryption/recovery results for the pinned version. No real notes or private recovery credentials are needed."
+    },
+    {
+      "id": "zotero",
+      "scope": "Existing profile retained; see plan.json and actual application page.",
+      "source_controls_established": "Pinned source stages trash/restore undo information and implements restoring selected records and children. Manual empty-trash confirms the irreversible action and then clears undo history. A separate timer can empty aged trash according to a preference, so manual confirmation is not universal. Merge, synchronization and backup-replacement control/recourse remain insufficiently covered.",
+      "recovery_evidence": "The retained schema again loads successfully, but selected item, collection, attachment, annotation and relation tables are empty. Preparing queries against DDL cannot demonstrate recovered research records, attachment bytes, annotation meaning or document-citation mappings. A populated library/storage backup and its expected relations remain necessary.",
+      "missing": "A populated synthetic library plus stored/linked attachments and a citation-bearing document, expected collection/tag/relation/annotation mappings and an independent recovery comparison remain missing. E5 still needs merge, synchronization and backup-replacement evidence, including automatic-trash preference/retention behavior; source trash/restore/manual-purge boundaries are answered.",
+      "next_without_local_installation": "Use a sanitized synthetic zotero.sqlite, storage directory, any linked-file dependencies and a citation-bearing sample document with an expected mapping manifest. Inspect them with SQLite/archive tools and obtain version-matched merge/sync/backup-restoration observations from upstream or another assessor without installing Zotero locally."
+    }
+  ],
+  "new_bounded_questions": [
+    {
+      "application": "kopia",
+      "target": "E5",
+      "text": "The explicit snapshot-delete command reports a preview and returns before DeleteManifest unless --delete is set. Confirmed snapshot-ID, root-object-ID and source-wide selections use the shared deletion gate; this does not cover automated maintenance.",
+      "url": "https://github.com/kopia/kopia/blob/0835005737025dc3e5203df0138c8265686cb4b3/cli/command_snapshot_delete.go",
+      "path": "cli/command_snapshot_delete.go",
+      "locators": [
+        "if !c.snapshotDeleteConfirm",
+        "return errors.Wrap(rep.DeleteManifest"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "application": "anki",
+      "target": "E5",
+      "text": "The full-sync conflict dialog offers upload, download and cancellation with cancellation as that dialog's default. Dedicated full-upload/full-download confirmation paths also exist; the full-download worker calls create_backup_now before closing for replacement. This proves code paths, not a successful or media-complete backup.",
+      "url": "https://github.com/ankitects/anki/blob/8d6e0a0f462f016889896ceaaab1be2aba182588/qt/aqt/sync.py",
+      "path": "qt/aqt/sync.py",
+      "locators": [
+        "default_button=2",
+        "mw.create_backup_now()"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "application": "anki",
+      "target": "E5",
+      "text": "The undo manager stores a bounded in-memory queue, truncates old steps and clears undo/redo when a step begins without an undoable operation. Undo therefore is not a durable or universal recovery archive.",
+      "url": "https://github.com/ankitects/anki/blob/8d6e0a0f462f016889896ceaaab1be2aba182588/rslib/src/undo/mod.rs",
+      "path": "rslib/src/undo/mod.rs",
+      "locators": [
+        "self.undo_steps.clear()",
+        "self.undo_steps.truncate(UNDO_LIMIT - 1)"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "application": "joplin",
+      "target": "E5",
+      "text": "Desktop empty-trash displays a permanent-deletion confirmation and calls the trash deletion service only when accepted. The service invokes note/folder deletion; this is not evidence that history or synchronized copies can recover a permanent deletion.",
+      "url": "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/app-desktop/commands/emptyTrash.ts",
+      "path": "packages/app-desktop/commands/emptyTrash.ts",
+      "locators": [
+        "showConfirmMessageBox",
+        "if (ok) await emptyTrash()"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "application": "joplin",
+      "target": "E5",
+      "text": "Trash restoration clears deleted_time and restores the parent when available. Missing/deleted parents use either an explicitly requested restore folder or an empty parent ID, unless a target folder is supplied; folder restoration recurses into children.",
+      "url": "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/trash/restoreItems.ts",
+      "path": "packages/lib/services/trash/restoreItems.ts",
+      "locators": [
+        "useRestoreFolder: false",
+        "deleted_time: 0",
+        "await restoreItems(ModelType.Folder"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "application": "joplin",
+      "target": "E5",
+      "text": "Automatic trash deletion exits when its enable setting is false, reads an age setting, logs selected items and excludes share-read-only items. It auto-deletes folders only when empty. Inspected setup schedules periodic processing; default setting values and cross-device consequences were not established here.",
+      "url": "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/trash/permanentlyDeleteOldItems.ts",
+      "path": "packages/lib/services/trash/permanentlyDeleteOldItems.ts",
+      "locators": [
+        "Setting.value('trash.autoDeletionEnabled')",
+        "logger.info('Items to permanently delete:', toDelete)",
+        "18 * Hour"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "application": "zotero",
+      "target": "E5",
+      "text": "The pinned trash path stages undo data before setting deletion state. Selected-item restoration runs transactionally, clears deletion state and includes applicable child notes/attachments or subcollections. This is source evidence of intended recovery paths, not a populated-library recovery run.",
+      "url": "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/chrome/content/zotero/zoteroPane.js",
+      "path": "chrome/content/zotero/zoteroPane.js",
+      "locators": [
+        "this.restoreSelectedItems = async function",
+        "Zotero.UndoHistory.stageAction(undoAction",
+        "child.deleted = false"
+      ],
+      "confidence": "medium",
+      "supporting_sources": [
+        {
+          "path": "chrome/content/zotero/xpcom/data/items.js",
+          "url": "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/chrome/content/zotero/xpcom/data/items.js",
+          "locators": [
+            "Zotero.UndoHistory.stageChange",
+            "// Record undo data before modifying state"
+          ]
+        }
+      ]
+    },
+    {
+      "application": "zotero",
+      "target": "E5",
+      "text": "Manual empty-trash asks for confirmation including an irreversible-action message, erases deleted objects and clears undo history. Separately, the item service can purge aged trash from an idle timer using a preference; the manual dialog must not be generalized to all purges or to an observed default retention value.",
+      "url": "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/chrome/content/zotero/zoteroPane.js",
+      "path": "chrome/content/zotero/zoteroPane.js",
+      "locators": [
+        "general.actionCannotBeUndone",
+        "Zotero.UndoHistory.clear()"
+      ],
+      "confidence": "medium",
+      "supporting_sources": [
+        {
+          "path": "chrome/content/zotero/xpcom/data/items.js",
+          "url": "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/chrome/content/zotero/xpcom/data/items.js",
+          "locators": [
+            "Zotero.Prefs.get('trashAutoEmptyDays')",
+            "this.emptyTrash("
+          ]
+        }
+      ]
+    }
+  ]
+}

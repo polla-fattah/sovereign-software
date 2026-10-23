@@ -4,6 +4,17 @@ Reviewed 22 October 2026 from the Jami documentation (docs.jami.net), jami.net (
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1. All facts below rest on page summaries returned by a fetch tool, not on full page reads.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 12](../third-pass/batch-12/README.md#jami) and reflected in the [application page](../../content/directory/jami.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: The account serializer explicitly builds JSON containing identity keys/certificate, configuration, contacts, conversation-info records and requests. The archive manager separately filters device-local settings and excludes collaborative-document conversation records. This identifies an identity/contact archive route, not demonstrated completeness of message repositories, attachments or collaborative content.
+- [x] Resolved: exportArchive refreshes/saves the account archive, then copies it to the destination with overwrite_existing and returns the filesystem result. This low-level export path permits replacing an existing backup; client-side prompts or backup rotation are not established by the daemon implementation.
+
+Remaining: Actual encrypted archive decoding and clean import, complete history/attachment preservation, outer encryption/version compatibility, conversation deletion propagation and runtime network dependency remain untested.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -44,3 +55,18 @@ Reviewed 22 October 2026 from the Jami documentation (docs.jami.net), jami.net (
 4. Run with network blocked and with the DHT proxy, push, and TURN options off, and note which functions fail.
 5. Delete a conversation and a message on one linked device, and see what remains on the other device and on the contact's side.
 6. Read: the full docs changelog and release notes (numeric version unknown), the account-management and backup pages (a guessed URL returned 404), the client README on git.jami.net (blocked), the licence of the client repositories, and any update-check or telemetry statement.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-12/README.md#jami); [actual assessment](../../content/directory/jami.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. Account archive source identifies identity/config/contact/conversation-info records, while some device-local and collaborative records are excluded or separate. Complete encrypted archive import with message repositories, attachments and collaborative content has not been demonstrated. Identity backup is not established as full conversation recovery.
+- E5: Not Verified. The daemon export path permits replacing an existing archive and reports its filesystem result; client-side confirmation/rotation is not established there. Effective client/device authority, key/export approval, conversation deletion propagation and recourse remain insufficiently covered.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: Actual encrypted archive decoding and clean import, complete history/attachment preservation, outer encryption/version compatibility, conversation deletion propagation and runtime network dependency remain untested. E5 needs client-side export/overwrite and device/conversation deletion controls, inspectable consequences and usable recovery boundaries.
+
+Next without a local installation: Inspect a synthetic encrypted archive plus separately required message/attachment repositories with dummy identity material and expected content; obtain same-version client prompt/overwrite/import/deletion and network-dependency records.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

@@ -1,0 +1,156 @@
+{
+  "inputs": [
+    {
+      "application": "beancount",
+      "path": "examples/vesting/vesting.beancount",
+      "commit": "9747213802acb733ce53acc6e963f5961f47d6cd",
+      "raw_url": "https://raw.githubusercontent.com/beancount/beancount/9747213802acb733ce53acc6e963f5961f47d6cd/examples/vesting/vesting.beancount",
+      "url": "https://github.com/beancount/beancount/blob/9747213802acb733ce53acc6e963f5961f47d6cd/examples/vesting/vesting.beancount",
+      "git_blob_sha": "e01f0da95869ca76b7e97ac1cd6225e4b607121d",
+      "probe": "ledger"
+    },
+    {
+      "application": "beancount",
+      "path": "beancount/ops/pad.py",
+      "commit": "9747213802acb733ce53acc6e963f5961f47d6cd",
+      "raw_url": "https://raw.githubusercontent.com/beancount/beancount/9747213802acb733ce53acc6e963f5961f47d6cd/beancount/ops/pad.py",
+      "url": "https://github.com/beancount/beancount/blob/9747213802acb733ce53acc6e963f5961f47d6cd/beancount/ops/pad.py",
+      "git_blob_sha": "5f827fb126ad8a2572d6433fddda47621ef66ae6"
+    },
+    {
+      "application": "gnucash",
+      "path": "doc/examples/reg_doc_example.gnucash",
+      "commit": "fec5643cd22cbafc7b16047f35cbe852395da947",
+      "raw_url": "https://raw.githubusercontent.com/Gnucash/gnucash/fec5643cd22cbafc7b16047f35cbe852395da947/doc/examples/reg_doc_example.gnucash",
+      "url": "https://github.com/Gnucash/gnucash/blob/fec5643cd22cbafc7b16047f35cbe852395da947/doc/examples/reg_doc_example.gnucash",
+      "git_blob_sha": "c9759e27283331c85a7936973c27293386364cff",
+      "probe": "gnucash"
+    },
+    {
+      "application": "gnucash",
+      "path": "libgnucash/backend/xml/gnc-transaction-xml-v2.cpp",
+      "commit": "fec5643cd22cbafc7b16047f35cbe852395da947",
+      "raw_url": "https://raw.githubusercontent.com/Gnucash/gnucash/fec5643cd22cbafc7b16047f35cbe852395da947/libgnucash/backend/xml/gnc-transaction-xml-v2.cpp",
+      "url": "https://github.com/Gnucash/gnucash/blob/fec5643cd22cbafc7b16047f35cbe852395da947/libgnucash/backend/xml/gnc-transaction-xml-v2.cpp",
+      "git_blob_sha": "83c70f57e8f482b6dcff947d42701c971015545c"
+    },
+    {
+      "application": "money-manager-ex",
+      "path": "src/table/tables_en.sql",
+      "commit": "a4aa421415143406e2557b334137ca1b90b58218",
+      "raw_url": "https://raw.githubusercontent.com/moneymanagerex/moneymanagerex/a4aa421415143406e2557b334137ca1b90b58218/src/table/tables_en.sql",
+      "url": "https://github.com/moneymanagerex/moneymanagerex/blob/a4aa421415143406e2557b334137ca1b90b58218/src/table/tables_en.sql",
+      "git_blob_sha": "44efd87cc2118c72e2e4121d3a8eeaea4419bd1b",
+      "probe": "sql-schema"
+    },
+    {
+      "application": "money-manager-ex",
+      "path": "src/db/dbwrapper.cpp",
+      "commit": "a4aa421415143406e2557b334137ca1b90b58218",
+      "raw_url": "https://raw.githubusercontent.com/moneymanagerex/moneymanagerex/a4aa421415143406e2557b334137ca1b90b58218/src/db/dbwrapper.cpp",
+      "url": "https://github.com/moneymanagerex/moneymanagerex/blob/a4aa421415143406e2557b334137ca1b90b58218/src/db/dbwrapper.cpp",
+      "git_blob_sha": "8a97ee196bbad0193f5b66d9eac63eaf7034c8ff"
+    },
+    {
+      "application": "todo-txt",
+      "path": "README.md",
+      "commit": "1d90c086533a2574f6039a756ada760ec672a53e",
+      "raw_url": "https://raw.githubusercontent.com/todotxt/todo.txt/1d90c086533a2574f6039a756ada760ec672a53e/README.md",
+      "url": "https://github.com/todotxt/todo.txt/blob/1d90c086533a2574f6039a756ada760ec672a53e/README.md",
+      "git_blob_sha": "238cfef3847fd1b16fd69517e4bf30c401037d73",
+      "probe": "todo-spec"
+    },
+    {
+      "application": "sqlite",
+      "path": "test/dump.sql",
+      "commit": "31ebfdf4a1483218a7e17499957eca4caabce915",
+      "raw_url": "https://raw.githubusercontent.com/sqlite/sqlite/31ebfdf4a1483218a7e17499957eca4caabce915/test/dump.sql",
+      "url": "https://github.com/sqlite/sqlite/blob/31ebfdf4a1483218a7e17499957eca4caabce915/test/dump.sql",
+      "git_blob_sha": "c7672a1fb77886bf8eff79e900f4298abee93cc3"
+    },
+    {
+      "application": "hledger",
+      "path": "examples/borrowing.journal",
+      "commit": "cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd",
+      "raw_url": "https://raw.githubusercontent.com/hledgerorg/hledger/cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd/examples/borrowing.journal",
+      "url": "https://github.com/hledgerorg/hledger/blob/cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd/examples/borrowing.journal",
+      "git_blob_sha": "ffe190f83d715ff17dcf50955bfa20abba060de2",
+      "probe": "ledger"
+    },
+    {
+      "application": "hledger",
+      "path": "hledger/Hledger/Cli/Commands/Import.hs",
+      "commit": "cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd",
+      "raw_url": "https://raw.githubusercontent.com/hledgerorg/hledger/cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd/hledger/Hledger/Cli/Commands/Import.hs",
+      "url": "https://github.com/hledgerorg/hledger/blob/cfc6aeb0adfc1fcad0e5144a34171d6e75c348dd/hledger/Hledger/Cli/Commands/Import.hs",
+      "git_blob_sha": "96387960f4fc006b229b1b41a73621a142cc4706"
+    },
+    {
+      "application": "todo-txt",
+      "path": "todo.sh",
+      "commit": "a9846a232c86937a218d1be45bc4c7631855ee16",
+      "raw_url": "https://raw.githubusercontent.com/todotxt/todo.txt-cli/a9846a232c86937a218d1be45bc4c7631855ee16/todo.sh",
+      "url": "https://github.com/todotxt/todo.txt-cli/blob/a9846a232c86937a218d1be45bc4c7631855ee16/todo.sh"
+    }
+  ],
+  "source_questions": [
+    {
+      "application": "beancount",
+      "id": "automatic-pad",
+      "anchors": {
+        "beancount/ops/pad.py": [
+          "Synthesize and insert Transaction entries",
+          "single currency only"
+        ]
+      }
+    },
+    {
+      "application": "hledger",
+      "id": "import-checkpoints",
+      "anchors": {
+        "hledger/Hledger/Cli/Commands/Import.hs": [
+          "new_=True",
+          "new_save_=False",
+          "_dryrun=dryRun",
+          "saveLatestDatesForFiles latestdatesforfiles"
+        ]
+      }
+    },
+    {
+      "application": "gnucash",
+      "id": "split-serialization",
+      "anchors": {
+        "libgnucash/backend/xml/gnc-transaction-xml-v2.cpp": [
+          "split:value",
+          "split:quantity",
+          "split:account"
+        ]
+      }
+    },
+    {
+      "application": "money-manager-ex",
+      "id": "cipher-migration",
+      "anchors": {
+        "src/db/dbwrapper.cpp": [
+          "cipher.InitializeVersionDefault(4)",
+          "wxSQLite3CipherAes128",
+          "Rekeying with the new cipher will prevent opening this database in older versions",
+          "msgDlg.ShowModal() == wxID_YES"
+        ]
+      }
+    },
+    {
+      "application": "todo-txt",
+      "id": "completion-and-archive",
+      "anchors": {
+        "todo.sh": [
+          "grep \"^x \" \"$TODO_FILE\" >> \"$DONE_FILE\"",
+          "sed -i.bak '/^x /d'",
+          "sed -i.bak \"${item}s/^(.) //\""
+        ]
+      }
+    }
+  ],
+  "sqlite_library_experiment": true,
+  "ratings_reconciliation": "Deferred; preserve original eligibility and principle tables"
+}

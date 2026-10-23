@@ -4,6 +4,15 @@ Reviewed 22 October 2026 from the Audacity Manual, audacityteam.org, and the pro
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Follow-up: 23 October 2026
+
+2 bounded questions are resolved in [batch 4](../third-pass/batch-4/README.md#audacity) and incorporated into the [application assessment](../../content/directory/audacity.md). The original documentation review below remains a dated record; these narrower findings supersede its corresponding uncertainties.
+
+- [x] Resolved: The pinned test.aup4 fixture exposes project, autosave, sampleblocks and project_history schemas to standard SQLite. Its project row contains 2,067-byte dictionary and 2,177-byte document BLOBs, but reading sampleblocks and running integrity_check report database disk image is malformed with SQLite 3.45.3. The bytes match the upstream Git blob. This resolves this sample's read boundary, not independent audio recovery or a general Audacity defect.
+- [x] Resolved: The shared project-file implementation stores encoded XML as dictionary/document BLOBs, not ordinary XML text. The serializer publishes field opcodes and character-width handling; sample blocks carry numeric audio data while valid block lengths come from the encoded project. SQLite table access alone is therefore insufficient to reconstruct an editable session. AUP3 recovery and AUP3/AUP4 compatibility were not demonstrated.
+
+Remaining: A known-good representative AUP3/AUP4 project decoded and reconstructed independently; sample-audio recovery, track/label migration, cross-version saves, plugin fidelity and crash recovery.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -38,3 +47,20 @@ Reviewed 22 October 2026 from the Audacity Manual, audacityteam.org, and the pro
 4. Recovery after a forced crash, and behavior after a failed save.
 5. Effects applied to selections and whether any effect or plugin dependency breaks a project on another machine (not found in the docs).
 6. Reconcile the GPL v2 and v3 statements and read the CLA text.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-3/README.md#audacity); [actual assessment](../../content/directory/audacity.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The retained AUP4 bytes match upstream, but generic sample-block reading and integrity checking failed in the recorded SQLite reader. Encoded project XML and audio-block semantics still require reconstruction, and the AUP4 sample cannot certify AUP3. This sample-specific unsuccessful check is not an application-wide E3 Fail or a successful audio recovery.
+- E5: Not Verified. The history code exposes undo/redo state, initialization resets and autosave requests; new edits can discard redo. These answer editing-retention questions but do not establish the complete project's save/overwrite, destructive effects, current UI settings and recovery controls across the stated AUP3/AUP4/version scope.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+- [x] Resolved: The inspected project-history initialization clears existing undo states. New non-consolidated edits abandon redo states, while history pushes normally request autosave unless flagged otherwise. This identifies control and retention boundaries, not persistent recoverability of every AUP3/AUP4 project. [Pinned source](https://github.com/audacity/audacity/blob/f515da46486301d48db89f195729ef0c87980668/au3/libraries/au3-project-history/ProjectHistory.cpp).
+
+Remaining: A known-good representative AUP3/AUP4 project decoded and reconstructed independently; sample-audio recovery, track/label migration, cross-version saves, plugin fidelity and crash recovery. E5 also needs version-matched save/overwrite/destructive-edit controls and their recoverable state boundaries; initialization/redo source behavior is now answered.
+
+Next without a local installation: Use a known-good representative AUP3 and AUP4 packet with expected track, label and sample metadata plus independent audio extraction; pair it with primary-source or recorded save/undo/overwrite evidence for each exact version.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

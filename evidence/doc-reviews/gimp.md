@@ -4,6 +4,15 @@ Reviewed 22 October 2026 from the GIMP User Manual (docs.gimp.org), the develope
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Evidence follow-up: 23 October 2026
+
+Two bounded questions are resolved in [batch 5](../third-pass/batch-5/README.md#gimp) and reflected in the [application page](../../content/directory/gimp.md). Existing eligibility and principle ratings remain unchanged until the next-pass reconciliation, as requested by the user.
+
+- [x] Resolved: A bounded independent parser read the legacy XCF version-0 header, 100-by-90 canvas, property records, layer offsets, and layer2/layer1 names and dimensions from the published fixture. This uses neither GIMP nor a GIMP library. Pixel tiles, masks, modern XCF versions and rendered appearance were not reconstructed.
+- [x] Resolved: The OpenRaster exporter serializes layer pixels as PNG, nests groups in stack XML and stores names, offsets, opacity and visibility. Unsupported layer modes fall back to svg:src-over in its mapping. This path does not serialize editable text or arbitrary native effect state as their native objects, so an ORA exit must not be assumed to preserve all editability or compositing semantics.
+
+Remaining: Current layered-XCF decoding, text/mask/group/high-bit-depth and ICC fidelity, actual ORA/PSD/TIFF round trips, old/new-version saves, crash recovery and plugin/network controls.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -41,3 +50,18 @@ Reviewed 22 October 2026 from the GIMP User Manual (docs.gimp.org), the develope
 4. Kill the process with unsaved edits and check whether a recovery prompt appears on restart.
 5. Run with the network blocked and the update check on; note any failure or prompt.
 6. Read next: developer.gimp.org XCF spec, www.gimp.org about, downloads, release notes and licence pages (blocked by certificate errors), and the 3.2.6 news page directly.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-6/README.md#gimp); [actual assessment](../../content/directory/gimp.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The independent parser reads legacy XCF header/layer records but not pixels, masks, modern formats or equivalent color/compositing. OpenRaster serializes rasterized state and falls back for some modes, so complete native editable-image reconstruction remains unestablished.
+- E5: Not Verified. Save/export prompts are positive leads, not full evidence for plugin/script authorization, destructive effects/layer changes, overwrite visibility and meaningful undo/crash recovery in the declared modern project and plugin configuration.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: Current layered-XCF decoding, text/mask/group/high-bit-depth and ICC fidelity, actual ORA/PSD/TIFF round trips, old/new-version saves, crash recovery and plugin/network controls. E5 needs plugin/script, destructive-edit and save/export overwrite control with explicit undo/recovery limits.
+
+Next without a local installation: Acquire a current synthetic layered XCF plus mask/text/ICC dependencies, expected semantic/pixel records and independent ORA/PSD/TIFF comparisons; seek same-version plugin/save/undo evidence without running the target.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

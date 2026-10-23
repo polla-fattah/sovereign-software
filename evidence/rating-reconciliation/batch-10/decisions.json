@@ -1,0 +1,455 @@
+{
+  "review_date": "2026-10-24",
+  "purpose": "Individual reconciliation against each existing scope. Completed review is not product certification or proof that every gap is resolved.",
+  "applications": [
+    {
+      "id": "gdal",
+      "name": "GDAL",
+      "version": "Pinned evidence 0e24e0288164b5237df0aeb82ab742909e719479",
+      "E3": [
+        "not_verified",
+        "An independent GeoPackage read exposes attributes, feature counts, geometry metadata and SRS records, but geometry coordinates were not decoded or reconstructed. PAM sidecars/proxy metadata and driver-specific fidelity remain essential boundaries; main-file access is not complete geospatial recovery.",
+        "https://github.com/OSGeo/gdal/blob/0e24e0288164b5237df0aeb82ab742909e719479/autotest/ogr/data/gpkg/poly_golden_gpkg_1_4.gpkg",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Strict/options documentation makes some transformations explicit, but effective caller overwrite authority, lossy conversion warnings, sidecar handling and usable correction are not established across the assessed drivers/datasets. Inspectable options alone do not prove the required oversight.",
+        "https://gdal.org/en/stable/programs/gdal_translate.html",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for GDAL's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/OSGeo/gdal/blob/0e24e0288164b5237df0aeb82ab742909e719479/autotest/ogr/data/gpkg/poly_golden_gpkg_1_4.gpkg",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://gdal.org/en/stable/programs/gdal_translate.html",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "practical_exit": "not_verified",
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Driver-specific lossy conversion, geometry fidelity, actual overwrite behavior, sidecar-removal comparison and cross-version compatibility remain untested. E5 needs driver/caller-specific overwrite and loss decisions, retained transformation parameters and available correction.",
+      "current_remaining": "Driver-specific lossy conversion, geometry fidelity, actual overwrite behavior, sidecar-removal comparison and cross-version compatibility remain untested. E5 needs driver/caller-specific overwrite and loss decisions, retained transformation parameters and available correction.",
+      "next": "Acquire representative dataset/file-list/sidecar packets with expected coordinates, CRS, metadata and nodata semantics; compare independent readers and same-version conversion/overwrite observations.",
+      "E2": [
+        "not_verified",
+        "The former E2 Pass does not establish preservation of essential geometry, CRS, sidecar and driver metadata in an alternative workflow. Format breadth and one readable GeoPackage schema do not complete that migration comparison.",
+        "https://gdal.org/en/stable/programs/gdal_translate.html",
+        "medium"
+      ],
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for GDAL does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://gdal.org/en/stable/programs/gdal_translate.html",
+        "medium"
+      ]
+    },
+    {
+      "id": "grass-gis",
+      "name": "GRASS GIS",
+      "version": "Pinned evidence 09ad2796fff4fdfc2a3bee8446868f8be3076db4",
+      "E3": [
+        "not_verified",
+        "Vector/raster pack source identifies native maps, attribute SQLite data and projection support, but no complete pack was independently unpacked and compared. External database dependencies and null/category/projection meaning remain unestablished for the native project/mapset.",
+        "https://github.com/OSGeo/grass/blob/09ad2796fff4fdfc2a3bee8446868f8be3076db4/scripts/v.pack/v.pack.py",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "g.remove previews matches and requires force for the inspected deletion branch. That is a concrete bounded safeguard, not full evidence for overwrite/import/processing authority, mapset permissions or recourse after removed maps and interrupted writes.",
+        "https://github.com/OSGeo/grass/blob/09ad2796fff4fdfc2a3bee8446868f8be3076db4/general/g.remove/main.c",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for GRASS GIS's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/OSGeo/grass/blob/09ad2796fff4fdfc2a3bee8446868f8be3076db4/scripts/v.pack/v.pack.py",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://github.com/OSGeo/grass/blob/09ad2796fff4fdfc2a3bee8446868f8be3076db4/general/g.remove/main.c",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Pack/unpack equivalence, external database dependencies, raster/null/category fidelity, older-version opening and interrupted-write recovery remain untested. E5 needs mapset/processing/overwrite authority, effective removal scope and appropriate independent backup/restore boundaries.",
+      "current_remaining": "Pack/unpack equivalence, external database dependencies, raster/null/category fidelity, older-version opening and interrupted-write recovery remain untested. E5 needs mapset/processing/overwrite authority, effective removal scope and appropriate independent backup/restore boundaries.",
+      "next": "Inspect synthetic native raster/vector packs, external DB references and expected attributes/CRS/null/category records; seek independent unpack comparisons and version-matched preview/remove/overwrite recovery evidence.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for GRASS GIS does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://github.com/OSGeo/grass/blob/09ad2796fff4fdfc2a3bee8446868f8be3076db4/scripts/v.pack/v.pack.py",
+        "medium"
+      ]
+    },
+    {
+      "id": "r-project",
+      "name": "R",
+      "version": "Pinned evidence c267ebb7f9720154535e63642c25a5d91d5f512d",
+      "E3": [
+        "not_verified",
+        "Serialization headers specify representation/version/encoding bounds but do not recover every object/package class. No factor/date/attribute/NA-preserving independent reconstruction with a complete package/source/data environment has been recorded; bare RDS compatibility metadata is not file validity or whole-workflow recovery.",
+        "https://github.com/r-devel/r-svn/blob/c267ebb7f9720154535e63642c25a5d91d5f512d/src/main/serialize.c",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Model accuracy alone is not E5. The current evidence does not establish effective script/package execution authority, workspace/file overwrite decisions, inspectable transformation state or available correction of consequential data/model changes.",
+        "https://rstudio.github.io/renv/articles/renv",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for R's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/r-devel/r-svn/blob/c267ebb7f9720154535e63642c25a5d91d5f512d/src/main/serialize.c",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://rstudio.github.io/renv/articles/renv",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Factor/date/attribute/NA round trips, a non-R reader, older-release trials, package-library upgrades and workspace overwrite recovery remain untested. E5 needs script/package and workspace-write authority, visible transformation parameters/state and correction boundaries.",
+      "current_remaining": "Factor/date/attribute/NA round trips, a non-R reader, older-release trials, package-library upgrades and workspace overwrite recovery remain untested. E5 needs script/package and workspace-write authority, visible transformation parameters/state and correction boundaries.",
+      "next": "Use synthetic scripts/data/serialization and package-lock/source manifests with expected types, missingness and results; compare independent readers or externally reproduced outputs and same-version execution/overwrite controls.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for R does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://github.com/r-devel/r-svn/blob/c267ebb7f9720154535e63642c25a5d91d5f512d/src/main/serialize.c",
+        "medium"
+      ]
+    },
+    {
+      "id": "gnu-pspp",
+      "name": "GNU PSPP",
+      "version": "Pinned evidence retrieved 2026-10-23",
+      "E3": [
+        "not_verified",
+        "The retained official specification exposes CSV label/value, missingness and case-selection loss boundaries, not native dictionary recovery. SAV/POR compression, labels/missing distinctions and independent-reader reconstruction have not been compared. Dated manual evidence is retained despite failed source retrieval.",
+        "https://www.gnu.org/software/pspp/manual/html_node/SAVE-TRANSLATE-_002fTYPE_003dCSV-and-TYPE_003dTAB.html",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "SAVE TRANSLATE documents default overwrite refusal and explicit REPLACE, plus options that change scope/meaning. These controls are positive but do not comprehensively cover syntax transformations, effective output selection, reversal and crash recovery in the original statistical workflow.",
+        "https://www.gnu.org/software/pspp/manual/html_node/SAVE-TRANSLATE.html",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for GNU PSPP's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://www.gnu.org/software/pspp/manual/html_node/SAVE-TRANSLATE-_002fTYPE_003dCSV-and-TYPE_003dTAB.html",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://www.gnu.org/software/pspp/manual/html_node/SAVE-TRANSLATE.html",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "practical_exit": "not_verified",
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Native SAV/POR compression compatibility, independent-reader comparisons, dictionary round trips, transformation reversibility and crash recovery remain untested. Savannah source-file retrieval failed; dated retained official manual pages are used instead. E5 needs effective transformation/save scope, output overwrite review and recoverable source/dictionary states; documented REPLACE is not a full executed safeguard.",
+      "current_remaining": "Native SAV/POR compression compatibility, independent-reader comparisons, dictionary round trips, transformation reversibility and crash recovery remain untested. Savannah source-file retrieval failed; dated retained official manual pages are used instead. E5 needs effective transformation/save scope, output overwrite review and recoverable source/dictionary states; documented REPLACE is not a full executed safeguard.",
+      "next": "Inspect representative synthetic SAV/POR and CSV pairs with expected dictionary/labels/missingness, and seek independent-reader plus same-version syntax/overwrite/recovery records.",
+      "E2": [
+        "not_verified",
+        "The former E2 Pass does not establish a usable independent statistical workflow preserving native dictionary, labels and missing-value distinctions. The inspected CSV route can collapse those distinctions; alternative native routes remain unverified rather than failed.",
+        "https://www.gnu.org/software/pspp/manual/pspp.html",
+        "medium"
+      ],
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for GNU PSPP does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://www.gnu.org/software/pspp/manual/pspp.html",
+        "medium"
+      ]
+    },
+    {
+      "id": "kolibri",
+      "name": "Kolibri",
+      "version": "Pinned evidence 303e3baea3e0df85b797111af8ca4d89e7fbbe92",
+      "E3": [
+        "not_verified",
+        "The inspected dbrestore route is for the same device, selects version-bounded backups and refuses a running instance. It does not demonstrate cross-device restoration of content, user/progress/log data or complete backup coverage for the existing learning profile.",
+        "https://github.com/learningequality/kolibri/blob/303e3baea3e0df85b797111af8ca4d89e7fbbe92/kolibri/core/deviceadmin/management/commands/dbrestore.py",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Bulk import has dry-run mutation guards and exclusions for administrators/acting users, but can hard-delete omitted selected users and clear memberships. Effective role authorization, content/progress deletion visibility and recovery are not comprehensively established by that command alone.",
+        "https://github.com/learningequality/kolibri/blob/303e3baea3e0df85b797111af8ca4d89e7fbbe92/kolibri/core/auth/management/commands/bulkimportusers.py",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for Kolibri's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/learningequality/kolibri/blob/303e3baea3e0df85b797111af8ca4d89e7fbbe92/kolibri/core/deviceadmin/management/commands/dbrestore.py",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://github.com/learningequality/kolibri/blob/303e3baea3e0df85b797111af8ca4d89e7fbbe92/kolibri/core/auth/management/commands/bulkimportusers.py",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "practical_exit": "not_verified",
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Actual backup restoration/content coverage, cross-device migration, user/log export completeness, downgrade behavior and runtime deletion/traffic observations remain untested. E5 needs effective importer/role settings, omission-driven deletion and progress/content recourse beyond one dry-run guard.",
+      "current_remaining": "Actual backup restoration/content coverage, cross-device migration, user/log export completeness, downgrade behavior and runtime deletion/traffic observations remain untested. E5 needs effective importer/role settings, omission-driven deletion and progress/content recourse beyond one dry-run guard.",
+      "next": "Use a synthetic content/channel/user-progress/device backup packet with expected identities/logs and version boundaries; inspect exports and obtain same-version external restore/bulk-import/deletion records.",
+      "E2": [
+        "not_verified",
+        "The former E2 Pass covers a content-transfer lead, not preservation of essential learner identity, progress and logs in a replacement workflow. Complete cross-device/user-data migration remains unestablished.",
+        "https://kolibri.readthedocs.io/_/downloads/en/latest/pdf/",
+        "medium"
+      ],
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Kolibri does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://kolibri.readthedocs.io/_/downloads/en/latest/pdf/",
+        "medium"
+      ]
+    },
+    {
+      "id": "moodle",
+      "name": "Moodle (self-hosted)",
+      "version": "Pinned evidence 46c042e7da65f8cb2ec7dc19f46566ce61a393e1",
+      "E3": [
+        "not_verified",
+        "Course backup source conditionally includes users/files and writes several manifests, so a course package is not automatically a full site archive. Complete student submissions, grades, plugin state, accounts and permissions have not been independently reconstructed and compared.",
+        "https://github.com/moodle/moodle/blob/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/moodle2/backup_final_task.class.php",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Restore prechecks distinguish warnings/errors and permission-dependent user creation. They do not establish full target-deletion, grading/workflow mutation, role authority and correction/recourse across the declared course/site configuration.",
+        "https://github.com/moodle/moodle/blob/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/util/helper/restore_prechecks_helper.class.php",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for Moodle (self-hosted)'s existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/moodle/moodle/blob/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/moodle2/backup_final_task.class.php",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://github.com/moodle/moodle/blob/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/util/helper/restore_prechecks_helper.class.php",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Real course/site restore comparisons, student submissions/grade coverage, deleting-target recovery, plugin dependencies and version-specific migrations remain untested. E5 needs role- and target-aware restore/delete/grading authority, inspectable mutations and available correction for student/course records.",
+      "current_remaining": "Real course/site restore comparisons, student submissions/grade coverage, deleting-target recovery, plugin dependencies and version-specific migrations remain untested. E5 needs role- and target-aware restore/delete/grading authority, inspectable mutations and available correction for student/course records.",
+      "next": "Inspect synthetic course/site manifests and files with expected submissions, grades, roles and plugin dependencies; obtain same-version external restore/permission/deletion comparisons. Do not use real student data.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Moodle (self-hosted) does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://github.com/moodle/moodle/blob/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/moodle2/backup_final_task.class.php",
+        "medium"
+      ]
+    }
+  ],
+  "field_changes": [
+    {
+      "id": "gdal",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for GDAL's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "gdal",
+      "table": "principles",
+      "key": "transparency",
+      "before": "meets",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "gdal",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "pass",
+      "after": "not_verified",
+      "reason": "The former E2 Pass does not establish preservation of essential geometry, CRS, sidecar and driver metadata in an alternative workflow. Format breadth and one readable GeoPackage schema do not complete that migration comparison."
+    },
+    {
+      "id": "gdal",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for GDAL does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "grass-gis",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for GRASS GIS's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "grass-gis",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "grass-gis",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "partial",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for GRASS GIS does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "r-project",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "E3 is not established for R's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "r-project",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "r-project",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "partial",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for R does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "gnu-pspp",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for GNU PSPP's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "gnu-pspp",
+      "table": "principles",
+      "key": "transparency",
+      "before": "meets",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "gnu-pspp",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "pass",
+      "after": "not_verified",
+      "reason": "The former E2 Pass does not establish a usable independent statistical workflow preserving native dictionary, labels and missing-value distinctions. The inspected CSV route can collapse those distinctions; alternative native routes remain unverified rather than failed."
+    },
+    {
+      "id": "gnu-pspp",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for GNU PSPP does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "kolibri",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for Kolibri's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "kolibri",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "kolibri",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "pass",
+      "after": "not_verified",
+      "reason": "The former E2 Pass covers a content-transfer lead, not preservation of essential learner identity, progress and logs in a replacement workflow. Complete cross-device/user-data migration remains unestablished."
+    },
+    {
+      "id": "kolibri",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Kolibri does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "moodle",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for Moodle (self-hosted)'s existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "moodle",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "moodle",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "partial",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Moodle (self-hosted) does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    }
+  ]
+}

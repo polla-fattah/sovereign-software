@@ -6,6 +6,8 @@ Reviewed 22 October 2026 from the darktable development manual, darktable.org, a
 
 ## What the documentation says
 
+Follow-up, 23 October 2026: resolved questions and remaining work are recorded in the [second third-pass batch](../third-pass/batch-2/README.md#darktable) and reflected in the [application assessment](../../content/directory/darktable.md). The earlier review below is superseded where that evidence answers or corrects it.
+
 **Storage and access (E1, E3)**
 - Metadata, tags, and processing steps are stored in XMP and DTDATA sidecar files beside the raw files and also in the library database (`library.db`, with `data.db`). Once an image is imported, "the database takes precedence" over the XMP file. [sidecar files](https://docs.darktable.org/usermanual/development/en/overview/sidecar-files/sidecar/), [history stack](https://docs.darktable.org/usermanual/development/en/darkroom/pixelpipe/history-stack/)
 - The only explicit statement of data not in sidecars is that custom sort sequence numbers are not stored there, with a warning that this "could be destructive" on reimport. A complete list of database-only data was not found. No specification of the XMP schema or of how the history is encoded was found; the history is described as binary XMP tags. [sidecar files](https://docs.darktable.org/usermanual/development/en/overview/sidecar-files/sidecar/), [storage preferences](https://docs.darktable.org/usermanual/development/en/preferences-settings/storage/)
@@ -35,3 +37,18 @@ Reviewed 22 October 2026 from the darktable development manual, darktable.org, a
 3. Test whether another tool can read the XMP history or only the embedded preview.
 4. Pages not read: collections, film rolls, labels, tagging, presets, workflow, `darktable-generate-cache`, miscellaneous preferences, credits, and the GitHub release notes.
 5. Reconcile the two backup statements and the platform minimums against current behavior.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-5/README.md#darktable); [actual assessment](../../content/directory/darktable.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The historical XMP history and 160 decoded parameter/mask blocks are independently inspectable, but module-version semantics and equivalent image reconstruction were not recovered. Original images, library organization, database/sidecar precedence and DTDATA-dependent meaning remain outside the observed fixture coverage.
+- E5: Not Verified. Inspectable non-destructive history is positive evidence, but it does not establish effective sidecar/database conflict precedence, original/export overwrite protection, deletion authority or available correction across the library and editing workflow.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: Module-specific semantics, image render equivalence, DTDATA, complete library organization, and database/version recovery. E5 needs database/sidecar conflict policy, deletion/export overwrite safeguards and usable correction records.
+
+Next without a local installation: Acquire a synthetic RAW/sidecar/library packet with expected module/history/organization and reference renders; compare records with existing parsers and obtain matching primary-source or external deletion/overwrite/conflict evidence.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

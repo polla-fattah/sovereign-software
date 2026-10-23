@@ -1,0 +1,136 @@
+{
+  "review_date": "2026-10-24",
+  "method": "Manual source review plus independently repeated fixture queries. Locator matches are provenance checks, not product executions.",
+  "inputs": [
+    {
+      "application": "calibre",
+      "repository": "kovidgoyal/calibre",
+      "commit": "e2a169f96a30b9be215e3abd78cb0599e7a4479a",
+      "path": "src/calibre/gui2/actions/delete.py",
+      "git_blob_sha": "e2fc3c9a99751642014902cf9ea6684ac3ff1a02",
+      "url": "https://github.com/kovidgoyal/calibre/blob/e2a169f96a30b9be215e3abd78cb0599e7a4479a/src/calibre/gui2/actions/delete.py",
+      "raw_url": "https://raw.githubusercontent.com/kovidgoyal/calibre/e2a169f96a30b9be215e3abd78cb0599e7a4479a/src/calibre/gui2/actions/delete.py",
+      "local_path": "inputs/calibre/src/calibre/gui2/actions/delete.py"
+    },
+    {
+      "application": "audacity",
+      "repository": "audacity/audacity",
+      "commit": "f515da46486301d48db89f195729ef0c87980668",
+      "path": "au3/libraries/au3-project-history/ProjectHistory.cpp",
+      "git_blob_sha": "9ac3c4571f0624b3ab6cc0356c7318a639962cb0",
+      "url": "https://github.com/audacity/audacity/blob/f515da46486301d48db89f195729ef0c87980668/au3/libraries/au3-project-history/ProjectHistory.cpp",
+      "raw_url": "https://raw.githubusercontent.com/audacity/audacity/f515da46486301d48db89f195729ef0c87980668/au3/libraries/au3-project-history/ProjectHistory.cpp",
+      "local_path": "inputs/audacity/au3/libraries/au3-project-history/ProjectHistory.cpp"
+    },
+    {
+      "application": "audacity",
+      "repository": "audacity/audacity",
+      "commit": "f515da46486301d48db89f195729ef0c87980668",
+      "path": "au3/libraries/au3-project-history/UndoManager.cpp",
+      "git_blob_sha": "2ef5308fadad6b45bd5c4cd5d42efb6a974980fc",
+      "url": "https://github.com/audacity/audacity/blob/f515da46486301d48db89f195729ef0c87980668/au3/libraries/au3-project-history/UndoManager.cpp",
+      "raw_url": "https://raw.githubusercontent.com/audacity/audacity/f515da46486301d48db89f195729ef0c87980668/au3/libraries/au3-project-history/UndoManager.cpp",
+      "local_path": "inputs/audacity/au3/libraries/au3-project-history/UndoManager.cpp"
+    },
+    {
+      "application": "audacity",
+      "repository": "audacity/audacity",
+      "commit": "f515da46486301d48db89f195729ef0c87980668",
+      "path": "src/trackedit/internal/au3/au3projecthistory.cpp",
+      "git_blob_sha": "92ed839b31e768d87d00b696e8effa68ae5ab187",
+      "url": "https://github.com/audacity/audacity/blob/f515da46486301d48db89f195729ef0c87980668/src/trackedit/internal/au3/au3projecthistory.cpp",
+      "raw_url": "https://raw.githubusercontent.com/audacity/audacity/f515da46486301d48db89f195729ef0c87980668/src/trackedit/internal/au3/au3projecthistory.cpp",
+      "local_path": "inputs/audacity/src/trackedit/internal/au3/au3projecthistory.cpp"
+    },
+    {
+      "application": "ardour",
+      "repository": "Ardour/ardour",
+      "commit": "b896344c8d16f89e04a235562ab31594605c6715",
+      "path": "libs/ardour/session_state.cc",
+      "git_blob_sha": "4100a7599e3ffd671bf598fdfd9ab52e462639ba",
+      "url": "https://github.com/Ardour/ardour/blob/b896344c8d16f89e04a235562ab31594605c6715/libs/ardour/session_state.cc",
+      "raw_url": "https://raw.githubusercontent.com/Ardour/ardour/b896344c8d16f89e04a235562ab31594605c6715/libs/ardour/session_state.cc",
+      "local_path": "inputs/ardour/libs/ardour/session_state.cc"
+    },
+    {
+      "application": "musescore-studio",
+      "repository": "musescore/MuseScore",
+      "commit": "4676f83f368f1afc9cad6815eb5401a2ec8aca2b",
+      "path": "src/notation/internal/notationundostack.cpp",
+      "git_blob_sha": "03f09617af90bad5716632b996305e824eb1e483",
+      "url": "https://github.com/musescore/MuseScore/blob/4676f83f368f1afc9cad6815eb5401a2ec8aca2b/src/notation/internal/notationundostack.cpp",
+      "raw_url": "https://raw.githubusercontent.com/musescore/MuseScore/4676f83f368f1afc9cad6815eb5401a2ec8aca2b/src/notation/internal/notationundostack.cpp",
+      "local_path": "inputs/musescore-studio/src/notation/internal/notationundostack.cpp"
+    },
+    {
+      "application": "musescore-studio",
+      "repository": "musescore/MuseScore",
+      "commit": "4676f83f368f1afc9cad6815eb5401a2ec8aca2b",
+      "path": "src/project/internal/projectautosaver.cpp",
+      "git_blob_sha": "5daa52462a0448fcee3bde1a7dbbce4fe55c1377",
+      "url": "https://github.com/musescore/MuseScore/blob/4676f83f368f1afc9cad6815eb5401a2ec8aca2b/src/project/internal/projectautosaver.cpp",
+      "raw_url": "https://raw.githubusercontent.com/musescore/MuseScore/4676f83f368f1afc9cad6815eb5401a2ec8aca2b/src/project/internal/projectautosaver.cpp",
+      "local_path": "inputs/musescore-studio/src/project/internal/projectautosaver.cpp"
+    },
+    {
+      "application": "zim-wiki",
+      "repository": "zim-desktop-wiki/zim-desktop-wiki",
+      "commit": "d82c631fa20f03764aa336a9357add0cd32714fc",
+      "path": "zim/gui/uiactions.py",
+      "git_blob_sha": "ef855a64da481db1f1b48f90d1311b086acdf19f",
+      "url": "https://github.com/zim-desktop-wiki/zim-desktop-wiki/blob/d82c631fa20f03764aa336a9357add0cd32714fc/zim/gui/uiactions.py",
+      "raw_url": "https://raw.githubusercontent.com/zim-desktop-wiki/zim-desktop-wiki/d82c631fa20f03764aa336a9357add0cd32714fc/zim/gui/uiactions.py",
+      "local_path": "inputs/zim-wiki/zim/gui/uiactions.py"
+    },
+    {
+      "application": "zim-wiki",
+      "repository": "zim-desktop-wiki/zim-desktop-wiki",
+      "commit": "d82c631fa20f03764aa336a9357add0cd32714fc",
+      "path": "zim/gui/pageview/undostack.py",
+      "git_blob_sha": "4f678eaa4ff666d9f561f133178d46e11fe696c6",
+      "url": "https://github.com/zim-desktop-wiki/zim-desktop-wiki/blob/d82c631fa20f03764aa336a9357add0cd32714fc/zim/gui/pageview/undostack.py",
+      "raw_url": "https://raw.githubusercontent.com/zim-desktop-wiki/zim-desktop-wiki/d82c631fa20f03764aa336a9357add0cd32714fc/zim/gui/pageview/undostack.py",
+      "local_path": "inputs/zim-wiki/zim/gui/pageview/undostack.py"
+    },
+    {
+      "application": "taskwarrior",
+      "repository": "GothenburgBitFactory/taskwarrior",
+      "commit": "c280c347c1adc47e9bb1ad42c92958e2d7f92e9c",
+      "path": "src/commands/CmdDelete.cpp",
+      "git_blob_sha": "35b5c7ecfd302a934ddae67dde4c84c6d37ef254",
+      "url": "https://github.com/GothenburgBitFactory/taskwarrior/blob/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/commands/CmdDelete.cpp",
+      "raw_url": "https://raw.githubusercontent.com/GothenburgBitFactory/taskwarrior/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/commands/CmdDelete.cpp",
+      "local_path": "inputs/taskwarrior/src/commands/CmdDelete.cpp"
+    },
+    {
+      "application": "taskwarrior",
+      "repository": "GothenburgBitFactory/taskwarrior",
+      "commit": "c280c347c1adc47e9bb1ad42c92958e2d7f92e9c",
+      "path": "src/commands/CmdPurge.cpp",
+      "git_blob_sha": "d5b3c89feca1e4df632b6f29148358ac349722d0",
+      "url": "https://github.com/GothenburgBitFactory/taskwarrior/blob/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/commands/CmdPurge.cpp",
+      "raw_url": "https://raw.githubusercontent.com/GothenburgBitFactory/taskwarrior/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/commands/CmdPurge.cpp",
+      "local_path": "inputs/taskwarrior/src/commands/CmdPurge.cpp"
+    },
+    {
+      "application": "taskwarrior",
+      "repository": "GothenburgBitFactory/taskwarrior",
+      "commit": "c280c347c1adc47e9bb1ad42c92958e2d7f92e9c",
+      "path": "src/commands/CmdUndo.cpp",
+      "git_blob_sha": "83156410e222e9839c2be00dc2f3584d292bac8a",
+      "url": "https://github.com/GothenburgBitFactory/taskwarrior/blob/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/commands/CmdUndo.cpp",
+      "raw_url": "https://raw.githubusercontent.com/GothenburgBitFactory/taskwarrior/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/commands/CmdUndo.cpp",
+      "local_path": "inputs/taskwarrior/src/commands/CmdUndo.cpp"
+    },
+    {
+      "application": "taskwarrior",
+      "repository": "GothenburgBitFactory/taskwarrior",
+      "commit": "c280c347c1adc47e9bb1ad42c92958e2d7f92e9c",
+      "path": "src/feedback.cpp",
+      "git_blob_sha": "efd2302b436b2a4c748390f46896b8627f03a8fe",
+      "url": "https://github.com/GothenburgBitFactory/taskwarrior/blob/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/feedback.cpp",
+      "raw_url": "https://raw.githubusercontent.com/GothenburgBitFactory/taskwarrior/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/feedback.cpp",
+      "local_path": "inputs/taskwarrior/src/feedback.cpp"
+    }
+  ]
+}

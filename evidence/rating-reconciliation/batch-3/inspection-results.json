@@ -1,0 +1,5311 @@
+{
+  "review_date": "2026-10-24",
+  "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "sqlite": "3.45.3",
+  "plan_sha256": "b30478d8bb441f218afd200b99533b63103732a1308fb374d0f2a1e4dc91ddd1",
+  "inspection_plan_sha256": "3808659fa3c53c5a900777ada18fb03aaf8199bc79f3d231ebc4a4a3002b5d98",
+  "runner_sha256": "41c96ea5b4ee44a58a41f3241abea953edcbfa88d63cb7a7ce8e8ba75e9e71a1",
+  "helper_sha256": "dfe3372a4df9d0382fea9288ba2602df66e3422e4996162e7b6074a87936f0b3",
+  "applications_installed_or_executed": false,
+  "upstream_test_suites_executed": false,
+  "inputs": [
+    {
+      "application": "calibre",
+      "repository": "kovidgoyal/calibre",
+      "commit": "e2a169f96a30b9be215e3abd78cb0599e7a4479a",
+      "path": "src/calibre/gui2/actions/delete.py",
+      "git_blob_sha": "e2fc3c9a99751642014902cf9ea6684ac3ff1a02",
+      "url": "https://github.com/kovidgoyal/calibre/blob/e2a169f96a30b9be215e3abd78cb0599e7a4479a/src/calibre/gui2/actions/delete.py",
+      "raw_url": "https://raw.githubusercontent.com/kovidgoyal/calibre/e2a169f96a30b9be215e3abd78cb0599e7a4479a/src/calibre/gui2/actions/delete.py",
+      "local_path": "inputs/calibre/src/calibre/gui2/actions/delete.py",
+      "bytes": 24525,
+      "sha256": "295cf4a435fa31d6112df2477289a4834621c3bbf7eaa48d3d545d0ee5b090ae"
+    },
+    {
+      "application": "audacity",
+      "repository": "audacity/audacity",
+      "commit": "f515da46486301d48db89f195729ef0c87980668",
+      "path": "au3/libraries/au3-project-history/ProjectHistory.cpp",
+      "git_blob_sha": "9ac3c4571f0624b3ab6cc0356c7318a639962cb0",
+      "url": "https://github.com/audacity/audacity/blob/f515da46486301d48db89f195729ef0c87980668/au3/libraries/au3-project-history/ProjectHistory.cpp",
+      "raw_url": "https://raw.githubusercontent.com/audacity/audacity/f515da46486301d48db89f195729ef0c87980668/au3/libraries/au3-project-history/ProjectHistory.cpp",
+      "local_path": "inputs/audacity/au3/libraries/au3-project-history/ProjectHistory.cpp",
+      "bytes": 3778,
+      "sha256": "3b510816f29174d6af84f2f02700d56d4765b832a98a8d7a5225ec9b958f302c"
+    },
+    {
+      "application": "audacity",
+      "repository": "audacity/audacity",
+      "commit": "f515da46486301d48db89f195729ef0c87980668",
+      "path": "au3/libraries/au3-project-history/UndoManager.cpp",
+      "git_blob_sha": "2ef5308fadad6b45bd5c4cd5d42efb6a974980fc",
+      "url": "https://github.com/audacity/audacity/blob/f515da46486301d48db89f195729ef0c87980668/au3/libraries/au3-project-history/UndoManager.cpp",
+      "raw_url": "https://raw.githubusercontent.com/audacity/audacity/f515da46486301d48db89f195729ef0c87980668/au3/libraries/au3-project-history/UndoManager.cpp",
+      "local_path": "inputs/audacity/au3/libraries/au3-project-history/UndoManager.cpp",
+      "bytes": 9452,
+      "sha256": "d1f95f1a27ed1e572a60062c10db889e39826c9fb13e58a03f47c8c66fa4835d"
+    },
+    {
+      "application": "audacity",
+      "repository": "audacity/audacity",
+      "commit": "f515da46486301d48db89f195729ef0c87980668",
+      "path": "src/trackedit/internal/au3/au3projecthistory.cpp",
+      "git_blob_sha": "92ed839b31e768d87d00b696e8effa68ae5ab187",
+      "url": "https://github.com/audacity/audacity/blob/f515da46486301d48db89f195729ef0c87980668/src/trackedit/internal/au3/au3projecthistory.cpp",
+      "raw_url": "https://raw.githubusercontent.com/audacity/audacity/f515da46486301d48db89f195729ef0c87980668/src/trackedit/internal/au3/au3projecthistory.cpp",
+      "local_path": "inputs/audacity/src/trackedit/internal/au3/au3projecthistory.cpp",
+      "bytes": 6661,
+      "sha256": "7a01430124a392e4e852e4f4b01f7746eb6fb498253b32d267f637dad3f9f9c1"
+    },
+    {
+      "application": "ardour",
+      "repository": "Ardour/ardour",
+      "commit": "b896344c8d16f89e04a235562ab31594605c6715",
+      "path": "libs/ardour/session_state.cc",
+      "git_blob_sha": "4100a7599e3ffd671bf598fdfd9ab52e462639ba",
+      "url": "https://github.com/Ardour/ardour/blob/b896344c8d16f89e04a235562ab31594605c6715/libs/ardour/session_state.cc",
+      "raw_url": "https://raw.githubusercontent.com/Ardour/ardour/b896344c8d16f89e04a235562ab31594605c6715/libs/ardour/session_state.cc",
+      "local_path": "inputs/ardour/libs/ardour/session_state.cc",
+      "bytes": 187691,
+      "sha256": "0446e00990c23a2c6e4af8f96cd2e5157b4eda483823f6a089429c3dee061ca5"
+    },
+    {
+      "application": "musescore-studio",
+      "repository": "musescore/MuseScore",
+      "commit": "4676f83f368f1afc9cad6815eb5401a2ec8aca2b",
+      "path": "src/notation/internal/notationundostack.cpp",
+      "git_blob_sha": "03f09617af90bad5716632b996305e824eb1e483",
+      "url": "https://github.com/musescore/MuseScore/blob/4676f83f368f1afc9cad6815eb5401a2ec8aca2b/src/notation/internal/notationundostack.cpp",
+      "raw_url": "https://raw.githubusercontent.com/musescore/MuseScore/4676f83f368f1afc9cad6815eb5401a2ec8aca2b/src/notation/internal/notationundostack.cpp",
+      "local_path": "inputs/musescore-studio/src/notation/internal/notationundostack.cpp",
+      "bytes": 6545,
+      "sha256": "6604a6b36d293491b116be864b8c20f47f8a887c35453185aa3f05782b0a625c"
+    },
+    {
+      "application": "musescore-studio",
+      "repository": "musescore/MuseScore",
+      "commit": "4676f83f368f1afc9cad6815eb5401a2ec8aca2b",
+      "path": "src/project/internal/projectautosaver.cpp",
+      "git_blob_sha": "5daa52462a0448fcee3bde1a7dbbce4fe55c1377",
+      "url": "https://github.com/musescore/MuseScore/blob/4676f83f368f1afc9cad6815eb5401a2ec8aca2b/src/project/internal/projectautosaver.cpp",
+      "raw_url": "https://raw.githubusercontent.com/musescore/MuseScore/4676f83f368f1afc9cad6815eb5401a2ec8aca2b/src/project/internal/projectautosaver.cpp",
+      "local_path": "inputs/musescore-studio/src/project/internal/projectautosaver.cpp",
+      "bytes": 5614,
+      "sha256": "33625732e9ab9b8407a1d76719a612832277540c8d7e035d936b88ae0e35a21c"
+    },
+    {
+      "application": "zim-wiki",
+      "repository": "zim-desktop-wiki/zim-desktop-wiki",
+      "commit": "d82c631fa20f03764aa336a9357add0cd32714fc",
+      "path": "zim/gui/uiactions.py",
+      "git_blob_sha": "ef855a64da481db1f1b48f90d1311b086acdf19f",
+      "url": "https://github.com/zim-desktop-wiki/zim-desktop-wiki/blob/d82c631fa20f03764aa336a9357add0cd32714fc/zim/gui/uiactions.py",
+      "raw_url": "https://raw.githubusercontent.com/zim-desktop-wiki/zim-desktop-wiki/d82c631fa20f03764aa336a9357add0cd32714fc/zim/gui/uiactions.py",
+      "local_path": "inputs/zim-wiki/zim/gui/uiactions.py",
+      "bytes": 28398,
+      "sha256": "9c2fe39de351d1b1b7eb1b9428907b142a8fc23e734bb4b8e7bf95fd054cceca"
+    },
+    {
+      "application": "zim-wiki",
+      "repository": "zim-desktop-wiki/zim-desktop-wiki",
+      "commit": "d82c631fa20f03764aa336a9357add0cd32714fc",
+      "path": "zim/gui/pageview/undostack.py",
+      "git_blob_sha": "4f678eaa4ff666d9f561f133178d46e11fe696c6",
+      "url": "https://github.com/zim-desktop-wiki/zim-desktop-wiki/blob/d82c631fa20f03764aa336a9357add0cd32714fc/zim/gui/pageview/undostack.py",
+      "raw_url": "https://raw.githubusercontent.com/zim-desktop-wiki/zim-desktop-wiki/d82c631fa20f03764aa336a9357add0cd32714fc/zim/gui/pageview/undostack.py",
+      "local_path": "inputs/zim-wiki/zim/gui/pageview/undostack.py",
+      "bytes": 14042,
+      "sha256": "439fea0e020bf590e32efc4a50245a7d11209fa493eaaecf55d9728a04f255d9"
+    },
+    {
+      "application": "taskwarrior",
+      "repository": "GothenburgBitFactory/taskwarrior",
+      "commit": "c280c347c1adc47e9bb1ad42c92958e2d7f92e9c",
+      "path": "src/commands/CmdDelete.cpp",
+      "git_blob_sha": "35b5c7ecfd302a934ddae67dde4c84c6d37ef254",
+      "url": "https://github.com/GothenburgBitFactory/taskwarrior/blob/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/commands/CmdDelete.cpp",
+      "raw_url": "https://raw.githubusercontent.com/GothenburgBitFactory/taskwarrior/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/commands/CmdDelete.cpp",
+      "local_path": "inputs/taskwarrior/src/commands/CmdDelete.cpp",
+      "bytes": 6416,
+      "sha256": "3326a8ad589cdd4b3569d0f68511b8503ad8ff7a1477c075863542e52b9c8a4d"
+    },
+    {
+      "application": "taskwarrior",
+      "repository": "GothenburgBitFactory/taskwarrior",
+      "commit": "c280c347c1adc47e9bb1ad42c92958e2d7f92e9c",
+      "path": "src/commands/CmdPurge.cpp",
+      "git_blob_sha": "d5b3c89feca1e4df632b6f29148358ac349722d0",
+      "url": "https://github.com/GothenburgBitFactory/taskwarrior/blob/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/commands/CmdPurge.cpp",
+      "raw_url": "https://raw.githubusercontent.com/GothenburgBitFactory/taskwarrior/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/commands/CmdPurge.cpp",
+      "local_path": "inputs/taskwarrior/src/commands/CmdPurge.cpp",
+      "bytes": 6320,
+      "sha256": "dc2a52299579841c17720c2327e5d34cc3af4c7757337cab75dc6b71856043d9"
+    },
+    {
+      "application": "taskwarrior",
+      "repository": "GothenburgBitFactory/taskwarrior",
+      "commit": "c280c347c1adc47e9bb1ad42c92958e2d7f92e9c",
+      "path": "src/commands/CmdUndo.cpp",
+      "git_blob_sha": "83156410e222e9839c2be00dc2f3584d292bac8a",
+      "url": "https://github.com/GothenburgBitFactory/taskwarrior/blob/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/commands/CmdUndo.cpp",
+      "raw_url": "https://raw.githubusercontent.com/GothenburgBitFactory/taskwarrior/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/commands/CmdUndo.cpp",
+      "local_path": "inputs/taskwarrior/src/commands/CmdUndo.cpp",
+      "bytes": 5150,
+      "sha256": "583c524486f3e3d4197fb99927cafa76031cf43d3799809c6b546be64d0786d9"
+    },
+    {
+      "application": "taskwarrior",
+      "repository": "GothenburgBitFactory/taskwarrior",
+      "commit": "c280c347c1adc47e9bb1ad42c92958e2d7f92e9c",
+      "path": "src/feedback.cpp",
+      "git_blob_sha": "efd2302b436b2a4c748390f46896b8627f03a8fe",
+      "url": "https://github.com/GothenburgBitFactory/taskwarrior/blob/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/feedback.cpp",
+      "raw_url": "https://raw.githubusercontent.com/GothenburgBitFactory/taskwarrior/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/feedback.cpp",
+      "local_path": "inputs/taskwarrior/src/feedback.cpp",
+      "bytes": 10132,
+      "sha256": "f7efa171a9c26bdfdbebf1bf3c2d1d772a80daee97717a9bc582ca1495f78fac"
+    }
+  ],
+  "retained_inputs": [
+    {
+      "application": "calibre",
+      "local_path": "evidence/third-pass/batch-4/inputs/calibre/src/calibre/db/tests/metadata.db",
+      "sha256": "9e0efc52f914b22827ca6ae51e7d88d0007c0d25c32dc5ff91909d8254102571",
+      "git_blob_sha": "a84f9d68ef16cb6f1c15c55e99f0a34fff403d42",
+      "bytes": 270336,
+      "url": "https://github.com/kovidgoyal/calibre/blob/e2a169f96a30b9be215e3abd78cb0599e7a4479a/src/calibre/db/tests/metadata.db"
+    },
+    {
+      "application": "calibre",
+      "local_path": "evidence/third-pass/batch-4/inputs/calibre/src/calibre/db/restore.py",
+      "sha256": "476baf4b7ecfd2e1525e7af36f7ffa797550f717d8eb670c3de49a6e55a29bad",
+      "git_blob_sha": "99264851c6f77896c5568a18e62d9b4bfd6c8c3c",
+      "bytes": 15314,
+      "url": "https://github.com/kovidgoyal/calibre/blob/e2a169f96a30b9be215e3abd78cb0599e7a4479a/src/calibre/db/restore.py"
+    },
+    {
+      "application": "calibre",
+      "local_path": "evidence/third-pass/batch-4/inputs/calibre/src/calibre/db/backend.py",
+      "sha256": "e45d1077fab6b452103e21056249a2fe2e0feed7ab18ff7910dcb3041556a371",
+      "git_blob_sha": "112bd2aa97a547c1f94b593f3a657c9f31305819",
+      "bytes": 130979,
+      "url": "https://github.com/kovidgoyal/calibre/blob/e2a169f96a30b9be215e3abd78cb0599e7a4479a/src/calibre/db/backend.py"
+    },
+    {
+      "application": "audacity",
+      "local_path": "evidence/third-pass/batch-4/inputs/audacity/src/project/tests/data/test.aup4",
+      "sha256": "57ee7d04d64c965682ab4e0c1d047e5d01ba4940b7c0cb2624bda6f3bd6c22bb",
+      "git_blob_sha": "87c59e935f422f594bbf69ad34757009a0c1bb26",
+      "bytes": 917504,
+      "url": "https://github.com/audacity/audacity/blob/f515da46486301d48db89f195729ef0c87980668/src/project/tests/data/test.aup4"
+    },
+    {
+      "application": "audacity",
+      "local_path": "evidence/third-pass/batch-4/inputs/audacity/au3/libraries/au3-project-file-io/ProjectFileIO.cpp",
+      "sha256": "841f8bf567ec94eb32f2d95ce9ba218c5bb87a97983ecc57ec165c9d19a10ebc",
+      "git_blob_sha": "85ffdd83f936ef69a0bfed6066d29c62e05f9ccd",
+      "bytes": 89495,
+      "url": "https://github.com/audacity/audacity/blob/f515da46486301d48db89f195729ef0c87980668/au3/libraries/au3-project-file-io/ProjectFileIO.cpp"
+    },
+    {
+      "application": "audacity",
+      "local_path": "evidence/third-pass/batch-4/inputs/audacity/au3/libraries/au3-project-file-io/ProjectSerializer.cpp",
+      "sha256": "f0b41542f1b428638c1b42167f8ad2115768dfea8d88415079d267095b40821b",
+      "git_blob_sha": "4709a2accbb5ea9a5565b146c29fd9b8ed5d6ac0",
+      "bytes": 20581,
+      "url": "https://github.com/audacity/audacity/blob/f515da46486301d48db89f195729ef0c87980668/au3/libraries/au3-project-file-io/ProjectSerializer.cpp"
+    },
+    {
+      "application": "audacity",
+      "local_path": "evidence/third-pass/batch-4/inputs/audacity/au3/libraries/au3-project-file-io/SqliteSampleBlock.cpp",
+      "sha256": "80b0ac985dbf0544191302cdcf7c3e9e1d6332649cc5eead7cedd2077d5ce368",
+      "git_blob_sha": "fb08a7ee4b30a5435e62532395a16c5f22a8f8d9",
+      "bytes": 35369,
+      "url": "https://github.com/audacity/audacity/blob/f515da46486301d48db89f195729ef0c87980668/au3/libraries/au3-project-file-io/SqliteSampleBlock.cpp"
+    },
+    {
+      "application": "ardour",
+      "local_path": "evidence/third-pass/batch-4/inputs/ardour/libs/ardour/test/profiling/sessions/1region/1region.ardour",
+      "sha256": "1a5aba91c4721d6ce463bfa4fa4429971feb884f79ed4a958cea58a8827876e4",
+      "git_blob_sha": "9808be50985fdde606c819c5ff91f5a6718c94f2",
+      "bytes": 10368,
+      "url": "https://github.com/Ardour/ardour/blob/b896344c8d16f89e04a235562ab31594605c6715/libs/ardour/test/profiling/sessions/1region/1region.ardour"
+    },
+    {
+      "application": "ardour",
+      "local_path": "evidence/third-pass/batch-4/inputs/ardour/libs/ardour/unknown_processor.cc",
+      "sha256": "bb6fb4505cc4ebffd844fd19d1422bfb1af97c6e5668b94de1c52c32230bf62e",
+      "git_blob_sha": "649c6022c756c5c4dd687a232153f8cc64f156c3",
+      "bytes": 6062,
+      "url": "https://github.com/Ardour/ardour/blob/b896344c8d16f89e04a235562ab31594605c6715/libs/ardour/unknown_processor.cc"
+    },
+    {
+      "application": "musescore-studio",
+      "local_path": "evidence/third-pass/batch-4/inputs/musescore-studio/demos/Amazing_grace.mscz",
+      "sha256": "6a2546472e0923b695cc117b8756bce985484d9766568eb983ee30d92cc28ee9",
+      "git_blob_sha": "8fce1862056464672f7f9516073ce09015e9a59a",
+      "bytes": 20446,
+      "url": "https://github.com/musescore/MuseScore/blob/4676f83f368f1afc9cad6815eb5401a2ec8aca2b/demos/Amazing_grace.mscz"
+    },
+    {
+      "application": "musescore-studio",
+      "local_path": "evidence/third-pass/batch-4/inputs/musescore-studio/src/project/internal/notationproject.cpp",
+      "sha256": "883fbb4d1f1e95bd653b0c9e9054a6ef4333010aa51c34666fb8e8d3e1f9eb2a",
+      "git_blob_sha": "e7ea1e042ceadbedb935cb89bded98f1d1495bb7",
+      "bytes": 40997,
+      "url": "https://github.com/musescore/MuseScore/blob/4676f83f368f1afc9cad6815eb5401a2ec8aca2b/src/project/internal/notationproject.cpp"
+    },
+    {
+      "application": "zim-wiki",
+      "local_path": "evidence/third-pass/batch-4/inputs/zim-wiki/tests/data/notebook-wiki.xml",
+      "sha256": "f34e2b47149d156cea33556f46f5f43c517075a5948a3e24907d4dd9b076f2cd",
+      "git_blob_sha": "47e36954bd435a84a2db44645ce5e6ed070af371",
+      "bytes": 8498,
+      "url": "https://github.com/zim-desktop-wiki/zim-desktop-wiki/blob/d82c631fa20f03764aa336a9357add0cd32714fc/tests/data/notebook-wiki.xml"
+    },
+    {
+      "application": "zim-wiki",
+      "local_path": "evidence/third-pass/batch-4/inputs/zim-wiki/tests/data/formats/wiki.txt",
+      "sha256": "33673d77222bb6b2c927812d8fe93ed13468a6ebba2ccb3095850df3b580b9b6",
+      "git_blob_sha": "945b5f86984b18837b88b306739c0ba4290e281a",
+      "bytes": 4192,
+      "url": "https://github.com/zim-desktop-wiki/zim-desktop-wiki/blob/d82c631fa20f03764aa336a9357add0cd32714fc/tests/data/formats/wiki.txt"
+    },
+    {
+      "application": "zim-wiki",
+      "local_path": "evidence/third-pass/batch-4/inputs/zim-wiki/tests/data/formats/parsetree.xml",
+      "sha256": "234e9809a63cad5d7a6ee73f033e84f27ff8efbd16e827cd2ee48d3f93282007",
+      "git_blob_sha": "d9b91a4d93d4ac21fb1565ceb79c676ba58463d1",
+      "bytes": 6140,
+      "url": "https://github.com/zim-desktop-wiki/zim-desktop-wiki/blob/d82c631fa20f03764aa336a9357add0cd32714fc/tests/data/formats/parsetree.xml"
+    },
+    {
+      "application": "zim-wiki",
+      "local_path": "evidence/third-pass/batch-4/inputs/zim-wiki/tests/data/formats/export.markdown",
+      "sha256": "02b9437f8aed3f10edb1d2990a1ed54f04f08739dfcb9db502d597b59cca9103",
+      "git_blob_sha": "bac446878e690b6185bd1f47b3eb794fbb212ee1",
+      "bytes": 4244,
+      "url": "https://github.com/zim-desktop-wiki/zim-desktop-wiki/blob/d82c631fa20f03764aa336a9357add0cd32714fc/tests/data/formats/export.markdown"
+    },
+    {
+      "application": "zim-wiki",
+      "local_path": "evidence/third-pass/batch-4/inputs/zim-wiki/tests/formats.py",
+      "sha256": "822d86d8beb92376ebbd0a8c2fec652ef5cde183be44eb41c92dbabcb62ae08b",
+      "git_blob_sha": "22071ecefe95c131db972a5cc3ec1cac683cb8af",
+      "bytes": 48965,
+      "url": "https://github.com/zim-desktop-wiki/zim-desktop-wiki/blob/d82c631fa20f03764aa336a9357add0cd32714fc/tests/formats.py"
+    },
+    {
+      "application": "zim-wiki",
+      "local_path": "evidence/third-pass/batch-4/inputs/zim-wiki/zim/notebook/notebook.py",
+      "sha256": "ec4fc4a50b9cd1478d0a5b45df1642a42f64093ab16deb20e932642ef2775368",
+      "git_blob_sha": "9b070a9ab00b3380e3898c5e2dcd060d1171dac7",
+      "bytes": 37507,
+      "url": "https://github.com/zim-desktop-wiki/zim-desktop-wiki/blob/d82c631fa20f03764aa336a9357add0cd32714fc/zim/notebook/notebook.py"
+    },
+    {
+      "application": "taskwarrior",
+      "local_path": "evidence/third-pass/batch-4/inputs/taskwarrior/test/import.test.py",
+      "sha256": "8eabf8e30f0b71f54c33064de79d339d41dbe9cda2cd8675e153fc36000ced56",
+      "git_blob_sha": "cf194e97cb21e862f6100cf7074962c2f308775b",
+      "bytes": 13396,
+      "url": "https://github.com/GothenburgBitFactory/taskwarrior/blob/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/test/import.test.py"
+    },
+    {
+      "application": "taskwarrior",
+      "local_path": "evidence/third-pass/batch-4/inputs/taskwarrior/src/commands/CmdExport.cpp",
+      "sha256": "dc779ad70f964f96c5b3af086fe22e6ed9100dcf17997b6b898b8c0c1babdc5f",
+      "git_blob_sha": "2924645dd37005564ca18f5e82e19dbbcdc966dc",
+      "bytes": 5136,
+      "url": "https://github.com/GothenburgBitFactory/taskwarrior/blob/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/commands/CmdExport.cpp"
+    },
+    {
+      "application": "taskwarrior",
+      "local_path": "evidence/third-pass/batch-4/inputs/taskwarrior/src/commands/CmdImport.cpp",
+      "sha256": "a6e4dce48bef553a13078389ba3ffbc686ab3f090370da4a81ae528628092232",
+      "git_blob_sha": "b3ccc0c2a74e421ed6f000086a720edb44a29805",
+      "bytes": 7622,
+      "url": "https://github.com/GothenburgBitFactory/taskwarrior/blob/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/commands/CmdImport.cpp"
+    },
+    {
+      "application": "taskwarrior",
+      "local_path": "evidence/third-pass/batch-4/inputs/taskwarrior/src/Task.cpp",
+      "sha256": "8985e42a88bc348568802d11940c2455eb3de24f09ce661cf75d7bde4f7cdcd4",
+      "git_blob_sha": "02fb4bce36df00eeae592c261e2f589a332ae2b2",
+      "bytes": 71573,
+      "url": "https://github.com/GothenburgBitFactory/taskwarrior/blob/c280c347c1adc47e9bb1ad42c92958e2d7f92e9c/src/Task.cpp"
+    }
+  ],
+  "observations": {
+    "calibre": {
+      "integrity_check": [
+        [
+          "ok"
+        ]
+      ],
+      "user_version": 28,
+      "schema": [
+        [
+          "annot_idx",
+          "index",
+          "CREATE INDEX annot_idx ON annotations (book)"
+        ],
+        [
+          "annotations",
+          "table",
+          "CREATE TABLE annotations ( id INTEGER PRIMARY KEY,\n    book INTEGER NOT NULL,\n    format TEXT NOT NULL COLLATE NOCASE,\n    user_type TEXT NOT NULL,\n    user TEXT NOT NULL,\n    timestamp REAL NOT NULL,\n    annot_id TEXT NOT NULL,\n    annot_type TEXT NOT NULL,\n    annot_data TEXT NOT NULL,\n    searchable_text TEXT NOT NULL DEFAULT \"\",\n    UNIQUE(book, user_type, user, format, annot_type, annot_id)\n)"
+        ],
+        [
+          "annotations_dirtied",
+          "table",
+          "CREATE TABLE annotations_dirtied(id INTEGER PRIMARY KEY,\n                             book INTEGER NOT NULL,\n                             UNIQUE(book))"
+        ],
+        [
+          "annotations_fts",
+          "table",
+          "CREATE VIRTUAL TABLE annotations_fts USING fts5(searchable_text,\n    content = 'annotations', content_rowid = 'id', tokenize = 'unicode61 remove_diacritics 2')"
+        ],
+        [
+          "annotations_fts_config",
+          "table",
+          "CREATE TABLE 'annotations_fts_config'(k PRIMARY KEY, v) WITHOUT ROWID"
+        ],
+        [
+          "annotations_fts_data",
+          "table",
+          "CREATE TABLE 'annotations_fts_data'(id INTEGER PRIMARY KEY, block BLOB)"
+        ],
+        [
+          "annotations_fts_delete_trg",
+          "trigger",
+          "CREATE TRIGGER annotations_fts_delete_trg AFTER DELETE ON annotations\nBEGIN\n    INSERT INTO annotations_fts(annotations_fts, rowid, searchable_text) VALUES('delete', OLD.id, OLD.searchable_text);\n    INSERT INTO annotations_fts_stemmed(annotations_fts_stemmed, rowid, searchable_text) VALUES('delete', OLD.id, OLD.searchable_text);\nEND"
+        ],
+        [
+          "annotations_fts_docsize",
+          "table",
+          "CREATE TABLE 'annotations_fts_docsize'(id INTEGER PRIMARY KEY, sz BLOB)"
+        ],
+        [
+          "annotations_fts_idx",
+          "table",
+          "CREATE TABLE 'annotations_fts_idx'(segid, term, pgno, PRIMARY KEY(segid, term)) WITHOUT ROWID"
+        ],
+        [
+          "annotations_fts_insert_trg",
+          "trigger",
+          "CREATE TRIGGER annotations_fts_insert_trg AFTER INSERT ON annotations\nBEGIN\n    INSERT INTO annotations_fts(rowid, searchable_text) VALUES (NEW.id, NEW.searchable_text);\n    INSERT INTO annotations_fts_stemmed(rowid, searchable_text) VALUES (NEW.id, NEW.searchable_text);\nEND"
+        ],
+        [
+          "annotations_fts_stemmed",
+          "table",
+          "CREATE VIRTUAL TABLE annotations_fts_stemmed USING fts5(searchable_text,\n    content = 'annotations', content_rowid = 'id', tokenize = 'porter unicode61 remove_diacritics 2')"
+        ],
+        [
+          "annotations_fts_stemmed_config",
+          "table",
+          "CREATE TABLE 'annotations_fts_stemmed_config'(k PRIMARY KEY, v) WITHOUT ROWID"
+        ],
+        [
+          "annotations_fts_stemmed_data",
+          "table",
+          "CREATE TABLE 'annotations_fts_stemmed_data'(id INTEGER PRIMARY KEY, block BLOB)"
+        ],
+        [
+          "annotations_fts_stemmed_docsize",
+          "table",
+          "CREATE TABLE 'annotations_fts_stemmed_docsize'(id INTEGER PRIMARY KEY, sz BLOB)"
+        ],
+        [
+          "annotations_fts_stemmed_idx",
+          "table",
+          "CREATE TABLE 'annotations_fts_stemmed_idx'(segid, term, pgno, PRIMARY KEY(segid, term)) WITHOUT ROWID"
+        ],
+        [
+          "annotations_fts_update_trg",
+          "trigger",
+          "CREATE TRIGGER annotations_fts_update_trg AFTER UPDATE ON annotations\nBEGIN\n    INSERT INTO annotations_fts(annotations_fts, rowid, searchable_text) VALUES('delete', OLD.id, OLD.searchable_text);\n    INSERT INTO annotations_fts(rowid, searchable_text) VALUES (NEW.id, NEW.searchable_text);\n    INSERT INTO annotations_fts_stemmed(annotations_fts_stemmed, rowid, searchable_text) VALUES('delete', OLD.id, OLD.searchable_text);\n    INSERT INTO annotations_fts_stemmed(rowid, searchable_text) VALUES (NEW.id, NEW.searchable_text);\nEND"
+        ],
+        [
+          "authors",
+          "table",
+          "CREATE TABLE authors ( id   INTEGER PRIMARY KEY,\n                              name TEXT NOT NULL COLLATE NOCASE,\n                              sort TEXT COLLATE NOCASE,\n                              link TEXT NOT NULL DEFAULT \"\",\n                              UNIQUE(name)\n                             )"
+        ],
+        [
+          "authors_idx",
+          "index",
+          "CREATE INDEX authors_idx ON books (author_sort COLLATE NOCASE)"
+        ],
+        [
+          "book_storage",
+          "table",
+          "CREATE TABLE book_storage ( id INTEGER PRIMARY KEY,\n    book INTEGER NOT NULL,\n    format TEXT NOT NULL COLLATE NOCASE,\n    user_type TEXT NOT NULL,\n    user TEXT NOT NULL,\n    timestamp REAL NOT NULL,\n    data TEXT NOT NULL DEFAULT '{}',\n    UNIQUE(book, format, user_type, user),\n    FOREIGN KEY (book) REFERENCES books(id) ON DELETE CASCADE\n)"
+        ],
+        [
+          "books",
+          "table",
+          "CREATE TABLE books ( id      INTEGER PRIMARY KEY AUTOINCREMENT,\n                             title     TEXT NOT NULL DEFAULT 'Unknown' COLLATE NOCASE,\n                             sort      TEXT COLLATE NOCASE,\n                             timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n                             pubdate   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n                             series_index REAL NOT NULL DEFAULT 1.0,\n                             author_sort TEXT COLLATE NOCASE,\n                             path TEXT NOT NULL DEFAULT \"\",\n                             uuid TEXT,\n                             has_cover BOOL DEFAULT 0,\n                             last_modified TIMESTAMP NOT NULL DEFAULT \"2000-01-01 00:00:00+00:00\")"
+        ],
+        [
+          "books_authors_link",
+          "table",
+          "CREATE TABLE books_authors_link ( id INTEGER PRIMARY KEY,\n                                          book INTEGER NOT NULL,\n                                          author INTEGER NOT NULL,\n                                          UNIQUE(book, author)\n                                        )"
+        ],
+        [
+          "books_authors_link_aidx",
+          "index",
+          "CREATE INDEX books_authors_link_aidx ON books_authors_link (author)"
+        ],
+        [
+          "books_authors_link_bidx",
+          "index",
+          "CREATE INDEX books_authors_link_bidx ON books_authors_link (book)"
+        ],
+        [
+          "books_custom_column_2_link",
+          "table",
+          "CREATE TABLE books_custom_column_2_link(\n                    id INTEGER PRIMARY KEY AUTOINCREMENT,\n                    book INTEGER NOT NULL,\n                    value INTEGER NOT NULL,\n                    \n                    UNIQUE(book, value)\n                    )"
+        ],
+        [
+          "books_custom_column_2_link_aidx",
+          "index",
+          "CREATE INDEX books_custom_column_2_link_aidx ON books_custom_column_2_link (value)"
+        ],
+        [
+          "books_custom_column_2_link_bidx",
+          "index",
+          "CREATE INDEX books_custom_column_2_link_bidx ON books_custom_column_2_link (book)"
+        ],
+        [
+          "books_custom_column_3_link",
+          "table",
+          "CREATE TABLE books_custom_column_3_link(\n                    id INTEGER PRIMARY KEY AUTOINCREMENT,\n                    book INTEGER NOT NULL,\n                    value INTEGER NOT NULL,\n                    \n                    UNIQUE(book, value)\n                    )"
+        ],
+        [
+          "books_custom_column_3_link_aidx",
+          "index",
+          "CREATE INDEX books_custom_column_3_link_aidx ON books_custom_column_3_link (value)"
+        ],
+        [
+          "books_custom_column_3_link_bidx",
+          "index",
+          "CREATE INDEX books_custom_column_3_link_bidx ON books_custom_column_3_link (book)"
+        ],
+        [
+          "books_custom_column_4_link",
+          "table",
+          "CREATE TABLE books_custom_column_4_link(\n                    id INTEGER PRIMARY KEY AUTOINCREMENT,\n                    book INTEGER NOT NULL,\n                    value INTEGER NOT NULL,\n                    extra REAL,\n                    UNIQUE(book, value)\n                    )"
+        ],
+        [
+          "books_custom_column_4_link_aidx",
+          "index",
+          "CREATE INDEX books_custom_column_4_link_aidx ON books_custom_column_4_link (value)"
+        ],
+        [
+          "books_custom_column_4_link_bidx",
+          "index",
+          "CREATE INDEX books_custom_column_4_link_bidx ON books_custom_column_4_link (book)"
+        ],
+        [
+          "books_custom_column_7_link",
+          "table",
+          "CREATE TABLE books_custom_column_7_link(\n                    id INTEGER PRIMARY KEY AUTOINCREMENT,\n                    book INTEGER NOT NULL,\n                    value INTEGER NOT NULL,\n                    \n                    UNIQUE(book, value)\n                    )"
+        ],
+        [
+          "books_custom_column_7_link_aidx",
+          "index",
+          "CREATE INDEX books_custom_column_7_link_aidx ON books_custom_column_7_link (value)"
+        ],
+        [
+          "books_custom_column_7_link_bidx",
+          "index",
+          "CREATE INDEX books_custom_column_7_link_bidx ON books_custom_column_7_link (book)"
+        ],
+        [
+          "books_custom_column_9_link",
+          "table",
+          "CREATE TABLE books_custom_column_9_link(\n                    id INTEGER PRIMARY KEY AUTOINCREMENT,\n                    book INTEGER NOT NULL,\n                    value INTEGER NOT NULL,\n                    \n                    UNIQUE(book, value)\n                    )"
+        ],
+        [
+          "books_custom_column_9_link_aidx",
+          "index",
+          "CREATE INDEX books_custom_column_9_link_aidx ON books_custom_column_9_link (value)"
+        ],
+        [
+          "books_custom_column_9_link_bidx",
+          "index",
+          "CREATE INDEX books_custom_column_9_link_bidx ON books_custom_column_9_link (book)"
+        ],
+        [
+          "books_delete_trg",
+          "trigger",
+          "CREATE TRIGGER books_delete_trg\n    AFTER DELETE ON books\n    BEGIN\n        DELETE FROM books_authors_link WHERE book=OLD.id;\n        DELETE FROM books_publishers_link WHERE book=OLD.id;\n        DELETE FROM books_ratings_link WHERE book=OLD.id;\n        DELETE FROM books_series_link WHERE book=OLD.id;\n        DELETE FROM books_tags_link WHERE book=OLD.id;\n        DELETE FROM books_languages_link WHERE book=OLD.id;\n        DELETE FROM data WHERE book=OLD.id;\n        DELETE FROM last_read_positions WHERE book=OLD.id;\n        DELETE FROM annotations WHERE book=OLD.id;\n        DELETE FROM comments WHERE book=OLD.id;\n        DELETE FROM conversion_options WHERE book=OLD.id;\n        DELETE FROM books_plugin_data WHERE book=OLD.id;\n        DELETE FROM identifiers WHERE book=OLD.id;\nEND"
+        ],
+        [
+          "books_idx",
+          "index",
+          "CREATE INDEX books_idx ON books (sort COLLATE NOCASE)"
+        ],
+        [
+          "books_insert_trg",
+          "trigger",
+          "CREATE TRIGGER books_insert_trg AFTER INSERT ON books\n        BEGIN\n            UPDATE books SET sort=title_sort(NEW.title),uuid=uuid4() WHERE id=NEW.id;\n        END"
+        ],
+        [
+          "books_languages_link",
+          "table",
+          "CREATE TABLE books_languages_link ( id INTEGER PRIMARY KEY,\n                                            book INTEGER NOT NULL,\n                                            lang_code INTEGER NOT NULL,\n                                            item_order INTEGER NOT NULL DEFAULT 0,\n                                            UNIQUE(book, lang_code)\n        )"
+        ],
+        [
+          "books_languages_link_aidx",
+          "index",
+          "CREATE INDEX books_languages_link_aidx ON books_languages_link (lang_code)"
+        ],
+        [
+          "books_languages_link_bidx",
+          "index",
+          "CREATE INDEX books_languages_link_bidx ON books_languages_link (book)"
+        ],
+        [
+          "books_pages_link",
+          "table",
+          "CREATE TABLE books_pages_link (\n                book INTEGER PRIMARY KEY,\n                pages INTEGER DEFAULT 0 NOT NULL,\n                algorithm INTEGER DEFAULT 0 NOT NULL,\n                format TEXT DEFAULT '' NOT NULL COLLATE NOCASE,\n                format_size INTEGER DEFAULT 0 NOT NULL,\n                timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n                needs_scan INTEGER NOT NULL DEFAULT 0 CHECK(needs_scan IN (0, 1)),\n                FOREIGN KEY (book) REFERENCES books(id) ON DELETE CASCADE\n            )"
+        ],
+        [
+          "books_pages_link_create_trigger",
+          "trigger",
+          "CREATE TRIGGER books_pages_link_create_trigger AFTER INSERT ON books FOR EACH ROW\n            BEGIN\n                INSERT INTO books_pages_link(book) VALUES(NEW.id);\n            END"
+        ],
+        [
+          "books_pages_link_pidx",
+          "index",
+          "CREATE INDEX books_pages_link_pidx ON books_pages_link (needs_scan)"
+        ],
+        [
+          "books_plugin_data",
+          "table",
+          "CREATE TABLE books_plugin_data(id INTEGER PRIMARY KEY,\n                                     book INTEGER NOT NULL,\n                                     name TEXT NOT NULL,\n                                     val TEXT NOT NULL,\n                                     UNIQUE(book,name))"
+        ],
+        [
+          "books_publishers_link",
+          "table",
+          "CREATE TABLE books_publishers_link ( id INTEGER PRIMARY KEY,\n                                          book INTEGER NOT NULL,\n                                          publisher INTEGER NOT NULL,\n                                          UNIQUE(book)\n                                        )"
+        ],
+        [
+          "books_publishers_link_aidx",
+          "index",
+          "CREATE INDEX books_publishers_link_aidx ON books_publishers_link (publisher)"
+        ],
+        [
+          "books_publishers_link_bidx",
+          "index",
+          "CREATE INDEX books_publishers_link_bidx ON books_publishers_link (book)"
+        ],
+        [
+          "books_ratings_link",
+          "table",
+          "CREATE TABLE books_ratings_link ( id INTEGER PRIMARY KEY,\n                                          book INTEGER NOT NULL,\n                                          rating INTEGER NOT NULL,\n                                          UNIQUE(book, rating)\n                                        )"
+        ],
+        [
+          "books_ratings_link_aidx",
+          "index",
+          "CREATE INDEX books_ratings_link_aidx ON books_ratings_link (rating)"
+        ],
+        [
+          "books_ratings_link_bidx",
+          "index",
+          "CREATE INDEX books_ratings_link_bidx ON books_ratings_link (book)"
+        ],
+        [
+          "books_series_link",
+          "table",
+          "CREATE TABLE books_series_link ( id INTEGER PRIMARY KEY,\n                                          book INTEGER NOT NULL,\n                                          series INTEGER NOT NULL,\n                                          UNIQUE(book)\n                                        )"
+        ],
+        [
+          "books_series_link_aidx",
+          "index",
+          "CREATE INDEX books_series_link_aidx ON books_series_link (series)"
+        ],
+        [
+          "books_series_link_bidx",
+          "index",
+          "CREATE INDEX books_series_link_bidx ON books_series_link (book)"
+        ],
+        [
+          "books_tags_link",
+          "table",
+          "CREATE TABLE books_tags_link ( id INTEGER PRIMARY KEY,\n                                          book INTEGER NOT NULL,\n                                          tag INTEGER NOT NULL,\n                                          UNIQUE(book, tag)\n                                        )"
+        ],
+        [
+          "books_tags_link_aidx",
+          "index",
+          "CREATE INDEX books_tags_link_aidx ON books_tags_link (tag)"
+        ],
+        [
+          "books_tags_link_bidx",
+          "index",
+          "CREATE INDEX books_tags_link_bidx ON books_tags_link (book)"
+        ],
+        [
+          "books_update_trg",
+          "trigger",
+          "CREATE TRIGGER books_update_trg\n            AFTER UPDATE ON books\n            BEGIN\n            UPDATE books SET sort=title_sort(NEW.title)\n                         WHERE id=NEW.id AND OLD.title <> NEW.title;\n            END"
+        ],
+        [
+          "comments",
+          "table",
+          "CREATE TABLE comments ( id INTEGER PRIMARY KEY,\n                              book INTEGER NOT NULL,\n                              text TEXT NOT NULL COLLATE NOCASE,\n                              UNIQUE(book)\n                            )"
+        ],
+        [
+          "comments_idx",
+          "index",
+          "CREATE INDEX comments_idx ON comments (book)"
+        ],
+        [
+          "conversion_options",
+          "table",
+          "CREATE TABLE conversion_options ( id INTEGER PRIMARY KEY,\n                                          format TEXT NOT NULL COLLATE NOCASE,\n                                          book INTEGER,\n                                          data BLOB NOT NULL,\n                                          UNIQUE(format,book)\n                                        )"
+        ],
+        [
+          "conversion_options_idx_a",
+          "index",
+          "CREATE INDEX conversion_options_idx_a ON conversion_options (format COLLATE NOCASE)"
+        ],
+        [
+          "conversion_options_idx_b",
+          "index",
+          "CREATE INDEX conversion_options_idx_b ON conversion_options (book)"
+        ],
+        [
+          "custom_column_1",
+          "table",
+          "CREATE TABLE custom_column_1(\n                    id    INTEGER PRIMARY KEY AUTOINCREMENT,\n                    book  INTEGER,\n                    value TEXT NOT NULL COLLATE NOCASE,\n                    UNIQUE(book))"
+        ],
+        [
+          "custom_column_10",
+          "table",
+          "CREATE TABLE custom_column_10(\n                    id    INTEGER PRIMARY KEY AUTOINCREMENT,\n                    book  INTEGER,\n                    value TEXT NOT NULL COLLATE NOCASE,\n                    UNIQUE(book))"
+        ],
+        [
+          "custom_column_10_idx",
+          "index",
+          "CREATE INDEX custom_column_10_idx ON custom_column_10 (book)"
+        ],
+        [
+          "custom_column_11",
+          "table",
+          "CREATE TABLE custom_column_11(\n                    id    INTEGER PRIMARY KEY AUTOINCREMENT,\n                    book  INTEGER,\n                    value REAL NOT NULL ,\n                    UNIQUE(book))"
+        ],
+        [
+          "custom_column_11_idx",
+          "index",
+          "CREATE INDEX custom_column_11_idx ON custom_column_11 (book)"
+        ],
+        [
+          "custom_column_12",
+          "table",
+          "CREATE TABLE custom_column_12(\n                    id    INTEGER PRIMARY KEY AUTOINCREMENT,\n                    book  INTEGER,\n                    value TEXT NOT NULL COLLATE NOCASE,\n                    UNIQUE(book))"
+        ],
+        [
+          "custom_column_12_idx",
+          "index",
+          "CREATE INDEX custom_column_12_idx ON custom_column_12 (book)"
+        ],
+        [
+          "custom_column_1_idx",
+          "index",
+          "CREATE INDEX custom_column_1_idx ON custom_column_1 (book)"
+        ],
+        [
+          "custom_column_2",
+          "table",
+          "CREATE TABLE custom_column_2(\n                    id    INTEGER PRIMARY KEY AUTOINCREMENT,\n                    value INT NOT NULL , link TEXT NOT NULL DEFAULT \"\",\n                    UNIQUE(value))"
+        ],
+        [
+          "custom_column_2_idx",
+          "index",
+          "CREATE INDEX custom_column_2_idx ON custom_column_2 (value )"
+        ],
+        [
+          "custom_column_3",
+          "table",
+          "CREATE TABLE custom_column_3(\n                    id    INTEGER PRIMARY KEY AUTOINCREMENT,\n                    value TEXT NOT NULL COLLATE NOCASE, link TEXT NOT NULL DEFAULT \"\",\n                    UNIQUE(value))"
+        ],
+        [
+          "custom_column_3_idx",
+          "index",
+          "CREATE INDEX custom_column_3_idx ON custom_column_3 (value COLLATE NOCASE)"
+        ],
+        [
+          "custom_column_4",
+          "table",
+          "CREATE TABLE custom_column_4(\n                    id    INTEGER PRIMARY KEY AUTOINCREMENT,\n                    value TEXT NOT NULL COLLATE NOCASE, link TEXT NOT NULL DEFAULT \"\",\n                    UNIQUE(value))"
+        ],
+        [
+          "custom_column_4_idx",
+          "index",
+          "CREATE INDEX custom_column_4_idx ON custom_column_4 (value COLLATE NOCASE)"
+        ],
+        [
+          "custom_column_5",
+          "table",
+          "CREATE TABLE custom_column_5(\n                    id    INTEGER PRIMARY KEY AUTOINCREMENT,\n                    book  INTEGER,\n                    value timestamp NOT NULL ,\n                    UNIQUE(book))"
+        ],
+        [
+          "custom_column_5_idx",
+          "index",
+          "CREATE INDEX custom_column_5_idx ON custom_column_5 (book)"
+        ],
+        [
+          "custom_column_6",
+          "table",
+          "CREATE TABLE custom_column_6(\n                    id    INTEGER PRIMARY KEY AUTOINCREMENT,\n                    book  INTEGER,\n                    value BOOL NOT NULL ,\n                    UNIQUE(book))"
+        ],
+        [
+          "custom_column_6_idx",
+          "index",
+          "CREATE INDEX custom_column_6_idx ON custom_column_6 (book)"
+        ],
+        [
+          "custom_column_7",
+          "table",
+          "CREATE TABLE custom_column_7(\n                    id    INTEGER PRIMARY KEY AUTOINCREMENT,\n                    value TEXT NOT NULL COLLATE NOCASE, link TEXT NOT NULL DEFAULT \"\",\n                    UNIQUE(value))"
+        ],
+        [
+          "custom_column_7_idx",
+          "index",
+          "CREATE INDEX custom_column_7_idx ON custom_column_7 (value COLLATE NOCASE)"
+        ],
+        [
+          "custom_column_8",
+          "table",
+          "CREATE TABLE custom_column_8(\n                    id    INTEGER PRIMARY KEY AUTOINCREMENT,\n                    book  INTEGER,\n                    value TEXT NOT NULL COLLATE NOCASE,\n                    UNIQUE(book))"
+        ],
+        [
+          "custom_column_8_idx",
+          "index",
+          "CREATE INDEX custom_column_8_idx ON custom_column_8 (book)"
+        ],
+        [
+          "custom_column_9",
+          "table",
+          "CREATE TABLE custom_column_9(\n                    id    INTEGER PRIMARY KEY AUTOINCREMENT,\n                    value TEXT NOT NULL COLLATE NOCASE, link TEXT NOT NULL DEFAULT \"\",\n                    UNIQUE(value))"
+        ],
+        [
+          "custom_column_9_idx",
+          "index",
+          "CREATE INDEX custom_column_9_idx ON custom_column_9 (value COLLATE NOCASE)"
+        ],
+        [
+          "custom_columns",
+          "table",
+          "CREATE TABLE custom_columns (\n                    id       INTEGER PRIMARY KEY AUTOINCREMENT,\n                    label    TEXT NOT NULL,\n                    name     TEXT NOT NULL,\n                    datatype TEXT NOT NULL,\n                    mark_for_delete   BOOL DEFAULT 0 NOT NULL,\n                    editable BOOL DEFAULT 1 NOT NULL,\n                    display  TEXT DEFAULT \"{}\" NOT NULL,\n                    is_multiple BOOL DEFAULT 0 NOT NULL,\n                    normalized BOOL NOT NULL,\n                    UNIQUE(label)\n                )"
+        ],
+        [
+          "custom_columns_idx",
+          "index",
+          "CREATE INDEX custom_columns_idx ON custom_columns (label)"
+        ],
+        [
+          "data",
+          "table",
+          "CREATE TABLE data ( id     INTEGER PRIMARY KEY,\n                            book   INTEGER NOT NULL,\n                            format TEXT NOT NULL COLLATE NOCASE,\n                            uncompressed_size INTEGER NOT NULL,\n                            name TEXT NOT NULL,\n                            UNIQUE(book, format)\n)"
+        ],
+        [
+          "data_idx",
+          "index",
+          "CREATE INDEX data_idx ON data (book)"
+        ],
+        [
+          "feeds",
+          "table",
+          "CREATE TABLE feeds ( id   INTEGER PRIMARY KEY,\n                              title TEXT NOT NULL,\n                              script TEXT NOT NULL,\n                              UNIQUE(title)\n                             )"
+        ],
+        [
+          "fkc_annot_insert",
+          "trigger",
+          "CREATE TRIGGER fkc_annot_insert\n        BEFORE INSERT ON annotations\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n            END;\n        END"
+        ],
+        [
+          "fkc_annot_update",
+          "trigger",
+          "CREATE TRIGGER fkc_annot_update\n        BEFORE UPDATE OF book ON annotations\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n            END;\n        END"
+        ],
+        [
+          "fkc_comments_insert",
+          "trigger",
+          "CREATE TRIGGER fkc_comments_insert\n        BEFORE INSERT ON comments\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n            END;\n        END"
+        ],
+        [
+          "fkc_comments_update",
+          "trigger",
+          "CREATE TRIGGER fkc_comments_update\n        BEFORE UPDATE OF book ON comments\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n            END;\n        END"
+        ],
+        [
+          "fkc_data_insert",
+          "trigger",
+          "CREATE TRIGGER fkc_data_insert\n        BEFORE INSERT ON data\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n            END;\n        END"
+        ],
+        [
+          "fkc_data_update",
+          "trigger",
+          "CREATE TRIGGER fkc_data_update\n        BEFORE UPDATE OF book ON data\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n            END;\n        END"
+        ],
+        [
+          "fkc_delete_books_custom_column_2_link",
+          "trigger",
+          "CREATE TRIGGER fkc_delete_books_custom_column_2_link\n                        AFTER DELETE ON custom_column_2\n                        BEGIN\n                            DELETE FROM books_custom_column_2_link WHERE value=OLD.id;\n                        END"
+        ],
+        [
+          "fkc_delete_books_custom_column_3_link",
+          "trigger",
+          "CREATE TRIGGER fkc_delete_books_custom_column_3_link\n                        AFTER DELETE ON custom_column_3\n                        BEGIN\n                            DELETE FROM books_custom_column_3_link WHERE value=OLD.id;\n                        END"
+        ],
+        [
+          "fkc_delete_books_custom_column_4_link",
+          "trigger",
+          "CREATE TRIGGER fkc_delete_books_custom_column_4_link\n                        AFTER DELETE ON custom_column_4\n                        BEGIN\n                            DELETE FROM books_custom_column_4_link WHERE value=OLD.id;\n                        END"
+        ],
+        [
+          "fkc_delete_books_custom_column_7_link",
+          "trigger",
+          "CREATE TRIGGER fkc_delete_books_custom_column_7_link\n                        AFTER DELETE ON custom_column_7\n                        BEGIN\n                            DELETE FROM books_custom_column_7_link WHERE value=OLD.id;\n                        END"
+        ],
+        [
+          "fkc_delete_books_custom_column_9_link",
+          "trigger",
+          "CREATE TRIGGER fkc_delete_books_custom_column_9_link\n                        AFTER DELETE ON custom_column_9\n                        BEGIN\n                            DELETE FROM books_custom_column_9_link WHERE value=OLD.id;\n                        END"
+        ],
+        [
+          "fkc_delete_on_authors",
+          "trigger",
+          "CREATE TRIGGER fkc_delete_on_authors\n        BEFORE DELETE ON authors\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT COUNT(id) FROM books_authors_link WHERE author=OLD.id) > 0\n                THEN RAISE(ABORT, 'Foreign key violation: authors is still referenced')\n            END;\n        END"
+        ],
+        [
+          "fkc_delete_on_languages",
+          "trigger",
+          "CREATE TRIGGER fkc_delete_on_languages\n        BEFORE DELETE ON languages\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT COUNT(id) FROM books_languages_link WHERE lang_code=OLD.id) > 0\n                THEN RAISE(ABORT, 'Foreign key violation: language is still referenced')\n            END;\n        END"
+        ],
+        [
+          "fkc_delete_on_languages_link",
+          "trigger",
+          "CREATE TRIGGER fkc_delete_on_languages_link\n        BEFORE INSERT ON books_languages_link\n        BEGIN\n          SELECT CASE\n              WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n              THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n              WHEN (SELECT id from languages WHERE id=NEW.lang_code) IS NULL\n              THEN RAISE(ABORT, 'Foreign key violation: lang_code not in languages')\n          END;\n        END"
+        ],
+        [
+          "fkc_delete_on_publishers",
+          "trigger",
+          "CREATE TRIGGER fkc_delete_on_publishers\n        BEFORE DELETE ON publishers\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT COUNT(id) FROM books_publishers_link WHERE publisher=OLD.id) > 0\n                THEN RAISE(ABORT, 'Foreign key violation: publishers is still referenced')\n            END;\n        END"
+        ],
+        [
+          "fkc_delete_on_series",
+          "trigger",
+          "CREATE TRIGGER fkc_delete_on_series\n        BEFORE DELETE ON series\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT COUNT(id) FROM books_series_link WHERE series=OLD.id) > 0\n                THEN RAISE(ABORT, 'Foreign key violation: series is still referenced')\n            END;\n        END"
+        ],
+        [
+          "fkc_delete_on_tags",
+          "trigger",
+          "CREATE TRIGGER fkc_delete_on_tags\n        BEFORE DELETE ON tags\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT COUNT(id) FROM books_tags_link WHERE tag=OLD.id) > 0\n                THEN RAISE(ABORT, 'Foreign key violation: tags is still referenced')\n            END;\n        END"
+        ],
+        [
+          "fkc_insert_books_authors_link",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_books_authors_link\n        BEFORE INSERT ON books_authors_link\n        BEGIN\n          SELECT CASE\n              WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n              THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n              WHEN (SELECT id from authors WHERE id=NEW.author) IS NULL\n              THEN RAISE(ABORT, 'Foreign key violation: author not in authors')\n          END;\n        END"
+        ],
+        [
+          "fkc_insert_books_custom_column_2_link",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_books_custom_column_2_link\n                        BEFORE INSERT ON books_custom_column_2_link\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                                WHEN (SELECT id from custom_column_2 WHERE id=NEW.value) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: value not in custom_column_2')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_insert_books_custom_column_3_link",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_books_custom_column_3_link\n                        BEFORE INSERT ON books_custom_column_3_link\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                                WHEN (SELECT id from custom_column_3 WHERE id=NEW.value) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: value not in custom_column_3')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_insert_books_custom_column_4_link",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_books_custom_column_4_link\n                        BEFORE INSERT ON books_custom_column_4_link\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                                WHEN (SELECT id from custom_column_4 WHERE id=NEW.value) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: value not in custom_column_4')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_insert_books_custom_column_7_link",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_books_custom_column_7_link\n                        BEFORE INSERT ON books_custom_column_7_link\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                                WHEN (SELECT id from custom_column_7 WHERE id=NEW.value) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: value not in custom_column_7')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_insert_books_custom_column_9_link",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_books_custom_column_9_link\n                        BEFORE INSERT ON books_custom_column_9_link\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                                WHEN (SELECT id from custom_column_9 WHERE id=NEW.value) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: value not in custom_column_9')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_insert_books_publishers_link",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_books_publishers_link\n        BEFORE INSERT ON books_publishers_link\n        BEGIN\n          SELECT CASE\n              WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n              THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n              WHEN (SELECT id from publishers WHERE id=NEW.publisher) IS NULL\n              THEN RAISE(ABORT, 'Foreign key violation: publisher not in publishers')\n          END;\n        END"
+        ],
+        [
+          "fkc_insert_books_ratings_link",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_books_ratings_link\n        BEFORE INSERT ON books_ratings_link\n        BEGIN\n          SELECT CASE\n              WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n              THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n              WHEN (SELECT id from ratings WHERE id=NEW.rating) IS NULL\n              THEN RAISE(ABORT, 'Foreign key violation: rating not in ratings')\n          END;\n        END"
+        ],
+        [
+          "fkc_insert_books_series_link",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_books_series_link\n        BEFORE INSERT ON books_series_link\n        BEGIN\n          SELECT CASE\n              WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n              THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n              WHEN (SELECT id from series WHERE id=NEW.series) IS NULL\n              THEN RAISE(ABORT, 'Foreign key violation: series not in series')\n          END;\n        END"
+        ],
+        [
+          "fkc_insert_books_tags_link",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_books_tags_link\n        BEFORE INSERT ON books_tags_link\n        BEGIN\n          SELECT CASE\n              WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n              THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n              WHEN (SELECT id from tags WHERE id=NEW.tag) IS NULL\n              THEN RAISE(ABORT, 'Foreign key violation: tag not in tags')\n          END;\n        END"
+        ],
+        [
+          "fkc_insert_custom_column_1",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_custom_column_1\n                        BEFORE INSERT ON custom_column_1\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_insert_custom_column_10",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_custom_column_10\n                        BEFORE INSERT ON custom_column_10\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_insert_custom_column_11",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_custom_column_11\n                        BEFORE INSERT ON custom_column_11\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_insert_custom_column_12",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_custom_column_12\n                        BEFORE INSERT ON custom_column_12\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_insert_custom_column_5",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_custom_column_5\n                        BEFORE INSERT ON custom_column_5\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_insert_custom_column_6",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_custom_column_6\n                        BEFORE INSERT ON custom_column_6\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_insert_custom_column_8",
+          "trigger",
+          "CREATE TRIGGER fkc_insert_custom_column_8\n                        BEFORE INSERT ON custom_column_8\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_lrp_insert",
+          "trigger",
+          "CREATE TRIGGER fkc_lrp_insert\n        BEFORE INSERT ON last_read_positions\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n            END;\n        END"
+        ],
+        [
+          "fkc_lrp_update",
+          "trigger",
+          "CREATE TRIGGER fkc_lrp_update\n        BEFORE UPDATE OF book ON last_read_positions\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n            END;\n        END"
+        ],
+        [
+          "fkc_update_books_authors_link_a",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_authors_link_a\n        BEFORE UPDATE OF book ON books_authors_link\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n            END;\n        END"
+        ],
+        [
+          "fkc_update_books_authors_link_b",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_authors_link_b\n        BEFORE UPDATE OF author ON books_authors_link\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from authors WHERE id=NEW.author) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: author not in authors')\n            END;\n        END"
+        ],
+        [
+          "fkc_update_books_custom_column_2_link_a",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_custom_column_2_link_a\n                        BEFORE UPDATE OF book ON books_custom_column_2_link\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_books_custom_column_2_link_b",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_custom_column_2_link_b\n                        BEFORE UPDATE OF author ON books_custom_column_2_link\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from custom_column_2 WHERE id=NEW.value) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: value not in custom_column_2')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_books_custom_column_3_link_a",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_custom_column_3_link_a\n                        BEFORE UPDATE OF book ON books_custom_column_3_link\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_books_custom_column_3_link_b",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_custom_column_3_link_b\n                        BEFORE UPDATE OF author ON books_custom_column_3_link\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from custom_column_3 WHERE id=NEW.value) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: value not in custom_column_3')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_books_custom_column_4_link_a",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_custom_column_4_link_a\n                        BEFORE UPDATE OF book ON books_custom_column_4_link\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_books_custom_column_4_link_b",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_custom_column_4_link_b\n                        BEFORE UPDATE OF author ON books_custom_column_4_link\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from custom_column_4 WHERE id=NEW.value) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: value not in custom_column_4')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_books_custom_column_7_link_a",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_custom_column_7_link_a\n                        BEFORE UPDATE OF book ON books_custom_column_7_link\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_books_custom_column_7_link_b",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_custom_column_7_link_b\n                        BEFORE UPDATE OF author ON books_custom_column_7_link\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from custom_column_7 WHERE id=NEW.value) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: value not in custom_column_7')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_books_custom_column_9_link_a",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_custom_column_9_link_a\n                        BEFORE UPDATE OF book ON books_custom_column_9_link\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_books_custom_column_9_link_b",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_custom_column_9_link_b\n                        BEFORE UPDATE OF author ON books_custom_column_9_link\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from custom_column_9 WHERE id=NEW.value) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: value not in custom_column_9')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_books_languages_link_a",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_languages_link_a\n        BEFORE UPDATE OF book ON books_languages_link\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n            END;\n        END"
+        ],
+        [
+          "fkc_update_books_languages_link_b",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_languages_link_b\n        BEFORE UPDATE OF lang_code ON books_languages_link\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from languages WHERE id=NEW.lang_code) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: lang_code not in languages')\n            END;\n        END"
+        ],
+        [
+          "fkc_update_books_publishers_link_a",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_publishers_link_a\n        BEFORE UPDATE OF book ON books_publishers_link\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n            END;\n        END"
+        ],
+        [
+          "fkc_update_books_publishers_link_b",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_publishers_link_b\n        BEFORE UPDATE OF publisher ON books_publishers_link\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from publishers WHERE id=NEW.publisher) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: publisher not in publishers')\n            END;\n        END"
+        ],
+        [
+          "fkc_update_books_ratings_link_a",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_ratings_link_a\n        BEFORE UPDATE OF book ON books_ratings_link\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n            END;\n        END"
+        ],
+        [
+          "fkc_update_books_ratings_link_b",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_ratings_link_b\n        BEFORE UPDATE OF rating ON books_ratings_link\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from ratings WHERE id=NEW.rating) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: rating not in ratings')\n            END;\n        END"
+        ],
+        [
+          "fkc_update_books_series_link_a",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_series_link_a\n        BEFORE UPDATE OF book ON books_series_link\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n            END;\n        END"
+        ],
+        [
+          "fkc_update_books_series_link_b",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_series_link_b\n        BEFORE UPDATE OF series ON books_series_link\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from series WHERE id=NEW.series) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: series not in series')\n            END;\n        END"
+        ],
+        [
+          "fkc_update_books_tags_link_a",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_tags_link_a\n        BEFORE UPDATE OF book ON books_tags_link\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n            END;\n        END"
+        ],
+        [
+          "fkc_update_books_tags_link_b",
+          "trigger",
+          "CREATE TRIGGER fkc_update_books_tags_link_b\n        BEFORE UPDATE OF tag ON books_tags_link\n        BEGIN\n            SELECT CASE\n                WHEN (SELECT id from tags WHERE id=NEW.tag) IS NULL\n                THEN RAISE(ABORT, 'Foreign key violation: tag not in tags')\n            END;\n        END"
+        ],
+        [
+          "fkc_update_custom_column_1",
+          "trigger",
+          "CREATE TRIGGER fkc_update_custom_column_1\n                        BEFORE UPDATE OF book ON custom_column_1\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_custom_column_10",
+          "trigger",
+          "CREATE TRIGGER fkc_update_custom_column_10\n                        BEFORE UPDATE OF book ON custom_column_10\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_custom_column_11",
+          "trigger",
+          "CREATE TRIGGER fkc_update_custom_column_11\n                        BEFORE UPDATE OF book ON custom_column_11\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_custom_column_12",
+          "trigger",
+          "CREATE TRIGGER fkc_update_custom_column_12\n                        BEFORE UPDATE OF book ON custom_column_12\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_custom_column_5",
+          "trigger",
+          "CREATE TRIGGER fkc_update_custom_column_5\n                        BEFORE UPDATE OF book ON custom_column_5\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_custom_column_6",
+          "trigger",
+          "CREATE TRIGGER fkc_update_custom_column_6\n                        BEFORE UPDATE OF book ON custom_column_6\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "fkc_update_custom_column_8",
+          "trigger",
+          "CREATE TRIGGER fkc_update_custom_column_8\n                        BEFORE UPDATE OF book ON custom_column_8\n                        BEGIN\n                            SELECT CASE\n                                WHEN (SELECT id from books WHERE id=NEW.book) IS NULL\n                                THEN RAISE(ABORT, 'Foreign key violation: book not in books')\n                            END;\n                        END"
+        ],
+        [
+          "formats_idx",
+          "index",
+          "CREATE INDEX formats_idx ON data (format)"
+        ],
+        [
+          "identifiers",
+          "table",
+          "CREATE TABLE identifiers  ( id     INTEGER PRIMARY KEY,\n                                    book   INTEGER NOT NULL,\n                                    type   TEXT NOT NULL DEFAULT \"isbn\" COLLATE NOCASE,\n                                    val    TEXT NOT NULL COLLATE NOCASE,\n                                    UNIQUE(book, type)\n        )"
+        ],
+        [
+          "languages",
+          "table",
+          "CREATE TABLE languages    ( id        INTEGER PRIMARY KEY,\n                                    lang_code TEXT NOT NULL COLLATE NOCASE, link TEXT NOT NULL DEFAULT \"\",\n                                    UNIQUE(lang_code)\n        )"
+        ],
+        [
+          "languages_idx",
+          "index",
+          "CREATE INDEX languages_idx ON languages (lang_code COLLATE NOCASE)"
+        ],
+        [
+          "last_read_positions",
+          "table",
+          "CREATE TABLE last_read_positions ( id INTEGER PRIMARY KEY,\n    book INTEGER NOT NULL,\n    format TEXT NOT NULL COLLATE NOCASE,\n    user TEXT NOT NULL,\n    device TEXT NOT NULL,\n    cfi TEXT NOT NULL,\n    epoch REAL NOT NULL,\n    pos_frac REAL NOT NULL DEFAULT 0,\n    UNIQUE(user, device, book, format)\n)"
+        ],
+        [
+          "library_id",
+          "table",
+          "CREATE TABLE library_id ( id   INTEGER PRIMARY KEY,\n                                  uuid TEXT NOT NULL,\n                                  UNIQUE(uuid)\n        )"
+        ],
+        [
+          "lrp_idx",
+          "index",
+          "CREATE INDEX lrp_idx ON last_read_positions (book)"
+        ],
+        [
+          "meta",
+          "view",
+          "CREATE VIEW meta AS\n                    SELECT id, title,\n                        (SELECT sortconcat(bal.id, name) FROM books_authors_link AS bal JOIN authors ON(author = authors.id) WHERE book = books.id) authors,\n                        (SELECT name FROM publishers WHERE publishers.id IN (SELECT publisher from books_publishers_link WHERE book=books.id)) publisher,\n                        (SELECT rating FROM ratings WHERE ratings.id IN (SELECT rating from books_ratings_link WHERE book=books.id)) rating,\n                        timestamp,\n                        (SELECT MAX(uncompressed_size) FROM data WHERE book=books.id) size,\n                        (SELECT concat(name) FROM tags WHERE tags.id IN (SELECT tag from books_tags_link WHERE book=books.id)) tags,\n                        (SELECT text FROM comments WHERE book=books.id) comments,\n                        (SELECT name FROM series WHERE series.id IN (SELECT series FROM books_series_link WHERE book=books.id)) series,\n                        series_index,\n                        sort,\n                        author_sort,\n                        (SELECT concat(format) FROM data WHERE data.book=books.id) formats,\n                        path,\n                        pubdate,\n                        uuid\n                    FROM books"
+        ],
+        [
+          "metadata_dirtied",
+          "table",
+          "CREATE TABLE metadata_dirtied(id INTEGER PRIMARY KEY,\n                             book INTEGER NOT NULL,\n                             UNIQUE(book))"
+        ],
+        [
+          "preferences",
+          "table",
+          "CREATE TABLE preferences(id INTEGER PRIMARY KEY,\n                                 key TEXT NOT NULL,\n                                 val TEXT NOT NULL,\n                                 UNIQUE(key))"
+        ],
+        [
+          "publishers",
+          "table",
+          "CREATE TABLE publishers ( id   INTEGER PRIMARY KEY,\n                                  name TEXT NOT NULL COLLATE NOCASE,\n                                  sort TEXT COLLATE NOCASE, link TEXT NOT NULL DEFAULT \"\",\n                                  UNIQUE(name)\n                             )"
+        ],
+        [
+          "publishers_idx",
+          "index",
+          "CREATE INDEX publishers_idx ON publishers (name COLLATE NOCASE)"
+        ],
+        [
+          "ratings",
+          "table",
+          "CREATE TABLE ratings ( id   INTEGER PRIMARY KEY,\n                               rating INTEGER CHECK(rating > -1 AND rating < 11), link TEXT NOT NULL DEFAULT \"\",\n                               UNIQUE (rating)\n                             )"
+        ],
+        [
+          "series",
+          "table",
+          "CREATE TABLE series ( id   INTEGER PRIMARY KEY,\n                              name TEXT NOT NULL COLLATE NOCASE,\n                              sort TEXT COLLATE NOCASE, link TEXT NOT NULL DEFAULT \"\",\n                              UNIQUE (name)\n                             )"
+        ],
+        [
+          "series_idx",
+          "index",
+          "CREATE INDEX series_idx ON series (name COLLATE NOCASE)"
+        ],
+        [
+          "series_insert_trg",
+          "trigger",
+          "CREATE TRIGGER series_insert_trg\n            AFTER INSERT ON series\n            BEGIN\n              UPDATE series SET sort=title_sort(NEW.name) WHERE id=NEW.id;\n            END"
+        ],
+        [
+          "series_update_trg",
+          "trigger",
+          "CREATE TRIGGER series_update_trg\n            AFTER UPDATE ON series\n            BEGIN\n              UPDATE series SET sort=title_sort(NEW.name) WHERE id=NEW.id;\n            END"
+        ],
+        [
+          "sqlite_autoindex_annotations_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_annotations_dirtied_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_authors_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_book_storage_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_books_authors_link_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_books_custom_column_2_link_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_books_custom_column_3_link_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_books_custom_column_4_link_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_books_custom_column_7_link_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_books_custom_column_9_link_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_books_languages_link_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_books_plugin_data_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_books_publishers_link_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_books_ratings_link_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_books_series_link_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_books_tags_link_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_comments_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_conversion_options_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_custom_column_10_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_custom_column_11_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_custom_column_12_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_custom_column_1_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_custom_column_2_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_custom_column_3_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_custom_column_4_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_custom_column_5_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_custom_column_6_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_custom_column_7_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_custom_column_8_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_custom_column_9_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_custom_columns_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_data_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_feeds_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_identifiers_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_languages_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_last_read_positions_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_library_id_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_metadata_dirtied_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_preferences_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_publishers_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_ratings_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_series_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_autoindex_tags_1",
+          "index",
+          null
+        ],
+        [
+          "sqlite_sequence",
+          "table",
+          "CREATE TABLE sqlite_sequence(name,seq)"
+        ],
+        [
+          "tag_browser_authors",
+          "view",
+          "CREATE VIEW tag_browser_authors AS SELECT\n                    id,\n                    name,\n                    (SELECT COUNT(id) FROM books_authors_link WHERE author=authors.id) count,\n                    (SELECT AVG(ratings.rating)\n                     FROM books_authors_link AS tl, books_ratings_link AS bl, ratings\n                     WHERE tl.author=authors.id AND bl.book=tl.book AND\n                     ratings.id = bl.rating AND ratings.rating <> 0) avg_rating,\n                     sort AS sort\n                FROM authors"
+        ],
+        [
+          "tag_browser_custom_column_2",
+          "view",
+          "CREATE VIEW tag_browser_custom_column_2 AS SELECT\n                    id,\n                    value,\n                    (SELECT COUNT(id) FROM books_custom_column_2_link WHERE value=custom_column_2.id) count,\n                    (SELECT AVG(r.rating)\n                     FROM books_custom_column_2_link,\n                          books_ratings_link as bl,\n                          ratings as r\n                     WHERE books_custom_column_2_link.value=custom_column_2.id and bl.book=books_custom_column_2_link.book and\n                           r.id = bl.rating and r.rating <> 0) avg_rating,\n                    value AS sort\n                FROM custom_column_2"
+        ],
+        [
+          "tag_browser_custom_column_3",
+          "view",
+          "CREATE VIEW tag_browser_custom_column_3 AS SELECT\n                    id,\n                    value,\n                    (SELECT COUNT(id) FROM books_custom_column_3_link WHERE value=custom_column_3.id) count,\n                    (SELECT AVG(r.rating)\n                     FROM books_custom_column_3_link,\n                          books_ratings_link as bl,\n                          ratings as r\n                     WHERE books_custom_column_3_link.value=custom_column_3.id and bl.book=books_custom_column_3_link.book and\n                           r.id = bl.rating and r.rating <> 0) avg_rating,\n                    value AS sort\n                FROM custom_column_3"
+        ],
+        [
+          "tag_browser_custom_column_4",
+          "view",
+          "CREATE VIEW tag_browser_custom_column_4 AS SELECT\n                    id,\n                    value,\n                    (SELECT COUNT(id) FROM books_custom_column_4_link WHERE value=custom_column_4.id) count,\n                    (SELECT AVG(r.rating)\n                     FROM books_custom_column_4_link,\n                          books_ratings_link as bl,\n                          ratings as r\n                     WHERE books_custom_column_4_link.value=custom_column_4.id and bl.book=books_custom_column_4_link.book and\n                           r.id = bl.rating and r.rating <> 0) avg_rating,\n                    value AS sort\n                FROM custom_column_4"
+        ],
+        [
+          "tag_browser_custom_column_7",
+          "view",
+          "CREATE VIEW tag_browser_custom_column_7 AS SELECT\n                    id,\n                    value,\n                    (SELECT COUNT(id) FROM books_custom_column_7_link WHERE value=custom_column_7.id) count,\n                    (SELECT AVG(r.rating)\n                     FROM books_custom_column_7_link,\n                          books_ratings_link as bl,\n                          ratings as r\n                     WHERE books_custom_column_7_link.value=custom_column_7.id and bl.book=books_custom_column_7_link.book and\n                           r.id = bl.rating and r.rating <> 0) avg_rating,\n                    value AS sort\n                FROM custom_column_7"
+        ],
+        [
+          "tag_browser_custom_column_9",
+          "view",
+          "CREATE VIEW tag_browser_custom_column_9 AS SELECT\n                    id,\n                    value,\n                    (SELECT COUNT(id) FROM books_custom_column_9_link WHERE value=custom_column_9.id) count,\n                    (SELECT AVG(r.rating)\n                     FROM books_custom_column_9_link,\n                          books_ratings_link as bl,\n                          ratings as r\n                     WHERE books_custom_column_9_link.value=custom_column_9.id and bl.book=books_custom_column_9_link.book and\n                           r.id = bl.rating and r.rating <> 0) avg_rating,\n                    value AS sort\n                FROM custom_column_9"
+        ],
+        [
+          "tag_browser_filtered_authors",
+          "view",
+          "CREATE VIEW tag_browser_filtered_authors AS SELECT\n                    id,\n                    name,\n                    (SELECT COUNT(books_authors_link.id) FROM books_authors_link WHERE\n                        author=authors.id AND books_list_filter(book)) count,\n                    (SELECT AVG(ratings.rating)\n                     FROM books_authors_link AS tl, books_ratings_link AS bl, ratings\n                     WHERE tl.author=authors.id AND bl.book=tl.book AND\n                     ratings.id = bl.rating AND ratings.rating <> 0 AND\n                     books_list_filter(bl.book)) avg_rating,\n                     sort AS sort\n                FROM authors"
+        ],
+        [
+          "tag_browser_filtered_custom_column_2",
+          "view",
+          "CREATE VIEW tag_browser_filtered_custom_column_2 AS SELECT\n                    id,\n                    value,\n                    (SELECT COUNT(books_custom_column_2_link.id) FROM books_custom_column_2_link WHERE value=custom_column_2.id AND\n                    books_list_filter(book)) count,\n                    (SELECT AVG(r.rating)\n                     FROM books_custom_column_2_link,\n                          books_ratings_link as bl,\n                          ratings as r\n                     WHERE books_custom_column_2_link.value=custom_column_2.id AND bl.book=books_custom_column_2_link.book AND\n                           r.id = bl.rating AND r.rating <> 0 AND\n                           books_list_filter(bl.book)) avg_rating,\n                    value AS sort\n                FROM custom_column_2"
+        ],
+        [
+          "tag_browser_filtered_custom_column_3",
+          "view",
+          "CREATE VIEW tag_browser_filtered_custom_column_3 AS SELECT\n                    id,\n                    value,\n                    (SELECT COUNT(books_custom_column_3_link.id) FROM books_custom_column_3_link WHERE value=custom_column_3.id AND\n                    books_list_filter(book)) count,\n                    (SELECT AVG(r.rating)\n                     FROM books_custom_column_3_link,\n                          books_ratings_link as bl,\n                          ratings as r\n                     WHERE books_custom_column_3_link.value=custom_column_3.id AND bl.book=books_custom_column_3_link.book AND\n                           r.id = bl.rating AND r.rating <> 0 AND\n                           books_list_filter(bl.book)) avg_rating,\n                    value AS sort\n                FROM custom_column_3"
+        ],
+        [
+          "tag_browser_filtered_custom_column_4",
+          "view",
+          "CREATE VIEW tag_browser_filtered_custom_column_4 AS SELECT\n                    id,\n                    value,\n                    (SELECT COUNT(books_custom_column_4_link.id) FROM books_custom_column_4_link WHERE value=custom_column_4.id AND\n                    books_list_filter(book)) count,\n                    (SELECT AVG(r.rating)\n                     FROM books_custom_column_4_link,\n                          books_ratings_link as bl,\n                          ratings as r\n                     WHERE books_custom_column_4_link.value=custom_column_4.id AND bl.book=books_custom_column_4_link.book AND\n                           r.id = bl.rating AND r.rating <> 0 AND\n                           books_list_filter(bl.book)) avg_rating,\n                    value AS sort\n                FROM custom_column_4"
+        ],
+        [
+          "tag_browser_filtered_custom_column_7",
+          "view",
+          "CREATE VIEW tag_browser_filtered_custom_column_7 AS SELECT\n                    id,\n                    value,\n                    (SELECT COUNT(books_custom_column_7_link.id) FROM books_custom_column_7_link WHERE value=custom_column_7.id AND\n                    books_list_filter(book)) count,\n                    (SELECT AVG(r.rating)\n                     FROM books_custom_column_7_link,\n                          books_ratings_link as bl,\n                          ratings as r\n                     WHERE books_custom_column_7_link.value=custom_column_7.id AND bl.book=books_custom_column_7_link.book AND\n                           r.id = bl.rating AND r.rating <> 0 AND\n                           books_list_filter(bl.book)) avg_rating,\n                    value AS sort\n                FROM custom_column_7"
+        ],
+        [
+          "tag_browser_filtered_custom_column_9",
+          "view",
+          "CREATE VIEW tag_browser_filtered_custom_column_9 AS SELECT\n                    id,\n                    value,\n                    (SELECT COUNT(books_custom_column_9_link.id) FROM books_custom_column_9_link WHERE value=custom_column_9.id AND\n                    books_list_filter(book)) count,\n                    (SELECT AVG(r.rating)\n                     FROM books_custom_column_9_link,\n                          books_ratings_link as bl,\n                          ratings as r\n                     WHERE books_custom_column_9_link.value=custom_column_9.id AND bl.book=books_custom_column_9_link.book AND\n                           r.id = bl.rating AND r.rating <> 0 AND\n                           books_list_filter(bl.book)) avg_rating,\n                    value AS sort\n                FROM custom_column_9"
+        ],
+        [
+          "tag_browser_filtered_publishers",
+          "view",
+          "CREATE VIEW tag_browser_filtered_publishers AS SELECT\n                    id,\n                    name,\n                    (SELECT COUNT(books_publishers_link.id) FROM books_publishers_link WHERE\n                        publisher=publishers.id AND books_list_filter(book)) count,\n                    (SELECT AVG(ratings.rating)\n                     FROM books_publishers_link AS tl, books_ratings_link AS bl, ratings\n                     WHERE tl.publisher=publishers.id AND bl.book=tl.book AND\n                     ratings.id = bl.rating AND ratings.rating <> 0 AND\n                     books_list_filter(bl.book)) avg_rating,\n                     name AS sort\n                FROM publishers"
+        ],
+        [
+          "tag_browser_filtered_ratings",
+          "view",
+          "CREATE VIEW tag_browser_filtered_ratings AS SELECT\n                    id,\n                    rating,\n                    (SELECT COUNT(books_ratings_link.id) FROM books_ratings_link WHERE\n                        rating=ratings.id AND books_list_filter(book)) count,\n                    (SELECT AVG(ratings.rating)\n                     FROM books_ratings_link AS tl, books_ratings_link AS bl, ratings\n                     WHERE tl.rating=ratings.id AND bl.book=tl.book AND\n                     ratings.id = bl.rating AND ratings.rating <> 0 AND\n                     books_list_filter(bl.book)) avg_rating,\n                     rating AS sort\n                FROM ratings"
+        ],
+        [
+          "tag_browser_filtered_series",
+          "view",
+          "CREATE VIEW tag_browser_filtered_series AS SELECT\n                    id,\n                    name,\n                    (SELECT COUNT(books_series_link.id) FROM books_series_link WHERE\n                        series=series.id AND books_list_filter(book)) count,\n                    (SELECT AVG(ratings.rating)\n                     FROM books_series_link AS tl, books_ratings_link AS bl, ratings\n                     WHERE tl.series=series.id AND bl.book=tl.book AND\n                     ratings.id = bl.rating AND ratings.rating <> 0 AND\n                     books_list_filter(bl.book)) avg_rating,\n                     (title_sort(name)) AS sort\n                FROM series"
+        ],
+        [
+          "tag_browser_filtered_tags",
+          "view",
+          "CREATE VIEW tag_browser_filtered_tags AS SELECT\n                    id,\n                    name,\n                    (SELECT COUNT(books_tags_link.id) FROM books_tags_link WHERE\n                        tag=tags.id AND books_list_filter(book)) count,\n                    (SELECT AVG(ratings.rating)\n                     FROM books_tags_link AS tl, books_ratings_link AS bl, ratings\n                     WHERE tl.tag=tags.id AND bl.book=tl.book AND\n                     ratings.id = bl.rating AND ratings.rating <> 0 AND\n                     books_list_filter(bl.book)) avg_rating,\n                     name AS sort\n                FROM tags"
+        ],
+        [
+          "tag_browser_publishers",
+          "view",
+          "CREATE VIEW tag_browser_publishers AS SELECT\n                    id,\n                    name,\n                    (SELECT COUNT(id) FROM books_publishers_link WHERE publisher=publishers.id) count,\n                    (SELECT AVG(ratings.rating)\n                     FROM books_publishers_link AS tl, books_ratings_link AS bl, ratings\n                     WHERE tl.publisher=publishers.id AND bl.book=tl.book AND\n                     ratings.id = bl.rating AND ratings.rating <> 0) avg_rating,\n                     name AS sort\n                FROM publishers"
+        ],
+        [
+          "tag_browser_ratings",
+          "view",
+          "CREATE VIEW tag_browser_ratings AS SELECT\n                    id,\n                    rating,\n                    (SELECT COUNT(id) FROM books_ratings_link WHERE rating=ratings.id) count,\n                    (SELECT AVG(ratings.rating)\n                     FROM books_ratings_link AS tl, books_ratings_link AS bl, ratings\n                     WHERE tl.rating=ratings.id AND bl.book=tl.book AND\n                     ratings.id = bl.rating AND ratings.rating <> 0) avg_rating,\n                     rating AS sort\n                FROM ratings"
+        ],
+        [
+          "tag_browser_series",
+          "view",
+          "CREATE VIEW tag_browser_series AS SELECT\n                    id,\n                    name,\n                    (SELECT COUNT(id) FROM books_series_link WHERE series=series.id) count,\n                    (SELECT AVG(ratings.rating)\n                     FROM books_series_link AS tl, books_ratings_link AS bl, ratings\n                     WHERE tl.series=series.id AND bl.book=tl.book AND\n                     ratings.id = bl.rating AND ratings.rating <> 0) avg_rating,\n                     (title_sort(name)) AS sort\n                FROM series"
+        ],
+        [
+          "tag_browser_tags",
+          "view",
+          "CREATE VIEW tag_browser_tags AS SELECT\n                    id,\n                    name,\n                    (SELECT COUNT(id) FROM books_tags_link WHERE tag=tags.id) count,\n                    (SELECT AVG(ratings.rating)\n                     FROM books_tags_link AS tl, books_ratings_link AS bl, ratings\n                     WHERE tl.tag=tags.id AND bl.book=tl.book AND\n                     ratings.id = bl.rating AND ratings.rating <> 0) avg_rating,\n                     name AS sort\n                FROM tags"
+        ],
+        [
+          "tags",
+          "table",
+          "CREATE TABLE tags ( id   INTEGER PRIMARY KEY,\n                            name TEXT NOT NULL COLLATE NOCASE, link TEXT NOT NULL DEFAULT \"\",\n                            UNIQUE (name)\n                             )"
+        ],
+        [
+          "tags_idx",
+          "index",
+          "CREATE INDEX tags_idx ON tags (name COLLATE NOCASE)"
+        ]
+      ],
+      "tables": {
+        "annotations": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "format",
+              "TEXT"
+            ],
+            [
+              "user_type",
+              "TEXT"
+            ],
+            [
+              "user",
+              "TEXT"
+            ],
+            [
+              "timestamp",
+              "REAL"
+            ],
+            [
+              "annot_id",
+              "TEXT"
+            ],
+            [
+              "annot_type",
+              "TEXT"
+            ],
+            [
+              "annot_data",
+              "TEXT"
+            ],
+            [
+              "searchable_text",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "annotations_dirtied": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "annotations_fts": {
+          "columns": [
+            [
+              "searchable_text",
+              ""
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "annotations_fts_config": {
+          "columns": [
+            [
+              "k",
+              ""
+            ],
+            [
+              "v",
+              ""
+            ]
+          ],
+          "sample_rows": [
+            [
+              "version",
+              4
+            ]
+          ],
+          "row_count": 1
+        },
+        "annotations_fts_data": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "block",
+              "BLOB"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              {
+                "bytes": 2,
+                "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+              }
+            ],
+            [
+              10,
+              {
+                "bytes": 7,
+                "sha256": "837885c8f8091aeaeb9ec3c3f85a6ff470a415e610b8ba3e49f9b33c9cf9d619"
+              }
+            ]
+          ],
+          "row_count": 2
+        },
+        "annotations_fts_docsize": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "sz",
+              "BLOB"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "annotations_fts_idx": {
+          "columns": [
+            [
+              "segid",
+              ""
+            ],
+            [
+              "term",
+              ""
+            ],
+            [
+              "pgno",
+              ""
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "annotations_fts_stemmed": {
+          "columns": [
+            [
+              "searchable_text",
+              ""
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "annotations_fts_stemmed_config": {
+          "columns": [
+            [
+              "k",
+              ""
+            ],
+            [
+              "v",
+              ""
+            ]
+          ],
+          "sample_rows": [
+            [
+              "version",
+              4
+            ]
+          ],
+          "row_count": 1
+        },
+        "annotations_fts_stemmed_data": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "block",
+              "BLOB"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              {
+                "bytes": 2,
+                "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+              }
+            ],
+            [
+              10,
+              {
+                "bytes": 7,
+                "sha256": "837885c8f8091aeaeb9ec3c3f85a6ff470a415e610b8ba3e49f9b33c9cf9d619"
+              }
+            ]
+          ],
+          "row_count": 2
+        },
+        "annotations_fts_stemmed_docsize": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "sz",
+              "BLOB"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "annotations_fts_stemmed_idx": {
+          "columns": [
+            [
+              "segid",
+              ""
+            ],
+            [
+              "term",
+              ""
+            ],
+            [
+              "pgno",
+              ""
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "authors": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "sort",
+              "TEXT"
+            ],
+            [
+              "link",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              2,
+              "Author One",
+              "One, Author",
+              ""
+            ],
+            [
+              3,
+              "Author Two",
+              "Two, Author",
+              ""
+            ],
+            [
+              4,
+              "Unknown",
+              "Unknown",
+              ""
+            ]
+          ],
+          "row_count": 3
+        },
+        "book_storage": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "format",
+              "TEXT"
+            ],
+            [
+              "user_type",
+              "TEXT"
+            ],
+            [
+              "user",
+              "TEXT"
+            ],
+            [
+              "timestamp",
+              "REAL"
+            ],
+            [
+              "data",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "books": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "title",
+              "TEXT"
+            ],
+            [
+              "sort",
+              "TEXT"
+            ],
+            [
+              "timestamp",
+              "TIMESTAMP"
+            ],
+            [
+              "pubdate",
+              "TIMESTAMP"
+            ],
+            [
+              "series_index",
+              "REAL"
+            ],
+            [
+              "author_sort",
+              "TEXT"
+            ],
+            [
+              "path",
+              "TEXT"
+            ],
+            [
+              "uuid",
+              "TEXT"
+            ],
+            [
+              "has_cover",
+              "BOOL"
+            ],
+            [
+              "last_modified",
+              "TIMESTAMP"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              "Title Two",
+              "Title Two",
+              "2011-09-06 06:00:00+00:00",
+              "2011-08-05 06:00:00+00:00",
+              2.0,
+              "Two, Author & One, Author",
+              "Author Two/Title Two (1)",
+              "c67a09ae-ea43-4d7f-b754-d38847319512",
+              0,
+              "2013-01-24 17:32:46.387653+00:00"
+            ],
+            [
+              2,
+              "Title One",
+              "One",
+              "2011-09-05 21:06:00.055290+00:00",
+              "2011-09-05 21:06:00.055300+00:00",
+              1.0,
+              "One, Author",
+              "Author One/Title One (2)",
+              "69323d27-dc28-42b5-813b-ea9c001946ad",
+              0,
+              "2013-01-20 10:51:59.627949+00:00"
+            ],
+            [
+              3,
+              "Unknown",
+              "Unknown",
+              "2011-09-07 19:54:41.103944+00:00",
+              "2011-09-07 19:54:41.103964+00:00",
+              1.0,
+              "Unknown",
+              "Unknown/Unknown (3)",
+              "e029fd52-f564-451f-823a-5611ba1bef46",
+              0,
+              "2011-09-07 19:54:41.214742+00:00"
+            ]
+          ],
+          "row_count": 3
+        },
+        "books_authors_link": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "author",
+              "INTEGER"
+            ]
+          ],
+          "sample_rows": [
+            [
+              5,
+              2,
+              2
+            ],
+            [
+              6,
+              1,
+              3
+            ],
+            [
+              7,
+              1,
+              2
+            ],
+            [
+              8,
+              3,
+              4
+            ]
+          ],
+          "row_count": 4
+        },
+        "books_custom_column_2_link": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "INTEGER"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              2
+            ]
+          ],
+          "row_count": 2
+        },
+        "books_custom_column_3_link": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "INTEGER"
+            ]
+          ],
+          "sample_rows": [
+            [
+              2,
+              1,
+              2
+            ],
+            [
+              3,
+              2,
+              3
+            ],
+            [
+              4,
+              2,
+              4
+            ]
+          ],
+          "row_count": 3
+        },
+        "books_custom_column_4_link": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "INTEGER"
+            ],
+            [
+              "extra",
+              "REAL"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              2,
+              1,
+              1.0
+            ],
+            [
+              3,
+              1,
+              2,
+              3.0
+            ]
+          ],
+          "row_count": 2
+        },
+        "books_custom_column_7_link": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "INTEGER"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              3,
+              1,
+              2
+            ]
+          ],
+          "row_count": 3
+        },
+        "books_custom_column_9_link": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "INTEGER"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              2
+            ]
+          ],
+          "row_count": 2
+        },
+        "books_languages_link": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "lang_code",
+              "INTEGER"
+            ],
+            [
+              "item_order",
+              "INTEGER"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              2,
+              1,
+              0
+            ],
+            [
+              2,
+              1,
+              2,
+              0
+            ]
+          ],
+          "row_count": 2
+        },
+        "books_pages_link": {
+          "columns": [
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "pages",
+              "INTEGER"
+            ],
+            [
+              "algorithm",
+              "INTEGER"
+            ],
+            [
+              "format",
+              "TEXT"
+            ],
+            [
+              "format_size",
+              "INTEGER"
+            ],
+            [
+              "timestamp",
+              "TIMESTAMP"
+            ],
+            [
+              "needs_scan",
+              "INTEGER"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              0,
+              0,
+              "",
+              0,
+              "2025-12-28 16:10:52",
+              1
+            ],
+            [
+              2,
+              0,
+              0,
+              "",
+              0,
+              "2025-12-28 16:10:52",
+              1
+            ],
+            [
+              3,
+              0,
+              0,
+              "",
+              0,
+              "2025-12-28 16:10:52",
+              1
+            ]
+          ],
+          "row_count": 3
+        },
+        "books_plugin_data": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "val",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "books_publishers_link": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "publisher",
+              "INTEGER"
+            ]
+          ],
+          "sample_rows": [
+            [
+              4,
+              1,
+              4
+            ],
+            [
+              5,
+              2,
+              5
+            ]
+          ],
+          "row_count": 2
+        },
+        "books_ratings_link": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "rating",
+              "INTEGER"
+            ]
+          ],
+          "sample_rows": [
+            [
+              4,
+              1,
+              2
+            ],
+            [
+              5,
+              2,
+              3
+            ]
+          ],
+          "row_count": 2
+        },
+        "books_series_link": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "series",
+              "INTEGER"
+            ]
+          ],
+          "sample_rows": [
+            [
+              4,
+              1,
+              3
+            ],
+            [
+              5,
+              2,
+              3
+            ]
+          ],
+          "row_count": 2
+        },
+        "books_tags_link": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "tag",
+              "INTEGER"
+            ]
+          ],
+          "sample_rows": [
+            [
+              7,
+              2,
+              3
+            ],
+            [
+              8,
+              2,
+              2
+            ],
+            [
+              9,
+              1,
+              4
+            ],
+            [
+              10,
+              1,
+              2
+            ]
+          ],
+          "row_count": 4
+        },
+        "comments": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "text",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              4,
+              1,
+              "<p>Comments Two</p>"
+            ],
+            [
+              5,
+              2,
+              "<p>Comments One</p>"
+            ]
+          ],
+          "row_count": 2
+        },
+        "conversion_options": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "format",
+              "TEXT"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "data",
+              "BLOB"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "custom_column_1": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              2,
+              "<div>My Comments One<p></p></div>"
+            ],
+            [
+              2,
+              1,
+              "<div>My Comments Two<p></p></div>"
+            ]
+          ],
+          "row_count": 2
+        },
+        "custom_column_10": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "custom_column_11": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "REAL"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              1,
+              10.01
+            ],
+            [
+              2,
+              2,
+              20.02
+            ]
+          ],
+          "row_count": 2
+        },
+        "custom_column_12": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "custom_column_2": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "INT"
+            ],
+            [
+              "link",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              2,
+              ""
+            ],
+            [
+              2,
+              4,
+              ""
+            ]
+          ],
+          "row_count": 2
+        },
+        "custom_column_3": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "TEXT"
+            ],
+            [
+              "link",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              2,
+              "My Author Two",
+              ""
+            ],
+            [
+              3,
+              "Custom One",
+              ""
+            ],
+            [
+              4,
+              "Custom Two",
+              ""
+            ]
+          ],
+          "row_count": 3
+        },
+        "custom_column_4": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "TEXT"
+            ],
+            [
+              "link",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              "My Series One",
+              ""
+            ],
+            [
+              2,
+              "My Series Two",
+              ""
+            ]
+          ],
+          "row_count": 2
+        },
+        "custom_column_5": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "timestamp"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              2,
+              "2011-09-05 06:00:00+00:00"
+            ],
+            [
+              2,
+              1,
+              "2011-09-01 06:00:00+00:00"
+            ]
+          ],
+          "row_count": 2
+        },
+        "custom_column_6": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "BOOL"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ],
+          "row_count": 2
+        },
+        "custom_column_7": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "TEXT"
+            ],
+            [
+              "link",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              "My Tag One",
+              ""
+            ],
+            [
+              2,
+              "My Tag Two",
+              ""
+            ]
+          ],
+          "row_count": 2
+        },
+        "custom_column_8": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "custom_column_9": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "value",
+              "TEXT"
+            ],
+            [
+              "link",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              "One",
+              ""
+            ],
+            [
+              2,
+              "Two",
+              ""
+            ]
+          ],
+          "row_count": 2
+        },
+        "custom_columns": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "label",
+              "TEXT"
+            ],
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "datatype",
+              "TEXT"
+            ],
+            [
+              "mark_for_delete",
+              "BOOL"
+            ],
+            [
+              "editable",
+              "BOOL"
+            ],
+            [
+              "display",
+              "TEXT"
+            ],
+            [
+              "is_multiple",
+              "BOOL"
+            ],
+            [
+              "normalized",
+              "BOOL"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              "comments",
+              "My Comments",
+              "comments",
+              0,
+              1,
+              "{}",
+              0,
+              0
+            ],
+            [
+              2,
+              "rating",
+              "My Rating",
+              "rating",
+              0,
+              1,
+              "{}",
+              0,
+              1
+            ],
+            [
+              3,
+              "authors",
+              "My Authors",
+              "text",
+              0,
+              1,
+              "{\"is_names\": true}",
+              1,
+              1
+            ],
+            [
+              4,
+              "series",
+              "My Series",
+              "series",
+              0,
+              1,
+              "{}",
+              0,
+              1
+            ]
+          ],
+          "row_count": 12
+        },
+        "data": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "format",
+              "TEXT"
+            ],
+            [
+              "uncompressed_size",
+              "INTEGER"
+            ],
+            [
+              "name",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "feeds": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "title",
+              "TEXT"
+            ],
+            [
+              "script",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "identifiers": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "type",
+              "TEXT"
+            ],
+            [
+              "val",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              2,
+              "test",
+              "one"
+            ],
+            [
+              2,
+              1,
+              "test",
+              "two"
+            ]
+          ],
+          "row_count": 2
+        },
+        "languages": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "lang_code",
+              "TEXT"
+            ],
+            [
+              "link",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              "eng",
+              ""
+            ],
+            [
+              2,
+              "deu",
+              ""
+            ]
+          ],
+          "row_count": 2
+        },
+        "last_read_positions": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ],
+            [
+              "format",
+              "TEXT"
+            ],
+            [
+              "user",
+              "TEXT"
+            ],
+            [
+              "device",
+              "TEXT"
+            ],
+            [
+              "cfi",
+              "TEXT"
+            ],
+            [
+              "epoch",
+              "REAL"
+            ],
+            [
+              "pos_frac",
+              "REAL"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "library_id": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "uuid",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              "95869367-2abd-4e0d-a201-3b640b601dde"
+            ]
+          ],
+          "row_count": 1
+        },
+        "metadata_dirtied": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "book",
+              "INTEGER"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "preferences": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "key",
+              "TEXT"
+            ],
+            [
+              "val",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              "bools_are_tristate",
+              "true"
+            ],
+            [
+              4,
+              "grouped_search_terms",
+              "{}"
+            ],
+            [
+              97,
+              "news_to_be_synced",
+              "[]"
+            ],
+            [
+              115,
+              "user_categories",
+              {
+                "characters": 385,
+                "preview": "{\n  \"Good Series\": [\n    [\n      \"A Series One\", \n      \"series\", \n      3\n    ], \n    [\n      \"My Series One\", \n      \"#series\", \n      11\n    ]\n  ], \n  \"Good Series.Good Tags\": [\n    [\n      \"Tag One\", \n      \"tags\", \n      6\n    ]\n  ], \n  \"Good Authors\": [\n    [\n      \"Author One\", \n      \"authors\", \n      0\n    ], \n    [\n      \"Author Two\", \n  "
+              }
+            ]
+          ],
+          "row_count": 8
+        },
+        "publishers": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "sort",
+              "TEXT"
+            ],
+            [
+              "link",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              4,
+              "Publisher Two",
+              null,
+              ""
+            ],
+            [
+              5,
+              "Publisher One",
+              null,
+              ""
+            ]
+          ],
+          "row_count": 2
+        },
+        "ratings": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "rating",
+              "INTEGER"
+            ],
+            [
+              "link",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              2,
+              6,
+              ""
+            ],
+            [
+              3,
+              4,
+              ""
+            ]
+          ],
+          "row_count": 2
+        },
+        "series": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "sort",
+              "TEXT"
+            ],
+            [
+              "link",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              3,
+              "A Series One",
+              "Series One, A",
+              ""
+            ]
+          ],
+          "row_count": 1
+        },
+        "tags": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "name",
+              "TEXT"
+            ],
+            [
+              "link",
+              "TEXT"
+            ]
+          ],
+          "sample_rows": [
+            [
+              2,
+              "Tag One",
+              ""
+            ],
+            [
+              3,
+              "Tag Two",
+              ""
+            ],
+            [
+              4,
+              "News",
+              ""
+            ]
+          ],
+          "row_count": 3
+        }
+      },
+      "relationship_queries": {
+        "authors": {
+          "sql": "SELECT b.id, b.title, a.name, b.path FROM books b JOIN books_authors_link l ON l.book=b.id JOIN authors a ON a.id=l.author ORDER BY b.id, l.id",
+          "rows": [
+            [
+              1,
+              "Title Two",
+              "Author Two",
+              "Author Two/Title Two (1)"
+            ],
+            [
+              1,
+              "Title Two",
+              "Author One",
+              "Author Two/Title Two (1)"
+            ],
+            [
+              2,
+              "Title One",
+              "Author One",
+              "Author One/Title One (2)"
+            ],
+            [
+              3,
+              "Unknown",
+              "Unknown",
+              "Unknown/Unknown (3)"
+            ]
+          ]
+        },
+        "tags": {
+          "sql": "SELECT b.id, b.title, t.name FROM books b JOIN books_tags_link l ON l.book=b.id JOIN tags t ON t.id=l.tag ORDER BY b.id, l.id",
+          "rows": [
+            [
+              1,
+              "Title Two",
+              "News"
+            ],
+            [
+              1,
+              "Title Two",
+              "Tag One"
+            ],
+            [
+              2,
+              "Title One",
+              "Tag Two"
+            ],
+            [
+              2,
+              "Title One",
+              "Tag One"
+            ]
+          ]
+        },
+        "custom_values": {
+          "sql": "SELECT b.id, b.title, c.value FROM books b JOIN custom_column_11 c ON c.book=b.id ORDER BY b.id",
+          "rows": [
+            [
+              1,
+              "Title Two",
+              10.01
+            ],
+            [
+              2,
+              "Title One",
+              20.02
+            ]
+          ]
+        }
+      },
+      "preferences": {
+        "bools_are_tristate": true,
+        "grouped_search_terms": {},
+        "news_to_be_synced": [],
+        "user_categories": {
+          "Good Series": [
+            [
+              "A Series One",
+              "series",
+              3
+            ],
+            [
+              "My Series One",
+              "#series",
+              11
+            ]
+          ],
+          "Good Series.Good Tags": [
+            [
+              "Tag One",
+              "tags",
+              6
+            ]
+          ],
+          "Good Authors": [
+            [
+              "Author One",
+              "authors",
+              0
+            ],
+            [
+              "Author Two",
+              "authors",
+              1
+            ]
+          ]
+        },
+        "saved_searches": {
+          "Author One": "authors:one and not authors:two"
+        },
+        "tag_browser_hidden_categories": [],
+        "library_view books view state": {
+          "column_alignment": {
+            "timestamp": "center",
+            "pubdate": "center",
+            "size": "center"
+          },
+          "column_sizes": {
+            "rating": 80,
+            "#rating": 101,
+            "pubdate": 100,
+            "series": 140,
+            "#date": 90,
+            "#isbn": 68,
+            "#formats": 88,
+            "size": 99,
+            "title": 66,
+            "#authors": 165,
+            "#series": 117,
+            "languages": 0,
+            "#yesno": 81,
+            "tags": 115,
+            "timestamp": 90,
+            "last_modified": 0,
+            "authors": 166,
+            "#float": 100,
+            "#comments": 249,
+            "publisher": 97,
+            "#enum": 73,
+            "#comp_tags": 100,
+            "#tags": 161
+          },
+          "languages_injected": true,
+          "column_positions": {
+            "rating": 5,
+            "#rating": 13,
+            "pubdate": 9,
+            "series": 7,
+            "#date": 16,
+            "#isbn": 19,
+            "#formats": 21,
+            "size": 4,
+            "title": 1,
+            "#authors": 14,
+            "#series": 15,
+            "languages": 11,
+            "#yesno": 17,
+            "tags": 6,
+            "timestamp": 3,
+            "last_modified": 10,
+            "authors": 2,
+            "#float": 22,
+            "#comments": 12,
+            "publisher": 8,
+            "#enum": 20,
+            "ondevice": 0,
+            "#comp_tags": 23,
+            "#tags": 18
+          },
+          "sort_history": [
+            [
+              "#rating",
+              true
+            ],
+            [
+              "#date",
+              true
+            ],
+            [
+              "#enum",
+              true
+            ],
+            [
+              "timestamp",
+              false
+            ]
+          ],
+          "hidden_columns": [
+            "last_modified",
+            "languages"
+          ],
+          "last_modified_injected": true
+        },
+        "field_metadata": {
+          "rating": {
+            "is_category": true,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "is_csp": false,
+            "datatype": "rating",
+            "rec_index": 5,
+            "search_terms": [
+              "rating"
+            ],
+            "link_column": "rating",
+            "label": "rating",
+            "is_multiple": {},
+            "column": "rating",
+            "category_sort": "rating",
+            "table": "ratings",
+            "display": {},
+            "name": "Rating"
+          },
+          "author_sort": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": "Author Sort",
+            "datatype": "text",
+            "rec_index": 12,
+            "search_terms": [
+              "author_sort"
+            ],
+            "label": "author_sort",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": false
+          },
+          "pubdate": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": "Published",
+            "datatype": "datetime",
+            "rec_index": 15,
+            "search_terms": [
+              "pubdate"
+            ],
+            "label": "pubdate",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {
+              "date_format": "MMM yyyy"
+            },
+            "is_csp": false
+          },
+          "series": {
+            "is_category": true,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "is_csp": false,
+            "datatype": "series",
+            "rec_index": 8,
+            "search_terms": [
+              "series"
+            ],
+            "link_column": "series",
+            "label": "series",
+            "is_multiple": {},
+            "column": "name",
+            "category_sort": "(title_sort(name))",
+            "table": "series",
+            "display": {},
+            "name": "Series"
+          },
+          "marked": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": null,
+            "datatype": "text",
+            "rec_index": 36,
+            "search_terms": [
+              "marked"
+            ],
+            "label": "marked",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": false
+          },
+          "#date": {
+            "is_category": false,
+            "colnum": 5,
+            "kind": "field",
+            "is_custom": true,
+            "name": "My Date",
+            "column": "value",
+            "rec_index": 27,
+            "search_terms": [
+              "#date"
+            ],
+            "link_column": "value",
+            "label": "date",
+            "is_multiple": {},
+            "datatype": "datetime",
+            "category_sort": "value",
+            "table": "custom_column_5",
+            "is_editable": true,
+            "display": {
+              "date_format": null
+            },
+            "is_csp": false
+          },
+          "#rating": {
+            "is_category": true,
+            "colnum": 2,
+            "kind": "field",
+            "is_custom": true,
+            "name": "My Rating",
+            "column": "value",
+            "rec_index": 23,
+            "search_terms": [
+              "#rating"
+            ],
+            "link_column": "value",
+            "label": "rating",
+            "is_multiple": {},
+            "datatype": "rating",
+            "category_sort": "value",
+            "table": "custom_column_2",
+            "is_editable": true,
+            "display": {},
+            "is_csp": false
+          },
+          "#series_index": {
+            "is_category": false,
+            "colnum": null,
+            "kind": "field",
+            "is_custom": false,
+            "name": "",
+            "column": null,
+            "rec_index": 26,
+            "search_terms": [
+              "#series_index"
+            ],
+            "link_column": null,
+            "label": "series_index",
+            "is_multiple": {},
+            "datatype": "float",
+            "category_sort": null,
+            "table": null,
+            "is_editable": false,
+            "display": {},
+            "is_csp": false
+          },
+          "path": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": "Path",
+            "datatype": "text",
+            "rec_index": 14,
+            "search_terms": [],
+            "label": "path",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": false
+          },
+          "#isbn": {
+            "is_category": false,
+            "colnum": 8,
+            "kind": "field",
+            "is_custom": true,
+            "name": "ISBN",
+            "column": "value",
+            "rec_index": 30,
+            "search_terms": [
+              "#isbn"
+            ],
+            "link_column": "value",
+            "label": "isbn",
+            "is_multiple": {},
+            "datatype": "composite",
+            "category_sort": "value",
+            "table": "custom_column_8",
+            "is_editable": true,
+            "display": {
+              "composite_template": "{identifiers:select(isbn)}",
+              "contains_html": false,
+              "make_category": false,
+              "composite_sort": "text",
+              "use_decorations": 0
+            },
+            "is_csp": false
+          },
+          "au_map": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": null,
+            "datatype": "text",
+            "rec_index": 18,
+            "search_terms": [],
+            "label": "au_map",
+            "is_multiple": {
+              "cache_to_list": ",",
+              "ui_to_list": null,
+              "list_to_ui": null
+            },
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": false
+          },
+          "id": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": null,
+            "datatype": "int",
+            "rec_index": 0,
+            "search_terms": [],
+            "label": "id",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": false
+          },
+          "size": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": "Size",
+            "datatype": "float",
+            "rec_index": 4,
+            "search_terms": [
+              "size"
+            ],
+            "label": "size",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": false
+          },
+          "uuid": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": null,
+            "datatype": "text",
+            "rec_index": 16,
+            "search_terms": [],
+            "label": "uuid",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": false
+          },
+          "title": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": "Title",
+            "datatype": "text",
+            "rec_index": 1,
+            "search_terms": [
+              "title"
+            ],
+            "label": "title",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": false
+          },
+          "series_sort": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": "Series Sort",
+            "datatype": "text",
+            "rec_index": 37,
+            "search_terms": [
+              "series_sort"
+            ],
+            "label": "series_sort",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": false
+          },
+          "#series": {
+            "is_category": true,
+            "colnum": 4,
+            "kind": "field",
+            "is_custom": true,
+            "name": "My Series",
+            "column": "value",
+            "rec_index": 25,
+            "search_terms": [
+              "#series"
+            ],
+            "link_column": "value",
+            "label": "series",
+            "is_multiple": {},
+            "datatype": "series",
+            "category_sort": "value",
+            "table": "custom_column_4",
+            "is_editable": true,
+            "display": {},
+            "is_csp": false
+          },
+          "comments": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": "Comments",
+            "datatype": "text",
+            "rec_index": 7,
+            "search_terms": [
+              "comments",
+              "comment"
+            ],
+            "label": "comments",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": false
+          },
+          "#formats": {
+            "is_category": false,
+            "colnum": 10,
+            "kind": "field",
+            "is_custom": true,
+            "name": "Formats",
+            "column": "value",
+            "rec_index": 32,
+            "search_terms": [
+              "#formats"
+            ],
+            "link_column": "value",
+            "label": "formats",
+            "is_multiple": {},
+            "datatype": "composite",
+            "category_sort": "value",
+            "table": "custom_column_10",
+            "is_editable": true,
+            "display": {
+              "composite_template": "{formats}",
+              "contains_html": false,
+              "make_category": false,
+              "composite_sort": "text",
+              "use_decorations": 0
+            },
+            "is_csp": false
+          },
+          "languages": {
+            "is_category": true,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "is_csp": false,
+            "datatype": "text",
+            "rec_index": 21,
+            "search_terms": [
+              "languages",
+              "language"
+            ],
+            "link_column": "lang_code",
+            "label": "languages",
+            "is_multiple": {
+              "cache_to_list": ",",
+              "ui_to_list": ",",
+              "list_to_ui": ", "
+            },
+            "column": "lang_code",
+            "category_sort": "lang_code",
+            "table": "languages",
+            "display": {},
+            "name": "Languages"
+          },
+          "#yesno": {
+            "is_category": false,
+            "colnum": 6,
+            "kind": "field",
+            "is_custom": true,
+            "name": "Yes/No",
+            "column": "value",
+            "rec_index": 28,
+            "search_terms": [
+              "#yesno"
+            ],
+            "link_column": "value",
+            "label": "yesno",
+            "is_multiple": {},
+            "datatype": "bool",
+            "category_sort": "value",
+            "table": "custom_column_6",
+            "is_editable": true,
+            "display": {},
+            "is_csp": false
+          },
+          "sort": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": "Title Sort",
+            "datatype": "text",
+            "rec_index": 11,
+            "search_terms": [
+              "title_sort"
+            ],
+            "label": "sort",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": false
+          },
+          "#authors": {
+            "is_category": true,
+            "colnum": 3,
+            "kind": "field",
+            "is_custom": true,
+            "name": "My Authors",
+            "column": "value",
+            "rec_index": 24,
+            "search_terms": [
+              "#authors"
+            ],
+            "link_column": "value",
+            "label": "authors",
+            "is_multiple": {
+              "cache_to_list": "|",
+              "list_to_ui": " & ",
+              "ui_to_list": "&"
+            },
+            "datatype": "text",
+            "category_sort": "value",
+            "table": "custom_column_3",
+            "is_editable": true,
+            "display": {
+              "is_names": true
+            },
+            "is_csp": false
+          },
+          "tags": {
+            "is_category": true,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "is_csp": false,
+            "datatype": "text",
+            "rec_index": 6,
+            "search_terms": [
+              "tags",
+              "tag"
+            ],
+            "link_column": "tag",
+            "label": "tags",
+            "is_multiple": {
+              "cache_to_list": ",",
+              "ui_to_list": ",",
+              "list_to_ui": ", "
+            },
+            "column": "name",
+            "category_sort": "name",
+            "table": "tags",
+            "display": {},
+            "name": "Tags"
+          },
+          "timestamp": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": "Date",
+            "datatype": "datetime",
+            "rec_index": 3,
+            "search_terms": [
+              "date"
+            ],
+            "label": "timestamp",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {
+              "date_format": "dd MMM yyyy"
+            },
+            "is_csp": false
+          },
+          "search": {
+            "is_multiple": {},
+            "datatype": null,
+            "kind": "search",
+            "is_custom": false,
+            "name": "Searches",
+            "column": null,
+            "table": null,
+            "is_category": true,
+            "search_terms": [],
+            "is_csp": false
+          },
+          "@Good Series.Good Tags": {
+            "is_multiple": {},
+            "datatype": null,
+            "kind": "user",
+            "is_custom": false,
+            "name": "Good Series.Good Tags",
+            "column": null,
+            "table": null,
+            "is_category": true,
+            "search_terms": [
+              "@Good Series.Good Tags",
+              "@good series.good tags"
+            ],
+            "is_csp": false
+          },
+          "last_modified": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": "Modified",
+            "datatype": "datetime",
+            "rec_index": 19,
+            "search_terms": [
+              "last_modified"
+            ],
+            "label": "last_modified",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {
+              "date_format": "dd MMM yyyy"
+            },
+            "is_csp": false
+          },
+          "authors": {
+            "is_category": true,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "is_csp": false,
+            "datatype": "text",
+            "rec_index": 2,
+            "search_terms": [
+              "authors",
+              "author"
+            ],
+            "link_column": "author",
+            "label": "authors",
+            "is_multiple": {
+              "cache_to_list": ",",
+              "ui_to_list": "&",
+              "list_to_ui": " & "
+            },
+            "column": "name",
+            "category_sort": "sort",
+            "table": "authors",
+            "display": {},
+            "name": "Authors"
+          },
+          "news": {
+            "is_category": true,
+            "is_editable": true,
+            "kind": "category",
+            "is_custom": false,
+            "is_csp": false,
+            "datatype": null,
+            "search_terms": [],
+            "label": "news",
+            "is_multiple": {},
+            "column": "name",
+            "category_sort": "name",
+            "table": "news",
+            "display": {},
+            "name": "News"
+          },
+          "#float": {
+            "is_category": false,
+            "colnum": 11,
+            "kind": "field",
+            "is_custom": true,
+            "name": "Float",
+            "column": "value",
+            "rec_index": 33,
+            "search_terms": [
+              "#float"
+            ],
+            "link_column": "value",
+            "label": "float",
+            "is_multiple": {},
+            "datatype": "float",
+            "category_sort": "value",
+            "table": "custom_column_11",
+            "is_editable": true,
+            "display": {
+              "number_format": "Price: ${0,.2f}"
+            },
+            "is_csp": false
+          },
+          "@Good Authors": {
+            "is_multiple": {},
+            "datatype": null,
+            "kind": "user",
+            "is_custom": false,
+            "name": "Good Authors",
+            "column": null,
+            "table": null,
+            "is_category": true,
+            "search_terms": [
+              "@Good Authors",
+              "@good authors"
+            ],
+            "is_csp": false
+          },
+          "#comments": {
+            "is_category": false,
+            "colnum": 1,
+            "kind": "field",
+            "is_custom": true,
+            "name": "My Comments",
+            "column": "value",
+            "rec_index": 22,
+            "search_terms": [
+              "#comments"
+            ],
+            "link_column": "value",
+            "label": "comments",
+            "is_multiple": {},
+            "datatype": "comments",
+            "category_sort": "value",
+            "table": "custom_column_1",
+            "is_editable": true,
+            "display": {},
+            "is_csp": false
+          },
+          "publisher": {
+            "is_category": true,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "is_csp": false,
+            "datatype": "text",
+            "rec_index": 9,
+            "search_terms": [
+              "publisher"
+            ],
+            "link_column": "publisher",
+            "label": "publisher",
+            "is_multiple": {},
+            "column": "name",
+            "category_sort": "name",
+            "table": "publishers",
+            "display": {},
+            "name": "Publishers"
+          },
+          "series_index": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": null,
+            "datatype": "float",
+            "rec_index": 10,
+            "search_terms": [
+              "series_index"
+            ],
+            "label": "series_index",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": false
+          },
+          "#enum": {
+            "is_category": true,
+            "colnum": 9,
+            "kind": "field",
+            "is_custom": true,
+            "name": "Enum",
+            "column": "value",
+            "rec_index": 31,
+            "search_terms": [
+              "#enum"
+            ],
+            "link_column": "value",
+            "label": "enum",
+            "is_multiple": {},
+            "datatype": "enumeration",
+            "category_sort": "value",
+            "table": "custom_column_9",
+            "is_editable": true,
+            "display": {
+              "enum_colors": [
+                "red",
+                "green",
+                "blue"
+              ],
+              "use_decorations": 0,
+              "enum_values": [
+                "One",
+                "Two",
+                "Three"
+              ]
+            },
+            "is_csp": false
+          },
+          "identifiers": {
+            "is_category": true,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": "Identifiers",
+            "datatype": "text",
+            "rec_index": 20,
+            "search_terms": [
+              "identifiers",
+              "identifier",
+              "isbn"
+            ],
+            "label": "identifiers",
+            "is_multiple": {
+              "cache_to_list": ",",
+              "ui_to_list": ",",
+              "list_to_ui": ", "
+            },
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": true
+          },
+          "cover": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": null,
+            "datatype": "int",
+            "rec_index": 17,
+            "search_terms": [
+              "cover"
+            ],
+            "label": "cover",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": false
+          },
+          "ondevice": {
+            "is_category": false,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": "On Device",
+            "datatype": "text",
+            "rec_index": 35,
+            "search_terms": [
+              "ondevice"
+            ],
+            "label": "ondevice",
+            "is_multiple": {},
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": false
+          },
+          "formats": {
+            "is_category": true,
+            "is_editable": true,
+            "kind": "field",
+            "is_custom": false,
+            "name": "Formats",
+            "datatype": "text",
+            "rec_index": 13,
+            "search_terms": [
+              "formats",
+              "format"
+            ],
+            "label": "formats",
+            "is_multiple": {
+              "cache_to_list": ",",
+              "ui_to_list": ",",
+              "list_to_ui": ", "
+            },
+            "column": null,
+            "table": null,
+            "display": {},
+            "is_csp": false
+          },
+          "#comp_tags": {
+            "is_category": false,
+            "colnum": 12,
+            "kind": "field",
+            "is_custom": true,
+            "name": "Composite Tags",
+            "column": "value",
+            "rec_index": 34,
+            "search_terms": [
+              "#comp_tags"
+            ],
+            "link_column": "value",
+            "label": "comp_tags",
+            "is_multiple": {
+              "cache_to_list": ",",
+              "list_to_ui": ", ",
+              "ui_to_list": ","
+            },
+            "datatype": "composite",
+            "category_sort": "value",
+            "table": "custom_column_12",
+            "is_editable": true,
+            "display": {
+              "composite_template": "{tags}",
+              "contains_html": false,
+              "make_category": true,
+              "composite_sort": "text"
+            },
+            "is_csp": false
+          },
+          "#tags": {
+            "is_category": true,
+            "colnum": 7,
+            "kind": "field",
+            "is_custom": true,
+            "name": "My Tags",
+            "column": "value",
+            "rec_index": 29,
+            "search_terms": [
+              "#tags"
+            ],
+            "link_column": "value",
+            "label": "tags",
+            "is_multiple": {
+              "cache_to_list": "|",
+              "list_to_ui": ", ",
+              "ui_to_list": ","
+            },
+            "datatype": "text",
+            "category_sort": "value",
+            "table": "custom_column_7",
+            "is_editable": true,
+            "display": {
+              "is_names": false
+            },
+            "is_csp": false
+          },
+          "@Good Series": {
+            "is_multiple": {},
+            "datatype": null,
+            "kind": "user",
+            "is_custom": false,
+            "name": "Good Series",
+            "column": null,
+            "table": null,
+            "is_category": true,
+            "search_terms": [
+              "@Good Series",
+              "@good series"
+            ],
+            "is_csp": false
+          }
+        }
+      }
+    },
+    "audacity": {
+      "integrity_check": {
+        "error": "database disk image is malformed"
+      },
+      "user_version": 67108865,
+      "schema": [
+        [
+          "autosave",
+          "table",
+          "CREATE TABLE autosave(  id                   INTEGER PRIMARY KEY,  dict                 BLOB,  doc                  BLOB)"
+        ],
+        [
+          "project",
+          "table",
+          "CREATE TABLE project(  id                   INTEGER PRIMARY KEY,  dict                 BLOB,  doc                  BLOB)"
+        ],
+        [
+          "project_history",
+          "table",
+          "CREATE TABLE project_history(  generation           INTEGER PRIMARY KEY AUTOINCREMENT,  saved_at             INTEGER,  dict                 BLOB,  doc                  BLOB)"
+        ],
+        [
+          "sampleblocks",
+          "table",
+          "CREATE TABLE sampleblocks(  blockid              INTEGER PRIMARY KEY AUTOINCREMENT,  sampleformat         INTEGER,  summin               REAL,  summax               REAL,  sumrms               REAL,  summary256           BLOB,  summary64k           BLOB,  samples              BLOB)"
+        ],
+        [
+          "sqlite_sequence",
+          "table",
+          "CREATE TABLE sqlite_sequence(name,seq)"
+        ]
+      ],
+      "tables": {
+        "autosave": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "dict",
+              "BLOB"
+            ],
+            [
+              "doc",
+              "BLOB"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "project": {
+          "columns": [
+            [
+              "id",
+              "INTEGER"
+            ],
+            [
+              "dict",
+              "BLOB"
+            ],
+            [
+              "doc",
+              "BLOB"
+            ]
+          ],
+          "sample_rows": [
+            [
+              1,
+              {
+                "bytes": 2067,
+                "sha256": "01ba1705cd0a20bf8ba40d743560ce47a2884b9ab01aa4be67eaa17accabbc28"
+              },
+              {
+                "bytes": 2177,
+                "sha256": "223b3108c1394987a8045dbb807164e39b8c1e5d2a9712cb37b58c53fd781c1e"
+              }
+            ]
+          ],
+          "row_count": 1
+        },
+        "project_history": {
+          "columns": [
+            [
+              "generation",
+              "INTEGER"
+            ],
+            [
+              "saved_at",
+              "INTEGER"
+            ],
+            [
+              "dict",
+              "BLOB"
+            ],
+            [
+              "doc",
+              "BLOB"
+            ]
+          ],
+          "sample_rows": [],
+          "row_count": 0
+        },
+        "sampleblocks": {
+          "columns": [
+            [
+              "blockid",
+              "INTEGER"
+            ],
+            [
+              "sampleformat",
+              "INTEGER"
+            ],
+            [
+              "summin",
+              "REAL"
+            ],
+            [
+              "summax",
+              "REAL"
+            ],
+            [
+              "sumrms",
+              "REAL"
+            ],
+            [
+              "summary256",
+              "BLOB"
+            ],
+            [
+              "summary64k",
+              "BLOB"
+            ],
+            [
+              "samples",
+              "BLOB"
+            ]
+          ],
+          "read_error": "database disk image is malformed"
+        }
+      }
+    },
+    "ardour": {
+      "session_attributes": {
+        "version": "3001",
+        "name": "1region",
+        "sample-rate": "48000",
+        "id-counter": "140",
+        "event-counter": "1"
+      },
+      "sources": [
+        {
+          "name": "MIDI 1-1.mid",
+          "type": "midi",
+          "flags": "Writable,CanRename",
+          "id": "118",
+          "origin": ""
+        }
+      ],
+      "region_source_references": [
+        {
+          "region": "131",
+          "field": "source-0",
+          "source_id": "118",
+          "resolves": true
+        },
+        {
+          "region": "131",
+          "field": "master-source-0",
+          "source_id": "118",
+          "resolves": true
+        }
+      ],
+      "routes": [
+        {
+          "id": "21",
+          "name": "master",
+          "default-type": "audio",
+          "flags": "MasterOut",
+          "active": "yes",
+          "phase-invert": "00",
+          "denormal-protection": "no",
+          "meter-point": "MeterPostFader",
+          "order-keys": "editor=0:signal=0",
+          "self-solo": "no",
+          "soloed-by-upstream": "0",
+          "soloed-by-downstream": "0",
+          "solo-isolated": "no",
+          "solo-safe": "no"
+        },
+        {
+          "id": "88",
+          "name": "MIDI 1",
+          "default-type": "midi",
+          "active": "yes",
+          "phase-invert": "",
+          "denormal-protection": "no",
+          "meter-point": "MeterPostFader",
+          "order-keys": "editor=1:signal=1",
+          "self-solo": "no",
+          "soloed-by-upstream": "0",
+          "soloed-by-downstream": "0",
+          "solo-isolated": "no",
+          "solo-safe": "no",
+          "monitoring": "",
+          "saved-meter-point": "MeterPostFader",
+          "note-mode": "Sustained",
+          "step-editing": "no",
+          "input-active": "yes"
+        }
+      ],
+      "external_media_read_or_rendered": false
+    },
+    "musescore-studio": {
+      "members": [
+        {
+          "name": "META-INF/container.xml",
+          "bytes": 161
+        },
+        {
+          "name": "Thumbnails/thumbnail.png",
+          "bytes": 16687
+        },
+        {
+          "name": "Amazing_grace.mscx",
+          "bytes": 71323
+        }
+      ],
+      "score_member": "Amazing_grace.mscx",
+      "xml_root": "museScore",
+      "version": "2.06",
+      "program_version": "2.0.2",
+      "element_counts": {
+        "Accidental": 7,
+        "Articulation": 16,
+        "BarLine": 4,
+        "Beam": 32,
+        "Channel": 4,
+        "Chord": 175,
+        "Clef": 4,
+        "Division": 1,
+        "Instrument": 4,
+        "KeySig": 6,
+        "LayerTag": 1,
+        "Lyrics": 118,
+        "Measure": 68,
+        "Note": 175,
+        "Page": 2,
+        "PageList": 1,
+        "Part": 4,
+        "Rest": 69,
+        "Score": 1,
+        "Spatium": 1,
+        "Staff": 8,
+        "StaffText": 1,
+        "StaffType": 4,
+        "Style": 1,
+        "Synthesizer": 1,
+        "System": 4,
+        "Text": 1,
+        "TextStyle": 2,
+        "Tie": 30,
+        "TimeSig": 4,
+        "VBox": 1,
+        "accidental": 6,
+        "beamMinLen": 1,
+        "beamWidth": 1,
+        "bottom-margin": 2,
+        "bottomGap": 1,
+        "bracket": 4,
+        "bracketDistance": 1,
+        "bracketWidth": 1,
+        "chordDescriptionFile": 1,
+        "chordStyle": 1,
+        "chordsXmlFile": 1,
+        "clefLeftMargin": 1,
+        "concertClefType": 4,
+        "controller": 11,
+        "currentLayer": 1,
+        "dots": 136,
+        "durationType": 244,
+        "endBarDistance": 1,
+        "endSpanner": 30,
+        "family": 2,
+        "font": 127,
+        "frameSystemDistance": 1,
+        "gateTime": 16,
+        "halign": 2,
+        "harmonyY": 1,
+        "height": 1,
+        "hideInstrumentNameIfOneInstrument": 1,
+        "keySigNaturals": 1,
+        "ledgerLineWidth": 1,
+        "left-margin": 2,
+        "longName": 4,
+        "lyricsMinBottomDistance": 1,
+        "maxPitchA": 4,
+        "maxPitchP": 4,
+        "measureSpacing": 1,
+        "metaTag": 13,
+        "minMeasureWidth": 1,
+        "minNoteDistance": 1,
+        "minPitchA": 4,
+        "minPitchP": 4,
+        "museScore": 1,
+        "name": 2,
+        "offsetType": 2,
+        "page-height": 1,
+        "page-layout": 1,
+        "page-margins": 2,
+        "page-width": 1,
+        "pitch": 175,
+        "program": 4,
+        "programRevision": 1,
+        "programVersion": 1,
+        "propertyDistanceStem": 1,
+        "right-margin": 2,
+        "role": 1,
+        "shortName": 4,
+        "showCourtesySig": 4,
+        "showFrames": 1,
+        "showInvisible": 1,
+        "showMargins": 1,
+        "showUnprintable": 1,
+        "sigD": 4,
+        "sigN": 4,
+        "size": 2,
+        "sizeIsSpatiumDependent": 2,
+        "span": 4,
+        "style": 1,
+        "subtype": 11,
+        "syllabic": 18,
+        "synti": 4,
+        "text": 120,
+        "ticks": 40,
+        "top-margin": 2,
+        "tpc": 175,
+        "trackName": 8,
+        "transposingClefType": 4,
+        "tupletOufOfStaff": 1,
+        "valign": 2,
+        "velocity": 16,
+        "voltaY": 1,
+        "xoffset": 1,
+        "yoffset": 1
+      },
+      "lyrics": [
+        "A",
+        "ma",
+        "zing",
+        "grace",
+        "how",
+        "sweet",
+        "the",
+        "sound",
+        "that",
+        "saved",
+        "a",
+        "wretch",
+        "like",
+        "me",
+        "I",
+        "once",
+        "was",
+        "lost",
+        "but",
+        "now",
+        "am",
+        "found",
+        "was",
+        "blind",
+        "but",
+        "now",
+        "I",
+        "see",
+        "A",
+        "ma",
+        "zing",
+        "grace",
+        "how",
+        "sweet",
+        "the",
+        "sound",
+        "that",
+        "saved",
+        "a",
+        "wretch",
+        "like",
+        "me",
+        "I",
+        "once",
+        "was",
+        "lost",
+        "but",
+        "now",
+        "I",
+        "found",
+        "was",
+        "blind",
+        "but",
+        "now",
+        "I",
+        "see",
+        "I",
+        "see",
+        "A",
+        "ma",
+        "zing",
+        "grace",
+        "how",
+        "sweet",
+        "the",
+        "sound",
+        "that",
+        "saved",
+        "a",
+        "wretch",
+        "like",
+        "me",
+        "I",
+        "once",
+        "was",
+        "lost",
+        "but",
+        "now",
+        "I",
+        "found",
+        "was",
+        "blind",
+        "but",
+        "now",
+        "I",
+        "see",
+        "I",
+        "see",
+        "A",
+        "ma",
+        "zing",
+        "grace",
+        "how",
+        "sweet",
+        "the",
+        "sound",
+        "that",
+        "saved",
+        "a",
+        "wretch",
+        "like",
+        "me",
+        "I",
+        "once",
+        "was",
+        "lost",
+        "but",
+        "now",
+        "I",
+        "found",
+        "was",
+        "blind",
+        "but",
+        "now",
+        "I",
+        "see",
+        "I",
+        "see"
+      ],
+      "note_pitches": [
+        "62",
+        "67",
+        "71",
+        "71",
+        "71",
+        "69",
+        "67",
+        "64",
+        "62",
+        "62",
+        "62",
+        "67",
+        "71",
+        "71",
+        "71",
+        "69",
+        "74",
+        "74",
+        "74",
+        "71",
+        "74",
+        "72",
+        "71",
+        "71",
+        "69",
+        "67",
+        "71",
+        "71",
+        "69",
+        "67",
+        "64",
+        "62",
+        "62",
+        "67",
+        "67",
+        "71",
+        "69",
+        "67",
+        "71",
+        "71",
+        "69",
+        "67",
+        "67",
+        "67",
+        "62",
+        "62",
+        "67",
+        "67",
+        "67",
+        "63",
+        "64",
+        "60",
+        "57",
+        "57",
+        "60",
+        "62",
+        "63",
+        "64",
+        "64",
+        "67",
+        "65",
+        "67",
+        "69",
+        "65",
+        "69",
+        "67",
+        "67",
+        "67",
+        "67",
+        "67",
+        "67",
+        "65",
+        "64",
+        "60",
+        "67",
+        "64",
+        "65",
+        "64",
+        "64",
+        "64",
+        "62",
+        "64",
+        "67",
+        "67",
+        "65",
+        "62",
+        "64",
+        "62",
+        "62",
+        "59",
+        "62",
+        "63",
+        "63",
+        "59",
+        "59",
+        "55",
+        "54",
+        "54",
+        "54",
+        "59",
+        "59",
+        "59",
+        "59",
+        "61",
+        "57",
+        "59",
+        "60",
+        "60",
+        "64",
+        "62",
+        "62",
+        "60",
+        "59",
+        "62",
+        "62",
+        "62",
+        "55",
+        "55",
+        "58",
+        "57",
+        "59",
+        "59",
+        "60",
+        "62",
+        "60",
+        "62",
+        "62",
+        "60",
+        "59",
+        "60",
+        "59",
+        "50",
+        "55",
+        "55",
+        "55",
+        "55",
+        "54",
+        "52",
+        "45",
+        "50",
+        "50",
+        "50",
+        "55",
+        "55",
+        "55",
+        "55",
+        "57",
+        "50",
+        "50",
+        "50",
+        "50",
+        "55",
+        "55",
+        "55",
+        "55",
+        "55",
+        "55",
+        "55",
+        "55",
+        "48",
+        "48",
+        "46",
+        "48",
+        "50",
+        "52",
+        "52",
+        "45",
+        "47",
+        "48",
+        "50",
+        "50",
+        "50",
+        "55",
+        "48",
+        "43"
+      ],
+      "rendered_or_reimported": false
+    },
+    "zim-wiki": {
+      "fixture_root": "pagelist",
+      "page_count": 37,
+      "pages": [
+        {
+          "name": "TaskList",
+          "characters": 10,
+          "links": []
+        },
+        {
+          "name": "TaskList:foo",
+          "characters": 53,
+          "links": []
+        },
+        {
+          "name": "TaskList:bar",
+          "characters": 86,
+          "links": [
+            "Test:Foo:BAR"
+          ]
+        },
+        {
+          "name": "TaskList:all",
+          "characters": 435,
+          "links": []
+        },
+        {
+          "name": "TrashMe",
+          "characters": 11,
+          "links": []
+        },
+        {
+          "name": "TrashMe:sub page 1",
+          "characters": 11,
+          "links": []
+        },
+        {
+          "name": "TrashMe:sub page 2",
+          "characters": 11,
+          "links": []
+        },
+        {
+          "name": "Test:wiki",
+          "characters": 2075,
+          "links": []
+        },
+        {
+          "name": "Test:foo",
+          "characters": 269,
+          "links": [
+            "foo:bar",
+            "http://foo.org/bar",
+            "mailto:foo@bar.org",
+            "foo@bar.org",
+            "/foo/bar.pdf",
+            "~/foo/bar.pdf"
+          ]
+        },
+        {
+          "name": "Test:foo:bar",
+          "characters": 53,
+          "links": [
+            "wIKi",
+            "test:foo"
+          ]
+        },
+        {
+          "name": "Test:tags",
+          "characters": 448,
+          "links": [
+            "foo:bar"
+          ]
+        },
+        {
+          "name": "Test:Foo Bar:Dus Ja Hmm",
+          "characters": 38,
+          "links": []
+        },
+        {
+          "name": "Test:Foo(Bar):Dus.Ja",
+          "characters": 36,
+          "links": []
+        },
+        {
+          "name": "roundtrip",
+          "characters": 1572,
+          "links": [
+            ":foo:bar",
+            "./file.png",
+            "Foo",
+            "Bar"
+          ]
+        },
+        {
+          "name": "utf8:\u03b1\u03b2\u03b3",
+          "characters": 23,
+          "links": []
+        },
+        {
+          "name": "utf8:\u05d1\u05d3\u05d9\u05e7\u05d4:\u05d8\u05db\u05e0\u05d9\u05d5\u05df",
+          "characters": 207,
+          "links": []
+        },
+        {
+          "name": "utf8:\u05d1\u05d3\u05d9\u05e7\u05d4:\u05d8\u05db\u05e0\u05d9\u05d5\u05df:\u05de\u05d3\u05e2\u05d9 \u05d4\u05de\u05d7\u05e9\u05d1",
+          "characters": 234,
+          "links": []
+        },
+        {
+          "name": "utf8:\u05d1\u05d3\u05d9\u05e7\u05d4:\u05d8\u05db\u05e0\u05d9\u05d5\u05df:\u05d4\u05e0\u05d3\u05e1\u05ea \u05de\u05db\u05d5\u05e0\u05d5\u05ea",
+          "characters": 292,
+          "links": []
+        },
+        {
+          "name": "utf8:\u4e2d\u6587",
+          "characters": 168,
+          "links": []
+        },
+        {
+          "name": "Linking:Foo:Bar",
+          "characters": 22,
+          "links": [
+            "Dus:Ja"
+          ]
+        },
+        {
+          "name": "Linking:Foo:Bar:Baz",
+          "characters": 9,
+          "links": [
+            "Bar"
+          ]
+        },
+        {
+          "name": "Linking:Dus",
+          "characters": 6,
+          "links": []
+        },
+        {
+          "name": "Linking:Dus:Ja",
+          "characters": 29,
+          "links": [
+            "Linking:Foo:Bar",
+            "Dus"
+          ]
+        },
+        {
+          "name": "Parent",
+          "characters": 36,
+          "links": []
+        },
+        {
+          "name": "Parent:Son",
+          "characters": 36,
+          "links": []
+        },
+        {
+          "name": "Parent:Son:Grandson",
+          "characters": 36,
+          "links": []
+        },
+        {
+          "name": "Parent:Son:Granddaughter",
+          "characters": 36,
+          "links": []
+        },
+        {
+          "name": "Parent:Daughter",
+          "characters": 36,
+          "links": []
+        },
+        {
+          "name": "Parent:Daughter:Grandson",
+          "characters": 36,
+          "links": []
+        },
+        {
+          "name": "Parent:Daughter:Granddaughter",
+          "characters": 36,
+          "links": []
+        },
+        {
+          "name": "Parent:Daughter:SomeOne:Foo",
+          "characters": 36,
+          "links": []
+        },
+        {
+          "name": "Parent:Daughter:SomeOne:Bar",
+          "characters": 36,
+          "links": []
+        },
+        {
+          "name": "Parent:Child:Grandchild",
+          "characters": 36,
+          "links": []
+        },
+        {
+          "name": "Movers",
+          "characters": 22,
+          "links": []
+        },
+        {
+          "name": "Movers:Stator",
+          "characters": 9,
+          "links": []
+        },
+        {
+          "name": "Movers:Stator:Mover",
+          "characters": 7,
+          "links": []
+        },
+        {
+          "name": "Books:H2G2",
+          "characters": 221,
+          "links": []
+        }
+      ],
+      "parse_tree_counts": {
+        "anchor": 2,
+        "code": 1,
+        "div": 1,
+        "emphasis": 5,
+        "h": 10,
+        "img": 5,
+        "li": 29,
+        "line": 1,
+        "link": 18,
+        "mark": 1,
+        "object": 4,
+        "ol": 4,
+        "p": 34,
+        "pre": 3,
+        "strike": 4,
+        "strong": 9,
+        "sub": 1,
+        "sup": 1,
+        "table": 1,
+        "tag": 2,
+        "td": 9,
+        "th": 3,
+        "thead": 1,
+        "trow": 3,
+        "ul": 8,
+        "zim-tree": 1
+      },
+      "parse_tree_links": [
+        {
+          "href": "foo"
+        },
+        {
+          "href": ":foo"
+        },
+        {
+          "href": "+foo"
+        },
+        {
+          "href": "foo"
+        },
+        {
+          "href": ":foo:bar"
+        },
+        {
+          "href": "./file.png"
+        },
+        {
+          "href": "file:///etc/passwd"
+        },
+        {
+          "href": "mailto:foo@bar.org"
+        },
+        {
+          "href": "wp?Test"
+        },
+        {
+          "href": "http://nongnu.org"
+        },
+        {
+          "href": "foo@bar.org"
+        },
+        {
+          "href": "#foo"
+        },
+        {
+          "href": "page#foo"
+        },
+        {
+          "href": "wp?wiki"
+        },
+        {
+          "href": "http://x.org"
+        },
+        {
+          "href": "https://example.org"
+        },
+        {
+          "href": "https://example.org"
+        },
+        {
+          "href": "https://example.org"
+        }
+      ],
+      "wiki_task_markers": {
+        "[ ]": 1,
+        "[*]": 3,
+        "[x]": 1,
+        "[>]": 1,
+        "[<]": 1
+      },
+      "markdown_task_markers": {},
+      "markdown_checkbox_glyphs": {
+        "\u2610": 1,
+        "\u2611": 3,
+        "\u2612": 1,
+        "\u25b7": 1,
+        "\u25c1": 1
+      },
+      "export_executed": false
+    },
+    "taskwarrior": {
+      "upstream_test_literals": {
+        "self.data1": [
+          {
+            "uuid": "a0000000-a000-a000-a000-a00000000000",
+            "description": "zero",
+            "project": "A",
+            "status": "pending",
+            "entry": "1234567889"
+          },
+          {
+            "uuid": "a1111111-a111-a111-a111-a11111111111",
+            "description": "one",
+            "project": "B",
+            "status": "pending",
+            "entry": "1234567889"
+          },
+          {
+            "uuid": "a2222222-a222-a222-a222-a22222222222",
+            "description": "two",
+            "status": "completed",
+            "entry": "1234524689",
+            "end": "1234524690"
+          }
+        ],
+        "self.data2": {
+          "uuid": "44444444-4444-4444-4444-444444444444",
+          "description": "three",
+          "status": "pending",
+          "entry": "1234567889"
+        },
+        "self.data3": {
+          "uuid": "55555555-5555-5555-5555-555555555555",
+          "description": "four",
+          "status": "pending",
+          "entry": "1234567889"
+        }
+      },
+      "taskwarrior_tests_executed": false
+    }
+  },
+  "limits": "Queries and parsers executed, target implementation did not. Historical samples retain their limited scope. Read errors are not discarded or generalized to all projects. No equivalent audio/layout or application restoration is claimed."
+}

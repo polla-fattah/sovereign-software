@@ -1,0 +1,235 @@
+{
+  "review_date": "2026-10-23",
+  "ratings_reconciliation": "Deferred to the next pass at the user's request",
+  "inputs": [
+    {
+      "application": "blender",
+      "repository": "blender/blender",
+      "path": "doc/blender_file_format/README",
+      "commit": "ded7fde71c04f034d6c065e8d0a75d9f548003a0",
+      "host": "github",
+      "git_blob_sha": "25bb189d980206b8308a265c066c8bdee5a17b67"
+    },
+    {
+      "application": "blender",
+      "repository": "blender/blender",
+      "path": "doc/blender_file_format/mystery_of_the_blend.html",
+      "commit": "ded7fde71c04f034d6c065e8d0a75d9f548003a0",
+      "host": "github",
+      "git_blob_sha": "74c59cd041453c2e368151fefbd3308fc4ddef9f"
+    },
+    {
+      "application": "blender",
+      "repository": "blender/blender",
+      "path": "source/blender/makesdna/intern/dna_genfile.cc",
+      "commit": "ded7fde71c04f034d6c065e8d0a75d9f548003a0",
+      "host": "github",
+      "git_blob_sha": "3d7dd754a554bf6f5fa88f71ae3d81c9bdaca0d3"
+    },
+    {
+      "application": "blender",
+      "repository": "blender/blender",
+      "path": "source/blender/blenkernel/intern/packedFile.cc",
+      "commit": "ded7fde71c04f034d6c065e8d0a75d9f548003a0",
+      "host": "github",
+      "git_blob_sha": "9fc5e5f596c5f9803d4a824a5f36053bffb865cc"
+    },
+    {
+      "application": "inkscape",
+      "repository": "inkscape/inkscape",
+      "path": "share/examples/live-path-effects-gears.svg",
+      "commit": "9055f262b58743a1f7caee54c1132f029341fe0a",
+      "host": "gitlab",
+      "git_blob_sha": "bb2b2ea5944d717de828e65bafb9715579ab3036"
+    },
+    {
+      "application": "inkscape",
+      "repository": "inkscape/inkscape",
+      "path": "share/examples/data_uri.svg",
+      "commit": "9055f262b58743a1f7caee54c1132f029341fe0a",
+      "host": "gitlab",
+      "git_blob_sha": "6f6f59359a7895bacf0c00fb53f3301a222f84b6"
+    },
+    {
+      "application": "inkscape",
+      "repository": "inkscape/inkscape",
+      "path": "src/extension/internal/svg.cpp",
+      "commit": "9055f262b58743a1f7caee54c1132f029341fe0a",
+      "host": "gitlab",
+      "git_blob_sha": "2852df9e4a2b090a8fd9e669e95cbc2e9018ab5b"
+    },
+    {
+      "application": "krita",
+      "repository": "KDE/krita",
+      "path": "libs/image/tests/data/store_test.kra",
+      "commit": "b5b6dd3c8b53944f67a824f7f938f4bbfa80275d",
+      "host": "github",
+      "git_blob_sha": "e5676833ff40ac54b6b70c3155571d964dffc576"
+    },
+    {
+      "application": "krita",
+      "repository": "KDE/krita",
+      "path": "plugins/impex/ora/kis_open_raster_stack_save_visitor.cpp",
+      "commit": "b5b6dd3c8b53944f67a824f7f938f4bbfa80275d",
+      "host": "github",
+      "git_blob_sha": "3fcd8b1dbc8d1cfd6550abfb80b8594e566461f5"
+    },
+    {
+      "application": "gimp",
+      "repository": "GNOME/gimp",
+      "path": "app/tests/files/gimp-2-6-file.xcf",
+      "commit": "84709e20bc45311322a318b20669dc6b52118353",
+      "host": "github",
+      "git_blob_sha": "3ab958f360055a1dbf2106b1b3da8a139070d6cb"
+    },
+    {
+      "application": "gimp",
+      "repository": "GNOME/gimp",
+      "path": "plug-ins/python/file-openraster.py",
+      "commit": "84709e20bc45311322a318b20669dc6b52118353",
+      "host": "github",
+      "git_blob_sha": "4c6d7f455c773038befaebc5388fbd326aef0623"
+    },
+    {
+      "application": "kicad",
+      "repository": "KiCad/kicad-source-mirror",
+      "path": "qa/data/cli/basic_test/basic_test.kicad_pcb",
+      "commit": "ba5ed30c1bee8bcfa7db6dc423f1d20224c4e3a5",
+      "host": "github",
+      "git_blob_sha": "25ee0a0aa13178dcd71a9760167bb2e9fbec16e2"
+    },
+    {
+      "application": "kicad",
+      "repository": "KiCad/kicad-source-mirror",
+      "path": "common/project/project_archiver.cpp",
+      "commit": "ba5ed30c1bee8bcfa7db6dc423f1d20224c4e3a5",
+      "host": "github",
+      "git_blob_sha": "f509d24012a20a2a66859d84ffb0ed6740f17f88"
+    },
+    {
+      "application": "openscad",
+      "repository": "openscad/openscad",
+      "path": "tests/regression/export-3mf/lazyunion-color-cubes-expected.3mf",
+      "commit": "d7a210ed01e5db9f09a8164894b0d0b07d7f2c67",
+      "host": "github",
+      "git_blob_sha": "8d6fbfaa969a2f533aee95d10653819337b50b21"
+    },
+    {
+      "application": "openscad",
+      "repository": "openscad/openscad",
+      "path": "tests/regression/export-binstl/stl-export-expected.stl",
+      "commit": "d7a210ed01e5db9f09a8164894b0d0b07d7f2c67",
+      "host": "github",
+      "git_blob_sha": "444f314b559f2a9a6965b70170ada6fa1d1d15c8"
+    },
+    {
+      "application": "openscad",
+      "repository": "openscad/openscad",
+      "path": "src/io/export_3mf_v2.cc",
+      "commit": "d7a210ed01e5db9f09a8164894b0d0b07d7f2c67",
+      "host": "github",
+      "git_blob_sha": "eb4ac78ddd42f913691ee08099c555515f45508f"
+    },
+    {
+      "application": "openscad",
+      "repository": "openscad/openscad",
+      "path": "src/io/export_stl.cc",
+      "commit": "d7a210ed01e5db9f09a8164894b0d0b07d7f2c67",
+      "host": "github",
+      "git_blob_sha": "e7ddf4deb91ceeb138aa259bcf7de0e5396a3bb2"
+    },
+    {
+      "application": "openscad",
+      "repository": "openscad/openscad",
+      "path": "tests/data/scad/3D/features/import.3mf",
+      "commit": "d7a210ed01e5db9f09a8164894b0d0b07d7f2c67",
+      "host": "github",
+      "git_blob_sha": "6cfb681d8c579aa9427e061d5d31982f6c00f107"
+    }
+  ],
+  "source_questions": [
+    {
+      "application": "blender",
+      "id": "sdna-format-knowledge",
+      "anchors": {
+        "source/blender/makesdna/intern/dna_genfile.cc": [
+          "NAME (4 bytes)",
+          "TYPE (4 bytes)",
+          "TLEN (4 bytes)",
+          "STRC (4 bytes)"
+        ]
+      }
+    },
+    {
+      "application": "blender",
+      "id": "pack-all-exclusions",
+      "anchors": {
+        "source/blender/blenkernel/intern/packedFile.cc": [
+          "void BKE_packedfile_pack_all",
+          "IMA_SRC_MOVIE, IMA_SRC_SEQUENCE",
+          "packing movies or image sequences not supported",
+          "if (ID_IS_LINKED(&object))"
+        ]
+      }
+    },
+    {
+      "application": "inkscape",
+      "id": "plain-svg-export-registration",
+      "anchors": {
+        "src/extension/internal/svg.cpp": [
+          "Plain SVG (*.svg)",
+          "prune-inkscape-namespaces",
+          "prune-proprietary-namespaces"
+        ]
+      }
+    },
+    {
+      "application": "krita",
+      "id": "ora-projection-and-filter-boundaries",
+      "anchors": {
+        "plugins/impex/ora/kis_open_raster_stack_save_visitor.cpp": [
+          "visit(KisGeneratorLayer",
+          "visit(KisCloneLayer",
+          "layer->projection()",
+          "applications:krita:",
+          "layer->isFakeNode()"
+        ]
+      }
+    },
+    {
+      "application": "gimp",
+      "id": "ora-rasterization-and-blend-fallback",
+      "anchors": {
+        "plug-ins/python/file-openraster.py": [
+          "file-png-export",
+          "ET.Element('stack')",
+          "gimp_layermodes_map.get(gimp_layer.get_mode(), 'svg:src-over')"
+        ]
+      }
+    },
+    {
+      "application": "kicad",
+      "id": "archive-selection-boundary",
+      "anchors": {
+        "common/project/project_archiver.cpp": [
+          "if( aIncludeExtraFiles )",
+          "FILEEXT::StepFileExtension",
+          "FILEEXT::VrmlFileExtension",
+          "projectDir.Traverse( traverser",
+          "Do not include hidden directories"
+        ]
+      }
+    },
+    {
+      "application": "openscad",
+      "id": "stl-output-information-boundary",
+      "anchors": {
+        "src/io/export_stl.cc": [
+          "char header[80]",
+          "char attrib[2] = {0, 0}",
+          "write_floats(output, coords)"
+        ]
+      }
+    }
+  ]
+}

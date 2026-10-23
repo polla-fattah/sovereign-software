@@ -4,6 +4,17 @@ Reviewed 22 October 2026 from the xbmc/xbmc repository (README, releases page, G
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 11](../third-pass/batch-11/README.md#kodi) and reflected in the [application page](../../content/directory/kodi.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: The export code distinguishes a dated videodb.xml folder with artwork directories from per-item NFO export; import reads that XML and reconstructs source paths only when the scraper add-on exists. The import code explicitly notes scraper settings are not exported. This route is therefore not demonstrated to recreate an entire profile.
+- [x] Resolved: Library cleanup distinguishes absent files under reachable sources from unavailable source directories. For unavailable sources, silent mode retains entries; interactive mode can ask, while missing files under reachable parents can be removed from the database without asking. This concerns library records/history, not an assertion that Clean Library deletes media bytes.
+
+Remaining: Watched/resume/artwork round-trip comparison, independent database reading, profile migration/downgrade and observed cleanup/source-removal behavior remain untested.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -45,3 +56,18 @@ Reviewed 22 October 2026 from the xbmc/xbmc repository (README, releases page, G
 5. Run Clean Library and Remove Source on the synthetic data and note which prompts appear and what files change on disk.
 6. Read kodi.tv privacy policy and the LICENSE.md text, and check offline behavior with the network disabled (update checks, scraper calls, add-on repository lookups).
 7. Confirm the stable release year from the Kodi download page (failed with a certificate error) and read the last 17302 characters of the releases page.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-11/README.md#kodi); [actual assessment](../../content/directory/kodi.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. Source distinguishes per-item NFO from a dated XML/artwork export and makes reconstruction depend on available scraper add-ons; scraper settings are not exported in that route. Complete watched/resume, profile, settings/add-on and media dependency recovery remains unestablished.
+- E5: Not Verified. Library cleanup treats missing files on reachable sources differently from unavailable sources, with conditional prompts and silent retention. This concerns library records, not automatically media-byte deletion. Effective source/remove/add-on authority and correction of record/history loss remain insufficiently covered.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: Watched/resume/artwork round-trip comparison, independent database reading, profile migration/downgrade and observed cleanup/source-removal behavior remain untested. E5 needs effective cleanup/source/removal settings, add-on authority and recoverable library/history states; record cleanup and media deletion are distinct.
+
+Next without a local installation: Use a synthetic profile/database/NFO/artwork/media-reference packet with expected watched/resume records; inspect it independently and obtain same-version cleanup/source/add-on authority and restoration evidence.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

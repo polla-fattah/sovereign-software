@@ -4,6 +4,17 @@ Reviewed 22 October 2026 from the KOReader User Guide (koreader.rocks), the proj
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1. The User Guide page is long and was read through a summarising fetch, so statements below rest on those summaries. The guide is marked "Guide last update: 2025-03-25", which is older than the release found.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 11](../third-pass/batch-11/README.md#koreader) and reflected in the [application page](../../content/directory/koreader.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: Sidecars are located beside the book, under a separate document-settings tree, or in a partial-MD5-based hashed tree, and use metadata.<suffix>.lua names. The inspected JSON exporter copies each supplied entry's first record plus selected book fields, not the entire sidecar/settings object. Book-only copying and highlight export are therefore distinct recovery scopes.
+- [x] Resolved: Sidecar loading actually invokes dofile inside pcall; error-catching is not a sandbox for arbitrary Lua code. Writing serializes settings and maintains a .old backup before replacement, with candidate priority rules. Recovery should inspect untrusted sidecars without executing them; no generic Lua execution was performed in this review.
+
+Remaining: Actual cross-device/hash-mode migration, annotation-field comparisons across export formats, PDF checksum changes, release compatibility and backup restoration remain untested.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -46,3 +57,18 @@ Reviewed 22 October 2026 from the KOReader User Guide (koreader.rocks), the proj
 5. Restore a settings backup from an older release into the latest one, and from a newer release into an older one; record failures.
 6. Run with the network blocked and log outgoing connections at start-up and idle, to check for update checks or telemetry (not found in the docs).
 7. Not read or not found: the Device tips and Troubleshooting sections in full, the rest of the wiki ("97 more pages"), any KOSync server privacy or self-hosting page, the AGPL COPYING text, and the changelog for sidecar format changes.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-11/README.md#koreader); [actual assessment](../../content/directory/koreader.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. Sidecar location varies by adjacent, separate-tree and hashed modes, and the inspected highlight JSON export is not the whole sidecar/settings object. No complete cross-device metadata/annotation reconstruction with checksum/path changes and compatible releases is established.
+- E5: Not Verified. Sidecar loading calls Lua dofile inside error-catching, which is not sandboxing; source also defines replacement/old-backup priorities. Effective trust of imported sidecars, write/backup policy and usable recourse after metadata migration remain insufficiently established.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: Actual cross-device/hash-mode migration, annotation-field comparisons across export formats, PDF checksum changes, release compatibility and backup restoration remain untested. E5 needs safe sidecar trust/execution policy and effective backup/write/migration correction; data inspection must not execute untrusted Lua.
+
+Next without a local installation: Inspect synthetic sidecars as text/data only, alongside book hashes and a location/migration manifest; obtain same-version external annotation/move/backup records without executing sidecar code.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

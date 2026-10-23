@@ -4,6 +4,15 @@ Reviewed 22 October 2026 from the Gitea documentation (docs.gitea.com), about.gi
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Source follow-up: 23 October 2026
+
+2 specific source questions are resolved in [batch 3](../third-pass/batch-3/README.md#gitea) and incorporated into the [application assessment](../../content/directory/gitea.md). These pinned implementation findings supersede the corresponding documentation-only uncertainty below; the original review is retained as a dated record.
+
+- [x] Resolved: The dump implementation writes gitea-db.sql, app.ini, repositories and data, and iterates configured LFS, attachment and package storage into data/lfs, data/attachments and data/packages. Skip flags can omit these stores; LFS is nested under repository dumping and requires its server to be enabled. This resolves implementation coverage, not backup consistency or restoration.
+- [x] Resolved: The repository dumper serializes issues to issue.yml and comments/reviews into numbered YAML files; repository metadata, Git/wiki data and release assets have separate paths. The retained issue JSON schema and migration types expose identifiers, labels, assignees and review links. This is an inspectable export representation, not proof of complete migration to another forge.
+
+Remaining: A real dump/clean restore with counts, attachments, LFS, hooks and permissions; cross-version and cross-forge fidelity; live-backup consistency and deletion recovery.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -42,3 +51,18 @@ Reviewed 22 October 2026 from the Gitea documentation (docs.gitea.com), about.gi
 5. Read the unread tail of the config cheat sheet (storage, `[lfs]`, `[attachment]`, update checker disable switch) and the first part of the releases history.
 6. Not read: MAINTAINERS, CONTRIBUTING, privacy or terms pages, security policy, database schema docs, Actions runner docs.
 7. Delete a repository and a user on a test instance, and check whether anything remains recoverable without a backup.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-4/README.md#gitea); [actual assessment](../../content/directory/gitea.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. Dump source includes SQL, configuration, repositories and configurable object stores, while per-repository export serializes forge relationships. Skip flags and deployment state affect completeness. No consistent representative instance has been reconstructed with users, permissions, reviews, LFS and attachments; Git history alone is not the forge profile.
+- E5: Not Verified. Inspectable Git history is not authorization or recourse for forge permissions, hooks, instance/database mutation and repository/account deletion. The collected dump/migration implementation does not sufficiently cover those deployment-specific operations and restore-order consequences.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: A real dump/clean restore with counts, attachments, LFS, hooks and permissions; cross-version and cross-forge fidelity; live-backup consistency and deletion recovery. E5 needs role-specific permission/hook/deletion authorization, auditable mutations and recovery boundaries, including relevant external authentication/CI.
+
+Next without a local installation: Obtain a stopped or consistency-controlled synthetic instance dump with SQL/config/object-store manifests and expected role/relationship records; inspect it independently and reuse version-matched permission/deletion/restore observations.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

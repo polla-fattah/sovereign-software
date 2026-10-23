@@ -4,6 +4,17 @@ Reviewed 22 October 2026 from the PSPP Users' Guide, the PSPP Developers Guide, 
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1. The single-page Users' Guide is about 451,000 characters and the fetch tool read it in chunks; the last ~50,000 characters (appendices and utilities) came back without the system-file or pspp-convert sections, so those were read from their own pages instead.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 10](../third-pass/batch-10/README.md#gnu-pspp) and reflected in the [application page](../../content/directory/gnu-pspp.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: The official CSV specification distinguishes VALUES from LABELS output, documents print-format trimming and writes numeric system-missing values as a space. Together with MISSING=RECODE, this can collapse missing-value distinctions; a CSV is not demonstrated to preserve the native dictionary. This is a documented format conclusion, not a conversion experiment.
+- [x] Resolved: The official SAVE TRANSLATE specification refuses existing-file overwrite by default and requires REPLACE; MISSING=RECODE, DROP/KEEP and UNSELECTED change the exported representation/case scope. These explicit controls resolve their documented semantics, not proof of an executed safeguard.
+
+Remaining: Native SAV/POR compression compatibility, independent-reader comparisons, dictionary round trips, transformation reversibility and crash recovery remain untested. Savannah source-file retrieval failed; dated retained official manual pages are used instead.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -46,3 +57,19 @@ Reviewed 22 October 2026 from the PSPP Users' Guide, the PSPP Developers Guide, 
 5. Kill PSPP mid-session and check what is recoverable (no recovery text found).
 6. Read the Developers Guide chapters on portable files and encrypted wrappers, and the Users' Guide GET DATA, SAVE TRANSLATE target formats, and output (SPV) sections that fell in truncated chunks.
 7. Read the Savannah project pages and a NEWS file for maintainer count and succession (Savannah blocked automated reads); confirm the GPL version in the source tree.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-10/README.md#gnu-pspp); [actual assessment](../../content/directory/gnu-pspp.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The retained official specification exposes CSV label/value, missingness and case-selection loss boundaries, not native dictionary recovery. SAV/POR compression, labels/missing distinctions and independent-reader reconstruction have not been compared. Dated manual evidence is retained despite failed source retrieval.
+- E5: Not Verified. SAVE TRANSLATE documents default overwrite refusal and explicit REPLACE, plus options that change scope/meaning. These controls are positive but do not comprehensively cover syntax transformations, effective output selection, reversal and crash recovery in the original statistical workflow.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+- E2: Not Verified. The former E2 Pass does not establish a usable independent statistical workflow preserving native dictionary, labels and missing-value distinctions. The inspected CSV route can collapse those distinctions; alternative native routes remain unverified rather than failed.
+
+Remaining: Native SAV/POR compression compatibility, independent-reader comparisons, dictionary round trips, transformation reversibility and crash recovery remain untested. Savannah source-file retrieval failed; dated retained official manual pages are used instead. E5 needs effective transformation/save scope, output overwrite review and recoverable source/dictionary states; documented REPLACE is not a full executed safeguard.
+
+Next without a local installation: Inspect representative synthetic SAV/POR and CSV pairs with expected dictionary/labels/missingness, and seek independent-reader plus same-version syntax/overwrite/recovery records.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

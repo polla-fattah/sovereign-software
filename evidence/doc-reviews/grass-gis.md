@@ -4,6 +4,17 @@ Reviewed 22 October 2026 from the GRASS 8.5 manual pages, grass.osgeo.org (downl
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 10](../third-pass/batch-10/README.md#grass-gis) and reflected in the [application page](../../content/directory/grass-gis.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: The native vector pack implementation archives map files, copies connected attribute tables into db.sqlite via db.copy, and includes projection support files. The separately inspected raster pack collects cats/cell/cellhd/cell_misc/colr/fcell/hist and CRS support. Native packs preserve structures that a geometry-only export need not carry; this is not a successful unpack trial.
+- [x] Resolved: The removal loop prints matched mapset elements and continues without deletion unless force (-f) is set; the implementation explicitly warns that nothing was removed. With force it calls M_do_remove. This establishes a concrete preview/deletion branch, not an automatic recovery guarantee.
+
+Remaining: Pack/unpack equivalence, external database dependencies, raster/null/category fidelity, older-version opening and interrupted-write recovery remain untested.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -44,3 +55,18 @@ Reviewed 22 October 2026 from the GRASS 8.5 manual pages, grass.osgeo.org (downl
 5. Run `g.remove` without and with `-f`, and `g.copy --overwrite`, on synthetic maps; check for any recovery.
 6. Pages not read: GRASS data-format and version-migration notes (not found), mapset locking pages, full release notes, the GOVERNANCE.md text (the fetch only returned a pointer), and GitHub release tags (releases page showed none).
 7. The download page omits the release date; the GitHub release page was not directly read.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-10/README.md#grass-gis); [actual assessment](../../content/directory/grass-gis.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. Vector/raster pack source identifies native maps, attribute SQLite data and projection support, but no complete pack was independently unpacked and compared. External database dependencies and null/category/projection meaning remain unestablished for the native project/mapset.
+- E5: Not Verified. g.remove previews matches and requires force for the inspected deletion branch. That is a concrete bounded safeguard, not full evidence for overwrite/import/processing authority, mapset permissions or recourse after removed maps and interrupted writes.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: Pack/unpack equivalence, external database dependencies, raster/null/category fidelity, older-version opening and interrupted-write recovery remain untested. E5 needs mapset/processing/overwrite authority, effective removal scope and appropriate independent backup/restore boundaries.
+
+Next without a local installation: Inspect synthetic native raster/vector packs, external DB references and expected attributes/CRS/null/category records; seek independent unpack comparisons and version-matched preview/remove/overwrite recovery evidence.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

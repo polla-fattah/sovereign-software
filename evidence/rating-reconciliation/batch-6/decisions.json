@@ -1,0 +1,440 @@
+{
+  "review_date": "2026-10-24",
+  "purpose": "Individual reconciliation against each existing scope. Completed review is not product certification or proof that every gap is resolved.",
+  "applications": [
+    {
+      "id": "blender",
+      "name": "Blender",
+      "version": "Source commit ded7fde71c04f034d6c065e8d0a75d9f548003a0; published SDNA layout and Pack All coverage",
+      "E3": [
+        "not_verified",
+        "Published SDNA definitions explain binary structure layout, while Pack All deliberately skips some external image/movie/linked bake dependencies. Neither a current scene was independently reconstructed nor its complete assets, scripts, node semantics and compatible runtime retained and compared. Available format knowledge is not complete scene survival.",
+        "https://github.com/blender/blender/blob/ded7fde71c04f034d6c065e8d0a75d9f548003a0/source/blender/makesdna/intern/dna_genfile.cc",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Undo/recovery documentation and pack warnings do not establish effective Python/driver/plugin authorization, save/export overwrite control or correction across asset packing and destructive scene changes. Known pack exclusions are dependency facts, not proof of governable execution.",
+        "https://docs.blender.org/manual/en/latest/files/blend/index.html",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for Blender's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/blender/blender/blob/ded7fde71c04f034d6c065e8d0a75d9f548003a0/source/blender/makesdna/intern/dna_genfile.cc",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://docs.blender.org/manual/en/latest/files/blend/index.html",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "An actual current-version blend-file interpretation, complete offline scene/dependency rebuild, pack/move comparison, editable export losses, version compatibility and script/undo safeguards. E5 needs effective script/driver/plugin trust, overwrite and destructive-edit controls plus recoverable scene state.",
+      "current_remaining": "An actual current-version blend-file interpretation, complete offline scene/dependency rebuild, pack/move comparison, editable export losses, version compatibility and script/undo safeguards. E5 needs effective script/driver/plugin trust, overwrite and destructive-edit controls plus recoverable scene state.",
+      "next": "Obtain a complete synthetic scene/dependency manifest, native source and interchange/reference outputs with expected object/node/animation semantics; inspect preserved files and reuse version-matched script/undo/save observations.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Blender does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://github.com/blender/blender/blob/ded7fde71c04f034d6c065e8d0a75d9f548003a0/source/blender/makesdna/intern/dna_genfile.cc",
+        "medium"
+      ]
+    },
+    {
+      "id": "inkscape",
+      "name": "Inkscape",
+      "version": "Source commit 9055f262b58743a1f7caee54c1132f029341fe0a; sample SVG metadata/embedded assets and Plain SVG action registration",
+      "E3": [
+        "not_verified",
+        "Independent SVG/XML and embedded-image inspection recovers some paths, references and live-effect metadata, but no current native/Plain SVG reconstruction establishes equivalent objects/effects, fonts, linked assets and multipage meaning. Namespace pruning is a known export distinction, not complete recovery.",
+        "https://inkscape.org/learn/",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "The generic publishing/accessibility note does not establish control of document mutations. Save/export overwrite, extension/script execution, external-link transmission and undo/recovery boundaries remain insufficiently evidenced for the original artwork workflow.",
+        "https://inkscape.org/learn/",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for Inkscape's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://inkscape.org/learn/",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://inkscape.org/learn/",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "practical_exit": "not_verified",
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "An executed native/Plain SVG comparison, independent rendering/editing, fonts and linked-image relocation, PDF/PNG losses, current-version multipage behavior, crash recovery and network behavior. E5 needs extension/external-link and save/export overwrite controls, visible changes and available undo/recovery.",
+      "current_remaining": "An executed native/Plain SVG comparison, independent rendering/editing, fonts and linked-image relocation, PDF/PNG losses, current-version multipage behavior, crash recovery and network behavior. E5 needs extension/external-link and save/export overwrite controls, visible changes and available undo/recovery.",
+      "next": "Inspect a native/Plain SVG pair with fonts/assets and expected layer/effect/object relationships, plus independent render/edit comparisons. Add primary-source or external tests of extension, overwrite and undo controls.",
+      "E2": [
+        "not_verified",
+        "The former E2 Pass is not supported for the full editable-artwork scope. Plain SVG namespace pruning and historical path inspection do not establish preservation of essential live effects, layers, linked assets and editable relationships in a replacement workflow.",
+        "https://gitlab.com/inkscape/inkscape/-/blob/9055f262b58743a1f7caee54c1132f029341fe0a/src/extension/internal/svg.cpp",
+        "medium"
+      ],
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Inkscape does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://gitlab.com/inkscape/inkscape/-/blob/9055f262b58743a1f7caee54c1132f029341fe0a/src/extension/internal/svg.cpp",
+        "medium"
+      ]
+    },
+    {
+      "id": "krita",
+      "name": "Krita",
+      "version": "Source commit b5b6dd3c8b53944f67a824f7f938f4bbfa80275d; KRA archive relationships and OpenRaster editable-state limits",
+      "E3": [
+        "not_verified",
+        "The historical KRA exposes a layer/payload relationship and profiles but its pixel data/color semantics were not independently rebuilt. OpenRaster source projects or skips some native constructs, so neither equivalent layers/masks/animation nor complete native recovery follows from ZIP readability.",
+        "https://docs.krita.org/en/user_manual/working_with_images.html",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "User-directed image editing does not establish plugin/script authority, save/export overwrite decisions or correction after layer and animation changes. Conditional backups/autosave and effective settings still lack sufficient evidence for this profile.",
+        "https://docs.krita.org/en/reference_manual/main_menu/file_menu.html",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for Krita's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://docs.krita.org/en/user_manual/working_with_images.html",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://docs.krita.org/en/reference_manual/main_menu/file_menu.html",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Native pixel reconstruction, masks/vector/text/animation and color fidelity across ORA/PSD/PNG, actual adjustment-layer export behavior, version round trips, backup/autosave recovery and update/network controls. E5 needs save/autosave, plugin/script and destructive-edit/overwrite visibility and correction boundaries.",
+      "current_remaining": "Native pixel reconstruction, masks/vector/text/animation and color fidelity across ORA/PSD/PNG, actual adjustment-layer export behavior, version round trips, backup/autosave recovery and update/network controls. E5 needs save/autosave, plugin/script and destructive-edit/overwrite visibility and correction boundaries.",
+      "next": "Use a synthetic KRA with representative layers/masks/text/animation and dependency/color manifest, native/interchange exports and reference comparisons; inspect archives and seek matching save/undo/autosave controls.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Krita does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://docs.krita.org/en/user_manual/working_with_images.html",
+        "medium"
+      ]
+    },
+    {
+      "id": "gimp",
+      "name": "GIMP",
+      "version": "Source commit 84709e20bc45311322a318b20669dc6b52118353; legacy XCF layer records and OpenRaster raster/mode boundaries",
+      "E3": [
+        "not_verified",
+        "The independent parser reads legacy XCF header/layer records but not pixels, masks, modern formats or equivalent color/compositing. OpenRaster serializes rasterized state and falls back for some modes, so complete native editable-image reconstruction remains unestablished.",
+        "https://docs.gimp.org/en_GB/gimp-images-out.html",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Save/export prompts are positive leads, not full evidence for plugin/script authorization, destructive effects/layer changes, overwrite visibility and meaningful undo/crash recovery in the declared modern project and plugin configuration.",
+        "https://docs.gimp.org/3.0/en/gimp-export-dialog.html",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for GIMP's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://docs.gimp.org/en_GB/gimp-images-out.html",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://docs.gimp.org/3.0/en/gimp-export-dialog.html",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Current layered-XCF decoding, text/mask/group/high-bit-depth and ICC fidelity, actual ORA/PSD/TIFF round trips, old/new-version saves, crash recovery and plugin/network controls. E5 needs plugin/script, destructive-edit and save/export overwrite control with explicit undo/recovery limits.",
+      "current_remaining": "Current layered-XCF decoding, text/mask/group/high-bit-depth and ICC fidelity, actual ORA/PSD/TIFF round trips, old/new-version saves, crash recovery and plugin/network controls. E5 needs plugin/script, destructive-edit and save/export overwrite control with explicit undo/recovery limits.",
+      "next": "Acquire a current synthetic layered XCF plus mask/text/ICC dependencies, expected semantic/pixel records and independent ORA/PSD/TIFF comparisons; seek same-version plugin/save/undo evidence without running the target.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for GIMP does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://docs.gimp.org/en_GB/gimp-images-out.html",
+        "medium"
+      ]
+    },
+    {
+      "id": "kicad",
+      "name": "KiCad",
+      "version": "Source commit ba5ed30c1bee8bcfa7db6dc423f1d20224c4e3a5; PCB S-expression connectivity and project-archive inclusion limits",
+      "E3": [
+        "not_verified",
+        "The standalone PCB parser resolves pad/net relationships and identifies external 3D-model variables, while archive source selects files rather than resolving every dependency. Hierarchical schematics, custom libraries, external models and cross-version editable/fabrication meaning have not been reconstructed.",
+        "https://docs.kicad.org/doxygen/classPROJECT__ARCHIVER.html",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Electrical correctness and manufacturing suitability are not themselves E5 authorization tests. The evidence does not sufficiently establish schematic-to-board mutation review, destructive library/board changes, output overwrite or release/correction controls in the existing engineering workflow.",
+        "https://www.kicad.org/",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for KiCad's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://docs.kicad.org/doxygen/classPROJECT__ARCHIVER.html",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://www.kicad.org/",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Hierarchical schematic/custom-library reconstruction, complete archive/move including external models, manufacturing and editable export comparison, old/new-version saves, .history recovery and schematic-to-PCB update effects. E5 needs inspectable schematic-to-PCB updates, destructive edit/output overwrite controls and available correction; accuracy claims are separate.",
+      "current_remaining": "Hierarchical schematic/custom-library reconstruction, complete archive/move including external models, manufacturing and editable export comparison, old/new-version saves, .history recovery and schematic-to-PCB update effects. E5 needs inspectable schematic-to-PCB updates, destructive edit/output overwrite controls and available correction; accuracy claims are separate.",
+      "next": "Inspect a complete synthetic schematic/PCB/library/model packet and expected connectivity/units manifest, with independent output comparisons. Obtain primary-source or external update/undo/overwrite evidence.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for KiCad does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://docs.kicad.org/doxygen/classPROJECT__ARCHIVER.html",
+        "medium"
+      ]
+    },
+    {
+      "id": "openscad",
+      "name": "OpenSCAD",
+      "version": "Source commit d7a210ed01e5db9f09a8164894b0d0b07d7f2c67; 3MF package/expectation inspection and binary STL information limits",
+      "E3": [
+        "not_verified",
+        "The independent 3MF/STL readers expose mesh geometry and units where represented, but STL does not preserve source parameters/construction meaning and one regression expectation is not standalone XML. Complete includes/fonts, source/version dependencies and equivalent generated geometry remain unestablished for the original parametric profile.",
+        "https://files.openscad.org/documentation/manual/Using_OpenSCAD_with_an_external_Editor.html",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Manufacturing accuracy alone is not E5. The current evidence does not establish effective model/include execution authority, file/output overwrite control, previewed consequential changes or correction after lost source edits; backup and configuration boundaries remain open.",
+        "https://files.openscad.org/documentation/manual/OpenSCAD_User_Manual.html",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for OpenSCAD's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://files.openscad.org/documentation/manual/Using_OpenSCAD_with_an_external_Editor.html",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://files.openscad.org/documentation/manual/OpenSCAD_User_Manual.html",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "practical_exit": "not_verified",
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Actual CGAL/Manifold equivalence, exported geometry reconstruction, parameter/color/unit losses in receiving tools, complete library/font dependency capture, source/version compatibility and crash backup behavior. E5 needs source/include execution and save/export overwrite authority, inspectability and backup/correction boundaries.",
+      "current_remaining": "Actual CGAL/Manifold equivalence, exported geometry reconstruction, parameter/color/unit losses in receiving tools, complete library/font dependency capture, source/version compatibility and crash backup behavior. E5 needs source/include execution and save/export overwrite authority, inspectability and backup/correction boundaries.",
+      "next": "Retain a synthetic parametric model with every include/font and expected geometry/unit/color manifest, then use independent parsers and externally supplied engine comparisons. Review same-version file/execution/backup controls.",
+      "E2": [
+        "not_verified",
+        "The former E2 Pass does not establish a replacement parametric workflow preserving source parameters, construction meaning, units and required dependencies. Mesh-only interoperability is a narrower result, not full-scope migration.",
+        "https://github.com/openscad/openscad/blob/d7a210ed01e5db9f09a8164894b0d0b07d7f2c67/src/io/export_stl.cc",
+        "medium"
+      ],
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for OpenSCAD does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://github.com/openscad/openscad/blob/d7a210ed01e5db9f09a8164894b0d0b07d7f2c67/src/io/export_stl.cc",
+        "medium"
+      ]
+    }
+  ],
+  "field_changes": [
+    {
+      "id": "blender",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for Blender's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "blender",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "blender",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "partial",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Blender does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "inkscape",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for Inkscape's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "inkscape",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "inkscape",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "pass",
+      "after": "not_verified",
+      "reason": "The former E2 Pass is not supported for the full editable-artwork scope. Plain SVG namespace pruning and historical path inspection do not establish preservation of essential live effects, layers, linked assets and editable relationships in a replacement workflow."
+    },
+    {
+      "id": "inkscape",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Inkscape does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "krita",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "E3 is not established for Krita's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "krita",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "krita",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "partial",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Krita does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "gimp",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for GIMP's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "gimp",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "gimp",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "partial",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for GIMP does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "kicad",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "E3 is not established for KiCad's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "kicad",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "kicad",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "partial",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for KiCad does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "openscad",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "E3 is not established for OpenSCAD's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "openscad",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "openscad",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "pass",
+      "after": "not_verified",
+      "reason": "The former E2 Pass does not establish a replacement parametric workflow preserving source parameters, construction meaning, units and required dependencies. Mesh-only interoperability is a narrower result, not full-scope migration."
+    },
+    {
+      "id": "openscad",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for OpenSCAD does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    }
+  ]
+}

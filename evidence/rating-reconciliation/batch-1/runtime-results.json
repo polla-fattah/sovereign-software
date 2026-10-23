@@ -1,0 +1,1075 @@
+{
+  "review_date": "2026-10-23",
+  "plan_sha256": "3f5f9fabf654b4218e46a1009236b63ccfd1f998c121a3d60903699b01a5029c",
+  "runner_sha256": "95cf92818e7a05c86c79cbfc816e1fdedc0b5e09d754b32fc73c9d4d7fac7bc6",
+  "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+  "installation_performed": false,
+  "scope": {
+    "declared_before_execution": "2026-10-23",
+    "purpose": "Reconcile collected evidence with E3/E5 and Longevity/Transparency decisions, without installing target software.",
+    "applications": [
+      "git",
+      "sqlite",
+      "fossil",
+      "jujutsu",
+      "emacs-org-mode",
+      "qownnotes"
+    ],
+    "git": {
+      "profile": "vcs_core",
+      "role": "Individual custodian of a local repository",
+      "configuration": "Installed Git; synthetic tracked history, branch, annotated unsigned tag, stash, ignore rules, local configuration and one submodule. Global/system configuration and executable hooks are disabled by the runner.",
+      "backup_contract": "Full main/submodule bundles plus separate local configuration. Reconstruct after original paths become unavailable; compare all refs, history metadata, tracked file bytes, config, submodule commit and fsck.",
+      "consequential_operations": "Preview and execute a tracked-history reset, recover its committed tip using reflog, inspect clean -n, then explicitly force deletion on a disposable copy and recover the untracked file from a separate backup.",
+      "departures": "No LFS, executable hooks, signed-tag authenticity, hosted permissions, network isolation, remotes or corruption injection. These were not silently satisfied: the earlier broader candidate scenario remains open and judgments are limited to this configured local core workflow."
+    },
+    "sqlite": {
+      "profile": "Embedded relational-engine profile: schema, rows, types, keys, relationships, view and trigger definitions; not the application-specific meaning of arbitrary databases",
+      "role": "Developer/custodian using Python's installed SQLite API, explicit transactions, foreign_keys ON and trace callback ON",
+      "recovery": "Repeat the previously recorded dump/backup evidence and inspect schema/rows/view/foreign keys; confirm a restored trigger actually executes.",
+      "consequential_operations": "Rollback a DELETE, rollback to a savepoint, observe a rejected foreign-key write, rollback a DROP TABLE, commit an authorized change and reopen it; record SQL trace.",
+      "departures": "Not a GUI or arbitrary client, not the newest upstream revision, not another SQLite implementation, not a filesystem/crash/corruption stress test. Audit/authorization is supplied at this API boundary, not automatically enforced on every client."
+    },
+    "other_applications": "Source/fixture evidence already retained is reviewed as evidence, not reported as runtime success. Incomplete requirement coverage stays Not Verified and does not justify a positive principle finding.",
+    "schema_repair": "Invalid requirement values become not_verified unless an individually justified decision establishes pass/fail. No automatic partial-to-pass or meets-to-pass rule."
+  },
+  "git": {
+    "version": "git version 2.54.0.windows.1",
+    "checks": {
+      "refs_equal": true,
+      "history_metadata_equal": true,
+      "tracked_files_equal": true,
+      "local_configuration_equal": true,
+      "submodule_commit_equal": true,
+      "submodule_file_equal": true,
+      "original_paths_unavailable": true,
+      "fsck_ok": true,
+      "reset_diff_inspectable": true,
+      "reset_tip_in_reflog": true,
+      "committed_revision_recovered": true,
+      "clean_preview_retains_file": true,
+      "clean_force_deletes_file": true,
+      "untracked_restored_from_external_copy": true
+    },
+    "expected": {
+      "refs": "refs/heads/feature 2f35b08de9e88d8d3ffbe24fdf9ab56d5cb4e233\nrefs/heads/main 21ed20b6eb4fd078facd31b130c1533daaf774d2\nrefs/stash de1c576fa7c1f5a28c50a8c4eeab139cc2aee86f\nrefs/tags/v1 678209a8b13effeb5496db8ec7c149920a788030\n",
+      "history": "de1c576fa7c1f5a28c50a8c4eeab139cc2aee86f|21ed20b6eb4fd078facd31b130c1533daaf774d2 cc41a661d1ac0457b5d3fa2e692140604189ccc9|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|On main: preserved stash\ncc41a661d1ac0457b5d3fa2e692140604189ccc9|21ed20b6eb4fd078facd31b130c1533daaf774d2|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|index on main: 21ed20b record submodule\n21ed20b6eb4fd078facd31b130c1533daaf774d2|2f35b08de9e88d8d3ffbe24fdf9ab56d5cb4e233|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|record submodule\n2f35b08de9e88d8d3ffbe24fdf9ab56d5cb4e233||Synthetic custodian|audit@example.invalid|2026-10-23T10:46:32+03:00|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:32+03:00|baseline record\n",
+      "files": {
+        ".gitignore": "a827e74341e6186af0be27b3cdde5238cee303c17a8d850dd8380c98ce09cbe0",
+        ".gitmodules": "8ca2e1d2f2f5150c701d23c4dba3a475b0b09034d20e15d168d8f1c7c2661c12",
+        "record.txt": "101bf9f13e26dce45aa390c962d2b5c7a4b92a1d9f3bec63f41f4a7704509b4e"
+      },
+      "config": "2b28c369d54c9773c54cd131be9e93d819b4146f4a77abf5336cac68bd4ed186",
+      "submodule_commit": "bc3520e563125b1539483b78cd46a098cfed508f",
+      "submodule_file": "7725eb136f4240f043bf2d65e6e39089a22e32c760ae6f569e9ba818e48673a4"
+    },
+    "commands": [
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "init",
+          "-q",
+          "-b",
+          "main"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "config",
+          "user.name",
+          "Synthetic custodian"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "config",
+          "user.email",
+          "audit@example.invalid"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\sub-source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "init",
+          "-q",
+          "-b",
+          "main"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\sub-source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "config",
+          "user.name",
+          "Synthetic custodian"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\sub-source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "config",
+          "user.email",
+          "audit@example.invalid"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\sub-source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "add",
+          "."
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\sub-source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "commit",
+          "-qm",
+          "submodule baseline"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "add",
+          "."
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "commit",
+          "-qm",
+          "baseline record"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "branch",
+          "feature"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "tag",
+          "-a",
+          "v1",
+          "-m",
+          "unsigned annotation"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "-c",
+          "protocol.file.allow=always",
+          "submodule",
+          "add",
+          "-q",
+          "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\sub-source",
+          "modules/demo"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "commit",
+          "-qam",
+          "record submodule"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "stash",
+          "push",
+          "-q",
+          "-m",
+          "preserved stash"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "config",
+          "audit.marker",
+          "separate configuration survives"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "for-each-ref",
+          "--format=%(refname) %(objectname)"
+        ],
+        "returncode": 0,
+        "stdout": "refs/heads/feature 2f35b08de9e88d8d3ffbe24fdf9ab56d5cb4e233\nrefs/heads/main 21ed20b6eb4fd078facd31b130c1533daaf774d2\nrefs/stash de1c576fa7c1f5a28c50a8c4eeab139cc2aee86f\nrefs/tags/v1 678209a8b13effeb5496db8ec7c149920a788030\n",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "log",
+          "--all",
+          "--date-order",
+          "--format=%H|%P|%an|%ae|%aI|%cn|%ce|%cI|%s"
+        ],
+        "returncode": 0,
+        "stdout": "de1c576fa7c1f5a28c50a8c4eeab139cc2aee86f|21ed20b6eb4fd078facd31b130c1533daaf774d2 cc41a661d1ac0457b5d3fa2e692140604189ccc9|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|On main: preserved stash\ncc41a661d1ac0457b5d3fa2e692140604189ccc9|21ed20b6eb4fd078facd31b130c1533daaf774d2|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|index on main: 21ed20b record submodule\n21ed20b6eb4fd078facd31b130c1533daaf774d2|2f35b08de9e88d8d3ffbe24fdf9ab56d5cb4e233|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|record submodule\n2f35b08de9e88d8d3ffbe24fdf9ab56d5cb4e233||Synthetic custodian|audit@example.invalid|2026-10-23T10:46:32+03:00|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:32+03:00|baseline record\n",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "ls-files",
+          "-z"
+        ],
+        "returncode": 0,
+        "stdout": ".gitignore\u0000.gitmodules\u0000modules/demo\u0000record.txt\u0000",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\sub-source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "rev-parse",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stdout": "bc3520e563125b1539483b78cd46a098cfed508f\n",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "bundle",
+          "create",
+          "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\main.bundle",
+          "--all"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\sub-source",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "bundle",
+          "create",
+          "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\sub.bundle",
+          "--all"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "clone",
+          "-q",
+          "--mirror",
+          "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\main.bundle",
+          "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored.git"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "checkout",
+          "-q",
+          "-f",
+          "main"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "clone",
+          "-q",
+          "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\sub.bundle",
+          "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored\\modules\\demo"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "for-each-ref",
+          "--format=%(refname) %(objectname)"
+        ],
+        "returncode": 0,
+        "stdout": "refs/heads/feature 2f35b08de9e88d8d3ffbe24fdf9ab56d5cb4e233\nrefs/heads/main 21ed20b6eb4fd078facd31b130c1533daaf774d2\nrefs/stash de1c576fa7c1f5a28c50a8c4eeab139cc2aee86f\nrefs/tags/v1 678209a8b13effeb5496db8ec7c149920a788030\n",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "log",
+          "--all",
+          "--date-order",
+          "--format=%H|%P|%an|%ae|%aI|%cn|%ce|%cI|%s"
+        ],
+        "returncode": 0,
+        "stdout": "de1c576fa7c1f5a28c50a8c4eeab139cc2aee86f|21ed20b6eb4fd078facd31b130c1533daaf774d2 cc41a661d1ac0457b5d3fa2e692140604189ccc9|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|On main: preserved stash\ncc41a661d1ac0457b5d3fa2e692140604189ccc9|21ed20b6eb4fd078facd31b130c1533daaf774d2|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|index on main: 21ed20b record submodule\n21ed20b6eb4fd078facd31b130c1533daaf774d2|2f35b08de9e88d8d3ffbe24fdf9ab56d5cb4e233|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:34+03:00|record submodule\n2f35b08de9e88d8d3ffbe24fdf9ab56d5cb4e233||Synthetic custodian|audit@example.invalid|2026-10-23T10:46:32+03:00|Synthetic custodian|audit@example.invalid|2026-10-23T10:46:32+03:00|baseline record\n",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "ls-files",
+          "-z"
+        ],
+        "returncode": 0,
+        "stdout": ".gitignore\u0000.gitmodules\u0000modules/demo\u0000record.txt\u0000",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored\\modules\\demo",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "rev-parse",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stdout": "bc3520e563125b1539483b78cd46a098cfed508f\n",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "fsck",
+          "--full"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "add",
+          "record.txt"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "commit",
+          "-qm",
+          "disposable reset target"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "rev-parse",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stdout": "2882618e86cd6b208322b3b94507c1a42a00aea1\n",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "diff",
+          "HEAD~1",
+          "HEAD",
+          "--",
+          "record.txt"
+        ],
+        "returncode": 0,
+        "stdout": "diff --git a/record.txt b/record.txt\nindex a0dcb44..11e6bce 100644\n--- a/record.txt\n+++ b/record.txt\n@@ -1 +1 @@\n-original record\n+authorized committed revision\n",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "reset",
+          "--hard",
+          "HEAD~1"
+        ],
+        "returncode": 0,
+        "stdout": "HEAD is now at 21ed20b record submodule\n",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "reflog",
+          "show",
+          "--format=%H %gs"
+        ],
+        "returncode": 0,
+        "stdout": "21ed20b6eb4fd078facd31b130c1533daaf774d2 reset: moving to HEAD~1\n2882618e86cd6b208322b3b94507c1a42a00aea1 commit: disposable reset target\n21ed20b6eb4fd078facd31b130c1533daaf774d2 checkout: moving from main to main\n",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "reset",
+          "--hard",
+          "2882618e86cd6b208322b3b94507c1a42a00aea1"
+        ],
+        "returncode": 0,
+        "stdout": "HEAD is now at 2882618 disposable reset target\n",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "clean",
+          "-n",
+          "--",
+          "disposable-untracked.txt"
+        ],
+        "returncode": 0,
+        "stdout": "Would remove disposable-untracked.txt\n",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\restored",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "clean",
+          "-f",
+          "--",
+          "disposable-untracked.txt"
+        ],
+        "returncode": 0,
+        "stdout": "Removing disposable-untracked.txt\n",
+        "stderr": ""
+      },
+      {
+        "cwd": "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7",
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-ratings-git-i5ja3vy7\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "--version"
+        ],
+        "returncode": 0,
+        "stdout": "git version 2.54.0.windows.1\n",
+        "stderr": ""
+      }
+    ],
+    "limits": "No LFS/signature/authentication/corruption/hook execution test; clean cannot recover an untracked file from Git without a separate copy."
+  },
+  "sqlite": {
+    "version": "3.45.3",
+    "checks": {
+      "restored_trigger_executes": true,
+      "restored_view_rows_match": true,
+      "restored_foreign_keys_clean": true,
+      "delete_observed_then_rolled_back": true,
+      "savepoint_rollback": true,
+      "constraint_error_visible": true,
+      "drop_table_rolled_back": true,
+      "authorized_commit_persists": true,
+      "sql_trace_recorded": true
+    },
+    "constraint_error": {
+      "type": "IntegrityError",
+      "message": "FOREIGN KEY constraint failed"
+    },
+    "sql_trace": [
+      "CREATE TABLE parent(id INTEGER PRIMARY KEY, name TEXT);",
+      "\nCREATE TABLE child(id INTEGER PRIMARY KEY, parent_id REFERENCES parent(id), value TEXT);",
+      "\nCREATE TABLE audit(event TEXT);",
+      "\nCREATE TRIGGER child_insert AFTER INSERT ON child BEGIN INSERT INTO audit VALUES('insert'); END;",
+      "\nCREATE VIEW joined AS SELECT child.id,parent.name,child.value FROM child JOIN parent ON parent.id=child.parent_id;",
+      "\nINSERT INTO parent VALUES(1,'parent');",
+      " INSERT INTO child VALUES(1,1,'baseline');",
+      " INSERT INTO child VALUES(1,1,'baseline');",
+      " INSERT INTO child VALUES(1,1,'baseline');",
+      "PRAGMA foreign_key_check",
+      "\n        SELECT \"name\", \"type\", \"sql\"\n        FROM \"sqlite_master\"\n            WHERE \"sql\" NOT NULL AND\n            \"type\" == 'table'\n            \n            ORDER BY \"name\"\n        ",
+      "PRAGMA table_info(\"audit\")",
+      "SELECT 'INSERT INTO \"audit\" VALUES('||quote(\"event\")||')' FROM \"audit\";",
+      "PRAGMA table_info(\"child\")",
+      "SELECT 'INSERT INTO \"child\" VALUES('||quote(\"id\")||','||quote(\"parent_id\")||','||quote(\"value\")||')' FROM \"child\";",
+      "PRAGMA table_info(\"parent\")",
+      "SELECT 'INSERT INTO \"parent\" VALUES('||quote(\"id\")||','||quote(\"name\")||')' FROM \"parent\";",
+      "\n        SELECT \"name\", \"type\", \"sql\"\n        FROM \"sqlite_master\"\n            WHERE \"sql\" NOT NULL AND\n            \"type\" IN ('index', 'trigger', 'view')\n            \n        ",
+      "BEGIN",
+      "DELETE FROM child",
+      "SELECT count(*) FROM child",
+      "ROLLBACK",
+      "SELECT count(*) FROM child",
+      "BEGIN",
+      "UPDATE child SET value='outer'",
+      "SAVEPOINT review",
+      "UPDATE child SET value='inner'",
+      "ROLLBACK TO review",
+      "SELECT value FROM child",
+      "ROLLBACK",
+      "BEGIN ",
+      "INSERT INTO child VALUES(2,999,'invalid reference')",
+      "INSERT INTO child VALUES(2,999,'invalid reference')",
+      "INSERT INTO child VALUES(2,999,'invalid reference')",
+      "ROLLBACK",
+      "BEGIN",
+      "DROP TABLE child",
+      "ROLLBACK",
+      "SELECT count(*) FROM child",
+      "BEGIN ",
+      "UPDATE child SET value='authorized commit'",
+      "COMMIT"
+    ],
+    "prior_dump_wal_backup_experiment": {
+      "runtime": "Python bundled SQLite",
+      "version": "3.45.3",
+      "not_a_test_of_pinned_current_upstream_commit": true,
+      "main_file_only_tables_while_wal_open": [],
+      "backup_child_rows": 2,
+      "backup_integrity": [
+        [
+          "ok"
+        ]
+      ],
+      "dump_restore_rows_equal": true,
+      "restored_rows": [
+        [
+          1,
+          "00FF",
+          "text",
+          "text"
+        ],
+        [
+          2,
+          "4142",
+          "real",
+          12.5
+        ]
+      ],
+      "restored_view": [
+        [
+          1,
+          "example"
+        ],
+        [
+          2,
+          "example"
+        ]
+      ],
+      "restored_trigger_count": 1,
+      "foreign_key_check": [],
+      "source_dump_sha256": "6d11bc48f99e73c8f7f02c01809ec61d41a47659fafb9e00538a0c54e74b5b16"
+    },
+    "limits": "Trace is explicitly configured; SQLite is not a GUI, universal audit service or automatic authorization policy. No crash/power-loss trial."
+  },
+  "artifacts": [
+    {
+      "path": "artifacts/git/local-config.txt",
+      "sha256": "2b28c369d54c9773c54cd131be9e93d819b4146f4a77abf5336cac68bd4ed186"
+    },
+    {
+      "path": "artifacts/git/main.bundle",
+      "sha256": "6e941f32b328032e2150e3ed3c50f786cdcef0afa19b53b1bfe939fb9310c0ab"
+    },
+    {
+      "path": "artifacts/git/sub.bundle",
+      "sha256": "6b980a516a06faef74df6a865d1c47ba3d1ba80eb368bd19abcc723bec4bfe42"
+    }
+  ]
+}

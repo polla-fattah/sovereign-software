@@ -4,6 +4,18 @@ Reviewed 22 October 2026 from briarproject.org and its GitHub mirror only. The p
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+3 bounded questions are resolved in [batch 12](../third-pass/batch-12/README.md#briar) and reflected in the [application page](../../content/directory/briar.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: The database implementation uses split H2 storage with CIPHER=AES and obtains its file password from a supplied secret key. It is not plain SQLite: copying database files alone does not establish readable independent recovery without the key material and a compatible H2/schema reader.
+- [x] Resolved: Account creation generates a random database key, encrypts it under the password with an optional key strengthener, and stores that encrypted key separately. Sign-in loads/decrypts it; deleteAccount removes both key and database directories. The password alone is not demonstrated to regenerate a lost random key or account.
+- [x] Resolved: Contrary to the earlier documentation search's unknown, the pinned source implements per-contact auto-delete timers with validated bounds, a disabled sentinel, timestamps and rules for mirroring received timer changes. This establishes that timed-deletion controls exist, not that recipients cannot retain copies or that deletion/undo was observed.
+
+Remaining: Independent encrypted-database reading, key-strengthener portability, protocol interoperability, actual device-loss recovery, deletion timing and UI confirmation/undo behavior remain untested.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -32,3 +44,18 @@ Reviewed 22 October 2026 from briarproject.org and its GitHub mirror only. The p
 3. Check whether any other client can read or import Briar data, and whether the protocols are specified well enough to implement independently.
 4. Read the GitHub releases, the desktop page, and the Android minimum version.
 5. Judge E2 and E3 carefully for software where permanent loss on device loss is by design: the framework should say what it expects there.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-12/README.md#briar); [actual assessment](../../content/directory/briar.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. Source requires an AES-encrypted H2 database, a separately preserved random database key encrypted under the password, and any configured key-strengthener material. No compatible independent account/database/message reconstruction was demonstrated. Losing that key is not the same as provider withdrawal with all legitimate recovery material preserved, so it does not prove a general E3 Fail.
+- E5: Not Verified. Per-contact auto-delete bounds, disabled state and timer-mirroring logic are established in source. Effective UI authorization, deletion timing/propagation, account deletion recourse and recipient-retained copies remain insufficiently covered. Timer existence is not guaranteed erasure or observed undo.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: Independent encrypted-database reading, key-strengthener portability, protocol interoperability, actual device-loss recovery, deletion timing and UI confirmation/undo behavior remain untested. E5 needs configured UI/timer/account-deletion authority, propagation visibility and realistic correction/recipient-copy boundaries.
+
+Next without a local installation: Use a synthetic account with non-secret test key/password/strengthener material, compatible H2/schema records and expected messages/contacts; inspect data independently and seek version-matched device-loss/timer/account-deletion observations. Do not supply real messaging keys.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

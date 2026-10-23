@@ -4,6 +4,17 @@ Reviewed 22 October 2026 from the LibreOffice Help (help.libreoffice.org), libre
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 6](../third-pass/batch-6/README.md#libreoffice) and reflected in the [application page](../../content/directory/libreoffice.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: The published resolved-comment.odt opens as ZIP and its content.xml parses independently. It contains two office:annotation elements, two matching annotation-end elements, creator/date fields and document paragraphs/styles. This establishes accessible comment structures for this fixture, not correct rendering of resolved-comment state, tracked changes, spreadsheets, macros or password-protected documents.
+- [x] Resolved: DoBackup_Impl first requires an existing source document and uses NameClash::OVERWRITE when transferring the backup; failure can set ERRCODE_SFX_CANTCREATEBACKUP. Internal transactional backups and a backup-restore error path also exist separately. A persistent backup is not necessarily an unlimited version history, and these branches do not establish crash durability or the user's configured backup/autorecovery policy.
+
+Remaining: Current ODT/ODS/DOCX/XLSX comparisons including tracked changes/formulas/macros, encrypted-package inspection, actual repeated saves and crash recovery, older versions and external dependencies.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -45,3 +56,19 @@ Reviewed 22 October 2026 from the LibreOffice Help (help.libreoffice.org), libre
 6. With a network monitor, record connections on first start and whether an update check runs; read the Online Update option page.
 7. Read the 26.8 release notes, the Security Level page, the Undo help page, and the "Saving Documents in Other Formats" and "Using Microsoft Office and LibreOffice" pages. Read the ODF wiki when reachable, and the Foundation statutes for succession.
 8. Confirm the 26.8.1 release date; the official pages read omit it.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-7/README.md#libreoffice); [actual assessment](../../content/directory/libreoffice.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The ODT fixture independently exposes comments and XML structure, but not equivalent resolved-comment rendering, tracked changes, spreadsheet formulas/macros or encrypted document recovery. Complete version- and format-specific document semantics were not reconstructed for the original office profile.
+- E5: Not Verified. Persistent and transactional backup paths, overwrite behavior and error handling are established in source, but do not prove configured retention or crash durability. Macro/external-link authorization, save/format-loss decisions and correction of consequential document changes remain insufficiently covered.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+- E2: Not Verified. The former E2 Pass does not establish usable migration of the full declared office records, including tracked changes, formulas, macros and structural meaning. Supported formats and acknowledged formatting loss are not a completed essential-feature comparison.
+
+Remaining: Current ODT/ODS/DOCX/XLSX comparisons including tracked changes/formulas/macros, encrypted-package inspection, actual repeated saves and crash recovery, older versions and external dependencies. E5 needs macro/external-link authority, format/overwrite decisions, effective backup/autorecovery and usable correction limits.
+
+Next without a local installation: Collect representative synthetic ODT/ODS/native-interchange pairs, encrypted test documents with non-secret credentials and semantic manifests; inspect packages and reuse same-version macro/link/save/recovery evidence.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

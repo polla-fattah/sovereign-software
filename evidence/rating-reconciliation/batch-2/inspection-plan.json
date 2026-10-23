@@ -1,0 +1,96 @@
+{
+  "review_date": "2026-10-23",
+  "purpose": "Answer bounded deletion/undo/restore-control questions, not execute downloaded application code.",
+  "inputs": [
+    {
+      "application": "anki",
+      "repository": "ankitects/anki",
+      "commit": "8d6e0a0f462f016889896ceaaab1be2aba182588",
+      "path": "qt/aqt/sync.py",
+      "git_blob_sha": "fdd6d06981437f3c33fd3660234526d001d3b535",
+      "raw_url": "https://raw.githubusercontent.com/ankitects/anki/8d6e0a0f462f016889896ceaaab1be2aba182588/qt/aqt/sync.py",
+      "url": "https://github.com/ankitects/anki/blob/8d6e0a0f462f016889896ceaaab1be2aba182588/qt/aqt/sync.py",
+      "local_path": "inputs/anki/qt/aqt/sync.py"
+    },
+    {
+      "application": "anki",
+      "repository": "ankitects/anki",
+      "commit": "8d6e0a0f462f016889896ceaaab1be2aba182588",
+      "path": "rslib/src/undo/mod.rs",
+      "git_blob_sha": "cd5d68d6b38f33ba45b1f17517e6407486b10c36",
+      "raw_url": "https://raw.githubusercontent.com/ankitects/anki/8d6e0a0f462f016889896ceaaab1be2aba182588/rslib/src/undo/mod.rs",
+      "url": "https://github.com/ankitects/anki/blob/8d6e0a0f462f016889896ceaaab1be2aba182588/rslib/src/undo/mod.rs",
+      "local_path": "inputs/anki/rslib/src/undo/mod.rs"
+    },
+    {
+      "application": "joplin",
+      "repository": "laurent22/joplin",
+      "commit": "280954e58fc7c9e74200fd817272ac3fb80dcead",
+      "path": "packages/app-desktop/commands/emptyTrash.ts",
+      "git_blob_sha": "1a4be0f13e6a954a943f6d4454f9d27c4848b520",
+      "raw_url": "https://raw.githubusercontent.com/laurent22/joplin/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/app-desktop/commands/emptyTrash.ts",
+      "url": "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/app-desktop/commands/emptyTrash.ts",
+      "local_path": "inputs/joplin/packages/app-desktop/commands/emptyTrash.ts"
+    },
+    {
+      "application": "joplin",
+      "repository": "laurent22/joplin",
+      "commit": "280954e58fc7c9e74200fd817272ac3fb80dcead",
+      "path": "packages/lib/services/trash/emptyTrash.ts",
+      "git_blob_sha": "e62e1fb96b4c0903b6bd332d8c90df3792c62dd9",
+      "raw_url": "https://raw.githubusercontent.com/laurent22/joplin/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/trash/emptyTrash.ts",
+      "url": "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/trash/emptyTrash.ts",
+      "local_path": "inputs/joplin/packages/lib/services/trash/emptyTrash.ts"
+    },
+    {
+      "application": "joplin",
+      "repository": "laurent22/joplin",
+      "commit": "280954e58fc7c9e74200fd817272ac3fb80dcead",
+      "path": "packages/lib/services/trash/restoreItems.ts",
+      "git_blob_sha": "96e6c1e665b74a562d35596916be43a1e6bb4afe",
+      "raw_url": "https://raw.githubusercontent.com/laurent22/joplin/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/trash/restoreItems.ts",
+      "url": "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/trash/restoreItems.ts",
+      "local_path": "inputs/joplin/packages/lib/services/trash/restoreItems.ts"
+    },
+    {
+      "application": "joplin",
+      "repository": "laurent22/joplin",
+      "commit": "280954e58fc7c9e74200fd817272ac3fb80dcead",
+      "path": "packages/lib/services/trash/permanentlyDeleteOldItems.ts",
+      "git_blob_sha": "73ddaa977c675c77eb8b35d85772d0fa26eb85e8",
+      "raw_url": "https://raw.githubusercontent.com/laurent22/joplin/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/trash/permanentlyDeleteOldItems.ts",
+      "url": "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/trash/permanentlyDeleteOldItems.ts",
+      "local_path": "inputs/joplin/packages/lib/services/trash/permanentlyDeleteOldItems.ts"
+    },
+    {
+      "application": "zotero",
+      "repository": "zotero/zotero",
+      "commit": "db41b99fddcc52d38897c59c161b6adaca036afb",
+      "path": "chrome/content/zotero/zoteroPane.js",
+      "git_blob_sha": "46a7bfb01a41c0ca3dab1c73d7f05095319931d8",
+      "raw_url": "https://raw.githubusercontent.com/zotero/zotero/db41b99fddcc52d38897c59c161b6adaca036afb/chrome/content/zotero/zoteroPane.js",
+      "url": "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/chrome/content/zotero/zoteroPane.js",
+      "local_path": "inputs/zotero/chrome/content/zotero/zoteroPane.js"
+    },
+    {
+      "application": "zotero",
+      "repository": "zotero/zotero",
+      "commit": "db41b99fddcc52d38897c59c161b6adaca036afb",
+      "path": "chrome/content/zotero/xpcom/data/items.js",
+      "git_blob_sha": "dd35b89a53c385c0266aa87c8aeff77b906e5fd0",
+      "raw_url": "https://raw.githubusercontent.com/zotero/zotero/db41b99fddcc52d38897c59c161b6adaca036afb/chrome/content/zotero/xpcom/data/items.js",
+      "url": "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/chrome/content/zotero/xpcom/data/items.js",
+      "local_path": "inputs/zotero/chrome/content/zotero/xpcom/data/items.js"
+    },
+    {
+      "application": "kopia",
+      "repository": "kopia/kopia",
+      "commit": "0835005737025dc3e5203df0138c8265686cb4b3",
+      "path": "cli/command_snapshot_delete.go",
+      "git_blob_sha": "be594d64e05fdd63d6a3f089da3299fad1e45062",
+      "raw_url": "https://raw.githubusercontent.com/kopia/kopia/0835005737025dc3e5203df0138c8265686cb4b3/cli/command_snapshot_delete.go",
+      "url": "https://github.com/kopia/kopia/blob/0835005737025dc3e5203df0138c8265686cb4b3/cli/command_snapshot_delete.go",
+      "local_path": "inputs/kopia/cli/command_snapshot_delete.go"
+    }
+  ]
+}

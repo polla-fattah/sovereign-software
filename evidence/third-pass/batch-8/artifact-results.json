@@ -1,0 +1,533 @@
+{
+  "batch": 8,
+  "review_date": "2026-10-23",
+  "recorded_at_utc": "2026-10-23T07:29:34.387189+00:00",
+  "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+  "applications_executed": true,
+  "downloaded_application_implementation_executed": false,
+  "published_schema_ddl_executed": false,
+  "sqlite_reader_version": "3.45.3",
+  "inspection_code_sha256": "7834200af11946de7c4a23b1cf4ddeccfdcf3c29ff56a6ea57583974324e7aa1",
+  "rating_reconciliation": "Deferred to the next pass at the user's request",
+  "inputs": [
+    {
+      "application": "git",
+      "path": "Documentation/git-bundle.adoc",
+      "commit": "7e34d8174dcda3435d1404c9a30bef46afe6c13e",
+      "raw_url": "https://raw.githubusercontent.com/git/git/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/git-bundle.adoc",
+      "url": "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/git-bundle.adoc",
+      "git_blob_sha": "cd722bd674f0348606b0e26857eec17bfe56ded1",
+      "local_path": "inputs/git/Documentation/git-bundle.adoc",
+      "bytes": 13413,
+      "sha256": "a6a7abd7f9827d847064334533e5ff60f9e3f267c71fa1e717687f2b7847a7f6"
+    },
+    {
+      "application": "fossil",
+      "path": "src/export.c",
+      "commit": "9f1ea15e06b9be018175d231a939d19372fd4b8b",
+      "raw_url": "https://raw.githubusercontent.com/drhsqlite/fossil-mirror/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/export.c",
+      "url": "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/export.c",
+      "git_blob_sha": "3c3258fddc31887e1c12327dd6d5db278c5efafe",
+      "local_path": "inputs/fossil/src/export.c",
+      "bytes": 60811,
+      "sha256": "7a8c8fda387bbbf4abb660eabd68a0d4535f3431350ef358bc2254a5f0f11dc1"
+    },
+    {
+      "application": "fossil",
+      "path": "src/purge.c",
+      "commit": "9f1ea15e06b9be018175d231a939d19372fd4b8b",
+      "raw_url": "https://raw.githubusercontent.com/drhsqlite/fossil-mirror/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/purge.c",
+      "url": "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/purge.c",
+      "git_blob_sha": "07c8c1d3186f44c49db03f443cd9f6610a9dd15d",
+      "local_path": "inputs/fossil/src/purge.c",
+      "bytes": 23235,
+      "sha256": "26ff50a91614e1fcd94ce50a0e40a4b617f109be9f29d6331af1f82373b9eeb4"
+    },
+    {
+      "application": "jujutsu",
+      "path": "cli/src/commands/undo.rs",
+      "commit": "531e8da8066271040b4b1e74ce17a8a941544cce",
+      "raw_url": "https://raw.githubusercontent.com/jj-vcs/jj/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/undo.rs",
+      "url": "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/undo.rs",
+      "git_blob_sha": "a1a0cbe1347fcf075de32b9e4a18d8b7a15971c2",
+      "local_path": "inputs/jujutsu/cli/src/commands/undo.rs",
+      "bytes": 8350,
+      "sha256": "5c8614001a1a28f759ee7d8c4fb06de0c2ae90f0582756a835fadeb45cb084da"
+    },
+    {
+      "application": "jujutsu",
+      "path": "cli/src/commands/git/export.rs",
+      "commit": "531e8da8066271040b4b1e74ce17a8a941544cce",
+      "raw_url": "https://raw.githubusercontent.com/jj-vcs/jj/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/git/export.rs",
+      "url": "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/git/export.rs",
+      "git_blob_sha": "0239ccfb98f37f4282adb476bcd33fe6e593c5f6",
+      "local_path": "inputs/jujutsu/cli/src/commands/git/export.rs",
+      "bytes": 2009,
+      "sha256": "8fa64394418573dc6fcb37ed995ef09d39ef57120cd2c3a966b23e8fecf54646"
+    },
+    {
+      "application": "hugo",
+      "path": "config/security/securityConfig.go",
+      "commit": "ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7",
+      "raw_url": "https://raw.githubusercontent.com/gohugoio/hugo/ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7/config/security/securityConfig.go",
+      "url": "https://github.com/gohugoio/hugo/blob/ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7/config/security/securityConfig.go",
+      "git_blob_sha": "a2708288a3213f58c02be97b7156d5beddd25014",
+      "local_path": "inputs/hugo/config/security/securityConfig.go",
+      "bytes": 14763,
+      "sha256": "58517e2849a6fe217735cda771c438732d4ac8a440d635030129032737e1312b"
+    },
+    {
+      "application": "hugo",
+      "path": "resources/resource_factories/create/create.go",
+      "commit": "ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7",
+      "raw_url": "https://raw.githubusercontent.com/gohugoio/hugo/ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7/resources/resource_factories/create/create.go",
+      "url": "https://github.com/gohugoio/hugo/blob/ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7/resources/resource_factories/create/create.go",
+      "git_blob_sha": "1570c264892dde0f644d46d646291c8052e0f625",
+      "local_path": "inputs/hugo/resources/resource_factories/create/create.go",
+      "bytes": 13294,
+      "sha256": "9f4666b0e780842ed4f47dcd02c5fab3247c5f9c9940fb0c853ba04c919644cc"
+    },
+    {
+      "application": "typst",
+      "path": "crates/typst-cli/src/world.rs",
+      "commit": "64c5e8c02fe0394d913ead36e42ef8c1334d2107",
+      "raw_url": "https://raw.githubusercontent.com/typst/typst/64c5e8c02fe0394d913ead36e42ef8c1334d2107/crates/typst-cli/src/world.rs",
+      "url": "https://github.com/typst/typst/blob/64c5e8c02fe0394d913ead36e42ef8c1334d2107/crates/typst-cli/src/world.rs",
+      "git_blob_sha": "19d795e070e76b0b3b4178944348510288592953",
+      "local_path": "inputs/typst/crates/typst-cli/src/world.rs",
+      "bytes": 11862,
+      "sha256": "25750a6dd5e7dcf086dcdeab9a416da4c7a3229e56ee0a5e505ceb0a7222328d"
+    },
+    {
+      "application": "typst",
+      "path": "crates/typst-kit/src/packages.rs",
+      "commit": "64c5e8c02fe0394d913ead36e42ef8c1334d2107",
+      "raw_url": "https://raw.githubusercontent.com/typst/typst/64c5e8c02fe0394d913ead36e42ef8c1334d2107/crates/typst-kit/src/packages.rs",
+      "url": "https://github.com/typst/typst/blob/64c5e8c02fe0394d913ead36e42ef8c1334d2107/crates/typst-kit/src/packages.rs",
+      "git_blob_sha": "a5603579cb239232f4e4b8ade235f0dbc35733c4",
+      "local_path": "inputs/typst/crates/typst-kit/src/packages.rs",
+      "bytes": 18274,
+      "sha256": "53ba158cf9566861f2f8b8da374bbfe326b1806308bfe7a8bd884c330aac2de0"
+    },
+    {
+      "application": "ngspice",
+      "path": "src/frontend/rawfile.c",
+      "commit": "032b1c32c4dbad45ff132bcfac1dbecadbd8abb0",
+      "raw_url": "https://raw.githubusercontent.com/ngspice/ngspice/032b1c32c4dbad45ff132bcfac1dbecadbd8abb0/src/frontend/rawfile.c",
+      "url": "https://github.com/ngspice/ngspice/blob/032b1c32c4dbad45ff132bcfac1dbecadbd8abb0/src/frontend/rawfile.c",
+      "git_blob_sha": "4ccf4082dd980451838db8fd1c38c64d8c278525",
+      "local_path": "inputs/ngspice/src/frontend/rawfile.c",
+      "bytes": 27927,
+      "sha256": "939507ef90fbf56663ac5e9bc702a361527e9e1a74d7821b4c85696b662006fd"
+    },
+    {
+      "application": "jujutsu",
+      "path": "docs/operation-log.md",
+      "commit": "531e8da8066271040b4b1e74ce17a8a941544cce",
+      "raw_url": "https://raw.githubusercontent.com/jj-vcs/jj/531e8da8066271040b4b1e74ce17a8a941544cce/docs/operation-log.md",
+      "url": "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/docs/operation-log.md",
+      "git_blob_sha": "be2a22c75eb74b266c3ac94e482c3b3a54d11f2d",
+      "local_path": "inputs/jujutsu/docs/operation-log.md",
+      "bytes": 3334,
+      "sha256": "2a48dab85483f8bed666ccc1aebd458d70f4ff57ece1a122aee8889b3209ce18"
+    },
+    {
+      "application": "jujutsu",
+      "path": "docs/git-compatibility.md",
+      "commit": "531e8da8066271040b4b1e74ce17a8a941544cce",
+      "raw_url": "https://raw.githubusercontent.com/jj-vcs/jj/531e8da8066271040b4b1e74ce17a8a941544cce/docs/git-compatibility.md",
+      "url": "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/docs/git-compatibility.md",
+      "git_blob_sha": "ab8f854ae6aced6a1a0b93038c4bc22eb35d72c9",
+      "local_path": "inputs/jujutsu/docs/git-compatibility.md",
+      "bytes": 13185,
+      "sha256": "135a99ea40d2e626d0bc282283459650ba864df728449ac9225965578bc4e4bc"
+    },
+    {
+      "application": "hugo",
+      "path": "testscripts/commands/hugo__clean_destination_dir.txt",
+      "commit": "ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7",
+      "raw_url": "https://raw.githubusercontent.com/gohugoio/hugo/ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7/testscripts/commands/hugo__clean_destination_dir.txt",
+      "url": "https://github.com/gohugoio/hugo/blob/ed22b85c192dd750cf0bdfb2d2005d31ab3bc0a7/testscripts/commands/hugo__clean_destination_dir.txt",
+      "git_blob_sha": "c3273227eb6d168b74fb3206ddb37f78351ab4c2",
+      "local_path": "inputs/hugo/testscripts/commands/hugo__clean_destination_dir.txt",
+      "bytes": 5125,
+      "sha256": "96180b84a6fec8e5fd3fcd13c968688e2d517032efab68543e6047b21e30aae6"
+    }
+  ],
+  "observations": {},
+  "source_questions": [
+    {
+      "application": "git",
+      "id": "Documentation/git-bundle.adoc",
+      "anchors": {
+        "Documentation/git-bundle.adoc": [
+          "git-bundle(1)"
+        ]
+      },
+      "locations": [
+        {
+          "path": "Documentation/git-bundle.adoc",
+          "anchor": "git-bundle(1)",
+          "lines": [
+            1
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "fossil",
+      "id": "src/export.c",
+      "anchors": {
+        "src/export.c": [
+          "** https://git-scm.com/docs/git-check-ref-format"
+        ]
+      },
+      "locations": [
+        {
+          "path": "src/export.c",
+          "anchor": "** https://git-scm.com/docs/git-check-ref-format",
+          "lines": [
+            172
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "fossil",
+      "id": "src/purge.c",
+      "anchors": {
+        "src/purge.c": [
+          "** related functionality for removing check-ins from a repository.  It also"
+        ]
+      },
+      "locations": [
+        {
+          "path": "src/purge.c",
+          "anchor": "** related functionality for removing check-ins from a repository.  It also",
+          "lines": [
+            19
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "jujutsu",
+      "id": "cli/src/commands/undo.rs",
+      "anchors": {
+        "cli/src/commands/undo.rs": [
+          "    allow_cross_workspace: bool,"
+        ]
+      },
+      "locations": [
+        {
+          "path": "cli/src/commands/undo.rs",
+          "anchor": "    allow_cross_workspace: bool,",
+          "lines": [
+            52
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "jujutsu",
+      "id": "cli/src/commands/git/export.rs",
+      "anchors": {
+        "cli/src/commands/git/export.rs": [
+          "    let stats = git::export_refs(tx.repo_mut())?;"
+        ]
+      },
+      "locations": [
+        {
+          "path": "cli/src/commands/git/export.rs",
+          "anchor": "    let stats = git::export_refs(tx.repo_mut())?;",
+          "lines": [
+            49
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "hugo",
+      "id": "config/security/securityConfig.go",
+      "anchors": {
+        "config/security/securityConfig.go": [
+          "func (c Config) CheckAllowedHTTPURL(u string) error {"
+        ]
+      },
+      "locations": [
+        {
+          "path": "config/security/securityConfig.go",
+          "anchor": "func (c Config) CheckAllowedHTTPURL(u string) error {",
+          "lines": [
+            203
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "hugo",
+      "id": "resources/resource_factories/create/create.go",
+      "anchors": {
+        "resources/resource_factories/create/create.go": [
+          "\t\t\t\trs.Logger.Warnf(\"Failed to check remote resource: %s\", err)"
+        ]
+      },
+      "locations": [
+        {
+          "path": "resources/resource_factories/create/create.go",
+          "anchor": "\t\t\t\trs.Logger.Warnf(\"Failed to check remote resource: %s\", err)",
+          "lines": [
+            84
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "typst",
+      "id": "crates/typst-cli/src/world.rs",
+      "anchors": {
+        "crates/typst-cli/src/world.rs": [
+          "                crate::fonts::discover_fonts(&world_args.font)"
+        ]
+      },
+      "locations": [
+        {
+          "path": "crates/typst-cli/src/world.rs",
+          "anchor": "                crate::fonts::discover_fonts(&world_args.font)",
+          "lines": [
+            89
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "typst",
+      "id": "crates/typst-kit/src/packages.rs",
+      "anchors": {
+        "crates/typst-kit/src/packages.rs": [
+          "        // This means that we do not check the integrity of an existing moved"
+        ]
+      },
+      "locations": [
+        {
+          "path": "crates/typst-kit/src/packages.rs",
+          "anchor": "        // This means that we do not check the integrity of an existing moved",
+          "lines": [
+            271
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "ngspice",
+      "id": "src/frontend/rawfile.c",
+      "anchors": {
+        "src/frontend/rawfile.c": [
+          "    fprintf(fp, \"No. Variables: %d\\n\", nvars);"
+        ]
+      },
+      "locations": [
+        {
+          "path": "src/frontend/rawfile.c",
+          "anchor": "    fprintf(fp, \"No. Variables: %d\\n\", nvars);",
+          "lines": [
+            119
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "jujutsu",
+      "id": "docs/operation-log.md",
+      "anchors": {
+        "docs/operation-log.md": [
+          "Jujutsu records each operation that modifies the repo in the \"operation log\"."
+        ]
+      },
+      "locations": [
+        {
+          "path": "docs/operation-log.md",
+          "anchor": "Jujutsu records each operation that modifies the repo in the \"operation log\".",
+          "lines": [
+            5
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "jujutsu",
+      "id": "docs/git-compatibility.md",
+      "anchors": {
+        "docs/git-compatibility.md": [
+          "Jujutsu has two backends for storing commits. One of them uses a regular Git"
+        ]
+      },
+      "locations": [
+        {
+          "path": "docs/git-compatibility.md",
+          "anchor": "Jujutsu has two backends for storing commits. One of them uses a regular Git",
+          "lines": [
+            3
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "hugo",
+      "id": "testscripts/commands/hugo__clean_destination_dir.txt",
+      "anchors": {
+        "testscripts/commands/hugo__clean_destination_dir.txt": [
+          "# --- Scenario 1: Without static directory ---"
+        ]
+      },
+      "locations": [
+        {
+          "path": "testscripts/commands/hugo__clean_destination_dir.txt",
+          "anchor": "# --- Scenario 1: Without static directory ---",
+          "lines": [
+            2
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    }
+  ],
+  "runtime_check_code_sha256": "4d488a0f73b15a190c6daa92a8a634eaa7cadae33b1f4a2cb911b0e6a98dd243",
+  "runtime_checks": {
+    "git": {
+      "available": true,
+      "runtime_version": "git version 2.54.0.windows.1",
+      "source_refs": {
+        "refs/heads/main": "42f1922e4d34aa55da93fef00920fa29add1aac1",
+        "refs/heads/side": "d2be76088687241d79513eec37832974bd43faf8",
+        "refs/stash": "1fd60ac285166653956286827960dff5bec26988",
+        "refs/tags/v1": "636ebd564ce6a0f6c2bfb4d9b5878200e1ef5d43"
+      },
+      "bundle_heads": "42f1922e4d34aa55da93fef00920fa29add1aac1 refs/heads/main\nd2be76088687241d79513eec37832974bd43faf8 refs/heads/side\n1fd60ac285166653956286827960dff5bec26988 refs/stash\n636ebd564ce6a0f6c2bfb4d9b5878200e1ef5d43 refs/tags/v1\n42f1922e4d34aa55da93fef00920fa29add1aac1 HEAD\n",
+      "normal_clone_refs": {
+        "refs/heads/main": "42f1922e4d34aa55da93fef00920fa29add1aac1",
+        "refs/remotes/origin/HEAD": "42f1922e4d34aa55da93fef00920fa29add1aac1",
+        "refs/remotes/origin/main": "42f1922e4d34aa55da93fef00920fa29add1aac1",
+        "refs/remotes/origin/side": "d2be76088687241d79513eec37832974bd43faf8",
+        "refs/tags/v1": "636ebd564ce6a0f6c2bfb4d9b5878200e1ef5d43"
+      },
+      "mirror_clone_refs": {
+        "refs/heads/main": "42f1922e4d34aa55da93fef00920fa29add1aac1",
+        "refs/heads/side": "d2be76088687241d79513eec37832974bd43faf8",
+        "refs/stash": "1fd60ac285166653956286827960dff5bec26988",
+        "refs/tags/v1": "636ebd564ce6a0f6c2bfb4d9b5878200e1ef5d43"
+      },
+      "mirror_refs_equal_source": true,
+      "stash_ref_in_normal_clone": false,
+      "stash_ref_in_mirror_clone": true,
+      "repository_local_config_copied": false,
+      "marker_hook_copied": false,
+      "submodule_file_present_in_normal_clone": false,
+      "mirror_fsck": {
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-git-n2bkk2e3\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-git-n2bkk2e3\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "fsck",
+          "--full"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "full_bundle_verifies_in_empty": true,
+      "incremental_bundle_verifies_in_empty": false,
+      "incremental_verification": {
+        "args": [
+          "C:\\Program Files\\Git\\cmd\\git.EXE",
+          "-c",
+          "core.autocrlf=false",
+          "-c",
+          "core.hooksPath=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-git-n2bkk2e3\\empty-hooks",
+          "-c",
+          "init.templateDir=C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-git-n2bkk2e3\\empty-hooks",
+          "-c",
+          "commit.gpgsign=false",
+          "-c",
+          "tag.gpgsign=false",
+          "bundle",
+          "verify",
+          "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-git-n2bkk2e3\\incremental.bundle"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "error: Repository lacks these prerequisite commits:\nerror: d2be76088687241d79513eec37832974bd43faf8 \n"
+      },
+      "bundle_sha256": "4319f4d967f7f18def76a973c1e6f714f3893ee422b769eef501a0e0d0a86210",
+      "signed_commits_tags_lfs_or_corruption_tested": false
+    },
+    "hugo": {
+      "available": true,
+      "runtime_version": "hugo v0.166.0-78400b4de8adc99273d3e674ed6c4d14c3bdf669+extended windows/amd64 BuildDate=2026-09-09T14:45:02Z VendorInfo=gohugoio",
+      "initial_page_exists": true,
+      "deleted_source_stale_output_after_default_build": true,
+      "deleted_source_output_after_clean_destination": true,
+      "commands": [
+        {
+          "args": [
+            "C:\\ProgramData\\chocolatey\\bin\\hugo.EXE",
+            "--quiet",
+            "--destination",
+            "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-hugo-hqqcawbr\\public"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "C:\\ProgramData\\chocolatey\\bin\\hugo.EXE",
+            "--quiet",
+            "--destination",
+            "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-hugo-hqqcawbr\\public"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "C:\\ProgramData\\chocolatey\\bin\\hugo.EXE",
+            "--quiet",
+            "--cleanDestinationDir",
+            "--destination",
+            "C:\\Users\\polla\\AppData\\Local\\Temp\\sovereign-hugo-hqqcawbr\\public"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "network_blocked_or_real_project_dependencies_tested": false
+    }
+  },
+  "executed_components": [
+    "git version 2.54.0.windows.1",
+    "hugo v0.166.0-78400b4de8adc99273d3e674ed6c4d14c3bdf669+extended windows/amd64 BuildDate=2026-09-09T14:45:02Z VendorInfo=gohugoio"
+  ]
+}

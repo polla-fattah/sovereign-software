@@ -1,0 +1,17 @@
+{
+  "declared_before_additional_checks": "2026-10-23",
+  "applications": ["restic", "borgbackup", "kopia", "anki", "joplin", "zotero"],
+  "method": "Keep each existing broad scope. Reconcile the retained source/fixture evidence with the actual requirement and principle thresholds. Inspect additional pinned source only to answer explicit missing questions; do not report source assertions as executed product behavior.",
+  "role": "Individual custodian of the existing backup, learning, note or research records",
+  "essential_records": {
+    "restic": "Existing backup profile: representative file bytes, hierarchy, permissions, links, timestamps, supported ACLs/xattrs and user-held recovery material.",
+    "borgbackup": "The same file-preservation goals, respecting the retained development commit rather than claiming Borg 1.x runtime behavior.",
+    "kopia": "Existing encrypted snapshot profile, including data and filesystem metadata, retention/maintenance and overwrite/delete boundaries.",
+    "anki": "Existing collection with notes/cards, decks/options, scheduling and media, including modern package formats; do not shrink this to the one-card legacy sample.",
+    "joplin": "Existing knowledge_notes profile, including nested notebooks, internal links, tags, resources and the stated encrypted/sync-conflict recovery scenario.",
+    "zotero": "Existing research_bibliographic profile including populated metadata/collections/relations, attachments/annotations and document-citation mappings; do not substitute an empty schema for a recovered library."
+  },
+  "independent_checks": "Reinspect retained Anki ZIP/SQLite/media and Zotero SQL schema with standard-library tools; verify retained hashes. Any newly constructed data is explicitly synthetic and cannot establish application-origin compatibility or a clean application restore.",
+  "decision_rule": "Pass/Fail requires sufficient evidence for the stated scope. A guarded command or readable format alone does not establish complete E3/E5. Unknown is not Fail; positive Longevity/Transparency requires the corresponding established minimum. No automatic rating promotions.",
+  "installations": "None authorized or needed; no target binary is downloaded, built or run."
+}

@@ -4,6 +4,17 @@ Reviewed 22 October 2026 from the Kolibri documentation on Read the Docs ("lates
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 10](../third-pass/batch-10/README.md#kolibri) and reflected in the [application page](../../content/directory/kolibri.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: The dbrestore command explicitly limits its intended use to restoring the same device, not cross-device replication; --latest selects the current major/minor version's backup and the command refuses a running Kolibri instance. This answers the scope of that recovery route without claiming a restore succeeded.
+- [x] Resolved: Bulk import excludes retained users, facility administrators and the specified acting user from --delete, then calls hard_delete=True for remaining selected users. Database mutation is inside the not-dryrun branch, including clearing memberships of omitted classes. A CSV omission can therefore be consequential, not merely an update.
+
+Remaining: Actual backup restoration/content coverage, cross-device migration, user/log export completeness, downgrade behavior and runtime deletion/traffic observations remain untested.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -48,3 +59,19 @@ Reviewed 22 October 2026 from the Kolibri documentation on Read the Docs ("lates
 6. Capture outbound traffic from an idle server for a day to check for update checks or telemetry.
 7. Not read: Facility and KDP sync pages, the options.ini page, the full 0.19.5 notes past character 100,000, CONTRIBUTING, the security policy, and the licence text of bundled dependencies.
 8. Reconcile the release date (July 14 versus 13 Jul) and read the readthedocs version selector to confirm "latest" matches 0.19.5.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-10/README.md#kolibri); [actual assessment](../../content/directory/kolibri.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The inspected dbrestore route is for the same device, selects version-bounded backups and refuses a running instance. It does not demonstrate cross-device restoration of content, user/progress/log data or complete backup coverage for the existing learning profile.
+- E5: Not Verified. Bulk import has dry-run mutation guards and exclusions for administrators/acting users, but can hard-delete omitted selected users and clear memberships. Effective role authorization, content/progress deletion visibility and recovery are not comprehensively established by that command alone.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+- E2: Not Verified. The former E2 Pass covers a content-transfer lead, not preservation of essential learner identity, progress and logs in a replacement workflow. Complete cross-device/user-data migration remains unestablished.
+
+Remaining: Actual backup restoration/content coverage, cross-device migration, user/log export completeness, downgrade behavior and runtime deletion/traffic observations remain untested. E5 needs effective importer/role settings, omission-driven deletion and progress/content recourse beyond one dry-run guard.
+
+Next without a local installation: Use a synthetic content/channel/user-progress/device backup packet with expected identities/logs and version boundaries; inspect exports and obtain same-version external restore/bulk-import/deletion records.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

@@ -6,6 +6,8 @@ Reviewed 22 October 2026 from the Kdenlive 26.08 Manual (docs.kdenlive.org), kde
 
 ## What the documentation says
 
+Follow-up, 23 October 2026: resolved questions and remaining work are recorded in the [second third-pass batch](../third-pass/batch-2/README.md#kdenlive) and reflected in the [application assessment](../../content/directory/kdenlive.md). The earlier review below is superseded where that evidence answers or corrects it.
+
 **Storage and access (E1, E3)**
 - The `.kdenlive` file is XML based on MLT's format. It stores a reference to source media (not the media itself; title and colour clips are the main exceptions), timeline positions, effects, parameters and keyframes. MLT can render it directly and "simply ignores" Kdenlive-specific data. Only MLT is named as a reader of the file; the detailed format is delegated to `fileformat.md` in the repository (not read). [project files](https://docs.kdenlive.org/en/project_and_asset_management/file_management/project_files.html)
 - Each project has a folder with `proxy/`, `thumbs/`, `titles/` and `.backup/`. Source media can live anywhere. Titles saved outside the project file go to `titles/`. [folder structure](https://docs.kdenlive.org/en/project_and_asset_management/file_management/folder_structure.html)
@@ -39,3 +41,18 @@ Reviewed 22 October 2026 from the Kdenlive 26.08 Manual (docs.kdenlive.org), kde
 5. Kill the process mid-edit and check the autosave and backup prompts; delete a source file and observe the missing-media behaviour (not found in the docs).
 6. Read `fileformat.md` in the repository, the Auto Save and proxy pages in full, and any Kdenlive-specific update-check or telemetry setting (not found).
 7. Settle the release date (31 Aug vs 6 July for 26.08.0 was reported inconsistent) and confirm the licence text and any contributor agreement (not found).
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-5/README.md#kdenlive); [actual assessment](../../content/directory/kdenlive.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The XML fixture reveals timeline/effect/resource relationships, and archive code rewrites resource/proxy/title paths. It does not include an observed complete dependency archive or independent reconstruction with equivalent keyframes, effects and media. Rendering/interchange and version/crash recovery remain incomplete.
+- E5: Not Verified. User-directed video editing is not sufficient evidence for save/archive overwrite, render/share approval, asset deletion or correction after missing assets and project mutations. The archive-path routine does not cover the consequential-action surface.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: Complete archive/move/restore, missing assets, render equivalence, keyframes, OTIO losses, and version/crash recovery. E5 needs asset/save/render/share authorization, inspectable project changes and available correction after destructive edits or overwrite.
+
+Next without a local installation: Acquire a complete synthetic project/archive/media packet with expected timeline/keyframes and reference renders or OTIO comparisons; inspect XML/assets and seek same-version save/render/archive control evidence.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

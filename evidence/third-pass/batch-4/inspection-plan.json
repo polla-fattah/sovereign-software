@@ -1,0 +1,247 @@
+{
+  "commits": {
+    "kovidgoyal/calibre": "e2a169f96a30b9be215e3abd78cb0599e7a4479a",
+    "audacity/audacity": "f515da46486301d48db89f195729ef0c87980668",
+    "Ardour/ardour": "b896344c8d16f89e04a235562ab31594605c6715",
+    "musescore/MuseScore": "4676f83f368f1afc9cad6815eb5401a2ec8aca2b",
+    "zim-desktop-wiki/zim-desktop-wiki": "d82c631fa20f03764aa336a9357add0cd32714fc",
+    "GothenburgBitFactory/taskwarrior": "c280c347c1adc47e9bb1ad42c92958e2d7f92e9c"
+  },
+  "inputs": [
+    {
+      "application": "calibre",
+      "repository": "kovidgoyal/calibre",
+      "path": "src/calibre/db/tests/metadata.db",
+      "git_blob_sha": "a84f9d68ef16cb6f1c15c55e99f0a34fff403d42"
+    },
+    {
+      "application": "calibre",
+      "repository": "kovidgoyal/calibre",
+      "path": "src/calibre/db/restore.py",
+      "git_blob_sha": "99264851c6f77896c5568a18e62d9b4bfd6c8c3c"
+    },
+    {
+      "application": "calibre",
+      "repository": "kovidgoyal/calibre",
+      "path": "src/calibre/db/backend.py",
+      "git_blob_sha": "112bd2aa97a547c1f94b593f3a657c9f31305819"
+    },
+    {
+      "application": "audacity",
+      "repository": "audacity/audacity",
+      "path": "src/project/tests/data/test.aup4",
+      "git_blob_sha": "87c59e935f422f594bbf69ad34757009a0c1bb26"
+    },
+    {
+      "application": "audacity",
+      "repository": "audacity/audacity",
+      "path": "au3/libraries/au3-project-file-io/ProjectFileIO.cpp",
+      "git_blob_sha": "85ffdd83f936ef69a0bfed6066d29c62e05f9ccd"
+    },
+    {
+      "application": "audacity",
+      "repository": "audacity/audacity",
+      "path": "au3/libraries/au3-project-file-io/ProjectSerializer.cpp",
+      "git_blob_sha": "4709a2accbb5ea9a5565b146c29fd9b8ed5d6ac0"
+    },
+    {
+      "application": "audacity",
+      "repository": "audacity/audacity",
+      "path": "au3/libraries/au3-project-file-io/SqliteSampleBlock.cpp",
+      "git_blob_sha": "fb08a7ee4b30a5435e62532395a16c5f22a8f8d9"
+    },
+    {
+      "application": "ardour",
+      "repository": "Ardour/ardour",
+      "path": "libs/ardour/test/profiling/sessions/1region/1region.ardour",
+      "git_blob_sha": "9808be50985fdde606c819c5ff91f5a6718c94f2"
+    },
+    {
+      "application": "ardour",
+      "repository": "Ardour/ardour",
+      "path": "libs/ardour/unknown_processor.cc",
+      "git_blob_sha": "649c6022c756c5c4dd687a232153f8cc64f156c3"
+    },
+    {
+      "application": "musescore-studio",
+      "repository": "musescore/MuseScore",
+      "path": "demos/Amazing_grace.mscz",
+      "git_blob_sha": "8fce1862056464672f7f9516073ce09015e9a59a"
+    },
+    {
+      "application": "musescore-studio",
+      "repository": "musescore/MuseScore",
+      "path": "src/project/internal/notationproject.cpp",
+      "git_blob_sha": "e7ea1e042ceadbedb935cb89bded98f1d1495bb7"
+    },
+    {
+      "application": "zim-wiki",
+      "repository": "zim-desktop-wiki/zim-desktop-wiki",
+      "path": "tests/data/notebook-wiki.xml",
+      "git_blob_sha": "47e36954bd435a84a2db44645ce5e6ed070af371"
+    },
+    {
+      "application": "zim-wiki",
+      "repository": "zim-desktop-wiki/zim-desktop-wiki",
+      "path": "tests/data/formats/wiki.txt",
+      "git_blob_sha": "945b5f86984b18837b88b306739c0ba4290e281a"
+    },
+    {
+      "application": "zim-wiki",
+      "repository": "zim-desktop-wiki/zim-desktop-wiki",
+      "path": "tests/data/formats/parsetree.xml",
+      "git_blob_sha": "d9b91a4d93d4ac21fb1565ceb79c676ba58463d1"
+    },
+    {
+      "application": "zim-wiki",
+      "repository": "zim-desktop-wiki/zim-desktop-wiki",
+      "path": "tests/data/formats/export.markdown",
+      "git_blob_sha": "bac446878e690b6185bd1f47b3eb794fbb212ee1"
+    },
+    {
+      "application": "zim-wiki",
+      "repository": "zim-desktop-wiki/zim-desktop-wiki",
+      "path": "tests/formats.py",
+      "git_blob_sha": "22071ecefe95c131db972a5cc3ec1cac683cb8af"
+    },
+    {
+      "application": "zim-wiki",
+      "repository": "zim-desktop-wiki/zim-desktop-wiki",
+      "path": "zim/notebook/notebook.py",
+      "git_blob_sha": "9b070a9ab00b3380e3898c5e2dcd060d1171dac7"
+    },
+    {
+      "application": "taskwarrior",
+      "repository": "GothenburgBitFactory/taskwarrior",
+      "path": "test/import.test.py",
+      "git_blob_sha": "cf194e97cb21e862f6100cf7074962c2f308775b"
+    },
+    {
+      "application": "taskwarrior",
+      "repository": "GothenburgBitFactory/taskwarrior",
+      "path": "src/commands/CmdExport.cpp",
+      "git_blob_sha": "2924645dd37005564ca18f5e82e19dbbcdc966dc"
+    },
+    {
+      "application": "taskwarrior",
+      "repository": "GothenburgBitFactory/taskwarrior",
+      "path": "src/commands/CmdImport.cpp",
+      "git_blob_sha": "b3ccc0c2a74e421ed6f000086a720edb44a29805"
+    },
+    {
+      "application": "taskwarrior",
+      "repository": "GothenburgBitFactory/taskwarrior",
+      "path": "src/Task.cpp",
+      "git_blob_sha": "02fb4bce36df00eeae592c261e2f589a332ae2b2"
+    }
+  ],
+  "source_questions": [
+    {
+      "application": "calibre",
+      "id": "preferences-restore-branch",
+      "anchors": {
+        "src/calibre/db/restore.py": [
+          "metadata_db_prefs_backup.json",
+          "restore_all_prefs=True",
+          "if not self.load_preferences():"
+        ],
+        "src/calibre/db/backend.py": [
+          "if default_prefs is not None and not self._exists:",
+          "if restore_all_prefs or key != 'news_to_be_synced':"
+        ]
+      }
+    },
+    {
+      "application": "audacity",
+      "id": "encoded-project-versus-sqlite",
+      "anchors": {
+        "au3/libraries/au3-project-file-io/ProjectFileIO.cpp": [
+          "project is a binary representation of an XML file",
+          "dict                 BLOB",
+          "provided in the project blob"
+        ],
+        "au3/libraries/au3-project-file-io/ProjectSerializer.cpp": [
+          "enum FieldTypes",
+          "FT_Name",
+          "FT_Blob"
+        ]
+      }
+    },
+    {
+      "application": "ardour",
+      "id": "missing-processor-state",
+      "anchors": {
+        "libs/ardour/unknown_processor.cc": [
+          "_state (state)",
+          "return *(new XMLNode (_state));",
+          "bufs.get_audio (i).silence (nframes);"
+        ]
+      }
+    },
+    {
+      "application": "musescore-studio",
+      "id": "save-backup-conditions",
+      "anchors": {
+        "src/project/internal/notationproject.cpp": [
+          "createBackup && configuration()->createBackupBeforeSaving()",
+          "targetContainerPath + \"_saving\"",
+          "if (generateBackup)",
+          "makeBackup(targetContainerPath);",
+          "backup allowed only for MSCZ"
+        ]
+      }
+    },
+    {
+      "application": "zim-wiki",
+      "id": "move-link-updates",
+      "anchors": {
+        "zim/notebook/notebook.py": [
+          "def move_page(self, path, newpath, update_links=True",
+          "self._update_links_in_moved_page(path, newpath)",
+          "self._update_links_to_moved_page(path, newpath)"
+        ]
+      }
+    },
+    {
+      "application": "zim-wiki",
+      "id": "trash-versus-delete",
+      "anchors": {
+        "zim/notebook/notebook.py": [
+          "def _delete_page(self, path):",
+          "folder.remove_children()",
+          "def _trash_page(self, path):",
+          "raise TrashNotSupportedError('disable_trash is set')",
+          "helper.trash(folder)"
+        ]
+      }
+    },
+    {
+      "application": "taskwarrior",
+      "id": "export-selection-and-serialization",
+      "anchors": {
+        "src/commands/CmdExport.cpp": [
+          "filter.subset(filtered);",
+          "task.composeJSON(true)"
+        ],
+        "src/Task.cpp": [
+          "std::string Task::composeJSON(bool decorate",
+          "if (annotation_count)",
+          "getDependencyUUIDs()"
+        ]
+      }
+    },
+    {
+      "application": "taskwarrior",
+      "id": "import-uuid-updates",
+      "anchors": {
+        "src/commands/CmdImport.cpp": [
+          "uuid_occurrences[uuid]++",
+          "tdb2.get(uuid, before)",
+          "task.set(\"modified\", before.get(\"modified\"))",
+          "modifyAndUpdate(before, task)",
+          "Tasks with the same UUID have been merged."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,466 @@
+{
+  "observed_at_utc": "2026-10-22T22:42:34.597202+00:00",
+  "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "sqlite": "3.45.3",
+  "target_applications_executed": false,
+  "results": [
+    {
+      "application": "anki",
+      "repository": "ankitects/anki",
+      "commit": "8d6e0a0f462f016889896ceaaab1be2aba182588",
+      "path": "pylib/tests/support/media.apkg",
+      "url": "https://raw.githubusercontent.com/ankitects/anki/8d6e0a0f462f016889896ceaaab1be2aba182588/pylib/tests/support/media.apkg",
+      "local_path": "inputs/anki-media.apkg",
+      "bytes": 2509,
+      "sha256": "fc194fe7e41f9a78790db405d1daa782a909459e83ffb54828d5ed682212dc7d",
+      "inspection": {
+        "members": [
+          {
+            "name": "collection.anki2",
+            "bytes": 57344,
+            "sha256": "d8062cd9444d42e10f26faac9e1a87a088bcd13628c089ca76411c545b6c9153"
+          },
+          {
+            "name": "0",
+            "bytes": 4,
+            "sha256": "edeaaff3f1774ad2888673770c6d64097e391bc362d7d6fb34982ddf0efd18cb"
+          },
+          {
+            "name": "media",
+            "bytes": 16,
+            "sha256": "df3cd573c1944f7e96480ca9f21d04a6748bad969c3742351b104b45a08cacf2"
+          }
+        ],
+        "collection.anki2": {
+          "tables": [
+            "cards",
+            "col",
+            "graves",
+            "notes",
+            "revlog",
+            "sqlite_stat1"
+          ],
+          "integrity_check": "ok",
+          "note_count": 1,
+          "card_count": 1,
+          "notes_with_cards": 1,
+          "note_columns": [
+            "id",
+            "guid",
+            "mid",
+            "mod",
+            "usn",
+            "tags",
+            "flds",
+            "sfld",
+            "csum",
+            "flags",
+            "data"
+          ],
+          "sample_note_fields": [
+            "[sound:foo.wav]\u001f"
+          ]
+        },
+        "media_map": {
+          "0": "foo.wav"
+        }
+      }
+    },
+    {
+      "application": "qgis",
+      "repository": "qgis/QGIS",
+      "commit": "b7db8233afbfe8d1e9870da61a2696592295932c",
+      "path": "tests/testdata/embedded_groups/project1.qgz",
+      "url": "https://raw.githubusercontent.com/qgis/QGIS/b7db8233afbfe8d1e9870da61a2696592295932c/tests/testdata/embedded_groups/project1.qgz",
+      "local_path": "inputs/qgis-project1.qgz",
+      "bytes": 5339,
+      "sha256": "53065cdec96c7fa09fa02246fd5498813c420a0192f2b51f4656e6d0734c5c88",
+      "inspection": {
+        "members": [
+          {
+            "name": "project1.qgs",
+            "bytes": 38885,
+            "sha256": "511ef1cab203a02dacc34a94c7340270659a641f5975777bec96d7574964d1c0"
+          },
+          {
+            "name": "project1.qgd",
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        ],
+        "project": {
+          "root_tag": "qgis",
+          "version": "3.11.0-Master",
+          "layers": [
+            {
+              "id": "lines20170310142652255",
+              "name": "lines",
+              "datasource": "../lines.shp",
+              "provider": "ogr"
+            },
+            {
+              "id": "points20170310142652246",
+              "name": "points",
+              "datasource": "../points.shp",
+              "provider": "ogr"
+            },
+            {
+              "id": "polys20170310142652234",
+              "name": "polys",
+              "datasource": "../polys.shp",
+              "provider": "ogr"
+            }
+          ],
+          "relation_count": 0,
+          "layout_count": 0
+        }
+      }
+    },
+    {
+      "application": "freecad",
+      "repository": "FreeCAD/FreeCAD",
+      "commit": "d48752f2851906f93e060cc996ba9fba1e5a05f8",
+      "path": "data/tests/PadTest.fcstd",
+      "url": "https://raw.githubusercontent.com/FreeCAD/FreeCAD/d48752f2851906f93e060cc996ba9fba1e5a05f8/data/tests/PadTest.fcstd",
+      "local_path": "inputs/freecad-PadTest.fcstd",
+      "bytes": 52140,
+      "sha256": "8fb14621564f8e75b632b4b8250c27308082889b98515e4cba4a3bc559c6685d",
+      "inspection": {
+        "members": [
+          {
+            "name": "Document.xml",
+            "bytes": 29628,
+            "sha256": "ecc8e7c37cfdea5bc91e99f1171b64bfe7baceee7aaa461fed43a7ef8fbea15d"
+          },
+          {
+            "name": "PartShape.brp",
+            "bytes": 2036,
+            "sha256": "c2de7362201de8de20a373c4e0295f291327b560bfae3027a372d12ac58dbd8d"
+          },
+          {
+            "name": "PartShape1.brp",
+            "bytes": 13898,
+            "sha256": "ab24879ee38a0a7d06c19c73b99dfceb7e3444b00c23bcb0189e3a6b818c972d"
+          },
+          {
+            "name": "PartShape2.brp",
+            "bytes": 14930,
+            "sha256": "4f5a9b6674af605a8dbfeac61d6dac03549f495c7e21f8fdf7b7853db336be51"
+          },
+          {
+            "name": "PartShape3.brp",
+            "bytes": 648,
+            "sha256": "e1816a7b33a8dcf8b979dcb880c3e49887436438373ae51af73e285e2cd98be5"
+          },
+          {
+            "name": "PartShape4.brp",
+            "bytes": 4849,
+            "sha256": "8a2ffba62597a405a51d611483ecfb8c701b88fd3ea316fbc3f5a0370c981b73"
+          },
+          {
+            "name": "PartShape5.brp",
+            "bytes": 21515,
+            "sha256": "cb42d10eca15f222e38921eb810037c25cb3f84c3c4ae06968b7a624116ced81"
+          },
+          {
+            "name": "PartShape6.brp",
+            "bytes": 45903,
+            "sha256": "000da92249eb39fb4b9dabc5ee35d26bb58f5ac9c36dd773dbc7e98d70f42dc8"
+          },
+          {
+            "name": "PartShape7.brp",
+            "bytes": 457,
+            "sha256": "acd07067718727f7c2595bccbe9be7d24064dc0ad89b95e73278c4373b890f7a"
+          },
+          {
+            "name": "PartShape8.brp",
+            "bytes": 475,
+            "sha256": "52f9632e4c9505883270ca5877d52d7dca2598cdf6e730deb60cb6187e1e8f12"
+          },
+          {
+            "name": "PartShape9.brp",
+            "bytes": 1075,
+            "sha256": "7259f04f790057417dcb2a79f17ddb31b573af425321234d8c3bd8d3c16ecb1c"
+          },
+          {
+            "name": "PartShape10.brp",
+            "bytes": 6947,
+            "sha256": "ad71c9fe8988f4139ad1600b0ca70a5b40c4167cd9d1e7adade953398635e52b"
+          },
+          {
+            "name": "PartShape11.brp",
+            "bytes": 46122,
+            "sha256": "871d98db5c2259b2a3c86f1784b687258394d62bc50e2aece4f4a3454ee41e92"
+          },
+          {
+            "name": "GuiDocument.xml",
+            "bytes": 25232,
+            "sha256": "657e978315daf5e0da9f2afb54d55c235b73ffc490881aa2c79953421d05fd09"
+          },
+          {
+            "name": "thumbnails/Thumbnail.png",
+            "bytes": 8735,
+            "sha256": "10824a864e1ed63e01f76cd3e01fc45203c7dbd6000c24f756461a50a2e2cf1f"
+          },
+          {
+            "name": "DiffuseColor",
+            "bytes": 8,
+            "sha256": "e9241470db3d3b729483edecc100e63465c19b3bdb7c4770bd3a058f918c2369"
+          },
+          {
+            "name": "DiffuseColor1",
+            "bytes": 8,
+            "sha256": "e9241470db3d3b729483edecc100e63465c19b3bdb7c4770bd3a058f918c2369"
+          },
+          {
+            "name": "DiffuseColor2",
+            "bytes": 8,
+            "sha256": "e9241470db3d3b729483edecc100e63465c19b3bdb7c4770bd3a058f918c2369"
+          },
+          {
+            "name": "DiffuseColor3",
+            "bytes": 8,
+            "sha256": "e9241470db3d3b729483edecc100e63465c19b3bdb7c4770bd3a058f918c2369"
+          },
+          {
+            "name": "DiffuseColor4",
+            "bytes": 8,
+            "sha256": "e9241470db3d3b729483edecc100e63465c19b3bdb7c4770bd3a058f918c2369"
+          },
+          {
+            "name": "DiffuseColor5",
+            "bytes": 8,
+            "sha256": "e9241470db3d3b729483edecc100e63465c19b3bdb7c4770bd3a058f918c2369"
+          },
+          {
+            "name": "DiffuseColor6",
+            "bytes": 8,
+            "sha256": "e9241470db3d3b729483edecc100e63465c19b3bdb7c4770bd3a058f918c2369"
+          }
+        ],
+        "document": {
+          "root_tag": "Document",
+          "schema_version": "4",
+          "objects": [
+            {
+              "type": "Sketcher::SketchObject",
+              "name": "Sketch"
+            },
+            {
+              "type": "PartDesign::Pad",
+              "name": "Pad"
+            },
+            {
+              "type": "Sketcher::SketchObject",
+              "name": "Sketch001"
+            },
+            {
+              "type": "PartDesign::Pad",
+              "name": "Pad001"
+            },
+            {
+              "type": "App::Plane",
+              "name": "BaseplaneXY"
+            },
+            {
+              "type": "App::Plane",
+              "name": "BaseplaneXZ"
+            },
+            {
+              "type": "App::Plane",
+              "name": "BaseplaneYZ"
+            },
+            {
+              "type": "App::DocumentObjectGroup",
+              "name": "Origin"
+            },
+            {
+              "type": "PartDesign::Body",
+              "name": "Body"
+            },
+            {
+              "type": "PartDesign::Plane",
+              "name": "DatumPlane"
+            },
+            {
+              "type": "PartDesign::Plane",
+              "name": "DatumPlane001"
+            },
+            {
+              "type": "Sketcher::SketchObject",
+              "name": "Sketch002"
+            },
+            {
+              "type": "PartDesign::Pad",
+              "name": "Pad002"
+            }
+          ],
+          "property_names": [
+            "AddShape",
+            "Angle",
+            "BaseFeature",
+            "Comment",
+            "Company",
+            "Constraints",
+            "CreatedBy",
+            "CreationDate",
+            "ExternalGeometry",
+            "FileName",
+            "Geometry",
+            "Group",
+            "Id",
+            "IsActive",
+            "Label",
+            "LastModifiedBy",
+            "LastModifiedDate",
+            "Length",
+            "Length2",
+            "License",
+            "LicenseURL",
+            "Material",
+            "Meta",
+            "Midplane",
+            "Model",
+            "Offset",
+            "Offset2",
+            "Offset3",
+            "Placement",
+            "References",
+            "Reversed",
+            "Shape",
+            "Sketch",
+            "Support",
+            "Tip",
+            "Type",
+            "Uid",
+            "UpToFace"
+          ],
+          "property_types": [
+            "App::PropertyBool",
+            "App::PropertyEnumeration",
+            "App::PropertyFloat",
+            "App::PropertyLength",
+            "App::PropertyLink",
+            "App::PropertyLinkList",
+            "App::PropertyLinkSub",
+            "App::PropertyLinkSubList",
+            "App::PropertyMap",
+            "App::PropertyPlacement",
+            "App::PropertyString",
+            "App::PropertyUUID",
+            "Part::PropertyGeometryList",
+            "Part::PropertyPartShape",
+            "Sketcher::PropertyConstraintList"
+          ]
+        }
+      }
+    },
+    {
+      "application": "zotero",
+      "repository": "zotero/zotero",
+      "commit": "db41b99fddcc52d38897c59c161b6adaca036afb",
+      "path": "resource/schema/userdata.sql",
+      "url": "https://raw.githubusercontent.com/zotero/zotero/db41b99fddcc52d38897c59c161b6adaca036afb/resource/schema/userdata.sql",
+      "local_path": "inputs/zotero-userdata.sql",
+      "bytes": 18743,
+      "sha256": "f4879fd4d2e91ba7bfff98e6c9c2dd7666b3f3b16aac2f73041f96c73c45a36a",
+      "inspection": {
+        "schema_created": true,
+        "tables": [
+          "baseFieldMappings",
+          "baseFieldMappingsCombined",
+          "collectionItems",
+          "collectionRelations",
+          "collections",
+          "creatorTypes",
+          "creators",
+          "customBaseFieldMappings",
+          "customFields",
+          "customItemTypeFields",
+          "customItemTypes",
+          "dbDebug1",
+          "deletedCollections",
+          "deletedItems",
+          "deletedSearches",
+          "feedItems",
+          "feeds",
+          "fields",
+          "fieldsCombined",
+          "fulltextItems",
+          "groupItems",
+          "groups",
+          "itemAnnotations",
+          "itemAttachments",
+          "itemCreators",
+          "itemData",
+          "itemDataValues",
+          "itemNotes",
+          "itemRelations",
+          "itemTags",
+          "itemTypeCreatorTypes",
+          "itemTypeFields",
+          "itemTypeFieldsCombined",
+          "itemTypes",
+          "itemTypesCombined",
+          "items",
+          "libraries",
+          "proxies",
+          "proxyHosts",
+          "publicationsItems",
+          "relationPredicates",
+          "retractedItems",
+          "savedSearchConditions",
+          "savedSearches",
+          "settings",
+          "storageDeleteLog",
+          "syncCache",
+          "syncDeleteLog",
+          "syncQueue",
+          "syncedSettings",
+          "tags",
+          "translatorCache",
+          "users",
+          "version"
+        ],
+        "prepared_query_columns": {
+          "metadata": [
+            "itemID",
+            "fieldName",
+            "value"
+          ],
+          "creators": [
+            "itemID",
+            "firstName",
+            "lastName",
+            "orderIndex"
+          ],
+          "tags": [
+            "itemID",
+            "name"
+          ],
+          "collections": [
+            "itemID",
+            "collectionName",
+            "parentCollectionID"
+          ],
+          "annotations": [
+            "itemID",
+            "parentItemID",
+            "text",
+            "comment",
+            "position"
+          ]
+        },
+        "queries": {
+          "metadata": "SELECT i.itemID,f.fieldName,v.value FROM items i JOIN itemData d ON d.itemID=i.itemID JOIN fieldsCombined f ON f.fieldID=d.fieldID JOIN itemDataValues v ON v.valueID=d.valueID LIMIT 0",
+          "creators": "SELECT i.itemID,c.firstName,c.lastName,ic.orderIndex FROM items i JOIN itemCreators ic ON ic.itemID=i.itemID JOIN creators c ON c.creatorID=ic.creatorID LIMIT 0",
+          "tags": "SELECT it.itemID,t.name FROM itemTags it JOIN tags t ON t.tagID=it.tagID LIMIT 0",
+          "collections": "SELECT ci.itemID,c.collectionName,c.parentCollectionID FROM collectionItems ci JOIN collections c ON c.collectionID=ci.collectionID LIMIT 0",
+          "annotations": "SELECT itemID,parentItemID,text,comment,position FROM itemAnnotations LIMIT 0"
+        },
+        "populated_library_tested": false
+      }
+    }
+  ]
+}

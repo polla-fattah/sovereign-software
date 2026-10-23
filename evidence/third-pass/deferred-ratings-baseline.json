@@ -1,0 +1,195 @@
+{
+  "purpose": "Original tables before batches 6-12; preserved exactly for the agreed next-pass rating reconciliation, including pre-existing invalid values.",
+  "applications": [
+    {
+      "id": "emacs-org-mode",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"not_verified\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "logseq",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"partial\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "obsidian",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "qownnotes",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "bibdesk",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"not_verified\"\nindependent_recoverability = \"not_verified\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "libreoffice",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "beancount",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "hledger",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"not_verified\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "gnucash",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"not_verified\"\nindependent_recoverability = \"not_verified\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "money-manager-ex",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"partial\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "todo-txt",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "sqlite",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"meets\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "git",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"pass\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "fossil",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"not_verified\"\nindependent_recoverability = \"not_verified\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "jujutsu",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "hugo",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "typst",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "ngspice",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "nixos",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"partial\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "guix",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"not_verified\"\nindependent_recoverability = \"not_verified\"\nretained_control = \"partial\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"partial\"\nlocality = \"partial\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "openbsd",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"partial\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "podman",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"partial\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "syncthing",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"partial\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "pass",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "gdal",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"not_verified\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"meets\"\n"
+    },
+    {
+      "id": "grass-gis",
+      "eligibility": "[eligibility]\nindependent_data_access = \"not_verified\"\npractical_exit = \"not_verified\"\nindependent_recoverability = \"not_verified\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "r-project",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"partial\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "gnu-pspp",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"not_verified\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"meets\"\n"
+    },
+    {
+      "id": "kolibri",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"not_verified\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "moodle",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"partial\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"partial\"\nlocality = \"partial\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "shotcut",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"partial\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "reaper",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"meets\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "kodi",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"partial\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "koreader",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"partial\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "mpv",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"pass\"\nindependent_recoverability = \"partial\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"meets\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "jellyfin",
+      "eligibility": "[eligibility]\nindependent_data_access = \"pass\"\npractical_exit = \"partial\"\nindependent_recoverability = \"not_verified\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"partial\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "briar",
+      "eligibility": "[eligibility]\nindependent_data_access = \"not_verified\"\npractical_exit = \"not_verified\"\nindependent_recoverability = \"not_verified\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"does_not_meet\"\nlocality = \"meets\"\ntransparency = \"partial\"\n"
+    },
+    {
+      "id": "jami",
+      "eligibility": "[eligibility]\nindependent_data_access = \"partial\"\npractical_exit = \"partial\"\nindependent_recoverability = \"not_verified\"\nretained_control = \"pass\"\nconsequential_oversight = \"not_verified\"\n",
+      "principles": "[principles]\nsovereignty = \"partial\"\nlongevity = \"partial\"\nlocality = \"partial\"\ntransparency = \"partial\"\n"
+    }
+  ]
+}

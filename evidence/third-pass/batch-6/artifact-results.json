@@ -1,0 +1,1440 @@
+{
+  "batch": 6,
+  "review_date": "2026-10-23",
+  "recorded_at_utc": "2026-10-23T07:29:32.999667+00:00",
+  "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+  "applications_executed": false,
+  "downloaded_application_implementation_executed": false,
+  "published_schema_ddl_executed": false,
+  "sqlite_reader_version": "3.45.3",
+  "inspection_code_sha256": "7834200af11946de7c4a23b1cf4ddeccfdcf3c29ff56a6ea57583974324e7aa1",
+  "rating_reconciliation": "Deferred to the next pass at the user's request",
+  "inputs": [
+    {
+      "application": "emacs-org-mode",
+      "path": "lisp/ob-core.el",
+      "commit": "38e0eaeec4b1b3482be1afbf77373457bacd93f2",
+      "raw_url": "https://raw.githubusercontent.com/bzg/org-mode/38e0eaeec4b1b3482be1afbf77373457bacd93f2/lisp/ob-core.el",
+      "url": "https://github.com/bzg/org-mode/blob/38e0eaeec4b1b3482be1afbf77373457bacd93f2/lisp/ob-core.el",
+      "git_blob_sha": "e512f0ffcb1ff80dd8736f90dc2dba21375f9f7c",
+      "local_path": "inputs/emacs-org-mode/lisp/ob-core.el",
+      "bytes": 151392,
+      "sha256": "499bd1ad8c71018d988c40d5e52268c2e0c35ac9c50da1c472daa114ce8ad303"
+    },
+    {
+      "application": "emacs-org-mode",
+      "path": "testing/examples/babel.org",
+      "commit": "38e0eaeec4b1b3482be1afbf77373457bacd93f2",
+      "raw_url": "https://raw.githubusercontent.com/bzg/org-mode/38e0eaeec4b1b3482be1afbf77373457bacd93f2/testing/examples/babel.org",
+      "url": "https://github.com/bzg/org-mode/blob/38e0eaeec4b1b3482be1afbf77373457bacd93f2/testing/examples/babel.org",
+      "git_blob_sha": "d46afeb5e9c668400d4d6b05ed272a2d4c3871c8",
+      "probe": "org",
+      "local_path": "inputs/emacs-org-mode/testing/examples/babel.org",
+      "bytes": 12201,
+      "sha256": "79512fcdf56ec81c4ce4d23d3687890423ad145be9249d3dc9dac8fc661b4609"
+    },
+    {
+      "application": "logseq",
+      "path": "deps/db/src/logseq/db/sqlite/backup.cljs",
+      "commit": "05c3ae73e08498e9e20f1b11c3eac5525e5e588d",
+      "raw_url": "https://raw.githubusercontent.com/logseq/logseq/05c3ae73e08498e9e20f1b11c3eac5525e5e588d/deps/db/src/logseq/db/sqlite/backup.cljs",
+      "url": "https://github.com/logseq/logseq/blob/05c3ae73e08498e9e20f1b11c3eac5525e5e588d/deps/db/src/logseq/db/sqlite/backup.cljs",
+      "git_blob_sha": "6dda40705f65ef97db7f71c9ce7a27b664acd8a3",
+      "local_path": "inputs/logseq/deps/db/src/logseq/db/sqlite/backup.cljs",
+      "bytes": 1959,
+      "sha256": "9d531ac04404325691d49d853c6f7169ad6b5b2615e97c34fe5fdeb8371679ce"
+    },
+    {
+      "application": "logseq",
+      "path": "deps/db/src/logseq/db/sqlite/export.cljs",
+      "commit": "05c3ae73e08498e9e20f1b11c3eac5525e5e588d",
+      "raw_url": "https://raw.githubusercontent.com/logseq/logseq/05c3ae73e08498e9e20f1b11c3eac5525e5e588d/deps/db/src/logseq/db/sqlite/export.cljs",
+      "url": "https://github.com/logseq/logseq/blob/05c3ae73e08498e9e20f1b11c3eac5525e5e588d/deps/db/src/logseq/db/sqlite/export.cljs",
+      "git_blob_sha": "ccc7f82a6824a942a3e85fae2abe26da831e27bc",
+      "local_path": "inputs/logseq/deps/db/src/logseq/db/sqlite/export.cljs",
+      "bytes": 76936,
+      "sha256": "d57dae8829b5ac91b219b64e5004dc27cd7639d4dab89cf27f6198edf9418255"
+    },
+    {
+      "application": "obsidian",
+      "path": "sample.canvas",
+      "commit": "456f843cb293df4f4ab1763e22ccb46a80b307c8",
+      "raw_url": "https://raw.githubusercontent.com/obsidianmd/jsoncanvas/456f843cb293df4f4ab1763e22ccb46a80b307c8/sample.canvas",
+      "url": "https://github.com/obsidianmd/jsoncanvas/blob/456f843cb293df4f4ab1763e22ccb46a80b307c8/sample.canvas",
+      "git_blob_sha": "27b6571127e5256434cd3edad6ec662522d74a8c",
+      "probe": "json",
+      "local_path": "inputs/obsidian/sample.canvas",
+      "bytes": 802,
+      "sha256": "ad089f3cbf255924d912a1e6fdc29d3414d9c7264b2c6c878e38680c3f33a7ce"
+    },
+    {
+      "application": "obsidian",
+      "path": "spec/1.0.md",
+      "commit": "456f843cb293df4f4ab1763e22ccb46a80b307c8",
+      "raw_url": "https://raw.githubusercontent.com/obsidianmd/jsoncanvas/456f843cb293df4f4ab1763e22ccb46a80b307c8/spec/1.0.md",
+      "url": "https://github.com/obsidianmd/jsoncanvas/blob/456f843cb293df4f4ab1763e22ccb46a80b307c8/spec/1.0.md",
+      "git_blob_sha": "a463e34c90fadf7981e54a73a865a7866fa5cc61",
+      "local_path": "inputs/obsidian/spec/1.0.md",
+      "bytes": 3899,
+      "sha256": "41d75005394f3ed43a53031ff9d07c5d49c47e897971e7afb2972cc8af67469a"
+    },
+    {
+      "application": "qownnotes",
+      "path": "src/services/databaseservice.cpp",
+      "commit": "21b4d8554828bf77f89be5b25da7a6722ebc7b8f",
+      "raw_url": "https://raw.githubusercontent.com/pbek/QOwnNotes/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/services/databaseservice.cpp",
+      "url": "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/services/databaseservice.cpp",
+      "git_blob_sha": "058cb3b8ac3f6bb1341499455f048ef0cf0ddacb",
+      "local_path": "inputs/qownnotes/src/services/databaseservice.cpp",
+      "bytes": 49366,
+      "sha256": "fa5e41c7dd80f532b8a12e9055f998d46d464197f2eb7ab5dc5e51a4d6c6c4cb"
+    },
+    {
+      "application": "qownnotes",
+      "path": "src/managers/noteoperationsmanager.cpp",
+      "commit": "21b4d8554828bf77f89be5b25da7a6722ebc7b8f",
+      "raw_url": "https://raw.githubusercontent.com/pbek/QOwnNotes/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/managers/noteoperationsmanager.cpp",
+      "url": "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/managers/noteoperationsmanager.cpp",
+      "git_blob_sha": "e7c26688770650d39dddbe990acf24a549483a2a",
+      "local_path": "inputs/qownnotes/src/managers/noteoperationsmanager.cpp",
+      "bytes": 42291,
+      "sha256": "bdc5f851f6d7f94f3803c1aed69fb292ffe1ed0fb8507d29686db8a44833f647"
+    },
+    {
+      "application": "libreoffice",
+      "path": "sfx2/source/doc/docfile.cxx",
+      "commit": "568bac1a5c057f8ec1f43f6d3dae1a9ad0509708",
+      "raw_url": "https://raw.githubusercontent.com/LibreOffice/core/568bac1a5c057f8ec1f43f6d3dae1a9ad0509708/sfx2/source/doc/docfile.cxx",
+      "url": "https://github.com/LibreOffice/core/blob/568bac1a5c057f8ec1f43f6d3dae1a9ad0509708/sfx2/source/doc/docfile.cxx",
+      "local_path": "inputs/libreoffice/sfx2/source/doc/docfile.cxx",
+      "bytes": 189311,
+      "sha256": "7566add8f03a32344ea6f76e924e99b4ac858c05e698830a83db14215ac14cfa"
+    },
+    {
+      "application": "libreoffice",
+      "path": "sw/qa/extras/odfexport/data/resolved-comment.odt",
+      "commit": "568bac1a5c057f8ec1f43f6d3dae1a9ad0509708",
+      "git_blob_sha": "e136cac3d82527f934063667d04ca04c516d7e9b",
+      "raw_url": "https://raw.githubusercontent.com/LibreOffice/core/568bac1a5c057f8ec1f43f6d3dae1a9ad0509708/sw/qa/extras/odfexport/data/resolved-comment.odt",
+      "url": "https://github.com/LibreOffice/core/blob/568bac1a5c057f8ec1f43f6d3dae1a9ad0509708/sw/qa/extras/odfexport/data/resolved-comment.odt",
+      "probe": "zip-xml",
+      "local_path": "inputs/libreoffice/sw/qa/extras/odfexport/data/resolved-comment.odt",
+      "bytes": 8912,
+      "sha256": "dea9f8a7bcf3047e1cf2f734195eda15d720ad2e61fc23bef5faaa7d6b835735"
+    },
+    {
+      "application": "bibdesk",
+      "path": "BDSKStaticGroup.m",
+      "commit": "SVN r30791",
+      "url": "https://svn.code.sf.net/p/bibdesk/svn/!svn/bc/30791/trunk/bibdesk/BDSKStaticGroup.m",
+      "raw_url": "https://svn.code.sf.net/p/bibdesk/svn/!svn/bc/30791/trunk/bibdesk/BDSKStaticGroup.m",
+      "local_path": "inputs/bibdesk/BDSKStaticGroup.m",
+      "bytes": 7023,
+      "sha256": "1c39f2b28e86d9516d963b5210c56e421e7ab0c111f1f52df89349b0054d002a"
+    },
+    {
+      "application": "bibdesk",
+      "path": "BDSKLinkedFile.m",
+      "commit": "SVN r30791",
+      "url": "https://svn.code.sf.net/p/bibdesk/svn/!svn/bc/30791/trunk/bibdesk/BDSKLinkedFile.m",
+      "raw_url": "https://svn.code.sf.net/p/bibdesk/svn/!svn/bc/30791/trunk/bibdesk/BDSKLinkedFile.m",
+      "local_path": "inputs/bibdesk/BDSKLinkedFile.m",
+      "bytes": 38395,
+      "sha256": "8fb13dbec7b25b3cb79513ce55dcea21bc78255afbd391c3ea99b6e9e91e67e8"
+    }
+  ],
+  "observations": {
+    "emacs-org-mode:testing/examples/babel.org": {
+      "headings": [
+        [
+          "*",
+          "=:noweb= header argument expansion"
+        ],
+        [
+          "*",
+          "=:noweb= header argument expansion using :exports results"
+        ],
+        [
+          "*",
+          "excessive id links on tangling"
+        ],
+        [
+          "**",
+          "no, don't give me an ID"
+        ],
+        [
+          "**",
+          "yes, I'd love an ID"
+        ],
+        [
+          "*",
+          "simple named code block"
+        ],
+        [
+          "*",
+          "Pascal's Triangle -- exports both test"
+        ],
+        [
+          "*",
+          "executing an lob call line"
+        ],
+        [
+          "*",
+          "exporting an lob call line"
+        ],
+        [
+          "*",
+          "inline source block"
+        ],
+        [
+          "*",
+          "exported inline source block"
+        ],
+        [
+          "*",
+          "mixed blocks with exports both"
+        ],
+        [
+          "*",
+          "using the =:noweb-ref= header argument"
+        ],
+        [
+          "**",
+          "query all mounted disks"
+        ],
+        [
+          "**",
+          "strip the header row"
+        ],
+        [
+          "**",
+          "sort by the percent full"
+        ],
+        [
+          "**",
+          "extract the mount point"
+        ],
+        [
+          "*",
+          "resolving sub-trees as references"
+        ],
+        [
+          "**",
+          "simple subtree with custom ID"
+        ],
+        [
+          "**",
+          "simple subtree with global ID"
+        ],
+        [
+          "*",
+          "exporting a code block with a name"
+        ],
+        [
+          "*",
+          "noweb no-export and exports both"
+        ],
+        [
+          "*",
+          "in order evaluation on export"
+        ],
+        [
+          "*",
+          "exporting more than just results from a call line"
+        ],
+        [
+          "*",
+          "strip noweb references on export"
+        ],
+        [
+          "*",
+          "use case of reading entry properties"
+        ],
+        [
+          "**",
+          "section"
+        ],
+        [
+          "***",
+          "subsection"
+        ],
+        [
+          "****",
+          "function definition"
+        ],
+        [
+          "*",
+          "=:file-ext= and =:output-dir= header args"
+        ],
+        [
+          "*",
+          "detangle"
+        ],
+        [
+          "**",
+          "false positive"
+        ],
+        [
+          "**",
+          "linked content to detangle"
+        ]
+      ],
+      "links": [
+        "= causes a false positive which ~org-babel-detangle~ should handle properly\n#+begin_src emacs-lisp :tangle yes\n(string-match-p \"^#[[:digit:"
+      ],
+      "properties": [
+        [
+          "PROPERTIES",
+          ":ID:       cd54fc88-1b6b-45b6-8511-4d8fa7fc8076"
+        ],
+        [
+          "END",
+          "Here is one in the middle src_sh{echo 1} of a line."
+        ],
+        [
+          "PROPERTIES",
+          ":ID:       73115FB0-6565-442B-BB95-50195A499EF4"
+        ],
+        [
+          "END",
+          "#+begin_src emacs-lisp :tangle yes :comments link"
+        ]
+      ],
+      "source_languages": [
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "sh",
+        "sh",
+        "sh",
+        "sh",
+        "sh",
+        "emacs-lisp",
+        "org",
+        "sh",
+        "sh",
+        "sh",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "sh",
+        "sh",
+        "sh",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp",
+        "emacs-lisp"
+      ],
+      "executed": false
+    },
+    "obsidian:sample.canvas": {
+      "root_type": "dict",
+      "value": {
+        "nodes": [
+          {
+            "id": "754a8ef995f366bc",
+            "type": "group",
+            "x": -300,
+            "y": -460,
+            "width": 610,
+            "height": 200,
+            "label": "JSON Canvas"
+          },
+          {
+            "id": "8132d4d894c80022",
+            "type": "file",
+            "file": "readme.md",
+            "x": -280,
+            "y": -200,
+            "width": 570,
+            "height": 560,
+            "color": "6"
+          },
+          {
+            "id": "7efdbbe0c4742315",
+            "type": "file",
+            "file": "_site/logo.svg",
+            "x": -280,
+            "y": -440,
+            "width": 217,
+            "height": 80
+          },
+          {
+            "id": "59e896bc8da20699",
+            "type": "text",
+            "text": "Learn more:\n\n- [Apps](/docs/apps.md)\n- [Spec](spec/1.0.md)\n- [Github](https://github.com/obsidianmd/jsoncanvas)",
+            "x": 40,
+            "y": -440,
+            "width": 250,
+            "height": 160
+          },
+          {
+            "id": "0ba565e7f30e0652",
+            "type": "file",
+            "file": "spec/1.0.md",
+            "x": 360,
+            "y": -400,
+            "width": 400,
+            "height": 400
+          }
+        ],
+        "edges": [
+          {
+            "id": "6fa11ab87f90b8af",
+            "fromNode": "7efdbbe0c4742315",
+            "fromSide": "right",
+            "toNode": "59e896bc8da20699",
+            "toSide": "left"
+          }
+        ]
+      },
+      "unresolved_edge_nodes": []
+    },
+    "libreoffice:sw/qa/extras/odfexport/data/resolved-comment.odt": {
+      "members": [
+        {
+          "name": "mimetype",
+          "bytes": 39
+        },
+        {
+          "name": "styles.xml",
+          "bytes": 10692
+        },
+        {
+          "name": "Configurations2/toolbar/",
+          "bytes": 0
+        },
+        {
+          "name": "Configurations2/images/Bitmaps/",
+          "bytes": 0
+        },
+        {
+          "name": "Configurations2/floater/",
+          "bytes": 0
+        },
+        {
+          "name": "Configurations2/statusbar/",
+          "bytes": 0
+        },
+        {
+          "name": "Configurations2/progressbar/",
+          "bytes": 0
+        },
+        {
+          "name": "Configurations2/popupmenu/",
+          "bytes": 0
+        },
+        {
+          "name": "Configurations2/accelerator/",
+          "bytes": 0
+        },
+        {
+          "name": "Configurations2/menubar/",
+          "bytes": 0
+        },
+        {
+          "name": "Configurations2/toolpanel/",
+          "bytes": 0
+        },
+        {
+          "name": "Thumbnails/thumbnail.png",
+          "bytes": 467
+        },
+        {
+          "name": "content.xml",
+          "bytes": 5953
+        },
+        {
+          "name": "meta.xml",
+          "bytes": 1107
+        },
+        {
+          "name": "manifest.rdf",
+          "bytes": 899
+        },
+        {
+          "name": "settings.xml",
+          "bytes": 11654
+        },
+        {
+          "name": "META-INF/manifest.xml",
+          "bytes": 1061
+        }
+      ],
+      "xml": {
+        "styles.xml": {
+          "root": "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}document-styles",
+          "attributes": {
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}version": "1.2"
+          },
+          "element_counts": {
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}document-styles": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}font-face-decls": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-face": 3,
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}styles": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}default-style": 4,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}graphic-properties": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}paragraph-properties": 6,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}tab-stops": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-properties": 6,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}table-properties": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}table-row-properties": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}style": 6,
+            "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}outline-style": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}outline-level-style": 10,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}list-level-properties": 10,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}list-level-label-alignment": 10,
+            "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}notes-configuration": 2,
+            "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}linenumbering-configuration": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}automatic-styles": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}page-layout": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}page-layout-properties": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}footnote-sep": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}header-style": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}footer-style": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}master-styles": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}master-page": 1
+          },
+          "text": "",
+          "selected_attributes": [
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}version": "1.2"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "Liberation Serif",
+              "{urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0}font-family": "'Liberation Serif'",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "Liberation Sans",
+              "{urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0}font-family": "'Liberation Sans'",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "swiss",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "DejaVu Sans",
+              "{urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0}font-family": "'DejaVu Sans'",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "system",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}family": "graphic"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0}stroke-color": "#3465a4",
+              "{urn:oasis:names:tc:opendocument:xmlns:drawing:1.0}fill-color": "#729fcf",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}wrap-option": "no-wrap",
+              "{urn:oasis:names:tc:opendocument:xmlns:drawing:1.0}shadow-offset-x": "0.3cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:drawing:1.0}shadow-offset-y": "0.3cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:drawing:1.0}start-line-spacing-horizontal": "0.283cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:drawing:1.0}start-line-spacing-vertical": "0.283cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:drawing:1.0}end-line-spacing-horizontal": "0.283cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:drawing:1.0}end-line-spacing-vertical": "0.283cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}flow-with-text": "false"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-autospace": "ideograph-alpha",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}line-break": "strict",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-independent-line-spacing": "false"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}use-window-font-color": "true",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Liberation Serif",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}language": "en",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}country": "GB",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}letter-kerning": "true",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name-asian": "DejaVu Sans",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "10.5pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}language-asian": "zh",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}country-asian": "CN",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name-complex": "DejaVu Sans",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}language-complex": "hi",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}country-complex": "IN"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}family": "paragraph"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}orphans": "2",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}widows": "2",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}hyphenation-ladder-count": "no-limit",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-autospace": "ideograph-alpha",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}punctuation-wrap": "hanging",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}line-break": "strict",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}tab-stop-distance": "1.251cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}writing-mode": "page"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}use-window-font-color": "true",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Liberation Serif",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}language": "en",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}country": "GB",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}letter-kerning": "true",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name-asian": "DejaVu Sans",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "10.5pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}language-asian": "zh",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}country-asian": "CN",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name-complex": "DejaVu Sans",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}language-complex": "hi",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}country-complex": "IN",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}hyphenate": "false",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}hyphenation-remain-char-count": "2",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}hyphenation-push-char-count": "2"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}family": "table"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:table:1.0}border-model": "collapsing"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}family": "table-row"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}keep-together": "auto"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "Standard",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}family": "paragraph",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}class": "text"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "Heading",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}family": "paragraph",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}parent-style-name": "Standard",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}next-style-name": "Text_20_body",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}class": "text"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}margin-top": "0.423cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}margin-bottom": "0.212cm",
+              "{urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0}contextual-spacing": "false",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}keep-with-next": "always"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Liberation Sans",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-family": "'Liberation Sans'",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "swiss",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "14pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name-asian": "DejaVu Sans",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-asian": "'DejaVu Sans'",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic-asian": "system",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch-asian": "variable",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "14pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name-complex": "DejaVu Sans",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-complex": "'DejaVu Sans'",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic-complex": "system",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch-complex": "variable",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "14pt"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "Text_20_body",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}display-name": "Text body",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}family": "paragraph",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}parent-style-name": "Standard",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}class": "text"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}margin-top": "0cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}margin-bottom": "0.247cm",
+              "{urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0}contextual-spacing": "false",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}line-height": "115%"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "List",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}family": "paragraph",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}parent-style-name": "Text_20_body",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}class": "list"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "Caption",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}family": "paragraph",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}parent-style-name": "Standard",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}class": "extra"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}margin-top": "0.212cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}margin-bottom": "0.212cm",
+              "{urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0}contextual-spacing": "false",
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}number-lines": "false",
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}line-number": "0"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "italic",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "italic",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "italic"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "Index",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}family": "paragraph",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}parent-style-name": "Standard",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}class": "index"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}number-lines": "false",
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}line-number": "0"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "12pt"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "Outline"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}level": "1",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}num-format": ""
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}list-level-position-and-space-mode": "label-alignment"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}label-followed-by": "listtab"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}level": "2",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}num-format": ""
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}list-level-position-and-space-mode": "label-alignment"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}label-followed-by": "listtab"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}level": "3",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}num-format": ""
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}list-level-position-and-space-mode": "label-alignment"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}label-followed-by": "listtab"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}level": "4",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}num-format": ""
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}list-level-position-and-space-mode": "label-alignment"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}label-followed-by": "listtab"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}level": "5",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}num-format": ""
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}list-level-position-and-space-mode": "label-alignment"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}label-followed-by": "listtab"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}level": "6",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}num-format": ""
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}list-level-position-and-space-mode": "label-alignment"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}label-followed-by": "listtab"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}level": "7",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}num-format": ""
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}list-level-position-and-space-mode": "label-alignment"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}label-followed-by": "listtab"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}level": "8",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}num-format": ""
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}list-level-position-and-space-mode": "label-alignment"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}label-followed-by": "listtab"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}level": "9",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}num-format": ""
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}list-level-position-and-space-mode": "label-alignment"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}label-followed-by": "listtab"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}level": "10",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}num-format": ""
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}list-level-position-and-space-mode": "label-alignment"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}label-followed-by": "listtab"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}note-class": "footnote",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}num-format": "1",
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}start-value": "0",
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}footnotes-position": "page",
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}start-numbering-at": "document"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}note-class": "endnote",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}num-format": "i",
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}start-value": "0"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}number-lines": "false",
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}offset": "0.499cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}num-format": "1",
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}number-position": "left",
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}increment": "5"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "Mpm1"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}page-width": "21.001cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}page-height": "29.7cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}num-format": "1",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}print-orientation": "portrait",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}margin-top": "2cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}margin-bottom": "2cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}margin-left": "2cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}margin-right": "2cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}writing-mode": "lr-tb",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}footnote-max-height": "0cm"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}width": "0.018cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}distance-before-sep": "0.101cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}distance-after-sep": "0.101cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}line-style": "solid",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}adjustment": "left",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}rel-width": "25%",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}color": "#000000"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "Standard",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}page-layout-name": "Mpm1"
+            }
+          ]
+        },
+        "content.xml": {
+          "root": "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}document-content",
+          "attributes": {
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}version": "1.2"
+          },
+          "element_counts": {
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}document-content": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}scripts": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}font-face-decls": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-face": 3,
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}automatic-styles": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}style": 3,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-properties": 3,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}paragraph-properties": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}tab-stops": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}body": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}text": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}sequence-decls": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}sequence-decl": 5,
+            "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}p": 4,
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}annotation": 2,
+            "{http://purl.org/dc/elements/1.1/}creator": 2,
+            "{http://purl.org/dc/elements/1.1/}date": 2,
+            "{urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0}sender-initials": 2,
+            "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}span": 2,
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}annotation-end": 2
+          },
+          "text": "Scott Clarke 2019-08-08T14:05:04.535603552 SC This comment is resolved Resolved Comment Scott Clarke 2019-08-08T14:05:20.135798972 SC This comment is not resolved Unresolved Comment",
+          "selected_attributes": [
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}version": "1.2"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "Liberation Serif",
+              "{urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0}font-family": "'Liberation Serif'",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "roman",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "Liberation Sans",
+              "{urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0}font-family": "'Liberation Sans'",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "swiss",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "DejaVu Sans",
+              "{urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0}font-family": "'DejaVu Sans'",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-family-generic": "system",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-pitch": "variable"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "P1",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}family": "paragraph",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}parent-style-name": "Standard"
+            },
+            {
+              "{http://openoffice.org/2009/office}rsid": "0008565b",
+              "{http://openoffice.org/2009/office}paragraph-rsid": "0008565b"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "P2",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}family": "paragraph"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}margin-left": "0cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}margin-right": "0cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}margin-top": "0cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}margin-bottom": "0cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}line-height": "100%",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}text-align": "start",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}text-indent": "0cm",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-autospace": "ideograph-alpha",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}punctuation-wrap": "simple",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}line-break": "strict",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}writing-mode": "lr-tb"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}hyphenate": "false"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}name": "T1",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}family": "text"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-variant": "normal",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}text-transform": "none",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}use-window-font-color": "true",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-outline": "false",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-line-through-style": "none",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-line-through-type": "none",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-position": "0% 100%",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name": "Liberation Serif",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-size": "10pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}letter-spacing": "normal",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}language": "en",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}country": "GB",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-style": "normal",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}text-shadow": "none",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-underline-style": "none",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}font-weight": "normal",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-underline-mode": "continuous",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-overline-mode": "continuous",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-line-through-mode": "continuous",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}letter-kerning": "true",
+              "{urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0}background-color": "transparent",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name-asian": "DejaVu Sans",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-asian": "10.5pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}language-asian": "zh",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}country-asian": "CN",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-asian": "normal",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-asian": "normal",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-name-complex": "DejaVu Sans",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-size-complex": "12pt",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}language-complex": "hi",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}country-complex": "IN",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-style-complex": "normal",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-weight-complex": "normal",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-emphasize": "none",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-scale": "100%",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}font-relief": "none",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-overline-style": "none",
+              "{urn:oasis:names:tc:opendocument:xmlns:style:1.0}text-overline-color": "font-color"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}display-outline-level": "0",
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}name": "Illustration"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}display-outline-level": "0",
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}name": "Table"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}display-outline-level": "0",
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}name": "Text"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}display-outline-level": "0",
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}name": "Drawing"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}display-outline-level": "0",
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}name": "Figure"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}style-name": "P1"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}name": "__Annotation__0_137305655",
+              "{urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0}resolved": "true"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}style-name": "P2"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}style-name": "T1"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}name": "__Annotation__0_137305655"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}style-name": "P1"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}name": "__Annotation__1_137305655",
+              "{urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0}resolved": "false"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}style-name": "P2"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:text:1.0}style-name": "T1"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}name": "__Annotation__1_137305655"
+            }
+          ]
+        },
+        "meta.xml": {
+          "root": "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}document-meta",
+          "attributes": {
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}version": "1.2"
+          },
+          "element_counts": {
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}document-meta": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}meta": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:meta:1.0}initial-creator": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:meta:1.0}creation-date": 1,
+            "{http://purl.org/dc/elements/1.1/}date": 1,
+            "{http://purl.org/dc/elements/1.1/}creator": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:meta:1.0}editing-duration": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:meta:1.0}editing-cycles": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:meta:1.0}document-statistic": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:meta:1.0}generator": 1
+          },
+          "text": "Scott Clarke 2019-08-08T14:04:42.624476510 2019-08-08T14:06:22.145596371 Scott Clarke PT1M40S 1 LibreOfficeDev/6.4.0.0.alpha0$Linux_X86_64 LibreOffice_project/f0a6826aaec310cf6a667f79c7237407376da0cd",
+          "selected_attributes": [
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:office:1.0}version": "1.2"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:meta:1.0}table-count": "0",
+              "{urn:oasis:names:tc:opendocument:xmlns:meta:1.0}image-count": "0",
+              "{urn:oasis:names:tc:opendocument:xmlns:meta:1.0}object-count": "0",
+              "{urn:oasis:names:tc:opendocument:xmlns:meta:1.0}page-count": "1",
+              "{urn:oasis:names:tc:opendocument:xmlns:meta:1.0}paragraph-count": "2",
+              "{urn:oasis:names:tc:opendocument:xmlns:meta:1.0}word-count": "4",
+              "{urn:oasis:names:tc:opendocument:xmlns:meta:1.0}character-count": "34",
+              "{urn:oasis:names:tc:opendocument:xmlns:meta:1.0}non-whitespace-character-count": "32"
+            }
+          ]
+        },
+        "META-INF/manifest.xml": {
+          "root": "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}manifest",
+          "attributes": {
+            "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}version": "1.2"
+          },
+          "element_counts": {
+            "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}manifest": 1,
+            "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}file-entry": 8
+          },
+          "text": "\n  \n  \n  \n  \n  \n  \n  \n  \n",
+          "selected_attributes": [
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}version": "1.2"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}full-path": "/",
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}version": "1.2",
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}media-type": "application/vnd.oasis.opendocument.text"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}full-path": "styles.xml",
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}media-type": "text/xml"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}full-path": "Configurations2/",
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}media-type": "application/vnd.sun.xml.ui.configuration"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}full-path": "Thumbnails/thumbnail.png",
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}media-type": "image/png"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}full-path": "content.xml",
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}media-type": "text/xml"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}full-path": "meta.xml",
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}media-type": "text/xml"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}full-path": "manifest.rdf",
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}media-type": "application/rdf+xml"
+            },
+            {
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}full-path": "settings.xml",
+              "{urn:oasis:names:tc:opendocument:xmlns:manifest:1.0}media-type": "text/xml"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "source_questions": [
+    {
+      "application": "emacs-org-mode",
+      "id": "babel-controls",
+      "anchors": {
+        "lisp/ob-core.el": [
+          "(defcustom org-confirm-babel-evaluate t",
+          "never-export",
+          "(defun org-babel-confirm-evaluate"
+        ]
+      },
+      "locations": [
+        {
+          "path": "lisp/ob-core.el",
+          "anchor": "(defcustom org-confirm-babel-evaluate t",
+          "lines": [
+            104
+          ]
+        },
+        {
+          "path": "lisp/ob-core.el",
+          "anchor": "never-export",
+          "lines": [
+            258,
+            433
+          ]
+        },
+        {
+          "path": "lisp/ob-core.el",
+          "anchor": "(defun org-babel-confirm-evaluate",
+          "lines": [
+            288
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "logseq",
+      "id": "export-options",
+      "anchors": {
+        "deps/db/src/logseq/db/sqlite/export.cljs": [
+          "include-timestamps?",
+          "exclude-ontology?",
+          "Do not* use for a full graph"
+        ]
+      },
+      "locations": [
+        {
+          "path": "deps/db/src/logseq/db/sqlite/export.cljs",
+          "anchor": "include-timestamps?",
+          "lines": [
+            107,
+            168,
+            180,
+            214,
+            223,
+            293,
+            309,
+            799,
+            804,
+            817,
+            946
+          ]
+        },
+        {
+          "path": "deps/db/src/logseq/db/sqlite/export.cljs",
+          "anchor": "exclude-ontology?",
+          "lines": [
+            293,
+            298,
+            315,
+            509,
+            760
+          ]
+        },
+        {
+          "path": "deps/db/src/logseq/db/sqlite/export.cljs",
+          "anchor": "Do not* use for a full graph",
+          "lines": [
+            337
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "logseq",
+      "id": "backup-cleanup",
+      "anchors": {
+        "deps/db/src/logseq/db/sqlite/backup.cljs": [
+          "sqlite-backup-fn db path",
+          "remove-file-if-exists! path",
+          "(.close db)"
+        ]
+      },
+      "locations": [
+        {
+          "path": "deps/db/src/logseq/db/sqlite/backup.cljs",
+          "anchor": "sqlite-backup-fn db path",
+          "lines": [
+            38
+          ]
+        },
+        {
+          "path": "deps/db/src/logseq/db/sqlite/backup.cljs",
+          "anchor": "remove-file-if-exists! path",
+          "lines": [
+            40,
+            43
+          ]
+        },
+        {
+          "path": "deps/db/src/logseq/db/sqlite/backup.cljs",
+          "anchor": "(.close db)",
+          "lines": [
+            53
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "qownnotes",
+      "id": "tags-and-trash",
+      "anchors": {
+        "src/services/databaseservice.cpp": [
+          "CREATE TABLE tag",
+          "CREATE TABLE noteTagLink",
+          "CREATE TABLE trashItem"
+        ]
+      },
+      "locations": [
+        {
+          "path": "src/services/databaseservice.cpp",
+          "anchor": "CREATE TABLE tag",
+          "lines": [
+            109
+          ]
+        },
+        {
+          "path": "src/services/databaseservice.cpp",
+          "anchor": "CREATE TABLE noteTagLink",
+          "lines": [
+            145
+          ]
+        },
+        {
+          "path": "src/services/databaseservice.cpp",
+          "anchor": "CREATE TABLE trashItem",
+          "lines": [
+            174
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "qownnotes",
+      "id": "delete-authorization",
+      "anchors": {
+        "src/managers/noteoperationsmanager.cpp": [
+          "remove-note-with-backlinks",
+          "_mainWindow->currentNote.remove(true)",
+          "All files and folders in these folders will be removed"
+        ]
+      },
+      "locations": [
+        {
+          "path": "src/managers/noteoperationsmanager.cpp",
+          "anchor": "remove-note-with-backlinks",
+          "lines": [
+            60
+          ]
+        },
+        {
+          "path": "src/managers/noteoperationsmanager.cpp",
+          "anchor": "_mainWindow->currentNote.remove(true)",
+          "lines": [
+            100
+          ]
+        },
+        {
+          "path": "src/managers/noteoperationsmanager.cpp",
+          "anchor": "All files and folders in these folders will be removed",
+          "lines": [
+            208,
+            220
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "bibdesk",
+      "id": "group-encoding",
+      "anchors": {
+        "BDSKStaticGroup.m": [
+          "dictionaryValue",
+          "componentsJoinedByString:@\",\"",
+          "@\"group name\""
+        ]
+      },
+      "locations": [
+        {
+          "path": "BDSKStaticGroup.m",
+          "anchor": "dictionaryValue",
+          "lines": [
+            81
+          ]
+        },
+        {
+          "path": "BDSKStaticGroup.m",
+          "anchor": "componentsJoinedByString:@\",\"",
+          "lines": [
+            91
+          ]
+        },
+        {
+          "path": "BDSKStaticGroup.m",
+          "anchor": "@\"group name\"",
+          "lines": [
+            71,
+            91
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "bibdesk",
+      "id": "file-link-encoding",
+      "anchors": {
+        "BDSKLinkedFile.m": [
+          "initWithBase64String:",
+          "objectForKey:BOOKMARK_KEY",
+          "objectForKey:RELATIVEPATH_KEY"
+        ]
+      },
+      "locations": [
+        {
+          "path": "BDSKLinkedFile.m",
+          "anchor": "initWithBase64String:",
+          "lines": [
+            165,
+            177,
+            270,
+            271,
+            337,
+            965
+          ]
+        },
+        {
+          "path": "BDSKLinkedFile.m",
+          "anchor": "objectForKey:BOOKMARK_KEY",
+          "lines": [
+            375
+          ]
+        },
+        {
+          "path": "BDSKLinkedFile.m",
+          "anchor": "objectForKey:RELATIVEPATH_KEY",
+          "lines": [
+            376
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    },
+    {
+      "application": "libreoffice",
+      "id": "backup-overwrite",
+      "anchors": {
+        "sfx2/source/doc/docfile.cxx": [
+          "void SfxMedium::DoBackup_Impl",
+          "NameClash::OVERWRITE",
+          "ERRCODE_SFX_CANTCREATEBACKUP"
+        ]
+      },
+      "locations": [
+        {
+          "path": "sfx2/source/doc/docfile.cxx",
+          "anchor": "void SfxMedium::DoBackup_Impl",
+          "lines": [
+            2824
+          ]
+        },
+        {
+          "path": "sfx2/source/doc/docfile.cxx",
+          "anchor": "NameClash::OVERWRITE",
+          "lines": [
+            2662,
+            2774,
+            2872,
+            4165,
+            4698
+          ]
+        },
+        {
+          "path": "sfx2/source/doc/docfile.cxx",
+          "anchor": "ERRCODE_SFX_CANTCREATEBACKUP",
+          "lines": [
+            992,
+            2334,
+            2891
+          ]
+        }
+      ],
+      "scope": "Static inspection, not execution"
+    }
+  ]
+}

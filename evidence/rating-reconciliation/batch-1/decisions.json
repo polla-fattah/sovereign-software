@@ -1,0 +1,992 @@
+{
+  "review_date": "2026-10-23",
+  "purpose": "User-authorized rating reconciliation superseding the earlier freeze. Not a blanket product certification.",
+  "applications": [
+    {
+      "id": "git",
+      "name": "Git",
+      "version": "Git 2.54.0.windows.1; configured local vcs_core workflow, rating reconciliation batch 1",
+      "E3": [
+        "pass",
+        "The configured local vcs_core backup restores all refs, author/committer timestamps and identities, tracked bytes, ignore rules, separately preserved local configuration and one submodule after the original paths become unavailable; fsck succeeds. Full main/submodule bundles plus configuration are required, not the displayed main bundle command alone. This Pass excludes LFS, executable hooks, signature authenticity and hosted-service state; the earlier broader candidate scenario remains open.",
+        "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/git-bundle.adoc",
+        "high"
+      ],
+      "E5": [
+        "pass",
+        "In the declared local configuration, diffs expose the history reset, reflog retains the displaced committed tip and explicit reset restores it. clean -n lists and retains a disposable untracked file; clean -f explicitly removes it and reports removal. That file is restored from a separate copy, not Git history. This demonstrates proportionate command authorization, inspection and available correction for these operations, not automatic recovery of arbitrary uncommitted work.",
+        "https://git-scm.com/docs/git-clean",
+        "high"
+      ],
+      "longevity": [
+        "meets",
+        "For the configured vcs_core fixture, complete preserved history/configuration/submodule material reconstructed a usable repository without the original paths. This supports Longevity for that workflow; it does not certify LFS, signed provenance, arbitrary automation or future-version recovery.",
+        "https://github.com/git/git/blob/7e34d8174dcda3435d1404c9a30bef46afe6c13e/Documentation/git-bundle.adoc",
+        "high"
+      ],
+      "transparency": [
+        "partial",
+        "E5's minimum is demonstrated for the declared local commands: changes are inspectable and committed-history reset is correctable. Reflog retention is finite, untracked deletion needs an external backup, and executable hooks/remote automation were excluded rather than verified. These residual limits justify Partially meets, not a blanket Meets.",
+        "https://git-scm.com/docs/git-clean",
+        "high"
+      ],
+      "remaining": "LFS payloads, signed-tag authenticity, executable hooks, remote/hosted permissions, corruption/crash recovery, independent network isolation, older versions and the earlier broader two-assessor candidate protocol remain unverified.",
+      "limits": [
+        "Passes apply only to the predeclared installed local-core configuration, not every Git deployment.",
+        "A full bundle alone omits local configuration and submodule payloads; preserve these separately.",
+        "Untracked clean deletion has no Git-history undo; external backup was required in the test."
+      ],
+      "current_remaining": "LFS payloads, signed-tag authenticity, executable hooks, remote/hosted permissions, corruption/crash recovery, independent network isolation, older versions and the earlier broader two-assessor candidate protocol remain unverified."
+    },
+    {
+      "id": "sqlite",
+      "name": "SQLite",
+      "version": "Python-bundled SQLite 3.45.3; declared embedded relational-engine/API profile",
+      "E3": [
+        "pass",
+        "The prior logical dump/backup experiments are reproduced and extended: a fresh connection restores schema and rows, the view returns expected related records, the restored trigger actually fires, and foreign_key_check is clean. This establishes meaningful recovery of the declared relational fixture through user-held files/SQL and the available open engine, not an independent SQLite implementation or the semantics of arbitrary application databases.",
+        "https://www.sqlite.org/backup.html",
+        "high"
+      ],
+      "E5": [
+        "pass",
+        "With explicit transactions, foreign_keys ON and SQL trace enabled, DELETE and DROP TABLE are rolled back, a savepoint undoes an inner update, an invalid reference produces a visible IntegrityError, and an explicitly committed update survives reopen. This establishes governable SQL/API mutations in the declared configuration; it does not provide GUI consent, automatic client authorization or recovery after an unbacked committed deletion.",
+        "https://www.sqlite.org/lang_transaction.html",
+        "high"
+      ],
+      "longevity": [
+        "meets",
+        "The declared fixture's schema, types, relationships, view and functioning trigger survive logical restoration, and the prior live-WAL comparison identifies the required backup boundary. This supports Longevity for this engine-level profile, not every application schema, damaged-file case, extension or future file-format feature.",
+        "https://www.sqlite.org/backup.html",
+        "high"
+      ],
+      "transparency": [
+        "partial",
+        "E5 is demonstrated at the explicitly configured SQL/API boundary: statements, errors, rollback and commit are inspectable. Trace logging is opt-in and permission/UI policy belongs to the caller; the engine is not a universal audit or authorization service. These known limits support Partially meets.",
+        "https://www.sqlite.org/lang_transaction.html",
+        "high"
+      ],
+      "remaining": "Migration into a different engine/workflow, application-specific record semantics, independent non-SQLite decoding, extensions, corruption/crash/concurrent-writer stress and newer-feature/older-version compatibility remain unverified.",
+      "limits": [
+        "Ratings apply to the declared SQLite 3.45.3 API profile, not arbitrary clients or application databases.",
+        "Explicit transactions and trace were configured; committed deletion has no automatic undo.",
+        "WAL-aware backup is necessary; a live main-file-only copy can omit committed data."
+      ],
+      "extra": {
+        "practical_exit": "not_verified",
+        "sovereignty": null
+      },
+      "current_remaining": "Migration into a different engine/workflow, application-specific record semantics, independent non-SQLite decoding, extensions, corruption/crash/concurrent-writer stress and newer-feature/older-version compatibility remain unverified."
+    },
+    {
+      "id": "fossil",
+      "name": "Fossil SCM",
+      "E3": [
+        "not_verified",
+        "The retained source proves Git export omits wiki, tickets, technical notes and attachments, but that is a limitation of this exit route, not proof that native Fossil recovery fails. Complete native restoration of artifacts, accounts, settings, private/shunned content and attachments has not been demonstrated. E3 therefore remains Not Verified.",
+        "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/export.c",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Purge preview, local graveyard undo and obliterate confirmation are positively established by source inspection. They do not cover the full consequential-operation surface: synchronization/configuration propagation, shunning/rebuild and effective recovery have not been sufficiently established. A guarded purge routine alone does not establish whole-scope E5.",
+        "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/purge.c",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 remains Not Verified for the existing essential-record scope. The methodology requires established E3 before a positive Longevity finding, so the earlier positive rating is withdrawn pending recovery evidence; source/format strengths are retained as facts, not graded as a failure.",
+        "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/export.c",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "E5 remains Not Verified. The methodology's Partially meets threshold requires demonstrated minimum oversight, so the earlier positive Transparency and Control finding is withdrawn rather than retained on the strength of one documented control. This is Not assessed, not Does not meet.",
+        "https://github.com/drhsqlite/fossil-mirror/blob/9f1ea15e06b9be018175d231a939d19372fd4b8b/src/purge.c",
+        "medium"
+      ],
+      "remaining": "The existing open recovery and consequential-action scenarios remain pending; the individually explained E3/E5 blockers above determine the current Not Verified and Not assessed findings.",
+      "current_remaining": "The existing open recovery and consequential-action scenarios remain pending; the individually explained E3/E5 blockers above determine the current Not Verified and Not assessed findings."
+    },
+    {
+      "id": "jujutsu",
+      "name": "Jujutsu",
+      "E3": [
+        "not_verified",
+        "The retained operation-log model explains repository-state recovery, while git export exports refs rather than archiving the jj operation store. Independent interpretation and restoration of the preserved operation store, conflicts and workspace state remain unestablished. Invalid partial is replaced by Not Verified, not automatically converted to Pass or Fail.",
+        "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/git/export.rs",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "The retained undo implementation provides real cross-workspace guards and explains that a removed workspace directory is not recreated by undo. However operation abandonment/garbage collection, colocated Git changes and actual correction/retention boundaries remain insufficiently covered. These source controls alone do not justify a whole-scope E5 Pass.",
+        "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/undo.rs",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 remains Not Verified for the existing essential-record scope. The methodology requires established E3 before a positive Longevity finding, so the earlier positive rating is withdrawn pending recovery evidence; source/format strengths are retained as facts, not graded as a failure.",
+        "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/git/export.rs",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "E5 remains Not Verified. The methodology's Partially meets threshold requires demonstrated minimum oversight, so the earlier positive Transparency and Control finding is withdrawn rather than retained on the strength of one documented control. This is Not assessed, not Does not meet.",
+        "https://github.com/jj-vcs/jj/blob/531e8da8066271040b4b1e74ce17a8a941544cce/cli/src/commands/undo.rs",
+        "medium"
+      ],
+      "remaining": "The existing open recovery and consequential-action scenarios remain pending; the individually explained E3/E5 blockers above determine the current Not Verified and Not assessed findings.",
+      "current_remaining": "The existing open recovery and consequential-action scenarios remain pending; the individually explained E3/E5 blockers above determine the current Not Verified and Not assessed findings."
+    },
+    {
+      "id": "emacs-org-mode",
+      "name": "Emacs Org-mode",
+      "E3": [
+        "not_verified",
+        "The retained Org fixture is independently readable and exposes headings, links/properties and source blocks, but the knowledge_notes profile also needs attachment/ID-link relocation and preserved executable/agenda/table meaning. These have not been reconstructed. Plain-text readability is positive E1 evidence, not sufficient E3 recovery evidence.",
+        "https://github.com/bzg/org-mode/blob/38e0eaeec4b1b3482be1afbf77373457bacd93f2/testing/examples/babel.org",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "The pinned Babel code establishes a confirmation default and evaluation-control branches. Effective buffer settings, export-time evaluation, hooks and consequential editing/reversal have not been comprehensively checked. Defaults and the existence of a prompt cannot alone justify E5 for the existing broad literate-programming scope.",
+        "https://github.com/bzg/org-mode/blob/38e0eaeec4b1b3482be1afbf77373457bacd93f2/lisp/ob-core.el",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 remains Not Verified for the existing essential-record scope. The methodology requires established E3 before a positive Longevity finding, so the earlier positive rating is withdrawn pending recovery evidence; source/format strengths are retained as facts, not graded as a failure.",
+        "https://github.com/bzg/org-mode/blob/38e0eaeec4b1b3482be1afbf77373457bacd93f2/testing/examples/babel.org",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "E5 remains Not Verified. The methodology's Partially meets threshold requires demonstrated minimum oversight, so the earlier positive Transparency and Control finding is withdrawn rather than retained on the strength of one documented control. This is Not assessed, not Does not meet.",
+        "https://github.com/bzg/org-mode/blob/38e0eaeec4b1b3482be1afbf77373457bacd93f2/lisp/ob-core.el",
+        "medium"
+      ],
+      "remaining": "The existing open recovery and consequential-action scenarios remain pending; the individually explained E3/E5 blockers above determine the current Not Verified and Not assessed findings.",
+      "current_remaining": "The existing open recovery and consequential-action scenarios remain pending; the individually explained E3/E5 blockers above determine the current Not Verified and Not assessed findings."
+    },
+    {
+      "id": "qownnotes",
+      "name": "QOwnNotes",
+      "E3": [
+        "not_verified",
+        "The retained schema places hierarchical tags, note-tag associations and trash metadata outside Markdown prose. A populated database/native-folder recovery and relationship reconstruction have not been demonstrated. This is an incomplete essential-record preservation check, not a reason to infer a failure or promote the invalid partial value.",
+        "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/services/databaseservice.cpp",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "The retained note-removal implementation has backlink and bulk-folder confirmation branches, but saved dialog preferences, local/server trash restoration, other deletion modes and concurrent edits remain unverified. This closes a control-implementation question without establishing risk-appropriate authorization and correction for the whole assessed workflow.",
+        "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/managers/noteoperationsmanager.cpp",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 remains Not Verified for the existing essential-record scope. The methodology requires established E3 before a positive Longevity finding, so the earlier positive rating is withdrawn pending recovery evidence; source/format strengths are retained as facts, not graded as a failure.",
+        "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/services/databaseservice.cpp",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "E5 remains Not Verified. The methodology's Partially meets threshold requires demonstrated minimum oversight, so the earlier positive Transparency and Control finding is withdrawn rather than retained on the strength of one documented control. This is Not assessed, not Does not meet.",
+        "https://github.com/pbek/QOwnNotes/blob/21b4d8554828bf77f89be5b25da7a6722ebc7b8f/src/managers/noteoperationsmanager.cpp",
+        "medium"
+      ],
+      "remaining": "The existing open recovery and consequential-action scenarios remain pending; the individually explained E3/E5 blockers above determine the current Not Verified and Not assessed findings.",
+      "current_remaining": "The existing open recovery and consequential-action scenarios remain pending; the individually explained E3/E5 blockers above determine the current Not Verified and Not assessed findings."
+    }
+  ],
+  "field_changes": [
+    {
+      "id": "beancount",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "gimp",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "guix",
+      "table": "eligibility",
+      "key": "retained_control",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "hugo",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "inkscape",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "jami",
+      "table": "eligibility",
+      "key": "independent_data_access",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "jami",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "jellyfin",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "jujutsu",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Individual E3 reconciliation; see jujutsu criteria in batch 1."
+    },
+    {
+      "id": "kicad",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "kicad",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "kodi",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "kodi",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "koreader",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "koreader",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "krita",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "krita",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "libreoffice",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "logseq",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "logseq",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "money-manager-ex",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "money-manager-ex",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "moodle",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "moodle",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "mpv",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "ngspice",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "nixos",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "nixos",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "obsidian",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "openbsd",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "openbsd",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "openscad",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "pass",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "podman",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "podman",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "qownnotes",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Individual E3 reconciliation; see qownnotes criteria in batch 1."
+    },
+    {
+      "id": "r-project",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "r-project",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "reaper",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "shotcut",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "shotcut",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "sqlite",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "meets",
+      "after": "pass",
+      "reason": "Individual E3 reconciliation; see sqlite criteria in batch 1."
+    },
+    {
+      "id": "syncthing",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "syncthing",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "todo-txt",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "typst",
+      "table": "eligibility",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "after": "not_verified",
+      "reason": "Schema repair only: partial is not a requirement status; existing incomplete evidence does not establish Pass or Fail."
+    },
+    {
+      "id": "git",
+      "table": "eligibility",
+      "key": "consequential_oversight",
+      "before": "not_verified",
+      "after": "pass",
+      "reason": "Individual E5 reconciliation; see git criteria in batch 1."
+    },
+    {
+      "id": "sqlite",
+      "table": "eligibility",
+      "key": "consequential_oversight",
+      "before": "not_verified",
+      "after": "pass",
+      "reason": "Individual E5 reconciliation; see sqlite criteria in batch 1."
+    },
+    {
+      "id": "sqlite",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "pass",
+      "after": "not_verified",
+      "reason": "Withdraw earlier placeholder-backed exit claim; recovery in the same engine does not establish migration."
+    },
+    {
+      "id": "sqlite",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E2; exit is not yet verified."
+    },
+    {
+      "id": "fossil",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "Individual Longevity reconciliation with E3 and its full essential-record scope."
+    },
+    {
+      "id": "fossil",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "Individual Transparency reconciliation with E5 and documented residual limits."
+    },
+    {
+      "id": "jujutsu",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "Individual Longevity reconciliation with E3 and its full essential-record scope."
+    },
+    {
+      "id": "jujutsu",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "Individual Transparency reconciliation with E5 and documented residual limits."
+    },
+    {
+      "id": "emacs-org-mode",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "Individual Longevity reconciliation with E3 and its full essential-record scope."
+    },
+    {
+      "id": "emacs-org-mode",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "Individual Transparency reconciliation with E5 and documented residual limits."
+    },
+    {
+      "id": "qownnotes",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "Individual Longevity reconciliation with E3 and its full essential-record scope."
+    },
+    {
+      "id": "qownnotes",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "Individual Transparency reconciliation with E5 and documented residual limits."
+    }
+  ],
+  "schema_repairs": [
+    {
+      "id": "beancount",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "gimp",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "guix",
+      "key": "retained_control",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "hugo",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "inkscape",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "jami",
+      "key": "independent_data_access",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "jami",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "jellyfin",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "jujutsu",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "kicad",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "kicad",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "kodi",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "kodi",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "koreader",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "koreader",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "krita",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "krita",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "libreoffice",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "logseq",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "logseq",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "money-manager-ex",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "money-manager-ex",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "moodle",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "moodle",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "mpv",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "ngspice",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "nixos",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "nixos",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "obsidian",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "openbsd",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "openbsd",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "openscad",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "pass",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "podman",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "podman",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "qownnotes",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "r-project",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "r-project",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "reaper",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "shotcut",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "shotcut",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "sqlite",
+      "key": "independent_recoverability",
+      "before": "meets",
+      "normalized": "not_verified",
+      "final": "pass"
+    },
+    {
+      "id": "syncthing",
+      "key": "practical_exit",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "syncthing",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "todo-txt",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    },
+    {
+      "id": "typst",
+      "key": "independent_recoverability",
+      "before": "partial",
+      "normalized": "not_verified",
+      "final": "not_verified"
+    }
+  ]
+}

@@ -6,6 +6,8 @@ Reviewed 22 October 2026 from the KeePassXC website (download, privacy, user gui
 
 ## What the documentation says
 
+Follow-up, 23 October 2026: resolved questions and remaining work are recorded in the [second third-pass batch](../third-pass/batch-2/README.md#keepassxc) and reflected in the [application assessment](../../content/directory/keepassxc.md). The earlier review below is superseded where that evidence answers or corrects it.
+
 **Storage and access (E1, E3)**
 - The database is one `.kdbx` file. The README says KeePassXC can "Create, open, and save databases in the KDBX format (KeePass-compatible with KDBX4 and KDBX3)". Which other tools can read it, and the byte-level format specification, were not found in the pages read. [README](https://github.com/keepassxreboot/keepassxc)
 - The guide says information is "encrypted at all times within the `kdbx` file", and that unencrypted data is never written to disk. [user guide](https://keepassxc.org/docs/KeePassXC_GettingStarted), [user guide, storing](https://keepassxc.org/docs/KeePassXC_UserGuide)
@@ -13,7 +15,7 @@ Reviewed 22 October 2026 from the KeePassXC website (download, privacy, user gui
 - Passkeys are stored as ordinary entries in a group named "KeePassXC-Browser Passwords". TOTP, custom attributes, attachments and entry history are entry features. [passkeys](https://github.com/keepassxreboot/keepassxc/blob/develop/docs/topics/Passkeys.adoc), [user guide](https://keepassxc.org/docs/KeePassXC_UserGuide)
 
 **Exit and migration (E2)**
-- Export formats are CSV, XML and HTML. Documented losses: CSV drops attachments, advanced attributes, Auto-Type settings and custom icons; XML drops attachments; HTML drops attachments and some custom data fields. [import and export](https://github.com/keepassxreboot/keepassxc/blob/develop/docs/topics/ImportExport.adoc)
+- Original documentation review: export formats are CSV, XML and HTML, with format-specific losses. Follow-up source inspection now resolves CSV's exact ten columns (including TOTP) and narrows XML attachment loss to the inspected KDBX 4+ extraction path; older XML can embed payloads. See the [versioned evidence](../third-pass/batch-2/README.md#keepassxc) before applying a blanket XML-loss claim. [import and export](https://github.com/keepassxreboot/keepassxc/blob/develop/docs/topics/ImportExport.adoc)
 - All exports are unencrypted. HTML is for printing as a paper backup, not for re-import. [import and export](https://github.com/keepassxreboot/keepassxc/blob/develop/docs/topics/ImportExport.adoc)
 - Import: CSV, 1Password (.1pux, .opvault), Bitwarden JSON, Proton Pass JSON, KeePass 1 (.kdb), and remote .kdbx. [import and export](https://github.com/keepassxreboot/keepassxc/blob/develop/docs/topics/ImportExport.adoc)
 - `keepassxc-cli export` writes XML by default, or CSV with `-f`. `keepassxc-cli import` takes an XML export and creates a KDBX 4 database. [CLI man page](https://github.com/keepassxreboot/keepassxc/blob/develop/docs/man/keepassxc-cli.1.adoc)
@@ -49,3 +51,19 @@ Reviewed 22 October 2026 from the KeePassXC website (download, privacy, user gui
 5. Edit the same entry in two copies and merge both ways; check history and the deletion-record behavior.
 6. With a network monitor, run the desktop app with default settings and record any connection (update check, favicons, HIBP).
 7. Not read: the GUI sections on the recycle bin, history and entry deletion; Advanced Entry Handling; the KDBX specification or any statement of third-party readers; CONTRIBUTING, SECURITY and COPYING; reconcile GPLv3 versus "GPL-2 or GPL-3".
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-5/README.md#keepassxc); [actual assessment](../../content/directory/keepassxc.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The plaintext historical XML fixture's attachments resolve, but no encrypted KDBX was decrypted or restored across independent clients with preserved history, keys and passkeys. The inspected CSV and KDBX 4+ XML routes omit essential payloads in different ways. Those bounded export limitations are not full native-vault recovery or proof all recovery paths fail.
+- E5: Not Verified. The collected exporter/writer evidence does not establish effective approval for secret disclosure, browser/Auto-Type use, merge/overwrite or key/hardware recovery. Password custody and local availability alone do not demonstrate governability of those high-risk actions.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+- E2: Not Verified. The former E2 Pass does not establish a complete usable alternative-vault migration: the inspected CSV and KDBX 4+ XML routes omit essential history/attachments or other fields. Another KDBX route may work, but that complete comparison remains missing.
+
+Remaining: Actual KDBX decryption and cross-client restore, version-specific CLI export/import, passkeys, hardware/key-file recovery, and merges. E5 needs secret-use/export approval, browser/Auto-Type authority, merge/overwrite visibility and key-change/correction boundaries.
+
+Next without a local installation: Use a synthetic encrypted KDBX with non-secret test credentials, attachments/history/passkeys and expected records; seek independent-client and same-version approval/merge recovery evidence without handling real passwords or installing the target.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

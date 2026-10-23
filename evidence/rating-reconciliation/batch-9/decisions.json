@@ -1,0 +1,394 @@
+{
+  "review_date": "2026-10-24",
+  "purpose": "Individual reconciliation against each existing scope. Completed review is not product certification or proof that every gap is resolved.",
+  "applications": [
+    {
+      "id": "nixos",
+      "name": "NixOS",
+      "version": "Pinned evidence 44d27ba452c1c4177882732bd48fabd7d332e38d",
+      "E3": [
+        "not_verified",
+        "The retained state documentation explicitly requires persistent store/daemon/profile/root and boot/UID-allocation data, plus mutable account files where configured. A declarative configuration alone does not reconstruct services, secrets and closure inputs. No pinned offline complete state restoration is established.",
+        "https://github.com/NixOS/nixpkgs/blob/44d27ba452c1c4177882732bd48fabd7d332e38d/nixos/doc/manual/administration/nixos-state.section.md",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Generation selection and running/boot-default rollback are distinct, and garbage collection can remove recovery generations. Service/user data are not rolled back by those mechanisms. Effective activation/GC authority, inspectable consequences and recourse for mutable-state changes remain insufficiently covered.",
+        "https://github.com/NixOS/nixpkgs/blob/44d27ba452c1c4177882732bd48fabd7d332e38d/nixos/doc/manual/administration/rollback.section.md",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for NixOS's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/NixOS/nixpkgs/blob/44d27ba452c1c4177882732bd48fabd7d332e38d/nixos/doc/manual/administration/nixos-state.section.md",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://github.com/NixOS/nixpkgs/blob/44d27ba452c1c4177882732bd48fabd7d332e38d/nixos/doc/manual/administration/rollback.section.md",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Pinned-closure rebuilds, offline cache completeness, mutable service/secret restoration and actual rollback/GC trials remain open. E5 needs effective activation/GC policy, boot versus running-state choices and mutable-data correction; retained generations are conditional recourse.",
+      "current_remaining": "Pinned-closure rebuilds, offline cache completeness, mutable service/secret restoration and actual rollback/GC trials remain open. E5 needs effective activation/GC policy, boot versus running-state choices and mutable-data correction; retained generations are conditional recourse.",
+      "next": "Use a synthetic pinned configuration/closure/cache plus mutable-state/secret-substitute manifest and expected users/services; inspect preservation records and obtain externally recorded offline rebuild/activation/GC recovery checks.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for NixOS does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://github.com/NixOS/nixpkgs/blob/44d27ba452c1c4177882732bd48fabd7d332e38d/nixos/doc/manual/administration/nixos-state.section.md",
+        "medium"
+      ]
+    },
+    {
+      "id": "guix",
+      "name": "GNU Guix",
+      "version": "Pinned evidence a639dc9f4767b55d5a9240a76c82957533273657",
+      "E3": [
+        "not_verified",
+        "Archive export is recursive only when requested and is not arbitrary mutable-service backup. Channels, source/substitute closure, hardware and persistent service data have not been reconstructed in a network-blocked deployment. Declarative Scheme/profile generations do not alone establish complete E3.",
+        "https://codeberg.org/guix/guix/src/commit/a639dc9f4767b55d5a9240a76c82957533273657/guix/scripts/archive.scm",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "System dry-run propagation avoids the inspected activation/bootloader/service-switch branch, but configuration evaluation/planning is not proven side-effect-free. Generation deletion, effective privilege/substitute policy and correction of service/mutable-state changes remain insufficiently covered.",
+        "https://codeberg.org/guix/guix/src/commit/a639dc9f4767b55d5a9240a76c82957533273657/guix/scripts/system.scm",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for GNU Guix's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://codeberg.org/guix/guix/src/commit/a639dc9f4767b55d5a9240a76c82957533273657/guix/scripts/archive.scm",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://codeberg.org/guix/guix/src/commit/a639dc9f4767b55d5a9240a76c82957533273657/guix/scripts/system.scm",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Channel-pinned rebuilds, network-blocked closure completeness, mutable-data restoration, generation deletion and release-specific compatibility remain untested. E5 needs configuration-evaluation, activation and generation-deletion authority and mutable-service recourse; dry-run is a bounded branch.",
+      "current_remaining": "Channel-pinned rebuilds, network-blocked closure completeness, mutable-data restoration, generation deletion and release-specific compatibility remain untested. E5 needs configuration-evaluation, activation and generation-deletion authority and mutable-service recourse; dry-run is a bounded branch.",
+      "next": "Inspect channel-pinned recursive archives, source/substitute manifests and synthetic persistent data with expected service state; reuse same-version dry-run/activation/generation-deletion and offline restore evidence.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for GNU Guix does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://codeberg.org/guix/guix/src/commit/a639dc9f4767b55d5a9240a76c82957533273657/guix/scripts/archive.scm",
+        "medium"
+      ]
+    },
+    {
+      "id": "openbsd",
+      "name": "OpenBSD",
+      "version": "Pinned evidence d962f40cd0b4b974405c3cac59ec7417040c0533",
+      "E3": [
+        "not_verified",
+        "The restore manual specifies full/incremental archive-chain requirements, pristine targets and possible active-filesystem inconsistencies. No complete archive/keydisk/application-data restoration with verified ownership/times/permissions is recorded for the declared system scope.",
+        "https://github.com/openbsd/src/blob/d962f40cd0b4b974405c3cac59ec7417040c0533/sbin/restore/restore.8",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Listing, selective extraction and full rebuilding have different risk and authority requirements; the manual warns about hazardous full restore. Those descriptions do not establish effective target/privilege authorization, upgrade reversal or recourse after overwritten system/user state.",
+        "https://github.com/openbsd/src/blob/d962f40cd0b4b974405c3cac59ec7417040c0533/sbin/restore/restore.8",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for OpenBSD's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/openbsd/src/blob/d962f40cd0b4b974405c3cac59ec7417040c0533/sbin/restore/restore.8",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://github.com/openbsd/src/blob/d962f40cd0b4b974405c3cac59ec7417040c0533/sbin/restore/restore.8",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "An actual dump/restore chain, keydisk recovery, upgrade reversal and filesystem/metadata comparison remain untested. E5 needs target/privilege and upgrade/restore authority, inspectable planned changes and appropriate independent backups/recourse.",
+      "current_remaining": "An actual dump/restore chain, keydisk recovery, upgrade reversal and filesystem/metadata comparison remain untested. E5 needs target/privilege and upgrade/restore authority, inspectable planned changes and appropriate independent backups/recourse.",
+      "next": "Inspect an externally generated synthetic dump/incremental/keydisk packet with expected files/metadata and precise version/hardware assumptions; seek same-version restore/upgrade-control and recovery records.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for OpenBSD does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://github.com/openbsd/src/blob/d962f40cd0b4b974405c3cac59ec7417040c0533/sbin/restore/restore.8",
+        "medium"
+      ]
+    },
+    {
+      "id": "podman",
+      "name": "Podman",
+      "version": "Pinned evidence 5e20fea154919770d36569a09c31b4f7b8dc3a28",
+      "E3": [
+        "not_verified",
+        "Container export flattens a filesystem and omits image layers/history/tags; complete service state also depends on volumes, bind mounts, networks, secrets and host/rootless ownership. No independently reconstructed deployment with preserved provenance and data is established.",
+        "https://github.com/podman-container-tools/podman/blob/5e20fea154919770d36569a09c31b4f7b8dc3a28/docs/source/markdown/podman-export.1.md",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Prune's volume selection and prompt bypass flags are concrete source behavior. They do not cover all stop/remove/volume/bind-mount/secret mutations, effective rootless permissions or correction across the complete deployed service.",
+        "https://github.com/podman-container-tools/podman/blob/5e20fea154919770d36569a09c31b4f7b8dc3a28/cmd/podman/system/prune.go",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for Podman's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/podman-container-tools/podman/blob/5e20fea154919770d36569a09c31b4f7b8dc3a28/docs/source/markdown/podman-export.1.md",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://github.com/podman-container-tools/podman/blob/5e20fea154919770d36569a09c31b4f7b8dc3a28/cmd/podman/system/prune.go",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Named-volume/bind-mount/secret coverage, cross-runtime digest comparisons, ownership restoration, rootless migration and real prune trials remain open. E5 needs role/rootless-aware container/volume/secret mutation, explicit prune/force scope and state recovery boundaries.",
+      "current_remaining": "Named-volume/bind-mount/secret coverage, cross-runtime digest comparisons, ownership restoration, rootless migration and real prune trials remain open. E5 needs role/rootless-aware container/volume/secret mutation, explicit prune/force scope and state recovery boundaries.",
+      "next": "Inspect a synthetic image/save/export and volume/bind/network/config packet with digests and ownership expectations; obtain cross-runtime restoration plus same-version remove/prune/secret authority evidence.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Podman does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://github.com/podman-container-tools/podman/blob/5e20fea154919770d36569a09c31b4f7b8dc3a28/docs/source/markdown/podman-export.1.md",
+        "medium"
+      ]
+    },
+    {
+      "id": "syncthing",
+      "name": "Syncthing",
+      "version": "Pinned evidence d6d0181f7d466381c4b39ec8fd944c364f939b32",
+      "E3": [
+        "not_verified",
+        "Versioner archives are ordinary files using RenameOrCopy and timestamp handling, but full metadata fidelity, configuration/index migration and two-peer reconstruction were not established. Version retention is not proof of independent backup or recovered conflict/deletion history.",
+        "https://github.com/syncthing/syncthing/blob/d6d0181f7d466381c4b39ec8fd944c364f939b32/lib/versioner/util.go",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Trashcan retention uses policy-dependent cleanup and non-tagged names; synchronization can propagate destructive changes. Effective peer/folder authority, override/revert choices, conflict visibility and usable recovery remain insufficiently covered by the retention helper alone.",
+        "https://github.com/syncthing/syncthing/blob/d6d0181f7d466381c4b39ec8fd944c364f939b32/lib/versioner/trashcan.go",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for Syncthing's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/syncthing/syncthing/blob/d6d0181f7d466381c4b39ec8fd944c364f939b32/lib/versioner/util.go",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://github.com/syncthing/syncthing/blob/d6d0181f7d466381c4b39ec8fd944c364f939b32/lib/versioner/trashcan.go",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {
+        "sovereignty": null
+      },
+      "reviewed_individually": true,
+      "remaining": "Two-peer deletion/conflict propagation, manual metadata recovery, config/database migration, destructive override/revert behavior and network observations remain untested. E5 needs peer/folder authorization, deletion/conflict and override/revert visibility, plus configured retention and recovery limits.",
+      "current_remaining": "Two-peer deletion/conflict propagation, manual metadata recovery, config/database migration, destructive override/revert behavior and network observations remain untested. E5 needs peer/folder authorization, deletion/conflict and override/revert visibility, plus configured retention and recovery limits.",
+      "next": "Use a synthetic two-peer folder/config/version archive packet with expected conflicts/metadata and externally recorded propagation/revert/restore observations; inspect files and policies independently.",
+      "sovereignty": [
+        null,
+        "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Syncthing does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure.",
+        "https://github.com/syncthing/syncthing/blob/d6d0181f7d466381c4b39ec8fd944c364f939b32/lib/versioner/util.go",
+        "medium"
+      ]
+    },
+    {
+      "id": "pass",
+      "name": "Pass",
+      "version": "Pinned evidence 3ca13cd8882cae4083c1c478858adbf2e82dd037",
+      "E3": [
+        "not_verified",
+        "Source delegates individual entry decryption to GPG, so the preserved files are not tied to a pass-only proprietary reader. However no corresponding private-key/trust/recipient environment was reconstructed or old encrypted history checked after recipient changes. The declared key and history recovery remains unverified.",
+        "https://github.com/zx2c4/password-store/blob/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Git-backed removal/re-encryption records normal commits rather than erasing old history, and the yes/no helper bypasses prompting on non-terminal input. These are important command/history boundaries, not complete evidence of effective secret-use/export, recipient-change and correction controls in the assessed configuration.",
+        "https://github.com/zx2c4/password-store/blob/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh",
+        "medium"
+      ],
+      "longevity": [
+        null,
+        "E3 is not established for Pass's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder.",
+        "https://github.com/zx2c4/password-store/blob/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet.",
+        "https://github.com/zx2c4/password-store/blob/3ca13cd8882cae4083c1c478858adbf2e82dd037/src/password-store.sh",
+        "medium"
+      ],
+      "findings": [],
+      "extra": {},
+      "reviewed_individually": true,
+      "remaining": "Actual private-key/trust recovery, prior-history decryption after recipient changes, importer completeness and observed offline behavior remain untested. E5 needs effective non-interactive/force, recipient-change, secret-use/export and historical-ciphertext recourse boundaries.",
+      "current_remaining": "Actual private-key/trust recovery, prior-history decryption after recipient changes, importer completeness and observed offline behavior remain untested. E5 needs effective non-interactive/force, recipient-change, secret-use/export and historical-ciphertext recourse boundaries.",
+      "next": "Inspect a synthetic store with non-secret GPG test credentials, recipient policy and Git history, then obtain independently recorded key/trust restoration and approval/history behavior. Do not supply or use real private keys."
+    }
+  ],
+  "field_changes": [
+    {
+      "id": "nixos",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "E3 is not established for NixOS's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "nixos",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "nixos",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for NixOS does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "guix",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for GNU Guix's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "guix",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "guix",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "partial",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for GNU Guix does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "openbsd",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "E3 is not established for OpenBSD's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "openbsd",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "openbsd",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for OpenBSD does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "podman",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for Podman's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "podman",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "podman",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "partial",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Podman does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "syncthing",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 is not established for Syncthing's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "syncthing",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    },
+    {
+      "id": "syncthing",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "partial",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E1, E2 and E4 in the declared scope. The existing access/exit/custody record for Syncthing does not establish all three minimums. The prior positive finding is withdrawn; recorded storage and portability strengths remain facts, not a verified failure."
+    },
+    {
+      "id": "pass",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "E3 is not established for Pass's existing essential-record scope. The previous Longevity finding is replaced by Not assessed, not a verified failure or a positive placeholder."
+    },
+    {
+      "id": "pass",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The positive control observations above do not yet establish whole-scope E5. The methodology requires that minimum before a positive Transparency and Control finding; the previous positive finding is therefore withdrawn to Not assessed, not changed to Does not meet."
+    }
+  ]
+}

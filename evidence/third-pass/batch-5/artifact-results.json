@@ -1,0 +1,1101 @@
+{
+  "review_date": "2026-10-23",
+  "recorded_at_utc": "2026-10-22T23:23:55.117982+00:00",
+  "python": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "applications_executed": false,
+  "ratings_reconciliation": "Deferred to the next pass at the user's request",
+  "inputs": [
+    {
+      "application": "blender",
+      "repository": "blender/blender",
+      "path": "doc/blender_file_format/README",
+      "commit": "ded7fde71c04f034d6c065e8d0a75d9f548003a0",
+      "host": "github",
+      "git_blob_sha": "25bb189d980206b8308a265c066c8bdee5a17b67",
+      "url": "https://github.com/blender/blender/blob/ded7fde71c04f034d6c065e8d0a75d9f548003a0/doc/blender_file_format/README",
+      "raw_url": "https://raw.githubusercontent.com/blender/blender/ded7fde71c04f034d6c065e8d0a75d9f548003a0/doc/blender_file_format/README",
+      "local_path": "inputs/blender/doc/blender_file_format/README",
+      "sha256": "d737b502a8cfe2bb0e8923cee4144f074ca7edea9a6ba0ada90dab0cbf30fe07",
+      "bytes": 1361
+    },
+    {
+      "application": "blender",
+      "repository": "blender/blender",
+      "path": "doc/blender_file_format/mystery_of_the_blend.html",
+      "commit": "ded7fde71c04f034d6c065e8d0a75d9f548003a0",
+      "host": "github",
+      "git_blob_sha": "74c59cd041453c2e368151fefbd3308fc4ddef9f",
+      "url": "https://github.com/blender/blender/blob/ded7fde71c04f034d6c065e8d0a75d9f548003a0/doc/blender_file_format/mystery_of_the_blend.html",
+      "raw_url": "https://raw.githubusercontent.com/blender/blender/ded7fde71c04f034d6c065e8d0a75d9f548003a0/doc/blender_file_format/mystery_of_the_blend.html",
+      "local_path": "inputs/blender/doc/blender_file_format/mystery_of_the_blend.html",
+      "sha256": "6e5358d76643758177e1d86e42d636f59b87f5006f6cdca6052139b1734acde4",
+      "bytes": 31906
+    },
+    {
+      "application": "blender",
+      "repository": "blender/blender",
+      "path": "source/blender/makesdna/intern/dna_genfile.cc",
+      "commit": "ded7fde71c04f034d6c065e8d0a75d9f548003a0",
+      "host": "github",
+      "git_blob_sha": "3d7dd754a554bf6f5fa88f71ae3d81c9bdaca0d3",
+      "url": "https://github.com/blender/blender/blob/ded7fde71c04f034d6c065e8d0a75d9f548003a0/source/blender/makesdna/intern/dna_genfile.cc",
+      "raw_url": "https://raw.githubusercontent.com/blender/blender/ded7fde71c04f034d6c065e8d0a75d9f548003a0/source/blender/makesdna/intern/dna_genfile.cc",
+      "local_path": "inputs/blender/source/blender/makesdna/intern/dna_genfile.cc",
+      "sha256": "c212385648c22ca4f2d03b6e930c9e6e623bb314efa871d65a2b5665b5e097fd",
+      "bytes": 94585
+    },
+    {
+      "application": "blender",
+      "repository": "blender/blender",
+      "path": "source/blender/blenkernel/intern/packedFile.cc",
+      "commit": "ded7fde71c04f034d6c065e8d0a75d9f548003a0",
+      "host": "github",
+      "git_blob_sha": "9fc5e5f596c5f9803d4a824a5f36053bffb865cc",
+      "url": "https://github.com/blender/blender/blob/ded7fde71c04f034d6c065e8d0a75d9f548003a0/source/blender/blenkernel/intern/packedFile.cc",
+      "raw_url": "https://raw.githubusercontent.com/blender/blender/ded7fde71c04f034d6c065e8d0a75d9f548003a0/source/blender/blenkernel/intern/packedFile.cc",
+      "local_path": "inputs/blender/source/blender/blenkernel/intern/packedFile.cc",
+      "sha256": "edbaa40775ebdae806f7a9b4ecd750f90cba55616685624ac8d2cc041c9978fa",
+      "bytes": 27591
+    },
+    {
+      "application": "inkscape",
+      "repository": "inkscape/inkscape",
+      "path": "share/examples/live-path-effects-gears.svg",
+      "commit": "9055f262b58743a1f7caee54c1132f029341fe0a",
+      "host": "gitlab",
+      "git_blob_sha": "bb2b2ea5944d717de828e65bafb9715579ab3036",
+      "url": "https://gitlab.com/inkscape/inkscape/-/blob/9055f262b58743a1f7caee54c1132f029341fe0a/share/examples/live-path-effects-gears.svg",
+      "raw_url": "https://gitlab.com/inkscape/inkscape/-/raw/9055f262b58743a1f7caee54c1132f029341fe0a/share/examples/live-path-effects-gears.svg",
+      "local_path": "inputs/inkscape/share/examples/live-path-effects-gears.svg",
+      "sha256": "1e93e570f1c2742b625fe33362d1e4fbc1a997500a952f5838968fe3a75a2035",
+      "bytes": 26006
+    },
+    {
+      "application": "inkscape",
+      "repository": "inkscape/inkscape",
+      "path": "share/examples/data_uri.svg",
+      "commit": "9055f262b58743a1f7caee54c1132f029341fe0a",
+      "host": "gitlab",
+      "git_blob_sha": "6f6f59359a7895bacf0c00fb53f3301a222f84b6",
+      "url": "https://gitlab.com/inkscape/inkscape/-/blob/9055f262b58743a1f7caee54c1132f029341fe0a/share/examples/data_uri.svg",
+      "raw_url": "https://gitlab.com/inkscape/inkscape/-/raw/9055f262b58743a1f7caee54c1132f029341fe0a/share/examples/data_uri.svg",
+      "local_path": "inputs/inkscape/share/examples/data_uri.svg",
+      "sha256": "774c05ec63c3461e2a0bb48110e976b2141e5dc1af56579fe59b95743cf162c2",
+      "bytes": 3776
+    },
+    {
+      "application": "inkscape",
+      "repository": "inkscape/inkscape",
+      "path": "src/extension/internal/svg.cpp",
+      "commit": "9055f262b58743a1f7caee54c1132f029341fe0a",
+      "host": "gitlab",
+      "git_blob_sha": "2852df9e4a2b090a8fd9e669e95cbc2e9018ab5b",
+      "url": "https://gitlab.com/inkscape/inkscape/-/blob/9055f262b58743a1f7caee54c1132f029341fe0a/src/extension/internal/svg.cpp",
+      "raw_url": "https://gitlab.com/inkscape/inkscape/-/raw/9055f262b58743a1f7caee54c1132f029341fe0a/src/extension/internal/svg.cpp",
+      "local_path": "inputs/inkscape/src/extension/internal/svg.cpp",
+      "sha256": "649253e0b7ab34ee99481ea39e173c17fb68af8aa59f0f53010cb8c1dd892fc8",
+      "bytes": 13798
+    },
+    {
+      "application": "krita",
+      "repository": "KDE/krita",
+      "path": "libs/image/tests/data/store_test.kra",
+      "commit": "b5b6dd3c8b53944f67a824f7f938f4bbfa80275d",
+      "host": "github",
+      "git_blob_sha": "e5676833ff40ac54b6b70c3155571d964dffc576",
+      "url": "https://github.com/KDE/krita/blob/b5b6dd3c8b53944f67a824f7f938f4bbfa80275d/libs/image/tests/data/store_test.kra",
+      "raw_url": "https://raw.githubusercontent.com/KDE/krita/b5b6dd3c8b53944f67a824f7f938f4bbfa80275d/libs/image/tests/data/store_test.kra",
+      "local_path": "inputs/krita/libs/image/tests/data/store_test.kra",
+      "sha256": "6641d368d75633ea1294192ac4b8ad69a7316e26f3a143558536854a69e0e2ab",
+      "bytes": 29379
+    },
+    {
+      "application": "krita",
+      "repository": "KDE/krita",
+      "path": "plugins/impex/ora/kis_open_raster_stack_save_visitor.cpp",
+      "commit": "b5b6dd3c8b53944f67a824f7f938f4bbfa80275d",
+      "host": "github",
+      "git_blob_sha": "3fcd8b1dbc8d1cfd6550abfb80b8594e566461f5",
+      "url": "https://github.com/KDE/krita/blob/b5b6dd3c8b53944f67a824f7f938f4bbfa80275d/plugins/impex/ora/kis_open_raster_stack_save_visitor.cpp",
+      "raw_url": "https://raw.githubusercontent.com/KDE/krita/b5b6dd3c8b53944f67a824f7f938f4bbfa80275d/plugins/impex/ora/kis_open_raster_stack_save_visitor.cpp",
+      "local_path": "inputs/krita/plugins/impex/ora/kis_open_raster_stack_save_visitor.cpp",
+      "sha256": "e94fb8447bb52b774abd07fe973d8ecffc9d3afe8285d4c8d7f0d17f2879fb12",
+      "bytes": 7496
+    },
+    {
+      "application": "gimp",
+      "repository": "GNOME/gimp",
+      "path": "app/tests/files/gimp-2-6-file.xcf",
+      "commit": "84709e20bc45311322a318b20669dc6b52118353",
+      "host": "github",
+      "git_blob_sha": "3ab958f360055a1dbf2106b1b3da8a139070d6cb",
+      "url": "https://github.com/GNOME/gimp/blob/84709e20bc45311322a318b20669dc6b52118353/app/tests/files/gimp-2-6-file.xcf",
+      "raw_url": "https://raw.githubusercontent.com/GNOME/gimp/84709e20bc45311322a318b20669dc6b52118353/app/tests/files/gimp-2-6-file.xcf",
+      "local_path": "inputs/gimp/app/tests/files/gimp-2-6-file.xcf",
+      "sha256": "a1557a22fd7ba5d8185447c932a708bd2369910203081590e45e3a3cabe46636",
+      "bytes": 1872
+    },
+    {
+      "application": "gimp",
+      "repository": "GNOME/gimp",
+      "path": "plug-ins/python/file-openraster.py",
+      "commit": "84709e20bc45311322a318b20669dc6b52118353",
+      "host": "github",
+      "git_blob_sha": "4c6d7f455c773038befaebc5388fbd326aef0623",
+      "url": "https://github.com/GNOME/gimp/blob/84709e20bc45311322a318b20669dc6b52118353/plug-ins/python/file-openraster.py",
+      "raw_url": "https://raw.githubusercontent.com/GNOME/gimp/84709e20bc45311322a318b20669dc6b52118353/plug-ins/python/file-openraster.py",
+      "local_path": "inputs/gimp/plug-ins/python/file-openraster.py",
+      "sha256": "620391dbf2a3f014ab2f821886ca2d2981ae53e1521ee37877d8b60da1589e0f",
+      "bytes": 21945
+    },
+    {
+      "application": "kicad",
+      "repository": "KiCad/kicad-source-mirror",
+      "path": "qa/data/cli/basic_test/basic_test.kicad_pcb",
+      "commit": "ba5ed30c1bee8bcfa7db6dc423f1d20224c4e3a5",
+      "host": "github",
+      "git_blob_sha": "25ee0a0aa13178dcd71a9760167bb2e9fbec16e2",
+      "url": "https://github.com/KiCad/kicad-source-mirror/blob/ba5ed30c1bee8bcfa7db6dc423f1d20224c4e3a5/qa/data/cli/basic_test/basic_test.kicad_pcb",
+      "raw_url": "https://raw.githubusercontent.com/KiCad/kicad-source-mirror/ba5ed30c1bee8bcfa7db6dc423f1d20224c4e3a5/qa/data/cli/basic_test/basic_test.kicad_pcb",
+      "local_path": "inputs/kicad/qa/data/cli/basic_test/basic_test.kicad_pcb",
+      "sha256": "5db4b0bba54553591de636e83b3da3141868cd1e2e5fd327b6cbdb7eb5804b3a",
+      "bytes": 71304
+    },
+    {
+      "application": "kicad",
+      "repository": "KiCad/kicad-source-mirror",
+      "path": "common/project/project_archiver.cpp",
+      "commit": "ba5ed30c1bee8bcfa7db6dc423f1d20224c4e3a5",
+      "host": "github",
+      "git_blob_sha": "f509d24012a20a2a66859d84ffb0ed6740f17f88",
+      "url": "https://github.com/KiCad/kicad-source-mirror/blob/ba5ed30c1bee8bcfa7db6dc423f1d20224c4e3a5/common/project/project_archiver.cpp",
+      "raw_url": "https://raw.githubusercontent.com/KiCad/kicad-source-mirror/ba5ed30c1bee8bcfa7db6dc423f1d20224c4e3a5/common/project/project_archiver.cpp",
+      "local_path": "inputs/kicad/common/project/project_archiver.cpp",
+      "sha256": "0602ec93f7054697442f4ea6f3149826f3846eef0122db5f2507c89cf277c1c7",
+      "bytes": 14107
+    },
+    {
+      "application": "openscad",
+      "repository": "openscad/openscad",
+      "path": "tests/regression/export-3mf/lazyunion-color-cubes-expected.3mf",
+      "commit": "d7a210ed01e5db9f09a8164894b0d0b07d7f2c67",
+      "host": "github",
+      "git_blob_sha": "8d6fbfaa969a2f533aee95d10653819337b50b21",
+      "url": "https://github.com/openscad/openscad/blob/d7a210ed01e5db9f09a8164894b0d0b07d7f2c67/tests/regression/export-3mf/lazyunion-color-cubes-expected.3mf",
+      "raw_url": "https://raw.githubusercontent.com/openscad/openscad/d7a210ed01e5db9f09a8164894b0d0b07d7f2c67/tests/regression/export-3mf/lazyunion-color-cubes-expected.3mf",
+      "local_path": "inputs/openscad/tests/regression/export-3mf/lazyunion-color-cubes-expected.3mf",
+      "sha256": "dfedfffa47523d67bcb5792f81d530cbfe1a15ae3770df2b70e2f2f40c3ee1d9",
+      "bytes": 8609
+    },
+    {
+      "application": "openscad",
+      "repository": "openscad/openscad",
+      "path": "tests/regression/export-binstl/stl-export-expected.stl",
+      "commit": "d7a210ed01e5db9f09a8164894b0d0b07d7f2c67",
+      "host": "github",
+      "git_blob_sha": "444f314b559f2a9a6965b70170ada6fa1d1d15c8",
+      "url": "https://github.com/openscad/openscad/blob/d7a210ed01e5db9f09a8164894b0d0b07d7f2c67/tests/regression/export-binstl/stl-export-expected.stl",
+      "raw_url": "https://raw.githubusercontent.com/openscad/openscad/d7a210ed01e5db9f09a8164894b0d0b07d7f2c67/tests/regression/export-binstl/stl-export-expected.stl",
+      "local_path": "inputs/openscad/tests/regression/export-binstl/stl-export-expected.stl",
+      "sha256": "6ab29fafbffdd138a5a2d603e3898a898f9784c9958a1aa0dc9a0a08429c2b79",
+      "bytes": 484
+    },
+    {
+      "application": "openscad",
+      "repository": "openscad/openscad",
+      "path": "src/io/export_3mf_v2.cc",
+      "commit": "d7a210ed01e5db9f09a8164894b0d0b07d7f2c67",
+      "host": "github",
+      "git_blob_sha": "eb4ac78ddd42f913691ee08099c555515f45508f",
+      "url": "https://github.com/openscad/openscad/blob/d7a210ed01e5db9f09a8164894b0d0b07d7f2c67/src/io/export_3mf_v2.cc",
+      "raw_url": "https://raw.githubusercontent.com/openscad/openscad/d7a210ed01e5db9f09a8164894b0d0b07d7f2c67/src/io/export_3mf_v2.cc",
+      "local_path": "inputs/openscad/src/io/export_3mf_v2.cc",
+      "sha256": "aa6b6f5e389552cdca139d5529bb7631cdf730a9784c24124a227d988c497a67",
+      "bytes": 15582
+    },
+    {
+      "application": "openscad",
+      "repository": "openscad/openscad",
+      "path": "src/io/export_stl.cc",
+      "commit": "d7a210ed01e5db9f09a8164894b0d0b07d7f2c67",
+      "host": "github",
+      "git_blob_sha": "e7ddf4deb91ceeb138aa259bcf7de0e5396a3bb2",
+      "url": "https://github.com/openscad/openscad/blob/d7a210ed01e5db9f09a8164894b0d0b07d7f2c67/src/io/export_stl.cc",
+      "raw_url": "https://raw.githubusercontent.com/openscad/openscad/d7a210ed01e5db9f09a8164894b0d0b07d7f2c67/src/io/export_stl.cc",
+      "local_path": "inputs/openscad/src/io/export_stl.cc",
+      "sha256": "00ddb7cf41f1b14b9cecf2512405795fee9587ffd3f9ab41399421ad1f055490",
+      "bytes": 9933
+    },
+    {
+      "application": "openscad",
+      "repository": "openscad/openscad",
+      "path": "tests/data/scad/3D/features/import.3mf",
+      "commit": "d7a210ed01e5db9f09a8164894b0d0b07d7f2c67",
+      "host": "github",
+      "git_blob_sha": "6cfb681d8c579aa9427e061d5d31982f6c00f107",
+      "url": "https://github.com/openscad/openscad/blob/d7a210ed01e5db9f09a8164894b0d0b07d7f2c67/tests/data/scad/3D/features/import.3mf",
+      "raw_url": "https://raw.githubusercontent.com/openscad/openscad/d7a210ed01e5db9f09a8164894b0d0b07d7f2c67/tests/data/scad/3D/features/import.3mf",
+      "local_path": "inputs/openscad/tests/data/scad/3D/features/import.3mf",
+      "sha256": "6a919608898144e3ffd4f814e0f0803f41cc70e507b33ddeee3f75fa5b005407",
+      "bytes": 1439
+    }
+  ],
+  "observations": {
+    "inkscape": {
+      "gears": {
+        "root": "{http://www.w3.org/2000/svg}svg",
+        "creator_version": "0.92",
+        "element_counts": {
+          "svg": 1,
+          "defs": 1,
+          "path-effect": 1,
+          "namedview": 1,
+          "metadata": 1,
+          "RDF": 1,
+          "Work": 1,
+          "format": 1,
+          "type": 1,
+          "g": 1,
+          "path": 8,
+          "use": 4,
+          "flowRoot": 4,
+          "flowRegion": 4,
+          "rect": 4,
+          "flowPara": 4
+        },
+        "layers": [
+          {
+            "{http://www.inkscape.org/namespaces/inkscape}label": "Layer 1",
+            "{http://www.inkscape.org/namespaces/inkscape}groupmode": "layer",
+            "id": "layer1"
+          }
+        ],
+        "path_effects": [
+          {
+            "effect": "gears",
+            "id": "path-effect2210",
+            "phi": "20",
+            "teeth": "10"
+          }
+        ],
+        "editor_attributes": [
+          "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}cx",
+          "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}cy",
+          "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname",
+          "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}nodetypes",
+          "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}rx",
+          "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}ry",
+          "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}type",
+          "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}version",
+          "{http://www.inkscape.org/namespaces/inkscape}current-layer",
+          "{http://www.inkscape.org/namespaces/inkscape}cx",
+          "{http://www.inkscape.org/namespaces/inkscape}cy",
+          "{http://www.inkscape.org/namespaces/inkscape}document-units",
+          "{http://www.inkscape.org/namespaces/inkscape}groupmode",
+          "{http://www.inkscape.org/namespaces/inkscape}label",
+          "{http://www.inkscape.org/namespaces/inkscape}original-d",
+          "{http://www.inkscape.org/namespaces/inkscape}output_extension",
+          "{http://www.inkscape.org/namespaces/inkscape}pageopacity",
+          "{http://www.inkscape.org/namespaces/inkscape}pageshadow",
+          "{http://www.inkscape.org/namespaces/inkscape}path-effect",
+          "{http://www.inkscape.org/namespaces/inkscape}version",
+          "{http://www.inkscape.org/namespaces/inkscape}window-height",
+          "{http://www.inkscape.org/namespaces/inkscape}window-width",
+          "{http://www.inkscape.org/namespaces/inkscape}window-x",
+          "{http://www.inkscape.org/namespaces/inkscape}window-y",
+          "{http://www.inkscape.org/namespaces/inkscape}zoom"
+        ],
+        "hrefs": [
+          "#path2306",
+          "#use2310",
+          "#use2312",
+          "#use2314"
+        ],
+        "embedded_payloads": [],
+        "rendered": false
+      },
+      "embedded": {
+        "root": "{http://www.w3.org/2000/svg}svg",
+        "creator_version": "0.92.0 r15304",
+        "element_counts": {
+          "svg": 1,
+          "defs": 1,
+          "namedview": 1,
+          "metadata": 1,
+          "RDF": 1,
+          "Work": 1,
+          "format": 1,
+          "type": 1,
+          "title": 2,
+          "date": 1,
+          "creator": 1,
+          "Agent": 1,
+          "license": 1,
+          "description": 1,
+          "License": 1,
+          "permits": 3,
+          "requires": 2,
+          "image": 1,
+          "text": 1,
+          "tspan": 2
+        },
+        "layers": [],
+        "path_effects": [],
+        "editor_attributes": [
+          "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname",
+          "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}role",
+          "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}version",
+          "{http://www.inkscape.org/namespaces/inkscape}current-layer",
+          "{http://www.inkscape.org/namespaces/inkscape}cx",
+          "{http://www.inkscape.org/namespaces/inkscape}cy",
+          "{http://www.inkscape.org/namespaces/inkscape}pageopacity",
+          "{http://www.inkscape.org/namespaces/inkscape}pageshadow",
+          "{http://www.inkscape.org/namespaces/inkscape}version",
+          "{http://www.inkscape.org/namespaces/inkscape}window-height",
+          "{http://www.inkscape.org/namespaces/inkscape}window-maximized",
+          "{http://www.inkscape.org/namespaces/inkscape}window-width",
+          "{http://www.inkscape.org/namespaces/inkscape}window-x",
+          "{http://www.inkscape.org/namespaces/inkscape}window-y",
+          "{http://www.inkscape.org/namespaces/inkscape}zoom"
+        ],
+        "hrefs": [],
+        "embedded_payloads": [
+          {
+            "element": "{http://www.w3.org/2000/svg}image",
+            "media_type": "data:image/png;base64",
+            "bytes": 235,
+            "sha256": "74462d7957fcee54d59885eb635aa54bba8b23abab2b5da09dc8b7515a102554"
+          }
+        ],
+        "rendered": false
+      }
+    },
+    "krita": {
+      "members": [
+        {
+          "name": "mimetype",
+          "bytes": 19
+        },
+        {
+          "name": "maindoc.xml",
+          "bytes": 614
+        },
+        {
+          "name": "documentinfo.xml",
+          "bytes": 875
+        },
+        {
+          "name": "preview.png",
+          "bytes": 19890
+        },
+        {
+          "name": "built image/layers/layer0",
+          "bytes": 65582
+        },
+        {
+          "name": "built image/layers/layer0.icc",
+          "bytes": 6876
+        },
+        {
+          "name": "built image/annotations/icc",
+          "bytes": 6876
+        }
+      ],
+      "xml_root": "{http://www.koffice.org/DTD/krita}DOC",
+      "document_attributes": {
+        "syntaxVersion": "1",
+        "editor": "Krita",
+        "depth": "1"
+      },
+      "image_attributes": [
+        {
+          "y-res": "1",
+          "width": "100",
+          "mime": "application/x-kra",
+          "profile": "sRGB built-in - (lcms internal)",
+          "height": "100",
+          "colorspacename": "RGBA",
+          "name": "built image",
+          "x-res": "1",
+          "description": ""
+        }
+      ],
+      "layers": [
+        {
+          "hasmask": "0",
+          "x": "0",
+          "y": "0",
+          "compositeop": "normal",
+          "layertype": "paintlayer",
+          "locked": "0",
+          "colorspacename": "RGBA",
+          "opacity": "255",
+          "name": "Layer 1",
+          "filename": "layer0",
+          "visible": "1"
+        }
+      ],
+      "merged_preview_present": false,
+      "pixels_decoded_or_document_rebuilt": false
+    },
+    "gimp": {
+      "header": "gimp xcf file",
+      "width": 100,
+      "height": 90,
+      "base_type": 0,
+      "properties": [
+        {
+          "type": 17,
+          "bytes": 1
+        },
+        {
+          "type": 18,
+          "bytes": 20
+        },
+        {
+          "type": 27,
+          "bytes": 16
+        },
+        {
+          "type": 19,
+          "bytes": 8
+        },
+        {
+          "type": 20,
+          "bytes": 4
+        },
+        {
+          "type": 22,
+          "bytes": 4
+        },
+        {
+          "type": 25,
+          "bytes": 182
+        },
+        {
+          "type": 21,
+          "bytes": 498
+        }
+      ],
+      "layers": [
+        {
+          "offset": 855,
+          "width": 25,
+          "height": 251,
+          "type": 0,
+          "name": "layer2"
+        },
+        {
+          "offset": 1285,
+          "width": 50,
+          "height": 51,
+          "type": 1,
+          "name": "layer1"
+        }
+      ],
+      "pixels_decoded_or_document_rebuilt": false
+    },
+    "kicad": {
+      "root": "kicad_pcb",
+      "version": "20221018",
+      "record_counts": {
+        "kicad_pcb": 1,
+        "version": 1,
+        "generator": 1,
+        "general": 1,
+        "thickness": 29,
+        "paper": 1,
+        "title_block": 1,
+        "title": 1,
+        "date": 1,
+        "rev": 1,
+        "company": 1,
+        "layers": 23,
+        "0": 1,
+        "31": 1,
+        "32": 1,
+        "33": 1,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 1,
+        "38": 1,
+        "39": 1,
+        "40": 1,
+        "41": 1,
+        "42": 1,
+        "43": 1,
+        "44": 1,
+        "45": 1,
+        "46": 1,
+        "47": 1,
+        "48": 1,
+        "49": 1,
+        "50": 1,
+        "51": 1,
+        "52": 1,
+        "53": 1,
+        "54": 1,
+        "55": 1,
+        "56": 1,
+        "57": 1,
+        "58": 1,
+        "setup": 1,
+        "pad_to_mask_clearance": 1,
+        "pcbplotparams": 1,
+        "layerselection": 1,
+        "plot_on_all_layers_selection": 1,
+        "disableapertmacros": 1,
+        "usegerberextensions": 1,
+        "usegerberattributes": 1,
+        "usegerberadvancedattributes": 1,
+        "creategerberjobfile": 1,
+        "dashed_line_dash_ratio": 1,
+        "dashed_line_gap_ratio": 1,
+        "svgprecision": 1,
+        "plotframeref": 1,
+        "viasonmask": 1,
+        "mode": 1,
+        "useauxorigin": 1,
+        "hpglpennumber": 1,
+        "hpglpenspeed": 1,
+        "hpglpendiameter": 1,
+        "dxfpolygonmode": 1,
+        "dxfimperialunits": 1,
+        "dxfusepcbnewfont": 1,
+        "psnegative": 1,
+        "psa4output": 1,
+        "plotreference": 1,
+        "plotvalue": 1,
+        "plotinvisibletext": 1,
+        "sketchpadsonfab": 1,
+        "subtractmaskfromsilk": 1,
+        "outputformat": 1,
+        "mirror": 1,
+        "drillshape": 1,
+        "scaleselection": 1,
+        "outputdirectory": 1,
+        "net": 55,
+        "footprint": 9,
+        "layer": 150,
+        "tstamp": 171,
+        "at": 58,
+        "descr": 9,
+        "tags": 9,
+        "property": 36,
+        "path": 9,
+        "attr": 9,
+        "fp_text": 27,
+        "effects": 28,
+        "font": 28,
+        "size": 49,
+        "fp_line": 85,
+        "start": 112,
+        "end": 112,
+        "stroke": 86,
+        "width": 112,
+        "type": 86,
+        "pad": 17,
+        "pinfunction": 8,
+        "pintype": 17,
+        "roundrect_rratio": 13,
+        "model": 5,
+        "offset": 5,
+        "xyz": 15,
+        "scale": 5,
+        "rotate": 5,
+        "gr_rect": 1,
+        "fill": 2,
+        "gr_text": 1,
+        "justify": 1,
+        "segment": 26,
+        "via": 4,
+        "drill": 4,
+        "zone": 1,
+        "net_name": 1,
+        "hatch": 1,
+        "connect_pads": 1,
+        "clearance": 1,
+        "min_thickness": 1,
+        "filled_areas_thickness": 1,
+        "thermal_gap": 1,
+        "thermal_bridge_width": 1,
+        "polygon": 1,
+        "pts": 2,
+        "xy": 1098,
+        "filled_polygon": 1
+      },
+      "nets": {
+        "0": "",
+        "1": "GND",
+        "2": "Net-(U1-+)",
+        "3": "Net-(U1--)",
+        "4": "/VCC",
+        "5": "/IN",
+        "6": "/OUT"
+      },
+      "pad_net_references": [
+        [
+          "net",
+          "4",
+          "/VCC"
+        ],
+        [
+          "net",
+          "6",
+          "/OUT"
+        ],
+        [
+          "net",
+          "1",
+          "GND"
+        ],
+        [
+          "net",
+          "2",
+          "Net-(U1-+)"
+        ],
+        [
+          "net",
+          "3",
+          "Net-(U1--)"
+        ],
+        [
+          "net",
+          "4",
+          "/VCC"
+        ],
+        [
+          "net",
+          "6",
+          "/OUT"
+        ],
+        [
+          "net",
+          "3",
+          "Net-(U1--)"
+        ],
+        [
+          "net",
+          "6",
+          "/OUT"
+        ],
+        [
+          "net",
+          "1",
+          "GND"
+        ],
+        [
+          "net",
+          "3",
+          "Net-(U1--)"
+        ],
+        [
+          "net",
+          "5",
+          "/IN"
+        ],
+        [
+          "net",
+          "5",
+          "/IN"
+        ],
+        [
+          "net",
+          "2",
+          "Net-(U1-+)"
+        ],
+        [
+          "net",
+          "2",
+          "Net-(U1-+)"
+        ],
+        [
+          "net",
+          "1",
+          "GND"
+        ],
+        [
+          "net",
+          "1",
+          "GND"
+        ]
+      ],
+      "unresolved_pad_net_ids": [],
+      "model_references": [
+        "${KICAD6_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/SOT-23-5.wrl",
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl",
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl",
+        "${KICAD6_3DMODEL_DIR}/Resistor_SMD.3dshapes/R_1206_3216Metric.wrl",
+        "${KICAD6_3DMODEL_DIR}/Capacitor_SMD.3dshapes/C_1206_3216Metric.wrl"
+      ],
+      "electrical_rules_or_manufacturing_checked": false
+    },
+    "openscad": {
+      "3mf_colour_expectation": {
+        "container_format": "Normalized regression text, not a packaged 3MF",
+        "xml_parse_error": "unbound prefix: line 13, column 2",
+        "raw_element_counts": {
+          "model": 1,
+          "metadata": 3,
+          "resources": 1,
+          "basematerials": 1,
+          "base": 4,
+          "object": 6,
+          "mesh": 6,
+          "vertices": 6,
+          "vertex": 48,
+          "triangles": 6,
+          "triangle": 72,
+          "build": 1,
+          "item": 6
+        },
+        "raw_colour_attributes": [
+          "#F9D72CFF",
+          "#FF0000FF",
+          "#0000FFFF",
+          "#008000FF"
+        ]
+      },
+      "3mf_archive": {
+        "container_format": "ZIP",
+        "members": [
+          "3D/3dmodel.model",
+          "[Content_Types].xml",
+          "_rels/.rels"
+        ],
+        "models": [
+          {
+            "name": "3D/3dmodel.model",
+            "attributes": {
+              "unit": "millimeter",
+              "{http://www.w3.org/XML/1998/namespace}lang": "en-US"
+            },
+            "counts": {
+              "model": 1,
+              "resources": 1,
+              "object": 1,
+              "mesh": 1,
+              "vertices": 1,
+              "vertex": 20,
+              "triangles": 1,
+              "triangle": 36,
+              "build": 1,
+              "item": 1
+            },
+            "build_items": [
+              {
+                "objectid": "1"
+              }
+            ],
+            "colour_records": [],
+            "triangle_properties": []
+          }
+        ],
+        "geometry_reconstructed": false
+      },
+      "stl": {
+        "header": "OpenSCAD Model\n",
+        "triangles": 8,
+        "attribute_values": [
+          0
+        ],
+        "units_or_source_parameters": "No semantic unit or source-parameter fields decoded from this format"
+      }
+    }
+  },
+  "source_locations": [
+    {
+      "application": "blender",
+      "id": "sdna-format-knowledge",
+      "anchors": {
+        "source/blender/makesdna/intern/dna_genfile.cc": [
+          "NAME (4 bytes)",
+          "TYPE (4 bytes)",
+          "TLEN (4 bytes)",
+          "STRC (4 bytes)"
+        ]
+      },
+      "locations": [
+        {
+          "path": "source/blender/makesdna/intern/dna_genfile.cc",
+          "anchor": "NAME (4 bytes)",
+          "lines": [
+            59
+          ]
+        },
+        {
+          "path": "source/blender/makesdna/intern/dna_genfile.cc",
+          "anchor": "TYPE (4 bytes)",
+          "lines": [
+            65
+          ]
+        },
+        {
+          "path": "source/blender/makesdna/intern/dna_genfile.cc",
+          "anchor": "TLEN (4 bytes)",
+          "lines": [
+            71
+          ]
+        },
+        {
+          "path": "source/blender/makesdna/intern/dna_genfile.cc",
+          "anchor": "STRC (4 bytes)",
+          "lines": [
+            76
+          ]
+        }
+      ]
+    },
+    {
+      "application": "blender",
+      "id": "pack-all-exclusions",
+      "anchors": {
+        "source/blender/blenkernel/intern/packedFile.cc": [
+          "void BKE_packedfile_pack_all",
+          "IMA_SRC_MOVIE, IMA_SRC_SEQUENCE",
+          "packing movies or image sequences not supported",
+          "if (ID_IS_LINKED(&object))"
+        ]
+      },
+      "locations": [
+        {
+          "path": "source/blender/blenkernel/intern/packedFile.cc",
+          "anchor": "void BKE_packedfile_pack_all",
+          "lines": [
+            273,
+            786
+          ]
+        },
+        {
+          "path": "source/blender/blenkernel/intern/packedFile.cc",
+          "anchor": "IMA_SRC_MOVIE, IMA_SRC_SEQUENCE",
+          "lines": [
+            287
+          ]
+        },
+        {
+          "path": "source/blender/blenkernel/intern/packedFile.cc",
+          "anchor": "packing movies or image sequences not supported",
+          "lines": [
+            290
+          ]
+        },
+        {
+          "path": "source/blender/blenkernel/intern/packedFile.cc",
+          "anchor": "if (ID_IS_LINKED(&object))",
+          "lines": [
+            157,
+            323,
+            853
+          ]
+        }
+      ]
+    },
+    {
+      "application": "inkscape",
+      "id": "plain-svg-export-registration",
+      "anchors": {
+        "src/extension/internal/svg.cpp": [
+          "Plain SVG (*.svg)",
+          "prune-inkscape-namespaces",
+          "prune-proprietary-namespaces"
+        ]
+      },
+      "locations": [
+        {
+          "path": "src/extension/internal/svg.cpp",
+          "anchor": "Plain SVG (*.svg)",
+          "lines": [
+            107
+          ]
+        },
+        {
+          "path": "src/extension/internal/svg.cpp",
+          "anchor": "prune-inkscape-namespaces",
+          "lines": [
+            116
+          ]
+        },
+        {
+          "path": "src/extension/internal/svg.cpp",
+          "anchor": "prune-proprietary-namespaces",
+          "lines": [
+            88,
+            115
+          ]
+        }
+      ]
+    },
+    {
+      "application": "krita",
+      "id": "ora-projection-and-filter-boundaries",
+      "anchors": {
+        "plugins/impex/ora/kis_open_raster_stack_save_visitor.cpp": [
+          "visit(KisGeneratorLayer",
+          "visit(KisCloneLayer",
+          "layer->projection()",
+          "applications:krita:",
+          "layer->isFakeNode()"
+        ]
+      },
+      "locations": [
+        {
+          "path": "plugins/impex/ora/kis_open_raster_stack_save_visitor.cpp",
+          "anchor": "visit(KisGeneratorLayer",
+          "lines": [
+            116
+          ]
+        },
+        {
+          "path": "plugins/impex/ora/kis_open_raster_stack_save_visitor.cpp",
+          "anchor": "visit(KisCloneLayer",
+          "lines": [
+            167
+          ]
+        },
+        {
+          "path": "plugins/impex/ora/kis_open_raster_stack_save_visitor.cpp",
+          "anchor": "layer->projection()",
+          "lines": [
+            193
+          ]
+        },
+        {
+          "path": "plugins/impex/ora/kis_open_raster_stack_save_visitor.cpp",
+          "anchor": "applications:krita:",
+          "lines": [
+            163
+          ]
+        },
+        {
+          "path": "plugins/impex/ora/kis_open_raster_stack_save_visitor.cpp",
+          "anchor": "layer->isFakeNode()",
+          "lines": [
+            179
+          ]
+        }
+      ]
+    },
+    {
+      "application": "gimp",
+      "id": "ora-rasterization-and-blend-fallback",
+      "anchors": {
+        "plug-ins/python/file-openraster.py": [
+          "file-png-export",
+          "ET.Element('stack')",
+          "gimp_layermodes_map.get(gimp_layer.get_mode(), 'svg:src-over')"
+        ]
+      },
+      "locations": [
+        {
+          "path": "plug-ins/python/file-openraster.py",
+          "anchor": "file-png-export",
+          "lines": [
+            238
+          ]
+        },
+        {
+          "path": "plug-ins/python/file-openraster.py",
+          "anchor": "ET.Element('stack')",
+          "lines": [
+            284
+          ]
+        },
+        {
+          "path": "plug-ins/python/file-openraster.py",
+          "anchor": "gimp_layermodes_map.get(gimp_layer.get_mode(), 'svg:src-over')",
+          "lines": [
+            273,
+            290
+          ]
+        }
+      ]
+    },
+    {
+      "application": "kicad",
+      "id": "archive-selection-boundary",
+      "anchors": {
+        "common/project/project_archiver.cpp": [
+          "if( aIncludeExtraFiles )",
+          "FILEEXT::StepFileExtension",
+          "FILEEXT::VrmlFileExtension",
+          "projectDir.Traverse( traverser",
+          "Do not include hidden directories"
+        ]
+      },
+      "locations": [
+        {
+          "path": "common/project/project_archiver.cpp",
+          "anchor": "if( aIncludeExtraFiles )",
+          "lines": [
+            217
+          ]
+        },
+        {
+          "path": "common/project/project_archiver.cpp",
+          "anchor": "FILEEXT::StepFileExtension",
+          "lines": [
+            227
+          ]
+        },
+        {
+          "path": "common/project/project_archiver.cpp",
+          "anchor": "FILEEXT::VrmlFileExtension",
+          "lines": [
+            228
+          ]
+        },
+        {
+          "path": "common/project/project_archiver.cpp",
+          "anchor": "projectDir.Traverse( traverser",
+          "lines": [
+            291
+          ]
+        },
+        {
+          "path": "common/project/project_archiver.cpp",
+          "anchor": "Do not include hidden directories",
+          "lines": [
+            289
+          ]
+        }
+      ]
+    },
+    {
+      "application": "openscad",
+      "id": "stl-output-information-boundary",
+      "anchors": {
+        "src/io/export_stl.cc": [
+          "char header[80]",
+          "char attrib[2] = {0, 0}",
+          "write_floats(output, coords)"
+        ]
+      },
+      "locations": [
+        {
+          "path": "src/io/export_stl.cc",
+          "anchor": "char header[80]",
+          "lines": [
+            271
+          ]
+        },
+        {
+          "path": "src/io/export_stl.cc",
+          "anchor": "char attrib[2] = {0, 0}",
+          "lines": [
+            163
+          ]
+        },
+        {
+          "path": "src/io/export_stl.cc",
+          "anchor": "write_floats(output, coords)",
+          "lines": [
+            162
+          ]
+        }
+      ]
+    }
+  ]
+}

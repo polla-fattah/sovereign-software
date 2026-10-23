@@ -6,6 +6,8 @@ Reviewed 22 October 2026 from the Joplin help pages and privacy page on joplinap
 
 ## What the documentation says
 
+Follow-up, 23 October 2026: two questions are now resolved in the [third-pass evidence](../third-pass/README.md#joplin) and reflected in the [application assessment](../../content/directory/joplin.md). The review below preserves the earlier documentation record; its gap list is superseded where the follow-up answers it.
+
 **Storage and access (E1, E3)**
 - The README says "The notes are in Markdown format" and that the app is offline first. [GitHub README](https://github.com/laurent22/joplin)
 - The FAQ refers to "the Joplin sqlite database". The docs pages read do not describe the profile directory, the table layout, or how to read the database with other tools (not found in the docs). [FAQ](https://joplinapp.org/help/faq)
@@ -40,3 +42,22 @@ Reviewed 22 October 2026 from the Joplin help pages and privacy page on joplinap
 5. Empty the trash, then check whether history or sync still holds the note.
 6. Restore a backup made with one version into a newer and an older release.
 7. Not read: the sync specification pages, terminal application page, plugin pages, backup or profile-location pages, the Warrant Canary, the CLA page, and the releases changelog history. Release year, maintenance or succession statements, and the Markdown export page were not found.
+
+## Rating reconciliation: 23 October 2026
+
+This dated follow-up supersedes the earlier rating freeze, not the historical observations above. [Individual decision and coverage](../rating-reconciliation/batch-2/README.md#joplin); [actual assessment](../../content/directory/joplin.md).
+
+- E3: Not Verified. JEX/raw implementation and inspected import assertions explain serialized items, resource copying, new IDs and rewritten links, but no populated 200-note profile was independently reconstructed. Complete notebook/tag/link/resource relationships and the declared encrypted/offline-conflict recovery scenario remain unverified; package structure alone is not meaningful restoration.
+- E5: Not Verified. Pinned source adds concrete trash controls: desktop empty-trash asks for confirmation before calling deletion; restore clears deletion state with explicit missing-parent handling; automatic deletion is setting-gated, uses a configured age and logs selected items. These are positive controls, not a complete account of sync conflicts, encryption changes, transmission or recovery after permanent deletion.
+- Longevity and Transparency and Control: Not assessed; their E3/E5 minimums are not established.
+- Sovereignty: Not assessed because E2 is Not Verified. Native import ID remapping and upstream assertions do not establish the declared collection's usable transition into an independent notes workflow. The earlier E2 Pass is withdrawn to Not Verified until essential hierarchy, links, tags, timestamps and attachments are compared in an actual alternative representation.
+
+- [x] Resolved: Desktop empty-trash displays a permanent-deletion confirmation and calls the trash deletion service only when accepted. The service invokes note/folder deletion; this is not evidence that history or synchronized copies can recover a permanent deletion. [Pinned source](https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/app-desktop/commands/emptyTrash.ts).
+- [x] Resolved: Trash restoration clears deleted_time and restores the parent when available. Missing/deleted parents use either an explicitly requested restore folder or an empty parent ID, unless a target folder is supplied; folder restoration recurses into children. [Pinned source](https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/trash/restoreItems.ts).
+- [x] Resolved: Automatic trash deletion exits when its enable setting is false, reads an age setting, logs selected items and excludes share-read-only items. It auto-deletes folders only when empty. Inspected setup schedules periodic processing; default setting values and cross-device consequences were not established here. [Pinned source](https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/trash/permanentlyDeleteOldItems.ts).
+
+Remaining: A populated JEX/raw export with expected notebook/tag/link/resource relationships, independent reconstruction and encrypted/offline-conflict recovery records remain missing. For E5, record sync conflicts, encryption transitions and recovery boundaries after permanent deletion. Trash confirmation, missing-parent restore handling and setting-gated automatic deletion are now answered in source.
+
+Next without a local installation: Acquire a synthetic JEX/raw export plus expected relationship and resource hashes; reconstruct it with archive/text/SQLite tools already available. Add externally recorded two-profile conflict and encryption/recovery results for the pinned version. No real notes or private recovery credentials are needed.
+
+Source branches were inspected, not run. Hashes and the Anki/Zotero fixture queries were independently rechecked with Python/SQLite. No target app or upstream test suite was executed. Existing E1/E4/Locality findings were outside this targeted re-certification.

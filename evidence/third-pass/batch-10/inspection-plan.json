@@ -1,0 +1,219 @@
+{
+  "inputs": [
+    {
+      "application": "gdal",
+      "path": "gcore/gdalpamdataset.cpp",
+      "commit": "0e24e0288164b5237df0aeb82ab742909e719479",
+      "raw_url": "https://raw.githubusercontent.com/OSGeo/gdal/0e24e0288164b5237df0aeb82ab742909e719479/gcore/gdalpamdataset.cpp",
+      "url": "https://github.com/OSGeo/gdal/blob/0e24e0288164b5237df0aeb82ab742909e719479/gcore/gdalpamdataset.cpp",
+      "git_blob_sha": "73de51c74e9ce63187f2a529491d8271424cdcb3"
+    },
+    {
+      "application": "grass-gis",
+      "path": "general/g.remove/main.c",
+      "commit": "09ad2796fff4fdfc2a3bee8446868f8be3076db4",
+      "raw_url": "https://raw.githubusercontent.com/OSGeo/grass/09ad2796fff4fdfc2a3bee8446868f8be3076db4/general/g.remove/main.c",
+      "url": "https://github.com/OSGeo/grass/blob/09ad2796fff4fdfc2a3bee8446868f8be3076db4/general/g.remove/main.c",
+      "git_blob_sha": "3d1130884759f23cbd6b3e312228d8403f6c8c8c"
+    },
+    {
+      "application": "grass-gis",
+      "path": "scripts/r.pack/r.pack.py",
+      "commit": "09ad2796fff4fdfc2a3bee8446868f8be3076db4",
+      "raw_url": "https://raw.githubusercontent.com/OSGeo/grass/09ad2796fff4fdfc2a3bee8446868f8be3076db4/scripts/r.pack/r.pack.py",
+      "url": "https://github.com/OSGeo/grass/blob/09ad2796fff4fdfc2a3bee8446868f8be3076db4/scripts/r.pack/r.pack.py",
+      "git_blob_sha": "1ca877dcc97ffadbd83628718b295eb87eb7bc62"
+    },
+    {
+      "application": "grass-gis",
+      "path": "scripts/v.pack/v.pack.py",
+      "commit": "09ad2796fff4fdfc2a3bee8446868f8be3076db4",
+      "raw_url": "https://raw.githubusercontent.com/OSGeo/grass/09ad2796fff4fdfc2a3bee8446868f8be3076db4/scripts/v.pack/v.pack.py",
+      "url": "https://github.com/OSGeo/grass/blob/09ad2796fff4fdfc2a3bee8446868f8be3076db4/scripts/v.pack/v.pack.py",
+      "git_blob_sha": "00d684efb11f2a215e5c8c80f99347a26596596c"
+    },
+    {
+      "application": "r-project",
+      "path": "src/library/base/man/readRDS.Rd",
+      "commit": "c267ebb7f9720154535e63642c25a5d91d5f512d",
+      "raw_url": "https://raw.githubusercontent.com/r-devel/r-svn/c267ebb7f9720154535e63642c25a5d91d5f512d/src/library/base/man/readRDS.Rd",
+      "url": "https://github.com/r-devel/r-svn/blob/c267ebb7f9720154535e63642c25a5d91d5f512d/src/library/base/man/readRDS.Rd",
+      "git_blob_sha": "6f3137e0d387b5337393c5c11b5bda7c2ee3efb5"
+    },
+    {
+      "application": "r-project",
+      "path": "src/main/serialize.c",
+      "commit": "c267ebb7f9720154535e63642c25a5d91d5f512d",
+      "raw_url": "https://raw.githubusercontent.com/r-devel/r-svn/c267ebb7f9720154535e63642c25a5d91d5f512d/src/main/serialize.c",
+      "url": "https://github.com/r-devel/r-svn/blob/c267ebb7f9720154535e63642c25a5d91d5f512d/src/main/serialize.c",
+      "git_blob_sha": "82fec2d16cb46ba50975b91b8e0655b5c3080c3d"
+    },
+    {
+      "application": "kolibri",
+      "path": "kolibri/core/deviceadmin/management/commands/dbrestore.py",
+      "commit": "303e3baea3e0df85b797111af8ca4d89e7fbbe92",
+      "raw_url": "https://raw.githubusercontent.com/learningequality/kolibri/303e3baea3e0df85b797111af8ca4d89e7fbbe92/kolibri/core/deviceadmin/management/commands/dbrestore.py",
+      "url": "https://github.com/learningequality/kolibri/blob/303e3baea3e0df85b797111af8ca4d89e7fbbe92/kolibri/core/deviceadmin/management/commands/dbrestore.py",
+      "git_blob_sha": "2e5a44f4fe7d9756693e89228ba8b20cd68e4e4d"
+    },
+    {
+      "application": "kolibri",
+      "path": "kolibri/core/auth/management/commands/bulkimportusers.py",
+      "commit": "303e3baea3e0df85b797111af8ca4d89e7fbbe92",
+      "raw_url": "https://raw.githubusercontent.com/learningequality/kolibri/303e3baea3e0df85b797111af8ca4d89e7fbbe92/kolibri/core/auth/management/commands/bulkimportusers.py",
+      "url": "https://github.com/learningequality/kolibri/blob/303e3baea3e0df85b797111af8ca4d89e7fbbe92/kolibri/core/auth/management/commands/bulkimportusers.py",
+      "git_blob_sha": "14004f1ad8b1c28931d8fb53f1892f4e96b7a22f"
+    },
+    {
+      "application": "moodle",
+      "path": "public/backup/util/helper/restore_prechecks_helper.class.php",
+      "commit": "46c042e7da65f8cb2ec7dc19f46566ce61a393e1",
+      "raw_url": "https://raw.githubusercontent.com/moodle/moodle/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/util/helper/restore_prechecks_helper.class.php",
+      "url": "https://github.com/moodle/moodle/blob/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/util/helper/restore_prechecks_helper.class.php",
+      "git_blob_sha": "4dac448851c909344e31ad9f3d5690a4a7763372"
+    },
+    {
+      "application": "moodle",
+      "path": "public/backup/moodle2/backup_final_task.class.php",
+      "commit": "46c042e7da65f8cb2ec7dc19f46566ce61a393e1",
+      "raw_url": "https://raw.githubusercontent.com/moodle/moodle/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/moodle2/backup_final_task.class.php",
+      "url": "https://github.com/moodle/moodle/blob/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/moodle2/backup_final_task.class.php",
+      "git_blob_sha": "ebeb057100158e34f172f3856a4e54cc80599b7f"
+    },
+    {
+      "application": "moodle",
+      "path": "public/backup/moodle2/restore_course_task.class.php",
+      "commit": "46c042e7da65f8cb2ec7dc19f46566ce61a393e1",
+      "raw_url": "https://raw.githubusercontent.com/moodle/moodle/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/moodle2/restore_course_task.class.php",
+      "url": "https://github.com/moodle/moodle/blob/46c042e7da65f8cb2ec7dc19f46566ce61a393e1/public/backup/moodle2/restore_course_task.class.php",
+      "git_blob_sha": "f8365b5a3fce3835d98b7be79af74177e7be3cfc"
+    },
+    {
+      "application": "gdal",
+      "path": "autotest/ogr/data/gpkg/poly_golden_gpkg_1_4.gpkg",
+      "commit": "0e24e0288164b5237df0aeb82ab742909e719479",
+      "raw_url": "https://raw.githubusercontent.com/OSGeo/gdal/0e24e0288164b5237df0aeb82ab742909e719479/autotest/ogr/data/gpkg/poly_golden_gpkg_1_4.gpkg",
+      "url": "https://github.com/OSGeo/gdal/blob/0e24e0288164b5237df0aeb82ab742909e719479/autotest/ogr/data/gpkg/poly_golden_gpkg_1_4.gpkg",
+      "git_blob_sha": "f381872b4a9e76ea2dc83485ea866146acec8915",
+      "probe": "sqlite"
+    },
+    {
+      "application": "gnu-pspp",
+      "path": "save-translate.html",
+      "raw_url": "https://www.gnu.org/software/pspp/manual/html_node/SAVE-TRANSLATE.html",
+      "url": "https://www.gnu.org/software/pspp/manual/html_node/SAVE-TRANSLATE.html",
+      "retrieved": "2026-10-23",
+      "probe": "text"
+    },
+    {
+      "application": "gnu-pspp",
+      "path": "csv-export.html",
+      "raw_url": "https://www.gnu.org/software/pspp/manual/html_node/SAVE-TRANSLATE-_002fTYPE_003dCSV-and-TYPE_003dTAB.html",
+      "url": "https://www.gnu.org/software/pspp/manual/html_node/SAVE-TRANSLATE-_002fTYPE_003dCSV-and-TYPE_003dTAB.html",
+      "retrieved": "2026-10-23",
+      "probe": "text"
+    }
+  ],
+  "source_questions": [
+    {
+      "application": "gdal",
+      "id": "gcore/gdalpamdataset.cpp",
+      "anchors": {
+        "gcore/gdalpamdataset.cpp": [
+          " * with the .aux.xml extension."
+        ]
+      }
+    },
+    {
+      "application": "grass-gis",
+      "id": "general/g.remove/main.c",
+      "anchors": {
+        "general/g.remove/main.c": [
+          "        _(\"Force removal (required for actual deletion of files)\");"
+        ]
+      }
+    },
+    {
+      "application": "grass-gis",
+      "id": "scripts/r.pack/r.pack.py",
+      "anchors": {
+        "scripts/r.pack/r.pack.py": [
+          "    tar.add(infile, recursive=True)"
+        ]
+      }
+    },
+    {
+      "application": "grass-gis",
+      "id": "scripts/v.pack/v.pack.py",
+      "anchors": {
+        "scripts/v.pack/v.pack.py": [
+          "        tar.add(sqlitedb, \"db.sqlite\")"
+        ]
+      }
+    },
+    {
+      "application": "r-project",
+      "id": "src/library/base/man/readRDS.Rd",
+      "anchors": {
+        "src/library/base/man/readRDS.Rd": [
+          "  connection) are not suitable as an interchange format between"
+        ]
+      }
+    },
+    {
+      "application": "r-project",
+      "id": "src/main/serialize.c",
+      "anchors": {
+        "src/main/serialize.c": [
+          "\tOutInteger(stream, R_Version(3,5,0));"
+        ]
+      }
+    },
+    {
+      "application": "kolibri",
+      "id": "kolibri/core/deviceadmin/management/commands/dbrestore.py",
+      "anchors": {
+        "kolibri/core/deviceadmin/management/commands/dbrestore.py": [
+          "        \"Restores a database backup of Kolibri. This is not intended for \""
+        ]
+      }
+    },
+    {
+      "application": "kolibri",
+      "id": "kolibri/core/auth/management/commands/bulkimportusers.py",
+      "anchors": {
+        "kolibri/core/auth/management/commands/bulkimportusers.py": [
+          "            user.delete(hard_delete=True)"
+        ]
+      }
+    },
+    {
+      "application": "moodle",
+      "id": "public/backup/util/helper/restore_prechecks_helper.class.php",
+      "anchors": {
+        "public/backup/util/helper/restore_prechecks_helper.class.php": [
+          "            $warnings[] = get_string('noticenewerbackup','',$message);"
+        ]
+      }
+    },
+    {
+      "application": "moodle",
+      "id": "public/backup/moodle2/backup_final_task.class.php",
+      "anchors": {
+        "public/backup/moodle2/backup_final_task.class.php": [
+          "            $this->add_step(new backup_users_structure_step('users', 'users.xml'));"
+        ]
+      }
+    },
+    {
+      "application": "moodle",
+      "id": "public/backup/moodle2/restore_course_task.class.php",
+      "anchors": {
+        "public/backup/moodle2/restore_course_task.class.php": [
+          "        if ($this->get_target() != backup::TARGET_CURRENT_DELETING and $this->get_target() != backup::TARGET_EXISTING_DELETING) {"
+        ]
+      }
+    }
+  ],
+  "ratings_reconciliation": "Deferred; preserve original eligibility and principle tables"
+}

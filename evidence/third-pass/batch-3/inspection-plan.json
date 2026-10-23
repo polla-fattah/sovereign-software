@@ -1,0 +1,356 @@
+{
+  "commits": {
+    "go-gitea/gitea": "ad37b88631ade5af5db738a4ebe4ab89ed8d237d",
+    "forgejo/forgejo": "b021976fb1a87ec18543c3a5586ecfabcc1c06e7",
+    "paperless-ngx/paperless-ngx": "f71a9a6eda217a0f3e84ff9a40e0e57d10e7d9ae",
+    "kopia/kopia": "0835005737025dc3e5203df0138c8265686cb4b3",
+    "restic/restic": "dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4",
+    "borgbackup/borg": "45f8b178ae892ae73fcaa3127c951b0044cd7a7e"
+  },
+  "inputs": [
+    {
+      "application": "gitea",
+      "repository": "go-gitea/gitea",
+      "path": "cmd/dump.go"
+    },
+    {
+      "application": "gitea",
+      "repository": "go-gitea/gitea",
+      "path": "cmd/dump_repo.go"
+    },
+    {
+      "application": "gitea",
+      "repository": "go-gitea/gitea",
+      "path": "services/migrations/dump.go"
+    },
+    {
+      "application": "gitea",
+      "repository": "go-gitea/gitea",
+      "path": "modules/migration/issue.go"
+    },
+    {
+      "application": "gitea",
+      "repository": "go-gitea/gitea",
+      "path": "modules/migration/review.go"
+    },
+    {
+      "application": "gitea",
+      "repository": "go-gitea/gitea",
+      "path": "modules/migration/schemas/issue.json"
+    },
+    {
+      "application": "forgejo",
+      "repository": "forgejo/forgejo",
+      "path": "cmd/dump.go"
+    },
+    {
+      "application": "forgejo",
+      "repository": "forgejo/forgejo",
+      "path": "cmd/dump_repo.go"
+    },
+    {
+      "application": "paperless-ngx",
+      "repository": "paperless-ngx/paperless-ngx",
+      "path": "src/documents/management/commands/document_exporter.py"
+    },
+    {
+      "application": "paperless-ngx",
+      "repository": "paperless-ngx/paperless-ngx",
+      "path": "src/documents/management/commands/document_importer.py"
+    },
+    {
+      "application": "paperless-ngx",
+      "repository": "paperless-ngx/paperless-ngx",
+      "path": "src/documents/management/commands/mixins.py"
+    },
+    {
+      "application": "kopia",
+      "repository": "kopia/kopia",
+      "path": "cli/command_snapshot_verify.go"
+    },
+    {
+      "application": "kopia",
+      "repository": "kopia/kopia",
+      "path": "snapshot/snapshotfs/snapshot_verifier.go"
+    },
+    {
+      "application": "kopia",
+      "repository": "kopia/kopia",
+      "path": "snapshot/restore/tar_output.go"
+    },
+    {
+      "application": "kopia",
+      "repository": "kopia/kopia",
+      "path": "snapshot/restore/zip_output.go"
+    },
+    {
+      "application": "restic",
+      "repository": "restic/restic",
+      "path": "cmd/restic/cmd_check.go"
+    },
+    {
+      "application": "restic",
+      "repository": "restic/restic",
+      "path": "cmd/restic/cmd_forget.go"
+    },
+    {
+      "application": "restic",
+      "repository": "restic/restic",
+      "path": "cmd/restic/cmd_prune.go"
+    },
+    {
+      "application": "restic",
+      "repository": "restic/restic",
+      "path": "internal/repository/prune.go"
+    },
+    {
+      "application": "restic",
+      "repository": "restic/restic",
+      "path": "internal/dump/tar.go"
+    },
+    {
+      "application": "restic",
+      "repository": "restic/restic",
+      "path": "internal/dump/zip.go"
+    },
+    {
+      "application": "borgbackup",
+      "repository": "borgbackup/borg",
+      "path": "src/borg/archiver/tar_cmds.py"
+    },
+    {
+      "application": "borgbackup",
+      "repository": "borgbackup/borg",
+      "path": "src/borg/archiver/check_cmd.py"
+    },
+    {
+      "application": "borgbackup",
+      "repository": "borgbackup/borg",
+      "path": "src/borg/archiver/delete_cmd.py"
+    },
+    {
+      "application": "borgbackup",
+      "repository": "borgbackup/borg",
+      "path": "src/borg/archiver/undelete_cmd.py"
+    },
+    {
+      "application": "borgbackup",
+      "repository": "borgbackup/borg",
+      "path": "src/borg/archiver/compact_cmd.py"
+    }
+  ],
+  "questions": [
+    {
+      "application": "gitea",
+      "id": "dump-store-coverage",
+      "anchors": {
+        "cmd/dump.go": [
+          "\"gitea-db.sql\"",
+          "\"app.ini\"",
+          "\"skip-db\"",
+          "storage.LFS.IterateObjects",
+          "storage.Attachments.IterateObjects",
+          "storage.Packages.IterateObjects"
+        ]
+      }
+    },
+    {
+      "application": "gitea",
+      "id": "repository-export-structure",
+      "anchors": {
+        "services/migrations/dump.go": [
+          "\"repo.yml\"",
+          "\"issue.yml\"",
+          "yaml.Marshal(issues)",
+          "g.createItems(g.commentDir()",
+          "g.createItems(g.reviewDir()",
+          "\"release_assets\""
+        ]
+      }
+    },
+    {
+      "application": "forgejo",
+      "id": "dump-store-coverage",
+      "anchors": {
+        "cmd/dump.go": [
+          "\"forgejo-db.sql\"",
+          "\"app.ini\"",
+          "storage.LFS.IterateObjects",
+          "storage.Attachments.IterateObjects",
+          "storage.Packages.IterateObjects",
+          "\"skip-repository\""
+        ]
+      }
+    },
+    {
+      "application": "forgejo",
+      "id": "dump-repo-output-protection",
+      "anchors": {
+        "cmd/dump_repo.go": [
+          "os.ReadDir(repoDir); len(dir) > 0",
+          "repo_dir %q is not empty",
+          "migrations.DumpRepository("
+        ]
+      }
+    },
+    {
+      "application": "paperless-ngx",
+      "id": "manifest-and-file-coverage",
+      "anchors": {
+        "src/documents/management/commands/document_exporter.py": [
+          "manifest_key_to_object_query",
+          "Document.global_objects.order_by(\"id\").all()",
+          "document_dict[EXPORTER_FILE_NAME]",
+          "sink.add_file(document.source_path",
+          "if not self.no_archive and document.has_archive_version"
+        ]
+      }
+    },
+    {
+      "application": "paperless-ngx",
+      "id": "version-mismatch-behaviour",
+      "anchors": {
+        "src/documents/management/commands/document_importer.py": [
+          "self.version != version.__full_version_str__",
+          "self.style.WARNING(",
+          " Continuing, but import may fail."
+        ]
+      }
+    },
+    {
+      "application": "paperless-ngx",
+      "id": "export-secret-scope",
+      "anchors": {
+        "src/documents/management/commands/document_exporter.py": [
+          "No passphrase was given, sensitive fields will be in plaintext",
+          "if not self.passphrase:"
+        ],
+        "src/documents/management/commands/mixins.py": [
+          "\"paperless_mail.mailaccount\"",
+          "\"refresh_token\"",
+          "\"socialaccount.socialtoken\"",
+          "\"token_secret\""
+        ]
+      }
+    },
+    {
+      "application": "kopia",
+      "id": "verification-data-sampling",
+      "anchors": {
+        "cli/command_snapshot_verify.go": [
+          "Default(\"0\").Float64Var(&c.verifyCommandFilesPercent)"
+        ],
+        "snapshot/snapshotfs/snapshot_verifier.go": [
+          "100*rand.Float64() < v.opts.VerifyFilesPercent",
+          "v.readEntireObject(ctx, oid, entryPath)",
+          "v.rep.OpenObject(ctx, oid)"
+        ]
+      }
+    },
+    {
+      "application": "kopia",
+      "id": "tar-zip-loss-boundary",
+      "anchors": {
+        "snapshot/restore/tar_output.go": [
+          "Typeflag: tar.TypeDir",
+          "Typeflag: tar.TypeSymlink",
+          "Linkname: target",
+          "Uid:",
+          "Gid:"
+        ],
+        "snapshot/restore/zip_output.go": [
+          "create symlink not implemented yet",
+          "h.SetMode(f.Mode())"
+        ]
+      }
+    },
+    {
+      "application": "restic",
+      "id": "check-data-coverage",
+      "anchors": {
+        "cmd/restic/cmd_check.go": [
+          "\"read-data\", false",
+          "\"read-data-subset\"",
+          "if readDataFilter != nil",
+          "chkr.ReadPacks("
+        ]
+      }
+    },
+    {
+      "application": "restic",
+      "id": "forget-prune-preview",
+      "anchors": {
+        "cmd/restic/cmd_forget.go": [
+          "if !opts.DryRun {",
+          "restic.ParallelRemove(",
+          "pruneOptions.DryRun = opts.DryRun"
+        ],
+        "internal/repository/prune.go": [
+          "if plan.opts.DryRun {",
+          "Always quit here if DryRun was set!"
+        ]
+      }
+    },
+    {
+      "application": "restic",
+      "id": "tar-zip-metadata-boundary",
+      "anchors": {
+        "internal/dump/tar.go": [
+          "PAXRecords: parseXattrs",
+          "SCHILY.acl.access",
+          "SCHILY.xattr.",
+          "header.Linkname = node.LinkTarget"
+        ],
+        "internal/dump/zip.go": [
+          "header.SetMode(node.Mode)",
+          "w.Write([]byte(node.LinkTarget))"
+        ]
+      }
+    },
+    {
+      "application": "borgbackup",
+      "id": "tar-metadata-boundary",
+      "anchors": {
+        "src/borg/archiver/tar_cmds.py": [
+          "def item_to_tarinfo(",
+          "def item_to_paxheaders(",
+          "SCHILY_XATTR",
+          "SCHILY_ACL_ACCESS",
+          "ph[\"BORG.item.meta\"]",
+          "tarinfo.type = tarfile.LNKTYPE"
+        ]
+      }
+    },
+    {
+      "application": "borgbackup",
+      "id": "check-repair-boundary",
+      "anchors": {
+        "src/borg/archiver/check_cmd.py": [
+          "verify_data=args.verify_data",
+          "if args.repair:",
+          "Type 'YES'",
+          "\"--verify-data\"",
+          "POTENTIALLY DANGEROUS FEATURE"
+        ]
+      }
+    },
+    {
+      "application": "borgbackup",
+      "id": "delete-undelete-compaction-boundary",
+      "anchors": {
+        "src/borg/archiver/delete_cmd.py": [
+          "if not dry_run:",
+          "manifest.archives.delete_by_id(id)"
+        ],
+        "src/borg/archiver/undelete_cmd.py": [
+          "manifest.archives.undelete_by_id(id)"
+        ],
+        "src/borg/archiver/compact_cmd.py": [
+          "elif not self.dry_run:",
+          "self.manifest.archives.nuke_by_id(id)",
+          "self.mark_soft_deleted_used()"
+        ]
+      }
+    }
+  ]
+}

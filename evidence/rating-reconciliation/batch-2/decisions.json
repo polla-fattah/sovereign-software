@@ -1,0 +1,562 @@
+{
+  "review_date": "2026-10-23",
+  "purpose": "Individual reconciliation of E3/E5 and dependent principle findings. E2/positive Sovereignty contradictions in this batch are also corrected; unchanged E1/E4/Locality findings are not independently re-certified.",
+  "applications": [
+    {
+      "id": "restic",
+      "name": "restic",
+      "E3": [
+        "not_verified",
+        "Full-data reading is opt-in and TAR carries more metadata than ZIP, but retained source does not demonstrate decrypting a preserved repository, restoring the declared filesystem records, or comparing ownership, links, ACLs and xattrs with a baseline. These positive implementation findings are not a complete recovery record.",
+        "https://github.com/restic/restic/blob/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/internal/dump/tar.go",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "The inspected forget command reports retention selections and gates snapshot removal on dry-run; its prune call propagates dry-run, and the prune implementation returns before mutation in that mode. These establish useful retention safeguards, not the whole assessed operation surface: restore overwrite/delete, key-management authorization and recovery from interrupted mutations remain insufficiently evidenced.",
+        "https://github.com/restic/restic/blob/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/cmd/restic/cmd_forget.go",
+        "medium"
+      ],
+      "remaining": "A synthetic encrypted repository and expected file/metadata manifest, a matched restore report using preserved recovery material, and records for restore overwrite/delete, key changes and interrupted pruning remain missing. TAR/ZIP source differences and optional full-data checking are already answered; do not reopen those documentation questions.",
+      "next": "Obtain an upstream or independent version-matched synthetic recovery evidence packet: repository/configuration, non-secret test credentials, baseline manifest, commands and before/after output. Independently compare recovered bytes, paths, links and metadata using existing tools; no local restic installation is required if the restore was reproducibly run elsewhere.",
+      "longevity": [
+        null,
+        "E3 remains Not Verified for restic's existing essential-record scope. Documented/exported structure does not establish a baseline-matched clean recovery. The previous positive Longevity finding is withdrawn to Not assessed, not a finding of failure.",
+        "https://github.com/restic/restic/blob/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/internal/dump/tar.go",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The inspected controls are retained as positive facts, but whole-scope E5 remains Not Verified. The methodology requires established minimum oversight before a positive Transparency and Control finding; the earlier Partially meets is therefore withdrawn to Not assessed rather than used as a placeholder for incomplete evidence.",
+        "https://github.com/restic/restic/blob/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/cmd/restic/cmd_forget.go",
+        "medium"
+      ],
+      "extra": {
+        "sovereignty": null
+      },
+      "sovereignty": [
+        null,
+        "E2 is Not Verified for the existing essential-record scope, so the minimum for a positive Sovereignty finding is not established. Storage choice, local access and export-format strengths remain recorded; the old positive principle is withdrawn, not changed to a verified failure.",
+        "https://github.com/restic/restic/blob/dd09b6bd01af220b1d5d95c0d4d7d472e05e05c4/internal/dump/tar.go",
+        "medium"
+      ],
+      "current_remaining": "A synthetic encrypted repository and expected file/metadata manifest, a matched restore report using preserved recovery material, and records for restore overwrite/delete, key changes and interrupted pruning remain missing. TAR/ZIP source differences and optional full-data checking are already answered; do not reopen those documentation questions.",
+      "findings": []
+    },
+    {
+      "id": "borgbackup",
+      "name": "BorgBackup",
+      "E3": [
+        "not_verified",
+        "The development source writes interpretable TAR fields plus Borg-specific metadata; ordinary TAR readers do not automatically interpret that extension. No preserved encrypted repository, compatible-key recovery or baseline-matched extraction was exercised. Results cannot be transferred to Borg 1.x or a released Borg 2 binary merely because their documentation looks similar.",
+        "https://github.com/borgbackup/borg/blob/45f8b178ae892ae73fcaa3127c951b0044cd7a7e/src/borg/archiver/tar_cmds.py",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "The inspected development branch supplies a repair warning/typed acknowledgement, soft-delete/undelete and compaction dry-run. Normal compaction closes the soft-delete window. These control paths are concrete evidence, but extraction overwrite, credential handling and an observed delete/undelete/compact recovery sequence are not sufficiently covered for the existing backup scope.",
+        "https://github.com/borgbackup/borg/blob/45f8b178ae892ae73fcaa3127c951b0044cd7a7e/src/borg/archiver/check_cmd.py",
+        "medium"
+      ],
+      "remaining": "A declared released version or exact development build, a populated synthetic repository with baseline metadata and preserved recovery material, compatible restore evidence, and before/after delete/undelete/compact, repair and extraction-overwrite records remain missing. Existing source conclusions are limited to the pinned development tree.",
+      "next": "Request a reproducible packet for the exact assessed commit or explicitly reassess a released version. Use a disposable synthetic repository and expected manifest, with delete/undelete output before compaction and separately backed-up post-compaction evidence. Independent TAR/manifest inspection can happen here without installing Borg.",
+      "longevity": [
+        null,
+        "E3 remains Not Verified for BorgBackup's existing essential-record scope. A development-tree export is not compatible repository recovery. The previous positive Longevity finding is withdrawn to Not assessed, not a finding of failure.",
+        "https://github.com/borgbackup/borg/blob/45f8b178ae892ae73fcaa3127c951b0044cd7a7e/src/borg/archiver/tar_cmds.py",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The inspected controls are retained as positive facts, but whole-scope E5 remains Not Verified. The methodology requires established minimum oversight before a positive Transparency and Control finding; the earlier Partially meets is therefore withdrawn to Not assessed rather than used as a placeholder for incomplete evidence.",
+        "https://github.com/borgbackup/borg/blob/45f8b178ae892ae73fcaa3127c951b0044cd7a7e/src/borg/archiver/check_cmd.py",
+        "medium"
+      ],
+      "extra": {
+        "sovereignty": null
+      },
+      "sovereignty": [
+        null,
+        "E2 is Not Verified for the existing essential-record scope, so the minimum for a positive Sovereignty finding is not established. Storage choice, local access and export-format strengths remain recorded; the old positive principle is withdrawn, not changed to a verified failure.",
+        "https://github.com/borgbackup/borg/blob/45f8b178ae892ae73fcaa3127c951b0044cd7a7e/src/borg/archiver/tar_cmds.py",
+        "medium"
+      ],
+      "current_remaining": "A declared released version or exact development build, a populated synthetic repository with baseline metadata and preserved recovery material, compatible restore evidence, and before/after delete/undelete/compact, repair and extraction-overwrite records remain missing. Existing source conclusions are limited to the pinned development tree.",
+      "findings": []
+    },
+    {
+      "id": "kopia",
+      "name": "Kopia",
+      "E3": [
+        "not_verified",
+        "Full-file verification is percentage-gated, and the inspected ZIP writer omits symlink/directory output while TAR preserves more structure without setting ACL/xattr fields. None of those facts establishes complete decryption/restoration of the existing filesystem scope. Password-dependent repository recovery, executed exports and baseline comparisons remain absent.",
+        "https://github.com/kopia/kopia/blob/0835005737025dc3e5203df0138c8265686cb4b3/snapshot/snapshotfs/snapshot_verifier.go",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Additional pinned source resolves explicit snapshot deletion: without --delete the command reports the selected snapshot and returns before DeleteManifest; the confirmed branch reports deletion and calls DeleteManifest. Source IDs and source-wide selections reach that same gate. Automated retention/maintenance safety, restore overwrite/delete and available recovery are still insufficiently covered for whole-scope E5.",
+        "https://github.com/kopia/kopia/blob/0835005737025dc3e5203df0138c8265686cb4b3/cli/command_snapshot_delete.go",
+        "medium"
+      ],
+      "remaining": "A populated synthetic encrypted repository, preserved test password/configuration, full-file verification and baseline-matched restore/export records, plus policy/maintenance and restore overwrite/delete safeguards remain missing. The explicit snapshot-delete confirmation question is now answered; it does not establish maintenance rollback.",
+      "next": "Reuse a version-matched public or assessor-generated synthetic repository packet with verify-files-percent=100 output, expected content/metadata and restore results. Obtain separate retention/maintenance and overwrite/delete before/after records; compare TAR and ZIP independently without installing Kopia here.",
+      "longevity": [
+        null,
+        "E3 remains Not Verified for Kopia's existing essential-record scope. Documented/exported structure does not establish a baseline-matched clean recovery. The previous positive Longevity finding is withdrawn to Not assessed, not a finding of failure.",
+        "https://github.com/kopia/kopia/blob/0835005737025dc3e5203df0138c8265686cb4b3/snapshot/snapshotfs/snapshot_verifier.go",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The inspected controls are retained as positive facts, but whole-scope E5 remains Not Verified. The methodology requires established minimum oversight before a positive Transparency and Control finding; the earlier Meets is therefore withdrawn to Not assessed rather than used as a placeholder for incomplete evidence.",
+        "https://github.com/kopia/kopia/blob/0835005737025dc3e5203df0138c8265686cb4b3/cli/command_snapshot_delete.go",
+        "medium"
+      ],
+      "extra": {
+        "sovereignty": null
+      },
+      "sovereignty": [
+        null,
+        "E2 is Not Verified for the existing essential-record scope, so the minimum for a positive Sovereignty finding is not established. Storage choice, local access and export-format strengths remain recorded; the old positive principle is withdrawn, not changed to a verified failure.",
+        "https://github.com/kopia/kopia/blob/0835005737025dc3e5203df0138c8265686cb4b3/snapshot/snapshotfs/snapshot_verifier.go",
+        "medium"
+      ],
+      "current_remaining": "A populated synthetic encrypted repository, preserved test password/configuration, full-file verification and baseline-matched restore/export records, plus policy/maintenance and restore overwrite/delete safeguards remain missing. The explicit snapshot-delete confirmation question is now answered; it does not establish maintenance rollback.",
+      "findings": [
+        {
+          "application": "kopia",
+          "target": "E5",
+          "text": "The explicit snapshot-delete command reports a preview and returns before DeleteManifest unless --delete is set. Confirmed snapshot-ID, root-object-ID and source-wide selections use the shared deletion gate; this does not cover automated maintenance.",
+          "url": "https://github.com/kopia/kopia/blob/0835005737025dc3e5203df0138c8265686cb4b3/cli/command_snapshot_delete.go",
+          "path": "cli/command_snapshot_delete.go",
+          "locators": [
+            "if !c.snapshotDeleteConfirm",
+            "return errors.Wrap(rep.DeleteManifest"
+          ],
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "id": "anki",
+      "name": "Anki",
+      "E3": [
+        "not_verified",
+        "Reinspection reproduces integrity ok and the one-card/one-note join and sound-name mapping in the retained legacy APKG. Its mapped media member is only four bytes, not proof of usable audio. Modern package decoding, deck/options and scheduling semantics, complete media and a meaningful collection restore are not covered by this historical fixture.",
+        "https://github.com/ankitects/anki/blob/8d6e0a0f462f016889896ceaaab1be2aba182588/pylib/tests/support/media.apkg",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Pinned desktop source provides full-sync direction/cancel choices, confirmation paths and a backup call before full download. The undo manager keeps bounded in-memory operations and can clear them. These answer control-path questions but do not establish complete media-inclusive recovery, normal sync conflict handling or restoration after collection-wide destructive actions in the declared learning workflow.",
+        "https://github.com/ankitects/anki/blob/8d6e0a0f462f016889896ceaaab1be2aba182588/qt/aqt/sync.py",
+        "medium"
+      ],
+      "remaining": "A modern synthetic collection package with expected notes/cards, deck/options, scheduling and genuine media, independent decoding/comparison, and full-sync/deletion/recovery output remain missing. Legacy readability, full-sync confirmation/backup calls and bounded undo are already resolved; their coverage limits are explicit.",
+      "next": "Obtain a current-version APKG/COLPKG test export and expected semantic manifest from upstream fixtures or an external assessor. Independently decode and compare it here, keeping notes, cards, options and scheduling together. A recorded restore/sync exercise elsewhere can supply behavior evidence without a local Anki installation.",
+      "exit": "The prior E2 Pass rested on a generic documentation lead. The retained legacy fixture establishes readable records, not a usable alternative study workflow preserving the stated scheduling/deck/media meaning. E2 is withdrawn to Not Verified pending an independent conversion and comparison.",
+      "exitUrl": "https://github.com/ankitects/anki/blob/8d6e0a0f462f016889896ceaaab1be2aba182588/pylib/tests/support/media.apkg",
+      "longevity": [
+        null,
+        "E3 remains Not Verified for Anki's existing essential-record scope. A readable one-card legacy package does not cover the complete learning collection. The previous positive Longevity finding is withdrawn to Not assessed, not a finding of failure.",
+        "https://github.com/ankitects/anki/blob/8d6e0a0f462f016889896ceaaab1be2aba182588/pylib/tests/support/media.apkg",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The inspected controls are retained as positive facts, but whole-scope E5 remains Not Verified. The methodology requires established minimum oversight before a positive Transparency and Control finding; the earlier Partially meets is therefore withdrawn to Not assessed rather than used as a placeholder for incomplete evidence.",
+        "https://github.com/ankitects/anki/blob/8d6e0a0f462f016889896ceaaab1be2aba182588/qt/aqt/sync.py",
+        "medium"
+      ],
+      "extra": {
+        "sovereignty": null,
+        "practical_exit": "not_verified"
+      },
+      "sovereignty": [
+        null,
+        "E2 is Not Verified for the existing essential-record scope, so the minimum for a positive Sovereignty finding is not established. Storage choice, local access and export-format strengths remain recorded; the old positive principle is withdrawn, not changed to a verified failure.",
+        "https://github.com/ankitects/anki/blob/8d6e0a0f462f016889896ceaaab1be2aba182588/pylib/tests/support/media.apkg",
+        "medium"
+      ],
+      "current_remaining": "A modern synthetic collection package with expected notes/cards, deck/options, scheduling and genuine media, independent decoding/comparison, and full-sync/deletion/recovery output remain missing. Legacy readability, full-sync confirmation/backup calls and bounded undo are already resolved; their coverage limits are explicit.",
+      "findings": [
+        {
+          "application": "anki",
+          "target": "E5",
+          "text": "The full-sync conflict dialog offers upload, download and cancellation with cancellation as that dialog's default. Dedicated full-upload/full-download confirmation paths also exist; the full-download worker calls create_backup_now before closing for replacement. This proves code paths, not a successful or media-complete backup.",
+          "url": "https://github.com/ankitects/anki/blob/8d6e0a0f462f016889896ceaaab1be2aba182588/qt/aqt/sync.py",
+          "path": "qt/aqt/sync.py",
+          "locators": [
+            "default_button=2",
+            "mw.create_backup_now()"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "application": "anki",
+          "target": "E5",
+          "text": "The undo manager stores a bounded in-memory queue, truncates old steps and clears undo/redo when a step begins without an undoable operation. Undo therefore is not a durable or universal recovery archive.",
+          "url": "https://github.com/ankitects/anki/blob/8d6e0a0f462f016889896ceaaab1be2aba182588/rslib/src/undo/mod.rs",
+          "path": "rslib/src/undo/mod.rs",
+          "locators": [
+            "self.undo_steps.clear()",
+            "self.undo_steps.truncate(UNDO_LIMIT - 1)"
+          ],
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "id": "joplin",
+      "name": "Joplin",
+      "E3": [
+        "not_verified",
+        "JEX/raw implementation and inspected import assertions explain serialized items, resource copying, new IDs and rewritten links, but no populated 200-note profile was independently reconstructed. Complete notebook/tag/link/resource relationships and the declared encrypted/offline-conflict recovery scenario remain unverified; package structure alone is not meaningful restoration.",
+        "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/interop/InteropService_Exporter_Jex.ts",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Pinned source adds concrete trash controls: desktop empty-trash asks for confirmation before calling deletion; restore clears deletion state with explicit missing-parent handling; automatic deletion is setting-gated, uses a configured age and logs selected items. These are positive controls, not a complete account of sync conflicts, encryption changes, transmission or recovery after permanent deletion.",
+        "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/app-desktop/commands/emptyTrash.ts",
+        "medium"
+      ],
+      "remaining": "A populated JEX/raw export with expected notebook/tag/link/resource relationships, independent reconstruction and encrypted/offline-conflict recovery records remain missing. For E5, record sync conflicts, encryption transitions and recovery boundaries after permanent deletion. Trash confirmation, missing-parent restore handling and setting-gated automatic deletion are now answered in source.",
+      "next": "Acquire a synthetic JEX/raw export plus expected relationship and resource hashes; reconstruct it with archive/text/SQLite tools already available. Add externally recorded two-profile conflict and encryption/recovery results for the pinned version. No real notes or private recovery credentials are needed.",
+      "exit": "Native import ID remapping and upstream assertions do not establish the declared collection's usable transition into an independent notes workflow. The earlier E2 Pass is withdrawn to Not Verified until essential hierarchy, links, tags, timestamps and attachments are compared in an actual alternative representation.",
+      "exitUrl": "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/interop/InteropService.test.ts",
+      "longevity": [
+        null,
+        "E3 remains Not Verified for Joplin's existing essential-record scope. Documented/exported structure does not establish a baseline-matched clean recovery. The previous positive Longevity finding is withdrawn to Not assessed, not a finding of failure.",
+        "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/interop/InteropService_Exporter_Jex.ts",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The inspected controls are retained as positive facts, but whole-scope E5 remains Not Verified. The methodology requires established minimum oversight before a positive Transparency and Control finding; the earlier Partially meets is therefore withdrawn to Not assessed rather than used as a placeholder for incomplete evidence.",
+        "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/app-desktop/commands/emptyTrash.ts",
+        "medium"
+      ],
+      "extra": {
+        "sovereignty": null,
+        "practical_exit": "not_verified"
+      },
+      "sovereignty": [
+        null,
+        "E2 is Not Verified for the existing essential-record scope, so the minimum for a positive Sovereignty finding is not established. Storage choice, local access and export-format strengths remain recorded; the old positive principle is withdrawn, not changed to a verified failure.",
+        "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/interop/InteropService.test.ts",
+        "medium"
+      ],
+      "current_remaining": "A populated JEX/raw export with expected notebook/tag/link/resource relationships, independent reconstruction and encrypted/offline-conflict recovery records remain missing. For E5, record sync conflicts, encryption transitions and recovery boundaries after permanent deletion. Trash confirmation, missing-parent restore handling and setting-gated automatic deletion are now answered in source.",
+      "findings": [
+        {
+          "application": "joplin",
+          "target": "E5",
+          "text": "Desktop empty-trash displays a permanent-deletion confirmation and calls the trash deletion service only when accepted. The service invokes note/folder deletion; this is not evidence that history or synchronized copies can recover a permanent deletion.",
+          "url": "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/app-desktop/commands/emptyTrash.ts",
+          "path": "packages/app-desktop/commands/emptyTrash.ts",
+          "locators": [
+            "showConfirmMessageBox",
+            "if (ok) await emptyTrash()"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "application": "joplin",
+          "target": "E5",
+          "text": "Trash restoration clears deleted_time and restores the parent when available. Missing/deleted parents use either an explicitly requested restore folder or an empty parent ID, unless a target folder is supplied; folder restoration recurses into children.",
+          "url": "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/trash/restoreItems.ts",
+          "path": "packages/lib/services/trash/restoreItems.ts",
+          "locators": [
+            "useRestoreFolder: false",
+            "deleted_time: 0",
+            "await restoreItems(ModelType.Folder"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "application": "joplin",
+          "target": "E5",
+          "text": "Automatic trash deletion exits when its enable setting is false, reads an age setting, logs selected items and excludes share-read-only items. It auto-deletes folders only when empty. Inspected setup schedules periodic processing; default setting values and cross-device consequences were not established here.",
+          "url": "https://github.com/laurent22/joplin/blob/280954e58fc7c9e74200fd817272ac3fb80dcead/packages/lib/services/trash/permanentlyDeleteOldItems.ts",
+          "path": "packages/lib/services/trash/permanentlyDeleteOldItems.ts",
+          "locators": [
+            "Setting.value('trash.autoDeletionEnabled')",
+            "logger.info('Items to permanently delete:', toDelete)",
+            "18 * Hour"
+          ],
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "id": "zotero",
+      "name": "Zotero",
+      "E3": [
+        "not_verified",
+        "The retained schema again loads successfully, but selected item, collection, attachment, annotation and relation tables are empty. Preparing queries against DDL cannot demonstrate recovered research records, attachment bytes, annotation meaning or document-citation mappings. A populated library/storage backup and its expected relations remain necessary.",
+        "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/resource/schema/userdata.sql",
+        "medium"
+      ],
+      "E5": [
+        "not_verified",
+        "Pinned source stages trash/restore undo information and implements restoring selected records and children. Manual empty-trash confirms the irreversible action and then clears undo history. A separate timer can empty aged trash according to a preference, so manual confirmation is not universal. Merge, synchronization and backup-replacement control/recourse remain insufficiently covered.",
+        "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/chrome/content/zotero/zoteroPane.js",
+        "medium"
+      ],
+      "remaining": "A populated synthetic library plus stored/linked attachments and a citation-bearing document, expected collection/tag/relation/annotation mappings and an independent recovery comparison remain missing. E5 still needs merge, synchronization and backup-replacement evidence, including automatic-trash preference/retention behavior; source trash/restore/manual-purge boundaries are answered.",
+      "next": "Use a sanitized synthetic zotero.sqlite, storage directory, any linked-file dependencies and a citation-bearing sample document with an expected mapping manifest. Inspect them with SQLite/archive tools and obtain version-matched merge/sync/backup-restoration observations from upstream or another assessor without installing Zotero locally.",
+      "exit": "The prior E2 Pass rested on a generic documentation lead. An empty schema and ordinary citation-export availability do not establish preservation of essential collections, relations, annotations and document-citation mappings in an alternative workflow. E2 is withdrawn to Not Verified pending a populated comparison.",
+      "exitUrl": "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/resource/schema/userdata.sql",
+      "longevity": [
+        null,
+        "E3 remains Not Verified for Zotero's existing essential-record scope. An empty schema is not a restored research library. The previous positive Longevity finding is withdrawn to Not assessed, not a finding of failure.",
+        "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/resource/schema/userdata.sql",
+        "medium"
+      ],
+      "transparency": [
+        null,
+        "The inspected controls are retained as positive facts, but whole-scope E5 remains Not Verified. The methodology requires established minimum oversight before a positive Transparency and Control finding; the earlier Partially meets is therefore withdrawn to Not assessed rather than used as a placeholder for incomplete evidence.",
+        "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/chrome/content/zotero/zoteroPane.js",
+        "medium"
+      ],
+      "extra": {
+        "sovereignty": null,
+        "practical_exit": "not_verified"
+      },
+      "sovereignty": [
+        null,
+        "E2 is Not Verified for the existing essential-record scope, so the minimum for a positive Sovereignty finding is not established. Storage choice, local access and export-format strengths remain recorded; the old positive principle is withdrawn, not changed to a verified failure.",
+        "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/resource/schema/userdata.sql",
+        "medium"
+      ],
+      "current_remaining": "A populated synthetic library plus stored/linked attachments and a citation-bearing document, expected collection/tag/relation/annotation mappings and an independent recovery comparison remain missing. E5 still needs merge, synchronization and backup-replacement evidence, including automatic-trash preference/retention behavior; source trash/restore/manual-purge boundaries are answered.",
+      "findings": [
+        {
+          "application": "zotero",
+          "target": "E5",
+          "text": "The pinned trash path stages undo data before setting deletion state. Selected-item restoration runs transactionally, clears deletion state and includes applicable child notes/attachments or subcollections. This is source evidence of intended recovery paths, not a populated-library recovery run.",
+          "url": "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/chrome/content/zotero/zoteroPane.js",
+          "path": "chrome/content/zotero/zoteroPane.js",
+          "locators": [
+            "this.restoreSelectedItems = async function",
+            "Zotero.UndoHistory.stageAction(undoAction",
+            "child.deleted = false"
+          ],
+          "confidence": "medium",
+          "supporting_sources": [
+            {
+              "path": "chrome/content/zotero/xpcom/data/items.js",
+              "url": "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/chrome/content/zotero/xpcom/data/items.js",
+              "locators": [
+                "Zotero.UndoHistory.stageChange",
+                "// Record undo data before modifying state"
+              ]
+            }
+          ]
+        },
+        {
+          "application": "zotero",
+          "target": "E5",
+          "text": "Manual empty-trash asks for confirmation including an irreversible-action message, erases deleted objects and clears undo history. Separately, the item service can purge aged trash from an idle timer using a preference; the manual dialog must not be generalized to all purges or to an observed default retention value.",
+          "url": "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/chrome/content/zotero/zoteroPane.js",
+          "path": "chrome/content/zotero/zoteroPane.js",
+          "locators": [
+            "general.actionCannotBeUndone",
+            "Zotero.UndoHistory.clear()"
+          ],
+          "confidence": "medium",
+          "supporting_sources": [
+            {
+              "path": "chrome/content/zotero/xpcom/data/items.js",
+              "url": "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/chrome/content/zotero/xpcom/data/items.js",
+              "locators": [
+                "Zotero.Prefs.get('trashAutoEmptyDays')",
+                "this.emptyTrash("
+              ]
+            }
+          ]
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "target": "E5",
+          "text": "The pinned item service stages undo information before changing an item's trash state. Its idle observer separately reads trashAutoEmptyDays and can call emptyTrash for aged items; a false/zero preference stops that observer path. This establishes source-level controls, not the default retention value, guaranteed audit-log persistence or successful recovery after erasure.",
+          "url": "https://github.com/zotero/zotero/blob/db41b99fddcc52d38897c59c161b6adaca036afb/chrome/content/zotero/xpcom/data/items.js",
+          "confidence": "medium"
+        }
+      ]
+    }
+  ],
+  "field_changes": [
+    {
+      "id": "restic",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "E3 remains Not Verified for restic's existing essential-record scope. Documented/exported structure does not establish a baseline-matched clean recovery. The previous positive Longevity finding is withdrawn to Not assessed, not a finding of failure."
+    },
+    {
+      "id": "restic",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The inspected controls are retained as positive facts, but whole-scope E5 remains Not Verified. The methodology requires established minimum oversight before a positive Transparency and Control finding; the earlier Partially meets is therefore withdrawn to Not assessed rather than used as a placeholder for incomplete evidence."
+    },
+    {
+      "id": "restic",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "E2 is Not Verified for the existing essential-record scope, so the minimum for a positive Sovereignty finding is not established. Storage choice, local access and export-format strengths remain recorded; the old positive principle is withdrawn, not changed to a verified failure."
+    },
+    {
+      "id": "borgbackup",
+      "table": "principles",
+      "key": "longevity",
+      "before": "partial",
+      "after": null,
+      "reason": "E3 remains Not Verified for BorgBackup's existing essential-record scope. A development-tree export is not compatible repository recovery. The previous positive Longevity finding is withdrawn to Not assessed, not a finding of failure."
+    },
+    {
+      "id": "borgbackup",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The inspected controls are retained as positive facts, but whole-scope E5 remains Not Verified. The methodology requires established minimum oversight before a positive Transparency and Control finding; the earlier Partially meets is therefore withdrawn to Not assessed rather than used as a placeholder for incomplete evidence."
+    },
+    {
+      "id": "borgbackup",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "partial",
+      "after": null,
+      "reason": "E2 is Not Verified for the existing essential-record scope, so the minimum for a positive Sovereignty finding is not established. Storage choice, local access and export-format strengths remain recorded; the old positive principle is withdrawn, not changed to a verified failure."
+    },
+    {
+      "id": "kopia",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "E3 remains Not Verified for Kopia's existing essential-record scope. Documented/exported structure does not establish a baseline-matched clean recovery. The previous positive Longevity finding is withdrawn to Not assessed, not a finding of failure."
+    },
+    {
+      "id": "kopia",
+      "table": "principles",
+      "key": "transparency",
+      "before": "meets",
+      "after": null,
+      "reason": "The inspected controls are retained as positive facts, but whole-scope E5 remains Not Verified. The methodology requires established minimum oversight before a positive Transparency and Control finding; the earlier Meets is therefore withdrawn to Not assessed rather than used as a placeholder for incomplete evidence."
+    },
+    {
+      "id": "kopia",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "E2 is Not Verified for the existing essential-record scope, so the minimum for a positive Sovereignty finding is not established. Storage choice, local access and export-format strengths remain recorded; the old positive principle is withdrawn, not changed to a verified failure."
+    },
+    {
+      "id": "anki",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "E3 remains Not Verified for Anki's existing essential-record scope. A readable one-card legacy package does not cover the complete learning collection. The previous positive Longevity finding is withdrawn to Not assessed, not a finding of failure."
+    },
+    {
+      "id": "anki",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The inspected controls are retained as positive facts, but whole-scope E5 remains Not Verified. The methodology requires established minimum oversight before a positive Transparency and Control finding; the earlier Partially meets is therefore withdrawn to Not assessed rather than used as a placeholder for incomplete evidence."
+    },
+    {
+      "id": "anki",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "pass",
+      "after": "not_verified",
+      "reason": "The prior E2 Pass rested on a generic documentation lead. The retained legacy fixture establishes readable records, not a usable alternative study workflow preserving the stated scheduling/deck/media meaning. E2 is withdrawn to Not Verified pending an independent conversion and comparison."
+    },
+    {
+      "id": "anki",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "E2 is Not Verified for the existing essential-record scope, so the minimum for a positive Sovereignty finding is not established. Storage choice, local access and export-format strengths remain recorded; the old positive principle is withdrawn, not changed to a verified failure."
+    },
+    {
+      "id": "joplin",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "E3 remains Not Verified for Joplin's existing essential-record scope. Documented/exported structure does not establish a baseline-matched clean recovery. The previous positive Longevity finding is withdrawn to Not assessed, not a finding of failure."
+    },
+    {
+      "id": "joplin",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The inspected controls are retained as positive facts, but whole-scope E5 remains Not Verified. The methodology requires established minimum oversight before a positive Transparency and Control finding; the earlier Partially meets is therefore withdrawn to Not assessed rather than used as a placeholder for incomplete evidence."
+    },
+    {
+      "id": "joplin",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "pass",
+      "after": "not_verified",
+      "reason": "Native import ID remapping and upstream assertions do not establish the declared collection's usable transition into an independent notes workflow. The earlier E2 Pass is withdrawn to Not Verified until essential hierarchy, links, tags, timestamps and attachments are compared in an actual alternative representation."
+    },
+    {
+      "id": "joplin",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "E2 is Not Verified for the existing essential-record scope, so the minimum for a positive Sovereignty finding is not established. Storage choice, local access and export-format strengths remain recorded; the old positive principle is withdrawn, not changed to a verified failure."
+    },
+    {
+      "id": "zotero",
+      "table": "principles",
+      "key": "longevity",
+      "before": "meets",
+      "after": null,
+      "reason": "E3 remains Not Verified for Zotero's existing essential-record scope. An empty schema is not a restored research library. The previous positive Longevity finding is withdrawn to Not assessed, not a finding of failure."
+    },
+    {
+      "id": "zotero",
+      "table": "principles",
+      "key": "transparency",
+      "before": "partial",
+      "after": null,
+      "reason": "The inspected controls are retained as positive facts, but whole-scope E5 remains Not Verified. The methodology requires established minimum oversight before a positive Transparency and Control finding; the earlier Partially meets is therefore withdrawn to Not assessed rather than used as a placeholder for incomplete evidence."
+    },
+    {
+      "id": "zotero",
+      "table": "eligibility",
+      "key": "practical_exit",
+      "before": "pass",
+      "after": "not_verified",
+      "reason": "The prior E2 Pass rested on a generic documentation lead. An empty schema and ordinary citation-export availability do not establish preservation of essential collections, relations, annotations and document-citation mappings in an alternative workflow. E2 is withdrawn to Not Verified pending a populated comparison."
+    },
+    {
+      "id": "zotero",
+      "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "E2 is Not Verified for the existing essential-record scope, so the minimum for a positive Sovereignty finding is not established. Storage choice, local access and export-format strengths remain recorded; the old positive principle is withdrawn, not changed to a verified failure."
+    }
+  ]
+}

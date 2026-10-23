@@ -6,6 +6,8 @@ Reviewed 22 October 2026 from the CadQuery documentation, repository, and the re
 
 ## What the documentation says
 
+Follow-up, 23 October 2026: resolved questions and remaining work are recorded in the [second third-pass batch](../third-pass/batch-2/README.md#cadquery) and reflected in the [application assessment](../../content/directory/cadquery.md). The earlier review below is superseded where that evidence answers or corrects it.
+
 **Storage and access (E1, E3)**
 - A model is a plain Python script; there is no native project file. A stated goal is a "non-proprietary, plain text model format". [file format](https://cadquery.readthedocs.io/en/latest/fileformat.html), [introduction](https://cadquery.readthedocs.io/en/latest/intro.html)
 - Geometry is OpenCascade boundary representation (BREP). The docs do not state outright that the script is the durable artifact. No statement about long-term durability or about recovery was found. [primer](https://cadquery.readthedocs.io/en/latest/primer.html)
@@ -33,3 +35,19 @@ Reviewed 22 October 2026 from the CadQuery documentation, repository, and the re
 3. Rebuild from a script on a clean offline machine with a pinned conda environment.
 4. Pages not read: the FAQ (404), CQ-editor wiki pages, PyPI, and the OCP release list.
 5. Confirm the licence status of OpenCASCADE, which the sources read did not state.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-5/README.md#cadquery); [actual assessment](../../content/directory/cadquery.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. The STEP fixture exposes product names, solids and colors, and assembly export enables names/layers/colors. Geometry equivalence and the editable source's constraints, parameters and OCCT/runtime dependencies have not been reconstructed. Readable Python plus STEP entity counts do not establish the declared engineering-intent recovery.
+- E5: Not Verified. CQGI executes model text with real Python builtins and captures exceptions; the inspected path does not establish a sandbox. No effective execution authorization, dependency trust, output-overwrite visibility or correction after model side effects is established for the declared workflow.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+- E2: Not Verified. STEP name/color/layer output does not establish migration of the essential parametric constraints and editable intent into an independent CAD workflow. The former E2 Pass is therefore unestablished, not a verified failure of every possible exit route.
+
+Remaining: Geometry equivalence, editable constraints in another CAD tool, complete offline rebuild, and execution/overwrite safeguards. E5 needs model/dependency execution authority, overwrite controls and correction boundaries; exception capture is not isolation.
+
+Next without a local installation: Inspect source, pinned dependency records and STEP/native output with expected geometry/constraint manifests supplied by upstream or an assessor. Review execution/overwrite safeguards without running untrusted model code.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.

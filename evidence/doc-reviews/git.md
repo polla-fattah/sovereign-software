@@ -1,8 +1,28 @@
 # Git: documentation review
 
+## Rating reconciliation: 23 October 2026
+
+The current [rating review](../rating-reconciliation/batch-1/README.md#git) supersedes the earlier rating freeze. E3: Pass; E5: Pass; Longevity: Meets; Transparency and Control: Partially meets. The actual application page contains the same decisions and supporting evidence.
+
+Remaining: LFS payloads, signed-tag authenticity, executable hooks, remote/hosted permissions, corruption/crash recovery, independent network isolation, older versions and the earlier broader two-assessor candidate protocol remain unverified.
+
+Earlier evidence findings below remain historical observations with their original limits, not automatic Pass results.
+
+
 Reviewed 22 October 2026 from the git-scm.com install page, About page, and reference manual pages only (the Git GitHub release-notes file was read for the version check). Latest version shown: 2.56.0. The install page gives no release date, so the date and year are not found in the docs. Licence: GPL v2 per the About page.
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
+
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 8](../third-pass/batch-8/README.md#git) and reflected in the [application page](../../content/directory/git.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: In an isolated Git 2.54.0.windows.1 fixture, a full --all bundle mirrored all recorded branch/tag/stash refs with matching object IDs and passed fsck. Ordinary clone omitted refs/stash, repository-local configuration, the marker hook and submodule working-tree contents; these need separate recovery planning.
+- [x] Resolved: The full bundle verified in an empty repository, whereas an incremental v1..main bundle failed verification for missing prerequisite commits. Successful bundle creation therefore does not establish a self-contained backup.
+
+Remaining: Signed-tag verification, LFS payloads, corruption recovery, submodule restoration and a representative real repository remain untested.
 
 ## What the documentation says
 

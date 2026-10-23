@@ -4,6 +4,17 @@ Reviewed 22 October 2026 from the Jellyfin documentation (jellyfin.org/docs), th
 
 **Evidence class:** vendor or maintainer declaration. Nothing here was run or tested, so it cannot establish a Pass or a Fail under v3.1.
 
+## Evidence follow-up: 23 October 2026
+
+The initial documentation-only review is retained below as historical context. This follow-up records the later source/artifact findings and explicitly identifies any already-available runtime experiment; its scope supersedes earlier statements that a topic was not found or nothing had yet been tested.
+
+2 bounded questions are resolved in [batch 11](../third-pass/batch-11/README.md#jellyfin) and reflected in the [application page](../../content/directory/jellyfin.md). Ratings are preserved for the next-pass audit.
+
+- [x] Resolved: The NFO saver writes favourite/rating/playcount/watched/last-played/resume fields for the one configured UserId, returning early when no valid user is selected. NFO can carry selected user state, but this is not an export of every user's records or a substitute for a complete database backup.
+- [x] Resolved: Restore rejects a manifest from a newer server and requires an exactly matching backup-engine version in the inspected implementation. It then overwrites extracted files and, when database restoration is selected, purges target tables before loading records. These guards and destructive steps are concrete source findings, not a successful restore or universal rollback guarantee.
+
+Remaining: Same-version/cross-host recovery, complete archive coverage, media-byte preservation, per-user comparison, delete-media scope and observed network behavior remain untested.
+
 ## What the documentation says
 
 **Storage and access (E1, E3)**
@@ -47,3 +58,18 @@ Reviewed 22 October 2026 from the Jellyfin documentation (jellyfin.org/docs), th
 5. On a copy, use the delete-media action on an episode and an extras item and record exactly which files disappear.
 6. Capture outbound network traffic with metadata providers on and off.
 7. Not read: the release date with year, the updates page (404), the plugin and privacy statements, server downloads page (404), any governance or succession page, and the GPL version question.
+
+## Rating reconciliation: 24 October 2026
+
+[Individual review](../rating-reconciliation/batch-11/README.md#jellyfin); [actual assessment](../../content/directory/jellyfin.md). The original documentation/sweep records above remain historical; this follow-up supersedes the earlier rating freeze.
+
+- E3: Not Verified. NFO export can carry selected state for one configured user, not every user's records. Complete version-compatible database/config/metadata/subtitle/archive reconstruction, media preservation and cross-host per-user comparison are not demonstrated.
+- E5: Not Verified. Restore has explicit server/backup-engine version guards and destructive extraction/table-replacement steps. Those code paths do not establish effective role/target approval, delete-media scope, inspectable user-state changes and available recourse across the server workflow.
+- Longevity and Transparency and Control: Not assessed, because their required E3/E5 minimums remain unestablished.
+- Sovereignty: Not assessed; access/exit/custody minimums are not all established.
+
+Remaining: Same-version/cross-host recovery, complete archive coverage, media-byte preservation, per-user comparison, delete-media scope and observed network behavior remain untested. E5 needs restore/target and delete-media/user authority, clear destructive-state boundaries and independent recovery evidence.
+
+Next without a local installation: Inspect a synthetic complete server backup plus media/config manifests and expected per-user records, then obtain same-version cross-host restore and permission/delete-media observations with explicit rollback material.
+
+This review does not install or run target application implementation. Previously collected independent parser/runtime observations retain their original limits. E1/E4/Locality are outside this targeted re-certification.
