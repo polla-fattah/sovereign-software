@@ -1,4 +1,4 @@
-tools/
-public/
-resources/
-.claude/
+/tools/
+/public/
+/resources/
+/.claude/

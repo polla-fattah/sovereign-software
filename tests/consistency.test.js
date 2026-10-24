@@ -105,9 +105,12 @@ test('no weights, scores, tiers, or retired principles remain in the live source
     const t = read(f);
     for (const b of banned) assert.ok(!t.includes(b), f + ' still contains "' + b + '"');
   }
-  for (const f of fs.readdirSync(path.join(root, 'layouts/shortcodes'))) {
-    const t = read('layouts/shortcodes/' + f);
-    for (const b of ['weight', 'Weight', 'tier']) assert.ok(!t.includes(b), f + ' mentions ' + b);
+  const shortcodesDir = path.join(root, 'layouts/shortcodes');
+  if (fs.existsSync(shortcodesDir)) {
+    for (const f of fs.readdirSync(shortcodesDir)) {
+      const t = read('layouts/shortcodes/' + f);
+      for (const b of ['weight', 'Weight', 'tier']) assert.ok(!t.includes(b), f + ' mentions ' + b);
+    }
   }
   for (const gone of ['data/gates.json', 'data/escape.json', 'data/profiles.json', 'static/js/sovereign.js', 'static/js/scoring.js', 'static/js/evaluator.js', 'content/evaluator.md', 'layouts/_default/evaluator.html', 'layouts/_default/escape-hatches.html', 'static/schema']) {
     assert.equal(fs.existsSync(path.join(root, gone)), false, gone + ' is gone');

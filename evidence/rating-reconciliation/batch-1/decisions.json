@@ -603,6 +603,14 @@
     {
       "id": "fossil",
       "table": "principles",
+      "key": "sovereignty",
+      "before": "meets",
+      "after": null,
+      "reason": "A positive Sovereignty finding requires established E2; exit is not yet verified."
+    },
+    {
+      "id": "fossil",
+      "table": "principles",
       "key": "longevity",
       "before": "partial",
       "after": null,

@@ -1,0 +1,2 @@
+# Preserve exact byte-for-byte fidelity of evidence inputs and fixtures across all platforms
+evidence/**/inputs/** -text

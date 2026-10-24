@@ -501,7 +501,7 @@
         "consequential_oversight": "not_verified"
       },
       "principles": {
-        "sovereignty": "meets",
+        "sovereignty": null,
         "longevity": null,
         "locality": "meets",
         "transparency": null

@@ -20,7 +20,6 @@ retained_control = "pass"
 consequential_oversight = "not_verified"
 
 [principles]
-sovereignty = "meets"
 locality = "meets"
 
 [[evidence]]
