@@ -94,3 +94,6 @@ section.statement blockquote { font-size: 36px; }
 /* Smaller text for dense slides */
 section.dense { font-size: 26px; }
 section.dense li { margin: 0.25em 0; }
+table { width: 100%; border-collapse: collapse; margin: 0.4em 0; font-size: 23px; }
+th, td { border: 1px solid #d6d6d6; padding: 10px 14px; text-align: left; vertical-align: top; }
+th { background: #f6f1ed; color: #003f2e; font-weight: 700; }

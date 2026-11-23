@@ -16,6 +16,8 @@ Software should adapt to people, not force people to adapt to software.
 
 **Sovereign Software** is software designed so that ultimate authority remains with the person or organization using it, not with a vendor, an infrastructure operator, or an unaccountable algorithm. It need not reject networks, commercial software, artificial intelligence, or complex engineering. It rejects *unnecessary surrender of control*.
 
+Here, *sovereignty* means practical user and institutional authority over one's own records, tools, and workflows (including the ability to delegate daily maintenance to third-party services while retaining independent custody of data), rather than geopolitical state digital sovereignty or blockchain token systems.
+
 Rather than claiming to invent these concerns from nothing, Sovereign Software acts as a **synthesis and evaluation approach**: it brings together insights from Free Software, Local-first computing, IndieWeb, Solid, Permacomputing, digital preservation, and human-centered AI governance, and translates them into testable requirements across four dimensions of authority (information, execution, governance, and continuity). See [Lineage and Related Work](/lineage/) for how each movement informs and differs from this framework.
 
 Four foundational principles express this philosophy, in a deliberate conceptual order:
@@ -27,7 +29,7 @@ Four foundational principles express this philosophy, in a deliberate conceptual
 
 The order communicates a relationship, not a scientifically measured ranking. Sovereignty defines the goal, Longevity protects it across time, Locality provides a powerful means of independence, and Transparency and Control make authority meaningful in operation. All four matter, and no single numerical score can excuse a proven loss of fundamental user control.
 
-## 06. Evaluating Sovereign Software
+## 02. Evaluating Sovereign Software
 
 Evidence comes before any score. The framework adopts no weights, numerical score, or tier threshold. Software is assessed in three layers:
 

@@ -13,6 +13,8 @@ Modern software provides extraordinary capabilities, yet many applications make 
 
 **Sovereign Software** is a deliberate alternative. It is software designed so that ultimate authority remains with the person or organization using it, not with a vendor, an infrastructure operator, or an unaccountable algorithm. It need not reject networks, commercial software, artificial intelligence, or complex engineering. It rejects *unnecessary surrender of control*.
 
+In this manifesto, *sovereignty* refers to **practical user and institutional operational authority** over one's own records, tools, and workflows. It is distinct from geopolitical or state digital sovereignty (such as national data-localization mandates or telecommunications policy) and from financialized blockchain or Web3 token frameworks.
+
 Four foundational principles express this philosophy, in a deliberate conceptual order:
 
 1. **Sovereignty: Authority belongs to the user.** Users retain meaningful control of their data, essential capabilities, and ability to leave or replace providers.
@@ -48,7 +50,7 @@ An individual or organization should not lose access to essential information me
 
 Sovereignty requires practical, not merely contractual, authority over one's records and essential workflows. Users should be able to access, export, back up, restore, and migrate their information through documented means. Where cryptographic keys govern access to personal data, key ownership, portability, and recovery must be explained honestly; the user should not be left hostage to an inaccessible vendor-held secret.
 
-Sovereignty does not mean that every user must personally operate a server. A managed service can respect sovereignty if meaningful exit, independent access, recovery, and replaceability remain available. Conversely, local installation alone is not proof of sovereignty if essential functions are subject to revocable remote licensing or information is trapped in an undocumented format.
+Sovereignty does not mean that every user must personally operate a server. A managed service can respect sovereignty if meaningful exit, independent access, recovery, and replaceability remain available. Users and organizations may legitimately delegate daily operational maintenance, hosting, and backups to third-party services, provided the service architecture preserves user custody through automated, independently verifiable, and user-held copies of essential records. Conversely, local installation alone is not proof of sovereignty if essential functions are subject to revocable remote licensing or information is trapped in an undocumented format.
 
 **The ability to leave without losing what is yours is a practical test of ownership.**
 
@@ -117,7 +119,7 @@ Free software philosophy answers no: without the legally protected freedoms to s
 - **Where independent formats and alternative tools exist:** If a proprietary application operates without revocable remote permission, stores or exports complete records in documented formats, and allows essential workflows to continue in independent implementations (for example, plain Markdown notes or standard SQLite databases), operational independence can satisfy user authority over the work itself. Conversely, an open-source license does not establish sovereignty if a product's actual deployment traps user records in a centrally operated service without workable exit.
 - **Where the software itself is the irreplaceable interpreter:** When continuing essential work requires maintaining, patching, or adapting a specialized engine that no independent tool can replace, proprietary restriction becomes a direct threat to Functional Longevity and continuing authority. In those domains, source availability, open specifications, or a verified multi-implementation standard is required to prevent vendor abandonment from rendering the user's work inert.
 
-Operational independence can therefore substitute for software license freedom when the data and workflow are genuinely portable across independent tools, and cannot substitute for it when the application binary is the sole viable custodian of the work's meaning or execution.
+Operational independence can therefore substitute for software license freedom when the data and workflow are genuinely portable across independent tools, and cannot substitute for it when the application binary is the sole viable custodian of the work's meaning or execution. Where a commercial or specialized tool offers advanced capabilities that open-source alternatives cannot yet execute (such as complex parametric solvers or domain-specific modeling engines), sovereignty does not blame the tool for the capability gap of other software; instead, it evaluates whether the software documents and exports the full semantic structure, parameters, and design intent rather than stripping them out on exit. Likewise, while a hostile operating system or locked hardware platform can constrain any application, software is evaluated on the authority it grants within its declared operating environment rather than penalized for platform-level restrictions outside its control.
 
 ### Shared work and legitimate governance
 
